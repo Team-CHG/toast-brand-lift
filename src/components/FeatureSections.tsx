@@ -97,7 +97,9 @@ const FeatureSections = () => {
                 <p className="text-muted-foreground mb-4">
                   Rotating seasonal dishes crafted by our culinary team featuring the finest local ingredients.
                 </p>
-                <Button variant="outline">View Specials</Button>
+                <Button variant="outline" asChild>
+                  <a href="/locations">Order Online</a>
+                </Button>
               </div>
             </div>
             <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
@@ -107,13 +109,15 @@ const FeatureSections = () => {
                 <p className="text-muted-foreground mb-4">
                   Hand-crafted cocktails, mimosas, and brunch beverages to complement your meal perfectly.
                 </p>
-                <Button variant="outline">View Drinks</Button>
+                <Button variant="outline" asChild>
+                  <a href="/locations">Order Online</a>
+                </Button>
               </div>
             </div>
           </div>
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10">
-              See Full Menu
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10">
+              <a href="/locations">Order Online</a>
             </Button>
           </div>
         </div>

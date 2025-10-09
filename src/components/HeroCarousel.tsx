@@ -75,11 +75,11 @@ const HeroCarousel = () => {
                 {slide.subtitle}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                  View Menu
+                <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+                  <a href="/locations">Order Online</a>
                 </Button>
-                <Button size="lg" variant="outline" className="bg-card/20 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-card/30 text-lg px-8">
-                  Find Location
+                <Button size="lg" asChild variant="outline" className="bg-card/20 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-card/30 text-lg px-8">
+                  <a href="/locations">Find Location</a>
                 </Button>
               </div>
               <p className="mt-8 text-sm opacity-75 italic">{slide.caption}</p>

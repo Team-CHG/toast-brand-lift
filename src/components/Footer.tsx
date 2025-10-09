@@ -12,39 +12,38 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-lg mb-4">Menu</h4>
+            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Breakfast</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Brunch</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Lunch</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Beverages</a></li>
+              <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Order Online</a></li>
+              <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Join Waitlist</a></li>
+              <li><a href="/catering" className="opacity-90 hover:opacity-100 transition-opacity">Catering</a></li>
+              <li><a href="https://toastallday.com/rewards/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">Rewards</a></li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Company</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">About Us</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Locations</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Careers</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Catering</a></li>
+              <li><a href="/about" className="opacity-90 hover:opacity-100 transition-opacity">About Us</a></li>
+              <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Locations</a></li>
+              <li><a href="https://toastallday.com/contact-us/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a></li>
+              <li><a href="/catering" className="opacity-90 hover:opacity-100 transition-opacity">Catering</a></li>
             </ul>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Connect</h4>
-            <div className="flex gap-4 mb-6">
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">
+            <div className="flex gap-4">
+              <a href="https://www.facebook.com/ToastofCharleston/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">
+              <a href="https://www.instagram.com/toastofcharleston/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">
-                <Twitter className="h-6 w-6" />
+              <a href="https://www.tiktok.com/@toast.all.day" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">
+                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
               </a>
             </div>
-            <p className="text-sm opacity-90">
-              Hours: 7am - 2:30pm daily
-            </p>
           </div>
         </div>
         <div className="border-t border-primary-foreground/20 pt-8">
