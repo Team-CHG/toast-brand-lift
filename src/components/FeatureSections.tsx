@@ -115,11 +115,6 @@ const FeatureSections = () => {
               </div>
             </div>
           </div>
-          <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10">
-              <a href="/locations">Order Online</a>
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -136,8 +131,8 @@ const FeatureSections = () => {
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
               <a href="/locations">Find Your Location</a>
             </Button>
-            <Button size="lg" variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
-              Join Our Team
+            <Button size="lg" asChild variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
+              <a href="https://toastallday.com/careers/" target="_blank" rel="noopener noreferrer">Join Our Team</a>
             </Button>
           </div>
         </div>

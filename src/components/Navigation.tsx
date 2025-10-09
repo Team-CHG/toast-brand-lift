@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -60,16 +60,10 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center">
             <a href="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
               Toast All Day
             </a>
-            
-            {/* Location Selector - Desktop */}
-            <button className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-              <MapPin className="h-4 w-4" />
-              <span>Find Location</span>
-            </button>
           </div>
 
           {/* Desktop Navigation */}
