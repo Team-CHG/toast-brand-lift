@@ -1,6 +1,56 @@
 import { useState } from "react";
-import { MapPin, Menu, X } from "lucide-react";
+import { MapPin, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const locations = [
+  {
+    name: "Toast! on Meeting",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
+  },
+  {
+    name: "Toast! on King",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
+  },
+  {
+    name: "Toast! on Coleman",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
+  },
+  {
+    name: "Toast! Mt. Pleasant",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
+  },
+  {
+    name: "Toast! West Ashley",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
+  },
+  {
+    name: "Toast! Summerville",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road-ste-9%20&%2010",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
+  },
+  {
+    name: "Toast! Savannah",
+    menuUrl: "https://toastallday.com/toast-menu/",
+    orderUrl: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st",
+    waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
+  },
+];
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,28 +74,69 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            <a href="#menu" className="text-foreground hover:text-primary transition-colors font-medium">
-              Menu
-            </a>
-            <a href="#locations" className="text-foreground hover:text-primary transition-colors font-medium">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
+                Menu <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-card border-border">
+                {locations.map((location, index) => (
+                  <DropdownMenuItem key={index} asChild>
+                    <a href={location.menuUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                      {location.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <a href="/locations" className="text-foreground hover:text-primary transition-colors font-medium">
               Locations
             </a>
-            <a href="#catering" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/catering" className="text-foreground hover:text-primary transition-colors font-medium">
               Catering
             </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
               About
             </a>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" size="lg">
-              Order Online
-            </Button>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              Get in Line
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="lg">
+                  Order Online <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-card border-border">
+                {locations.map((location, index) => (
+                  <DropdownMenuItem key={index} asChild>
+                    <a href={location.orderUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                      {location.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  Get in Line <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-card border-border">
+                {locations.map((location, index) => (
+                  location.waitlistUrl && (
+                    <DropdownMenuItem key={index} asChild>
+                      <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                        {location.name}
+                      </a>
+                    </DropdownMenuItem>
+                  )
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,25 +156,66 @@ const Navigation = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden py-6 border-t border-border">
             <div className="flex flex-col gap-4">
-              <a href="#menu" className="text-lg font-medium hover:text-primary transition-colors">
-                Menu
-              </a>
-              <a href="#locations" className="text-lg font-medium hover:text-primary transition-colors">
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-muted-foreground px-2">Menu</p>
+                {locations.map((location, index) => (
+                  <a 
+                    key={index}
+                    href={location.menuUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block px-2 py-2 text-foreground hover:text-primary transition-colors"
+                  >
+                    {location.name}
+                  </a>
+                ))}
+              </div>
+
+              <a href="/locations" className="text-lg font-medium hover:text-primary transition-colors">
                 Locations
               </a>
-              <a href="#catering" className="text-lg font-medium hover:text-primary transition-colors">
+              <a href="/catering" className="text-lg font-medium hover:text-primary transition-colors">
                 Catering
               </a>
-              <a href="#about" className="text-lg font-medium hover:text-primary transition-colors">
+              <a href="/about" className="text-lg font-medium hover:text-primary transition-colors">
                 About
               </a>
+
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="outline" size="lg" className="w-full">
-                  Order Online
-                </Button>
-                <Button size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Get in Line
-                </Button>
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-muted-foreground">Order Online</p>
+                  {locations.map((location, index) => (
+                    <Button 
+                      key={index}
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      asChild
+                    >
+                      <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
+                        {location.name}
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+
+                <div className="space-y-2 pt-2">
+                  <p className="text-sm font-semibold text-muted-foreground">Get in Line</p>
+                  {locations.map((location, index) => (
+                    location.waitlistUrl && (
+                      <Button 
+                        key={index}
+                        size="sm" 
+                        className="w-full justify-start bg-accent hover:bg-accent/90 text-accent-foreground"
+                        asChild
+                      >
+                        <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
+                          {location.name}
+                        </a>
+                      </Button>
+                    )
+                  ))}
+                </div>
               </div>
             </div>
           </div>

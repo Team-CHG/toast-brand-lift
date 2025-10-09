@@ -24,8 +24,8 @@ const FeatureSections = () => {
                 From our signature french toast to perfectly poached eggs, every plate tells a story 
                 of quality, passion, and dedication to the art of breakfast.
               </p>
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                Our Story
+              <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <a href="/about">Our Story</a>
               </Button>
             </div>
             <div className="order-1 lg:order-2">
@@ -129,8 +129,8 @@ const FeatureSections = () => {
             With locations opening nationwide, we're bringing exceptional breakfast to your neighborhood.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-              Find Your Location
+            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+              <a href="/locations">Find Your Location</a>
             </Button>
             <Button size="lg" variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
               Join Our Team
