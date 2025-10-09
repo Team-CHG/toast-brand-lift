@@ -17,7 +17,7 @@ const Footer = () => {
               <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Order Online</a></li>
               <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Join Waitlist</a></li>
               <li><a href="/catering" className="opacity-90 hover:opacity-100 transition-opacity">Catering</a></li>
-              <li><a href="https://toastallday.com/rewards/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">Rewards</a></li>
+              <li><a href="/rewards" className="opacity-90 hover:opacity-100 transition-opacity">Rewards</a></li>
             </ul>
           </div>
           <div>
@@ -25,7 +25,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="/about" className="opacity-90 hover:opacity-100 transition-opacity">About Us</a></li>
               <li><a href="/locations" className="opacity-90 hover:opacity-100 transition-opacity">Locations</a></li>
-              <li><a href="https://toastallday.com/contact-us/" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a></li>
+              <li><a href="/contact" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a></li>
               <li><a href="/catering" className="opacity-90 hover:opacity-100 transition-opacity">Catering</a></li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="flex gap-6 text-sm">
               <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Privacy Policy</a>
               <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Terms of Service</a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a>
+              <a href="/contact" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a>
             </div>
           </div>
         </div>
