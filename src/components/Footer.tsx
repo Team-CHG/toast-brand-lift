@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import toastLogo from "@/assets/toast-logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Toast All Day</h3>
+            <img src={toastLogo} alt="Toast All Day" className="h-16 w-auto mb-4" />
             <p className="opacity-90 leading-relaxed">
               Serving exceptional breakfast, brunch, and lunch since day one.
             </p>

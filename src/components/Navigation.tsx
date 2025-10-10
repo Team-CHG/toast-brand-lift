@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import toastLogo from "@/assets/toast-logo.png";
 
 const locations = [
   {
@@ -61,8 +62,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
-              Toast All Day
+            <a href="/" className="hover:opacity-80 transition-opacity">
+              <img src={toastLogo} alt="Toast All Day" className="h-12 w-auto" />
             </a>
           </div>
 
