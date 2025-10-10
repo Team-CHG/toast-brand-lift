@@ -63,7 +63,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="hover:opacity-80 transition-opacity">
-              <img src={toastLogo} alt="Toast All Day" className="h-12 w-auto" />
+              <img src={toastLogo} alt="Toast All Day" className="h-16 w-auto" />
             </a>
           </div>
 

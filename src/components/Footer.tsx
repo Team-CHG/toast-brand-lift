@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <img src={toastLogo} alt="Toast All Day" className="h-16 w-auto mb-4" />
-            <p className="opacity-90 leading-relaxed">
+          <div className="flex flex-col items-center md:items-start">
+            <img src={toastLogo} alt="Toast All Day" className="h-24 w-auto mb-4" />
+            <p className="opacity-90 leading-relaxed text-center md:text-left">
               Serving exceptional breakfast, brunch, and lunch since day one.
             </p>
           </div>
