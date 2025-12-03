@@ -1,7 +1,21 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { useEffect } from "react";
+import { Facebook, Instagram } from "lucide-react";
 import toastLogo from "@/assets/toast-logo.png";
 
 const Footer = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.leadconnectorhq.com/loader.js";
+    script.setAttribute("data-resources-url", "https://widgets.leadconnectorhq.com/chat-widget/loader.js");
+    script.setAttribute("data-widget-id", "687adeb581758b005d3c04cf");
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4">
