@@ -1,4 +1,4 @@
-import freshIngredients from "@/assets/fresh-ingredients.jpg";
+import chickenWaffles from "@/assets/chicken-waffles.jpg";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
 import chefPreparing from "@/assets/chef-preparing.jpg";
 import { Button } from "@/components/ui/button";
@@ -30,9 +30,9 @@ const FeatureSections = () => {
             </div>
             <div className="order-1 lg:order-2">
               <img 
-                src={freshIngredients} 
-                alt="Fresh ingredients" 
-                className="rounded-lg shadow-xl w-full h-[500px] object-cover"
+                src={chickenWaffles} 
+                alt="Chicken and waffles with fresh berries" 
+                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-accent/20"
               />
             </div>
           </div>
