@@ -128,16 +128,7 @@ const FeatureSections = () => {
       {/* Reviews Section */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js"></script>
-            <iframe
-              class="lc_reviews_widget"
-              src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3"
-              frameborder="0"
-              scrolling="no"
-              style="min-width: 100%; width: 100%;"
-            ></iframe>
-          </div>
+          <div className="text-center mb-12"></div>
         </div>
       </section>
 
