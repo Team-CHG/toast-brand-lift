@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import chickenWaffles from "@/assets/chicken-waffles.jpg";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
 import chefPreparing from "@/assets/chef-preparing.jpg";
@@ -5,6 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Clock, Award, MapPin } from "lucide-react";
 
 const FeatureSections = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <>
       {/* About Section */}
@@ -114,6 +127,29 @@ const FeatureSections = () => {
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">
+              What Our Guests Say
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              See why breakfast lovers across the country choose Toast All Day.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg p-6 lg:p-8">
+            <iframe 
+              className="lc_reviews_widget" 
+              src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3" 
+              frameBorder="0" 
+              scrolling="no" 
+              style={{ minWidth: '100%', width: '100%', minHeight: '400px' }}
+            />
           </div>
         </div>
       </section>
