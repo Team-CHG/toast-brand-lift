@@ -7,12 +7,12 @@ import { Clock, Award, MapPin } from "lucide-react";
 
 const FeatureSections = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
-    script.type = 'text/javascript';
+    const script = document.createElement("script");
+    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
+    script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
-    
+
     return () => {
       document.body.removeChild(script);
     };
@@ -25,26 +25,24 @@ const FeatureSections = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">
-                Breakfast Done Right
-              </h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Breakfast Done Right</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                At Toast All Day, we believe breakfast is the most important meal – and it should be 
-                extraordinary. We source the freshest ingredients, craft each dish with care, and serve 
-                it all in a warm, welcoming atmosphere.
+                At Toast All Day, we believe breakfast is the most important meal – and it should be extraordinary. We
+                source the freshest ingredients, craft each dish with care, and serve it all in a warm, welcoming
+                atmosphere.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                From our signature french toast to perfectly poached eggs, every plate tells a story 
-                of quality, passion, and dedication to the art of breakfast.
+                From our signature french toast to perfectly poached eggs, every plate tells a story of quality,
+                passion, and dedication to the art of breakfast.
               </p>
               <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <a href="/about">Our Story</a>
               </Button>
             </div>
             <div className="order-1 lg:order-2">
-              <img 
-                src={chickenWaffles} 
-                alt="Chicken and waffles with fresh berries" 
+              <img
+                src={chickenWaffles}
+                alt="Chicken and waffles with fresh berries"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-accent/20"
               />
             </div>
@@ -55,9 +53,7 @@ const FeatureSections = () => {
       {/* Why Choose Us */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">
-            Why Toast All Day?
-          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Why Toast All Day?</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-card rounded-lg shadow-md hover:shadow-xl transition-shadow">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
@@ -94,12 +90,10 @@ const FeatureSections = () => {
       <section id="menu" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">
-              Explore Our Menu
-            </h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Explore Our Menu</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From classic breakfast favorites to innovative brunch creations, our menu celebrates 
-              the art of morning dining.
+              From classic breakfast favorites to innovative brunch creations, our menu celebrates the art of morning
+              dining.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -135,21 +129,14 @@ const FeatureSections = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">
-              What Our Guests Say
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              See why breakfast lovers across the country choose Toast All Day.
-            </p>
-          </div>
-          <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg p-6 lg:p-8">
-            <iframe 
-              className="lc_reviews_widget" 
-              src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ minWidth: '100%', width: '100%', minHeight: '400px' }}
-            />
+            <script type="text/javascript" src="https://reputationhub.site/reputation/assets/review-widget.js"></script>
+            <iframe
+              class="lc_reviews_widget"
+              src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3"
+              frameborder="0"
+              scrolling="no"
+              style="min-width: 100%; width: 100%;"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -157,9 +144,7 @@ const FeatureSections = () => {
       {/* Locations */}
       <section id="locations" className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Find a Toast All Day Near You
-          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Find a Toast All Day Near You</h2>
           <p className="text-xl mb-10 opacity-95 max-w-2xl mx-auto">
             With locations opening nationwide, we're bringing exceptional breakfast to your neighborhood.
           </p>
@@ -167,8 +152,15 @@ const FeatureSections = () => {
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
               <a href="/locations">Find Your Location</a>
             </Button>
-            <Button size="lg" asChild variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
-              <a href="https://toastallday.com/careers/" target="_blank" rel="noopener noreferrer">Join Our Team</a>
+            <Button
+              size="lg"
+              asChild
+              variant="outline"
+              className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8"
+            >
+              <a href="https://toastallday.com/careers/" target="_blank" rel="noopener noreferrer">
+                Join Our Team
+              </a>
             </Button>
           </div>
         </div>
