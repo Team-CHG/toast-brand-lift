@@ -4,7 +4,6 @@ import restaurantInterior from "@/assets/restaurant-interior.jpg";
 import chefPreparing from "@/assets/chef-preparing.jpg";
 import { Button } from "@/components/ui/button";
 import { Clock, Award, MapPin } from "lucide-react";
-
 const FeatureSections = () => {
   useEffect(() => {
     const script = document.createElement("script");
@@ -12,24 +11,22 @@ const FeatureSections = () => {
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
-
     return () => {
       document.body.removeChild(script);
     };
   }, []);
-
-  return (
-    <>
+  return <>
       {/* About Section */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Breakfast Done Right</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">A Toast to Awards
+            </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                At Toast All Day, we believe breakfast is the most important meal – and it should be extraordinary. We
-                source the freshest ingredients, craft each dish with care, and serve it all in a warm, welcoming
-                atmosphere.
+                Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers’ Choice “Best of the Best,” which is only awarded to the top 1% best reviews worldwide! Come taste our award-winning food today!
+
+
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality,
@@ -40,11 +37,7 @@ const FeatureSections = () => {
               </Button>
             </div>
             <div className="order-1 lg:order-2">
-              <img
-                src={chickenWaffles}
-                alt="Chicken and waffles with fresh berries"
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-accent/20"
-              />
+              <img src={chickenWaffles} alt="Chicken and waffles with fresh berries" className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-accent/20" />
             </div>
           </div>
         </div>
@@ -135,13 +128,11 @@ const FeatureSections = () => {
             </p>
           </div>
           <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
-            <iframe
-              className="lc_reviews_widget"
-              src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3"
-              frameBorder="0"
-              scrolling="no"
-              style={{ minWidth: "100%", width: "100%", minHeight: "500px" }}
-            />
+            <iframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3" frameBorder="0" scrolling="no" style={{
+            minWidth: "100%",
+            width: "100%",
+            minHeight: "500px"
+          }} />
           </div>
         </div>
       </section>
@@ -157,12 +148,7 @@ const FeatureSections = () => {
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
               <a href="/locations">Find Your Location</a>
             </Button>
-            <Button
-              size="lg"
-              asChild
-              variant="outline"
-              className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8"
-            >
+            <Button size="lg" asChild variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
               <a href="https://toastallday.com/careers/" target="_blank" rel="noopener noreferrer">
                 Join Our Team
               </a>
@@ -170,8 +156,6 @@ const FeatureSections = () => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 };
-
 export default FeatureSections;
