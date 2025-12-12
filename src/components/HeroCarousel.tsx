@@ -65,7 +65,7 @@ const HeroCarousel = () => {
           <div className="absolute bottom-24 left-0 right-0 flex justify-center">
             <div className="flex flex-wrap gap-4 justify-center px-4">
               {slide.buttons.map((button, btnIndex) => <Button key={btnIndex} size="lg" asChild className={button.variant === "outline" ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8" : "bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8"}>
-                  {isExternalLink(button.href) ? <a href={button.href} target="_blank" rel="noopener noreferrer">
+                  {isExternalLink(button.href) ? <a href={button.href} target="_blank" rel="noopener noreferrer" className="text-sm">
                       {button.label}
                     </a> : <a href={button.href} className="text-sm">{button.label}</a>}
                 </Button>)}
