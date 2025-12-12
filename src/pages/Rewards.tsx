@@ -33,11 +33,18 @@ Earn double points Monday-Friday 12-3pm</p>
               
             </div>
             
-            <Button asChild size="lg" className="text-lg px-8">
-              <a target="_blank" rel="noopener noreferrer" href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup">
-                ​Register Here 
-              </a>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup">
+                  ​Register Here 
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsLookup">
+                  Check Your Rewards
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
