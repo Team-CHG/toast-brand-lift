@@ -1,28 +1,40 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBreakfast from "@/assets/hero-breakfast.jpg";
-import heroAvocadoToast from "@/assets/hero-avocado-toast.jpg";
-import heroPancakes from "@/assets/hero-pancakes.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.png";
+import heroSlide2 from "@/assets/hero-slide-2.png";
+import heroSlide3 from "@/assets/hero-slide-3.png";
 
-const slides = [
+interface SlideButton {
+  label: string;
+  href: string;
+  variant?: "default" | "outline";
+}
+
+interface Slide {
+  image: string;
+  buttons: SlideButton[];
+}
+
+const slides: Slide[] = [
   {
-    image: heroBreakfast,
-    title: "We Put the Good in Morning",
-    subtitle: "Mornings are our thing. We're here to make your breakfast a little brighter each day.",
-    caption: "French Toast with Fresh Berries"
+    image: heroSlide1,
+    buttons: [
+      { label: "Order Online", href: "https://toastallday.com/order-online/", variant: "default" },
+      { label: "Become a VIP Member", href: "https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup", variant: "outline" }
+    ]
   },
   {
-    image: heroAvocadoToast,
-    title: "Crafted with Care",
-    subtitle: "Every dish is prepared fresh with the finest ingredients for an unforgettable experience.",
-    caption: "Artisan Avocado Toast"
+    image: heroSlide2,
+    buttons: [
+      { label: "Book Here", href: "https://linktr.ee/unforgettablecharleston", variant: "default" }
+    ]
   },
   {
-    image: heroPancakes,
-    title: "Stack Your Day Right",
-    subtitle: "Fluffy pancakes and warm syrup – the perfect start to any morning.",
-    caption: "Signature Buttermilk Pancakes"
+    image: heroSlide3,
+    buttons: [
+      { label: "View Full Menu", href: "/menu", variant: "default" }
+    ]
   }
 ];
 
@@ -48,6 +60,8 @@ const HeroCarousel = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+  const isExternalLink = (href: string) => href.startsWith("http");
+
   return (
     <section className="relative h-[600px] lg:h-[700px] overflow-hidden mt-20">
       {slides.map((slide, index) => (
@@ -58,31 +72,33 @@ const HeroCarousel = () => {
           }`}
         >
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent" />
           
-          <div className="relative h-full container mx-auto px-4 flex items-center">
-            <div className="max-w-2xl text-primary-foreground">
-              <p className="text-sm uppercase tracking-widest mb-4 opacity-90">
-                Breakfast · Brunch · Lunch
-              </p>
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                {slide.title}
-              </h1>
-              <p className="text-xl lg:text-2xl mb-8 opacity-95 leading-relaxed">
-                {slide.subtitle}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                  <a href="/locations">Order Online</a>
+          {/* Buttons positioned at the bottom */}
+          <div className="absolute bottom-24 left-0 right-0 flex justify-center">
+            <div className="flex flex-wrap gap-4 justify-center px-4">
+              {slide.buttons.map((button, btnIndex) => (
+                <Button
+                  key={btnIndex}
+                  size="lg"
+                  asChild
+                  className={
+                    button.variant === "outline"
+                      ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8"
+                      : "bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8"
+                  }
+                >
+                  {isExternalLink(button.href) ? (
+                    <a href={button.href} target="_blank" rel="noopener noreferrer">
+                      {button.label}
+                    </a>
+                  ) : (
+                    <a href={button.href}>{button.label}</a>
+                  )}
                 </Button>
-                <Button size="lg" asChild variant="outline" className="bg-card/20 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-card/30 text-lg px-8">
-                  <a href="/locations">Find Location</a>
-                </Button>
-              </div>
-              <p className="mt-8 text-sm opacity-75 italic">{slide.caption}</p>
+              ))}
             </div>
           </div>
         </div>
