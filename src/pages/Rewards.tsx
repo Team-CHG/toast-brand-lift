@@ -20,6 +20,24 @@ const Rewards = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Earn points with every visit and enjoy exclusive perks
             </p>
+            
+            {/* Highlighted Promo Section */}
+            <div className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-primary"></div>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                GET $10 FOR EVERY $100 SPENT!
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location or the fine restaurants listed below. The more you spend, the more points you accumulate.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks!
+              </p>
+              <div className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold text-sm md:text-base">
+                🎉 Earn double points Monday-Friday 12-3pm
+              </div>
+            </div>
+            
             <Button asChild size="lg" className="text-lg px-8">
               <a href="https://toastallday.com/rewards/" target="_blank" rel="noopener noreferrer">
                 Join Rewards Program
