@@ -63,18 +63,18 @@ const HeroCarousel = () => {
   const isExternalLink = (href: string) => href.startsWith("http");
 
   return (
-    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[700px] overflow-hidden mt-20">
+    <section className="relative h-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:h-[700px] overflow-hidden mt-20">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+          className={`${index === 0 ? 'relative' : 'absolute inset-0'} transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
           <img
             src={slide.image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-contain lg:object-cover object-center"
+            className="w-full h-auto object-contain md:object-contain lg:object-cover"
           />
           
           {/* Buttons positioned at the bottom */}
