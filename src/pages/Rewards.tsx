@@ -143,7 +143,7 @@ Earn double points Monday-Friday 12-3pm</p>
                 Join our rewards program today and start enjoying the benefits!
               </p>
               <Button asChild size="lg" className="text-lg px-10">
-                <a href="https://toastallday.com/rewards/" target="_blank" rel="noopener noreferrer">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup">
                   Sign Up Now
                 </a>
               </Button>
