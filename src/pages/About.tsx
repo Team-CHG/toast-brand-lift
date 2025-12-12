@@ -1,12 +1,13 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SideDrawer from "@/components/SideDrawer";
 import { Award, Heart, Users } from "lucide-react";
 
 const About = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+      <SideDrawer />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">

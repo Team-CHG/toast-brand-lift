@@ -9,7 +9,9 @@ import About from "./pages/About";
 import Catering from "./pages/Catering";
 import Contact from "./pages/Contact";
 import Rewards from "./pages/Rewards";
+import Franchise from "./pages/Franchise";
 import NotFound from "./pages/NotFound";
+import RafflePopup from "./components/RafflePopup";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <RafflePopup />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -26,6 +29,7 @@ const App = () => (
           <Route path="/catering" element={<Catering />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rewards" element={<Rewards />} />
+          <Route path="/franchise" element={<Franchise />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
