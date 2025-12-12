@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import restaurantInterior from "@/assets/restaurant-interior.jpg";
-import chefPreparing from "@/assets/chef-preparing.jpg";
 import foodSlide1 from "@/assets/food-slide-1.jpg";
 import foodSlide2 from "@/assets/food-slide-2.jpg";
 import foodSlide3 from "@/assets/food-slide-3.jpg";
+import menuImage1 from "@/assets/food-slide-1-new.jpg";
+import menuImage2 from "@/assets/food-slide-2-new.jpg";
 import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
@@ -154,7 +154,7 @@ const FeatureSections = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src={chefPreparing} alt="Chef preparing food" className="w-full h-64 object-cover" />
+              <img src={menuImage1} alt="Chef preparing food" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Chef's Specials</h3>
                 <p className="text-muted-foreground mb-4">
@@ -166,7 +166,7 @@ const FeatureSections = () => {
               </div>
             </div>
             <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src={restaurantInterior} alt="Restaurant interior" className="w-full h-64 object-cover" />
+              <img src={menuImage2} alt="Full bar selection" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Full Bar & Cocktails</h3>
                 <p className="text-muted-foreground mb-4">
