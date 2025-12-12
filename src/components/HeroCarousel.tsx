@@ -74,7 +74,7 @@ const HeroCarousel = () => {
           <img
             src={slide.image}
             alt={`Slide ${index + 1}`}
-            className="w-full h-full object-contain sm:object-cover object-center"
+            className="w-full h-full object-contain lg:object-cover object-center"
           />
           
           {/* Buttons positioned at the bottom */}
