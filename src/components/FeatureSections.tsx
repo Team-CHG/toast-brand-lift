@@ -10,17 +10,14 @@ import giftcardDesign from "@/assets/giftcard-design.png";
 import { Button } from "@/components/ui/button";
 import { Clock, Award, MapPin, ChevronLeft, ChevronRight, Gift, CreditCard, Search, Mail, Sparkles } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
-
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % foodSlides.length);
+      setCurrentSlide(prev => (prev + 1) % foodSlides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
-
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
@@ -31,7 +28,6 @@ const FeatureSections = () => {
       document.body.removeChild(script);
     };
   }, []);
-
   return <>
       {/* About Section */}
       <section id="about" className="py-20 bg-background">
@@ -61,44 +57,19 @@ const FeatureSections = () => {
             {/* Food Slideshow */}
             <div className="order-1 lg:order-2 relative">
               <div className="relative h-[500px] rounded-2xl shadow-2xl overflow-hidden ring-4 ring-accent/20">
-                {foodSlides.map((slide, index) => (
-                  <img
-                    key={index}
-                    src={slide}
-                    alt={`Delicious breakfast dish ${index + 1}`}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                      index === currentSlide ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
+                {foodSlides.map((slide, index) => <img key={index} src={slide} alt={`Delicious breakfast dish ${index + 1}`} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} />)}
                 
                 {/* Navigation Arrows */}
-                <button
-                  onClick={() => setCurrentSlide((prev) => (prev - 1 + foodSlides.length) % foodSlides.length)}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg"
-                >
+                <button onClick={() => setCurrentSlide(prev => (prev - 1 + foodSlides.length) % foodSlides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
                   <ChevronLeft className="h-5 w-5" />
                 </button>
-                <button
-                  onClick={() => setCurrentSlide((prev) => (prev + 1) % foodSlides.length)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg"
-                >
+                <button onClick={() => setCurrentSlide(prev => (prev + 1) % foodSlides.length)} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
                   <ChevronRight className="h-5 w-5" />
                 </button>
                 
                 {/* Indicators */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {foodSlides.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`h-2 rounded-full transition-all ${
-                        index === currentSlide 
-                          ? "w-8 bg-accent" 
-                          : "w-2 bg-card/60 hover:bg-card/80"
-                      }`}
-                    />
-                  ))}
+                  {foodSlides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-accent" : "w-2 bg-card/60 hover:bg-card/80"}`} />)}
                 </div>
               </div>
             </div>
@@ -154,7 +125,7 @@ const FeatureSections = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src={menuImage1} alt="Chef preparing food" className="w-full h-64 object-cover" />
+              <img alt="Chef preparing food" className="w-full h-64 object-cover" src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Chef's Specials</h3>
                 <p className="text-muted-foreground mb-4">
@@ -212,11 +183,7 @@ const FeatureSections = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <img 
-                src={giftcardDesign} 
-                alt="Charleston Hospitality Group Gift Card" 
-                className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20"
-              />
+              <img src={giftcardDesign} alt="Charleston Hospitality Group Gift Card" className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20" />
             </div>
           </div>
         </div>
