@@ -97,7 +97,7 @@ const HeroCarousel = () => {
           <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain md:object-contain lg:object-cover" />
           
           {/* Buttons positioned at the bottom */}
-          <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-0 right-0 flex justify-center">
+          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 flex justify-center">
             <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
               {slide.buttons.map((button, btnIndex) => (
                 <Button key={btnIndex} size="lg" asChild className={button.variant === "outline" ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8" : "bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8"}>
@@ -116,15 +116,15 @@ const HeroCarousel = () => {
       ))}
 
       {/* Navigation Arrows */}
-      <button onClick={previousSlide} className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
-        <ChevronLeft className="h-6 w-6" />
+      <button onClick={previousSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation">
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
-        <ChevronRight className="h-6 w-6" />
+      <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation">
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button key={index} onClick={() => goToSlide(index)} className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-12 bg-accent" : "w-2 bg-card/50 hover:bg-card/70"}`} />
         ))}
