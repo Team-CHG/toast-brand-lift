@@ -229,7 +229,7 @@ const FeatureSections = () => {
           
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 px-4">
             <Button size="lg" asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="text-sm font-medium">
                 <Mail className="h-5 w-5 mr-2" />
                 Sign Up For Exclusive News & Offers!
               </a>
