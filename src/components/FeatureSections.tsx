@@ -235,7 +235,7 @@ const FeatureSections = () => {
               </a>
             </Button>
             <Button size="lg" asChild variant="outline" className="w-full sm:w-auto bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
-              <a href="/locations">
+              <a href="/locations" className="text-sm font-semibold">
                 <MapPin className="h-5 w-5 mr-2" />
                 Find Your Location
               </a>
