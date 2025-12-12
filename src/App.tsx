@@ -10,6 +10,7 @@ import Catering from "./pages/Catering";
 import Contact from "./pages/Contact";
 import Rewards from "./pages/Rewards";
 import Franchise from "./pages/Franchise";
+import NewsEvents from "./pages/NewsEvents";
 import NotFound from "./pages/NotFound";
 import RafflePopup from "./components/RafflePopup";
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/rewards" element={<Rewards />} />
           <Route path="/franchise" element={<Franchise />} />
+          <Route path="/news-events" element={<NewsEvents />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
