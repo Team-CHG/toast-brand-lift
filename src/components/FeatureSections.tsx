@@ -8,7 +8,7 @@ import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import { Button } from "@/components/ui/button";
-import { Clock, Award, MapPin, ChevronLeft, ChevronRight, Gift, CreditCard, Search } from "lucide-react";
+import { Clock, Award, MapPin, ChevronLeft, ChevronRight, Gift, CreditCard, Search, Mail, Sparkles } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 
 const FeatureSections = () => {
@@ -241,35 +241,39 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Locations */}
-      <section id="locations" className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Find a Toast All Day Near You</h2>
-          <p className="text-xl mb-10 opacity-95 max-w-2xl mx-auto">
-            With locations opening nationwide, we're bringing exceptional breakfast to your neighborhood.
+      {/* Newsletter & CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-10 left-10 w-24 h-24 rounded-full border-2 border-primary-foreground animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-primary-foreground animate-pulse delay-300" />
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full border-2 border-primary-foreground animate-pulse delay-500" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-6">
+            <Sparkles className="h-8 w-8 text-accent" />
+          </div>
+          
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4">Never Miss Out on A Celebration!</h2>
+          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+            Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-              <a href="/locations">Find Your Location</a>
+              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer">
+                <Mail className="h-5 w-5 mr-2" />
+                Sign Up For Exclusive News & Offers!
+              </a>
             </Button>
             <Button size="lg" asChild variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
-              <a href="https://toastallday.com/careers/" target="_blank" rel="noopener noreferrer">
-                Join Our Team
+              <a href="/locations">
+                <MapPin className="h-5 w-5 mr-2" />
+                Find Your Location
               </a>
             </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Newsletter Signup Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-primary">Never Miss Out on A Celebration!</h2>
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-            <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer">
-              Sign Up For Exclusive News & Offers!
-            </a>
-          </Button>
         </div>
       </section>
     </>;
