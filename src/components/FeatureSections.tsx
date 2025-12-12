@@ -1,10 +1,26 @@
-import { useEffect } from "react";
-import chickenWaffles from "@/assets/chicken-waffles.jpg";
+import { useEffect, useState } from "react";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
 import chefPreparing from "@/assets/chef-preparing.jpg";
+import foodSlide1 from "@/assets/food-slide-1.jpg";
+import foodSlide2 from "@/assets/food-slide-2.jpg";
+import foodSlide3 from "@/assets/food-slide-3.jpg";
+import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
+import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import { Button } from "@/components/ui/button";
-import { Clock, Award, MapPin } from "lucide-react";
+import { Clock, Award, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+
+const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
+
 const FeatureSections = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % foodSlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
@@ -15,29 +31,76 @@ const FeatureSections = () => {
       document.body.removeChild(script);
     };
   }, []);
+
   return <>
       {/* About Section */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">A Toast to Awards
-            </h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">A Toast to Awards</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers’ Choice “Best of the Best,” which is only awarded to the top 1% best reviews worldwide! Come taste our award-winning food today!
-
-
+                Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers' Choice "Best of the Best," which is only awarded to the top 1% best reviews worldwide! Come taste our award-winning food today!
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality,
                 passion, and dedication to the art of breakfast.
               </p>
+              
+              {/* Award Badges */}
+              <div className="flex items-center gap-6 mb-8">
+                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-20 w-auto object-contain" />
+                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-20 w-auto object-contain rounded-md" />
+              </div>
+              
               <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <a href="/about">Our Story</a>
               </Button>
             </div>
-            <div className="order-1 lg:order-2">
-              <img src={chickenWaffles} alt="Chicken and waffles with fresh berries" className="rounded-2xl shadow-2xl w-full h-[500px] object-cover ring-4 ring-accent/20" />
+            
+            {/* Food Slideshow */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="relative h-[500px] rounded-2xl shadow-2xl overflow-hidden ring-4 ring-accent/20">
+                {foodSlides.map((slide, index) => (
+                  <img
+                    key={index}
+                    src={slide}
+                    alt={`Delicious breakfast dish ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+                
+                {/* Navigation Arrows */}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + foodSlides.length) % foodSlides.length)}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % foodSlides.length)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+                
+                {/* Indicators */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {foodSlides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`h-2 rounded-full transition-all ${
+                        index === currentSlide 
+                          ? "w-8 bg-accent" 
+                          : "w-2 bg-card/60 hover:bg-card/80"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
