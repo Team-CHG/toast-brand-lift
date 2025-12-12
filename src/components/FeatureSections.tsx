@@ -227,14 +227,14 @@ const FeatureSections = () => {
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
           
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
-            <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 px-4">
+            <Button size="lg" asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
               <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer">
                 <Mail className="h-5 w-5 mr-2" />
                 Sign Up For Exclusive News & Offers!
               </a>
             </Button>
-            <Button size="lg" asChild variant="outline" className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
+            <Button size="lg" asChild variant="outline" className="w-full sm:w-auto bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/30 hover:bg-primary-foreground/20 text-lg px-8">
               <a href="/locations">
                 <MapPin className="h-5 w-5 mr-2" />
                 Find Your Location
