@@ -66,10 +66,10 @@ const Footer = () => {
             <p className="opacity-90 text-sm">
               © 2025 Toast All Day. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Privacy Policy</a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity">Terms of Service</a>
-              <a href="/contact" className="opacity-90 hover:opacity-100 transition-opacity">Contact</a>
+            <div className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 text-sm">
+              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Privacy Policy</a>
+              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Terms of Service</a>
+              <a href="/contact" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Contact</a>
             </div>
           </div>
         </div>
