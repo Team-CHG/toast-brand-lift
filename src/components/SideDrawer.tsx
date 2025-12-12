@@ -6,7 +6,7 @@ const sideMenuItems = [
   { name: "About Us", href: "/about" },
   { name: "Menus", href: "/locations" },
   { name: "Rewards", href: "/rewards" },
-  { name: "News & Events", href: "/about" },
+  { name: "News & Events", href: "/news-events" },
   { name: "Catering", href: "/catering" },
   { name: "Franchise", href: "/franchise" },
   { name: "Careers", href: "https://payroll.toasttab.com/jobs/chgllc", external: true },
