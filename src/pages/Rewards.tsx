@@ -4,10 +4,8 @@ import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Star, TrendingUp, Zap } from "lucide-react";
-
 const Rewards = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       <SideDrawer />
       {/* Hero Section */}
@@ -30,17 +28,14 @@ const Rewards = () => {
               <p className="text-muted-foreground leading-relaxed mb-4">
                 A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location or the fine restaurants listed below. The more you spend, the more points you accumulate.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks!
-              </p>
-              <div className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold text-sm md:text-base">
-                🎉 Earn double points Monday-Friday 12-3pm
-              </div>
+              <p className="text-muted-foreground leading-relaxed mb-4">You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks! 
+Earn double points Monday-Friday 12-3pm</p>
+              
             </div>
             
             <Button asChild size="lg" className="text-lg px-8">
-              <a href="https://toastallday.com/rewards/" target="_blank" rel="noopener noreferrer">
-                Join Rewards Program
+              <a target="_blank" rel="noopener noreferrer" href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup">
+                ​Register Here 
               </a>
             </Button>
           </div>
@@ -151,8 +146,6 @@ const Rewards = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Rewards;
