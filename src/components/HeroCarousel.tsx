@@ -63,7 +63,7 @@ const HeroCarousel = () => {
   const isExternalLink = (href: string) => href.startsWith("http");
 
   return (
-    <section className="relative h-[600px] lg:h-[700px] overflow-hidden mt-20">
+    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[700px] overflow-hidden mt-20">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -71,9 +71,10 @@ const HeroCarousel = () => {
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
+          <img
+            src={slide.image}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-full object-contain sm:object-cover object-center"
           />
           
           {/* Buttons positioned at the bottom */}
