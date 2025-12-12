@@ -92,12 +92,17 @@ const HeroCarousel = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      {/* First slide sets the height */}
+      <div className="relative">
+        <img src={slides[0].image} alt="Slide 1" className="w-full h-auto object-contain md:object-contain lg:object-cover invisible" />
+      </div>
+      
       {slides.map((slide, index) => (
-        <div key={index} className={`${index === 0 ? 'relative' : 'absolute inset-0'} transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
+        <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
           <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain md:object-contain lg:object-cover" />
           
           {/* Buttons positioned at the bottom */}
-          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 left-0 right-0 flex justify-center">
+          <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center z-10">
             <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
               {slide.buttons.map((button, btnIndex) => (
                 <Button key={btnIndex} size="lg" asChild className={button.variant === "outline" ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8" : "bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8"}>
