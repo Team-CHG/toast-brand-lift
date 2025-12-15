@@ -149,7 +149,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-border">
+          <div className="lg:hidden py-6 border-t border-border max-h-[calc(100vh-5rem)] overflow-y-auto">
             <div className="flex flex-col gap-4">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground px-2">Menu</p>
