@@ -166,14 +166,29 @@ const Navigation = () => {
                 ))}
               </div>
 
+              <a href="/about" className="text-lg font-medium hover:text-primary transition-colors">
+                About Us
+              </a>
               <a href="/locations" className="text-lg font-medium hover:text-primary transition-colors">
                 Locations
+              </a>
+              <a href="/rewards" className="text-lg font-medium hover:text-primary transition-colors">
+                Rewards
+              </a>
+              <a href="/news-events" className="text-lg font-medium hover:text-primary transition-colors">
+                News & Events
               </a>
               <a href="/catering" className="text-lg font-medium hover:text-primary transition-colors">
                 Catering
               </a>
-              <a href="/about" className="text-lg font-medium hover:text-primary transition-colors">
-                About
+              <a href="/franchise" className="text-lg font-medium hover:text-primary transition-colors">
+                Franchise
+              </a>
+              <a href="https://payroll.toasttab.com/jobs/chgllc" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:text-primary transition-colors">
+                Careers
+              </a>
+              <a href="/contact" className="text-lg font-medium hover:text-primary transition-colors">
+                Contact Us
               </a>
 
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
