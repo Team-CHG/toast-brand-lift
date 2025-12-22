@@ -79,7 +79,7 @@ const Locations = () => {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <Button asChild size="sm" className="w-full">
+                    <Button asChild variant="accent" size="sm" className="w-full">
                       <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
                         Order Online
                       </a>

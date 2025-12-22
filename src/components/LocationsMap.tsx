@@ -218,7 +218,7 @@ const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <Button asChild size="sm">
+                <Button asChild variant="accent" size="sm">
                   <a href={selectedLocation.orderUrl} target="_blank" rel="noopener noreferrer">
                     Order Online
                   </a>
