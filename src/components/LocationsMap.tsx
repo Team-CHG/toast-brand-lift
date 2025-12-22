@@ -1,9 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React, { useState } from 'react';
 import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 interface Location {
   name: string;
@@ -14,7 +11,7 @@ interface Location {
   orderUrl: string;
   menuUrl: string;
   waitlistUrl?: string;
-  coordinates: [number, number];
+  embedQuery: string;
 }
 
 const locations: Location[] = [
@@ -27,7 +24,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
-    coordinates: [-79.9311, 32.7820],
+    embedQuery: "Toast+All+Day,+155+Meeting+St,+Charleston,+SC+29401",
   },
   {
     name: "Toast! on King",
@@ -38,7 +35,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
-    coordinates: [-79.9403, 32.7873],
+    embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
   },
   {
     name: "Toast! on Coleman",
@@ -48,7 +45,7 @@ const locations: Location[] = [
     hours: "Monday – Sunday: 7am – 3pm",
     orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
     menuUrl: "https://toastallday.com/toast-menu/",
-    coordinates: [-79.8627, 32.7938],
+    embedQuery: "Toast+All+Day,+835+Coleman+Blvd,+Mt+Pleasant,+SC+29464",
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -59,7 +56,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
-    coordinates: [-79.8563, 32.8134],
+    embedQuery: "Toast+All+Day,+1150+Hungry+Neck+Blvd,+Mt+Pleasant,+SC+29464",
   },
   {
     name: "Toast! West Ashley",
@@ -70,7 +67,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
-    coordinates: [-79.9851, 32.7677],
+    embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
   },
   {
     name: "Toast! Summerville",
@@ -81,7 +78,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road-ste-9%20&%2010",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
-    coordinates: [-80.1756, 32.9784],
+    embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
   },
   {
     name: "Toast! Savannah",
@@ -92,7 +89,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
-    coordinates: [-81.0912, 32.0809],
+    embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
   },
 ];
 
@@ -101,120 +98,26 @@ interface LocationsMapProps {
 }
 
 const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-  const markersRef = useRef<mapboxgl.Marker[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
-  const [mapboxToken, setMapboxToken] = useState<string>('');
-  const [isMapReady, setIsMapReady] = useState(false);
 
-  const handleTokenSubmit = () => {
-    if (mapboxToken.trim()) {
-      setIsMapReady(true);
+  // Build Google Maps embed URL showing all locations or a specific one
+  const getMapUrl = () => {
+    if (selectedLocation) {
+      return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${selectedLocation.embedQuery}&zoom=15`;
     }
+    // Default: show all Charleston area locations
+    return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d430346.46101056464!2d-79.70159282744464!3d32.577344423327034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7bfb9517ca2d%3A0xfe11c1310e1e64fd!2sToast*21%20All%20Day!5e0!3m2!1sen!2sus!4v1766417308913!5m2!1sen!2sus";
   };
-
-  useEffect(() => {
-    if (!mapContainer.current || !isMapReady || !mapboxToken) return;
-
-    mapboxgl.accessToken = mapboxToken;
-
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-79.95, 32.78],
-      zoom: 9,
-    });
-
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    map.current.on('load', () => {
-      locations.forEach((location) => {
-        const el = document.createElement('div');
-        el.className = 'custom-marker';
-        el.innerHTML = `
-          <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg cursor-pointer transform transition-transform hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-        `;
-
-        el.addEventListener('click', () => {
-          setSelectedLocation(location);
-          onLocationSelect?.(location);
-          map.current?.flyTo({
-            center: location.coordinates,
-            zoom: 14,
-            duration: 1000,
-          });
-        });
-
-        const marker = new mapboxgl.Marker(el)
-          .setLngLat(location.coordinates)
-          .addTo(map.current!);
-
-        markersRef.current.push(marker);
-      });
-    });
-
-    return () => {
-      markersRef.current.forEach((marker) => marker.remove());
-      markersRef.current = [];
-      map.current?.remove();
-    };
-  }, [isMapReady, mapboxToken, onLocationSelect]);
 
   const handleLocationClick = (location: Location) => {
     setSelectedLocation(location);
     onLocationSelect?.(location);
-    map.current?.flyTo({
-      center: location.coordinates,
-      zoom: 14,
-      duration: 1000,
-    });
   };
 
   const closeDetails = () => {
     setSelectedLocation(null);
     onLocationSelect?.(null);
-    map.current?.flyTo({
-      center: [-79.95, 32.78],
-      zoom: 9,
-      duration: 1000,
-    });
   };
-
-  if (!isMapReady) {
-    return (
-      <div className="bg-secondary/50 rounded-xl p-8 text-center">
-        <h3 className="text-xl font-semibold mb-4">Enter Your Mapbox Token</h3>
-        <p className="text-muted-foreground mb-6">
-          To view the interactive map, please enter your Mapbox public token. 
-          You can get one for free at{' '}
-          <a 
-            href="https://mapbox.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            mapbox.com
-          </a>
-        </p>
-        <div className="flex gap-2 max-w-md mx-auto">
-          <Input
-            type="text"
-            placeholder="pk.eyJ1Ijoi..."
-            value={mapboxToken}
-            onChange={(e) => setMapboxToken(e.target.value)}
-            className="flex-1"
-          />
-          <Button onClick={handleTokenSubmit}>Load Map</Button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="relative">
@@ -244,9 +147,15 @@ const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
 
         {/* Map Container */}
         <div className="lg:col-span-2 relative">
-          <div 
-            ref={mapContainer} 
-            className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg"
+          <iframe
+            src={getMapUrl()}
+            width="100%"
+            height="500"
+            style={{ border: 0, borderRadius: '0.75rem' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="shadow-lg"
           />
 
           {/* Selected Location Details Overlay */}
