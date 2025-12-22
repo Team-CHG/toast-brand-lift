@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import toastMeetingImg from '@/assets/locations/toast-meeting.jpg';
+import toastKingImg from '@/assets/locations/toast-king.jpg';
+import toastColemanImg from '@/assets/locations/toast-coleman.jpg';
+import toastMtPleasantImg from '@/assets/locations/toast-mt-pleasant.jpg';
+import toastWestAshleyImg from '@/assets/locations/toast-west-ashley.jpg';
+import toastSummervilleImg from '@/assets/locations/toast-summerville.jpg';
+import toastSavannahImg from '@/assets/locations/toast-savannah.jpg';
+
 interface Location {
   name: string;
   address: string;
@@ -13,6 +21,7 @@ interface Location {
   waitlistUrl?: string;
   embedQuery: string;
   temporarilyClosed?: boolean;
+  image: string;
 }
 
 const locations: Location[] = [
@@ -26,6 +35,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
     embedQuery: "Toast+All+Day,+155+Meeting+St,+Charleston,+SC+29401",
+    image: toastMeetingImg,
   },
   {
     name: "Toast! on King",
@@ -37,6 +47,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
     embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
+    image: toastKingImg,
   },
   {
     name: "Toast! on Coleman",
@@ -48,6 +59,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     embedQuery: "Toast+All+Day,+835+Coleman+Blvd,+Mt+Pleasant,+SC+29464",
     temporarilyClosed: true,
+    image: toastColemanImg,
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -59,6 +71,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
     embedQuery: "Toast+All+Day,+1150+Hungry+Neck+Blvd,+Mt+Pleasant,+SC+29464",
+    image: toastMtPleasantImg,
   },
   {
     name: "Toast! West Ashley",
@@ -70,6 +83,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
     embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
+    image: toastWestAshleyImg,
   },
   {
     name: "Toast! Summerville",
@@ -81,6 +95,7 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
     embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
+    image: toastSummervilleImg,
   },
   {
     name: "Toast! Savannah",
@@ -92,8 +107,12 @@ const locations: Location[] = [
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
     embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
+    image: toastSavannahImg,
   },
 ];
+
+export { locations };
+export type { Location };
 
 interface LocationsMapProps {
   onLocationSelect?: (location: Location | null) => void;
