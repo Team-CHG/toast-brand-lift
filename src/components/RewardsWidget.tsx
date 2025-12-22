@@ -94,7 +94,7 @@ const RewardsWidget = () => {
     return (
       <button
         onClick={handleMinimizedClick}
-        className="fixed bottom-4 right-4 z-[90] bg-accent text-accent-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 font-semibold animate-in slide-in-from-bottom-4 fade-in"
+        className="fixed bottom-4 left-4 z-[90] bg-accent text-accent-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 font-semibold animate-in slide-in-from-bottom-4 fade-in"
       >
         <Gift className="h-5 w-5" />
         <span>Get $10</span>
@@ -102,10 +102,10 @@ const RewardsWidget = () => {
     );
   }
 
-  // Expanded widget at bottom right
+  // Expanded widget at bottom left
   if (state === "expanded") {
     return (
-      <div className="fixed bottom-4 right-4 z-[90] bg-card rounded-2xl shadow-2xl max-w-sm w-full mx-4 p-6 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300">
+      <div className="fixed bottom-4 left-4 z-[90] bg-card rounded-2xl shadow-2xl max-w-sm w-full p-6 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300">
         <button
           onClick={handleCloseExpanded}
           className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted transition-colors"
