@@ -12,6 +12,7 @@ interface Location {
   menuUrl: string;
   waitlistUrl?: string;
   embedQuery: string;
+  temporarilyClosed?: boolean;
 }
 
 const locations: Location[] = [
@@ -46,6 +47,7 @@ const locations: Location[] = [
     orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
     menuUrl: "https://toastallday.com/toast-menu/",
     embedQuery: "Toast+All+Day,+835+Coleman+Blvd,+Mt+Pleasant,+SC+29464",
+    temporarilyClosed: true,
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -139,6 +141,9 @@ const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
               }`}
             >
               <h4 className="font-semibold text-sm">{location.name}</h4>
+              {location.temporarilyClosed && (
+                <p className="text-xs font-semibold text-red-600 mt-1">Temporarily Closed</p>
+              )}
               <p className="text-xs text-muted-foreground mt-1">
                 {location.address}, {location.city}
               </p>
