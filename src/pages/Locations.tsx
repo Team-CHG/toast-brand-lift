@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import LocationsMap from "@/components/LocationsMap";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -93,6 +94,21 @@ const Locations = () => {
               Visit us at any of our locations across South Carolina and Georgia for an unforgettable dining experience.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Explore Our <span className="text-primary">Locations</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Click on any location to see details and get directions.
+            </p>
+          </div>
+          <LocationsMap />
         </div>
       </section>
 
