@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { X, Gift, Star } from "lucide-react";
+import { X, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import toastLogo from "@/assets/toast-logo.png";
 
 const RewardsWidget = () => {
   const [state, setState] = useState<"popup" | "minimized" | "expanded">("popup");
@@ -48,9 +49,9 @@ const RewardsWidget = () => {
           </button>
 
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-6">
-              <Star className="h-8 w-8 text-accent" />
-            </div>
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/20 mb-6 p-2">
+            <img src={toastLogo} alt="Toast! All Day" className="w-full h-full object-contain" />
+          </div>
 
             <h2 className="text-2xl font-bold text-primary mb-4">
               GET $10 FOR EVERY $100 SPENT!
@@ -114,8 +115,8 @@ const RewardsWidget = () => {
         </button>
 
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/20 mb-4">
-            <Star className="h-6 w-6 text-accent" />
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/20 mb-4 p-1.5">
+            <img src={toastLogo} alt="Toast! All Day" className="w-full h-full object-contain" />
           </div>
 
           <h3 className="text-xl font-bold text-primary mb-3">
