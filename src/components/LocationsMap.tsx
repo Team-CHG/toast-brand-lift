@@ -100,13 +100,14 @@ interface LocationsMapProps {
 const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
 
-  // Build Google Maps embed URL showing all locations or a specific one
+  // Build Google Maps embed URL - search mode shows all Toast! All Day pins
   const getMapUrl = () => {
     if (selectedLocation) {
-      return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${selectedLocation.embedQuery}&zoom=15`;
+      // When a location is selected, zoom into that specific location
+      return `https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3000!2d0!3d0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2s${encodeURIComponent(selectedLocation.address + ', ' + selectedLocation.city)}!5e0!3m2!1sen!2sus&q=${encodeURIComponent('Toast All Day ' + selectedLocation.address + ' ' + selectedLocation.city)}`;
     }
-    // Default: show all Charleston area locations
-    return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d430346.46101056464!2d-79.70159282744464!3d32.577344423327034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7bfb9517ca2d%3A0xfe11c1310e1e64fd!2sToast*21%20All%20Day!5e0!3m2!1sen!2sus!4v1766417308913!5m2!1sen!2sus";
+    // Default: search for "Toast All Day" to show all locations with pins
+    return "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d430346.46101056464!2d-79.70159282744464!3d32.577344423327034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sToast%20All%20Day!5e0!3m2!1sen!2sus";
   };
 
   const handleLocationClick = (location: Location) => {
