@@ -22,7 +22,8 @@ import VeteransDay from "./pages/events/VeteransDay";
 import BestBrunch from "./pages/events/BestBrunch";
 import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
-import RafflePopup from "./components/RafflePopup";
+import PromoBand from "./components/PromoBand";
+import RewardsWidget from "./components/RewardsWidget";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <RafflePopup />
+      <PromoBand />
+      <RewardsWidget />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
