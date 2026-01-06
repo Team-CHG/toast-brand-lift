@@ -199,7 +199,7 @@ const FeatureSections = () => {
             </p>
           </div>
           <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
-            <iframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=69305a6ff4530a0640fb0bc3" frameBorder="0" scrolling="no" style={{
+            <iframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1" frameBorder="0" scrolling="no" style={{
             minWidth: "100%",
             width: "100%",
             minHeight: "500px"
