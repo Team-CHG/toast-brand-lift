@@ -198,11 +198,11 @@ const FeatureSections = () => {
               See why breakfast lovers keep coming back to Toast All Day.
             </p>
           </div>
-          <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
+          <div className="w-full max-w-7xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
             <iframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1" frameBorder="0" scrolling="no" style={{
             minWidth: "100%",
             width: "100%",
-            minHeight: "500px"
+            minHeight: "600px"
           }} />
           </div>
         </div>
