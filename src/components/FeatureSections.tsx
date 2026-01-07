@@ -44,9 +44,9 @@ const FeatureSections = () => {
               </p>
               
               {/* Award Badges */}
-              <div className="flex items-center gap-6 mb-8">
-                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-20 w-auto object-contain" />
-                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-20 w-auto object-contain rounded-md" />
+              <div className="flex items-center justify-center sm:justify-start gap-4 sm:gap-6 mb-8">
+                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-16 sm:h-20 w-auto object-contain" />
+                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-16 sm:h-20 w-auto object-contain rounded-md" />
               </div>
               
               <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
