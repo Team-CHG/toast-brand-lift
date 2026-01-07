@@ -175,9 +175,6 @@ const Navigation = () => {
               <a href="/locations" className="text-lg font-medium hover:text-primary transition-colors">
                 Locations
               </a>
-              <a href="/rewards" className="text-lg font-medium hover:text-primary transition-colors">
-                Rewards
-              </a>
               <a href="/news-events" className="text-lg font-medium hover:text-primary transition-colors">
                 News & Events
               </a>
