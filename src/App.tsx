@@ -24,6 +24,7 @@ import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
 import PromoBand from "./components/PromoBand";
 import RewardsWidget from "./components/RewardsWidget";
+import LocalBusinessSchema from "./components/LocalBusinessSchema";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <LocalBusinessSchema />
       <PromoBand />
       <RewardsWidget />
       <BrowserRouter>
