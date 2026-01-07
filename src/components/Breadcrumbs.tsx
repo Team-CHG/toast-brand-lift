@@ -25,6 +25,8 @@ const routeLabels: Record<string, string> = {
   'veterans-day': 'Veterans Day',
   'best-brunch': 'Best Brunch',
   'valentines-day': "Valentine's Day",
+  'privacy-policy': 'Privacy Policy',
+  'terms-of-service': 'Terms of Service',
 };
 
 interface BreadcrumbsProps {
