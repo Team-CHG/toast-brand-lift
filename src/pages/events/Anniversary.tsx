@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, PartyPopper, Gift, Calendar, MapPin } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Anniversary = () => {
   const events = [
@@ -31,8 +33,14 @@ const Anniversary = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="20th Anniversary Celebration - Toast All Day | Win Brunch for a Year"
+        description="Celebrate Toast All Day's 20th anniversary! Complimentary bubbles with every meal, first 100 guests entered to win brunch for a year. Join us in Mt Pleasant, West Ashley & Summerville."
+        keywords="Toast 20th anniversary, restaurant anniversary, free champagne, win brunch, Charleston celebration"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-primary/20 via-background to-accent/20">

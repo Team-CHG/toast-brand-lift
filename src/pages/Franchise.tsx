@@ -16,6 +16,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const franchiseSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -60,8 +62,14 @@ const Franchise = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Franchise Opportunities - Toast All Day | Own a Breakfast Restaurant"
+        description="Own a Toast All Day franchise. Award-winning breakfast & brunch concept with proven business model, comprehensive training, and strong brand recognition. Inquire today!"
+        keywords="franchise opportunity, breakfast franchise, brunch restaurant franchise, Toast All Day franchise, restaurant investment"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">

@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Gift, Calendar, PartyPopper } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const BlackFridayGiftCard = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Black Friday Gift Card Deal - Toast All Day | Free $20 Bonus"
+        description="Black Friday special! Buy $50 in Toast All Day gift cards and get a FREE $20 bonus card. Perfect holiday gift for breakfast and brunch lovers. Limited time offer."
+        keywords="Black Friday gift card, restaurant gift card, bonus gift card, holiday gift, brunch gift"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

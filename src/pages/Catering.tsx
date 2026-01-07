@@ -4,12 +4,20 @@ import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Utensils, Calendar, Users, Award } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Catering = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Catering Services - Toast All Day | Charleston Hospitality Group"
+        description="Toast All Day catering for weddings, corporate events, bridal showers & more. Award-winning breakfast and brunch catering in Charleston, Mt Pleasant & Summerville."
+        keywords="catering Charleston, brunch catering, breakfast catering, wedding catering SC, corporate catering, event catering"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">

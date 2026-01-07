@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Shield, MapPin, Utensils } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const VeteransDay = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Veterans Day Free Meal - Toast All Day | Honor Our Heroes"
+        description="Veterans eat FREE at Toast All Day on Veterans Day! Choose classic breakfast or smash burger. Valid at all 6 Charleston locations with military ID. Thank you for your service."
+        keywords="Veterans Day free meal, free food veterans, military free meal, Veterans Day restaurant"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

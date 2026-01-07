@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Gift, Star, Smartphone, Bell, Zap } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const DownloadApp = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Download Toast All Day App | Earn $5 Sign-Up Bonus"
+        description="Download the Toast All Day app and get $5 instantly! Earn points, access exclusive offers, order online seamlessly, and track your rewards. Available on iOS and Android."
+        keywords="Toast All Day app, restaurant app, rewards app, mobile ordering, loyalty program app"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">

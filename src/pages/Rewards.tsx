@@ -4,10 +4,20 @@ import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Gift, Star, TrendingUp, Zap } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 const Rewards = () => {
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
+      <SEO 
+        title="Rewards Program - Toast All Day | Earn $10 for Every $100"
+        description="Join Toast All Day Rewards and earn $10 for every $100 spent. Get birthday rewards, exclusive offers, double points Monday-Friday 12-3pm. Sign up free today!"
+        keywords="Toast rewards, loyalty program, restaurant rewards Charleston, earn points breakfast, birthday rewards"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">
@@ -153,6 +163,8 @@ Earn double points Monday-Friday 12-3pm</p>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Rewards;
