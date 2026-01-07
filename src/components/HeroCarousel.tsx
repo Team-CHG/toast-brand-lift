@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroSlide1 from "@/assets/hero-slide-1-anniversary.png";
-import heroSlide2 from "@/assets/hero-slide-2.png";
-import heroSlide3 from "@/assets/hero-slide-3.png";
+import heroSlideAnniversary from "@/assets/hero-slide-anniversary.png";
+import heroSlideMenu from "@/assets/hero-slide-menu.png";
+import heroSlideActivities from "@/assets/hero-slide-activities.png";
+
 interface SlideButton {
   label: string;
   href: string;
@@ -14,7 +15,7 @@ interface Slide {
   buttons: SlideButton[];
 }
 const slides: Slide[] = [{
-  image: heroSlide1,
+  image: heroSlideAnniversary,
   buttons: [{
     label: "Order Online",
     href: "https://toastallday.com/order-online/",
@@ -25,17 +26,17 @@ const slides: Slide[] = [{
     variant: "outline"
   }]
 }, {
-  image: heroSlide2,
-  buttons: [{
-    label: "Book Here",
-    href: "https://linktr.ee/unforgettablecharleston",
-    variant: "default"
-  }]
-}, {
-  image: heroSlide3,
+  image: heroSlideMenu,
   buttons: [{
     label: "View Full Menu",
     href: "/menu",
+    variant: "default"
+  }]
+}, {
+  image: heroSlideActivities,
+  buttons: [{
+    label: "Learn More",
+    href: "/news-events",
     variant: "default"
   }]
 }];
@@ -79,15 +80,15 @@ const HeroCarousel = () => {
     touchEndX.current = null;
   };
   const isExternalLink = (href: string) => href.startsWith("http");
-  return <section className="relative h-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:h-[700px] overflow-hidden pt-20" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+  return <section className="relative w-full overflow-hidden pt-16 sm:pt-20 bg-muted" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       
-      {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
-          <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain md:object-contain lg:object-contain border-none border-0" />
+      {slides.map((slide, index) => <div key={index} className={`transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"}`}>
+          <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain" />
           
           {/* Buttons positioned at the bottom */}
-          <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center z-10">
+          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex justify-center z-10">
             <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
-              {slide.buttons.map((button, btnIndex) => <Button key={btnIndex} size="lg" asChild className={button.variant === "outline" ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8" : "bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm md:text-lg px-4 sm:px-6 md:px-8"}>
+              {slide.buttons.map((button, btnIndex) => <Button key={btnIndex} size="lg" asChild className={button.variant === "outline" ? "bg-card/20 backdrop-blur-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-xs sm:text-sm md:text-lg px-3 sm:px-6 md:px-8 py-2 sm:py-3" : "bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm md:text-lg px-3 sm:px-6 md:px-8 py-2 sm:py-3"}>
                   {isExternalLink(button.href) ? <a href={button.href} target="_blank" rel="noopener noreferrer">
                       {button.label}
                     </a> : <a href={button.href}>{button.label}</a>}
