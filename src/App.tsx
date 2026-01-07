@@ -22,7 +22,6 @@ import VeteransDay from "./pages/events/VeteransDay";
 import BestBrunch from "./pages/events/BestBrunch";
 import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
-import PromoBand from "./components/PromoBand";
 import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
 
@@ -34,7 +33,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <LocalBusinessSchema />
-      <PromoBand />
       <RewardsWidget />
       <BrowserRouter>
         <Routes>
