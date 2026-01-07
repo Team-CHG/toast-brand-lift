@@ -30,33 +30,33 @@ const FeatureSections = () => {
   }, []);
   return <>
       {/* About Section */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">A Toast to Awards</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers' Choice "Best of the Best," which is only awarded to the top 1% best reviews worldwide! Come taste our award-winning food today!
+          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
+            <div className="order-2">
+              <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6 text-primary">A Toast to Awards</h2>
+              <p className="text-xs sm:text-sm md:text-lg text-muted-foreground mb-2 md:mb-6 leading-relaxed">
+                Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers' Choice "Best of the Best," which is only awarded to the top 1% best reviews worldwide!
               </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="hidden md:block text-lg text-muted-foreground mb-6 leading-relaxed">
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality,
                 passion, and dedication to the art of breakfast.
               </p>
               
               {/* Award Badges */}
-              <div className="flex items-center justify-center sm:justify-start gap-4 sm:gap-6 mb-8">
-                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-16 sm:h-20 w-auto object-contain" />
-                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-16 sm:h-20 w-auto object-contain rounded-md" />
+              <div className="flex items-center gap-2 sm:gap-4 md:gap-6 mb-4 md:mb-8">
+                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-10 sm:h-14 md:h-20 w-auto object-contain" />
+                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-10 sm:h-14 md:h-20 w-auto object-contain rounded-md" />
               </div>
               
-              <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button size="sm" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs md:text-base md:px-6 md:py-3">
                 <a href="/about">Our Story</a>
               </Button>
             </div>
             
             {/* Food Slideshow */}
-            <div className="order-1 lg:order-2 relative">
-              <div className="relative h-[500px] rounded-2xl shadow-2xl overflow-hidden ring-4 ring-accent/20">
+            <div className="order-1 relative">
+              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-lg md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden ring-2 md:ring-4 ring-accent/20">
                 {foodSlides.map((slide, index) => (
                   <img 
                     key={index} 
