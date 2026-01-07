@@ -87,6 +87,9 @@ const Navigation = () => {
             <a href="/locations" className="text-foreground hover:text-primary transition-colors font-medium">
               Locations
             </a>
+            <a href="/rewards" className="text-foreground hover:text-primary transition-colors font-medium">
+              Rewards
+            </a>
             <a href="/catering" className="text-foreground hover:text-primary transition-colors font-medium">
               Catering
             </a>
