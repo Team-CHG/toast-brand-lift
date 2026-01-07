@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Gift, Star, Percent } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const MothersDay = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Mother's Day Special - Toast All Day | Free Mimosa & Beignets"
+        description="Celebrate Mother's Day at Toast All Day! Free mimosa and beignets for moms with purchase of 2 entrees. App and loyalty members exclusive. Make it special for Mom!"
+        keywords="Mother's Day brunch Charleston, free mimosa moms, Mother's Day restaurant, brunch special, beignets"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

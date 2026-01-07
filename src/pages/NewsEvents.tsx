@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const newsItems = [
   { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Mothers-Day-Horizontal-Header-Post-1920-x-1080-px-1-1-1080x675.jpg", category: "Events", slug: "mothers-day" },
@@ -19,8 +21,14 @@ const newsItems = [
 const NewsEvents = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="News & Events - Toast All Day | Promotions, Specials & Celebrations"
+        description="Stay updated with Toast All Day news, events, and promotions. Mother's Day specials, military discounts, 20th anniversary celebrations, and exclusive offers."
+        keywords="Toast All Day news, restaurant events Charleston, brunch promotions, special offers, military discount, holiday specials"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">News & Events</h1>

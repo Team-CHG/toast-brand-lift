@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Star, MapPin } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const BestBrunch = () => {
   const menuHighlights = [
@@ -26,8 +28,14 @@ const BestBrunch = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Best Brunch in Charleston SC - Toast All Day | TripAdvisor Top 25"
+        description="Discover why Toast All Day is voted best brunch in Charleston! Try Eggs Meeting Street, Lowcountry Shrimp & Grits, Chicken & Waffles. 20+ years of excellence, 6 locations."
+        keywords="best brunch Charleston, top brunch SC, shrimp and grits, eggs benedict Charleston, chicken waffles"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

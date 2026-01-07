@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Shield, Heart, CheckCircle } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const MilitaryDiscount = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="10% Military Discount - Toast All Day | Veterans & Active Duty"
+        description="Toast All Day honors our military with 10% off for all active duty and retired veterans. Show your military ID and enjoy award-winning breakfast and brunch."
+        keywords="military discount Charleston, veteran discount restaurant, active duty discount, military appreciation"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

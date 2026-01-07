@@ -3,12 +3,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Calendar, MapPin, Wine } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const UnlimitedDrinkPass = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Unlimited Mimosa Wristband - Toast All Day 20th Anniversary"
+        description="Celebrate Toast All Day's 20th anniversary at the Bridge Run! Get unlimited mimosas with our special wristband offer at Toast Coleman or Toast on King."
+        keywords="unlimited mimosas, Bridge Run Charleston, 20th anniversary, mimosa festival, brunch event"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

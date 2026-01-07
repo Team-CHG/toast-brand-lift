@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Utensils } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const SoupSaladSandwich = () => {
   const sandwiches = ["BLT", "Ultimate Grilled Cheese", "Fried Chicken", "Seasonal Wrap"];
@@ -11,8 +13,14 @@ const SoupSaladSandwich = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="$12 Lunch Combo - Toast All Day | Soup, Salad & Sandwich"
+        description="Try Toast All Day's $12 lunch combo! Mix and match any 2: BLT, grilled cheese, lobster bisque, she crab soup, Caesar salad & more. Available at all locations."
+        keywords="lunch combo, soup salad sandwich, $12 lunch special, Charleston lunch, affordable lunch"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">

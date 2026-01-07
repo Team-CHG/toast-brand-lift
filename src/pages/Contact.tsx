@@ -11,6 +11,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be less than 100 characters" }),
@@ -35,7 +37,6 @@ const Contact = () => {
   });
 
   const onSubmit = (data: ContactFormValues) => {
-    // In a real application, this would send the form data to a backend
     console.log("Form submitted:", data);
     
     toast({
@@ -48,8 +49,14 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Contact Us - Toast All Day | Get in Touch"
+        description="Contact Toast All Day for reservations, catering inquiries, or feedback. Reach us by phone, email, or visit any of our 7 locations in Charleston, Mt Pleasant, Summerville & Savannah."
+        keywords="contact Toast All Day, Charleston restaurant contact, catering inquiry, restaurant feedback"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">

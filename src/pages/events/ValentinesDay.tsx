@@ -3,6 +3,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { ArrowLeft, Heart, Wine, Coffee, Cake } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const ValentinesDay = () => {
   const specials = [
@@ -32,8 +34,14 @@ const ValentinesDay = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Valentine's Day Specials - Toast All Day | Romantic Brunch"
+        description="Celebrate Valentine's Day at Toast All Day! Be Mine Mimosa, Red Velvet Waffles, Mocha-berry Bliss latte & more. Make it a romantic brunch date in Charleston."
+        keywords="Valentine's Day brunch, romantic brunch Charleston, Valentine's restaurant, red velvet waffles, Valentine cocktails"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
       
       {/* Hero Image */}
       <section className="relative h-[50vh] overflow-hidden">
