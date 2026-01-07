@@ -166,6 +166,9 @@ const Navigation = () => {
                 ))}
               </div>
 
+              <a href="/rewards" className="text-lg font-medium hover:text-primary transition-colors">
+                Rewards
+              </a>
               <a href="/about" className="text-lg font-medium hover:text-primary transition-colors">
                 About Us
               </a>
