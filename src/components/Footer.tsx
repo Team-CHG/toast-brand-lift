@@ -143,9 +143,8 @@ const Footer = () => {
               © 2025 Toast All Day. All rights reserved. A Charleston Hospitality Group restaurant.
             </p>
             <nav className="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 text-sm" aria-label="Legal">
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Privacy Policy</a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Terms of Service</a>
-              <a href="#" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Accessibility</a>
+              <Link to="/privacy-policy" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Terms of Service</Link>
               <Link to="/contact" className="opacity-90 hover:opacity-100 transition-opacity whitespace-nowrap">Contact</Link>
             </nav>
           </div>

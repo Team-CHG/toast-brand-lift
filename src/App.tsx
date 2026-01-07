@@ -22,6 +22,8 @@ import VeteransDay from "./pages/events/VeteransDay";
 import BestBrunch from "./pages/events/BestBrunch";
 import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
 
@@ -54,6 +56,8 @@ const App = () => (
           <Route path="/news-events/veterans-day" element={<VeteransDay />} />
           <Route path="/news-events/best-brunch" element={<BestBrunch />} />
           <Route path="/news-events/valentines-day" element={<ValentinesDay />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
