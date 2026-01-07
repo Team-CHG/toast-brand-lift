@@ -7,9 +7,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useIsMobile } from "@/hooks/use-mobile";
 import heroSlideAnniversary from "@/assets/hero-slide-anniversary.png";
 import heroSlideMenu from "@/assets/hero-slide-menu.png";
 import heroSlideActivities from "@/assets/hero-slide-activities.png";
+import heroMobile1 from "@/assets/hero-mobile-1.png";
+import heroMobile2 from "@/assets/hero-mobile-2.png";
+import heroMobile3 from "@/assets/hero-mobile-3.png";
 
 const locations = [
   {
@@ -53,23 +57,32 @@ interface Slide {
   image: string;
 }
 
-const slides: Slide[] = [
+const desktopSlides: Slide[] = [
   { image: heroSlideAnniversary },
   { image: heroSlideMenu },
   { image: heroSlideActivities },
+];
+
+const mobileSlides: Slide[] = [
+  { image: heroMobile1 },
+  { image: heroMobile2 },
+  { image: heroMobile3 },
 ];
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const isMobile = useIsMobile();
+  
+  const slides = isMobile ? mobileSlides : desktopSlides;
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -184,7 +197,11 @@ const HeroCarousel = () => {
           key={index} 
           className={`transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"}`}
         >
-          <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain" />
+          <img 
+            src={slide.image} 
+            alt={`Slide ${index + 1}`} 
+            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : ""}`} 
+          />
           
           {/* Buttons positioned at the bottom */}
           <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex justify-center z-10">
