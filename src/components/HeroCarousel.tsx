@@ -79,11 +79,7 @@ const HeroCarousel = () => {
     touchEndX.current = null;
   };
   const isExternalLink = (href: string) => href.startsWith("http");
-  return <section className="relative h-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:h-[700px] overflow-hidden mt-20" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-      {/* First slide sets the height */}
-      <div className="relative">
-        <img src={slides[0].image} alt="Slide 1" className="w-full h-auto object-contain md:object-contain lg:object-cover invisible" />
-      </div>
+  return <section className="relative h-auto min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:h-[700px] overflow-hidden pt-20" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       
       {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
           <img src={slide.image} alt={`Slide ${index + 1}`} className="w-full h-auto object-contain md:object-contain lg:object-contain border-none border-0" />
