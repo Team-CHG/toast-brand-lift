@@ -36,7 +36,7 @@ const slides: Slide[] = [{
   image: heroSlideActivities,
   buttons: [{
     label: "Learn More",
-    href: "/news-events",
+    href: "https://linktr.ee/unforgettablecharleston",
     variant: "default"
   }]
 }];
