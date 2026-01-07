@@ -5,12 +5,23 @@ import LocationsMap, { locations } from "@/components/LocationsMap";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 const Locations = () => {
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
+      <SEO 
+        title="Locations - Toast All Day | Charleston, Mt Pleasant, Summerville, Savannah"
+        description="Find your nearest Toast All Day restaurant. 7 locations across Charleston, Mt. Pleasant, Summerville SC and Savannah GA. View hours, menus, and order online."
+        keywords="Toast All Day locations, Charleston breakfast, Mt Pleasant brunch, Summerville restaurant, Savannah breakfast, order online"
+      />
       <Navigation />
       <SideDrawer />
+      <Breadcrumbs />
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-16 pb-12 bg-gradient-to-b from-secondary to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -24,10 +35,10 @@ const Locations = () => {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-16 bg-secondary/30" aria-labelledby="map-heading">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            
+            <h2 id="map-heading" className="sr-only">Interactive Location Map</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Click on any location to see details and get directions.
             </p>
@@ -37,15 +48,19 @@ const Locations = () => {
       </section>
 
       {/* Locations Grid */}
-      <section className="py-16">
+      <section className="py-16" aria-labelledby="all-locations">
         <div className="container mx-auto px-4">
+          <h2 id="all-locations" className="sr-only">All Toast All Day Locations</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {locations.map((location, index) => <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
+            {locations.map((location, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={location.image} 
-                    alt={location.name}
+                    alt={`${location.name} restaurant exterior at ${location.address}, ${location.city}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {location.temporarilyClosed && (
                     <div className="absolute top-3 right-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
@@ -56,9 +71,9 @@ const Locations = () => {
                 <CardContent className="p-6">
                   <h3 className="text-2xl font-bold mb-4">{location.name}</h3>
                   
-                  <div className="space-y-3 mb-6">
+                  <address className="space-y-3 mb-6 not-italic">
                     <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                       <div>
                         <p className="font-medium">{location.address}</p>
                         <p className="text-muted-foreground">{location.city}</p>
@@ -66,42 +81,66 @@ const Locations = () => {
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                      <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="hover:text-primary transition-colors">
+                      <Phone className="h-5 w-5 text-primary flex-shrink-0" aria-hidden="true" />
+                      <a 
+                        href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} 
+                        className="hover:text-primary transition-colors"
+                        aria-label={`Call ${location.name} at ${location.phone}`}
+                      >
                         {location.phone}
                       </a>
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
                       <p className="text-sm">{location.hours}</p>
                     </div>
-                  </div>
+                  </address>
 
                   <div className="flex flex-col gap-2">
                     <Button asChild variant="accent" size="sm" className="w-full">
-                      <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href={location.orderUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`Order online from ${location.name}`}
+                      >
                         Order Online
                       </a>
                     </Button>
                     <Button asChild variant="outline" size="sm" className="w-full">
-                      <a href={location.menuUrl} target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href={location.menuUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`View menu for ${location.name}`}
+                      >
                         View Menu
                       </a>
                     </Button>
-                    {location.waitlistUrl && <Button asChild variant="secondary" size="sm" className="w-full">
-                        <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
+                    {location.waitlistUrl && (
+                      <Button asChild variant="secondary" size="sm" className="w-full">
+                        <a 
+                          href={location.waitlistUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          aria-label={`Join waitlist at ${location.name}`}
+                        >
                           Join Waitlist
                         </a>
-                      </Button>}
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Locations;

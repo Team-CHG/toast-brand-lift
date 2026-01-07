@@ -57,7 +57,16 @@ const FeatureSections = () => {
             {/* Food Slideshow */}
             <div className="order-1 lg:order-2 relative">
               <div className="relative h-[500px] rounded-2xl shadow-2xl overflow-hidden ring-4 ring-accent/20">
-                {foodSlides.map((slide, index) => <img key={index} src={slide} alt={`Delicious breakfast dish ${index + 1}`} className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} />)}
+                {foodSlides.map((slide, index) => (
+                  <img 
+                    key={index} 
+                    src={slide} 
+                    alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`} 
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} 
+                  />
+                ))}
                 
                 {/* Navigation Arrows */}
                 <button onClick={() => setCurrentSlide(prev => (prev - 1 + foodSlides.length) % foodSlides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
@@ -124,30 +133,42 @@ const FeatureSections = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img alt="Chef preparing food" className="w-full h-64 object-cover" src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png" />
+            <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img 
+                alt="Toast All Day chef preparing fresh gourmet breakfast dishes in the kitchen" 
+                className="w-full h-64 object-cover" 
+                src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Chef's Specials</h3>
                 <p className="text-muted-foreground mb-4">
                   Rotating seasonal dishes crafted by our culinary team featuring the finest local ingredients.
                 </p>
                 <Button variant="outline" asChild>
-                  <a href="/locations">Order Online</a>
+                  <a href="/locations" aria-label="Order Chef's Specials online">Order Online</a>
                 </Button>
               </div>
-            </div>
-            <div className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src={menuImage2} alt="Full bar selection" className="w-full h-64 object-cover" />
+            </article>
+            <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img 
+                src={menuImage2} 
+                alt="Full bar selection with craft cocktails and mimosas at Toast All Day" 
+                className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Full Bar & Cocktails</h3>
                 <p className="text-muted-foreground mb-4">
                   Hand-crafted cocktails, mimosas, and brunch beverages to complement your meal perfectly.
                 </p>
                 <Button variant="outline" asChild>
-                  <a href="/locations">Order Online</a>
+                  <a href="/locations" aria-label="Order cocktails and drinks online">Order Online</a>
                 </Button>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -183,7 +204,13 @@ const FeatureSections = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <img src={giftcardDesign} alt="Charleston Hospitality Group Gift Card" className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20" />
+              <img 
+                src={giftcardDesign} 
+                alt="Charleston Hospitality Group Gift Card - Perfect gift for breakfast and brunch lovers" 
+                className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
