@@ -21,7 +21,7 @@ const Index = () => {
         <FeatureSections />
         
         {/* Locations Map Section */}
-        <section className="py-16 px-4 bg-secondary/30" aria-labelledby="locations-heading">
+        <section className="py-16 px-4 bg-complementary" aria-labelledby="locations-heading">
           <div className="container mx-auto">
             <h2 id="locations-heading" className="text-3xl md:text-4xl font-bold text-center mb-4">Find Us</h2>
             <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">

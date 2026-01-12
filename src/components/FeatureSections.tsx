@@ -87,7 +87,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-complementary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Why Toast All Day?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -174,7 +174,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Gift Cards Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-complementary">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Share the Food You Love</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
