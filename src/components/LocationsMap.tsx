@@ -146,7 +146,7 @@ const LocationsMap: React.FC<LocationsMapProps> = ({ onLocationSelect }) => {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Locations List */}
         <div className="lg:col-span-1 space-y-3 max-h-[500px] overflow-y-auto pr-2">
-          <h3 className="text-lg font-semibold sticky top-0 bg-background py-2">
+          <h3 className="text-lg font-semibold sticky top-0 bg-complementary py-2">
             Our Locations
           </h3>
           {locations.map((location, index) => (
