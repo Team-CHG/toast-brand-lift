@@ -130,7 +130,7 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Locations List */}
         <div className="lg:col-span-1 space-y-3 max-h-[500px] overflow-y-auto pr-2">
-          <h3 className="text-lg font-semibold sticky top-0 py-2 bg-[sidebar-primary-foreground] bg-[#f5f4ef]">
+          <h3 className="text-lg font-semibold sticky top-0 py-2 bg-complementary">
             Our Locations
           </h3>
           {locations.map((location, index) => <button key={index} onClick={() => handleLocationClick(location)} className={`w-full text-left p-4 rounded-lg border transition-all ${selectedLocation?.name === location.name ? 'border-primary bg-primary/5 shadow-md' : 'border-border hover:border-primary/50 hover:bg-secondary/50'}`}>

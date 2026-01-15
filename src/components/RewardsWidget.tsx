@@ -95,7 +95,7 @@ const RewardsWidget = () => {
     return (
       <button
         onClick={handleMinimizedClick}
-        className="fixed bottom-4 left-4 z-[90] bg-accent text-accent-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 font-semibold animate-in slide-in-from-bottom-4 fade-in"
+        className="fixed bottom-4 left-4 z-[90] bg-primary text-primary-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 font-semibold animate-in slide-in-from-bottom-4 fade-in"
       >
         <Gift className="h-5 w-5" />
         <span>Get $10</span>
