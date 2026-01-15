@@ -183,12 +183,6 @@ const FeatureSections = () => {
                 Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. Can be used in any of Charleston Hospitality Group restaurants. Start customizing your card.
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <a href="https://toastallday.myshopify.com/" target="_blank" rel="noopener noreferrer">
-                    <Gift className="h-5 w-5 mr-2" />
-                    Buy Physical Gift Card
-                  </a>
-                </Button>
                 <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
                   <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer">
                     <CreditCard className="h-5 w-5 mr-2" />
