@@ -8,9 +8,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
-import heroSlideAnniversary from "@/assets/hero-slide-anniversary.png";
-import heroSlideMenu from "@/assets/hero-slide-menu.png";
-import heroSlideActivities from "@/assets/hero-slide-activities.png";
+import heroSlide1New from "@/assets/hero-slide-1-new.png";
+import heroSlide2New from "@/assets/hero-slide-2-new.png";
+import heroSlide3New from "@/assets/hero-slide-3-new.png";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
 import heroMobile2 from "@/assets/hero-mobile-2.png";
 import heroMobile3 from "@/assets/hero-mobile-3.png";
@@ -58,9 +58,9 @@ interface Slide {
 }
 
 const desktopSlides: Slide[] = [
-  { image: heroSlideAnniversary },
-  { image: heroSlideMenu },
-  { image: heroSlideActivities },
+  { image: heroSlide1New },
+  { image: heroSlide2New },
+  { image: heroSlide3New },
 ];
 
 const mobileSlides: Slide[] = [
