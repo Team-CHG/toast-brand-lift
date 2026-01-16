@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronLeft, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -139,13 +139,13 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 transition-transform hover:translate-x-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <ChevronLeft className="h-8 w-8 text-primary" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <ChevronRight className="h-8 w-8 text-primary" />
             )}
           </button>
         </div>

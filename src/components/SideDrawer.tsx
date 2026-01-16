@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
@@ -33,8 +33,8 @@ const SideDrawer = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <button className="fixed left-0 top-1/2 -translate-y-1/2 z-40 bg-primary text-primary-foreground p-3 rounded-r-lg shadow-lg hover:bg-primary/90 transition-all">
-          <Menu className="h-6 w-6" />
+        <button className="fixed left-0 top-1/2 -translate-y-1/2 z-40 p-2 transition-all hover:translate-x-1">
+          <ChevronRight className="h-8 w-8 text-primary" />
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="w-72 bg-card p-0 overflow-y-auto">
