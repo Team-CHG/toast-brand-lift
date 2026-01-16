@@ -26,6 +26,13 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
+import ToastMeeting from "./pages/locations/ToastMeeting";
+import ToastKing from "./pages/locations/ToastKing";
+import ToastColeman from "./pages/locations/ToastColeman";
+import ToastMtPleasant from "./pages/locations/ToastMtPleasant";
+import ToastWestAshley from "./pages/locations/ToastWestAshley";
+import ToastSummerville from "./pages/locations/ToastSummerville";
+import ToastSavannah from "./pages/locations/ToastSavannah";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +47,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/locations/toast-meeting" element={<ToastMeeting />} />
+          <Route path="/locations/toast-king" element={<ToastKing />} />
+          <Route path="/locations/toast-coleman" element={<ToastColeman />} />
+          <Route path="/locations/toast-mt-pleasant" element={<ToastMtPleasant />} />
+          <Route path="/locations/toast-west-ashley" element={<ToastWestAshley />} />
+          <Route path="/locations/toast-summerville" element={<ToastSummerville />} />
+          <Route path="/locations/toast-savannah" element={<ToastSavannah />} />
           <Route path="/about" element={<About />} />
           <Route path="/catering" element={<Catering />} />
           <Route path="/contact" element={<Contact />} />
