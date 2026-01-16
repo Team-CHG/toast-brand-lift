@@ -200,11 +200,11 @@ const HeroCarousel = () => {
           <img 
             src={slide.image} 
             alt={`Slide ${index + 1}`} 
-            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : ""}`} 
+            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`} 
           />
           
           {/* Buttons positioned at the bottom */}
-          <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex justify-center z-10">
+          <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center z-10">
             <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
               {renderSlideButtons(index)}
             </div>
