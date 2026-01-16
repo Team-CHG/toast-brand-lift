@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Racing Sans One', 'Poppins', 'sans-serif'],
+        sans: ['Telegraf', 'sans-serif'],
         racing: ['Racing Sans One', 'sans-serif'],
-        body: ['Poppins', 'sans-serif'],
+        body: ['Telegraf', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
