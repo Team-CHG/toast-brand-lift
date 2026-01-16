@@ -200,7 +200,10 @@ const HeroCarousel = () => {
           <img 
             src={slide.image} 
             alt={`Slide ${index + 1}`} 
-            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`} 
+            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`}
+            style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+            loading="eager"
+            decoding="sync"
           />
           
           {/* Buttons positioned at the bottom */}

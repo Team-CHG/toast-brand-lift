@@ -115,4 +115,11 @@ All colors MUST be HSL.
   p, span, li, a, label, input, textarea, button:not(.font-racing) {
     font-family: 'Telegraf', sans-serif;
   }
+  
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
 }
