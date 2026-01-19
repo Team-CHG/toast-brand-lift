@@ -23,14 +23,14 @@ interface Location {
 }
 const locations: Location[] = [{
   name: "Toast! on Meeting",
-  address: "155 Meeting Street",
+  address: "129 Meeting St",
   city: "Charleston, SC 29401",
   phone: "(843) 994-3598",
   hours: "Monday – Sunday: 6am – 3pm",
   orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
-  embedQuery: "Toast+All+Day,+155+Meeting+St,+Charleston,+SC+29401",
+  embedQuery: "Toast+All+Day,+129+Meeting+St,+Charleston,+SC+29401",
   image: toastMeetingImg
 }, {
   name: "Toast! on King",

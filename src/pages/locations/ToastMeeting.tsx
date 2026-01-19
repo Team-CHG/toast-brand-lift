@@ -12,7 +12,7 @@ import toastMeetingImg from "@/assets/locations/toast-meeting.jpg";
 const ToastMeeting = () => {
   const location = {
     name: "Toast! on Meeting",
-    address: "155 Meeting Street",
+    address: "129 Meeting St",
     city: "Charleston",
     state: "SC",
     zip: "29401",
@@ -24,7 +24,7 @@ const ToastMeeting = () => {
     orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
-    embedQuery: "Toast+All+Day,+155+Meeting+St,+Charleston,+SC+29401",
+    embedQuery: "Toast+All+Day,+129+Meeting+St,+Charleston,+SC+29401",
     image: toastMeetingImg,
     latitude: 32.7832,
     longitude: -79.9364,
@@ -39,7 +39,7 @@ const ToastMeeting = () => {
     <div className="min-h-screen">
       <SEO 
         title={`Best Brunch in Downtown Charleston | ${location.name} - Toast All Day`}
-        description={`Award-winning breakfast & brunch at ${location.address}, Downtown Charleston. Open daily 6am-3pm. Farm-fresh ingredients, craft cocktails & family-friendly dining near City Market. Order online or join our waitlist!`}
+        description={`Award-winning breakfast & brunch at 129 Meeting St, Downtown Charleston. Open daily 6am-3pm. Farm-fresh ingredients, craft cocktails & family-friendly dining near City Market. Order online or join our waitlist!`}
         keywords="best brunch downtown Charleston, Charleston breakfast restaurant, Meeting Street brunch, Charleston City Market dining, farm to table Charleston, Sunday brunch Charleston SC"
       />
       <LocationSchema
