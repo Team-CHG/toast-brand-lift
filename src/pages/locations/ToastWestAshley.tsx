@@ -76,21 +76,21 @@ const ToastWestAshley = () => {
         </section>
 
         {/* NAP Section */}
-        <section className="bg-primary/5 py-6 border-b">
+        <section className="bg-complementary py-6 border-b">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center gap-8 text-center md:text-left md:justify-between items-center">
               <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-primary" />
+                <MapPin className="h-5 w-5 text-accent" />
                 <span className="font-medium">{location.address}, {location.fullCity}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium hover:text-primary transition-colors">
+                <Phone className="h-5 w-5 text-accent" />
+                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium hover:text-accent transition-colors">
                   {location.phone}
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-primary" />
+                <Clock className="h-5 w-5 text-accent" />
                 <span className="font-medium">{location.hours}</span>
               </div>
             </div>
@@ -98,7 +98,7 @@ const ToastWestAshley = () => {
         </section>
 
         {/* Primary CTA Section */}
-        <section className="py-8 bg-primary">
+        <section className="py-8 bg-accent">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" variant="secondary" className="text-lg px-8">
@@ -106,12 +106,12 @@ const ToastWestAshley = () => {
                   Order Online Now <ExternalLink className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-white hover:bg-white/90">
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-card hover:bg-card/90 text-foreground">
                 <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
                   Join Waitlist
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-white hover:bg-white/90">
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-card hover:bg-card/90 text-foreground">
                 <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}>
                   Call to Reserve
                 </a>
@@ -137,9 +137,9 @@ const ToastWestAshley = () => {
                 </div>
 
                 {/* Unique Local Content */}
-                <div className="bg-muted/30 rounded-xl p-6">
+                <div className="bg-complementary rounded-xl p-6">
                   <h3 className="text-xl mb-4 flex items-center gap-2">
-                    <Star className="h-5 w-5 text-primary" />
+                    <Star className="h-5 w-5 text-accent" />
                     Why Locals Love This Location
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
@@ -152,10 +152,10 @@ const ToastWestAshley = () => {
                 </div>
 
                 {/* NAP Display */}
-                <div className="space-y-4 bg-background border rounded-xl p-6">
+                <div className="space-y-4 bg-card border rounded-xl p-6">
                   <h3 className="text-xl mb-4">Contact & Hours</h3>
                   <div className="flex items-start gap-4">
-                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold">Toast! West Ashley</h4>
                       <p className="text-muted-foreground">{location.address}</p>
@@ -164,12 +164,12 @@ const ToastWestAshley = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold">Phone</h4>
                       <a 
                         href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground hover:text-accent transition-colors"
                       >
                         {location.phone}
                       </a>
@@ -177,7 +177,7 @@ const ToastWestAshley = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Clock className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <Clock className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold">Hours</h4>
                       <p className="text-muted-foreground">{location.hours}</p>
@@ -185,7 +185,7 @@ const ToastWestAshley = () => {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <Car className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <Car className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold">Parking</h4>
                       <p className="text-muted-foreground">{location.parking}</p>
@@ -230,11 +230,11 @@ const ToastWestAshley = () => {
                 </div>
                 
                 {/* Nearby Attractions */}
-                <div className="bg-muted/30 rounded-xl p-6">
+                <div className="bg-complementary rounded-xl p-6">
                   <h3 className="text-xl mb-4">Nearby Attractions</h3>
                   <div className="flex flex-wrap gap-2">
                     {location.nearbyAttractions.map((attraction) => (
-                      <span key={attraction} className="bg-background px-3 py-1 rounded-full text-sm border">
+                      <span key={attraction} className="bg-card px-3 py-1 rounded-full text-sm border">
                         {attraction}
                       </span>
                     ))}
@@ -246,7 +246,7 @@ const ToastWestAshley = () => {
         </section>
 
         {/* Secondary CTA */}
-        <section className="py-12 bg-muted/30">
+        <section className="py-12 bg-muted">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl mb-4">Ready for the Best Brunch in West Ashley?</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
