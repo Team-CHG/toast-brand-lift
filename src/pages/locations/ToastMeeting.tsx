@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Utensils, Star, Car, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastMeetingImg from "@/assets/locations/toast-meeting.jpg";
-
 const ToastMeeting = () => {
   const location = {
     name: "Toast! on Meeting",
@@ -30,45 +29,22 @@ const ToastMeeting = () => {
     longitude: -79.9364,
     neighborhood: "Downtown Charleston",
     nearbyAttractions: ["Charleston City Market", "Waterfront Park", "Rainbow Row", "The Battery"],
-    parking: "Street parking and nearby parking garages available on Meeting Street and Market Street.",
+    parking: "Street parking and nearby parking garages available on Meeting Street and Market Street."
   };
-
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${location.embedQuery}`;
-
-  return (
-    <div className="min-h-screen">
-      <SEO 
-        title={`Best Brunch in Downtown Charleston | ${location.name} - Toast All Day`}
-        description={`Award-winning breakfast & brunch at 129 Meeting St, Downtown Charleston. Open daily 6am-3pm. Farm-fresh ingredients, craft cocktails & family-friendly dining near City Market. Order online or join our waitlist!`}
-        keywords="best brunch downtown Charleston, Charleston breakfast restaurant, Meeting Street brunch, Charleston City Market dining, farm to table Charleston, Sunday brunch Charleston SC"
-      />
-      <LocationSchema
-        name={location.name}
-        address={location.address}
-        city={location.city}
-        state={location.state}
-        zip={location.zip}
-        phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`}
-        openTime={location.openTime}
-        closeTime={location.closeTime}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        url={`https://toast-all-day.lovable.app/locations/toast-meeting`}
-      />
+  return <div className="min-h-screen">
+      <SEO title={`Best Brunch in Downtown Charleston | ${location.name} - Toast All Day`} description={`Award-winning breakfast & brunch at 129 Meeting St, Downtown Charleston. Open daily 6am-3pm. Farm-fresh ingredients, craft cocktails & family-friendly dining near City Market. Order online or join our waitlist!`} keywords="best brunch downtown Charleston, Charleston breakfast restaurant, Meeting Street brunch, Charleston City Market dining, farm to table Charleston, Sunday brunch Charleston SC" />
+      <LocationSchema name={location.name} address={location.address} city={location.city} state={location.state} zip={location.zip} phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`} openTime={location.openTime} closeTime={location.closeTime} latitude={location.latitude} longitude={location.longitude} url={`https://toast-all-day.lovable.app/locations/toast-meeting`} />
       <Navigation />
       <SideDrawer />
       <main>
         {/* Hero Section */}
         <section className="relative h-[50vh] min-h-[400px]">
-          <img 
-            src={location.image} 
-            alt={`${location.name} - Best Breakfast Restaurant in Downtown Charleston`}
-            className="w-full h-full object-cover"
-          />
+          <img src={location.image} alt={`${location.name} - Best Breakfast Restaurant in Downtown Charleston`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="container mx-auto">
-              <Breadcrumbs />
+              
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mt-4">{location.name}</h1>
               <p className="text-white/90 text-lg mt-2">{location.address}, {location.fullCity}</p>
             </div>
@@ -167,10 +143,7 @@ const ToastMeeting = () => {
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <a 
-                        href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}
-                        className="text-muted-foreground hover:text-accent transition-colors"
-                      >
+                      <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="text-muted-foreground hover:text-accent transition-colors">
                         {location.phone}
                       </a>
                     </div>
@@ -216,28 +189,19 @@ const ToastMeeting = () => {
               {/* Map Column */}
               <div className="space-y-6">
                 <div className="h-[400px] lg:h-[500px]">
-                  <iframe
-                    src={mapUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0, borderRadius: '0.75rem' }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="shadow-lg"
-                    title={`Map showing ${location.name} location in ${location.neighborhood}`}
-                  />
+                  <iframe src={mapUrl} width="100%" height="100%" style={{
+                  border: 0,
+                  borderRadius: '0.75rem'
+                }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="shadow-lg" title={`Map showing ${location.name} location in ${location.neighborhood}`} />
                 </div>
                 
                 {/* Nearby Attractions */}
                 <div className="bg-complementary rounded-xl p-6">
                   <h3 className="text-xl mb-4">Nearby Attractions</h3>
                   <div className="flex flex-wrap gap-2">
-                    {location.nearbyAttractions.map((attraction) => (
-                      <span key={attraction} className="bg-card px-3 py-1 rounded-full text-sm border">
+                    {location.nearbyAttractions.map(attraction => <span key={attraction} className="bg-card px-3 py-1 rounded-full text-sm border">
                         {attraction}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
                 </div>
               </div>
@@ -268,8 +232,6 @@ const ToastMeeting = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ToastMeeting;
