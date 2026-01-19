@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const RewardsCtaSection = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-secondary to-background">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Start Earning?</h2>
         <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
