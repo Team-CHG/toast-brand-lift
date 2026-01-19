@@ -111,7 +111,7 @@ const RewardsWidget = () => {
   // Expanded widget at bottom left
   if (state === "expanded") {
     return (
-      <div className="fixed bottom-4 left-4 z-[90] bg-card rounded-2xl shadow-2xl max-w-sm w-full p-6 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300">
+      <div className="fixed bottom-4 left-4 z-[90] bg-card rounded-xl shadow-2xl w-72 p-4 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300">
         <button
           onClick={handleCloseExpanded}
           className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted transition-colors"
@@ -119,34 +119,34 @@ const RewardsWidget = () => {
           <X className="h-4 w-4 text-muted-foreground" />
         </button>
 
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary mb-3">
-            <Gift className="h-6 w-6 text-primary-foreground" />
+        <div className="text-center mb-3">
+          <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary mb-2">
+            <Gift className="h-5 w-5 text-primary-foreground" />
           </div>
-          <h3 className="text-lg font-bold text-primary">
+          <h3 className="text-base font-bold text-primary">
             Sign up for rewards
           </h3>
         </div>
 
-        <div className="space-y-2 mb-4 text-sm">
+        <div className="space-y-1.5 mb-3 text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-lg">🎁</span>
-            <p className="text-foreground"><span className="font-bold">$10</span> for every $100 spent</p>
+            <span className="text-base">🎁</span>
+            <p className="text-foreground"><span className="font-semibold">$10</span> for every $100 spent</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-lg">🕐</span>
-            <p className="text-foreground"><span className="font-bold">Double points</span> Mon–Fri, 12–3 PM</p>
+            <span className="text-base">🕐</span>
+            <p className="text-foreground"><span className="font-semibold">2x points</span> Mon–Fri, 12–3 PM</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-lg">🎂</span>
-            <p className="text-foreground"><span className="font-bold">Birthday surprise</span> included!</p>
+            <span className="text-base">🎂</span>
+            <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
           </div>
         </div>
 
         <Button
-          size="default"
+          size="sm"
           asChild
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
         >
           <a
             href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
