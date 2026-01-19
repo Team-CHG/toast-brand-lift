@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
+import GiftCardSection from "@/components/GiftCardSection";
+import RewardsCtaSection from "@/components/RewardsCtaSection";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Utensils, Star, Car, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -68,7 +69,6 @@ const ToastWestAshley = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
             <div className="container mx-auto">
-              <Breadcrumbs />
               <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mt-4">{location.name}</h1>
               <p className="text-white/90 text-lg mt-2">{location.address}, {location.fullCity}</p>
             </div>
@@ -266,6 +266,12 @@ const ToastWestAshley = () => {
             </div>
           </div>
         </section>
+
+        {/* Gift Card Section */}
+        <GiftCardSection />
+
+        {/* Rewards CTA Section */}
+        <RewardsCtaSection />
       </main>
       <Footer />
     </div>
