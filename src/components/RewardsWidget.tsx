@@ -49,42 +49,47 @@ const RewardsWidget = () => {
           </button>
 
           <div className="text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/20 mb-6 p-2">
-            <img src={toastLogo} alt="Toast! All Day" className="w-full h-full object-contain" />
-          </div>
-
-            <h2 className="text-2xl font-bold text-primary mb-4">
-              GET $10 FOR EVERY $100 SPENT!
-            </h2>
-
-            <p className="text-muted-foreground mb-4">
-              A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location or the fine restaurants listed below.
-            </p>
-
-            <p className="text-muted-foreground mb-4">
-              The more you spend, the more points you accumulate. You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks!
-            </p>
-
-            <div className="bg-accent/10 rounded-lg p-3 mb-6">
-              <p className="text-accent font-semibold text-sm">
-                ⭐ Earn double points Monday-Friday 12-3pm
-              </p>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary mb-4">
+              <Gift className="h-8 w-8 text-primary-foreground" />
             </div>
 
-            <Button
-              size="lg"
-              asChild
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg"
-            >
-              <a
-                href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Register Now
-              </a>
-            </Button>
+            <h2 className="text-2xl font-bold text-primary mb-6">
+              Sign up for rewards
+            </h2>
           </div>
+
+          <div className="space-y-4 mb-6">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🎁</span>
+              <p className="text-foreground"><span className="font-bold">$10</span> for every $100 spent</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">💰</span>
+              <p className="text-foreground"><span className="font-bold">1 point</span> per $1 spent</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🕐</span>
+              <p className="text-foreground"><span className="font-bold">Double points</span> Mon–Fri, 12–3 PM</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🎂</span>
+              <p className="text-foreground"><span className="font-bold">Birthday surprise</span> included!</p>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            asChild
+            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg"
+          >
+            <a
+              href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN REWARDS
+            </a>
+          </Button>
         </div>
       </div>
     );
@@ -114,43 +119,43 @@ const RewardsWidget = () => {
           <X className="h-4 w-4 text-muted-foreground" />
         </button>
 
-        <div className="text-center">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/20 mb-4 p-1.5">
-            <img src={toastLogo} alt="Toast! All Day" className="w-full h-full object-contain" />
+        <div className="text-center mb-4">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary mb-3">
+            <Gift className="h-6 w-6 text-primary-foreground" />
           </div>
-
-          <h3 className="text-xl font-bold text-primary mb-3">
-            GET $10 FOR EVERY $100 SPENT!
+          <h3 className="text-lg font-bold text-primary">
+            Sign up for rewards
           </h3>
-
-          <p className="text-sm text-muted-foreground mb-3">
-            A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location or the fine restaurants listed below.
-          </p>
-
-          <p className="text-sm text-muted-foreground mb-3">
-            The more you spend, the more points you accumulate. You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks!
-          </p>
-
-          <div className="bg-accent/10 rounded-lg p-2 mb-4">
-            <p className="text-accent font-semibold text-xs">
-              ⭐ Earn double points Monday-Friday 12-3pm
-            </p>
-          </div>
-
-          <Button
-            size="default"
-            asChild
-            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-          >
-            <a
-              href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Register Now
-            </a>
-          </Button>
         </div>
+
+        <div className="space-y-2 mb-4 text-sm">
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🎁</span>
+            <p className="text-foreground"><span className="font-bold">$10</span> for every $100 spent</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🕐</span>
+            <p className="text-foreground"><span className="font-bold">Double points</span> Mon–Fri, 12–3 PM</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🎂</span>
+            <p className="text-foreground"><span className="font-bold">Birthday surprise</span> included!</p>
+          </div>
+        </div>
+
+        <Button
+          size="default"
+          asChild
+          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+        >
+          <a
+            href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN REWARDS
+          </a>
+        </Button>
       </div>
     );
   }
