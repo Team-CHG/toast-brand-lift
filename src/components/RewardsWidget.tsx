@@ -39,8 +39,8 @@ const RewardsWidget = () => {
   // Initial popup
   if (state === "popup" && !hasShownPopup) {
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
-        <div className="relative bg-card rounded-2xl shadow-2xl max-w-md w-full mx-4 p-8 animate-in zoom-in-95 fade-in duration-300">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-6">
+        <div className="relative bg-card rounded-2xl shadow-2xl max-w-sm w-full p-6 sm:p-8 animate-in zoom-in-95 fade-in duration-300">
           <button
             onClick={handleClosePopup}
             className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors"
