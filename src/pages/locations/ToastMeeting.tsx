@@ -1,9 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
+import GiftCardSection from "@/components/GiftCardSection";
+import RewardsCtaSection from "@/components/RewardsCtaSection";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Utensils, Star, Car, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -230,6 +231,12 @@ const ToastMeeting = () => {
             </div>
           </div>
         </section>
+
+        {/* Gift Card Section */}
+        <GiftCardSection />
+
+        {/* Rewards CTA Section */}
+        <RewardsCtaSection />
       </main>
       <Footer />
     </div>;
