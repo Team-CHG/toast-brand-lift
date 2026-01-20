@@ -98,28 +98,6 @@ const ToastWestAshley = () => {
           </div>
         </section>
 
-        {/* Primary CTA Section */}
-        <section className="py-8 bg-accent">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
-                  Order Online Now <ExternalLink className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-card hover:bg-card/90 text-foreground">
-                <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
-                  Join Waitlist
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-lg px-8 bg-card hover:bg-card/90 text-foreground">
-                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}>
-                  Call to Reserve
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
 
         {/* Content Section */}
         <section className="py-16 px-4 bg-background">
