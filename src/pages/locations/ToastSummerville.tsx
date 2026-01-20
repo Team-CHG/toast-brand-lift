@@ -268,7 +268,7 @@ const ToastSummerville = () => {
         </section>
 
         {/* Gift Card Section */}
-        <GiftCardSection />
+        <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road-ste-9 & 10" />
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />

@@ -268,7 +268,7 @@ const ToastKing = () => {
         </section>
 
         {/* Gift Card Section */}
-        <GiftCardSection />
+        <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" />
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />

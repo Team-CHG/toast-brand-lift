@@ -268,7 +268,7 @@ const ToastWestAshley = () => {
         </section>
 
         {/* Gift Card Section */}
-        <GiftCardSection />
+        <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" />
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
