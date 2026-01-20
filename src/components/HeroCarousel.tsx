@@ -17,7 +17,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/use-mobile";
 import heroSlideHome1 from "@/assets/hero-slide-home-1.png";
-import heroSlideActivitiesDesktop from "@/assets/hero-slide-activities-desktop.png";
+import heroSlideActivities from "@/assets/hero-slide-activities.png";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
 import heroMobile2 from "@/assets/hero-mobile-2.png";
 import heroMobile3 from "@/assets/hero-mobile-3.png";
@@ -95,7 +95,7 @@ interface Slide {
 const desktopSlides: Slide[] = [
   { type: 'image', image: heroSlideHome1 },
   { type: 'menu' },
-  { type: 'image', image: heroSlideActivitiesDesktop },
+  { type: 'image', image: heroSlideActivities },
 ];
 
 const mobileSlides: Slide[] = [
@@ -284,8 +284,8 @@ const HeroCarousel = () => {
             />
           )}
           
-          {/* Buttons positioned at the bottom */}
-          <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center z-10">
+          {/* Buttons positioned at the bottom - activities slide needs lower position to avoid text overlap */}
+          <div className={`absolute left-0 right-0 flex justify-center z-10 ${index === 2 ? 'bottom-4 sm:bottom-6 md:bottom-8' : 'bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24'}`}>
             <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
               {renderSlideButtons(index)}
             </div>
