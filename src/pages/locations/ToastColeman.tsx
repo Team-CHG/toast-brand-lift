@@ -7,7 +7,7 @@ import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, ExternalLink, Utensils, Star, Car, Gift, AlertTriangle } from "lucide-react";
+import { MapPin, Phone, Clock, ExternalLink, Star, Car, Gift, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastColemanImg from "@/assets/locations/toast-coleman.jpg";
 
@@ -200,11 +200,6 @@ const ToastColeman = () => {
                     <Link to="/locations/toast-mt-pleasant">
                       Visit Hungry Neck Location
                     </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a href={location.menuUrl} target="_blank" rel="noopener noreferrer">
-                      <Utensils className="mr-2 h-4 w-4" /> View Full Menu
-                    </a>
                   </Button>
                   <Button asChild variant="secondary" size="lg">
                     <Link to="/rewards">
