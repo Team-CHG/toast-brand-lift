@@ -227,71 +227,84 @@ const HeroCarousel = () => {
       onTouchMove={handleTouchMove} 
       onTouchEnd={handleTouchEnd}
     >
-      {slides.map((slide, index) => (
-        <div 
-          key={index} 
-          className={`transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"}`}
-        >
-          {slide.type === 'menu' ? (
-            <div className="w-full bg-muted py-8 md:py-12" style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
-              <div className="container mx-auto px-4">
-                <h2 className="text-2xl md:text-4xl text-center mb-6 md:mb-8">Our Menu Favorites</h2>
-                <Carousel
-                  opts={{
-                    align: "start",
-                    loop: true,
-                  }}
-                  plugins={[
-                    Autoplay({
-                      delay: 3000,
-                      stopOnInteraction: false,
-                      stopOnMouseEnter: true,
-                    }),
-                  ]}
-                  className="w-full"
-                >
-                  <CarouselContent className="-ml-2 md:-ml-4">
-                    {heroMenuItems.map((item, itemIndex) => (
-                      <CarouselItem key={itemIndex} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                        <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                          <div className="aspect-square overflow-hidden">
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
+      <div className="relative w-full">
+        {slides.map((slide, index) => (
+          <div 
+            key={index} 
+            className={`w-full transition-all duration-700 ease-in-out ${
+              index === currentSlide 
+                ? "relative opacity-100 translate-x-0" 
+                : index < currentSlide 
+                  ? "absolute top-0 left-0 opacity-0 -translate-x-full" 
+                  : "absolute top-0 left-0 opacity-0 translate-x-full"
+            }`}
+          >
+            {slide.type === 'menu' ? (
+              <div className="w-full bg-muted flex flex-col items-center justify-center" style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
+                <div className="container mx-auto px-4 flex flex-col items-center">
+                  <h2 className="text-2xl md:text-4xl text-center mb-4 md:mb-6">Our Menu Favorites</h2>
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                    plugins={[
+                      Autoplay({
+                        delay: 3000,
+                        stopOnInteraction: false,
+                        stopOnMouseEnter: true,
+                      }),
+                    ]}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-2 md:-ml-4">
+                      {heroMenuItems.map((item, itemIndex) => (
+                        <CarouselItem key={itemIndex} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                          <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                            <div className="aspect-square overflow-hidden">
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                            <div className="p-3 text-center">
+                              <p className="font-medium text-sm">{item.name}</p>
+                            </div>
                           </div>
-                          <div className="p-3 text-center">
-                            <p className="font-medium text-sm">{item.name}</p>
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden md:flex -left-4" />
-                  <CarouselNext className="hidden md:flex -right-4" />
-                </Carousel>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="hidden md:flex -left-4" />
+                    <CarouselNext className="hidden md:flex -right-4" />
+                  </Carousel>
+                  {/* Button directly below menu carousel */}
+                  <div className="mt-6 md:mt-8 mb-12">
+                    {renderSlideButtons(index)}
+                  </div>
+                </div>
               </div>
-            </div>
-          ) : (
-            <img 
-              src={slide.image} 
-              alt={`Slide ${index + 1}`} 
-              className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`}
-              style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
-              loading="eager"
-              decoding="sync"
-            />
-          )}
-          
-          {/* Buttons positioned at the bottom - activities slide needs lower position to avoid text overlap */}
-          <div className={`absolute left-0 right-0 flex justify-center z-10 ${index === 2 ? 'bottom-4 sm:bottom-6 md:bottom-8' : 'bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24'}`}>
-            <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
-              {renderSlideButtons(index)}
-            </div>
+            ) : (
+              <>
+                <img 
+                  src={slide.image} 
+                  alt={`Slide ${index + 1}`} 
+                  className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`}
+                  style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+                  loading="eager"
+                  decoding="sync"
+                />
+                {/* Buttons positioned at the bottom for image slides */}
+                <div className={`absolute left-0 right-0 flex justify-center z-10 ${index === 2 ? 'bottom-4 sm:bottom-6 md:bottom-8' : 'bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24'}`}>
+                  <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
+                    {renderSlideButtons(index)}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {/* Navigation Arrows */}
       <button 
