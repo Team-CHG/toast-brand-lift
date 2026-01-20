@@ -100,6 +100,7 @@ const desktopSlides: Slide[] = [
 
 const mobileSlides: Slide[] = [
   { type: 'image', image: heroMobile1 },
+  { type: 'menu' },
   { type: 'image', image: heroMobile2 },
   { type: 'image', image: heroMobile3 },
 ];
@@ -240,26 +241,27 @@ const HeroCarousel = () => {
             }`}
           >
             {slide.type === 'menu' ? (
-              <div className="w-full bg-muted flex flex-col items-center justify-center" style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
+              <div className={`w-full bg-muted flex flex-col items-center justify-center ${isMobile ? 'py-6' : ''}`} style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
                 <div className="container mx-auto px-4 flex flex-col items-center">
-                  <h2 className="text-2xl md:text-4xl text-center mb-4 md:mb-6">Our Menu Favorites</h2>
+                  <h2 className={`text-center ${isMobile ? 'text-xl mb-3' : 'text-2xl md:text-4xl mb-4 md:mb-6'}`}>Our Menu Favorites</h2>
                   <Carousel
                     opts={{
                       align: "start",
                       loop: true,
+                      dragFree: true,
                     }}
                     plugins={[
                       Autoplay({
-                        delay: 3000,
+                        delay: 1500,
                         stopOnInteraction: false,
-                        stopOnMouseEnter: true,
+                        stopOnMouseEnter: false,
                       }),
                     ]}
                     className="w-full"
                   >
                     <CarouselContent className="-ml-2 md:-ml-4">
                       {heroMenuItems.map((item, itemIndex) => (
-                        <CarouselItem key={itemIndex} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                        <CarouselItem key={itemIndex} className={`pl-2 md:pl-4 ${isMobile ? 'basis-1/2' : 'basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5'}`}>
                           <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                             <div className="aspect-square overflow-hidden">
                               <img
@@ -268,8 +270,8 @@ const HeroCarousel = () => {
                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                               />
                             </div>
-                            <div className="p-3 text-center">
-                              <p className="font-medium text-sm">{item.name}</p>
+                            <div className={`text-center ${isMobile ? 'p-2' : 'p-3'}`}>
+                              <p className={`font-medium ${isMobile ? 'text-xs' : 'text-sm'}`}>{item.name}</p>
                             </div>
                           </div>
                         </CarouselItem>
@@ -279,7 +281,7 @@ const HeroCarousel = () => {
                     <CarouselNext className="hidden md:flex -right-4" />
                   </Carousel>
                   {/* Button directly below menu carousel */}
-                  <div className="mt-6 md:mt-8 mb-12">
+                  <div className={`${isMobile ? 'mt-4 mb-8' : 'mt-6 md:mt-8 mb-12'}`}>
                     {renderSlideButtons(index)}
                   </div>
                 </div>
