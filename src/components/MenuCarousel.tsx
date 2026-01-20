@@ -18,18 +18,30 @@ import candiedBacon from "@/assets/menu/candied-bacon.png";
 import frenchToastClassic from "@/assets/menu/french-toast-classic.png";
 import eggsBiscuit from "@/assets/menu/eggs-biscuit.png";
 import veggieOmelette from "@/assets/menu/veggie-omelette.png";
+import beignets from "@/assets/menu/beignets.png";
+import avocadoToast from "@/assets/menu/avocado-toast.png";
+import doubleCheeseburger from "@/assets/menu/double-cheeseburger.png";
+import englishBreakfast from "@/assets/menu/english-breakfast.png";
+import crabCakeBenedict from "@/assets/menu/crab-cake-benedict.png";
+import chickenBenedict from "@/assets/menu/chicken-benedict.png";
 
 const menuItems = [
   { image: friedGreenTomatoes, name: "Fried Green Tomatoes" },
   { image: chickenWafflesBerries, name: "Chicken & Waffles" },
-  { image: frenchToastOrange, name: "Orange French Toast" },
+  { image: frenchToastOrange, name: "Peach Stuffed French Toast" },
   { image: shrimpGrits, name: "Shrimp & Grits" },
   { image: steakEggs, name: "Steak & Eggs" },
   { image: bloodyMary, name: "Bloody Mary" },
-  { image: candiedBacon, name: "Candied Bacon" },
-  { image: frenchToastClassic, name: "Classic French Toast" },
-  { image: eggsBiscuit, name: "Eggs & Biscuit" },
+  { image: candiedBacon, name: "Pig Candy" },
+  { image: frenchToastClassic, name: "Maple Berry French Toast" },
+  { image: eggsBiscuit, name: "21 Anniversary Breakfast" },
   { image: veggieOmelette, name: "Veggie Omelette" },
+  { image: beignets, name: "Beignets" },
+  { image: avocadoToast, name: "Avocado Toast" },
+  { image: doubleCheeseburger, name: "Double Cheeseburger" },
+  { image: englishBreakfast, name: "English Breakfast" },
+  { image: crabCakeBenedict, name: "Crab Cake Benedict" },
+  { image: chickenBenedict, name: "Chicken Benedict" },
 ];
 
 const MenuCarousel = () => {
