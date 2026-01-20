@@ -23,7 +23,6 @@ import avocadoToast from "@/assets/menu/avocado-toast.png";
 import doubleCheeseburger from "@/assets/menu/double-cheeseburger.png";
 import englishBreakfast from "@/assets/menu/english-breakfast.png";
 import crabCakeBenedict from "@/assets/menu/crab-cake-benedict.png";
-import chickenBenedict from "@/assets/menu/chicken-benedict.png";
 
 const menuItems = [
   { image: friedGreenTomatoes, name: "Fried Green Tomatoes" },
@@ -34,14 +33,13 @@ const menuItems = [
   { image: bloodyMary, name: "Bloody Mary" },
   { image: candiedBacon, name: "Pig Candy" },
   { image: frenchToastClassic, name: "Maple Berry French Toast" },
-  { image: eggsBiscuit, name: "21 Anniversary Breakfast" },
+  { image: eggsBiscuit, name: "21st Anniversary Breakfast" },
   { image: veggieOmelette, name: "Veggie Omelette" },
-  { image: beignets, name: "Beignets" },
+  { image: beignets, name: "New Orleans Beignets" },
   { image: avocadoToast, name: "Avocado Toast" },
   { image: doubleCheeseburger, name: "Double Cheeseburger" },
-  { image: englishBreakfast, name: "English Breakfast" },
-  { image: crabCakeBenedict, name: "Crab Cake Benedict" },
-  { image: chickenBenedict, name: "Chicken Benedict" },
+  { image: englishBreakfast, name: "Power Plate" },
+  { image: crabCakeBenedict, name: "Eggs Meeting Street" },
 ];
 
 const MenuCarousel = () => {
