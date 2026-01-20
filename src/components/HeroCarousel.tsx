@@ -16,11 +16,11 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/use-mobile";
+import heroSlideAnniversaryDesktop from "@/assets/hero-slide-anniversary-desktop.png";
 import heroSlideHome1 from "@/assets/hero-slide-home-1.png";
-import heroSlideActivities from "@/assets/hero-slide-activities.png";
+import heroSlideActivitiesDesktop from "@/assets/hero-slide-activities-desktop.png";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
 import heroMobile2 from "@/assets/hero-mobile-2.png";
-import heroMobile3 from "@/assets/hero-mobile-3.png";
 
 // Menu item images for embedded carousel
 import friedGreenTomatoes from "@/assets/menu/fried-green-tomatoes.png";
@@ -93,16 +93,15 @@ interface Slide {
 }
 
 const desktopSlides: Slide[] = [
-  { type: 'image', image: heroSlideHome1 },
+  { type: 'image', image: heroSlideAnniversaryDesktop },
   { type: 'menu' },
-  { type: 'image', image: heroSlideActivities },
+  { type: 'image', image: heroSlideActivitiesDesktop },
 ];
 
 const mobileSlides: Slide[] = [
   { type: 'image', image: heroMobile1 },
   { type: 'menu' },
   { type: 'image', image: heroMobile2 },
-  { type: 'image', image: heroMobile3 },
 ];
 
 const HeroCarousel = () => {
@@ -243,7 +242,7 @@ const HeroCarousel = () => {
             {slide.type === 'menu' ? (
               <div className={`w-full bg-muted flex flex-col items-center justify-center ${isMobile ? 'py-6' : ''}`} style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
                 <div className="container mx-auto px-4 flex flex-col items-center">
-                  <h2 className={`text-center ${isMobile ? 'text-xl mb-3' : 'text-2xl md:text-4xl mb-4 md:mb-6'}`}>Our Menu Favorites</h2>
+                  <h2 className={`text-center ${isMobile ? 'text-xl mb-3' : 'text-2xl md:text-4xl mb-4 md:mb-6'}`} style={{ color: '#4d2410' }}>Our Menu Favorites</h2>
                   <Carousel
                     opts={{
                       align: "start",
