@@ -7,13 +7,47 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/use-mobile";
 import heroSlideHome1 from "@/assets/hero-slide-home-1.png";
-import heroSlideMenuDesktop from "@/assets/hero-slide-menu-desktop.png";
 import heroSlideActivitiesDesktop from "@/assets/hero-slide-activities-desktop.png";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
 import heroMobile2 from "@/assets/hero-mobile-2.png";
 import heroMobile3 from "@/assets/hero-mobile-3.png";
+
+// Menu item images for embedded carousel
+import friedGreenTomatoes from "@/assets/menu/fried-green-tomatoes.png";
+import chickenWafflesBerries from "@/assets/menu/chicken-waffles-berries.png";
+import frenchToastOrange from "@/assets/menu/french-toast-orange.png";
+import shrimpGrits from "@/assets/menu/shrimp-grits.png";
+import steakEggs from "@/assets/menu/steak-eggs.png";
+import bloodyMary from "@/assets/menu/bloody-mary.png";
+import candiedBacon from "@/assets/menu/candied-bacon.png";
+import frenchToastClassic from "@/assets/menu/french-toast-classic.png";
+import eggsBiscuit from "@/assets/menu/eggs-biscuit.png";
+import beignets from "@/assets/menu/beignets.png";
+import crabCakeBenedict from "@/assets/menu/crab-cake-benedict.png";
+
+const heroMenuItems = [
+  { image: friedGreenTomatoes, name: "Fried Green Tomatoes" },
+  { image: chickenWafflesBerries, name: "Chicken & Waffles" },
+  { image: frenchToastOrange, name: "Peach Stuffed French Toast" },
+  { image: shrimpGrits, name: "Shrimp & Grits" },
+  { image: steakEggs, name: "Steak & Eggs" },
+  { image: bloodyMary, name: "Bloody Mary" },
+  { image: candiedBacon, name: "Pig Candy" },
+  { image: frenchToastClassic, name: "Maple Berry French Toast" },
+  { image: eggsBiscuit, name: "21st Anniversary Breakfast" },
+  { image: beignets, name: "New Orleans Beignets" },
+  { image: crabCakeBenedict, name: "Eggs Meeting Street" },
+];
 
 const locations = [
   {
@@ -54,19 +88,20 @@ const locations = [
 ];
 
 interface Slide {
-  image: string;
+  type: 'image' | 'menu';
+  image?: string;
 }
 
 const desktopSlides: Slide[] = [
-  { image: heroSlideHome1 },
-  { image: heroSlideMenuDesktop },
-  { image: heroSlideActivitiesDesktop },
+  { type: 'image', image: heroSlideHome1 },
+  { type: 'menu' },
+  { type: 'image', image: heroSlideActivitiesDesktop },
 ];
 
 const mobileSlides: Slide[] = [
-  { image: heroMobile1 },
-  { image: heroMobile2 },
-  { image: heroMobile3 },
+  { type: 'image', image: heroMobile1 },
+  { type: 'image', image: heroMobile2 },
+  { type: 'image', image: heroMobile3 },
 ];
 
 const HeroCarousel = () => {
@@ -197,14 +232,57 @@ const HeroCarousel = () => {
           key={index} 
           className={`transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"}`}
         >
-          <img 
-            src={slide.image} 
-            alt={`Slide ${index + 1}`} 
-            className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`}
-            style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
-            loading="eager"
-            decoding="sync"
-          />
+          {slide.type === 'menu' ? (
+            <div className="w-full bg-muted py-8 md:py-12" style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
+              <div className="container mx-auto px-4">
+                <h2 className="text-2xl md:text-4xl text-center mb-6 md:mb-8">Our Menu Favorites</h2>
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  plugins={[
+                    Autoplay({
+                      delay: 3000,
+                      stopOnInteraction: false,
+                      stopOnMouseEnter: true,
+                    }),
+                  ]}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-2 md:-ml-4">
+                    {heroMenuItems.map((item, itemIndex) => (
+                      <CarouselItem key={itemIndex} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                        <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                          <div className="aspect-square overflow-hidden">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="p-3 text-center">
+                            <p className="font-medium text-sm">{item.name}</p>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden md:flex -left-4" />
+                  <CarouselNext className="hidden md:flex -right-4" />
+                </Carousel>
+              </div>
+            </div>
+          ) : (
+            <img 
+              src={slide.image} 
+              alt={`Slide ${index + 1}`} 
+              className={`w-full h-auto object-contain ${isMobile ? "max-w-[800px] max-h-[800px] mx-auto" : "max-h-[70vh]"}`}
+              style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden' }}
+              loading="eager"
+              decoding="sync"
+            />
+          )}
           
           {/* Buttons positioned at the bottom */}
           <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 flex justify-center z-10">
