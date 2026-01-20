@@ -268,7 +268,7 @@ const ToastMtPleasant = () => {
         </section>
 
         {/* Gift Card Section */}
-        <GiftCardSection />
+        <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" />
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
