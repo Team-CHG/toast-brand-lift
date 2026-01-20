@@ -108,17 +108,6 @@ const ToastColeman = () => {
           </div>
         </section>
 
-        {/* Alternative Location CTA */}
-        <section className="py-8 bg-accent">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-accent-foreground mb-4">Looking for Toast! in Mt. Pleasant? Visit our Hungry Neck location!</p>
-            <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-              <Link to="/locations/toast-mt-pleasant">
-                Visit Toast! Mt. Pleasant
-              </Link>
-            </Button>
-          </div>
-        </section>
 
         {/* Content Section */}
         <section className="py-16 px-4 bg-background">
