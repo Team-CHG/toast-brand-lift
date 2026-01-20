@@ -5,6 +5,7 @@ import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
+import MenuCarousel from "@/components/MenuCarousel";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Utensils, Star, Car, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -209,6 +210,9 @@ const ToastMeeting = () => {
             </div>
           </div>
         </section>
+
+        {/* Menu Carousel */}
+        <MenuCarousel />
 
         {/* Secondary CTA */}
         <section className="py-12 bg-secondary">
