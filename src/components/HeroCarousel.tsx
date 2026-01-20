@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from "@/hooks/use-mobile";
-import heroSlideAnniversaryDesktop from "@/assets/hero-slide-anniversary-desktop.png";
+import heroSlideHome1 from "@/assets/hero-slide-home-1.png";
 import heroSlideMenuDesktop from "@/assets/hero-slide-menu-desktop.png";
 import heroSlideActivitiesDesktop from "@/assets/hero-slide-activities-desktop.png";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
@@ -58,7 +58,7 @@ interface Slide {
 }
 
 const desktopSlides: Slide[] = [
-  { image: heroSlideAnniversaryDesktop },
+  { image: heroSlideHome1 },
   { image: heroSlideMenuDesktop },
   { image: heroSlideActivitiesDesktop },
 ];
