@@ -20,26 +20,26 @@ const Rewards = () => {
       <SideDrawer />
       <Breadcrumbs />
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-accent/30 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Toast! <span className="text-primary">Rewards</span>
+              Toast! <span className="text-accent-foreground">Rewards</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               Earn points with every visit and enjoy exclusive perks
             </p>
             
             {/* Highlighted Promo Section */}
-            <div className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-primary"></div>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+            <div className="bg-accent/20 border-2 border-accent/40 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-primary to-accent"></div>
+              <h2 className="text-2xl md:text-3xl font-bold text-accent-foreground mb-4">
                 GET $10 FOR EVERY $100 SPENT!
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location or the fine restaurants listed below. The more you spend, the more points you accumulate.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks! 
+              <p className="text-muted-foreground leading-relaxed mb-4">You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks! 
 Earn double points Monday-Friday 12-3pm</p>
               
             </div>
@@ -61,13 +61,13 @@ Earn double points Monday-Friday 12-3pm</p>
       </section>
 
       {/* Download App Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-16 bg-complementary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="p-8 bg-background rounded-2xl border-2 border-primary/20 shadow-lg">
+            <div className="p-8 bg-background rounded-2xl border-2 border-accent/30 shadow-lg">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <div className="inline-flex items-center gap-2 bg-accent/30 text-accent-foreground px-4 py-2 rounded-full text-sm font-semibold mb-4">
                     <Smartphone className="h-4 w-4" />
                     Mobile App
                   </div>
@@ -125,10 +125,10 @@ Earn double points Monday-Friday 12-3pm</p>
             <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <Card>
+              <Card className="border-accent/20">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Star className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                    <Star className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Earn Points</h3>
                   <p className="text-muted-foreground">
@@ -137,10 +137,10 @@ Earn double points Monday-Friday 12-3pm</p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-accent/20">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Gift className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                    <Gift className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Redeem Rewards</h3>
                   <p className="text-muted-foreground">
@@ -149,10 +149,10 @@ Earn double points Monday-Friday 12-3pm</p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-accent/20">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <TrendingUp className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                    <TrendingUp className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Level Up</h3>
                   <p className="text-muted-foreground">
@@ -161,10 +161,10 @@ Earn double points Monday-Friday 12-3pm</p>
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-accent/20">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Zap className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                    <Zap className="h-6 w-6 text-accent-foreground" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">Exclusive Perks</h3>
                   <p className="text-muted-foreground">
@@ -175,11 +175,11 @@ Earn double points Monday-Friday 12-3pm</p>
             </div>
 
             {/* Member Benefits */}
-            <div className="mt-16 p-8 bg-secondary rounded-lg">
+            <div className="mt-16 p-8 bg-accent/20 rounded-lg border border-accent/30">
               <h2 className="text-3xl font-bold text-center mb-8">Member Benefits</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">1x</div>
+                  <div className="text-4xl font-bold text-accent-foreground mb-2">1x</div>
                   <p className="text-muted-foreground">Point per dollar spent</p>
                 </div>
                 <div className="text-center">
