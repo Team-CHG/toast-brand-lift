@@ -23,7 +23,7 @@ const Rewards = () => {
       <section className="pt-32 pb-16 bg-gradient-to-b from-accent/30 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
               Toast! <span className="text-accent-foreground">Rewards</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
@@ -61,7 +61,7 @@ Earn double points Monday-Friday 12-3pm</p>
       </section>
 
       {/* Download App Section */}
-      <section className="py-16 bg-complementary">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="p-8 bg-background rounded-2xl border-2 border-accent/30 shadow-lg">
