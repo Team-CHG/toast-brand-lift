@@ -24,6 +24,7 @@ const sideMenuItems = [
   { name: "Careers", href: "https://payroll.toasttab.com/jobs/chgllc", external: true },
   { name: "Locations", href: "/locations", hasSubmenu: true },
   { name: "Contact Us", href: "/contact" },
+  { name: "Download App", href: "/download-app" },
 ];
 
 const SideDrawer = () => {

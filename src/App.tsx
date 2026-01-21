@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Catering from "./pages/Catering";
 import Contact from "./pages/Contact";
 import Rewards from "./pages/Rewards";
+import DownloadAppPage from "./pages/DownloadApp";
 import Franchise from "./pages/Franchise";
 import NewsEvents from "./pages/NewsEvents";
 import MothersDay from "./pages/events/MothersDay";
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/catering" element={<Catering />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rewards" element={<Rewards />} />
+          <Route path="/download-app" element={<DownloadAppPage />} />
           <Route path="/franchise" element={<Franchise />} />
           <Route path="/news-events" element={<NewsEvents />} />
           <Route path="/news-events/mothers-day" element={<MothersDay />} />
