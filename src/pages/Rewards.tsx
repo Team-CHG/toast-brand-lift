@@ -24,7 +24,7 @@ const Rewards = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              Toast! <span className="text-accent-foreground">Rewards</span>
+              Toast! <span className="text-accent-foreground font-racing">Rewards</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               Earn points with every visit and enjoy exclusive perks
