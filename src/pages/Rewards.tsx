@@ -179,28 +179,28 @@ Earn double points Monday-Friday 12-3pm</p>
               <h2 className="text-3xl font-bold text-center mb-8">Member Benefits</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-foreground mb-2">1x</div>
-                  <p className="text-muted-foreground">Point per dollar spent</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">1x Point</div>
+                  <p className="text-muted-foreground">Per dollar spent</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">🎂</div>
-                  <p className="text-muted-foreground">Birthday rewards</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">Birthday Rewards</div>
+                  <p className="text-muted-foreground">Special treats on your day</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">⚡</div>
-                  <p className="text-muted-foreground">Exclusive member offers</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">Exclusive Offers</div>
+                  <p className="text-muted-foreground">Members-only deals</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">🎁</div>
-                  <p className="text-muted-foreground">Free items & discounts</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">Free Items</div>
+                  <p className="text-muted-foreground">Discounts & freebies</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">📱</div>
-                  <p className="text-muted-foreground">Easy mobile ordering</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">Mobile Ordering</div>
+                  <p className="text-muted-foreground">Easy app access</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">🔔</div>
-                  <p className="text-muted-foreground">First to know updates</p>
+                  <div className="text-xl font-bold text-accent-foreground mb-2">First Updates</div>
+                  <p className="text-muted-foreground">Be the first to know</p>
                 </div>
               </div>
             </div>
