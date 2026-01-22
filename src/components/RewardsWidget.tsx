@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { X, Gift } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import toastLogo from "@/assets/toast-logo.png";
 
@@ -54,23 +54,11 @@ const RewardsWidget = () => {
             </h2>
           </div>
 
-          <div className="space-y-4 mb-6">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">🎁</span>
-              <p className="text-foreground"><span className="font-bold">$10</span> for every $100 spent</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">💰</span>
-              <p className="text-foreground"><span className="font-bold">1 point</span> per $1 spent</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">🕐</span>
-              <p className="text-foreground"><span className="font-bold">Double points</span> Mon–Fri, 12–3 PM</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">🎂</span>
-              <p className="text-foreground"><span className="font-bold">Birthday surprise</span> included!</p>
-            </div>
+          <div className="space-y-3 mb-6">
+            <p className="text-foreground"><span className="font-bold">$10</span> for every $100 spent</p>
+            <p className="text-foreground"><span className="font-bold">1 point</span> per $1 spent</p>
+            <p className="text-foreground"><span className="font-bold">Double points</span> Mon–Fri, 12–3 PM</p>
+            <p className="text-foreground"><span className="font-bold">Birthday surprise</span> included!</p>
           </div>
 
           <Button
@@ -96,10 +84,9 @@ const RewardsWidget = () => {
     return (
       <button
         onClick={handleMinimizedClick}
-        className="fixed bottom-4 left-4 z-[90] bg-primary text-primary-foreground px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 font-semibold animate-in slide-in-from-bottom-4 fade-in"
+        className="fixed bottom-4 left-4 z-[90] bg-primary text-primary-foreground px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold animate-in slide-in-from-bottom-4 fade-in"
       >
-        <Gift className="h-5 w-5" />
-        <span>Get $10</span>
+        Get $10
       </button>
     );
   }
@@ -122,18 +109,9 @@ const RewardsWidget = () => {
         </div>
 
         <div className="space-y-1.5 mb-3 text-xs">
-          <div className="flex items-center gap-2">
-            <span className="text-base">🎁</span>
-            <p className="text-foreground"><span className="font-semibold">$10</span> for every $100 spent</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-base">🕐</span>
-            <p className="text-foreground"><span className="font-semibold">2x points</span> Mon–Fri, 12–3 PM</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-base">🎂</span>
-            <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
-          </div>
+          <p className="text-foreground"><span className="font-semibold">$10</span> for every $100 spent</p>
+          <p className="text-foreground"><span className="font-semibold">2x points</span> Mon–Fri, 12–3 PM</p>
+          <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
         </div>
 
         <Button
