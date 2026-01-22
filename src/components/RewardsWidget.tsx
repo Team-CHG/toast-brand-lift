@@ -49,10 +49,6 @@ const RewardsWidget = () => {
           </button>
 
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary mb-4">
-              <Gift className="h-8 w-8 text-primary-foreground" />
-            </div>
-
             <h2 className="text-2xl font-bold text-primary mb-6">
               Sign up for rewards
             </h2>
@@ -120,9 +116,6 @@ const RewardsWidget = () => {
         </button>
 
         <div className="text-center mb-3">
-          <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary mb-2">
-            <Gift className="h-5 w-5 text-primary-foreground" />
-          </div>
           <h3 className="text-base font-bold text-primary">
             Sign up for rewards
           </h3>
