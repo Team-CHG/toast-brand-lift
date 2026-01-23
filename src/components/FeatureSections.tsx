@@ -8,7 +8,7 @@ import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -90,23 +90,23 @@ const FeatureSections = () => {
       <section className="py-12 bg-complementary">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-            <div className="flex items-center gap-3">
-              <span className="text-accent text-2xl font-bold">01</span>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
               <span className="text-primary font-medium">Fresh Daily</span>
             </div>
             <div className="hidden md:block w-px h-6 bg-border" />
-            <div className="flex items-center gap-3">
-              <span className="text-accent text-2xl font-bold">02</span>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
               <span className="text-primary font-medium">Award Winning</span>
             </div>
             <div className="hidden md:block w-px h-6 bg-border" />
-            <div className="flex items-center gap-3">
-              <span className="text-accent text-2xl font-bold">03</span>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
               <span className="text-primary font-medium">Locally Sourced</span>
             </div>
             <div className="hidden md:block w-px h-6 bg-border" />
-            <div className="flex items-center gap-3">
-              <span className="text-accent text-2xl font-bold">04</span>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
               <span className="text-primary font-medium">Nationwide</span>
             </div>
           </div>
