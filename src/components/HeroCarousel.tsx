@@ -16,9 +16,8 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/use-mobile";
-import heroSlideAnniversaryDesktop from "@/assets/hero-slide-anniversary-desktop.png";
-import heroSlideHome1 from "@/assets/hero-slide-home-1.png";
-import heroSlideActivitiesDesktop from "@/assets/hero-slide-activities-desktop.png";
+import heroSlideHome from "@/assets/hero-slide-home-new.webp";
+import heroSlideActivities from "@/assets/hero-slide-activities-new.webp";
 import heroMobile1 from "@/assets/hero-mobile-1.png";
 import heroMobile2 from "@/assets/hero-mobile-2.png";
 
@@ -93,9 +92,9 @@ interface Slide {
 }
 
 const desktopSlides: Slide[] = [
-  { type: 'image', image: heroSlideAnniversaryDesktop },
+  { type: 'image', image: heroSlideHome },
   { type: 'menu' },
-  { type: 'image', image: heroSlideActivitiesDesktop },
+  { type: 'image', image: heroSlideActivities },
 ];
 
 const mobileSlides: Slide[] = [
