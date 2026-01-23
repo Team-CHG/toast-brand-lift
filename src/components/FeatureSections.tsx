@@ -86,23 +86,29 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Compact Tags */}
-      <section className="py-10 bg-complementary">
+      {/* Why Choose Us - Editorial Style */}
+      <section className="py-12 bg-complementary">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-            <span className="text-sm font-medium text-muted-foreground">Why Toast?</span>
-            <span className="px-4 py-2 bg-card rounded-full text-sm font-medium text-primary border border-border/50 hover:border-accent/50 transition-colors">
-              Fresh Daily
-            </span>
-            <span className="px-4 py-2 bg-card rounded-full text-sm font-medium text-primary border border-border/50 hover:border-accent/50 transition-colors">
-              Award Winning
-            </span>
-            <span className="px-4 py-2 bg-card rounded-full text-sm font-medium text-primary border border-border/50 hover:border-accent/50 transition-colors">
-              Locally Sourced
-            </span>
-            <span className="px-4 py-2 bg-card rounded-full text-sm font-medium text-primary border border-border/50 hover:border-accent/50 transition-colors">
-              Nationwide
-            </span>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+            <div className="flex items-center gap-3">
+              <span className="text-accent text-2xl font-bold">01</span>
+              <span className="text-primary font-medium">Fresh Daily</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-3">
+              <span className="text-accent text-2xl font-bold">02</span>
+              <span className="text-primary font-medium">Award Winning</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-3">
+              <span className="text-accent text-2xl font-bold">03</span>
+              <span className="text-primary font-medium">Locally Sourced</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-3">
+              <span className="text-accent text-2xl font-bold">04</span>
+              <span className="text-primary font-medium">Nationwide</span>
+            </div>
           </div>
         </div>
       </section>
