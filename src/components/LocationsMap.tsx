@@ -138,11 +138,11 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Locations List */}
         <div className="lg:col-span-1 space-y-3 max-h-[500px] overflow-y-auto pr-2">
-          <h3 className="text-lg font-semibold sticky top-0 py-2 bg-complementary">
+          <h3 className="text-lg font-semibold sticky top-0 py-2 bg-accent/20 px-3 rounded-lg text-accent-foreground">
             Our Locations
           </h3>
-          {locations.map((location, index) => <button key={index} onClick={() => handleLocationClick(location)} className={`w-full text-left p-4 rounded-lg border transition-all ${selectedLocation?.name === location.name ? 'border-primary bg-primary/5 shadow-md' : 'border-border hover:border-primary/50 hover:bg-secondary/50'}`}>
-              <h4 className="font-semibold text-sm">{location.name}</h4>
+          {locations.map((location, index) => <button key={index} onClick={() => handleLocationClick(location)} className={`w-full text-left p-4 rounded-lg border transition-all ${selectedLocation?.name === location.name ? 'border-accent bg-accent/10 shadow-md' : 'border-accent/20 hover:border-accent/50 hover:bg-accent/5'}`}>
+              <h4 className="font-semibold text-sm text-foreground">{location.name}</h4>
               {location.temporarilyClosed && <p className="text-xs font-semibold text-red-600 mt-1">Temporarily Closed</p>}
               <p className="text-xs text-muted-foreground mt-1">
                 {location.address}, {location.city}
@@ -158,28 +158,28 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
         }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="shadow-lg" />
 
           {/* Selected Location Details Overlay */}
-          {selectedLocation && <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-border">
-              <button onClick={closeDetails} className="absolute top-2 right-2 p-1 hover:bg-secondary rounded-full transition-colors">
+          {selectedLocation && <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-accent/30">
+              <button onClick={closeDetails} className="absolute top-2 right-2 p-1 hover:bg-accent/10 rounded-full transition-colors">
                 <X className="h-4 w-4" />
               </button>
               
-              <h3 className="text-lg font-bold mb-3 pr-6">{selectedLocation.name}</h3>
+              <h3 className="text-lg font-bold mb-3 pr-6 text-accent-foreground">{selectedLocation.name}</h3>
               
               <div className="space-y-2 mb-4">
                 <div className="flex items-start gap-2">
-                  <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <MapPin className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                   <span className="text-sm">
                     {selectedLocation.address}, {selectedLocation.city}
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                  <a href={`tel:${selectedLocation.phone.replace(/[^0-9]/g, '')}`} className="text-sm hover:text-primary transition-colors">
+                  <Phone className="h-4 w-4 text-accent flex-shrink-0" />
+                  <a href={`tel:${selectedLocation.phone.replace(/[^0-9]/g, '')}`} className="text-sm hover:text-accent transition-colors">
                     {selectedLocation.phone}
                   </a>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Clock className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Clock className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                   <span className="text-sm">{selectedLocation.hours}</span>
                 </div>
               </div>

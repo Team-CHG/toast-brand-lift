@@ -73,7 +73,7 @@ const Locations = () => {
                   
                   <address className="space-y-3 mb-6 not-italic">
                     <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
+                      <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" aria-hidden="true" />
                       <div>
                         <p className="font-medium">{location.address}</p>
                         <p className="text-muted-foreground">{location.city}</p>
@@ -81,10 +81,10 @@ const Locations = () => {
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 text-primary flex-shrink-0" aria-hidden="true" />
+                      <Phone className="h-5 w-5 text-accent flex-shrink-0" aria-hidden="true" />
                       <a 
                         href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} 
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-accent transition-colors"
                         aria-label={`Call ${location.name} at ${location.phone}`}
                       >
                         {location.phone}
@@ -92,7 +92,7 @@ const Locations = () => {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
+                      <Clock className="h-5 w-5 text-accent mt-1 flex-shrink-0" aria-hidden="true" />
                       <p className="text-sm">{location.hours}</p>
                     </div>
                   </address>
@@ -110,12 +110,12 @@ const Locations = () => {
                     </Button>
                     <Button asChild variant="outline" size="sm" className="w-full">
                       <a 
-                        href={location.menuUrl} 
+                        href={location.reviewUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        aria-label={`View menu for ${location.name}`}
+                        aria-label={`Leave a review for ${location.name}`}
                       >
-                        View Menu
+                        Review Us
                       </a>
                     </Button>
                     {location.waitlistUrl && (
