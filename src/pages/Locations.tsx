@@ -21,11 +21,11 @@ const Locations = () => {
       <Breadcrumbs />
       
       {/* Hero Section */}
-      <section className="pt-16 pb-12 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-b from-accent/30 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Find Your Nearest <span className="text-primary">Toast! All Day</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
+              Find Your Nearest <span className="text-accent-foreground font-racing">Location</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Visit us at any of our locations across South Carolina and Georgia for an unforgettable dining experience.
@@ -35,7 +35,7 @@ const Locations = () => {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="py-16 bg-secondary/30" aria-labelledby="map-heading">
+      <section className="py-16 bg-accent/20" aria-labelledby="map-heading">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 id="map-heading" className="sr-only">Interactive Location Map</h2>
@@ -53,7 +53,7 @@ const Locations = () => {
           <h2 id="all-locations" className="sr-only">All Toast All Day Locations</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {locations.map((location, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
+              <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden border-accent/20">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={location.image} 
@@ -69,7 +69,7 @@ const Locations = () => {
                   )}
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">{location.name}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-accent-foreground">{location.name}</h3>
                   
                   <address className="space-y-3 mb-6 not-italic">
                     <div className="flex items-start gap-3">

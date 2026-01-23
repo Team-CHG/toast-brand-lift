@@ -17,6 +17,7 @@ interface Location {
   orderUrl: string;
   menuUrl: string;
   waitlistUrl?: string;
+  reviewUrl: string;
   embedQuery: string;
   temporarilyClosed?: boolean;
   image: string;
@@ -30,6 +31,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-charleston-155-meeting-st/guestfeedback",
   embedQuery: "Toast+All+Day,+129+Meeting+St,+Charleston,+SC+29401",
   image: toastMeetingImg
 }, {
@@ -41,6 +43,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-king-st-451-king-st/guestfeedback",
   embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
   image: toastKingImg
 }, {
@@ -51,6 +54,7 @@ const locations: Location[] = [{
   hours: "Monday – Sunday: 7am – 3pm",
   orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
   menuUrl: "https://toastallday.com/toast-menu/",
+  reviewUrl: "https://www.toasttab.com/toast-coleman-blvd-835-coleman-boulevard/guestfeedback",
   embedQuery: "Toast+All+Day,+835+Coleman+Blvd,+Mt+Pleasant,+SC+29464",
   temporarilyClosed: true,
   image: toastColemanImg
@@ -63,6 +67,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/guestfeedback",
   embedQuery: "Toast+All+Day,+1150+Hungry+Neck+Blvd,+Mt+Pleasant,+SC+29464",
   image: toastMtPleasantImg
 }, {
@@ -74,6 +79,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/guestfeedback",
   embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
   image: toastWestAshleyImg
 }, {
@@ -85,6 +91,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road-ste-9%20&%2010",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-summerville-717-old-trolley-road-ste-9%20&%2010/guestfeedback",
   embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
   image: toastSummervilleImg
 }, {
@@ -96,6 +103,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
+  reviewUrl: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/guestfeedback",
   embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
   image: toastSavannahImg
 }];
@@ -183,8 +191,8 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="sm">
-                  <a href={selectedLocation.menuUrl} target="_blank" rel="noopener noreferrer">
-                    View Menu
+                  <a href={selectedLocation.reviewUrl} target="_blank" rel="noopener noreferrer">
+                    Review Us
                   </a>
                 </Button>
                 {selectedLocation.waitlistUrl && <Button asChild variant="secondary" size="sm">
