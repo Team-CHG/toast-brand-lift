@@ -8,7 +8,7 @@ import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import { Button } from "@/components/ui/button";
-import { Clock, Award, MapPin, ChevronLeft, ChevronRight, Gift, CreditCard, Search, Mail, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -87,36 +87,52 @@ const FeatureSections = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-complementary">
+      <section className="py-20 md:py-28 bg-complementary overflow-hidden">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Why Toast All Day?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-card rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
-                <Clock className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">Fresh Daily</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Everything made fresh each morning using locally sourced ingredients and time-honored recipes.
-              </p>
+          <div className="max-w-6xl mx-auto">
+            {/* Header with editorial styling */}
+            <div className="text-center mb-16 md:mb-20">
+              <p className="text-accent font-medium tracking-widest uppercase text-sm mb-4">The Difference</p>
+              <h2 className="text-4xl lg:text-6xl font-bold text-primary">Why Toast All Day?</h2>
             </div>
-            <div className="text-center p-8 bg-card rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
-                <Award className="h-8 w-8 text-accent" />
+            
+            {/* Creative asymmetric layout */}
+            <div className="grid md:grid-cols-12 gap-6 md:gap-8">
+              {/* Large feature card */}
+              <div className="md:col-span-7 group">
+                <div className="relative h-full p-8 md:p-12 bg-gradient-to-br from-primary to-primary/90 rounded-2xl text-primary-foreground overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+                  <div className="relative z-10">
+                    <span className="text-7xl md:text-8xl font-bold text-accent/20 absolute -top-4 -left-2">01</span>
+                    <div className="pt-12 md:pt-16">
+                      <h3 className="text-3xl md:text-4xl font-bold mb-4">Fresh Daily</h3>
+                      <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-md">
+                        Everything made fresh each morning using locally sourced ingredients and time-honored recipes passed down through generations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">Award Winning</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Recognized nationally for our innovative menu and commitment to culinary excellence.
-              </p>
-            </div>
-            <div className="text-center p-8 bg-card rounded-lg shadow-md hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
-                <MapPin className="h-8 w-8 text-accent" />
+              
+              {/* Stacked smaller cards */}
+              <div className="md:col-span-5 flex flex-col gap-6 md:gap-8">
+                <div className="group flex-1 p-8 bg-card rounded-2xl border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
+                  <span className="text-5xl font-bold text-accent/20">02</span>
+                  <h3 className="text-2xl font-bold mb-3 text-primary mt-4">Award Winning</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Recognized nationally for our innovative menu and commitment to culinary excellence.
+                  </p>
+                </div>
+                
+                <div className="group flex-1 p-8 bg-card rounded-2xl border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-lg">
+                  <span className="text-5xl font-bold text-accent/20">03</span>
+                  <h3 className="text-2xl font-bold mb-3 text-primary mt-4">Nationwide</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Growing coast to coast with locations opening in communities across the country.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">Nationwide</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Growing coast to coast with locations opening in communities across the country.
-              </p>
             </div>
           </div>
         </div>
