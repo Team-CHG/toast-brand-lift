@@ -41,8 +41,8 @@ const locations = [
   },
   {
     name: "Toast! Summerville",
-    menuUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road-ste-9%20&%2010",
-    orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road-ste-9%20&%2010",
+    menuUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road",
+    orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road",
     waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
   },
   {
