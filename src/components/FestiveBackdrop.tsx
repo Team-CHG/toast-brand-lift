@@ -17,9 +17,9 @@ function hashStringToIndex(input: string, mod: number) {
 
 /**
  * Subtle, site-wide festive background textures.
- * - Uses different images per route (stable “interchangeably”)
- * - Blends into the design system colors via HSL CSS vars
- * - Very low opacity so it doesn't overpower sections
+ * - Uses different images per route (stable "interchangeably")
+ * - Blends into the design system colors
+ * - Low opacity so it doesn't overpower sections
  */
 export default function FestiveBackdrop() {
   const location = useLocation();
@@ -30,28 +30,34 @@ export default function FestiveBackdrop() {
   }, [location.pathname]);
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       {/* Top ambience */}
       <div
-        className="absolute inset-x-0 top-0 h-[55vh] bg-cover bg-center bg-no-repeat opacity-[0.10]"
+        className="absolute inset-x-0 top-0 h-[50vh] bg-cover bg-center bg-no-repeat opacity-[0.15]"
         style={{
-          backgroundImage: `linear-gradient(180deg, hsl(var(--background)) 0%, transparent 45%, transparent 100%), url(${topImg})`,
+          backgroundImage: `url(${topImg})`,
+          maskImage: 'linear-gradient(180deg, black 0%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(180deg, black 0%, transparent 100%)',
         }}
       />
 
-      {/* Mid ambience (very subtle so it doesn't feel repetitive) */}
+      {/* Mid ambience */}
       <div
-        className="absolute inset-x-0 top-[45vh] h-[70vh] bg-cover bg-center bg-no-repeat opacity-[0.06]"
+        className="absolute inset-x-0 top-[40vh] h-[50vh] bg-cover bg-center bg-no-repeat opacity-[0.08]"
         style={{
-          backgroundImage: `linear-gradient(180deg, transparent 0%, hsl(var(--muted)) 50%, transparent 100%), url(${midImg})`,
+          backgroundImage: `url(${midImg})`,
+          maskImage: 'linear-gradient(180deg, transparent 0%, black 50%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(180deg, transparent 0%, black 50%, transparent 100%)',
         }}
       />
 
       {/* Bottom ambience */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[55vh] bg-cover bg-center bg-no-repeat opacity-[0.08]"
+        className="absolute inset-x-0 bottom-0 h-[50vh] bg-cover bg-center bg-no-repeat opacity-[0.12]"
         style={{
-          backgroundImage: `linear-gradient(0deg, hsl(var(--background)) 0%, transparent 55%, transparent 100%), url(${botImg})`,
+          backgroundImage: `url(${botImg})`,
+          maskImage: 'linear-gradient(0deg, black 0%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(0deg, black 0%, transparent 100%)',
         }}
       />
     </div>
