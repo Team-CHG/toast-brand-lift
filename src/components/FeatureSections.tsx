@@ -7,6 +7,7 @@ import menuImage2 from "@/assets/food-slide-2-new.jpg";
 import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
+import homeBackground from "@/assets/home-background.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
@@ -84,6 +85,18 @@ const FeatureSections = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Decorative Background Image Section */}
+      <section className="relative h-48 md:h-64 lg:h-80 bg-background overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeBackground})` }}
+        />
+        {/* Top gradient fade to match Awards section background */}
+        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
+        {/* Bottom gradient fade to match Why Choose Us section background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
       </section>
 
       {/* Why Choose Us - Editorial Style */}
