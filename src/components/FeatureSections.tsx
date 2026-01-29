@@ -8,6 +8,8 @@ import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import homeBackground from "@/assets/home-background.avif";
+import homeBackground2 from "@/assets/home-background-2.avif";
+import homeBackground3 from "@/assets/home-background-3.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
@@ -127,8 +129,13 @@ const FeatureSections = () => {
       </section>
 
       {/* Menu Preview */}
-      <section id="menu" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section id="menu" className="py-20 bg-background relative overflow-hidden">
+        {/* Subtle background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.03]"
+          style={{ backgroundImage: `url(${homeBackground2})` }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Explore Our Menu</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -215,8 +222,13 @@ const FeatureSections = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-background relative overflow-hidden">
+        {/* Subtle background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.04]"
+          style={{ backgroundImage: `url(${homeBackground3})` }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">What Our Guests Say</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
