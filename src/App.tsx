@@ -27,6 +27,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
+import FestiveBackdrop from "./components/FestiveBackdrop";
 import ToastMeeting from "./pages/locations/ToastMeeting";
 import ToastKing from "./pages/locations/ToastKing";
 import ToastColeman from "./pages/locations/ToastColeman";
@@ -45,37 +46,40 @@ const App = () => (
       <LocalBusinessSchema />
       <RewardsWidget />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/locations" element={<Locations />} />
-          <Route path="/locations/toast-meeting" element={<ToastMeeting />} />
-          <Route path="/locations/toast-king" element={<ToastKing />} />
-          <Route path="/locations/toast-coleman" element={<ToastColeman />} />
-          <Route path="/locations/toast-mt-pleasant" element={<ToastMtPleasant />} />
-          <Route path="/locations/toast-west-ashley" element={<ToastWestAshley />} />
-          <Route path="/locations/toast-summerville" element={<ToastSummerville />} />
-          <Route path="/locations/toast-savannah" element={<ToastSavannah />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/catering" element={<Catering />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/rewards" element={<Rewards />} />
-          <Route path="/download-app" element={<DownloadAppPage />} />
-          <Route path="/franchise" element={<Franchise />} />
-          <Route path="/news-events" element={<NewsEvents />} />
-          <Route path="/news-events/mothers-day" element={<MothersDay />} />
-          <Route path="/news-events/download-app" element={<DownloadApp />} />
-          <Route path="/news-events/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
-          <Route path="/news-events/military-discount" element={<MilitaryDiscount />} />
-          <Route path="/news-events/anniversary" element={<Anniversary />} />
-          <Route path="/news-events/soup-salad-sandwich" element={<SoupSaladSandwich />} />
-          <Route path="/news-events/black-friday-gift-card" element={<BlackFridayGiftCard />} />
-          <Route path="/news-events/veterans-day" element={<VeteransDay />} />
-          <Route path="/news-events/best-brunch" element={<BestBrunch />} />
-          <Route path="/news-events/valentines-day" element={<ValentinesDay />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="relative min-h-screen">
+          <FestiveBackdrop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/locations/toast-meeting" element={<ToastMeeting />} />
+            <Route path="/locations/toast-king" element={<ToastKing />} />
+            <Route path="/locations/toast-coleman" element={<ToastColeman />} />
+            <Route path="/locations/toast-mt-pleasant" element={<ToastMtPleasant />} />
+            <Route path="/locations/toast-west-ashley" element={<ToastWestAshley />} />
+            <Route path="/locations/toast-summerville" element={<ToastSummerville />} />
+            <Route path="/locations/toast-savannah" element={<ToastSavannah />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/catering" element={<Catering />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/rewards" element={<Rewards />} />
+            <Route path="/download-app" element={<DownloadAppPage />} />
+            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/news-events" element={<NewsEvents />} />
+            <Route path="/news-events/mothers-day" element={<MothersDay />} />
+            <Route path="/news-events/download-app" element={<DownloadApp />} />
+            <Route path="/news-events/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
+            <Route path="/news-events/military-discount" element={<MilitaryDiscount />} />
+            <Route path="/news-events/anniversary" element={<Anniversary />} />
+            <Route path="/news-events/soup-salad-sandwich" element={<SoupSaladSandwich />} />
+            <Route path="/news-events/black-friday-gift-card" element={<BlackFridayGiftCard />} />
+            <Route path="/news-events/veterans-day" element={<VeteransDay />} />
+            <Route path="/news-events/best-brunch" element={<BestBrunch />} />
+            <Route path="/news-events/valentines-day" element={<ValentinesDay />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
