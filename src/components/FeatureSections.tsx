@@ -10,6 +10,7 @@ import giftcardDesign from "@/assets/giftcard-design.png";
 import homeBackground from "@/assets/home-background.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
+import giftcardBackground from "@/assets/giftcard-background.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
@@ -185,8 +186,13 @@ const FeatureSections = () => {
       </section>
 
       {/* Gift Cards Section */}
-      <section className="py-20 bg-complementary">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-complementary relative overflow-hidden">
+        {/* Subtle background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${giftcardBackground})` }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Share the Food You Love</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
