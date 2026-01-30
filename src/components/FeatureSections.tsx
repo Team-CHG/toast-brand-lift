@@ -11,8 +11,10 @@ import homeBackground from "@/assets/home-background.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
+import menuSectionBackground from "@/assets/menu-section-background.avif";
+import newsletterBackground from "@/assets/newsletter-background.avif";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -61,7 +63,16 @@ const FeatureSections = () => {
             {/* Food Slideshow */}
             <div className="order-1 relative">
               <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-lg md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden ring-2 md:ring-4 ring-accent/20">
-                {foodSlides.map((slide, index) => <img key={index} src={slide} alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`} loading={index === 0 ? "eager" : "lazy"} decoding="async" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} />)}
+                {foodSlides.map((slide, index) => (
+                  <img 
+                    key={index} 
+                    src={slide} 
+                    alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`} 
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} 
+                  />
+                ))}
                 
                 {/* Navigation Arrows */}
                 <button onClick={() => setCurrentSlide(prev => (prev - 1 + foodSlides.length) % foodSlides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
@@ -83,13 +94,14 @@ const FeatureSections = () => {
 
       {/* Decorative Background Image Section */}
       <section className="relative h-48 md:h-64 lg:h-80 bg-background overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url(${homeBackground})`
-      }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeBackground})` }}
+        />
         {/* Top gradient fade to match Awards section background */}
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
         {/* Bottom gradient fade to match Why Choose Us section background */}
-        
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
       </section>
 
       {/* Why Choose Us - Editorial Style */}
@@ -122,9 +134,10 @@ const FeatureSections = () => {
       {/* Menu Preview */}
       <section id="menu" className="py-20 bg-background relative overflow-hidden">
         {/* Subtle background image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.03]" style={{
-        backgroundImage: `url(${homeBackground2})`
-      }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${menuSectionBackground})` }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Explore Our Menu</h2>
@@ -135,7 +148,13 @@ const FeatureSections = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img alt="Toast All Day chef preparing fresh gourmet breakfast dishes in the kitchen" className="w-full h-64 object-cover" src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png" loading="lazy" decoding="async" />
+              <img 
+                alt="Toast All Day chef preparing fresh gourmet breakfast dishes in the kitchen" 
+                className="w-full h-64 object-cover" 
+                src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Chef's Specials</h3>
                 <p className="text-muted-foreground mb-4">
@@ -147,7 +166,13 @@ const FeatureSections = () => {
               </div>
             </article>
             <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src={menuImage2} alt="Full bar selection with craft cocktails and mimosas at Toast All Day" className="w-full h-64 object-cover" loading="lazy" decoding="async" />
+              <img 
+                src={menuImage2} 
+                alt="Full bar selection with craft cocktails and mimosas at Toast All Day" 
+                className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-3 text-primary">Full Bar & Cocktails</h3>
                 <p className="text-muted-foreground mb-4">
@@ -165,9 +190,10 @@ const FeatureSections = () => {
       {/* Gift Cards Section */}
       <section className="py-20 bg-complementary relative overflow-hidden">
         {/* Subtle background image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]" style={{
-        backgroundImage: `url(${giftcardBackground})`
-      }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${giftcardBackground})` }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Share the Food You Love</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -191,7 +217,13 @@ const FeatureSections = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <img src={giftcardDesign} alt="Charleston Hospitality Group Gift Card - Perfect gift for breakfast and brunch lovers" className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20" loading="lazy" decoding="async" />
+              <img 
+                src={giftcardDesign} 
+                alt="Charleston Hospitality Group Gift Card - Perfect gift for breakfast and brunch lovers" 
+                className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -200,9 +232,10 @@ const FeatureSections = () => {
       {/* Reviews Section */}
       <section className="py-20 bg-background relative overflow-hidden">
         {/* Subtle background image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.04]" style={{
-        backgroundImage: `url(${homeBackground3})`
-      }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.04]"
+          style={{ backgroundImage: `url(${homeBackground3})` }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">What Our Guests Say</h2>
@@ -221,21 +254,15 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-10 left-10 w-24 h-24 rounded-full border-2 border-primary-foreground animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-primary-foreground animate-pulse delay-300" />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full border-2 border-primary-foreground animate-pulse delay-500" />
-        </div>
-        
+      <section className="py-20 text-primary-foreground relative overflow-hidden">
+        {/* Full background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${newsletterBackground})` }}
+        />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-6">
-            <Sparkles className="h-8 w-8 text-accent" />
-          </div>
-          
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">Never Miss Out on A Celebration!</h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-[#4d2410]">Never Miss Out on A Celebration!</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-[#4d2410]">
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
           
