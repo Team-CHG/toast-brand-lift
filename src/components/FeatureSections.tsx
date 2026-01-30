@@ -11,6 +11,7 @@ import homeBackground from "@/assets/home-background.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
+import menuSectionBackground from "@/assets/menu-section-background.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
@@ -133,8 +134,8 @@ const FeatureSections = () => {
       <section id="menu" className="py-20 bg-background relative overflow-hidden">
         {/* Subtle background image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.03]"
-          style={{ backgroundImage: `url(${homeBackground2})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          style={{ backgroundImage: `url(${menuSectionBackground})` }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
