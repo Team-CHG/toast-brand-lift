@@ -104,6 +104,18 @@ const FeatureSections = () => {
         </div>
       </section>
 
+      {/* Decorative Background Image Section - Bottom */}
+      <section className="relative h-24 md:h-32 lg:h-40 bg-background overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeBackground})` }}
+        />
+        {/* Top gradient fade */}
+        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
+        {/* Bottom gradient fade to match Why Choose Us section background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
+      </section>
+
       {/* Why Choose Us - Editorial Style */}
       <section className="py-12 bg-complementary">
         <div className="container mx-auto px-4">
