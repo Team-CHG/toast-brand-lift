@@ -93,7 +93,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Decorative Background Image Section */}
-      <section className="relative h-48 md:h-64 lg:h-80 bg-background overflow-hidden">
+      <section className="relative h-24 md:h-32 lg:h-40 bg-background overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${homeBackground})` }}
