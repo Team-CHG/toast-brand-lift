@@ -12,8 +12,9 @@ import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
+import newsletterBackground from "@/assets/newsletter-background.avif";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Sparkles, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Star } from "lucide-react";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -253,19 +254,16 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-10 left-10 w-24 h-24 rounded-full border-2 border-primary-foreground animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-32 h-32 rounded-full border-2 border-primary-foreground animate-pulse delay-300" />
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 rounded-full border-2 border-primary-foreground animate-pulse delay-500" />
-        </div>
+      <section className="py-20 text-primary-foreground relative overflow-hidden">
+        {/* Full background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${newsletterBackground})` }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-6">
-            <Sparkles className="h-8 w-8 text-accent" />
-          </div>
-          
           <h2 className="text-3xl lg:text-5xl font-bold mb-4">Never Miss Out on A Celebration!</h2>
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
