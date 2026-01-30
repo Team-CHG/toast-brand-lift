@@ -260,12 +260,9 @@ const FeatureSections = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${newsletterBackground})` }}
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
-        
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">Never Miss Out on A Celebration!</h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-[#4d2410]">Never Miss Out on A Celebration!</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-[#4d2410]">
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
           
