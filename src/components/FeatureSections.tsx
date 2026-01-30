@@ -92,6 +92,44 @@ const FeatureSections = () => {
         </div>
       </section>
 
+      {/* Decorative Background Image Section */}
+      <section className="relative h-48 md:h-64 lg:h-80 bg-background overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeBackground})` }}
+        />
+        {/* Top gradient fade to match Awards section background */}
+        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
+        {/* Bottom gradient fade to match Why Choose Us section background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
+      </section>
+
+      {/* Why Choose Us - Editorial Style */}
+      <section className="py-12 bg-complementary">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
+              <span className="text-primary font-medium">Fresh Daily</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
+              <span className="text-primary font-medium">Award Winning</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
+              <span className="text-primary font-medium">Locally Sourced</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-border" />
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" strokeWidth={1} />
+              <span className="text-primary font-medium">Nationwide</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Menu Preview */}
       <section id="menu" className="py-20 bg-background relative overflow-hidden">
