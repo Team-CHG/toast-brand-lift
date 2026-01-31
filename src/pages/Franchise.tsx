@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FestiveBackdrop from "@/components/FestiveBackdrop";
 
 const franchiseSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -61,7 +62,8 @@ const Franchise = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
+      <FestiveBackdrop />
       <SEO 
         title="Franchise Opportunities - Toast All Day | Own a Breakfast Restaurant"
         description="Own a Toast All Day franchise. Award-winning breakfast & brunch concept with proven business model, comprehensive training, and strong brand recognition. Inquire today!"
@@ -72,20 +74,20 @@ const Franchise = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-primary text-primary-foreground">
+      <section className="pt-32 pb-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">Franchise Opportunities</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-primary">Franchise Opportunities</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Join the Toast All Day family and bring award-winning breakfast to your community.
           </p>
         </div>
       </section>
 
       {/* Franchise Info */}
-      <section className="py-16 bg-background">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 mb-16 bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
               <div>
                 <h2 className="text-3xl font-bold text-primary mb-6">Why Toast All Day?</h2>
                 <ul className="space-y-4 text-muted-foreground">
@@ -131,7 +133,7 @@ const Franchise = () => {
             </div>
 
             {/* Franchise Form */}
-            <div className="bg-card rounded-2xl shadow-lg p-8 lg:p-12">
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 lg:p-12">
               <h2 className="text-3xl font-bold text-primary mb-8 text-center">
                 Start Your Franchise Journey
               </h2>

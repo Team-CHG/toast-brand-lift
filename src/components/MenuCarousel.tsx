@@ -42,11 +42,15 @@ const menuItems = [
   { image: crabCakeBenedict, name: "Eggs Meeting Street" },
 ];
 
-const MenuCarousel = () => {
+interface MenuCarouselProps {
+  showHeader?: boolean;
+}
+
+const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
   return (
-    <section className="py-12 bg-complementary">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl text-center mb-8">Our Menu Favorites</h2>
+    <div className={showHeader ? "py-12 bg-complementary" : ""}>
+      <div className={showHeader ? "container mx-auto px-4" : ""}>
+        {showHeader && <h2 className="text-3xl text-center mb-8">Our Menu Favorites</h2>}
         <Carousel
           opts={{
             align: "start",
@@ -83,7 +87,7 @@ const MenuCarousel = () => {
           <CarouselNext className="hidden md:flex -right-4" />
         </Carousel>
       </div>
-    </section>
+    </div>
   );
 };
 
