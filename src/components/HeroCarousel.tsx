@@ -93,13 +93,11 @@ interface Slide {
 
 const desktopSlides: Slide[] = [
   { type: 'image', image: heroSlideHome },
-  { type: 'menu' },
   { type: 'image', image: heroSlideActivities },
 ];
 
 const mobileSlides: Slide[] = [
   { type: 'image', image: heroMobile1 },
-  { type: 'menu' },
   { type: 'image', image: heroMobile2 },
 ];
 
@@ -183,28 +181,8 @@ const HeroCarousel = () => {
           </Button>
         </>
       );
-    } else if (slideIndex === 1) {
-      // Second slide: View Full Menu dropdown
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm md:text-lg px-3 sm:px-6 md:px-8 py-2 sm:py-3">
-              View Full Menu <ChevronDown className="ml-2 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-card border-border">
-            {locations.map((location, index) => (
-              <DropdownMenuItem key={index} asChild>
-                <a href={location.menuUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                  {location.name}
-                </a>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
     } else {
-      // Third slide: Get Tickets button
+      // Second slide: Get Tickets button
       return (
         <Button 
           size="lg" 
@@ -238,53 +216,7 @@ const HeroCarousel = () => {
                   : "absolute top-0 left-0 opacity-0 translate-x-full"
             }`}
           >
-            {slide.type === 'menu' ? (
-              <div className={`w-full bg-muted flex flex-col items-center justify-center ${isMobile ? 'py-6' : ''}`} style={{ minHeight: isMobile ? 'auto' : '70vh' }}>
-                <div className="container mx-auto px-4 flex flex-col items-center">
-                  <h2 className={`text-center ${isMobile ? 'text-xl mb-3' : 'text-2xl md:text-4xl mb-4 md:mb-6'}`} style={{ color: '#4d2410' }}>Our Menu Favorites</h2>
-                  <Carousel
-                    opts={{
-                      align: "start",
-                      loop: true,
-                      dragFree: true,
-                    }}
-                    plugins={[
-                      Autoplay({
-                        delay: 1500,
-                        stopOnInteraction: false,
-                        stopOnMouseEnter: false,
-                      }),
-                    ]}
-                    className="w-full"
-                  >
-                    <CarouselContent className="-ml-2 md:-ml-4">
-                      {heroMenuItems.map((item, itemIndex) => (
-                        <CarouselItem key={itemIndex} className={`pl-2 md:pl-4 ${isMobile ? 'basis-1/2' : 'basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5'}`}>
-                          <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                            <div className="aspect-square overflow-hidden">
-                              <img
-                                src={item.image}
-                                alt={item.name}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                              />
-                            </div>
-                            <div className={`text-center ${isMobile ? 'p-2' : 'p-3'}`}>
-                              <p className={`font-medium ${isMobile ? 'text-xs' : 'text-sm'}`}>{item.name}</p>
-                            </div>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden md:flex -left-4" />
-                    <CarouselNext className="hidden md:flex -right-4" />
-                  </Carousel>
-                  {/* Button directly below menu carousel */}
-                  <div className={`${isMobile ? 'mt-4 mb-8' : 'mt-6 md:mt-8 mb-12'}`}>
-                    {renderSlideButtons(index)}
-                  </div>
-                </div>
-              </div>
-            ) : (
+            {slide.type === 'image' && (
               <>
                 <img 
                   src={slide.image} 
@@ -295,7 +227,7 @@ const HeroCarousel = () => {
                   decoding="sync"
                 />
                 {/* Buttons positioned at the bottom for image slides */}
-                <div className={`absolute left-0 right-0 flex justify-center z-10 ${index === 2 ? 'bottom-4 sm:bottom-6 md:bottom-8' : 'bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24'}`}>
+                <div className={`absolute left-0 right-0 flex justify-center z-10 ${index === 1 ? 'bottom-4 sm:bottom-6 md:bottom-8' : 'bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24'}`}>
                   <div className="flex flex-wrap gap-2 sm:gap-4 justify-center px-4">
                     {renderSlideButtons(index)}
                   </div>

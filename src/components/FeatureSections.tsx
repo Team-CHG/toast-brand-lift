@@ -16,6 +16,7 @@ import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Star } from "lucide-react";
+import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -154,6 +155,12 @@ const FeatureSections = () => {
               dining.
             </p>
           </div>
+          
+          {/* Menu Carousel - No headers, just the slideshow */}
+          <div className="mb-16">
+            <MenuCarousel showHeader={false} />
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img 
