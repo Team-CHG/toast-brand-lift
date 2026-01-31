@@ -61,14 +61,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <a href="/" className="hover:opacity-80 transition-opacity">
               <img src={toastLogo} alt="Toast All Day" className="h-16 w-auto" />
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1 gap-6">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
                 Menu <ChevronDown className="h-4 w-4" />
@@ -99,11 +99,11 @@ const Navigation = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="lg">
-                  Order Online <ChevronDown className="ml-2 h-4 w-4" />
+                <Button variant="outline" size="sm" className="text-xs px-3">
+                  Order Online <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card border-border">
@@ -119,8 +119,8 @@ const Navigation = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Get in Line <ChevronDown className="ml-2 h-4 w-4" />
+                <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs px-3">
+                  Get in Line <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card border-border">
