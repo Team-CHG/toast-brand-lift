@@ -5,15 +5,9 @@ import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import LocationsMap from "@/components/LocationsMap";
 import SEO from "@/components/SEO";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <SEO 
-        title="Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston"
-        description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations."
-        keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
-      />
+  return <div className="min-h-screen">
+      <SEO title="Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston" description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations." keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict" />
       <Navigation />
       <SideDrawer />
       <main>
@@ -42,7 +36,7 @@ const Index = () => {
                 Find Us
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Visit one of our locations across Charleston, Mt. Pleasant, Summerville, and Savannah
+                Raise a glass and celebrate with us across Charleston, Mt. Pleasant, Summerville & Savannah!
               </p>
             </div>
             
@@ -54,17 +48,9 @@ const Index = () => {
             {/* Bottom CTA */}
             <div className="text-center mt-10">
               <p className="text-muted-foreground mb-4">Can't decide which location? All serve our award-winning menu!</p>
-              <a 
-                href="/locations" 
-                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group"
-              >
+              <a href="/locations" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group">
                 View all locations
-                <svg 
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
@@ -73,8 +59,6 @@ const Index = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
