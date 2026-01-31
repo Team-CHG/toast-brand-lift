@@ -23,8 +23,8 @@ const Rewards = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-accent/10 via-complementary to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              Toast! <span className="text-accent-foreground font-racing">Rewards</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+              Toast! <span className="font-racing">Rewards</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               Earn points with every visit and enjoy exclusive perks
@@ -33,7 +33,7 @@ const Rewards = () => {
             {/* Highlighted Promo Section */}
             <div className="bg-accent/20 border-2 border-accent/40 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-primary to-accent"></div>
-              <h2 className="text-2xl md:text-3xl font-bold text-accent-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                 GET $10 FOR EVERY $100 SPENT!
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -122,7 +122,7 @@ Earn double points Monday-Friday 12-3pm</p>
       <section className="py-16 bg-gradient-to-br from-accent/5 via-background to-complementary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <h2 className="text-3xl font-bold text-center text-primary mb-12">How It Works</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="border-accent/20">
@@ -176,30 +176,30 @@ Earn double points Monday-Friday 12-3pm</p>
 
             {/* Member Benefits */}
             <div className="mt-16 p-8 bg-complementary rounded-lg border border-accent/30">
-              <h2 className="text-3xl font-bold text-center mb-8">Member Benefits</h2>
+              <h2 className="text-3xl font-bold text-center text-primary mb-8">Member Benefits</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">1x Point</div>
+                  <div className="text-xl font-bold text-primary mb-2">1x Point</div>
                   <p className="text-muted-foreground">Per dollar spent</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">Birthday Rewards</div>
+                  <div className="text-xl font-bold text-primary mb-2">Birthday Rewards</div>
                   <p className="text-muted-foreground">Special treats on your day</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">Exclusive Offers</div>
+                  <div className="text-xl font-bold text-primary mb-2">Exclusive Offers</div>
                   <p className="text-muted-foreground">Members-only deals</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">Free Items</div>
+                  <div className="text-xl font-bold text-primary mb-2">Free Items</div>
                   <p className="text-muted-foreground">Discounts & freebies</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">Mobile Ordering</div>
+                  <div className="text-xl font-bold text-primary mb-2">Mobile Ordering</div>
                   <p className="text-muted-foreground">Easy app access</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-accent-foreground mb-2">First Updates</div>
+                  <div className="text-xl font-bold text-primary mb-2">First Updates</div>
                   <p className="text-muted-foreground">Be the first to know</p>
                 </div>
               </div>
@@ -207,7 +207,7 @@ Earn double points Monday-Friday 12-3pm</p>
 
             {/* CTA Section */}
             <div className="mt-16 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Start Earning?</h2>
+              <h2 className="text-3xl font-bold text-primary mb-4">Ready to Start Earning?</h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Join our rewards program today and start enjoying the benefits!
               </p>
