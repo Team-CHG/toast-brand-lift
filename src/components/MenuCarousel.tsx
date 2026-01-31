@@ -65,10 +65,10 @@ const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
           ]}
           className="w-full"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-3">
             {menuItems.map((item, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <CarouselItem key={index} className="pl-2 md:pl-3 basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
+                <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={item.image}
@@ -76,8 +76,8 @@ const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-3 text-center">
-                    <p className="font-medium text-sm">{item.name}</p>
+                  <div className="p-2 text-center">
+                    <p className="font-medium text-xs">{item.name}</p>
                   </div>
                 </div>
               </CarouselItem>
