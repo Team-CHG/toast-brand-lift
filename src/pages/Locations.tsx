@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import locationsBackground from "@/assets/locations-background.avif";
 
 const Locations = () => {
   return (
@@ -22,8 +23,13 @@ const Locations = () => {
 
       {/* Interactive Map Section - Celebratory Style */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" aria-labelledby="map-heading">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-complementary to-accent/5" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${locationsBackground})` }}
+        />
+        {/* Gradient Overlay to maintain color scheme */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/70 via-complementary/80 to-accent/60" />
         
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
