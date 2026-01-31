@@ -8,6 +8,7 @@ import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import homeBackground from "@/assets/home-background.avif";
+import homeDecorativeBackground from "@/assets/home-decorative-background.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
@@ -38,8 +39,8 @@ const FeatureSections = () => {
       {/* Decorative Background Image Section */}
       <section className="relative h-24 md:h-32 lg:h-40 bg-background overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${homeBackground})` }}
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+          style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
         />
         {/* Top gradient fade */}
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
@@ -107,8 +108,8 @@ const FeatureSections = () => {
       {/* Decorative Background Image Section - Bottom */}
       <section className="relative h-24 md:h-32 lg:h-40 bg-background overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${homeBackground})` }}
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
+          style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
         />
         {/* Top gradient fade */}
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
