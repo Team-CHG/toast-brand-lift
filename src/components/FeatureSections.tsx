@@ -156,12 +156,7 @@ const FeatureSections = () => {
             </p>
           </div>
           
-          {/* Menu Carousel - No headers, just the slideshow */}
-          <div className="mb-16">
-            <MenuCarousel showHeader={false} />
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <article className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img 
                 alt="Toast All Day chef preparing fresh gourmet breakfast dishes in the kitchen" 
@@ -198,6 +193,11 @@ const FeatureSections = () => {
                 </Button>
               </div>
             </article>
+          </div>
+          
+          {/* Menu Carousel - No headers, just the slideshow */}
+          <div className="mt-16">
+            <MenuCarousel showHeader={false} />
           </div>
         </div>
       </section>
