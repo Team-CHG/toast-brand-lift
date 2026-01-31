@@ -19,23 +19,9 @@ const Locations = () => {
       <Navigation />
       <SideDrawer />
       <Breadcrumbs />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-accent/30 to-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-              Find Your Nearest <span className="text-accent-foreground font-racing">Location</span>
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              Visit us at any of our locations across South Carolina and Georgia for an unforgettable dining experience.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Interactive Map Section - Celebratory Style */}
-      <section className="relative py-20 px-4 overflow-hidden" aria-labelledby="map-heading">
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden" aria-labelledby="map-heading">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-complementary to-accent/5" />
         
@@ -47,6 +33,9 @@ const Locations = () => {
         <div className="container mx-auto relative z-10">
           {/* Header with decorative line */}
           <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+              Find Your Nearest Location
+            </h1>
             <div className="inline-flex items-center gap-3 mb-4">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent" />
               <span className="text-accent uppercase tracking-widest text-sm font-medium">Explore Our Locations</span>
