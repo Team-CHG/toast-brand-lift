@@ -138,9 +138,6 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Locations List */}
         <div className="lg:col-span-1 space-y-3 max-h-[500px] overflow-y-auto pr-2">
-          <h3 className="text-lg font-semibold sticky top-0 py-2 bg-accent/20 px-3 rounded-lg text-accent-foreground">
-            Our Locations
-          </h3>
           {locations.map((location, index) => <button key={index} onClick={() => handleLocationClick(location)} className={`w-full text-left p-4 rounded-lg border transition-all ${selectedLocation?.name === location.name ? 'border-accent bg-accent/10 shadow-md' : 'border-accent/20 hover:border-accent/50 hover:bg-accent/5'}`}>
               <h4 className="font-semibold text-sm text-foreground">{location.name}</h4>
               {location.temporarilyClosed && <p className="text-xs font-semibold text-red-600 mt-1">Temporarily Closed</p>}
