@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -20,32 +21,37 @@ const newsItems = [
 
 const NewsEvents = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <SEO 
         title="News & Events - Toast All Day | Promotions, Specials & Celebrations"
         description="Stay updated with Toast All Day news, events, and promotions. Mother's Day specials, military discounts, 20th anniversary celebrations, and exclusive offers."
         keywords="Toast All Day news, restaurant events Charleston, brunch promotions, special offers, military discount, holiday specials"
       />
+      <FestiveBackdrop />
       <Navigation />
       <SideDrawer />
       <Breadcrumbs />
-      <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      
+      {/* Hero Section */}
+      <section className="relative py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">News & Events</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">News & Events</h1>
+          <p className="text-lg text-foreground max-w-2xl mx-auto">Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.</p>
         </div>
       </section>
+      
+      {/* News Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsItems.map((item, index) => (
-              <Link key={index} to={`/news-events/${item.slug}`} className="group bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-primary/30 block">
+              <Link key={index} to={`/news-events/${item.slug}`} className="group bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/30 block">
                 <div className="aspect-video overflow-hidden">
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-3">{item.category}</span>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <span className="inline-block px-3 py-1 text-xs font-semibold text-accent bg-accent/10 rounded-full mb-3">{item.category}</span>
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
               </Link>
@@ -53,11 +59,15 @@ const NewsEvents = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10">
+      
+      {/* Newsletter CTA */}
+      <section className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Don't Miss Out!</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Sign up for our newsletter to get the latest news, events, and exclusive offers.</p>
-          <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors">Subscribe Now</a>
+          <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary mb-4">Don't Miss Out!</h2>
+            <p className="text-foreground mb-8 max-w-xl mx-auto">Sign up for our newsletter to get the latest news, events, and exclusive offers.</p>
+            <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors">Subscribe Now</a>
+          </div>
         </div>
       </section>
       <Footer />

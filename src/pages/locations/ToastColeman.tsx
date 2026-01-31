@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
@@ -57,6 +58,7 @@ const ToastColeman = () => {
         longitude={location.longitude}
         url={`https://toast-all-day.lovable.app/locations/toast-coleman`}
       />
+      <FestiveBackdrop />
       <Navigation />
       <SideDrawer />
       <main>
@@ -92,46 +94,45 @@ const ToastColeman = () => {
             <div className="flex flex-wrap justify-center gap-8 text-center md:text-left md:justify-between items-center">
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-accent" />
-                <span className="font-medium">{location.address}, {location.fullCity}</span>
+                <span className="font-medium text-foreground">{location.address}, {location.fullCity}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent" />
-                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium hover:text-accent transition-colors">
+                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium text-foreground hover:text-accent transition-colors">
                   {location.phone}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-accent" />
-                <span className="font-medium">{location.hours}</span>
+                <span className="font-medium text-foreground">{location.hours}</span>
               </div>
             </div>
           </div>
         </section>
 
-
         {/* Content Section */}
-        <section className="py-16 px-4 bg-background">
+        <section className="py-16 px-4">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Info Column */}
               <div className="space-y-8">
-                <div>
-                  <h2 className="text-3xl mb-4">About Our {location.neighborhood} Location</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                  <h2 className="text-3xl mb-4 text-primary">About Our {location.neighborhood} Location</h2>
+                  <p className="text-foreground leading-relaxed mb-4">
                     Toast! on Coleman brings our beloved breakfast and brunch experience to the Coleman Boulevard corridor in Mt. Pleasant. This location features a welcoming atmosphere perfect for families and friends gathering for a delicious meal.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed">
                     Conveniently located near Shem Creek and Patriots Point, our Coleman Boulevard location has been a favorite for Mt. Pleasant residents and visitors to the East Cooper area. While we're temporarily closed, we invite you to visit our nearby Hungry Neck Boulevard location for the same great Toast! experience.
                   </p>
                 </div>
 
                 {/* Unique Local Content */}
-                <div className="bg-complementary rounded-xl p-6">
-                  <h3 className="text-xl mb-4 flex items-center gap-2">
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 flex items-center gap-2 text-primary">
                     <Star className="h-5 w-5 text-accent" />
                     About This Location
                   </h3>
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="space-y-2 text-foreground">
                     <li>• Minutes from Shem Creek's waterfront restaurants and bars</li>
                     <li>• Easy access from Patriots Point and the USS Yorktown</li>
                     <li>• Family-friendly atmosphere with kids' menu options</li>
@@ -141,12 +142,12 @@ const ToastColeman = () => {
                 </div>
 
                 {/* NAP Display */}
-                <div className="space-y-4 bg-card border rounded-xl p-6">
-                  <h3 className="text-xl mb-4">Contact & Hours</h3>
+                <div className="space-y-4 bg-card/80 backdrop-blur-sm border rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 text-primary">Contact & Hours</h3>
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Toast! on Coleman</h4>
+                      <h4 className="font-semibold text-foreground">Toast! on Coleman</h4>
                       <p className="text-muted-foreground">{location.address}</p>
                       <p className="text-muted-foreground">{location.fullCity}</p>
                     </div>
@@ -155,7 +156,7 @@ const ToastColeman = () => {
                   <div className="flex items-start gap-4">
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Phone</h4>
+                      <h4 className="font-semibold text-foreground">Phone</h4>
                       <a 
                         href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}
                         className="text-muted-foreground hover:text-accent transition-colors"
@@ -168,7 +169,7 @@ const ToastColeman = () => {
                   <div className="flex items-start gap-4">
                     <Clock className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Hours</h4>
+                      <h4 className="font-semibold text-foreground">Hours</h4>
                       <p className="text-muted-foreground">{location.hours}</p>
                       <p className="text-destructive text-sm font-medium mt-1">Currently Temporarily Closed</p>
                     </div>
@@ -177,7 +178,7 @@ const ToastColeman = () => {
                   <div className="flex items-start gap-4">
                     <Car className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Parking</h4>
+                      <h4 className="font-semibold text-foreground">Parking</h4>
                       <p className="text-muted-foreground">{location.parking}</p>
                     </div>
                   </div>
@@ -215,11 +216,11 @@ const ToastColeman = () => {
                 </div>
                 
                 {/* Nearby Attractions */}
-                <div className="bg-complementary rounded-xl p-6">
-                  <h3 className="text-xl mb-4">Nearby Attractions</h3>
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 text-primary">Nearby Attractions</h3>
                   <div className="flex flex-wrap gap-2">
                     {location.nearbyAttractions.map((attraction) => (
-                      <span key={attraction} className="bg-card px-3 py-1 rounded-full text-sm border">
+                      <span key={attraction} className="bg-background px-3 py-1 rounded-full text-sm border text-foreground">
                         {attraction}
                       </span>
                     ))}
@@ -234,23 +235,25 @@ const ToastColeman = () => {
         <MenuCarousel />
 
         {/* Secondary CTA */}
-        <section className="py-12 bg-secondary">
+        <section className="py-12">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl mb-4">Visit Our Other Mt. Pleasant Location</h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              While this location is temporarily closed, you can enjoy the same great Toast! experience at our Hungry Neck Boulevard location, just minutes away!
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg">
-                <Link to="/locations/toast-mt-pleasant">
-                  Toast! Mt. Pleasant
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/locations">
-                  View All Locations
-                </Link>
-              </Button>
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
+              <h2 className="text-3xl mb-4 text-primary">Visit Our Other Mt. Pleasant Location</h2>
+              <p className="text-foreground mb-6 max-w-2xl mx-auto">
+                While this location is temporarily closed, you can enjoy the same great Toast! experience at our Hungry Neck Boulevard location, just minutes away!
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button asChild size="lg">
+                  <Link to="/locations/toast-mt-pleasant">
+                    Toast! Mt. Pleasant
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/locations">
+                    View All Locations
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
