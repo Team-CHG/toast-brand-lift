@@ -47,8 +47,8 @@ const FeatureSections = () => {
         <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-12 md:py-20 bg-background">
+      {/* About Section - A Toast to Awards */}
+      <section id="about" className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
             <div className="order-2">
@@ -143,13 +143,8 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Menu Preview */}
-      <section id="menu" className="py-20 bg-background relative overflow-hidden">
-        {/* Subtle background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
-          style={{ backgroundImage: `url(${menuSectionBackground})` }}
-        />
+      {/* Menu Preview - Explore Our Menu */}
+      <section id="menu" className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Explore Our Menu</h2>
@@ -199,13 +194,8 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Gift Cards Section */}
-      <section className="py-20 bg-complementary relative overflow-hidden">
-        {/* Subtle background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
-          style={{ backgroundImage: `url(${giftcardBackground})` }}
-        />
+      {/* Gift Cards Section - Share the Food You Love */}
+      <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Share the Food You Love</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
