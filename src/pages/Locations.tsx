@@ -29,7 +29,7 @@ const Locations = () => {
           style={{ backgroundImage: `url(${locationsBackground})` }}
         />
         {/* Gradient Overlay to maintain color scheme */}
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/70 via-complementary/80 to-accent/60" />
+        <div className="absolute inset-0 bg-[#e0f6ff]/80" />
         
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
