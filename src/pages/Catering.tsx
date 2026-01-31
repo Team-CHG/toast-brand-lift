@@ -6,10 +6,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Utensils, Calendar, Users, Award } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import pageBackground from "@/assets/page-background.avif";
 
 const Catering = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-20"
+        style={{ backgroundImage: `url(${pageBackground})` }}
+      />
+      {/* Color Overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-accent/10 via-complementary/90 to-accent/10 -z-10" />
       <SEO 
         title="Catering Services - Toast All Day | Charleston Hospitality Group"
         description="Toast All Day catering for weddings, corporate events, bridal showers & more. Award-winning breakfast and brunch catering in Charleston, Mt Pleasant & Summerville."
