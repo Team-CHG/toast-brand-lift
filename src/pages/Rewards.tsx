@@ -20,7 +20,7 @@ const Rewards = () => {
       <SideDrawer />
       <Breadcrumbs />
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-accent/30 to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-accent/10 via-complementary to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
@@ -61,7 +61,7 @@ Earn double points Monday-Friday 12-3pm</p>
       </section>
 
       {/* Download App Section */}
-      <section className="py-16">
+      <section className="py-16 bg-complementary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="p-8 bg-background rounded-2xl border-2 border-accent/30 shadow-lg">
@@ -119,7 +119,7 @@ Earn double points Monday-Friday 12-3pm</p>
       </section>
 
       {/* How It Works */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-accent/5 via-background to-complementary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
@@ -175,7 +175,7 @@ Earn double points Monday-Friday 12-3pm</p>
             </div>
 
             {/* Member Benefits */}
-            <div className="mt-16 p-8 bg-accent/20 rounded-lg border border-accent/30">
+            <div className="mt-16 p-8 bg-complementary rounded-lg border border-accent/30">
               <h2 className="text-3xl font-bold text-center mb-8">Member Benefits</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">

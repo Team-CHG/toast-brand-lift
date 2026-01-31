@@ -19,7 +19,7 @@ const Catering = () => {
       <SideDrawer />
       <Breadcrumbs />
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-accent/10 via-complementary to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -33,7 +33,7 @@ const Catering = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-br from-accent/5 via-background to-complementary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 text-center">
@@ -99,7 +99,7 @@ const Catering = () => {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-16 p-8 bg-secondary rounded-lg text-center">
+            <div className="mt-16 p-8 bg-complementary rounded-lg text-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Start Planning?</h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Let us make your next event unforgettable with our delicious catering services.
