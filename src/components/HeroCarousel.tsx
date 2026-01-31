@@ -18,8 +18,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { useIsMobile } from "@/hooks/use-mobile";
 import heroSlideHome from "@/assets/hero-slide-home-new.webp";
 import heroSlideActivities from "@/assets/hero-slide-activities-new.webp";
-import heroMobileHome from "@/assets/hero-mobile-home.avif";
-import heroMobile2 from "@/assets/hero-mobile-2.png";
+import heroMobile1 from "@/assets/hero-mobile-1.png";
+import heroMobileActivities from "@/assets/hero-mobile-activities.avif";
 
 // Menu item images for embedded carousel
 import friedGreenTomatoes from "@/assets/menu/fried-green-tomatoes.png";
@@ -97,8 +97,8 @@ const desktopSlides: Slide[] = [
 ];
 
 const mobileSlides: Slide[] = [
-  { type: 'image', image: heroMobileHome },
-  { type: 'image', image: heroMobile2 },
+  { type: 'image', image: heroMobile1 },
+  { type: 'image', image: heroMobileActivities },
 ];
 
 const HeroCarousel = () => {
