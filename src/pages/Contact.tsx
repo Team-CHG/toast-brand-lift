@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import FestiveBackdrop from "@/components/FestiveBackdrop";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -54,17 +55,19 @@ const Contact = () => {
         description="Contact Toast All Day for reservations, catering inquiries, or feedback. Reach us by phone, email, or visit any of our 7 locations in Charleston, Mt Pleasant, Summerville & Savannah."
         keywords="contact Toast All Day, Charleston restaurant contact, catering inquiry, restaurant feedback"
       />
+      <FestiveBackdrop />
       <Navigation />
       <SideDrawer />
       <Breadcrumbs />
+      
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Get in <span className="text-primary">Touch</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
+              Get in <span className="text-accent">Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-foreground">
               We'd love to hear from you! Send us a message and we'll respond as soon as possible.
             </p>
           </div>
@@ -77,9 +80,9 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Contact Form */}
-              <Card>
+              <Card className="bg-card/80 backdrop-blur-sm shadow-lg">
                 <CardHeader>
-                  <CardTitle>Send us a Message</CardTitle>
+                  <CardTitle className="text-primary">Send us a Message</CardTitle>
                   <CardDescription>Fill out the form below and we'll get back to you soon.</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -155,19 +158,19 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="space-y-6">
-                <Card>
+                <Card className="bg-card/80 backdrop-blur-sm shadow-lg">
                   <CardHeader>
-                    <CardTitle>Contact Information</CardTitle>
+                    <CardTitle className="text-primary">Contact Information</CardTitle>
                     <CardDescription>Other ways to reach us</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <Mail className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Email</p>
+                        <p className="font-medium text-foreground">Email</p>
                         <a 
                           href="mailto:info@toastallday.com" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-accent transition-colors"
                         >
                           info@toastallday.com
                         </a>
@@ -175,12 +178,12 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <Phone className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Phone</p>
+                        <p className="font-medium text-foreground">Phone</p>
                         <a 
                           href="tel:9802588278" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-accent transition-colors"
                         >
                           (980) 258-8278
                         </a>
@@ -188,12 +191,12 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">Visit Us</p>
+                        <p className="font-medium text-foreground">Visit Us</p>
                         <a 
                           href="/locations" 
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-accent transition-colors"
                         >
                           View all locations
                         </a>
@@ -202,9 +205,9 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="bg-card/80 backdrop-blur-sm shadow-lg">
                   <CardHeader>
-                    <CardTitle>Catering Inquiries</CardTitle>
+                    <CardTitle className="text-primary">Catering Inquiries</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">

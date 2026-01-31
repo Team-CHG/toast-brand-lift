@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
+import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
@@ -57,6 +58,7 @@ const ToastSummerville = () => {
         longitude={location.longitude}
         url={`https://toast-all-day.lovable.app/locations/toast-summerville`}
       />
+      <FestiveBackdrop />
       <Navigation />
       <SideDrawer />
       <main>
@@ -82,46 +84,45 @@ const ToastSummerville = () => {
             <div className="flex flex-wrap justify-center gap-8 text-center md:text-left md:justify-between items-center">
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-accent" />
-                <span className="font-medium">{location.address}, {location.fullCity}</span>
+                <span className="font-medium text-foreground">{location.address}, {location.fullCity}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent" />
-                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium hover:text-accent transition-colors">
+                <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="font-medium text-foreground hover:text-accent transition-colors">
                   {location.phone}
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-accent" />
-                <span className="font-medium">{location.hours}</span>
+                <span className="font-medium text-foreground">{location.hours}</span>
               </div>
             </div>
           </div>
         </section>
 
-
         {/* Content Section */}
-        <section className="py-16 px-4 bg-background">
+        <section className="py-16 px-4">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Info Column */}
               <div className="space-y-8">
-                <div>
-                  <h2 className="text-3xl mb-4">Best Breakfast & Brunch in Summerville, "Flowertown in the Pines"</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                  <h2 className="text-3xl mb-4 text-primary">Best Breakfast & Brunch in Summerville, "Flowertown in the Pines"</h2>
+                  <p className="text-foreground leading-relaxed mb-4">
                     Toast! Summerville brings our award-winning breakfast and brunch to the charming town of Summerville. Known as "Flowertown in the Pines," this location offers the perfect spot for a delicious meal in a welcoming atmosphere.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed">
                     Located on Old Trolley Road, we're the ideal destination for Summerville residents and visitors looking for the best breakfast and brunch in Dorchester County. With easy access from I-26 and plenty of parking, it's never been easier to enjoy the Toast! experience in Summerville.
                   </p>
                 </div>
 
                 {/* Unique Local Content */}
-                <div className="bg-complementary rounded-xl p-6">
-                  <h3 className="text-xl mb-4 flex items-center gap-2">
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 flex items-center gap-2 text-primary">
                     <Star className="h-5 w-5 text-accent" />
                     Why Locals Love This Location
                   </h3>
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="space-y-2 text-foreground">
                     <li>• Perfect brunch spot for Summerville's growing community</li>
                     <li>• Near beautiful Azalea Park and downtown Summerville</li>
                     <li>• Easy access from I-26 with spacious parking</li>
@@ -131,12 +132,12 @@ const ToastSummerville = () => {
                 </div>
 
                 {/* NAP Display */}
-                <div className="space-y-4 bg-card border rounded-xl p-6">
-                  <h3 className="text-xl mb-4">Contact & Hours</h3>
+                <div className="space-y-4 bg-card/80 backdrop-blur-sm border rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 text-primary">Contact & Hours</h3>
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Toast! Summerville</h4>
+                      <h4 className="font-semibold text-foreground">Toast! Summerville</h4>
                       <p className="text-muted-foreground">{location.address}</p>
                       <p className="text-muted-foreground">{location.fullCity}</p>
                     </div>
@@ -145,7 +146,7 @@ const ToastSummerville = () => {
                   <div className="flex items-start gap-4">
                     <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Phone</h4>
+                      <h4 className="font-semibold text-foreground">Phone</h4>
                       <a 
                         href={`tel:${location.phone.replace(/[^0-9]/g, '')}`}
                         className="text-muted-foreground hover:text-accent transition-colors"
@@ -158,7 +159,7 @@ const ToastSummerville = () => {
                   <div className="flex items-start gap-4">
                     <Clock className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Hours</h4>
+                      <h4 className="font-semibold text-foreground">Hours</h4>
                       <p className="text-muted-foreground">{location.hours}</p>
                     </div>
                   </div>
@@ -166,7 +167,7 @@ const ToastSummerville = () => {
                   <div className="flex items-start gap-4">
                     <Car className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold">Parking</h4>
+                      <h4 className="font-semibold text-foreground">Parking</h4>
                       <p className="text-muted-foreground">{location.parking}</p>
                     </div>
                   </div>
@@ -204,11 +205,11 @@ const ToastSummerville = () => {
                 </div>
                 
                 {/* Nearby Attractions */}
-                <div className="bg-complementary rounded-xl p-6">
-                  <h3 className="text-xl mb-4">Nearby Attractions</h3>
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                  <h3 className="text-xl mb-4 text-primary">Nearby Attractions</h3>
                   <div className="flex flex-wrap gap-2">
                     {location.nearbyAttractions.map((attraction) => (
-                      <span key={attraction} className="bg-card px-3 py-1 rounded-full text-sm border">
+                      <span key={attraction} className="bg-background px-3 py-1 rounded-full text-sm border text-foreground">
                         {attraction}
                       </span>
                     ))}
@@ -223,23 +224,25 @@ const ToastSummerville = () => {
         <MenuCarousel />
 
         {/* Secondary CTA */}
-        <section className="py-12 bg-secondary">
+        <section className="py-12">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl mb-4">Ready for the Best Brunch in Summerville?</h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Skip the wait! Order online for pickup or join our digital waitlist before you arrive.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg">
-                <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
-                  Order Now <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
-                  Join Waitlist
-                </a>
-              </Button>
+            <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
+              <h2 className="text-3xl mb-4 text-primary">Ready for the Best Brunch in Summerville?</h2>
+              <p className="text-foreground mb-6 max-w-2xl mx-auto">
+                Skip the wait! Order online for pickup or join our digital waitlist before you arrive.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button asChild size="lg">
+                  <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
+                    Order Now <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
+                    Join Waitlist
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
