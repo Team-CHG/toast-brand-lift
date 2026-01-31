@@ -18,7 +18,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-primary text-primary-foreground py-16" role="contentinfo">
+    <footer className="bg-[#f9f8f6] text-primary py-16" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start">
@@ -137,7 +137,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="border-t border-primary-foreground/20 pt-8">
+        <div className="border-t border-primary/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="opacity-90 text-sm">
               © 2025 Toast All Day. All rights reserved. A Charleston Hospitality Group restaurant.
