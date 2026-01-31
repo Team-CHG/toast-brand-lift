@@ -7,10 +7,18 @@ import { Gift, Star, TrendingUp, Zap, Smartphone } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import appScreenshot from "@/assets/app-screenshot.png";
+import pageBackground from "@/assets/page-background.avif";
 
 const Rewards = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-20"
+        style={{ backgroundImage: `url(${pageBackground})` }}
+      />
+      {/* Color Overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-accent/10 via-complementary/90 to-accent/10 -z-10" />
       <SEO 
         title="Rewards Program - Toast All Day | Earn $10 for Every $100"
         description="Join Toast All Day Rewards and earn $10 for every $100 spent. Get birthday rewards, exclusive offers, double points Monday-Friday 12-3pm. Sign up free today!"
