@@ -71,7 +71,6 @@ const mobileSlides: Slide[] = [
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [videoEnded, setVideoEnded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
@@ -79,57 +78,45 @@ const HeroCarousel = () => {
   
   const slides = isMobile ? mobileSlides : desktopSlides;
 
-  // Handle video end - start the carousel cycling
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-    setCurrentSlide(1); // Move to first image slide
-  };
-
-  // Auto-cycle only after video has ended
+  // Auto-cycle through all slides (including video)
   useEffect(() => {
-    if (!videoEnded) return;
+    // Don't auto-advance if currently on video slide - let it play
+    if (currentSlide === 0) return;
     
     const timer = setInterval(() => {
-      setCurrentSlide(prev => {
-        const next = prev + 1;
-        // Skip video slide (index 0) when cycling
-        return next >= slides.length ? 1 : next;
-      });
+      setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, [videoEnded, slides.length]);
+  }, [currentSlide, slides.length]);
+
+  // Handle video end - move to next slide
+  const handleVideoEnd = () => {
+    setCurrentSlide(1);
+  };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
     if (index === 0 && videoRef.current) {
-      setVideoEnded(false);
       videoRef.current.currentTime = 0;
       videoRef.current.play();
     }
   };
 
   const previousSlide = () => {
-    setCurrentSlide(prev => {
-      if (videoEnded) {
-        // Skip video when going backwards after it's played
-        const newIndex = prev - 1;
-        return newIndex < 1 ? slides.length - 1 : newIndex;
-      }
-      return (prev - 1 + slides.length) % slides.length;
-    });
+    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
+    // If navigating to video, restart it
+    if (currentSlide === 1 && videoRef.current) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play();
+        }
+      }, 100);
+    }
   };
 
   const nextSlide = () => {
-    if (currentSlide === 0 && !videoEnded) {
-      // If on video and it hasn't ended, skip to first image
-      setVideoEnded(true);
-      setCurrentSlide(1);
-    } else {
-      setCurrentSlide(prev => {
-        const next = prev + 1;
-        return next >= slides.length ? 1 : next;
-      });
-    }
+    setCurrentSlide(prev => (prev + 1) % slides.length);
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -256,36 +243,30 @@ const HeroCarousel = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows - hide during video playback */}
-      {(videoEnded || currentSlide !== 0) && (
-        <>
-          <button 
-            onClick={previousSlide} 
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation"
-          >
-            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-          </button>
-          <button 
-            onClick={nextSlide} 
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation"
-          >
-            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-          </button>
-        </>
-      )}
+      {/* Navigation Arrows - always visible */}
+      <button 
+        onClick={previousSlide} 
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation"
+      >
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+      </button>
+      <button 
+        onClick={nextSlide} 
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg touch-manipulation"
+      >
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+      </button>
 
-      {/* Indicators - hide during initial video playback */}
-      {(videoEnded || currentSlide !== 0) && (
-        <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-          {slides.slice(1).map((_, index) => (
-            <button 
-              key={index} 
-              onClick={() => goToSlide(index + 1)} 
-              className={`h-2 rounded-full transition-all ${index + 1 === currentSlide ? "w-12 bg-accent" : "w-2 bg-card/50 hover:bg-card/70"}`} 
-            />
-          ))}
-        </div>
-      )}
+      {/* Indicators - show all slides including video */}
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        {slides.map((_, index) => (
+          <button 
+            key={index} 
+            onClick={() => goToSlide(index)} 
+            className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-12 bg-accent" : "w-2 bg-card/50 hover:bg-card/70"}`} 
+          />
+        ))}
+      </div>
     </section>
   );
 };
