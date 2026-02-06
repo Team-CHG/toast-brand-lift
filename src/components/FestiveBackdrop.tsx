@@ -1,4 +1,4 @@
-import pageBackground from "@/assets/page-background.avif";
+import pageBackground from "@/assets/page-background.png";
 import pageBackgroundMobile from "@/assets/page-background-mobile.avif";
 
 /**
