@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -19,6 +20,9 @@ import {
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
+import TurnstileWidget from "@/components/TurnstileWidget";
+import { supabase } from "@/integrations/supabase/client";
+import { Loader2 } from "lucide-react";
 
 const franchiseSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -36,6 +40,8 @@ type FranchiseFormData = z.infer<typeof franchiseSchema>;
 
 const Franchise = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const form = useForm<FranchiseFormData>({
     resolver: zodResolver(franchiseSchema),
@@ -52,13 +58,62 @@ const Franchise = () => {
     },
   });
 
-  const onSubmit = (data: FranchiseFormData) => {
-    console.log("Franchise inquiry submitted:", data);
-    toast({
-      title: "Inquiry Submitted!",
-      description: "Thank you for your interest in franchising with Toast All Day. We'll be in touch soon!",
-    });
-    form.reset();
+  const onSubmit = async (data: FranchiseFormData) => {
+    if (!turnstileToken) {
+      toast({
+        title: "Verification Required",
+        description: "Please complete the spam verification.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data: response, error } = await supabase.functions.invoke("send-form-email", {
+        body: {
+          formType: "franchise",
+          turnstileToken,
+          data: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            city: data.city,
+            state: data.state,
+            investmentCapital: data.investmentCapital,
+            experience: data.experience || "",
+            message: data.message,
+          },
+        },
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      if (response?.error) {
+        throw new Error(response.error);
+      }
+
+      toast({
+        title: "Inquiry Submitted!",
+        description: "Thank you for your interest in franchising with Toast All Day. We'll be in touch soon!",
+      });
+      
+      form.reset();
+      setTurnstileToken(null);
+    } catch (error) {
+      console.error("Error submitting franchise inquiry:", error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to submit inquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -272,12 +327,28 @@ const Franchise = () => {
                     )}
                   />
 
+                  <div className="flex justify-center">
+                    <TurnstileWidget
+                      onVerify={setTurnstileToken}
+                      onError={() => setTurnstileToken(null)}
+                      onExpire={() => setTurnstileToken(null)}
+                    />
+                  </div>
+
                   <Button
                     type="submit"
                     size="lg"
                     className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg"
+                    disabled={isSubmitting || !turnstileToken}
                   >
-                    Submit Franchise Inquiry
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Submitting...
+                      </>
+                    ) : (
+                      "Submit Franchise Inquiry"
+                    )}
                   </Button>
                 </form>
               </Form>
