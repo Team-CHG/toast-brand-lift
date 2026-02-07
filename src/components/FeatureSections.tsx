@@ -11,6 +11,7 @@ import homeBackground from "@/assets/home-background.avif";
 import homeDecorativeBackground from "@/assets/home-decorative-background.avif";
 import homeDecorativeTopMobile from "@/assets/home-decorative-top-mobile.avif";
 import homeDecorativeBottomMobile from "@/assets/home-decorative-bottom-mobile.avif";
+import homeDecorativeBottomMobile2 from "@/assets/home-decorative-bottom-mobile-2.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
@@ -119,7 +120,7 @@ const FeatureSections = () => {
         {/* Mobile background */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-          style={{ backgroundImage: `url(${homeDecorativeBottomMobile})` }}
+          style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})` }}
         />
         {/* Desktop background */}
         <div 
