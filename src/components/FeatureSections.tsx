@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import foodSlide1 from "@/assets/food-slide-1.jpg";
-import foodSlide2 from "@/assets/food-slide-2.jpg";
-import foodSlide3 from "@/assets/food-slide-3.jpg";
+import awardsSlide1 from "@/assets/awards-slide-1.avif";
+import awardsSlide2 from "@/assets/awards-slide-2.avif";
+import awardsSlide3 from "@/assets/awards-slide-3.avif";
+import awardsSlide4 from "@/assets/awards-slide-4.avif";
+import awardsSlide5 from "@/assets/awards-slide-5.avif";
 import menuImage1 from "@/assets/food-slide-1-new.jpg";
 import menuImage2 from "@/assets/food-slide-2-new.jpg";
 import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
@@ -22,7 +24,7 @@ import newsletterBackground from "@/assets/newsletter-background.avif";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
-const foodSlides = [foodSlide1, foodSlide2, foodSlide3];
+const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
