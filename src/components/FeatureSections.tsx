@@ -43,7 +43,7 @@ const FeatureSections = () => {
   }, []);
   return <>
       {/* Decorative Background Image Section */}
-      <section className="relative h-40 sm:h-44 md:h-52 lg:h-64 bg-background overflow-hidden">
+      <section className="relative h-28 sm:h-32 md:h-40 lg:h-48 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
           className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
@@ -118,7 +118,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Decorative Background Image Section - Bottom */}
-      <section className="relative h-40 sm:h-44 md:h-52 lg:h-64 bg-background overflow-hidden">
+      <section className="relative h-28 sm:h-32 md:h-40 lg:h-48 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
           className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
