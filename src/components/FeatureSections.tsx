@@ -40,7 +40,7 @@ const FeatureSections = () => {
   }, []);
   return <>
       {/* Decorative Background Image Section */}
-      <section className="relative h-56 sm:h-60 md:h-52 lg:h-64 bg-background overflow-hidden">
+      <section className="relative h-40 sm:h-44 md:h-52 lg:h-64 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
           className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
@@ -58,7 +58,7 @@ const FeatureSections = () => {
       </section>
 
       {/* About Section - A Toast to Awards */}
-      <section id="about" className="py-12 md:py-20">
+      <section id="about" className="py-6 md:py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
             <div className="order-2">
@@ -115,7 +115,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Decorative Background Image Section - Bottom */}
-      <section className="relative h-56 sm:h-60 md:h-52 lg:h-64 bg-background overflow-hidden">
+      <section className="relative h-40 sm:h-44 md:h-52 lg:h-64 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
           className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
