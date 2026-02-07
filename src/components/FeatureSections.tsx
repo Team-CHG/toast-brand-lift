@@ -9,6 +9,8 @@ import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import homeBackground from "@/assets/home-background.avif";
 import homeDecorativeBackground from "@/assets/home-decorative-background.avif";
+import homeDecorativeTopMobile from "@/assets/home-decorative-top-mobile.avif";
+import homeDecorativeBottomMobile from "@/assets/home-decorative-bottom-mobile.avif";
 import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
@@ -39,8 +41,14 @@ const FeatureSections = () => {
   return <>
       {/* Decorative Background Image Section */}
       <section className="relative h-56 sm:h-60 md:h-52 lg:h-64 bg-background overflow-hidden">
+        {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${homeDecorativeTopMobile})` }}
+        />
+        {/* Desktop background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat hidden md:block"
           style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
         />
         {/* Top gradient fade */}
@@ -108,8 +116,14 @@ const FeatureSections = () => {
 
       {/* Decorative Background Image Section - Bottom */}
       <section className="relative h-56 sm:h-60 md:h-52 lg:h-64 bg-background overflow-hidden">
+        {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${homeDecorativeBottomMobile})` }}
+        />
+        {/* Desktop background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat hidden md:block"
           style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
         />
         {/* Top gradient fade */}
