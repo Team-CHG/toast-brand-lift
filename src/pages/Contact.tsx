@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -30,6 +30,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   
   const form = useForm<ContactFormValues>({
@@ -76,6 +77,7 @@ const Contact = () => {
         throw new Error(response.error);
       }
 
+      setIsSubmitted(true);
       toast({
         title: "Message Sent!",
         description: "Thank you for contacting us. We'll get back to you soon.",
@@ -133,6 +135,24 @@ const Contact = () => {
                   <CardDescription>Fill out the form below and we'll get back to you soon.</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {isSubmitted ? (
+                    <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                      <div className="rounded-full bg-green-100 p-4">
+                        <CheckCircle2 className="h-12 w-12 text-green-600" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary">Message Sent!</h3>
+                      <p className="text-muted-foreground max-w-sm">
+                        Thank you for contacting us. We'll get back to you as soon as possible.
+                      </p>
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setIsSubmitted(false)}
+                        className="mt-4"
+                      >
+                        Send Another Message
+                      </Button>
+                    </div>
+                  ) : (
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                       <FormField
@@ -220,6 +240,7 @@ const Contact = () => {
                       </Button>
                     </form>
                   </Form>
+                  )}
                 </CardContent>
               </Card>
 
