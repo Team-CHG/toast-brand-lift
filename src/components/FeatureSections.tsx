@@ -9,6 +9,8 @@ import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import homeBackground from "@/assets/home-background.avif";
 import homeDecorativeBackground from "@/assets/home-decorative-background.avif";
+import homeDecorativeTopDesktop from "@/assets/home-decorative-top-desktop.avif";
+import homeDecorativeBottomDesktop from "@/assets/home-decorative-bottom-desktop.avif";
 import homeDecorativeTopMobile from "@/assets/home-decorative-top-mobile.avif";
 import homeDecorativeBottomMobile from "@/assets/home-decorative-bottom-mobile.avif";
 import homeDecorativeBottomMobile2 from "@/assets/home-decorative-bottom-mobile-2.avif";
@@ -50,7 +52,7 @@ const FeatureSections = () => {
         {/* Desktop background */}
         <div 
           className="absolute inset-0 bg-cover bg-top bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
+          style={{ backgroundImage: `url(${homeDecorativeTopDesktop})` }}
         />
         {/* Top gradient fade */}
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
@@ -125,7 +127,7 @@ const FeatureSections = () => {
         {/* Desktop background */}
         <div 
           className="absolute inset-0 bg-cover bg-bottom bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${homeDecorativeBackground})` }}
+          style={{ backgroundImage: `url(${homeDecorativeBottomDesktop})` }}
         />
         {/* Top gradient fade */}
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
