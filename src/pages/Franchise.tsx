@@ -22,7 +22,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import TurnstileWidget from "@/components/TurnstileWidget";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2 } from "lucide-react";
+import { Loader2, CheckCircle2 } from "lucide-react";
 
 const franchiseSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50),
@@ -41,6 +41,7 @@ type FranchiseFormData = z.infer<typeof franchiseSchema>;
 const Franchise = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const form = useForm<FranchiseFormData>({
@@ -97,6 +98,7 @@ const Franchise = () => {
         throw new Error(response.error);
       }
 
+      setIsSubmitted(true);
       toast({
         title: "Inquiry Submitted!",
         description: "Thank you for your interest in franchising with Toast All Day. We'll be in touch soon!",
@@ -187,11 +189,28 @@ const Franchise = () => {
               </div>
             </div>
 
-            {/* Franchise Form */}
             <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 lg:p-12">
               <h2 className="text-3xl font-bold text-primary mb-8 text-center">
                 Start Your Franchise Journey
               </h2>
+              {isSubmitted ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                  <div className="rounded-full bg-green-100 p-4">
+                    <CheckCircle2 className="h-12 w-12 text-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary">Inquiry Submitted!</h3>
+                  <p className="text-muted-foreground max-w-sm">
+                    Thank you for your interest in franchising with Toast All Day. Our team will review your inquiry and be in touch soon.
+                  </p>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setIsSubmitted(false)}
+                    className="mt-4"
+                  >
+                    Submit Another Inquiry
+                  </Button>
+                </div>
+              ) : (
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -352,6 +371,7 @@ const Franchise = () => {
                   </Button>
                 </form>
               </Form>
+              )}
             </div>
           </div>
         </div>
