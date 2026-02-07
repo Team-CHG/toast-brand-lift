@@ -94,7 +94,7 @@ const handler = async (req: Request): Promise<Response> => {
       to: ["toast@teamchg.com"],
       subject,
       html: htmlContent,
-      reply_to: data.email,
+      replyTo: data.email,
     });
 
     console.log("Email sent successfully:", emailResponse);
