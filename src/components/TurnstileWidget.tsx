@@ -1,15 +1,15 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
 declare global {
   interface Window {
-    turnstile: {
+    turnstile?: {
       render: (
         container: HTMLElement,
         options: {
           sitekey: string;
           callback: (token: string) => void;
-          "error-callback": () => void;
-          "expired-callback": () => void;
+          "error-callback"?: () => void;
+          "expired-callback"?: () => void;
           theme?: "light" | "dark" | "auto";
         }
       ) => string;
@@ -31,53 +31,84 @@ const TURNSTILE_SITE_KEY = "0x4AAAAAABeDpkHWlTLrTlPO";
 const TurnstileWidget = ({ onVerify, onError, onExpire }: TurnstileWidgetProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
-  const scriptLoadedRef = useRef(false);
+  const callbacksRef = useRef({ onVerify, onError, onExpire });
 
-  const renderWidget = useCallback(() => {
-    if (!containerRef.current || !window.turnstile || widgetIdRef.current) return;
-
-    widgetIdRef.current = window.turnstile.render(containerRef.current, {
-      sitekey: TURNSTILE_SITE_KEY,
-      callback: onVerify,
-      "error-callback": () => onError?.(),
-      "expired-callback": () => onExpire?.(),
-      theme: "light",
-    });
-  }, [onVerify, onError, onExpire]);
+  // Keep callbacks ref updated
+  callbacksRef.current = { onVerify, onError, onExpire };
 
   useEffect(() => {
-    // Check if script is already loaded
+    const container = containerRef.current;
+    if (!container) return;
+
+    const renderWidget = () => {
+      if (!container || !window.turnstile || widgetIdRef.current) return;
+
+      console.log("Rendering Turnstile widget...");
+      widgetIdRef.current = window.turnstile.render(container, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token: string) => {
+          console.log("Turnstile verified successfully");
+          callbacksRef.current.onVerify(token);
+        },
+        "error-callback": () => {
+          console.log("Turnstile error");
+          callbacksRef.current.onError?.();
+        },
+        "expired-callback": () => {
+          console.log("Turnstile expired");
+          callbacksRef.current.onExpire?.();
+        },
+        theme: "light",
+      });
+      console.log("Turnstile widget rendered with ID:", widgetIdRef.current);
+    };
+
+    // Check if Turnstile is already loaded
     if (window.turnstile) {
       renderWidget();
       return;
     }
 
-    // Check if script tag already exists
-    if (document.querySelector('script[src*="turnstile"]')) {
-      window.onTurnstileLoad = renderWidget;
+    // Check if script is already being loaded
+    const existingScript = document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]');
+    if (existingScript) {
+      // Wait for it to load
+      const previousCallback = window.onTurnstileLoad;
+      window.onTurnstileLoad = () => {
+        previousCallback?.();
+        renderWidget();
+      };
       return;
     }
 
     // Load the Turnstile script
+    console.log("Loading Turnstile script...");
     const script = document.createElement("script");
     script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad";
     script.async = true;
-    script.defer = true;
     
     window.onTurnstileLoad = () => {
-      scriptLoadedRef.current = true;
+      console.log("Turnstile script loaded");
       renderWidget();
+    };
+
+    script.onerror = () => {
+      console.error("Failed to load Turnstile script");
     };
 
     document.head.appendChild(script);
 
     return () => {
       if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
+        try {
+          window.turnstile.remove(widgetIdRef.current);
+        } catch (e) {
+          console.log("Error removing Turnstile widget:", e);
+        }
         widgetIdRef.current = null;
       }
     };
-  }, [renderWidget]);
+  }, []);
 
   return <div ref={containerRef} className="cf-turnstile" />;
 };
