@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
@@ -10,10 +11,12 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import TurnstileWidget from "@/components/TurnstileWidget";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be less than 100 characters" }),
@@ -26,6 +29,8 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -37,15 +42,57 @@ const Contact = () => {
     }
   });
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (data: ContactFormValues) => {
+    if (!turnstileToken) {
+      toast({
+        title: "Verification Required",
+        description: "Please complete the spam verification.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
     
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    
-    form.reset();
+    try {
+      const { data: response, error } = await supabase.functions.invoke("send-form-email", {
+        body: {
+          formType: "contact",
+          turnstileToken,
+          data: {
+            name: data.name,
+            email: data.email,
+            phone: data.phone || "",
+            message: data.message,
+          },
+        },
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      if (response?.error) {
+        throw new Error(response.error);
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+      
+      form.reset();
+      setTurnstileToken(null);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -147,9 +194,29 @@ const Contact = () => {
                           </FormItem>
                         )}
                       />
+
+                      <div className="flex justify-center">
+                        <TurnstileWidget
+                          onVerify={setTurnstileToken}
+                          onError={() => setTurnstileToken(null)}
+                          onExpire={() => setTurnstileToken(null)}
+                        />
+                      </div>
                       
-                      <Button type="submit" size="lg" className="w-full">
-                        Send Message
+                      <Button 
+                        type="submit" 
+                        size="lg" 
+                        className="w-full"
+                        disabled={isSubmitting || !turnstileToken}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          "Send Message"
+                        )}
                       </Button>
                     </form>
                   </Form>
