@@ -119,7 +119,7 @@ const FeatureSections = () => {
       <section className="relative h-40 sm:h-44 md:h-52 lg:h-64 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
           style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})` }}
         />
         {/* Desktop background */}
