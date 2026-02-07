@@ -1,1 +1,7 @@
 project_id = "helxodckmqnnnbaegkra"
+
+[functions.get-turnstile-key]
+verify_jwt = false
+
+[functions.send-form-email]
+verify_jwt = false
