@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import awardsSlide1 from "@/assets/awards-slide-1.avif";
 import awardsSlide2 from "@/assets/awards-slide-2.avif";
 import awardsSlide3 from "@/assets/awards-slide-4.avif";
@@ -22,17 +24,26 @@ import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background.avif";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, CreditCard, Search, Mail, Star } from "lucide-react";
+import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+  ]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % foodSlides.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    return () => { emblaApi.off("select", onSelect); };
+  }, [emblaApi, onSelect]);
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
@@ -90,28 +101,25 @@ const FeatureSections = () => {
             {/* Food Slideshow */}
             <div className="order-1 relative">
               <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-lg md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden ring-2 md:ring-4 ring-accent/20">
-                {foodSlides.map((slide, index) => (
-                  <img 
-                    key={index} 
-                    src={slide} 
-                    alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`} 
-                    loading={index === 0 ? "eager" : "lazy"}
-                    decoding="async"
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"}`} 
-                  />
-                ))}
-                
-                {/* Navigation Arrows */}
-                <button onClick={() => setCurrentSlide(prev => (prev - 1 + foodSlides.length) % foodSlides.length)} className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button onClick={() => setCurrentSlide(prev => (prev + 1) % foodSlides.length)} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-card transition-all shadow-lg">
-                  <ChevronRight className="h-5 w-5" />
-                </button>
+                <div ref={emblaRef} className="overflow-hidden h-full">
+                  <div className="flex h-full">
+                    {foodSlides.map((slide, index) => (
+                      <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
+                        <img 
+                          src={slide} 
+                          alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`} 
+                          loading={index === 0 ? "eager" : "lazy"}
+                          decoding="async"
+                          className="w-full h-full object-cover" 
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 
                 {/* Indicators */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {foodSlides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-accent" : "w-2 bg-card/60 hover:bg-card/80"}`} />)}
+                  {foodSlides.map((_, index) => <button key={index} onClick={() => emblaApi?.scrollTo(index)} className={`h-2 rounded-full transition-all ${index === selectedIndex ? "w-8 bg-accent" : "w-2 bg-card/60 hover:bg-card/80"}`} />)}
                 </div>
               </div>
             </div>
