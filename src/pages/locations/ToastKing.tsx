@@ -251,14 +251,23 @@ const ToastKing = () => {
         <section className="py-16 px-4 bg-complementary">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-4xl text-center mb-8 text-primary">What Our Guests Say</h2>
-            <div className="max-w-4xl mx-auto">
+            <div className="w-full mx-auto">
               <iframe
                 className="lc_reviews_widget"
                 src="https://reputationhub.site/reputation/widgets/review_widget/AgA9wVRqpCliIwezK0mZ?widgetId=698b4c183d9d96088f750bb3"
                 frameBorder="0"
                 scrolling="no"
-                style={{ minWidth: '100%', width: '100%' }}
+                style={{ minWidth: '100%', width: '100%', minHeight: '1200px', height: 'auto' }}
                 title="King Street Guest Reviews"
+                onLoad={(e) => {
+                  const iframe = e.currentTarget;
+                  const handleResize = (event: MessageEvent) => {
+                    if (event.data && event.data.height) {
+                      iframe.style.height = event.data.height + 'px';
+                    }
+                  };
+                  window.addEventListener('message', handleResize);
+                }}
               />
             </div>
           </div>
