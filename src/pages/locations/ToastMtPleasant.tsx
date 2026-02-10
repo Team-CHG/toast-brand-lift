@@ -257,13 +257,14 @@ const ToastMtPleasant = () => {
                 src="https://reputationhub.site/reputation/widgets/review_widget/iKQtcBZdWcURNnuDKt3F?widgetId=698b5585b342f4c5736a5ae1"
                 frameBorder="0"
                 scrolling="no"
-                style={{ minWidth: '100%', width: '100%', minHeight: '1200px', height: 'auto' }}
+                style={{ minWidth: '100%', width: '100%', minHeight: '2400px', height: '2400px' }}
                 title="Mt. Pleasant Guest Reviews"
                 onLoad={(e) => {
                   const iframe = e.currentTarget;
                   const handleResize = (event: MessageEvent) => {
                     if (event.data && event.data.height) {
-                      iframe.style.height = event.data.height + 'px';
+                      const height = Math.max(Number(event.data.height), 2400);
+                      iframe.style.height = height + 'px';
                     }
                   };
                   window.addEventListener('message', handleResize);
