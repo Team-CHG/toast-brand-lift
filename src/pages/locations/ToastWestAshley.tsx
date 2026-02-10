@@ -247,6 +247,32 @@ const ToastWestAshley = () => {
           </div>
         </section>
 
+        {/* What Our Guests Say */}
+        <section className="py-16 px-0 md:px-4 bg-complementary">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl text-center mb-8 text-primary">What Our Guests Say</h2>
+            <div className="w-full mx-auto">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://reputationhub.site/reputation/widgets/review_widget/LtHAbwqM8EfwWjO76BOY?widgetId=698b5894d55f9ea3d7c79637"
+                frameBorder="0"
+                scrolling="no"
+                style={{ minWidth: '100%', width: '100%', minHeight: '1200px', height: 'auto' }}
+                title="West Ashley Guest Reviews"
+                onLoad={(e) => {
+                  const iframe = e.currentTarget;
+                  const handleResize = (event: MessageEvent) => {
+                    if (event.data && event.data.height) {
+                      iframe.style.height = event.data.height + 'px';
+                    }
+                  };
+                  window.addEventListener('message', handleResize);
+                }}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Gift Card Section */}
         <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" />
 
