@@ -215,7 +215,7 @@ const ToastMeeting = () => {
         </section>
 
         {/* What Our Guests Say */}
-        <section className="py-16 px-4 bg-complementary">
+        <section className="py-16 px-0 md:px-4 bg-complementary">
           <div className="container mx-auto">
             <h2 className="text-3xl md:text-4xl text-center mb-8 text-primary">What Our Guests Say</h2>
             <div className="w-full mx-auto">
