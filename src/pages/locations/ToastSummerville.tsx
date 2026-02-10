@@ -248,26 +248,22 @@ const ToastSummerville = () => {
         </section>
 
         {/* What Our Guests Say */}
-        <section className="py-16 px-0 md:px-4 bg-complementary">
-          <div className="container mx-auto">
-            <h2 className="text-3xl md:text-4xl text-center mb-8 text-primary">What Our Guests Say</h2>
-            <div className="w-full mx-auto">
+        <section className="py-20 bg-complementary relative overflow-hidden">
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">What Our Guests Say</h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                See why breakfast lovers keep coming back to Toast All Day.
+              </p>
+            </div>
+            <div className="w-full max-w-7xl mx-auto bg-card rounded-2xl shadow-lg overflow-hidden">
               <iframe
                 className="lc_reviews_widget"
                 src="https://reputationhub.site/reputation/widgets/review_widget/Ic4Oz2x7vXTqKGjY7s9a?widgetId=698b5771d6e303bafa436670"
                 frameBorder="0"
                 scrolling="no"
-                style={{ minWidth: '100%', width: '100%', minHeight: '800px', height: 'auto', overflow: 'hidden' }}
                 title="Summerville Guest Reviews"
-                onLoad={(e) => {
-                  const iframe = e.currentTarget;
-                  const handleResize = (event: MessageEvent) => {
-                    if (event.data && event.data.height) {
-                      iframe.style.height = event.data.height + 'px';
-                    }
-                  };
-                  window.addEventListener('message', handleResize);
-                }}
+                style={{ minWidth: '100%', width: '100%', minHeight: '600px' }}
               />
             </div>
           </div>
