@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
@@ -13,6 +14,16 @@ import { Link } from "react-router-dom";
 import toastSavannahImg from "@/assets/locations/toast-savannah.jpg";
 
 const ToastSavannah = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   const location = {
     name: "Toast! Savannah",
     address: "1 W Broughton Street",

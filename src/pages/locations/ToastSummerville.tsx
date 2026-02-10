@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
@@ -13,6 +14,16 @@ import { Link } from "react-router-dom";
 import toastSummervilleImg from "@/assets/locations/toast-summerville.jpg";
 
 const ToastSummerville = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   const location = {
     name: "Toast! Summerville",
     address: "717 Old Trolley Road",
