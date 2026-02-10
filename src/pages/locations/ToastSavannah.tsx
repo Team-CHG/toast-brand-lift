@@ -248,6 +248,32 @@ const ToastSavannah = () => {
           </div>
         </section>
 
+        {/* What Our Guests Say */}
+        <section className="py-16 px-0 md:px-4 bg-complementary">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl text-center mb-8 text-primary">What Our Guests Say</h2>
+            <div className="w-full mx-auto">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://reputationhub.site/reputation/widgets/review_widget/15q8bl9vxp8ZuylBaGaS?widgetId=698b56d03d9d96088f80e03b"
+                frameBorder="0"
+                scrolling="no"
+                style={{ minWidth: '100%', width: '100%', minHeight: '1200px', height: 'auto' }}
+                title="Savannah Guest Reviews"
+                onLoad={(e) => {
+                  const iframe = e.currentTarget;
+                  const handleResize = (event: MessageEvent) => {
+                    if (event.data && event.data.height) {
+                      iframe.style.height = event.data.height + 'px';
+                    }
+                  };
+                  window.addEventListener('message', handleResize);
+                }}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Gift Card Section */}
         <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" />
 
