@@ -258,14 +258,13 @@ const ToastSavannah = () => {
                 src="https://reputationhub.site/reputation/widgets/review_widget/15q8bl9vxp8ZuylBaGaS?widgetId=698b56d03d9d96088f80e03b"
                 frameBorder="0"
                 scrolling="no"
-                style={{ minWidth: '100%', width: '100%', minHeight: '2400px', height: '2400px' }}
+                style={{ minWidth: '100%', width: '100%', minHeight: '800px', height: 'auto', overflow: 'hidden' }}
                 title="Savannah Guest Reviews"
                 onLoad={(e) => {
                   const iframe = e.currentTarget;
                   const handleResize = (event: MessageEvent) => {
                     if (event.data && event.data.height) {
-                      const height = Math.max(Number(event.data.height), 2400);
-                      iframe.style.height = height + 'px';
+                      iframe.style.height = event.data.height + 'px';
                     }
                   };
                   window.addEventListener('message', handleResize);
