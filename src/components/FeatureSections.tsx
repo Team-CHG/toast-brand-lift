@@ -229,21 +229,6 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Reviews Widget Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="w-full max-w-7xl mx-auto overflow-hidden">
-            <iframe 
-              className="lc_reviews_widget" 
-              src="https://reputationhub.site/reputation/widgets/review_widget/AgA9wVRqpCliIwezK0mZ?widgetId=698b4c183d9d96088f750bb3" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ minWidth: "100%", width: "100%", minHeight: "600px" }} 
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Gift Cards Section - Share the Food You Love */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
