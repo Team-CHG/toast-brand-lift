@@ -1,5 +1,5 @@
 import heroVideo from "@/assets/hero-video.mp4";
-import heroVideoDesktop from "@/assets/hero-video-desktop.avi";
+import heroVideoDesktop from "@/assets/hero-video-desktop.webm";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const HeroCarousel = () => {
