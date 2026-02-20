@@ -12,7 +12,7 @@ const HeroCarousel = () => {
         <video
           key={videoSrc}
           src={videoSrc}
-          className="w-full h-auto object-contain max-h-[70vh]"
+          className="w-full h-auto object-cover"
           autoPlay
           muted
           loop
