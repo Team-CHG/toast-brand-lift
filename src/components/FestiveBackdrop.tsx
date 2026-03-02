@@ -41,7 +41,7 @@ export default function FestiveBackdrop() {
       >
         <video
           src={champagneVideo}
-          className="absolute right-0 top-0 h-full w-[55%] md:w-[40%] lg:w-[35%] object-cover will-change-transform"
+          className="absolute left-1/2 top-0 h-full w-[80%] md:w-[60%] lg:w-[50%] -translate-x-1/2 object-cover will-change-transform"
           style={{
             transform: `translateX(${translateX}%) scale(${scale})`,
             opacity,
