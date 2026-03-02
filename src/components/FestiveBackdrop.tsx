@@ -1,26 +1,30 @@
-import pageBackground from "@/assets/page-background.png";
-import pageBackgroundMobile from "@/assets/page-background-mobile.avif";
+import champagneVideo from "@/assets/champagne-glasses.mp4";
 
 /**
- * Site-wide background with consistent image and color overlay.
- * - Uses different background images for desktop and mobile
- * - Applies a complementary color overlay to maintain brand consistency
+ * Fixed decorative champagne glasses video on the right side of the viewport.
+ * Acts as a branding element giving the website a celebratory feel.
+ * Stays visible while scrolling.
  */
 export default function FestiveBackdrop() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Desktop Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{ backgroundImage: `url(${pageBackground})` }}
-      />
-      {/* Mobile Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-        style={{ backgroundImage: `url(${pageBackgroundMobile})` }}
-      />
-      {/* Color Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-complementary/90 to-accent/10" />
+      {/* Base background color */}
+      <div className="absolute inset-0 bg-complementary" />
+
+      {/* Champagne glasses video - fixed on far right */}
+      <div className="absolute right-0 top-0 h-full w-[280px] md:w-[400px] lg:w-[500px] flex items-center justify-end">
+        <video
+          src={champagneVideo}
+          className="h-full w-full object-cover object-left mix-blend-screen opacity-60"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
+
+      {/* Subtle gradient overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/80 to-transparent" />
     </div>
   );
 }
