@@ -11,20 +11,18 @@ export default function FestiveBackdrop() {
       {/* Base background color */}
       <div className="absolute inset-0 bg-complementary" />
 
-      {/* Champagne glasses video - fixed on far right */}
-      <div className="absolute right-0 top-0 h-full w-[280px] md:w-[400px] lg:w-[500px] flex items-center justify-end">
-        <video
-          src={champagneVideo}
-          className="h-full w-full object-cover object-left mix-blend-multiply opacity-40"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </div>
+      {/* Champagne glasses video - right side, not too far */}
+      <video
+        src={champagneVideo}
+        className="absolute right-[-5%] md:right-0 top-0 h-full w-[60%] md:w-[45%] lg:w-[40%] object-cover opacity-25"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
-      {/* Gradient overlay for left-side content readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/90 to-complementary/30" />
+      {/* Soft gradient to protect left-side content readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/70 to-transparent" />
     </div>
   );
 }
