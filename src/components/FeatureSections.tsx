@@ -22,7 +22,7 @@ import homeBackground2 from "@/assets/home-background-2.avif";
 import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
-import newsletterBackground from "@/assets/newsletter-background.avif";
+import newsletterBackground from "@/assets/newsletter-background-new.png";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
