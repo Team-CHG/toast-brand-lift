@@ -1,51 +1,60 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import champagneVideo from "@/assets/champagne-glasses.mp4";
 
 /**
- * Fixed decorative video branding element on the far right side.
- * Slides in from the right, then plays on loop. Stays visible while scrolling.
+ * Fixed decorative champagne glasses video that slides in from the right
+ * as the user scrolls down.
  */
 export default function FestiveBackdrop() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasSlid, setHasSlid] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    // Trigger slide-in after mount
-    const timer = setTimeout(() => setHasSlid(true), 100);
-    return () => clearTimeout(timer);
+    const handleScroll = () => {
+      // Map first 400px of scroll to 0→1 progress
+      const progress = Math.min(window.scrollY / 400, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (hasSlid && videoRef.current) {
-      // Start playing after slide-in animation completes (~700ms)
-      const playTimer = setTimeout(() => {
-        videoRef.current?.play().catch(() => {});
-      }, 700);
-      return () => clearTimeout(playTimer);
-    }
-  }, [hasSlid]);
+  const translateX = (1 - scrollProgress) * 100;
+  const scale = 0.85 + scrollProgress * 0.15;
+  const opacity = scrollProgress * 0.3;
 
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none fixed top-0 right-0 h-screen z-[0] flex items-center justify-end"
-      style={{
-        transform: hasSlid ? "translateX(0)" : "translateX(100%)",
-        transition: "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
-      }}
-    >
-      <video
-        ref={videoRef}
-        src={champagneVideo}
-        muted
-        loop
-        playsInline
-        className="h-full w-auto max-w-none mix-blend-screen"
-        style={{
-          objectFit: "contain",
-          objectPosition: "right center",
-        }}
+    <>
+      {/* Fixed background color layer */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 bg-complementary"
+        style={{ zIndex: -2 }}
       />
-    </div>
+
+      {/* Fixed video layer — behind page content */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 overflow-hidden"
+        style={{ zIndex: -1 }}
+      >
+        <video
+          src={champagneVideo}
+          className="absolute inset-0 h-full w-full object-cover will-change-transform"
+          style={{
+            opacity,
+            transition: "opacity 0.15s linear",
+          }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/60 to-transparent" />
+      </div>
+    </>
   );
 }
