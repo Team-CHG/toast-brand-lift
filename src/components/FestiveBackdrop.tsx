@@ -15,7 +15,7 @@ export default function FestiveBackdrop() {
       <div className="absolute right-0 top-0 h-full w-[280px] md:w-[400px] lg:w-[500px] flex items-center justify-end">
         <video
           src={champagneVideo}
-          className="h-full w-full object-cover object-left mix-blend-screen opacity-60"
+          className="h-full w-full object-cover object-left mix-blend-multiply opacity-40"
           autoPlay
           muted
           loop
@@ -23,8 +23,8 @@ export default function FestiveBackdrop() {
         />
       </div>
 
-      {/* Subtle gradient overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/80 to-transparent" />
+      {/* Gradient overlay for left-side content readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/90 to-complementary/30" />
     </div>
   );
 }
