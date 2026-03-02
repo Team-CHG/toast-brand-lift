@@ -14,24 +14,37 @@ export default function FestiveBackdrop() {
   }, []);
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Base background color */}
-      <div className="absolute inset-0 bg-complementary" />
-
-      {/* Champagne glasses video — slides in from right, then scales up */}
-      <video
-        src={champagneVideo}
-        className={`absolute right-0 top-0 h-full w-[55%] md:w-[40%] lg:w-[35%] object-cover opacity-0 translate-x-full scale-90 transition-all duration-1000 ease-out ${
-          visible ? "opacity-30 translate-x-0 scale-100" : ""
-        }`}
-        autoPlay
-        muted
-        loop
-        playsInline
+    <>
+      {/* Fixed background color layer */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 bg-complementary"
+        style={{ zIndex: -2 }}
       />
 
-      {/* Gradient to protect left content */}
-      <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/60 to-transparent" />
-    </div>
+      {/* Fixed video layer — above background, below page content */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 overflow-hidden"
+        style={{ zIndex: -1 }}
+      >
+        <video
+          src={champagneVideo}
+          className={`absolute right-0 top-0 h-full w-[55%] md:w-[40%] lg:w-[35%] object-cover transition-all duration-1000 ease-out ${
+            visible
+              ? "opacity-30 translate-x-0 scale-100"
+              : "opacity-0 translate-x-full scale-90"
+          }`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+
+        {/* Gradient to protect left content */}
+        <div className="absolute inset-0 bg-gradient-to-r from-complementary via-complementary/60 to-transparent" />
+      </div>
+    </>
   );
 }
