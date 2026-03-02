@@ -41,7 +41,7 @@ export default function FestiveBackdrop() {
       >
         <video
           src={champagneVideo}
-          className="absolute inset-0 h-full w-full object-cover will-change-transform"
+          className="absolute top-0 right-0 h-full w-auto object-cover will-change-transform"
           style={{
             opacity,
             transition: "opacity 0.15s linear",
