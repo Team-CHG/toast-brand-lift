@@ -322,23 +322,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Left decorative champagne image */}
-        <img
-          src={champagneLeft}
-          alt=""
-          aria-hidden="true"
-          className="fixed pointer-events-none left-[3vw] top-[50vh] -translate-y-1/2 h-[25vh] max-h-[400px] w-auto object-contain"
-          style={{ zIndex: 1 }}
-        />
-        {/* Right decorative champagne image */}
-        <img
-          src={champagneRight}
-          alt=""
-          aria-hidden="true"
-          className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain"
-          style={{ zIndex: 1 }}
-        />
+      <section ref={newsletterRef} className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
@@ -355,6 +339,26 @@ const FeatureSections = () => {
           </div>
         </div>
       </section>
+
+      {/* Fixed decorative champagne images - visible only when newsletter section is in view */}
+      {newsletterVisible && (
+        <>
+          <img
+            src={champagneLeft}
+            alt=""
+            aria-hidden="true"
+            className="fixed pointer-events-none left-[3vw] top-[50vh] -translate-y-1/2 h-[25vh] max-h-[400px] w-auto object-contain transition-opacity duration-500"
+            style={{ zIndex: 50 }}
+          />
+          <img
+            src={champagneRight}
+            alt=""
+            aria-hidden="true"
+            className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain transition-opacity duration-500"
+            style={{ zIndex: 50 }}
+          />
+        </>
+      )}
     </>;
 };
 export default FeatureSections;
