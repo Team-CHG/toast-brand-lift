@@ -27,6 +27,7 @@ import pageBackgroundTexture from "@/assets/page-background-texture.png";
 import champagneDecoration from "@/assets/champagne-decoration.mp4";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
+import TransparentVideo from "@/components/TransparentVideo";
 import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
