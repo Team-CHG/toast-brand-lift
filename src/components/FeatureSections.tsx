@@ -307,15 +307,26 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 text-primary-foreground relative overflow-hidden">
-        {/* Full background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${newsletterBackground})` }}
+      <section className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Left decorative champagne image */}
+        <img
+          src={champagneLeft}
+          alt=""
+          aria-hidden="true"
+          className="fixed pointer-events-none left-[3vw] top-[50vh] -translate-y-1/2 h-[25vh] max-h-[400px] w-auto object-contain"
+          style={{ zIndex: 1 }}
+        />
+        {/* Right decorative champagne image */}
+        <img
+          src={champagneRight}
+          alt=""
+          aria-hidden="true"
+          className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain"
+          style={{ zIndex: 1 }}
         />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-[#4d2410]">Never Miss Out on A Celebration!</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-[#4d2410]">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
           
