@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import awardsSlide1 from "@/assets/awards-slide-1.avif";
@@ -23,6 +23,8 @@ import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
+import champagneLeft from "@/assets/champagne-left.png";
+import champagneRight from "@/assets/champagne-right.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
 import champagneDecoration from "@/assets/champagne-decoration.mp4";
 import { Button } from "@/components/ui/button";
@@ -32,6 +34,8 @@ import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const newsletterRef = useRef<HTMLElement>(null);
+  const [newsletterVisible, setNewsletterVisible] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
   ]);
@@ -57,6 +61,17 @@ const FeatureSections = () => {
       document.body.removeChild(script);
     };
   }, []);
+  useEffect(() => {
+    const el = newsletterRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setNewsletterVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return <>
       {/* Decorative Background Image Section */}
       <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 bg-background overflow-hidden">
@@ -307,15 +322,10 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 text-primary-foreground relative overflow-hidden">
-        {/* Full background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${newsletterBackground})` }}
-        />
+      <section ref={newsletterRef} className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-[#4d2410]">Never Miss Out on A Celebration!</h2>
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-[#4d2410]">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
             Join our community and be the first to know about exclusive offers, new menu items, and special events.
           </p>
           
@@ -329,6 +339,26 @@ const FeatureSections = () => {
           </div>
         </div>
       </section>
+
+      {/* Fixed decorative champagne images - visible only when newsletter section is in view */}
+      {newsletterVisible && (
+        <>
+          <img
+            src={champagneLeft}
+            alt=""
+            aria-hidden="true"
+            className="fixed pointer-events-none left-[3vw] top-[50vh] -translate-y-1/2 h-[25vh] max-h-[400px] w-auto object-contain transition-opacity duration-500"
+            style={{ zIndex: 50 }}
+          />
+          <img
+            src={champagneRight}
+            alt=""
+            aria-hidden="true"
+            className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain transition-opacity duration-500"
+            style={{ zIndex: 50 }}
+          />
+        </>
+      )}
     </>;
 };
 export default FeatureSections;
