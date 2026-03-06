@@ -49,23 +49,18 @@ export default function TransparentVideo({ src, className, style }: TransparentV
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
+        const min = Math.min(r, g, b);
+        const max = Math.max(r, g, b);
+        const saturation = max === 0 ? 0 : (max - min) / max;
 
-        // Green-screen removal: detect pixels where green dominates
-        const greenDominance = g - Math.max(r, b);
-        const brightness = (r + g + b) / 3;
-
-        if (greenDominance > 40 && g > 80) {
-          // Strong green — fully transparent
+        // White removal: high brightness + low saturation = white background
+        if (min > 220 && saturation < 0.08) {
+          // Pure white — fully transparent
           data[i + 3] = 0;
-        } else if (greenDominance > 15 && g > 60) {
-          // Edge pixels with some green — fade out proportionally
-          const alpha = 255 - Math.min(255, ((greenDominance - 15) / 25) * 255);
+        } else if (min > 190 && saturation < 0.12) {
+          // Near-white edge pixels — fade proportionally
+          const alpha = 255 - Math.min(255, ((min - 190) / 30) * 255);
           data[i + 3] = Math.max(0, alpha);
-          // Remove green spill from edge pixels
-          data[i + 1] = Math.min(g, Math.max(r, b));
-        } else if (brightness > 240 && greenDominance > 5) {
-          // Near-white with green tint (bright green screen areas)
-          data[i + 3] = 0;
         }
       }
 
