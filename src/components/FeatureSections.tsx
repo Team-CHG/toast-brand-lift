@@ -24,6 +24,7 @@ import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import decorativeSwipe from "@/assets/decorative-swipe.svg";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -72,6 +73,16 @@ const FeatureSections = () => {
         <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
         {/* Bottom gradient fade to match Awards section background */}
         <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent" />
+        
+        {/* Decorative SVG animation - swipe from right */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 pointer-events-none animate-swipe-left">
+          <img 
+            src={decorativeSwipe} 
+            alt="" 
+            aria-hidden="true"
+            className="h-24 sm:h-28 md:h-36 lg:h-44 w-auto"
+          />
+        </div>
       </section>
 
       {/* About Section - A Toast to Awards */}
