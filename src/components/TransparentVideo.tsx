@@ -45,24 +45,28 @@ export default function TransparentVideo({ src, className, style }: TransparentV
       const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = frame.data;
 
-      // Threshold: pixels darker than this are considered "black background"
-      const threshold = 45;
-
       for (let i = 0; i < data.length; i += 4) {
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
-        const max = Math.max(r, g, b);
 
-        if (max < threshold) {
-          // Fully transparent for near-black
+        // Green-screen removal: detect pixels where green dominates
+        const greenDominance = g - Math.max(r, b);
+        const brightness = (r + g + b) / 3;
+
+        if (greenDominance > 40 && g > 80) {
+          // Strong green — fully transparent
           data[i + 3] = 0;
-        } else if (max < threshold + 40) {
-          // Smooth fade for dark-ish pixels so edges aren't harsh
-          const alpha = ((max - threshold) / 40) * 255;
-          data[i + 3] = Math.min(255, alpha);
+        } else if (greenDominance > 15 && g > 60) {
+          // Edge pixels with some green — fade out proportionally
+          const alpha = 255 - Math.min(255, ((greenDominance - 15) / 25) * 255);
+          data[i + 3] = Math.max(0, alpha);
+          // Remove green spill from edge pixels
+          data[i + 1] = Math.min(g, Math.max(r, b));
+        } else if (brightness > 240 && greenDominance > 5) {
+          // Near-white with green tint (bright green screen areas)
+          data[i + 3] = 0;
         }
-        // else: keep original alpha (255)
       }
 
       ctx.putImageData(frame, 0, 0);
