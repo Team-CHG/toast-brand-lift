@@ -61,6 +61,17 @@ const FeatureSections = () => {
       document.body.removeChild(script);
     };
   }, []);
+  useEffect(() => {
+    const el = newsletterRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setNewsletterVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return <>
       {/* Decorative Background Image Section */}
       <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 bg-background overflow-hidden">
