@@ -79,19 +79,20 @@ const FeatureSections = () => {
 
       {/* About Section - A Toast to Awards */}
       <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Floating champagne decoration */}
-        <video
+        {/* Floating champagne decoration - canvas with black removed */}
+        <TransparentVideo
           src={champagneDecoration}
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-          className="absolute right-0 w-auto object-contain pointer-events-none hidden md:block md:h-[420px] lg:h-[580px] md:max-h-[620px]"
-          style={{ mixBlendMode: 'multiply', zIndex: 1, top: '-10%', transform: 'translateY(0)' }}
+          className="absolute pointer-events-none h-[220px] sm:h-[300px] md:h-[420px] lg:h-[580px]"
+          style={{
+            right: '-20px',
+            top: '40%',
+            transform: 'translateY(-50%)',
+            width: 'auto',
+            zIndex: 1,
+          }}
         />
         <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
-          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center md:pr-24 lg:pr-32">
+          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center pr-16 sm:pr-20 md:pr-24 lg:pr-32">
             <div className="order-2">
               <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6 text-primary">A Toast to Awards</h2>
               <p className="text-xs sm:text-sm md:text-lg text-muted-foreground mb-2 md:mb-6 leading-relaxed">
