@@ -31,9 +31,27 @@ import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [videoTranslateX, setVideoTranslateX] = useState(100);
+  const aboutRef = useRef<HTMLElement>(null);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
   ]);
+
+  // Scroll-driven video animation
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!aboutRef.current) return;
+      const rect = aboutRef.current.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      // progress 0→1 as section enters viewport from bottom
+      const progress = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH * 0.6)));
+      // 100% off-screen → 20% partially visible on right
+      setVideoTranslateX(100 - progress * 80);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
