@@ -24,6 +24,7 @@ import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import champagneDecoration from "@/assets/champagne-decoration.mp4";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -76,9 +77,20 @@ const FeatureSections = () => {
       </section>
 
       {/* About Section - A Toast to Awards */}
-      <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
+      <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Floating champagne decoration */}
+        <video
+          src={champagneDecoration}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-auto object-contain pointer-events-none hidden md:block md:h-[340px] lg:h-[480px] md:max-h-[520px]"
+          style={{ mixBlendMode: 'screen', zIndex: 1 }}
+        />
+        <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
+          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center md:pr-24 lg:pr-32">
             <div className="order-2">
               <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6 text-primary">A Toast to Awards</h2>
               <p className="text-xs sm:text-sm md:text-lg text-muted-foreground mb-2 md:mb-6 leading-relaxed">
