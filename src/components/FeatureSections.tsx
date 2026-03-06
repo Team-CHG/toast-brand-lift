@@ -23,6 +23,7 @@ import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.png";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -74,7 +75,7 @@ const FeatureSections = () => {
       </section>
 
       {/* About Section - A Toast to Awards */}
-      <section id="about" className="py-6 md:py-10 lg:py-20">
+      <section id="about" className="py-6 md:py-10 lg:py-20" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
             <div className="order-2">
@@ -146,7 +147,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Why Choose Us - Editorial Style */}
-      <section className="py-12 bg-complementary">
+      <section className="py-12" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
             <div className="flex items-center gap-2">
@@ -173,7 +174,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Menu Preview - Explore Our Menu */}
-      <section id="menu" className="py-20 relative overflow-hidden">
+      <section id="menu" className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-primary">Explore Our Menu</h2>
@@ -230,7 +231,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Gift Cards Section - Share the Food You Love */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-primary">Share the Food You Love</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -267,7 +268,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         {/* Subtle background image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.04]"

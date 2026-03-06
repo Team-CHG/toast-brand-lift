@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import LocationsMap from "@/components/LocationsMap";
 import SEO from "@/components/SEO";
+import pageBackgroundTexture from "@/assets/page-background-texture.png";
 const Index = () => {
   return <div className="min-h-screen">
       <SEO title="Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston" description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations." keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict" />
@@ -15,7 +16,7 @@ const Index = () => {
         <FeatureSections />
         
         {/* Locations Map Section - Celebratory Style */}
-        <section className="relative py-20 px-4 overflow-hidden" aria-labelledby="locations-heading">
+        <section className="relative py-20 px-4 overflow-hidden" aria-labelledby="locations-heading" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           {/* Gradient Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-complementary to-accent/5" />
           
