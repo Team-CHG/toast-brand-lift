@@ -34,6 +34,8 @@ import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 const FeatureSections = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const newsletterRef = useRef<HTMLElement>(null);
+  const [newsletterVisible, setNewsletterVisible] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
   ]);
