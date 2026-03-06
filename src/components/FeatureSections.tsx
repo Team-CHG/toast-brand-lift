@@ -86,8 +86,8 @@ const FeatureSections = () => {
           loop
           playsInline
           aria-hidden="true"
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-auto object-contain pointer-events-none hidden md:block md:h-[340px] lg:h-[480px] md:max-h-[520px]"
-          style={{ mixBlendMode: 'screen', zIndex: 1 }}
+          className="absolute right-0 w-auto object-contain pointer-events-none hidden md:block md:h-[420px] lg:h-[580px] md:max-h-[620px]"
+          style={{ mixBlendMode: 'multiply', zIndex: 1, top: '-10%', transform: 'translateY(0)' }}
         />
         <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
           <div className="grid grid-cols-2 gap-4 md:gap-12 items-center md:pr-24 lg:pr-32">
