@@ -24,7 +24,7 @@ import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import decorativeSwipe from "@/assets/decorative-swipe.svg";
+import decorativeVideo from "@/assets/awards-decoration-video.mp4";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -86,7 +86,19 @@ const FeatureSections = () => {
       </section>
 
       {/* About Section - A Toast to Awards */}
-      <section id="about" className="py-6 md:py-10 lg:py-20" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Decorative video on the right */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none animate-swipe-left">
+          <video
+            src={decorativeVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-40 sm:h-52 md:h-72 lg:h-96 w-auto object-contain"
+            aria-hidden="true"
+          />
+        </div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-4 md:gap-12 items-center">
             <div className="order-2">
