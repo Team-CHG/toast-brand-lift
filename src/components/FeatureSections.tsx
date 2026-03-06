@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import awardsSlide1 from "@/assets/awards-slide-1.avif";
@@ -77,16 +77,22 @@ const FeatureSections = () => {
       </section>
 
       {/* About Section - A Toast to Awards */}
-      <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Decorative video on the right */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none animate-swipe-left">
+      <section id="about" ref={aboutRef} className="py-6 md:py-10 lg:py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Decorative video on the right - scroll interactive */}
+        <div 
+          className="absolute right-0 top-1/2 z-10 pointer-events-none"
+          style={{
+            transform: `translate(${videoTranslateX}%, -50%)`,
+            transition: 'transform 0.3s ease-out',
+          }}
+        >
           <video
             src={decorativeVideo}
             autoPlay
             muted
             loop
             playsInline
-            className="h-40 sm:h-52 md:h-72 lg:h-96 w-auto object-contain"
+            className="h-56 sm:h-72 md:h-[28rem] lg:h-[34rem] w-auto object-contain mix-blend-multiply"
             aria-hidden="true"
           />
         </div>
