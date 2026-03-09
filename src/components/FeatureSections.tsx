@@ -321,7 +321,15 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section ref={newsletterRef} className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        {/* Decorative champagne image - right side */}
+        <img
+          src={champagneHandRight}
+          alt=""
+          aria-hidden="true"
+          className="absolute pointer-events-none right-0 md:right-[3vw] top-1/2 -translate-y-1/2 h-[30vh] md:h-[45vh] max-h-[500px] w-auto object-contain"
+          style={{ zIndex: 1 }}
+        />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
@@ -338,17 +346,6 @@ const FeatureSections = () => {
           </div>
         </div>
       </section>
-
-      {/* Fixed decorative champagne image - visible only when newsletter section is in view */}
-      {newsletterVisible && (
-        <img
-          src={champagneHandRight}
-          alt=""
-          aria-hidden="true"
-          className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain transition-opacity duration-500"
-          style={{ zIndex: 50 }}
-        />
-      )}
     </>;
 };
 export default FeatureSections;
