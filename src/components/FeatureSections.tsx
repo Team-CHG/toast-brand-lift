@@ -23,7 +23,7 @@ import homeBackground3 from "@/assets/home-background-3.avif";
 import giftcardBackground from "@/assets/giftcard-background.avif";
 import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
-import champagneHandRight from "@/assets/champagne-hand-right.png";
+import newsletterCelebrationBg from "@/assets/newsletter-celebration-bg.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
 import champagneDecoration from "@/assets/champagne-decoration.mp4";
 import { Button } from "@/components/ui/button";
@@ -321,15 +321,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Decorative champagne image - right side */}
-        <img
-          src={champagneHandRight}
-          alt=""
-          aria-hidden="true"
-          className="absolute pointer-events-none right-0 md:right-[3vw] top-1/2 -translate-y-1/2 h-[30vh] md:h-[45vh] max-h-[500px] w-auto object-contain"
-          style={{ zIndex: 1 }}
-        />
+      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${newsletterCelebrationBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
