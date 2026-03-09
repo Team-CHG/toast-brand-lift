@@ -321,7 +321,7 @@ const FeatureSections = () => {
       </section>
 
       {/* Newsletter & CTA Section */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundImage: `url(${newsletterCelebrationBg})`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }}>
+      <section className="pt-40 md:pt-48 pb-20 relative overflow-visible -mt-20 md:-mt-28" style={{ backgroundImage: `url(${newsletterCelebrationBg})`, backgroundSize: 'contain', backgroundPosition: 'top center', backgroundRepeat: 'no-repeat' }}>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-primary">Never Miss Out on A Celebration!</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-muted-foreground">
