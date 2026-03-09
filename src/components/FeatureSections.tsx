@@ -339,24 +339,15 @@ const FeatureSections = () => {
         </div>
       </section>
 
-      {/* Fixed decorative champagne images - visible only when newsletter section is in view */}
+      {/* Fixed decorative champagne image - visible only when newsletter section is in view */}
       {newsletterVisible && (
-        <>
-          <img
-            src={champagneLeft}
-            alt=""
-            aria-hidden="true"
-            className="fixed pointer-events-none left-[3vw] top-[50vh] -translate-y-1/2 h-[25vh] max-h-[400px] w-auto object-contain transition-opacity duration-500"
-            style={{ zIndex: 50 }}
-          />
-          <img
-            src={champagneRight}
-            alt=""
-            aria-hidden="true"
-            className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain transition-opacity duration-500"
-            style={{ zIndex: 50 }}
-          />
-        </>
+        <img
+          src={champagneHandRight}
+          alt=""
+          aria-hidden="true"
+          className="fixed pointer-events-none right-[3vw] top-[50vh] -translate-y-1/2 h-[35vh] max-h-[600px] w-auto object-contain transition-opacity duration-500"
+          style={{ zIndex: 50 }}
+        />
       )}
     </>;
 };
