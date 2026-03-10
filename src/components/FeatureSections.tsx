@@ -96,7 +96,7 @@ const FeatureSections = () => {
         {/* Floating champagne decoration - canvas with black removed */}
         <TransparentVideo
           src={champagneDecoration}
-          className="absolute pointer-events-none h-[220px] sm:h-[300px] md:h-[420px] lg:h-[580px]"
+          className="hidden lg:block absolute pointer-events-none lg:h-[580px]"
           style={{
             right: '-20px',
             top: '40%',
