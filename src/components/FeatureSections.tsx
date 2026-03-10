@@ -106,10 +106,10 @@ const FeatureSections = () => {
           }}
         />
         <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
-          <div className="grid grid-cols-2 gap-4 md:gap-12 items-center pr-16 sm:pr-20 md:pr-24 lg:pr-32">
-            <div className="order-2">
-              <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-6 text-primary">A Toast to Awards</h2>
-              <p className="text-xs sm:text-sm md:text-lg text-muted-foreground mb-2 md:mb-6 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center lg:pr-32">
+            <div className="order-2 md:order-2">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 text-primary">A Toast to Awards</h2>
+              <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-6 leading-relaxed">
                 Thanks to our customers, Toast! All Day has been awarded the 2023 Top 25 Best Brunches in the U.S. by TripAdvisor! We are proud to be included in their Travelers' Choice "Best of the Best," which is only awarded to the top 1% best reviews worldwide!
               </p>
               <p className="hidden md:block text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -118,19 +118,19 @@ const FeatureSections = () => {
               </p>
               
               {/* Award Badges */}
-              <div className="flex items-center gap-2 sm:gap-4 md:gap-6 mb-4 md:mb-8">
-                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-10 sm:h-14 md:h-20 w-auto object-contain" />
-                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-10 sm:h-14 md:h-20 w-auto object-contain rounded-md" />
+              <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-8">
+                <img src={awardRestaurantGuru} alt="Restaurant Guru 2020 Award" className="h-14 md:h-20 w-auto object-contain" />
+                <img src={awardTripadvisor} alt="TripAdvisor Travelers Choice 2021" className="h-14 md:h-20 w-auto object-contain rounded-md" />
               </div>
               
-              <Button size="sm" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs md:text-base md:px-6 md:py-3">
+              <Button size="sm" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm md:text-base md:px-6 md:py-3">
                 <a href="/about">Our Story</a>
               </Button>
             </div>
             
             {/* Food Slideshow */}
-            <div className="order-1 relative">
-              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-lg md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden ring-2 md:ring-4 ring-accent/20">
+            <div className="order-1 md:order-1 relative">
+              <div className="relative h-[250px] md:h-[400px] lg:h-[500px] rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl overflow-hidden ring-2 md:ring-4 ring-accent/20">
                 <div ref={emblaRef} className="overflow-hidden h-full">
                   <div className="flex h-full">
                     {foodSlides.map((slide, index) => (
