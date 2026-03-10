@@ -94,7 +94,7 @@ const FeatureSections = () => {
       {/* About Section - A Toast to Awards */}
       <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center lg:pr-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="order-2 md:order-2">
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 text-primary">A Toast to Awards</h2>
               <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-6 leading-relaxed">
