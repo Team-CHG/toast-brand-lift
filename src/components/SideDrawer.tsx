@@ -7,7 +7,7 @@ const locationSubItems = [
   { name: "All Locations", href: "/locations" },
   { name: "Toast! on Meeting", href: "/locations/toast-meeting" },
   { name: "Toast! on King", href: "/locations/toast-king" },
-  { name: "Toast! on Coleman", href: "/locations/toast-coleman" },
+  
   { name: "Toast! Mt. Pleasant", href: "/locations/toast-mt-pleasant" },
   { name: "Toast! West Ashley", href: "/locations/toast-west-ashley" },
   { name: "Toast! Summerville", href: "/locations/toast-summerville" },

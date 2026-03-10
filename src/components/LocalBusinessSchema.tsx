@@ -30,15 +30,6 @@ const locations: LocationData[] = [
     hours: "Mo-Su 07:00-15:00",
   },
   {
-    name: "Toast! on Coleman",
-    address: "835 Coleman Boulevard",
-    city: "Mt. Pleasant",
-    state: "SC",
-    zip: "29464",
-    phone: "+1-843-585-3495",
-    hours: "Mo-Su 07:00-15:00",
-  },
-  {
     name: "Toast! Mt. Pleasant",
     address: "1150 Hungry Neck Blvd.",
     city: "Mt. Pleasant",
