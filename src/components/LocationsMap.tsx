@@ -3,7 +3,7 @@ import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import toastMeetingImg from '@/assets/locations/toast-meeting.jpg';
 import toastKingImg from '@/assets/locations/toast-king.jpg';
-import toastColemanImg from '@/assets/locations/toast-coleman.jpg';
+
 import toastMtPleasantImg from '@/assets/locations/toast-mt-pleasant.jpg';
 import toastWestAshleyImg from '@/assets/locations/toast-west-ashley.jpg';
 import toastSummervilleImg from '@/assets/locations/toast-summerville.jpg';
