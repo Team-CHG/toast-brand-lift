@@ -93,18 +93,6 @@ const FeatureSections = () => {
 
       {/* About Section - A Toast to Awards */}
       <section id="about" className="py-6 md:py-10 lg:py-20 relative overflow-visible" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        {/* Floating champagne decoration - canvas with black removed */}
-        <TransparentVideo
-          src={champagneDecoration}
-          className="hidden lg:block absolute pointer-events-none lg:h-[580px]"
-          style={{
-            right: '-20px',
-            top: '40%',
-            transform: 'translateY(-50%)',
-            width: 'auto',
-            zIndex: 1,
-          }}
-        />
         <div className="container mx-auto px-4 relative" style={{ zIndex: 2 }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center lg:pr-32">
             <div className="order-2 md:order-2">
