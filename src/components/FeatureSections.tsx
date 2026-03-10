@@ -25,7 +25,7 @@ import menuSectionBackground from "@/assets/menu-section-background.avif";
 import newsletterBackground from "@/assets/newsletter-background-new.png";
 import newsletterCelebrationBg from "@/assets/newsletter-celebration-bg.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import champagneDecoration from "@/assets/champagne-decoration.mp4";
+
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star } from "lucide-react";
 import TransparentVideo from "@/components/TransparentVideo";
