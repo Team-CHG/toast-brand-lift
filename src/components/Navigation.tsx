@@ -23,11 +23,6 @@ const locations = [
     waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
   },
   {
-    name: "Toast! on Coleman",
-    menuUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
-    orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
-  },
-  {
     name: "Toast! Mt. Pleasant",
     menuUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
     orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",

@@ -47,18 +47,6 @@ const locations: Location[] = [{
   embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
   image: toastKingImg
 }, {
-  name: "Toast! on Coleman",
-  address: "835 Coleman Boulevard",
-  city: "Mt. Pleasant, SC 29464",
-  phone: "(843) 585-3495",
-  hours: "Monday – Sunday: 7am – 3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-coleman-blvd-835-coleman-boulevard",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  reviewUrl: "https://g.page/r/CbKR_K7nKmdaEAE/review",
-  embedQuery: "Toast+All+Day,+835+Coleman+Blvd,+Mt+Pleasant,+SC+29464",
-  temporarilyClosed: true,
-  image: toastColemanImg
-}, {
   name: "Toast! Mt. Pleasant",
   address: "1150 Hungry Neck Blvd.",
   city: "Mt. Pleasant, SC 29464",
