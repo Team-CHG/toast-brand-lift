@@ -30,7 +30,7 @@ import LocalBusinessSchema from "./components/LocalBusinessSchema";
 import FestiveBackdrop from "./components/FestiveBackdrop";
 import ToastMeeting from "./pages/locations/ToastMeeting";
 import ToastKing from "./pages/locations/ToastKing";
-import ToastColeman from "./pages/locations/ToastColeman";
+
 import ToastMtPleasant from "./pages/locations/ToastMtPleasant";
 import ToastWestAshley from "./pages/locations/ToastWestAshley";
 import ToastSummerville from "./pages/locations/ToastSummerville";
