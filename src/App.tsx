@@ -11,7 +11,8 @@ import Contact from "./pages/Contact";
 import Rewards from "./pages/Rewards";
 import DownloadAppPage from "./pages/DownloadApp";
 import Franchise from "./pages/Franchise";
-import NewsEvents from "./pages/NewsEvents";
+import Blog from "./pages/Blog";
+import { Navigate } from "react-router-dom";
 import MothersDay from "./pages/events/MothersDay";
 import DownloadApp from "./pages/events/DownloadApp";
 import UnlimitedDrinkPass from "./pages/events/UnlimitedDrinkPass";
@@ -64,17 +65,20 @@ const App = () => (
             <Route path="/rewards" element={<Rewards />} />
             <Route path="/download-app" element={<DownloadAppPage />} />
             <Route path="/franchise" element={<Franchise />} />
-            <Route path="/news-events" element={<NewsEvents />} />
-            <Route path="/news-events/mothers-day" element={<MothersDay />} />
-            <Route path="/news-events/download-app" element={<DownloadApp />} />
-            <Route path="/news-events/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
-            <Route path="/news-events/military-discount" element={<MilitaryDiscount />} />
-            <Route path="/news-events/anniversary" element={<Anniversary />} />
-            <Route path="/news-events/soup-salad-sandwich" element={<SoupSaladSandwich />} />
-            <Route path="/news-events/black-friday-gift-card" element={<BlackFridayGiftCard />} />
-            <Route path="/news-events/veterans-day" element={<VeteransDay />} />
-            <Route path="/news-events/best-brunch" element={<BestBrunch />} />
-            <Route path="/news-events/valentines-day" element={<ValentinesDay />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/mothers-day" element={<MothersDay />} />
+            <Route path="/blog/download-app" element={<DownloadApp />} />
+            <Route path="/blog/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
+            <Route path="/blog/military-discount" element={<MilitaryDiscount />} />
+            <Route path="/blog/anniversary" element={<Anniversary />} />
+            <Route path="/blog/soup-salad-sandwich" element={<SoupSaladSandwich />} />
+            <Route path="/blog/black-friday-gift-card" element={<BlackFridayGiftCard />} />
+            <Route path="/blog/veterans-day" element={<VeteransDay />} />
+            <Route path="/blog/best-brunch" element={<BestBrunch />} />
+            <Route path="/blog/valentines-day" element={<ValentinesDay />} />
+            {/* Redirect old news-events URLs */}
+            <Route path="/news-events/*" element={<Navigate to="/blog" replace />} />
+            <Route path="/news-events" element={<Navigate to="/blog" replace />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
