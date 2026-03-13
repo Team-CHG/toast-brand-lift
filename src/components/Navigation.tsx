@@ -91,6 +91,9 @@ const Navigation = () => {
             <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
               About
             </a>
+            <a href="/blog" className="text-foreground hover:text-primary transition-colors font-medium">
+              Blog
+            </a>
           </div>
 
           {/* CTA Buttons */}
@@ -173,8 +176,8 @@ const Navigation = () => {
               <a href="/locations" className="text-lg font-medium hover:text-primary transition-colors">
                 Locations
               </a>
-              <a href="/news-events" className="text-lg font-medium hover:text-primary transition-colors">
-                News & Events
+              <a href="/blog" className="text-lg font-medium hover:text-primary transition-colors">
+                Blog
               </a>
               <a href="/catering" className="text-lg font-medium hover:text-primary transition-colors">
                 Catering
