@@ -91,6 +91,9 @@ const Navigation = () => {
             <a href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
               About
             </a>
+            <a href="/blog" className="text-foreground hover:text-primary transition-colors font-medium">
+              Blog
+            </a>
           </div>
 
           {/* CTA Buttons */}
