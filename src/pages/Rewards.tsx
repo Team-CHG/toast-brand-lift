@@ -274,6 +274,9 @@ Earn double points Monday-Friday 12-3pm</p>
                     <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
+                    <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
                     <a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
@@ -281,9 +284,6 @@ Earn double points Monday-Friday 12-3pm</p>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a>
