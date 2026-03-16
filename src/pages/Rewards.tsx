@@ -13,10 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Gift, Star, TrendingUp, Zap, Smartphone } from "lucide-react";
-import SEO from "@/components/SEO";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import appScreenshot from "@/assets/app-screenshot.png";
+
+
 
 const Rewards = () => {
   return (
