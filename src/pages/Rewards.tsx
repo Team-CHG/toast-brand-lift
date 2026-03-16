@@ -3,6 +3,16 @@ import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Gift, Star, TrendingUp, Zap, Smartphone, ChevronDown } from "lucide-react";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import appScreenshot from "@/assets/app-screenshot.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Gift, Star, TrendingUp, Zap, Smartphone } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
