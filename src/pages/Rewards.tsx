@@ -39,7 +39,7 @@ const Rewards = () => {
             </p>
             
             {/* Highlighted Promo Section */}
-            <div className="bg-accent/20 border-2 border-accent/40 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+            <div className="bg-background border-2 border-accent/30 rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden shadow-lg">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-primary to-accent"></div>
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
                 GET $10 FOR EVERY $100 SPENT!
