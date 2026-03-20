@@ -23,14 +23,15 @@ const Locations = () => {
       <Breadcrumbs />
 
       {/* Interactive Map Section - Celebratory Style */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden" aria-labelledby="map-heading">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${locationsBackground})` }}
-        />
-        {/* Gradient Overlay to maintain color scheme */}
-        <div className="absolute inset-0 bg-[#e0f6ff]/80" />
+      <section
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
+        aria-labelledby="map-heading"
+        style={{
+          backgroundImage: `url(${pageBackgroundTexture})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
