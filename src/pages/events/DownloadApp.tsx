@@ -22,7 +22,7 @@ const DownloadApp = () => {
         Our loyalty program has been running on the web for years, and it works well — but we heard the same feedback from regulars: "I forgot to check in," "I didn't know I had points," "Can I just order from my phone?" The app solves all three. Your rewards balance is always visible, you earn points automatically when you pay through the app, and you can place pickup orders without waiting in line.
       </p>
 
-      <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-app-hero.jpg" alt="Toast All Day app screens showing ordering, rewards, and offers" className="w-full rounded-2xl shadow-lg my-8" />
+      
 
       <h2>How the Rewards Work</h2>
       <p>
