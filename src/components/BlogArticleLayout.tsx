@@ -106,7 +106,7 @@ const BlogArticleLayout = ({
             [&>ol]:mb-6 [&>ol]:leading-[1.8] [&>ol]:pl-1
             [&_strong]:text-foreground [&_strong]:font-semibold
             [&_a]:text-primary [&_a:hover]:underline
-            [&_a.blog-btn]:bg-primary [&_a.blog-btn]:text-white [&_a.blog-btn]:no-underline [&_a.blog-btn]:hover:bg-primary/90 [&_a.blog-btn]:px-8 [&_a.blog-btn]:py-3 [&_a.blog-btn]:rounded-full [&_a.blog-btn]:font-semibold [&_a.blog-btn]:transition-colors [&_a.blog-btn]:inline-flex [&_a.blog-btn]:items-center [&_a.blog-btn]:gap-2 [&_a.blog-btn]:text-sm
+            [&_a.blog-btn]:bg-[#647da6] [&_a.blog-btn]:text-white [&_a.blog-btn]:no-underline [&_a.blog-btn]:hover:bg-[#546d96] [&_a.blog-btn]:px-8 [&_a.blog-btn]:py-3 [&_a.blog-btn]:rounded-full [&_a.blog-btn]:font-semibold [&_a.blog-btn]:transition-colors [&_a.blog-btn]:inline-flex [&_a.blog-btn]:items-center [&_a.blog-btn]:gap-2 [&_a.blog-btn]:text-sm
           ">
             {children}
           </div>
