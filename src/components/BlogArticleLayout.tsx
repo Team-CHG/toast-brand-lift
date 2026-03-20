@@ -25,8 +25,8 @@ interface BlogArticleLayoutProps {
   seoTitle: string;
   seoDescription: string;
   seoKeywords: string;
-  heroImage: string;
-  heroImageAlt: string;
+  heroImage?: string;
+  heroImageAlt?: string;
   category: string;
   title: string;
   date?: string;
@@ -38,8 +38,6 @@ const BlogArticleLayout = ({
   seoTitle,
   seoDescription,
   seoKeywords,
-  heroImage,
-  heroImageAlt,
   category,
   title,
   date,
@@ -58,27 +56,18 @@ const BlogArticleLayout = ({
       <SideDrawer />
       <Breadcrumbs />
 
-      {/* Hero */}
-      <article>
-        <header className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-          <img
-            src={heroImage}
-            alt={heroImageAlt}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        </header>
+      <article className="container mx-auto px-4 max-w-2xl pt-12 pb-16">
+        {/* Back link */}
+        <Link
+          to="/blog"
+          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium mb-8"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Blog
+        </Link>
 
-        {/* Article Header */}
-        <div className="container mx-auto px-4 max-w-3xl -mt-16 relative z-10">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium mb-4"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Blog
-          </Link>
-
+        {/* Article header */}
+        <header className="mb-10 border-b border-border/50 pb-8">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 text-xs font-semibold text-accent bg-accent/10 rounded-full">
               {category}
@@ -90,52 +79,41 @@ const BlogArticleLayout = ({
               </span>
             )}
           </div>
-
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
             {title}
           </h1>
-        </div>
+        </header>
 
-        {/* Article Content */}
-        <div className="container mx-auto px-4 max-w-3xl py-8">
-          <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed
-            [&>p]:mb-6 [&>p]:text-base [&>p]:md:text-lg [&>p]:leading-[1.8]
-            [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-12 [&>h2]:mb-4
-            [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-3
-            [&>ul]:mb-6 [&>ul]:text-base [&>ul]:md:text-lg [&>ul]:leading-[1.8]
-            [&>ol]:mb-6 [&>ol]:text-base [&>ol]:md:text-lg [&>ol]:leading-[1.8]
-            [&_strong]:text-foreground
-            [&>*]:mb-6
-          ">
-            {children}
-          </div>
+        {/* Article body */}
+        <div className="text-muted-foreground leading-relaxed
+          [&>p]:mb-6 [&>p]:text-base [&>p]:leading-[1.8]
+          [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-10 [&>h2]:mb-3
+          [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-2
+          [&>ul]:mb-6 [&>ul]:text-base [&>ul]:leading-[1.8]
+          [&>ol]:mb-6 [&>ol]:text-base [&>ol]:leading-[1.8]
+          [&_strong]:text-foreground
+          [&_a]:text-primary [&_a:hover]:underline
+        ">
+          {children}
         </div>
       </article>
 
       {/* Related Posts */}
-      <section className="py-16 border-t border-border/50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground mb-8">More from the Blog</h2>
+      <section className="py-12 border-t border-border/50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-xl font-bold text-foreground mb-6">More from the Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedArticles.map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
-                className="group bg-card/80 backdrop-blur-sm rounded-xl overflow-hidden border border-border/50 hover:border-accent/30 transition-all"
+                className="group block p-4 rounded-lg border border-border/50 hover:border-accent/30 transition-colors"
               >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4">
-                  <span className="text-xs font-semibold text-accent">{article.category}</span>
-                  <h3 className="text-sm font-bold text-foreground mt-1 group-hover:text-accent transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                </div>
+                <span className="text-xs font-semibold text-accent">{article.category}</span>
+                <h3 className="text-sm font-bold text-foreground mt-1 group-hover:text-accent transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">{article.date}</p>
               </Link>
             ))}
           </div>
