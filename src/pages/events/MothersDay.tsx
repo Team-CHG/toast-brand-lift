@@ -39,10 +39,10 @@ const MothersDay = () => {
         We're also running a Mother's Day giveaway on our social channels. Follow us on Instagram and Facebook for a chance to win a gift card for Mom. Tag a mom who deserves a morning off — it takes two seconds and could earn her a free brunch.
       </p>
       <div className="flex flex-wrap justify-center gap-4 my-6">
-        <a href="https://www.instagram.com/p/DJWsG0uR3YC/" target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors text-sm">
+        <a href="https://www.instagram.com/p/DJWsG0uR3YC/" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Enter on Instagram
         </a>
-        <a href="https://www.facebook.com/reel/1357283998877155" target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors text-sm">
+        <a href="https://www.facebook.com/reel/1357283998877155" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Enter on Facebook
         </a>
       </div>
@@ -53,7 +53,7 @@ const MothersDay = () => {
       </p>
 
       <div className="text-center my-8">
-        <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors">
+        <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Send Mom a Gift Card
         </a>
       </div>
