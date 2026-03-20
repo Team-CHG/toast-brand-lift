@@ -26,8 +26,8 @@ const Blog = () => {
       <section className="relative h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center">
         <img
           src={blogHero}
-          alt="Toast All Day brunch dishes"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          alt="Toast All Day restaurant storefront"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-black/50" />
         <h1 className="relative z-10 text-5xl md:text-6xl font-bold text-white tracking-wide">
