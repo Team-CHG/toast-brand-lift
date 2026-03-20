@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Clock } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
+import pageBackgroundTexture from "@/assets/page-background-texture.png";
 
-// Shared article data for "related posts"
+// Shared article data for blog listing and related posts
 export const blogArticles = [
   { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Mothers-Day-Horizontal-Header-Post-1920-x-1080-px-1-1-1080x675.jpg", category: "Events", slug: "mothers-day", date: "May 2025" },
   { title: "Download Our App and Earn $5", description: "Get rewarded just for downloading! Sign up through our app and receive $5 towards your next meal.", image: "https://toastallday.com/wp-content/uploads/2025/04/Toast-APP-Loyalty-Sign-Up-1920-x-1080-px-1080x675.jpg", category: "Promotions", slug: "download-app", date: "April 2025" },
@@ -25,8 +26,8 @@ interface BlogArticleLayoutProps {
   seoTitle: string;
   seoDescription: string;
   seoKeywords: string;
-  heroImage?: string;
-  heroImageAlt?: string;
+  heroImage: string;
+  heroImageAlt: string;
   category: string;
   title: string;
   date?: string;
@@ -38,16 +39,14 @@ const BlogArticleLayout = ({
   seoTitle,
   seoDescription,
   seoKeywords,
+  heroImage,
+  heroImageAlt,
   category,
   title,
   date,
   children,
   currentSlug,
 }: BlogArticleLayoutProps) => {
-  const relatedArticles = blogArticles
-    .filter((a) => a.slug !== currentSlug)
-    .slice(0, 3);
-
   return (
     <div className="min-h-screen bg-background">
       <SEO title={seoTitle} description={seoDescription} keywords={seoKeywords} />
@@ -56,69 +55,62 @@ const BlogArticleLayout = ({
       <SideDrawer />
       <Breadcrumbs />
 
-      <article className="container mx-auto px-4 max-w-2xl pt-12 pb-16">
-        {/* Back link */}
-        <Link
-          to="/blog"
-          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Blog
-        </Link>
-
-        {/* Article header */}
-        <header className="mb-10 border-b border-border/50 pb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 text-xs font-semibold text-accent bg-accent/10 rounded-full">
-              {category}
-            </span>
-            {date && (
-              <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="w-3 h-3" />
-                {date}
-              </span>
-            )}
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+      {/* Hero Banner with title overlay */}
+      <header className="relative h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center">
+        <img
+          src={heroImage}
+          alt={heroImageAlt}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center px-4 max-w-3xl">
+          {date && (
+            <div className="flex items-center justify-center gap-2 text-white/80 text-sm mb-3">
+              <Calendar className="w-4 h-4" />
+              <span>{date}</span>
+              <span className="mx-1">|</span>
+              <span>{category}</span>
+            </div>
+          )}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {title}
           </h1>
-        </header>
-
-        {/* Article body */}
-        <div className="text-muted-foreground leading-relaxed
-          [&>p]:mb-6 [&>p]:text-base [&>p]:leading-[1.8]
-          [&>h2]:text-xl [&>h2]:md:text-2xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-10 [&>h2]:mb-3
-          [&>h3]:text-lg [&>h3]:md:text-xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-2
-          [&>ul]:mb-6 [&>ul]:text-base [&>ul]:leading-[1.8]
-          [&>ol]:mb-6 [&>ol]:text-base [&>ol]:leading-[1.8]
-          [&_strong]:text-foreground
-          [&_a]:text-primary [&_a:hover]:underline
-        ">
-          {children}
         </div>
-      </article>
+      </header>
 
-      {/* Related Posts */}
-      <section className="py-12 border-t border-border/50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-xl font-bold text-foreground mb-6">More from the Blog</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedArticles.map((article) => (
-              <Link
-                key={article.slug}
-                to={`/blog/${article.slug}`}
-                className="group block p-4 rounded-lg border border-border/50 hover:border-accent/30 transition-colors"
-              >
-                <span className="text-xs font-semibold text-accent">{article.category}</span>
-                <h3 className="text-sm font-bold text-foreground mt-1 group-hover:text-accent transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">{article.date}</p>
-              </Link>
-            ))}
+      {/* Article body */}
+      <div
+        className="py-12 md:py-16"
+        style={{
+          backgroundImage: `url(${pageBackgroundTexture})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <article className="container mx-auto px-4 max-w-3xl">
+          {/* Back link */}
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium mb-10"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Blog
+          </Link>
+
+          {/* Article content */}
+          <div className="text-foreground/80 leading-relaxed text-base md:text-lg
+            [&>p]:mb-6 [&>p]:leading-[1.8]
+            [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-12 [&>h2]:mb-4
+            [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-3
+            [&>ul]:mb-6 [&>ul]:leading-[1.8] [&>ul]:pl-1
+            [&>ol]:mb-6 [&>ol]:leading-[1.8] [&>ol]:pl-1
+            [&_strong]:text-foreground [&_strong]:font-semibold
+            [&_a]:text-primary [&_a:hover]:underline
+          ">
+            {children}
           </div>
-        </div>
-      </section>
+        </article>
+      </div>
 
       <Footer />
     </div>
