@@ -27,7 +27,7 @@ const Blog = () => {
         <img
           src={blogHero}
           alt="Toast All Day brunch dishes"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-black/50" />
         <h1 className="relative z-10 text-5xl md:text-6xl font-bold text-white tracking-wide">
