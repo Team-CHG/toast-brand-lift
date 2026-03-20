@@ -73,7 +73,7 @@ const BlogArticleLayout = ({
               <span>{category}</span>
             </div>
           )}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight font-body">
             {title}
           </h1>
         </div>
