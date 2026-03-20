@@ -23,7 +23,7 @@ const UnlimitedDrinkPass = () => {
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 my-8">
-        <a href="https://www.eventbrite.com/e/toast-bridge-run-mimosa-festival-tickets-1304651721419?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors text-sm">
+        <a href="https://www.eventbrite.com/e/toast-bridge-run-mimosa-festival-tickets-1304651721419?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Get Your Wristband on Eventbrite
         </a>
       </div>
