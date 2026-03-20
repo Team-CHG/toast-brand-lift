@@ -22,6 +22,7 @@ import SoupSaladSandwich from "./pages/events/SoupSaladSandwich";
 import BlackFridayGiftCard from "./pages/events/BlackFridayGiftCard";
 import VeteransDay from "./pages/events/VeteransDay";
 import BestBrunch from "./pages/events/BestBrunch";
+import BestBreakfastBrunch from "./pages/events/BestBreakfastBrunch";
 import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -75,6 +76,7 @@ const App = () => (
             <Route path="/blog/black-friday-gift-card" element={<BlackFridayGiftCard />} />
             <Route path="/blog/veterans-day" element={<VeteransDay />} />
             <Route path="/blog/best-brunch" element={<BestBrunch />} />
+            <Route path="/blog/best-breakfast-brunch" element={<BestBreakfastBrunch />} />
             <Route path="/blog/valentines-day" element={<ValentinesDay />} />
             {/* Redirect old news-events URLs */}
             <Route path="/news-events/*" element={<Navigate to="/blog" replace />} />
