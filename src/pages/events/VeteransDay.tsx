@@ -15,7 +15,7 @@ const VeteransDay = () => {
       currentSlug="veterans-day"
     >
       <p>
-        Every Veterans Day, Toast All Day opens its doors to the men and women who have served our country — and this year is no exception. On <strong>November 11th, 2024</strong>, all veterans and active duty service members can enjoy a <strong>free meal</strong> at any of our Charleston-area locations.
+        Every Veterans Day, Toast All Day opens its doors to the men and women who have served our country — and this year is no exception. On November 11th, 2024, all veterans and active duty service members can enjoy a free meal at any of our Charleston-area locations.
       </p>
 
       <h2>Choose Your Free Meal</h2>
@@ -23,8 +23,8 @@ const VeteransDay = () => {
         Veterans can select from two of our most popular dishes:
       </p>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Classic Breakfast Plate</strong> — two eggs cooked your way, choice of bacon or sausage, toast, and hash browns. The breakfast that built Toast All Day.</li>
-        <li><strong className="text-foreground">Smash Burger</strong> — our double-patty smash burger with melted cheese, lettuce, tomato, and house sauce, served with a side of fries.</li>
+        <li>Classic Breakfast Plate — two eggs cooked your way, choice of bacon or sausage, toast, and hash browns. The breakfast that built Toast All Day.</li>
+        <li>Smash Burger — our double-patty smash burger with melted cheese, lettuce, tomato, and house sauce, served with a side of fries.</li>
       </ul>
       <p>
         Both options are full-sized dishes from our regular menu — not a scaled-down "special" plate. We want this to feel like a real meal, not a gesture.
@@ -32,7 +32,7 @@ const VeteransDay = () => {
 
       <h2>How to Redeem</h2>
       <p>
-        Simply visit any Toast All Day location on November 11th and let your server know you'd like the Veterans Day meal. You'll need to present a <strong>valid military ID</strong> or be in uniform. The offer is available for dine-in only during regular service hours. No reservation is needed, but we recommend arriving early — Veterans Day is one of our busiest days of the year.
+        Simply visit any Toast All Day location on November 11th and let your server know you'd like the Veterans Day meal. You'll need to present a valid military ID or be in uniform. The offer is available for dine-in only during regular service hours. No reservation is needed, but we recommend arriving early — Veterans Day is one of our busiest days of the year.
       </p>
 
       <h2>Beyond Veterans Day</h2>

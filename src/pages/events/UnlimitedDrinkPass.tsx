@@ -14,12 +14,12 @@ const UnlimitedDrinkPass = () => {
       currentSlug="unlimited-drink-pass"
     >
       <p>
-        The Cooper River Bridge Run is Charleston's biggest annual fitness event, drawing tens of thousands of runners and spectators to the streets every April. This year, Toast All Day is turning race day into a full-blown celebration — combining our 20th anniversary festivities with an <strong>unlimited mimosa wristband</strong> you can grab at two of our locations along the race route.
+        The Cooper River Bridge Run is Charleston's biggest annual fitness event, drawing tens of thousands of runners and spectators to the streets every April. This year, Toast All Day is turning race day into a full-blown celebration — combining our 20th anniversary festivities with an unlimited mimosa wristband you can grab at two of our locations along the race route.
       </p>
 
       <h2>How the Wristband Works</h2>
       <p>
-        Purchase your wristband in advance through Eventbrite and check in at either our <strong>Mount Pleasant location</strong> (near the starting line) or our <strong>King Street location</strong> (at the finish). Once the wristband is on, your mimosas are unlimited for the duration of your visit. Pair them with any dish on our full brunch menu and turn your post-run recovery into a proper celebration.
+        Purchase your wristband in advance through Eventbrite and check in at either our Mount Pleasant location (near the starting line) or our King Street location (at the finish). Once the wristband is on, your mimosas are unlimited for the duration of your visit. Pair them with any dish on our full brunch menu and turn your post-run recovery into a proper celebration.
       </p>
 
       <div className="flex flex-wrap justify-center gap-4 my-8">
@@ -30,11 +30,11 @@ const UnlimitedDrinkPass = () => {
 
       <h2>Event Details</h2>
       <p>
-        The mimosa festival runs on <strong>Saturday, April 5th, 2025</strong> during regular service hours. Both participating locations will have a check-in station where you can pick up your wristband and start sipping. No need to print anything — just show your Eventbrite confirmation on your phone.
+        The mimosa festival runs on Saturday, April 5th, 2025 during regular service hours. Both participating locations will have a check-in station where you can pick up your wristband and start sipping. No need to print anything — just show your Eventbrite confirmation on your phone.
       </p>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Toast Mount Pleasant</strong> — near the Bridge Run starting line</li>
-        <li><strong className="text-foreground">Toast King Street</strong> — 451 King St, near the finish line</li>
+        <li>Toast Mount Pleasant — near the Bridge Run starting line</li>
+        <li>Toast King Street — 451 King St, near the finish line</li>
       </ul>
 
       <h2>Why Brunch After the Bridge Run Just Makes Sense</h2>
@@ -47,7 +47,7 @@ const UnlimitedDrinkPass = () => {
 
       <h2>Don't Forget to Sign Up for Rewards</h2>
       <p>
-        If you're joining us for the Bridge Run event, sign up for our loyalty program while you wait. New members receive a <strong>$5 instant bonus</strong> and start earning points on every purchase. It's the best way to keep the celebration going long after race day.
+        If you're joining us for the Bridge Run event, sign up for our loyalty program while you wait. New members receive a $5 instant bonus and start earning points on every purchase. It's the best way to keep the celebration going long after race day.
       </p>
 
       <div className="text-center my-8">

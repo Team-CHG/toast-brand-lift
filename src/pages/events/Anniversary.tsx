@@ -20,10 +20,10 @@ const Anniversary = () => {
 
       <h2>What to Expect at the Anniversary Events</h2>
       <p>
-        Each celebration features <strong>complimentary bubbles with every meal</strong>, because no birthday is complete without a toast. Order any dish from our full menu and your server will deliver a glass of sparkling wine alongside it — no purchase minimum, no catch.
+        Each celebration features complimentary bubbles with every meal, because no birthday is complete without a toast. Order any dish from our full menu and your server will deliver a glass of sparkling wine alongside it — no purchase minimum, no catch.
       </p>
       <p>
-        The first 100 guests at each event will also be <strong>entered to win brunch for an entire year</strong>. That's 52 free meals at your favorite location. One winner per location will be drawn the following week and notified by phone, so make sure your contact info is up to date when you check in.
+        The first 100 guests at each event will also be entered to win brunch for an entire year. That's 52 free meals at your favorite location. One winner per location will be drawn the following week and notified by phone, so make sure your contact info is up to date when you check in.
       </p>
 
       <h2>Event Schedule</h2>
@@ -31,9 +31,9 @@ const Anniversary = () => {
         We're staggering the celebrations across February so you can attend more than one if you'd like. Each event runs from 7 AM to 3 PM during regular service hours:
       </p>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">February 8th</strong> — Mount Pleasant, 835 Coleman Blvd</li>
-        <li><strong className="text-foreground">February 15th</strong> — West Ashley, 2026 Savannah Hwy</li>
-        <li><strong className="text-foreground">February 22nd</strong> — Summerville, 717 Old Trolley Road</li>
+        <li>February 8th — Mount Pleasant, 835 Coleman Blvd</li>
+        <li>February 15th — West Ashley, 2026 Savannah Hwy</li>
+        <li>February 22nd — Summerville, 717 Old Trolley Road</li>
       </ul>
       <p>
         Additional celebrations at our downtown and Savannah locations will be announced on our social media channels. Follow us on <a href="https://www.instagram.com/toastallday/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Instagram</a> and <a href="https://www.facebook.com/toastallday/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Facebook</a> for updates.

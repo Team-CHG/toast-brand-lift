@@ -15,7 +15,7 @@ const SoupSaladSandwich = () => {
       currentSlug="soup-salad-sandwich"
     >
       <p>
-        Toast All Day has always been known for breakfast and brunch, but our lunch menu deserves its own spotlight. Starting this January, we're rolling out a <strong>$12 lunch combo</strong> that lets you mix and match any two items from our sandwich, soup, and salad selections. It's a straightforward deal designed for the midday crowd — fast, filling, and easy on the wallet.
+        Toast All Day has always been known for breakfast and brunch, but our lunch menu deserves its own spotlight. Starting this January, we're rolling out a $12 lunch combo that lets you mix and match any two items from our sandwich, soup, and salad selections. It's a straightforward deal designed for the midday crowd — fast, filling, and easy on the wallet.
       </p>
 
       <h2>Pick Any Two</h2>
@@ -25,23 +25,23 @@ const SoupSaladSandwich = () => {
 
       <h3>Sandwiches</h3>
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-        <li><strong className="text-foreground">BLT</strong> — thick-cut bacon, lettuce, tomato, and mayo on toasted bread</li>
-        <li><strong className="text-foreground">Ultimate Grilled Cheese</strong> — a melty, buttery upgrade on the childhood classic</li>
-        <li><strong className="text-foreground">Fried Chicken Sandwich</strong> — crispy fried chicken with pickles and house sauce</li>
-        <li><strong className="text-foreground">Seasonal Wrap</strong> — rotating ingredients based on what's fresh and local</li>
+        <li>BLT — thick-cut bacon, lettuce, tomato, and mayo on toasted bread</li>
+        <li>Ultimate Grilled Cheese — a melty, buttery upgrade on the childhood classic</li>
+        <li>Fried Chicken Sandwich — crispy fried chicken with pickles and house sauce</li>
+        <li>Seasonal Wrap — rotating ingredients based on what's fresh and local</li>
       </ul>
 
       <h3>Soups</h3>
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-        <li><strong className="text-foreground">Lobster Bisque</strong> — rich, creamy, and loaded with tender lobster</li>
-        <li><strong className="text-foreground">She Crab Soup</strong> — a Lowcountry classic that's been on our menu for years</li>
-        <li><strong className="text-foreground">Seasonal Soup</strong> — changes weekly based on seasonal ingredients</li>
+        <li>Lobster Bisque — rich, creamy, and loaded with tender lobster</li>
+        <li>She Crab Soup — a Lowcountry classic that's been on our menu for years</li>
+        <li>Seasonal Soup — changes weekly based on seasonal ingredients</li>
       </ul>
 
       <h3>Salads</h3>
       <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-        <li><strong className="text-foreground">Caesar Salad</strong> — crisp romaine, shaved parmesan, croutons, and house-made dressing</li>
-        <li><strong className="text-foreground">Mixed Greens</strong> — a lighter option with seasonal vegetables and vinaigrette</li>
+        <li>Caesar Salad — crisp romaine, shaved parmesan, croutons, and house-made dressing</li>
+        <li>Mixed Greens — a lighter option with seasonal vegetables and vinaigrette</li>
       </ul>
 
       <h2>Why $12?</h2>
