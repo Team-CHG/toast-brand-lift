@@ -69,13 +69,21 @@ const Navigation = () => {
                 Menu <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card border-border">
-                {locations.map((location, index) => (
-                  <DropdownMenuItem key={index} asChild>
-                    <a href={location.menuUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                      {location.name}
-                    </a>
-                  </DropdownMenuItem>
-                ))}
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Downtown_Locations_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Downtown Locations
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Suburbs_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Suburb Locations
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Savannah_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Savannah Location
+                  </a>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             
