@@ -25,7 +25,7 @@ const Blog = () => {
       {/* Hero Banner */}
       <section className="relative h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center">
         <img
-          src="https://toastallday.com/wp-content/uploads/2022/02/Toast-All-Day-syrup-pour-chicken-800x675.jpg"
+          src={blogHero}
           alt="Toast All Day brunch dishes"
           className="absolute inset-0 w-full h-full object-cover"
         />
