@@ -58,12 +58,12 @@ const DownloadApp = () => {
         Download the app today and put your next $5 toward the best breakfast in Charleston.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-4 my-4">
-        <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer">
-          <img src={badgeAppStore} alt="Download on the App Store" className="h-14" />
+      <div className="flex flex-wrap justify-center gap-6 my-6">
+        <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer" className="shrink-0">
+          <img src={badgeAppStore} alt="Download on the App Store" className="h-14 w-auto" />
         </a>
-        <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-          <img src={badgeGooglePlay} alt="Get it on Google Play" className="h-14" />
+        <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="shrink-0">
+          <img src={badgeGooglePlay} alt="Get it on Google Play" className="h-14 w-auto" />
         </a>
       </div>
     </BlogArticleLayout>

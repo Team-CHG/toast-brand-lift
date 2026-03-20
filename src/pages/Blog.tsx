@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogArticles } from "@/components/BlogArticleLayout";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import blogHero from "@/assets/blog-hero.jpg";
+
 
 const Blog = () => {
   return (
@@ -23,14 +23,8 @@ const Blog = () => {
       <Breadcrumbs />
 
       {/* Hero Banner */}
-      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center">
-        <img
-          src={blogHero}
-          alt="Toast All Day restaurant storefront"
-          className="absolute inset-0 w-full h-full object-cover object-bottom"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <h1 className="relative z-10 text-5xl md:text-6xl font-bold text-white tracking-wide">
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center bg-[#e4faff]">
+        <h1 className="text-5xl md:text-6xl font-bold text-foreground tracking-wide">
           BLOG
         </h1>
       </section>
