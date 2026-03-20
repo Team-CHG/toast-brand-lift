@@ -62,7 +62,15 @@ const Locations = () => {
       </section>
 
       {/* Locations Grid */}
-      <section className="py-16" aria-labelledby="all-locations">
+      <section
+        className="py-16"
+        aria-labelledby="all-locations"
+        style={{
+          backgroundImage: `url(${pageBackgroundTexture})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <div className="container mx-auto px-4">
           <h2 id="all-locations" className="sr-only">All Toast All Day Locations</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
