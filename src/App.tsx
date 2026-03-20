@@ -22,6 +22,7 @@ import SoupSaladSandwich from "./pages/events/SoupSaladSandwich";
 import BlackFridayGiftCard from "./pages/events/BlackFridayGiftCard";
 import VeteransDay from "./pages/events/VeteransDay";
 import BestBrunch from "./pages/events/BestBrunch";
+import BestBreakfastBrunch from "./pages/events/BestBreakfastBrunch";
 import ValentinesDay from "./pages/events/ValentinesDay";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
