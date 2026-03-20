@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import locationsBackground from "@/assets/locations-background.avif";
+import pageBackgroundTexture from "@/assets/page-background-texture.png";
 
 const Locations = () => {
   return (
