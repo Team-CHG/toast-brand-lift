@@ -98,7 +98,15 @@ const BlogArticleLayout = ({
 
         {/* Article Content */}
         <div className="container mx-auto px-4 max-w-3xl py-8">
-          <div className="prose prose-lg max-w-none [&>*]:mb-6">
+          <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed
+            [&>p]:mb-6 [&>p]:text-base [&>p]:md:text-lg [&>p]:leading-[1.8]
+            [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-12 [&>h2]:mb-4
+            [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-3
+            [&>ul]:mb-6 [&>ul]:text-base [&>ul]:md:text-lg [&>ul]:leading-[1.8]
+            [&>ol]:mb-6 [&>ol]:text-base [&>ol]:md:text-lg [&>ol]:leading-[1.8]
+            [&_strong]:text-foreground
+            [&>*]:mb-6
+          ">
             {children}
           </div>
         </div>
