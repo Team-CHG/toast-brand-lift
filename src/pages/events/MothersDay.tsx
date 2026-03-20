@@ -23,17 +23,8 @@ const MothersDay = () => {
         When your table purchases two or more entrees, Mom receives a <strong>free mimosa and a complimentary order of beignets</strong>. It's our small way of saying thank you to the moms who do so much. Whether she's a classic Eggs Benedict devotee or a Chicken &amp; Waffles loyalist, pair her favorite dish with a cold glass of bubbly and a dusting of powdered sugar — on the house.
       </p>
       <p>
-        This offer is exclusive to <strong>Toast All Day app users and loyalty members</strong>, so make sure you're signed up before you arrive. Not a member yet? Download the app and you'll also receive a $5 sign-up bonus toward your meal.
+        This offer is exclusive to <strong>Toast All Day app users and loyalty members</strong>, so make sure you're signed up before you arrive. Not a member yet? Download the app from the <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Play</a> and you'll also receive a $5 sign-up bonus toward your meal.
       </p>
-
-      <div className="flex flex-wrap justify-center gap-4 my-8">
-        <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer">
-          <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-apple-btn-web.png" alt="Download on the App Store" className="h-12" />
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-          <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-google-play-btn-web.png" alt="Get it on Google Play" className="h-12" />
-        </a>
-      </div>
 
       <h2>Why Brunch Is the Best Way to Celebrate Mom</h2>
       <p>

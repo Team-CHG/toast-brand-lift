@@ -17,21 +17,12 @@ const DownloadApp = () => {
         After twenty years of serving Charleston's favorite brunch, we're bringing the full Toast All Day experience to your pocket. Our brand-new app puts rewards tracking, online ordering, and exclusive offers in one place — and to celebrate the launch, every new user gets <strong>$5 in instant rewards</strong> just for signing up.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-4 my-8">
-        <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer">
-          <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-apple-btn-web.png" alt="Download on the App Store" className="h-14" />
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-          <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-google-play-btn-web.png" alt="Get it on Google Play" className="h-14" />
-        </a>
-      </div>
-
       <h2>Why We Built the App</h2>
       <p>
         Our loyalty program has been running on the web for years, and it works well — but we heard the same feedback from regulars: "I forgot to check in," "I didn't know I had points," "Can I just order from my phone?" The app solves all three. Your rewards balance is always visible, you earn points automatically when you pay through the app, and you can place pickup orders without waiting in line.
       </p>
 
-      <img src="https://toastallday.com/wp-content/uploads/2025/04/toast-app-hero.jpg" alt="Toast All Day app screens showing ordering, rewards, and offers" className="w-full rounded-2xl shadow-lg my-8" />
+      
 
       <h2>How the Rewards Work</h2>
       <p>
