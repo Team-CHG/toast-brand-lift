@@ -76,6 +76,7 @@ const App = () => (
             <Route path="/blog/black-friday-gift-card" element={<BlackFridayGiftCard />} />
             <Route path="/blog/veterans-day" element={<VeteransDay />} />
             <Route path="/blog/best-brunch" element={<BestBrunch />} />
+            <Route path="/blog/best-breakfast-brunch" element={<BestBreakfastBrunch />} />
             <Route path="/blog/valentines-day" element={<ValentinesDay />} />
             {/* Redirect old news-events URLs */}
             <Route path="/news-events/*" element={<Navigate to="/blog" replace />} />
