@@ -42,7 +42,7 @@ const MothersDay = () => {
         <a href="https://www.instagram.com/p/DJWsG0uR3YC/" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Enter on Instagram
         </a>
-        <a href="https://www.facebook.com/reel/1357283998877155" target="_blank" rel="noopener noreferrer" className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors text-sm">
+        <a href="https://www.facebook.com/reel/1357283998877155" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Enter on Facebook
         </a>
       </div>
