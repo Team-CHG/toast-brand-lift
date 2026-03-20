@@ -1,5 +1,6 @@
 import BlogArticleLayout from "@/components/BlogArticleLayout";
-
+import badgeAppStore from "@/assets/badge-app-store.png";
+import badgeGooglePlay from "@/assets/badge-google-play.png";
 const DownloadApp = () => {
   return (
     <BlogArticleLayout
