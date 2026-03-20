@@ -7,6 +7,7 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogArticles } from "@/components/BlogArticleLayout";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import blogHero from "@/assets/blog-hero.jpg";
 
 const Blog = () => {
   return (
