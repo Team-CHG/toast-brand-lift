@@ -69,13 +69,21 @@ const Navigation = () => {
                 Menu <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card border-border">
-                {locations.map((location, index) => (
-                  <DropdownMenuItem key={index} asChild>
-                    <a href={location.menuUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                      {location.name}
-                    </a>
-                  </DropdownMenuItem>
-                ))}
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Downtown_Locations_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Downtown Locations
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Suburbs_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Suburb Locations
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/menus/Toast_All_Day_Savannah_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                    Savannah Location
+                  </a>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             
@@ -154,17 +162,30 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground px-2">Menu</p>
-                {locations.map((location, index) => (
-                  <a 
-                    key={index}
-                    href={location.menuUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block px-2 py-2 text-foreground hover:text-primary transition-colors"
-                  >
-                    {location.name}
-                  </a>
-                ))}
+                <a 
+                  href="/menus/Toast_All_Day_Downtown_Locations_Menu.pdf"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block px-2 py-2 text-foreground hover:text-primary transition-colors"
+                >
+                  Downtown Locations
+                </a>
+                <a 
+                  href="/menus/Toast_All_Day_Suburbs_Menu.pdf"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block px-2 py-2 text-foreground hover:text-primary transition-colors"
+                >
+                  Suburb Locations
+                </a>
+                <a 
+                  href="/menus/Toast_All_Day_Savannah_Menu.pdf"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block px-2 py-2 text-foreground hover:text-primary transition-colors"
+                >
+                  Savannah Location
+                </a>
               </div>
 
               <a href="/rewards" className="text-lg font-medium hover:text-primary transition-colors">
