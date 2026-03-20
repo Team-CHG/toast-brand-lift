@@ -28,15 +28,15 @@ const BestBrunch = () => {
         Every regular has their go-to, but these four dishes are the most-ordered items across all of our locations:
       </p>
       <ul className="list-disc list-inside space-y-3 text-muted-foreground">
-        <li><strong className="text-foreground">Eggs Meeting Street</strong> — two crab cakes on fried green tomatoes, topped with perfectly poached eggs and our house-made hollandaise. Named after the street where it all started, and it's been on the menu since day one.</li>
-        <li><strong className="text-foreground">Lowcountry Shrimp &amp; Grits</strong> — stone-ground grits from a local mill, sautéed shrimp, and our signature lobster cream sauce. The dish that turned visiting food critics into regulars.</li>
-        <li><strong className="text-foreground">Chicken &amp; Waffles</strong> — crispy buttermilk fried chicken on a fluffy Belgian waffle with real maple syrup. Sweet, savory, and exactly as indulgent as it should be.</li>
-        <li><strong className="text-foreground">Avocado Toast</strong> — fresh avocado on thick-cut artisan bread with poached eggs, everything seasoning, and a drizzle of chili oil. Simple done right.</li>
+        <li>Eggs Meeting Street — two crab cakes on fried green tomatoes, topped with perfectly poached eggs and our house-made hollandaise. Named after the street where it all started, and it's been on the menu since day one.</li>
+        <li>Lowcountry Shrimp &amp; Grits — stone-ground grits from a local mill, sautéed shrimp, and our signature lobster cream sauce. The dish that turned visiting food critics into regulars.</li>
+        <li>Chicken &amp; Waffles — crispy buttermilk fried chicken on a fluffy Belgian waffle with real maple syrup. Sweet, savory, and exactly as indulgent as it should be.</li>
+        <li>Avocado Toast — fresh avocado on thick-cut artisan bread with poached eggs, everything seasoning, and a drizzle of chili oil. Simple done right.</li>
       </ul>
 
       <h2>Recognition That Speaks for Itself</h2>
       <p>
-        Toast All Day has earned a spot on <strong>TripAdvisor's Top 25 Restaurants in the U.S.</strong>, been featured in local and national press, and maintains a consistent stream of five-star reviews from both tourists and locals. But the recognition we value most is the repeat customer — the families who have been coming every Saturday for a decade, the college students who celebrated their 21st birthday over mimosas at our table, the retirees who walk in every morning at 7:15 sharp.
+        Toast All Day has earned a spot on TripAdvisor's Top 25 Restaurants in the U.S., been featured in local and national press, and maintains a consistent stream of five-star reviews from both tourists and locals. But the recognition we value most is the repeat customer — the families who have been coming every Saturday for a decade, the college students who celebrated their 21st birthday over mimosas at our table, the retirees who walk in every morning at 7:15 sharp.
       </p>
 
       <h2>Six Locations Across the Lowcountry</h2>

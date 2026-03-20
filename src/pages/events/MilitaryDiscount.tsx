@@ -15,7 +15,7 @@ const MilitaryDiscount = () => {
       currentSlug="military-discount"
     >
       <p>
-        The Charleston area is home to Joint Base Charleston, the Naval Weapons Station, and thousands of active duty families and retired veterans. Many of them have been part of the Toast All Day community since we opened our doors twenty years ago. As we mark our 20th anniversary, we're making our appreciation official with a <strong>permanent 10% discount for all active duty and retired military</strong>.
+        The Charleston area is home to Joint Base Charleston, the Naval Weapons Station, and thousands of active duty families and retired veterans. Many of them have been part of the Toast All Day community since we opened our doors twenty years ago. As we mark our 20th anniversary, we're making our appreciation official with a permanent 10% discount for all active duty and retired military.
       </p>
 
       <h2>How It Works</h2>
@@ -25,7 +25,7 @@ const MilitaryDiscount = () => {
 
       <h2>Available at Every Location, Every Day</h2>
       <p>
-        This isn't a one-day promotion or a holiday-only gesture. The military discount is available <strong>every day we're open</strong>, at every Toast All Day location across Charleston and Savannah. Whether you're grabbing a quick breakfast before reporting to base or settling in for a long weekend brunch with the family, the discount applies.
+        This isn't a one-day promotion or a holiday-only gesture. The military discount is available every day we're open, at every Toast All Day location across Charleston and Savannah. Whether you're grabbing a quick breakfast before reporting to base or settling in for a long weekend brunch with the family, the discount applies.
       </p>
       <p>
         Find your nearest location on our <Link to="/locations" className="text-primary hover:underline">locations page</Link> — we have restaurants in downtown Charleston, Mount Pleasant, West Ashley, Summerville, and Savannah.

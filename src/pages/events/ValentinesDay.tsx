@@ -25,18 +25,18 @@ const ValentinesDay = () => {
 
       <h3>Signature Cocktails</h3>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Be Mine Mimosa</strong> — our classic mimosa with a romantic twist. Sparkling wine meets fresh-squeezed juice with a berry garnish that turns every sip pink.</li>
-        <li><strong className="text-foreground">Sweetheart Spiked Lemonade</strong> — sweet, tart, and refreshing with a kick. Perfect for the person who claims they don't like mimosas but orders three anyway.</li>
+        <li>Be Mine Mimosa — our classic mimosa with a romantic twist. Sparkling wine meets fresh-squeezed juice with a berry garnish that turns every sip pink.</li>
+        <li>Sweetheart Spiked Lemonade — sweet, tart, and refreshing with a kick. Perfect for the person who claims they don't like mimosas but orders three anyway.</li>
       </ul>
 
       <h3>Specialty Latte</h3>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Mocha-berry Bliss</strong> — rich espresso meets dark chocolate and a swirl of berry syrup. It's dessert in a mug, and it's acceptable before noon.</li>
+        <li>Mocha-berry Bliss — rich espresso meets dark chocolate and a swirl of berry syrup. It's dessert in a mug, and it's acceptable before noon.</li>
       </ul>
 
       <h3>Sweet Treat</h3>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Red Velvet Waffles</strong> — fluffy Belgian waffles with a red velvet twist, served with cream cheese drizzle and your choice of breakfast meats. The showstopper of the menu — and extremely Instagram-friendly.</li>
+        <li>Red Velvet Waffles — fluffy Belgian waffles with a red velvet twist, served with cream cheese drizzle and your choice of breakfast meats. The showstopper of the menu — and extremely Instagram-friendly.</li>
       </ul>
 
       <h2>Why Brunch Is the Better Valentine's Date</h2>

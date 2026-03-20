@@ -15,7 +15,7 @@ const BlackFridayGiftCard = () => {
       currentSlug="black-friday-gift-card"
     >
       <p>
-        The holiday shopping season is here, and if you have a brunch lover on your list — or you simply want to treat yourself — Toast All Day has a deal worth grabbing. From now through <strong>December 15th, 2024</strong>, purchase $50 or more in Toast All Day gift cards and receive a <strong>free $20 bonus card</strong> on top.
+        The holiday shopping season is here, and if you have a brunch lover on your list — or you simply want to treat yourself — Toast All Day has a deal worth grabbing. From now through December 15th, 2024, purchase $50 or more in Toast All Day gift cards and receive a free $20 bonus card on top.
       </p>
 
       <h2>How the Bonus Works</h2>

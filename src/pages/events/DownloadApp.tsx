@@ -15,7 +15,7 @@ const DownloadApp = () => {
       currentSlug="download-app"
     >
       <p>
-        After twenty years of serving Charleston's favorite brunch, we're bringing the full Toast All Day experience to your pocket. Our brand-new app puts rewards tracking, online ordering, and exclusive offers in one place — and to celebrate the launch, every new user gets <strong>$5 in instant rewards</strong> just for signing up.
+        After twenty years of serving Charleston's favorite brunch, we're bringing the full Toast All Day experience to your pocket. Our brand-new app puts rewards tracking, online ordering, and exclusive offers in one place — and to celebrate the launch, every new user gets $5 in instant rewards just for signing up.
       </p>
 
       <h2>Why We Built the App</h2>
@@ -23,14 +23,12 @@ const DownloadApp = () => {
         Our loyalty program has been running on the web for years, and it works well — but we heard the same feedback from regulars: "I forgot to check in," "I didn't know I had points," "Can I just order from my phone?" The app solves all three. Your rewards balance is always visible, you earn points automatically when you pay through the app, and you can place pickup orders without waiting in line.
       </p>
 
-      
-
       <h2>How the Rewards Work</h2>
       <p>
-        The program is straightforward: <strong>earn 1 point for every dollar you spend</strong>. Points accumulate toward $10 rewards that you can apply to any future visit. There are no blackout dates, no complicated tiers, and no expiration tricks. Eat brunch, earn points, redeem when you're ready.
+        The program is straightforward: earn 1 point for every dollar you spend. Points accumulate toward $10 rewards that you can apply to any future visit. There are no blackout dates, no complicated tiers, and no expiration tricks. Eat brunch, earn points, redeem when you're ready.
       </p>
       <p>
-        On top of the standard earning rate, app users get access to <strong>exclusive promotions</strong> that don't appear on our website or social media. Think surprise double-point days, birthday perks, and early access to seasonal menu items. If you're the kind of person who visits Toast more than once a month, the savings add up quickly.
+        On top of the standard earning rate, app users get access to exclusive promotions that don't appear on our website or social media. Think surprise double-point days, birthday perks, and early access to seasonal menu items. If you're the kind of person who visits Toast more than once a month, the savings add up quickly.
       </p>
 
       <h2>Online Ordering, Simplified</h2>
@@ -40,9 +38,9 @@ const DownloadApp = () => {
 
       <h2>Getting Started Takes 60 Seconds</h2>
       <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
-        <li><strong className="text-foreground">Download</strong> the Toast All Day app from the App Store or Google Play.</li>
-        <li><strong className="text-foreground">Create an account</strong> with your name, email, and phone number.</li>
-        <li><strong className="text-foreground">Start earning</strong> — your $5 sign-up bonus is loaded instantly.</li>
+        <li>Download the Toast All Day app from the App Store or Google Play.</li>
+        <li>Create an account with your name, email, and phone number.</li>
+        <li>Start earning — your $5 sign-up bonus is loaded instantly.</li>
       </ol>
 
       <p>

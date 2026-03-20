@@ -20,10 +20,10 @@ const MothersDay = () => {
 
       <h2>The Offer: Mom Eats (and Sips) on Us</h2>
       <p>
-        When your table purchases two or more entrees, Mom receives a <strong>free mimosa and a complimentary order of beignets</strong>. It's our small way of saying thank you to the moms who do so much. Whether she's a classic Eggs Benedict devotee or a Chicken &amp; Waffles loyalist, pair her favorite dish with a cold glass of bubbly and a dusting of powdered sugar — on the house.
+        When your table purchases two or more entrees, Mom receives a free mimosa and a complimentary order of beignets. It's our small way of saying thank you to the moms who do so much. Whether she's a classic Eggs Benedict devotee or a Chicken &amp; Waffles loyalist, pair her favorite dish with a cold glass of bubbly and a dusting of powdered sugar — on the house.
       </p>
       <p>
-        This offer is exclusive to <strong>Toast All Day app users and loyalty members</strong>, so make sure you're signed up before you arrive. Not a member yet? Download the app from the <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Play</a> and you'll also receive a $5 sign-up bonus toward your meal.
+        This offer is exclusive to Toast All Day app users and loyalty members, so make sure you're signed up before you arrive. Not a member yet? Download the app from the <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.toasttab.toastallday&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Play</a> and you'll also receive a $5 sign-up bonus toward your meal.
       </p>
 
       <h2>Why Brunch Is the Best Way to Celebrate Mom</h2>
