@@ -1,74 +1,60 @@
+import { Link } from "react-router-dom";
 import BlogArticleLayout from "@/components/BlogArticleLayout";
-import { PartyPopper, Gift, Calendar, MapPin } from "lucide-react";
 
 const Anniversary = () => {
-  const events = [
-    { location: "Mount Pleasant Celebration", address: "835 Coleman Blvd", date: "February 8th 2025", time: "7AM – 3PM", link: "https://www.facebook.com/share/1BTgaxKMCd/" },
-    { location: "West Ashley Celebration", address: "2026 Savannah Hwy", date: "February 15th 2025", time: "7AM – 3PM", link: "https://www.facebook.com/share/1BTgaxKMCd/" },
-    { location: "Summerville Celebration", address: "717 Old Trolley Road", date: "February 22nd 2025", time: "7AM – 3PM", link: "https://www.facebook.com/share/15dwskFnLU/" },
-  ];
-
   return (
     <BlogArticleLayout
-      seoTitle="20th Anniversary Celebration - Toast All Day | Win Brunch for a Year"
-      seoDescription="Celebrate Toast All Day's 20th anniversary! Complimentary bubbles with every meal, first 100 guests entered to win brunch for a year."
-      seoKeywords="Toast 20th anniversary, restaurant anniversary, free champagne, win brunch, Charleston celebration"
+      seoTitle="Toast All Day 20th Anniversary | Win Brunch for a Year in Charleston"
+      seoDescription="Toast All Day celebrates 20 years! Join our anniversary parties with complimentary champagne, live music, and a chance to win brunch for a year. Events at all Charleston locations."
+      seoKeywords="Toast 20th anniversary, restaurant anniversary Charleston, win brunch for a year, free champagne brunch, Charleston celebration"
       heroImage="https://toastallday.com/wp-content/uploads/2025/02/Toast-20th-Anniversary-Event-Post-web.jpg"
-      heroImageAlt="Toast 20th Anniversary"
+      heroImageAlt="Toast All Day 20th anniversary celebration banner"
       category="Celebration"
       title="Toast's Two Decades of Delight"
       date="February 2025"
       currentSlug="anniversary"
     >
-      <div className="text-center">
-        <PartyPopper className="w-16 h-16 text-primary mx-auto mb-4" />
-        <h2 className="text-3xl font-bold text-foreground mb-6">Celebrating 20 Years of Toast</h2>
-        <p className="text-lg text-muted-foreground">
-          Toast is turning 20 and we want you to celebrate with us! We are having a party at our locations, and you're invited!
-        </p>
-      </div>
-
-      <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-card rounded-xl p-6 text-center border border-border/50">
-            <Gift className="w-10 h-10 text-primary mx-auto mb-3" />
-            <h4 className="font-bold text-foreground mb-2">Complimentary Bubbles</h4>
-            <p className="text-muted-foreground text-sm">Every meal comes with a glass of complimentary bubbles!</p>
-          </div>
-          <div className="bg-card rounded-xl p-6 text-center border border-border/50">
-            <PartyPopper className="w-10 h-10 text-primary mx-auto mb-3" />
-            <h4 className="font-bold text-foreground mb-2">Win Brunch for a Year!</h4>
-            <p className="text-muted-foreground text-sm">First 100 guests get entered to win BRUNCH for a YEAR!</p>
-          </div>
-        </div>
-      </div>
-
-      <p className="text-center text-lg text-muted-foreground">
-        Come join us for brunch and see what has made Toast so special for all of these years! We're celebrating and you're invited!
+      <p>
+        Twenty years ago, a small breakfast spot opened on Meeting Street with a simple idea: serve honest, scratch-made food in a room that feels like a friend's kitchen. Two decades, six locations, and countless plates of Shrimp &amp; Grits later, Toast All Day is celebrating its 20th anniversary — and we're throwing a party at every location to mark the occasion.
       </p>
 
-      <h3 className="text-2xl font-bold text-foreground text-center">Toast's 20th Anniversary Events</h3>
-      <div className="grid md:grid-cols-3 gap-6">
-        {events.map((event, index) => (
-          <div key={index} className="bg-card rounded-xl p-6 border border-border/50 hover:border-primary/30 transition-colors">
-            <h4 className="font-bold text-foreground mb-4">{event.location}</h4>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">{event.address}</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Calendar className="w-4 h-4 text-primary" />
-                <span className="text-sm">{event.date}</span>
-              </div>
-              <p className="text-sm text-primary font-semibold">{event.time}</p>
-            </div>
-            <a href={event.link} target="_blank" rel="noopener noreferrer" className="block text-center bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors">
-              View Details
-            </a>
-          </div>
-        ))}
-      </div>
+      <h2>What to Expect at the Anniversary Events</h2>
+      <p>
+        Each celebration features <strong>complimentary bubbles with every meal</strong>, because no birthday is complete without a toast. Order any dish from our full menu and your server will deliver a glass of sparkling wine alongside it — no purchase minimum, no catch.
+      </p>
+      <p>
+        The first 100 guests at each event will also be <strong>entered to win brunch for an entire year</strong>. That's 52 free meals at your favorite location. One winner per location will be drawn the following week and notified by phone, so make sure your contact info is up to date when you check in.
+      </p>
+
+      <h2>Event Schedule</h2>
+      <p>
+        We're staggering the celebrations across February so you can attend more than one if you'd like. Each event runs from 7 AM to 3 PM during regular service hours:
+      </p>
+      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+        <li><strong className="text-foreground">February 8th</strong> — Mount Pleasant, 835 Coleman Blvd</li>
+        <li><strong className="text-foreground">February 15th</strong> — West Ashley, 2026 Savannah Hwy</li>
+        <li><strong className="text-foreground">February 22nd</strong> — Summerville, 717 Old Trolley Road</li>
+      </ul>
+      <p>
+        Additional celebrations at our downtown and Savannah locations will be announced on our social media channels. Follow us on <a href="https://www.instagram.com/toastallday/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Instagram</a> and <a href="https://www.facebook.com/toastallday/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Facebook</a> for updates.
+      </p>
+
+      <h2>Looking Back: How Toast Became a Charleston Staple</h2>
+      <p>
+        What started as a single dining room on Meeting Street quickly became a neighborhood institution. Locals lined up on weekends for our Eggs Meeting Street — a dish that's been on the menu since day one — and visitors made Toast a mandatory stop on every Charleston trip.
+      </p>
+      <p>
+        Over the years we've expanded to six locations across the Lowcountry and Savannah, earned a spot on TripAdvisor's Top 25, and introduced a rewards program that now has thousands of active members. Through all the growth, the kitchen philosophy hasn't changed: fresh ingredients, generous portions, and a menu that feels like home.
+      </p>
+
+      <h2>Looking Ahead</h2>
+      <p>
+        The 20th anniversary is just the beginning of an exciting year. We have new menu items, app features, and community events planned throughout 2025. If you haven't already, <Link to="/blog/download-app" className="text-primary hover:underline">download our app</Link> to stay in the loop and earn rewards every time you visit.
+      </p>
+
+      <p>
+        Thank you to every guest, team member, and neighbor who has been part of the Toast story. Here's to twenty more years of great mornings.
+      </p>
     </BlogArticleLayout>
   );
 };

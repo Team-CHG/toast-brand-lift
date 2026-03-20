@@ -1,78 +1,53 @@
 import { Link } from "react-router-dom";
 import BlogArticleLayout from "@/components/BlogArticleLayout";
-import { Star, MapPin } from "lucide-react";
 
 const BestBrunch = () => {
-  const menuHighlights = [
-    { name: "Eggs Meeting Street", description: "Crab cakes, fried green tomatoes, and perfectly poached eggs with hollandaise sauce." },
-    { name: "Lowcountry Shrimp & Grits", description: "Creamy stone-ground grits topped with sautéed shrimp in our signature lobster cream sauce." },
-    { name: "Chicken & Waffles", description: "Crispy fried chicken served atop a fluffy Belgian waffle with maple syrup." },
-    { name: "Avocado Toast", description: "Fresh avocado on artisan bread with poached eggs and everything seasoning." },
-  ];
-
   return (
     <BlogArticleLayout
-      seoTitle="Best Brunch in Charleston SC - Toast All Day | TripAdvisor Top 25"
-      seoDescription="Discover why Toast All Day is voted best brunch in Charleston! Try Eggs Meeting Street, Lowcountry Shrimp & Grits, Chicken & Waffles. 20+ years of excellence."
-      seoKeywords="best brunch Charleston, top brunch SC, shrimp and grits, eggs benedict Charleston, chicken waffles"
+      seoTitle="Best Brunch in Charleston SC | Toast All Day — 20+ Years of Excellence"
+      seoDescription="Discover why Toast All Day has been voted the best brunch in Charleston for two decades. Eggs Meeting Street, Lowcountry Shrimp & Grits, Chicken & Waffles, and more."
+      seoKeywords="best brunch Charleston SC, top brunch restaurant, shrimp and grits Charleston, eggs benedict, chicken and waffles, breakfast Charleston"
       heroImage="https://toastallday.com/wp-content/uploads/2022/02/Toast-All-Day-syrup-pour-chicken-800x675.jpg"
-      heroImageAlt="Best Brunch in Charleston"
+      heroImageAlt="Golden syrup poured over crispy chicken and waffles at Toast All Day"
       category="News"
       title="The Best Brunch in Charleston, SC"
       date="February 2022"
       currentSlug="best-brunch"
     >
-      <div className="text-center">
-        <div className="flex items-center justify-center gap-1 mb-4">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-6 h-6 text-primary fill-primary" />
-          ))}
-        </div>
-        <p className="text-xl text-muted-foreground">
-          Discover why Toast! All Day has been voted the best brunch spot in Charleston for nearly two decades.
-        </p>
-      </div>
+      <p>
+        Charleston is a city that takes its food seriously. James Beard Award winners, rooftop oyster bars, and more farm-to-table restaurants than you can count populate every block south of Calhoun Street. So when we say Toast All Day has been voted the best brunch in Charleston — repeatedly, over nearly two decades — that carries weight.
+      </p>
 
-      <h2 className="text-3xl font-bold text-foreground text-center">Must-Try Menu Items</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        {menuHighlights.map((item, index) => (
-          <div key={index} className="bg-card rounded-xl p-6 border border-border/50 hover:border-primary/30 transition-colors">
-            <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
-            <p className="text-muted-foreground">{item.description}</p>
-          </div>
-        ))}
-      </div>
+      <h2>What Sets Toast All Day Apart</h2>
+      <p>
+        It's not one thing; it's the combination. A scratch-made menu that respects Lowcountry traditions without being stuffy about it. A dining room that buzzes with energy at 8 AM on a Tuesday. Servers who remember your name and your usual order. Mimosas that come in carafes, not thimbles. And a kitchen that has been refining the same core dishes for over twenty years — long enough to get them exactly right.
+      </p>
 
-      <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
-        <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Why Toast All Day?</h3>
-        <div className="grid md:grid-cols-3 gap-6 text-center">
-          <div>
-            <div className="text-4xl font-bold text-primary mb-2">20+</div>
-            <p className="text-muted-foreground">Years of Excellence</p>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-primary mb-2">6</div>
-            <p className="text-muted-foreground">Charleston Locations</p>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-primary mb-2">1000s</div>
-            <p className="text-muted-foreground">Happy Guests Daily</p>
-          </div>
-        </div>
-      </div>
+      <h2>The Dishes People Come Back For</h2>
+      <p>
+        Every regular has their go-to, but these four dishes are the most-ordered items across all of our locations:
+      </p>
+      <ul className="list-disc list-inside space-y-3 text-muted-foreground">
+        <li><strong className="text-foreground">Eggs Meeting Street</strong> — two crab cakes on fried green tomatoes, topped with perfectly poached eggs and our house-made hollandaise. Named after the street where it all started, and it's been on the menu since day one.</li>
+        <li><strong className="text-foreground">Lowcountry Shrimp &amp; Grits</strong> — stone-ground grits from a local mill, sautéed shrimp, and our signature lobster cream sauce. The dish that turned visiting food critics into regulars.</li>
+        <li><strong className="text-foreground">Chicken &amp; Waffles</strong> — crispy buttermilk fried chicken on a fluffy Belgian waffle with real maple syrup. Sweet, savory, and exactly as indulgent as it should be.</li>
+        <li><strong className="text-foreground">Avocado Toast</strong> — fresh avocado on thick-cut artisan bread with poached eggs, everything seasoning, and a drizzle of chili oil. Simple done right.</li>
+      </ul>
 
-      <div className="text-center">
-        <p className="text-lg text-muted-foreground mb-6">Experience the best brunch in Charleston for yourself!</p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/locations" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors">
-            <MapPin className="w-5 h-5" />
-            Find a Location
-          </Link>
-          <a href="https://toastallday.com/order-online/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold hover:bg-primary/10 transition-colors">
-            Order Online
-          </a>
-        </div>
-      </div>
+      <h2>Recognition That Speaks for Itself</h2>
+      <p>
+        Toast All Day has earned a spot on <strong>TripAdvisor's Top 25 Restaurants in the U.S.</strong>, been featured in local and national press, and maintains a consistent stream of five-star reviews from both tourists and locals. But the recognition we value most is the repeat customer — the families who have been coming every Saturday for a decade, the college students who celebrated their 21st birthday over mimosas at our table, the retirees who walk in every morning at 7:15 sharp.
+      </p>
+
+      <h2>Six Locations Across the Lowcountry</h2>
+      <p>
+        We started on Meeting Street and now serve guests at six locations across Charleston and Savannah. Each restaurant shares the same menu and kitchen standards, so your favorite dish tastes the same whether you're dining downtown, in Summerville, or on Broughton Street in Savannah. Find your nearest location on our <Link to="/locations" className="text-primary hover:underline">locations page</Link>.
+      </p>
+
+      <h2>Try It for Yourself</h2>
+      <p>
+        If you haven't been to Toast yet, this is your sign. If you've been once, you already know — you'll be back. We're open daily for breakfast, brunch, and lunch, and we never require reservations. Walk in, sit down, and see why Charleston keeps voting us number one.
+      </p>
     </BlogArticleLayout>
   );
 };

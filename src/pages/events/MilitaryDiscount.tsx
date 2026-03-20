@@ -1,65 +1,49 @@
+import { Link } from "react-router-dom";
 import BlogArticleLayout from "@/components/BlogArticleLayout";
-import { Shield, Heart, CheckCircle } from "lucide-react";
 
 const MilitaryDiscount = () => {
   return (
     <BlogArticleLayout
-      seoTitle="10% Military Discount - Toast All Day | Veterans & Active Duty"
-      seoDescription="Toast All Day honors our military with 10% off for all active duty and retired veterans. Show your military ID and enjoy award-winning breakfast and brunch."
-      seoKeywords="military discount Charleston, veteran discount restaurant, active duty discount, military appreciation"
+      seoTitle="10% Military Discount at Toast All Day | Active Duty & Veterans"
+      seoDescription="Toast All Day proudly offers a 10% military discount to all active duty service members and retired veterans at every location. Just show your military ID."
+      seoKeywords="military discount Charleston restaurant, veteran discount brunch, active duty discount, military appreciation restaurant, Toast All Day military"
       heroImage="https://toastallday.com/wp-content/uploads/2025/05/Toast-Military-10-Discount-1920-x-1080-px-1024x576.jpg"
-      heroImageAlt="Toast Military Discount"
+      heroImageAlt="Toast All Day 10% military discount for active duty and veterans"
       category="Offers"
-      title="A Toast to Our Troops"
+      title="A Toast to Our Troops: 10% Military Discount Every Day"
       date="January 2025"
       currentSlug="military-discount"
     >
-      <p className="text-center text-xl text-muted-foreground">
-        Celebrating 20 Years with a Special Military Discount
+      <p>
+        The Charleston area is home to Joint Base Charleston, the Naval Weapons Station, and thousands of active duty families and retired veterans. Many of them have been part of the Toast All Day community since we opened our doors twenty years ago. As we mark our 20th anniversary, we're making our appreciation official with a <strong>permanent 10% discount for all active duty and retired military</strong>.
       </p>
 
-      <p className="text-lg text-muted-foreground leading-relaxed">
-        At Toast All Day, we believe in honoring those who dedicate their lives to serving our country. As we celebrate our 20th anniversary, we're taking this milestone as an opportunity to give back to the heroes who have given so much for us. To show our appreciation, we're proud to offer a <strong className="text-primary">10% discount</strong> to all active duty and retired veterans.
+      <h2>How It Works</h2>
+      <p>
+        Redeeming the discount is simple. Just let your server know at the time of ordering and be prepared to show a valid military ID if you're not in uniform. The 10% applies to your entire check — food and non-alcoholic beverages — at any of our locations. There's no coupon to clip, no app to open, and no minimum purchase required.
       </p>
 
-      <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
-        <div className="flex items-center justify-center mb-6">
-          <Shield className="w-16 h-16 text-primary" />
-        </div>
-        <h2 className="text-2xl font-bold text-foreground mb-4 text-center">A Special Thank You to Our Service Members</h2>
-        <p className="text-center text-muted-foreground">
-          Our military customers have always been an integral part of our Toast All Day family. Your dedication, sacrifice, and bravery inspire us, and we want to express our gratitude in a meaningful way. Whether you're stopping by for breakfast, brunch, lunch, or dinner, let us serve you with the same commitment and care that you have shown our country.
-        </p>
-      </div>
+      <h2>Available at Every Location, Every Day</h2>
+      <p>
+        This isn't a one-day promotion or a holiday-only gesture. The military discount is available <strong>every day we're open</strong>, at every Toast All Day location across Charleston and Savannah. Whether you're grabbing a quick breakfast before reporting to base or settling in for a long weekend brunch with the family, the discount applies.
+      </p>
+      <p>
+        Find your nearest location on our <Link to="/locations" className="text-primary hover:underline">locations page</Link> — we have restaurants in downtown Charleston, Mount Pleasant, West Ashley, Summerville, and Savannah.
+      </p>
 
-      <div className="bg-card rounded-2xl p-8 border border-border/50">
-        <h3 className="text-2xl font-bold text-foreground mb-6 text-center">How to Redeem Your Discount</h3>
-        <p className="text-center text-muted-foreground mb-6">
-          Receiving your <strong className="text-primary">10% military discount</strong> is simple:
-        </p>
-        <div className="space-y-4 max-w-md mx-auto">
-          <div className="flex items-start gap-3">
-            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-            <p className="text-foreground">Notify your server at the time of ordering.</p>
-          </div>
-          <div className="flex items-start gap-3">
-            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-            <p className="text-foreground">Be prepared to show a valid military ID if not in uniform.</p>
-          </div>
-          <div className="flex items-start gap-3">
-            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-            <p className="text-foreground">Enjoy your meal, knowing that it comes with our deepest thanks and appreciation.</p>
-          </div>
-        </div>
-      </div>
+      <h2>Why This Matters to Us</h2>
+      <p>
+        Toast All Day has always been a community restaurant. We sponsor local teams, hire military spouses, and donate to veteran organizations in the Lowcountry. The discount is one more way we can show up for the people who show up for all of us. It's small compared to the sacrifices service members and their families make, but it's offered with genuine gratitude.
+      </p>
 
-      <div className="text-center bg-primary/10 rounded-2xl p-8">
-        <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-foreground mb-4">A TOAST to Our Troops!</h3>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          This special offer is our way of celebrating you, our brave service members, as we mark 20 incredible years in the community. Whether you're a longtime customer or visiting for the first time, we invite you to join us for a delicious meal and a warm welcome.
-        </p>
-      </div>
+      <h2>Pair It with Our Rewards Program</h2>
+      <p>
+        The military discount stacks with our loyalty program. Sign up through our <Link to="/blog/download-app" className="text-primary hover:underline">mobile app</Link> and you'll earn 1 point for every dollar spent — even on discounted checks. Over time, those points convert to $10 rewards you can use on any future visit. Between the discount and the loyalty perks, regular guests save meaningfully over the course of a year.
+      </p>
+
+      <p>
+        To every service member and veteran reading this: thank you. We look forward to serving you.
+      </p>
     </BlogArticleLayout>
   );
 };
