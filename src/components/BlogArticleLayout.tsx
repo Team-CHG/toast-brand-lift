@@ -101,8 +101,8 @@ const BlogArticleLayout = ({
           {/* Article content */}
           <div className="text-foreground/80 leading-relaxed text-base md:text-lg
             [&>p]:mb-6 [&>p]:leading-[1.8]
-            [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:font-bold [&>h2]:text-foreground [&>h2]:mt-12 [&>h2]:mb-4
-            [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-semibold [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-3
+            [&>h2]:text-2xl [&>h2]:md:text-3xl [&>h2]:font-medium [&>h2]:text-foreground [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:font-body
+            [&>h3]:text-xl [&>h3]:md:text-2xl [&>h3]:font-medium [&>h3]:text-foreground [&>h3]:mt-8 [&>h3]:mb-3 [&>h3]:font-body
             [&>ul]:mb-6 [&>ul]:leading-[1.8] [&>ul]:pl-1
             [&>ol]:mb-6 [&>ol]:leading-[1.8] [&>ol]:pl-1
             [&_strong]:text-foreground [&_strong]:font-semibold
