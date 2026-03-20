@@ -51,7 +51,7 @@ const UnlimitedDrinkPass = () => {
       </p>
 
       <div className="text-center my-8">
-        <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer" className="bg-accent text-accent-foreground px-8 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors text-sm">
+        <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Join the Rewards Program
         </a>
       </div>
