@@ -43,7 +43,7 @@ const Blog = () => {
             {blogArticles.map((article) => (
               <div key={article.slug} className="py-10 first:pt-0 last:pb-0">
                 <Link to={`/blog/${article.slug}`} className="group block">
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
+                  <h2 className="text-2xl md:text-3xl font-medium font-body text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
                     {article.title}
                   </h2>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
