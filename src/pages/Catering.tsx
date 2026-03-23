@@ -10,11 +10,11 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const Catering = () => {
   return (
     <div className="min-h-screen">
-      <SEO 
+      <SEO
         title="Catering Services - Toast All Day | Charleston Hospitality Group"
         description="Toast All Day catering for weddings, corporate events, bridal showers & more. Award-winning breakfast and brunch catering in Charleston, Mt Pleasant & Summerville."
-        keywords="catering Charleston, brunch catering, breakfast catering, wedding catering SC, corporate catering, event catering"
-      />
+        keywords="catering Charleston, brunch catering, breakfast catering, wedding catering SC, corporate catering, event catering" />
+      
       <Navigation />
       <SideDrawer />
       <Breadcrumbs />
@@ -23,7 +23,7 @@ const Catering = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Catering by <span className="font-racing">Toast! All Day</span>
+              Catering by <span className="font-sans text-accent">Toast! All Day</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Experience exceptional cuisine from Charleston Hospitality Group
@@ -122,8 +122,8 @@ const Catering = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>);
+
 };
 
 export default Catering;
