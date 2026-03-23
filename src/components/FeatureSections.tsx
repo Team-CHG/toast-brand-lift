@@ -146,21 +146,17 @@ const FeatureSections = () => {
       </section>
 
       {/* Decorative Background Image Section - Bottom */}
-      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 bg-background overflow-hidden">
+      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 overflow-hidden">
         {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
-          style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})` }}
+          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})`, backgroundAttachment: 'scroll' }}
         />
         {/* Desktop background */}
         <div 
-          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${homeDecorativeBottomDesktop})` }}
+          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat hidden md:block"
+          style={{ backgroundImage: `url(${homeDecorativeBottomDesktop})`, backgroundAttachment: 'scroll' }}
         />
-        {/* Top gradient fade */}
-        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
-        {/* Bottom gradient fade to match Why Choose Us section background */}
-        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
       </section>
 
       {/* Why Choose Us - Editorial Style */}
