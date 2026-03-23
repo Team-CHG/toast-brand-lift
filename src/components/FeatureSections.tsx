@@ -73,17 +73,22 @@ const FeatureSections = () => {
 
   return <>
       {/* Decorative Background Image Section */}
-      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 overflow-hidden">
+      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-contain bg-top bg-no-repeat md:hidden"
-          style={{ backgroundImage: `url(${homeDecorativeTopMobile})`, backgroundAttachment: 'scroll' }}
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${homeDecorativeTopMobile})` }}
         />
         {/* Desktop background */}
         <div 
-          className="absolute inset-0 bg-contain bg-top bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${homeDecorativeTopDesktop})`, backgroundAttachment: 'scroll' }}
+          className="absolute inset-0 bg-cover bg-top bg-no-repeat hidden md:block"
+          style={{ backgroundImage: `url(${homeDecorativeTopDesktop})` }}
         />
+        {/* Top gradient fade */}
+        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
+        {/* Bottom gradient fade to match Awards section background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent" />
+      
       </section>
 
       {/* About Section - A Toast to Awards */}
@@ -141,17 +146,21 @@ const FeatureSections = () => {
       </section>
 
       {/* Decorative Background Image Section - Bottom */}
-      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 overflow-hidden">
+      <section className="relative h-28 sm:h-32 md:h-32 lg:h-48 bg-background overflow-hidden">
         {/* Mobile background */}
         <div 
-          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat md:hidden"
-          style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})`, backgroundAttachment: 'scroll' }}
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat md:hidden"
+          style={{ backgroundImage: `url(${homeDecorativeBottomMobile2})` }}
         />
         {/* Desktop background */}
         <div 
-          className="absolute inset-0 bg-contain bg-bottom bg-no-repeat hidden md:block"
-          style={{ backgroundImage: `url(${homeDecorativeBottomDesktop})`, backgroundAttachment: 'scroll' }}
+          className="absolute inset-0 bg-cover bg-bottom bg-no-repeat hidden md:block"
+          style={{ backgroundImage: `url(${homeDecorativeBottomDesktop})` }}
         />
+        {/* Top gradient fade */}
+        <div className="absolute inset-x-0 top-0 h-16 md:h-24 bg-gradient-to-b from-background to-transparent" />
+        {/* Bottom gradient fade to match Why Choose Us section background */}
+        <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-t from-complementary to-transparent" />
       </section>
 
       {/* Why Choose Us - Editorial Style */}
