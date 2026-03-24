@@ -11,7 +11,7 @@ const BestBrunch = () => {
       heroImageAlt="Golden syrup poured over crispy chicken and waffles at Toast All Day"
       category="News"
       title="The Best Brunch in Charleston, SC"
-      date="February 2022"
+      date="March 2026"
       currentSlug="best-brunch"
     >
       <p>

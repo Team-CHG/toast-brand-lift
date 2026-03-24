@@ -11,7 +11,7 @@ const BestBreakfastBrunch = () => {
       heroImageAlt="Crispy chicken and waffles with syrup at Toast All Day in Charleston"
       category="News"
       title="Toast! All Day Named One of the Best Brunch and Breakfast Spots in Charleston"
-      date="March 2025"
+      date="March 2026"
       currentSlug="best-breakfast-brunch"
     >
       <h2>Charleston's Brunch and Breakfast Scene Has a Clear Favorite</h2>
