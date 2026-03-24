@@ -7,20 +7,31 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import bestBreakfastBrunchImg from "@/assets/blog/best-breakfast-brunch.jpg";
+import mothersDayImg from "@/assets/blog/mothers-day.jpg";
+import downloadAppImg from "@/assets/blog/download-app.jpg";
+import unlimitedDrinkPassImg from "@/assets/blog/unlimited-drink-pass.jpg";
+import militaryDiscountImg from "@/assets/blog/military-discount.jpg";
+import anniversaryImg from "@/assets/blog/anniversary.jpg";
+import soupSaladSandwichImg from "@/assets/blog/soup-salad-sandwich.jpg";
+import blackFridayGiftCardImg from "@/assets/blog/black-friday-gift-card.jpg";
+import veteransDayImg from "@/assets/blog/veterans-day.jpg";
+import bestBrunchImg from "@/assets/blog/best-brunch.jpg";
+import valentinesDayImg from "@/assets/blog/valentines-day.jpg";
 
 // Shared article data for blog listing and related posts
 export const blogArticles = [
-  { title: "Toast! All Day Named One of the Best Brunch and Breakfast Spots in Charleston", description: "We're honored to be recognized as one of the best brunch and breakfast spots in Charleston, SC. Discover why locals love our all-day breakfast and mimosas.", image: "https://toastallday.com/wp-content/uploads/2022/02/Toast-All-Day-syrup-pour-chicken-800x675.jpg", category: "News", slug: "best-breakfast-brunch", date: "March 2026" },
-  { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Mothers-Day-Horizontal-Header-Post-1920-x-1080-px-1-1-1080x675.jpg", category: "Events", slug: "mothers-day", date: "May 2025" },
-  { title: "Download Our App and Earn $5", description: "Get rewarded just for downloading! Sign up through our app and receive $5 towards your next meal.", image: "https://toastallday.com/wp-content/uploads/2025/04/Toast-APP-Loyalty-Sign-Up-1920-x-1080-px-1080x675.jpg", category: "Promotions", slug: "download-app", date: "April 2025" },
-  { title: "Unlimited Drink Pass", description: "Enjoy unlimited mimosas with our special wristband offer at the Bridge Run!", image: "https://toastallday.com/wp-content/uploads/2025/03/Toast-Bridge-Run-Mimosa-Festival-1920-x-1080-px-web.jpg", category: "Promotions", slug: "unlimited-drink-pass", date: "March 2025" },
-  { title: "10% Military Discount", description: "We proudly offer 10% off to all active duty military and veterans.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Military-10-Discount-1920-x-1080-px-1080x675.jpg", category: "Offers", slug: "military-discount", date: "January 2025" },
-  { title: "Toast 20th Anniversary Celebration", description: "Join us in celebrating 20 years of serving delicious breakfast and brunch!", image: "https://toastallday.com/wp-content/uploads/2025/02/Toast-20th-Anniversary-Event-Post-web.jpg", category: "Celebration", slug: "anniversary", date: "February 2025" },
-  { title: "New Soup, Salad or Sandwich Combo", description: "Try our new $12 lunch combo featuring fresh soup, crisp salads, and handcrafted sandwiches.", image: "https://toastallday.com/wp-content/uploads/2025/01/toast-soup-salad-sandwich-combo.jpg", category: "Menu", slug: "soup-salad-sandwich", date: "January 2025" },
-  { title: "Black Friday $20 Bonus Gift Card", description: "Purchase $50 in gift cards and receive a $20 bonus card.", image: "https://toastallday.com/wp-content/uploads/2024/12/Toast_Giving_is_the_Greatest_Gift_web-1.jpg", category: "Promotions", slug: "black-friday-gift-card", date: "December 2024" },
-  { title: "Veterans Eat FREE This Veterans Day", description: "We honor our veterans with a free meal on Veterans Day.", image: "https://toastallday.com/wp-content/uploads/2024/11/unnamed-22-1080x675.png", category: "Events", slug: "veterans-day", date: "November 2024" },
-  { title: "Best Brunch in Charleston, SC", description: "Discover why Toast! All Day is voted the best brunch spot in Charleston.", image: "https://toastallday.com/wp-content/uploads/2022/02/Toast-All-Day-syrup-pour-chicken-800x675.jpg", category: "News", slug: "best-brunch", date: "March 2026" },
-  { title: "Love Is In The Air At Toast!", description: "Celebrate love with our special Valentine's Day menu.", image: "https://toastallday.com/wp-content/uploads/2022/02/49a9faa3-d3c4-4d48-82a7-ea3a05d30e61-copy-1-496x620-1.jpeg", category: "Events", slug: "valentines-day", date: "February 2022" }
+  { title: "Toast! All Day Named One of the Best Brunch and Breakfast Spots in Charleston", description: "We're honored to be recognized as one of the best brunch and breakfast spots in Charleston, SC. Discover why locals love our all-day breakfast and mimosas.", image: bestBreakfastBrunchImg, category: "News", slug: "best-breakfast-brunch", date: "March 2026" },
+  { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: mothersDayImg, category: "Events", slug: "mothers-day", date: "May 2025" },
+  { title: "Download Our App and Earn $5", description: "Get rewarded just for downloading! Sign up through our app and receive $5 towards your next meal.", image: downloadAppImg, category: "Promotions", slug: "download-app", date: "April 2025" },
+  { title: "Unlimited Drink Pass", description: "Enjoy unlimited mimosas with our special wristband offer at the Bridge Run!", image: unlimitedDrinkPassImg, category: "Promotions", slug: "unlimited-drink-pass", date: "March 2025" },
+  { title: "10% Military Discount", description: "We proudly offer 10% off to all active duty military and veterans.", image: militaryDiscountImg, category: "Offers", slug: "military-discount", date: "January 2025" },
+  { title: "Toast 20th Anniversary Celebration", description: "Join us in celebrating 20 years of serving delicious breakfast and brunch!", image: anniversaryImg, category: "Celebration", slug: "anniversary", date: "February 2025" },
+  { title: "New Soup, Salad or Sandwich Combo", description: "Try our new $12 lunch combo featuring fresh soup, crisp salads, and handcrafted sandwiches.", image: soupSaladSandwichImg, category: "Menu", slug: "soup-salad-sandwich", date: "January 2025" },
+  { title: "Black Friday $20 Bonus Gift Card", description: "Purchase $50 in gift cards and receive a $20 bonus card.", image: blackFridayGiftCardImg, category: "Promotions", slug: "black-friday-gift-card", date: "December 2024" },
+  { title: "Veterans Eat FREE This Veterans Day", description: "We honor our veterans with a free meal on Veterans Day.", image: veteransDayImg, category: "Events", slug: "veterans-day", date: "November 2024" },
+  { title: "Best Brunch in Charleston, SC", description: "Discover why Toast! All Day is voted the best brunch spot in Charleston.", image: bestBrunchImg, category: "News", slug: "best-brunch", date: "March 2026" },
+  { title: "Love Is In The Air At Toast!", description: "Celebrate love with our special Valentine's Day menu.", image: valentinesDayImg, category: "Events", slug: "valentines-day", date: "February 2022" }
 ];
 
 interface BlogArticleLayoutProps {
