@@ -38,20 +38,27 @@ const Blog = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="divide-y divide-border/50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {blogArticles.map((article) => (
-              <div key={article.slug} className="py-10 first:pt-0 last:pb-0">
-                <Link to={`/blog/${article.slug}`} className="group block">
-                  <h2 className="text-2xl md:text-3xl font-medium font-body text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
-                    {article.title}
-                  </h2>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <div key={article.slug} className="group">
+                <Link to={`/blog/${article.slug}`} className="block">
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                     <span>{article.date}</span>
                     <span>|</span>
                     <span>{article.category}</span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <h2 className="text-xl md:text-2xl font-medium font-body text-foreground group-hover:text-primary transition-colors leading-snug mb-2">
+                    {article.title}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed text-sm mb-3">
                     {article.description}
                   </p>
                   <span className="text-sm font-semibold text-primary tracking-wide uppercase group-hover:underline">
