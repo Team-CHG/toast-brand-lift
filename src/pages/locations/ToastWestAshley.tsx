@@ -20,8 +20,21 @@ const ToastWestAshley = () => {
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
+
+    // Remove site-wide PX Grabber pixel and inject West Ashley-specific one
+    const existingPx = document.getElementById('px-grabber');
+    if (existingPx) existingPx.remove();
+
+    const px = document.createElement('script');
+    px.type = 'text/javascript';
+    px.textContent = `(function(doc, tag, id){var js = doc.getElementsByTagName(tag)[0];if (doc.getElementById(id)) {return;}js = doc.createElement(tag); js.id = id;js.src = "https://leads.goagency.com/px.min.js";js.type = "text/javascript";doc.head.appendChild(js);js.onload = function() {pxfired();};}(document, 'script', 'px-grabber-wa'));function pxfired() {PxGrabber.setOptions({Label: "97190411|" + window.location.href,});PxGrabber.render();};`;
+    document.head.appendChild(px);
+
     return () => {
       document.body.removeChild(script);
+      px.remove();
+      const pxScript = document.getElementById('px-grabber-wa');
+      if (pxScript) pxScript.remove();
     };
   }, []);
   const location = {
