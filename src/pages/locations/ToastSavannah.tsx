@@ -21,12 +21,13 @@ const ToastSavannah = () => {
     script.async = true;
     document.body.appendChild(script);
 
-    // PX Grabber pixel for Savannah location
+    // PX Grabber pixel for Savannah location — uses a unique id so it doesn't
+    // collide with the site-wide px-grabber script already in index.html.
     if (!document.getElementById('px-grabber-savannah')) {
       const px = document.createElement("script");
       px.id = 'px-grabber-savannah';
       px.type = "text/javascript";
-      px.textContent = `(function(doc, tag, id){var js = doc.getElementsByTagName(tag)[0];if (doc.getElementById(id)) {return;}js = doc.createElement(tag); js.id = id;js.src = "https://leads.goagency.com/px.min.js";js.type = "text/javascript";doc.head.appendChild(js);js.onload = function() {pxfired();};}(document, 'script', 'px-grabber'));function pxfired() {PxGrabber.setOptions({Label: "23811360|" + window.location.href,});PxGrabber.render();}`;
+      px.textContent = `(function(doc, tag, id){var js = doc.getElementsByTagName(tag)[0];if (doc.getElementById(id)) {return;}js = doc.createElement(tag); js.id = id;js.src = "https://leads.goagency.com/px.min.js";js.type = "text/javascript";doc.head.appendChild(js);js.onload = function() {pxfired();};}(document, 'script', 'px-grabber-sav'));function pxfired() {PxGrabber.setOptions({Label: "23811360|" + window.location.href,});PxGrabber.render();}`;
       document.head.appendChild(px);
     }
 
