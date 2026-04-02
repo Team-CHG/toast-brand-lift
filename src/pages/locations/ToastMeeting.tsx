@@ -20,8 +20,20 @@ const ToastMeeting = () => {
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
+
+    const existingPx = document.getElementById('px-grabber');
+    if (existingPx) existingPx.remove();
+
+    const px = document.createElement('script');
+    px.type = 'text/javascript';
+    px.textContent = `(function(doc, tag, id){var js = doc.getElementsByTagName(tag)[0];if (doc.getElementById(id)) {return;}js = doc.createElement(tag); js.id = id;js.src = "https://leads.goagency.com/px.min.js";js.type = "text/javascript";doc.head.appendChild(js);js.onload = function() {pxfired();};}(document, 'script', 'px-grabber-mtg'));function pxfired() {PxGrabber.setOptions({Label: "85544064|" + window.location.href,});PxGrabber.render();};`;
+    document.head.appendChild(px);
+
     return () => {
       document.body.removeChild(script);
+      px.remove();
+      const pxScript = document.getElementById('px-grabber-mtg');
+      if (pxScript) pxScript.remove();
     };
   }, []);
   const location = {
