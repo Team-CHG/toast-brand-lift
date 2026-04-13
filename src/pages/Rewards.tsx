@@ -82,7 +82,7 @@ const Rewards = () => {
               </DropdownMenu>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="lg" variant="outline" className="text-lg px-8 rounded-full border-white/30 text-white hover:bg-white/10">
+                  <Button size="lg" variant="outline" className="text-lg px-8 rounded-full border-white text-white bg-black/30 hover:bg-black/50 backdrop-blur-md">
                     Check Your Rewards <ChevronDown className="ml-1 h-5 w-5" />
                   </Button>
                 </DropdownMenuTrigger>

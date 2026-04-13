@@ -128,7 +128,7 @@ const Catering = () => {
                     <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full hover:scale-105 transition-all">
                       <a href="https://www.ezcater.com/brand/pvt/toast-1" target="_blank" rel="noopener noreferrer">Request Catering</a>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 rounded-full">
+                    <Button asChild variant="outline" size="lg" className="border-white text-white bg-black/30 hover:bg-black/50 rounded-full backdrop-blur-md">
                       <a href="/locations">Contact a Location</a>
                     </Button>
                   </div>

@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import heroVideoOld from "@/assets/hero-video.mp4";
 import awardsSlide1 from "@/assets/awards-slide-1.avif";
 import awardsSlide2 from "@/assets/awards-slide-2.avif";
 import awardsSlide3 from "@/assets/awards-slide-4.avif";
@@ -28,10 +29,10 @@ import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 
 const qualities = [
-  { icon: "🌿", label: "Fresh Daily" },
-  { icon: "🏆", label: "Award Winning" },
-  { icon: "📍", label: "Locally Sourced" },
-  { icon: "🥂", label: "Full Bar" },
+  { number: "Top 1%", label: "TripAdvisor Worldwide" },
+  { number: "Since 2005", label: "Serving Excellence" },
+  { number: "7", label: "Locations & Growing" },
+  { number: "Top 25", label: "Best Brunches in U.S." },
 ];
 
 const FeatureSections = () => {
@@ -95,12 +96,12 @@ const FeatureSections = () => {
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
                   <motion.div
-                    className="flex items-center gap-3 group cursor-default"
+                    className="flex flex-col items-center gap-1 group cursor-default"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <span className="text-2xl md:text-3xl group-hover:scale-125 transition-transform">{q.icon}</span>
-                    <span className="text-primary font-medium text-base md:text-lg tracking-wide">
+                    <span className="text-2xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
+                    <span className="text-primary/70 font-medium text-xs md:text-sm tracking-wide uppercase">
                       {q.label}
                     </span>
                   </motion.div>
@@ -150,14 +151,25 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                  <div ref={emblaRef} className="overflow-hidden h-full">
+                <div ref={emblaRef} className="overflow-hidden h-full">
                     <div className="flex h-full">
+                      {/* Video slide first */}
+                      <div className="flex-[0_0_100%] min-w-0 h-full">
+                        <video
+                          src={heroVideoOld}
+                          className="w-full h-full object-cover"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      </div>
                       {foodSlides.map((slide, index) => (
                         <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
                           <img
                             src={slide}
                             alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`}
-                            loading={index === 0 ? "eager" : "lazy"}
+                            loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover"
                           />
@@ -169,7 +181,7 @@ const FeatureSections = () => {
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
 
                   <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
-                    {foodSlides.map((_, index) => (
+                    {[...Array(foodSlides.length + 1)].map((_, index) => (
                       <button
                         key={index}
                         onClick={() => emblaApi?.scrollTo(index)}
@@ -302,7 +314,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white/30 text-white hover:bg-white/10"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -334,7 +346,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white/30 text-white hover:bg-white/10"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>

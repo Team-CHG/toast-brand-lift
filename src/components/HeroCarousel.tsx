@@ -1,15 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroVideo from "@/assets/hero-video.mp4";
-import heroVideoDesktop from "@/assets/hero-video-desktop.webm";
+import heroVideoNew from "@/assets/hero-video-new.mp4";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const HeroCarousel = () => {
-  const isMobile = useIsMobile();
-  const videoSrc = isMobile ? heroVideo : heroVideoDesktop;
+  const videoSrc = heroVideoNew;
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -119,7 +116,7 @@ const HeroCarousel = () => {
               size="lg"
               variant="outline"
               asChild
-              className="border-2 border-white/60 text-white hover:bg-white/10 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-sm"
+              className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-md shadow-lg"
             >
               <a href="/locations">Order Online</a>
             </Button>
