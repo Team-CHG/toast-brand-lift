@@ -438,7 +438,7 @@ const FeatureSections = () => {
               <Button
                 size="lg"
                 asChild
-                className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-lg px-10 py-6 rounded-full shadow-xl"
+                className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center"
               >
                 <a
                   href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
