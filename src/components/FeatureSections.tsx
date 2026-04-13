@@ -1,25 +1,45 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import awardsVideo from "@/assets/awards-video.mp4";
-import menuImage2 from "@/assets/food-slide-2-new.jpg";
-import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
-import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
-import giftcardDesign from "@/assets/giftcard-design.png";
-import homeBackground3 from "@/assets/home-background-3.avif";
-import newsletterCelebrationBg from "@/assets/newsletter-celebration-bg.png";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import flourishDecoration from "@/assets/flourish-decoration.png";
-import laurelWreath from "@/assets/laurel-wreath.png";
-
+import { useEffect, useState, useRef, useCallback } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star, Sparkles } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import ParallaxLayer from "@/components/animations/ParallaxLayer";
 import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
 
+// Lazy-load heavy images only when needed
+const menuImage2 = new URL("@/assets/food-slide-2-new.jpg", import.meta.url).href;
+const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.png", import.meta.url).href;
+const awardTripadvisor = new URL("@/assets/award-tripadvisor.jpg", import.meta.url).href;
+const giftcardDesign = new URL("@/assets/giftcard-design.png", import.meta.url).href;
+const pageBackgroundTexture = new URL("@/assets/page-background-texture.png", import.meta.url).href;
+const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png", import.meta.url).href;
+const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
+const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
 
+// Lazy video component — only loads video src when in viewport
+const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "200px" });
+
+  return (
+    <div ref={ref} className={className}>
+      {isInView ? (
+        <video
+          src={src}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <div className="w-full h-full bg-muted animate-pulse" />
+      )}
+    </div>
+  );
+};
 
 const qualities = [
   { number: "Top 1%", label: "TripAdvisor Worldwide" },
@@ -32,6 +52,8 @@ const FeatureSections = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const awardsRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLElement>(null);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+  const reviewsInView = useInView(reviewsRef, { once: true, margin: "100px" });
 
   const { scrollYProgress: awardsScroll } = useScroll({
     target: awardsRef,
@@ -45,9 +67,6 @@ const FeatureSections = () => {
   });
   const menuBgY = useTransform(menuScroll, [0, 1], [50, -50]);
 
-
-
-
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
@@ -57,13 +76,18 @@ const FeatureSections = () => {
     return () => { document.body.removeChild(script); };
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  // Throttled mouse move handler
+  const lastMove = useRef(0);
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const now = Date.now();
+    if (now - lastMove.current < 50) return; // throttle to ~20fps
+    lastMove.current = now;
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: (e.clientX - rect.left) / rect.width - 0.5,
       y: (e.clientY - rect.top) / rect.height - 0.5,
     });
-  };
+  }, []);
 
   return (
     <>
