@@ -94,7 +94,7 @@ const Contact = () => {
         <motion.div className="relative z-10 container mx-auto px-4 text-center" style={{ opacity: heroOpacity }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white">
-              Get in <span className="text-highlight italic">Touch</span>
+              Get in <span className="text-complementary italic">Touch</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
               We'd love to hear from you! Send us a message and we'll respond as soon as possible.

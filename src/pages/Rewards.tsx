@@ -59,7 +59,7 @@ const Rewards = () => {
               <span className="text-white text-sm font-medium tracking-widest uppercase">Loyalty Program</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
-              Toast! <span className="text-highlight italic">Rewards</span>
+              Toast! <span className="text-complementary italic">Rewards</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
               Earn points with every visit and enjoy exclusive perks

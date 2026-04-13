@@ -56,7 +56,7 @@ const About = () => {
               <span className="text-white text-sm font-medium tracking-widest uppercase">Est. 2005</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white">
-              About <span className="text-highlight italic">Toast! All Day</span>
+              About <span className="text-complementary italic">Toast! All Day</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
               A must-eat destination by the New York Times since 2005

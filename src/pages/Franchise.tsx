@@ -98,7 +98,7 @@ const Franchise = () => {
               <span className="text-accent text-sm font-medium tracking-widest uppercase">Join Our Family</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-primary">
-              Franchise <span className="text-highlight italic">Opportunities</span>
+              Franchise <span className="text-complementary italic">Opportunities</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Join the Toast All Day family and bring award-winning breakfast to your community.
