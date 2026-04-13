@@ -61,12 +61,12 @@ const HeroCarousel = () => {
       />
 
       {/* Red accent glow */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-highlight/20 rounded-full blur-[150px] -translate-x-1/4 translate-y-1/4" />
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[120px] translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-[300px] md:w-[600px] h-[200px] md:h-[400px] bg-highlight/20 rounded-full blur-[80px] md:blur-[150px] -translate-x-1/4 translate-y-1/4" />
+      <div className="absolute top-1/4 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-accent/15 rounded-full blur-[60px] md:blur-[120px] translate-x-1/4" />
 
       {/* Sparkles overlay with parallax */}
       <motion.div
-        className="absolute inset-0 pointer-events-none mix-blend-screen opacity-40"
+        className="absolute inset-0 pointer-events-none mix-blend-screen opacity-40 hidden md:block"
         style={{ y: sparkleY }}
       >
         <img
@@ -74,6 +74,7 @@ const HeroCarousel = () => {
           alt=""
           aria-hidden
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </motion.div>
 
