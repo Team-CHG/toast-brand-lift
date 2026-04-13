@@ -154,14 +154,7 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                  <video
-                    src={awardsVideo}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
+                  <LazyVideo src={new URL("@/assets/awards-video.mp4", import.meta.url).href} className="w-full h-full" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
 
