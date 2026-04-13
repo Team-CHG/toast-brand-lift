@@ -1,13 +1,6 @@
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import heroVideoOld from "@/assets/hero-video.mp4";
-import awardsSlide1 from "@/assets/awards-slide-1.avif";
-import awardsSlide2 from "@/assets/awards-slide-2.avif";
-import awardsSlide3 from "@/assets/awards-slide-4.avif";
-import awardsSlide4 from "@/assets/awards-slide-5.avif";
-import awardsSlide5 from "@/assets/awards-slide-6.avif";
+import awardsVideo from "@/assets/awards-video.mp4";
 import menuImage2 from "@/assets/food-slide-2-new.jpg";
 import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
@@ -26,7 +19,7 @@ import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
 
-const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
+
 
 const qualities = [
   { number: "Top 1%", label: "TripAdvisor Worldwide" },
@@ -36,15 +29,9 @@ const qualities = [
 ];
 
 const FeatureSections = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const awardsRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }),
-  ]);
 
   const { scrollYProgress: awardsScroll } = useScroll({
     target: awardsRef,
@@ -58,38 +45,8 @@ const FeatureSections = () => {
   });
   const menuBgY = useTransform(menuScroll, [0, 1], [50, -50]);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on("select", onSelect);
 
-    // Pause autoplay when on the video slide (index 0) and wait for video to end
-    const handleSettle = () => {
-      const idx = emblaApi.selectedScrollSnap();
-      const autoplay = emblaApi.plugins()?.autoplay as any;
-      if (idx === 0 && videoRef.current && autoplay) {
-        autoplay.stop();
-        videoRef.current.currentTime = 0;
-        videoRef.current.play();
-        const onEnded = () => {
-          autoplay.play();
-          videoRef.current?.removeEventListener("ended", onEnded);
-        };
-        videoRef.current.addEventListener("ended", onEnded);
-      }
-    };
-    emblaApi.on("settle", handleSettle);
-
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("settle", handleSettle);
-    };
-  }, [emblaApi, onSelect]);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -173,47 +130,15 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                <div ref={emblaRef} className="overflow-hidden h-full">
-                    <div className="flex h-full">
-                      {/* Video slide first */}
-                      <div className="flex-[0_0_100%] min-w-0 h-full">
-                        <video
-                          ref={videoRef}
-                          src={heroVideoOld}
-                          className="w-full h-full object-cover"
-                          muted
-                          playsInline
-                        />
-                      </div>
-                      {foodSlides.map((slide, index) => (
-                        <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
-                          <img
-                            src={slide}
-                            alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`}
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
+                  <video
+                    src={awardsVideo}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
-
-                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
-                    {[...Array(foodSlides.length + 1)].map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => emblaApi?.scrollTo(index)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          index === selectedIndex
-                            ? "w-10 bg-white"
-                            : "w-3 bg-white/40 hover:bg-white/60"
-                        }`}
-                      />
-                    ))}
-                  </div>
                 </div>
 
                 {/* Floating laurel wreath badge */}
