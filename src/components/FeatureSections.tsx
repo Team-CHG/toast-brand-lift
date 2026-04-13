@@ -40,6 +40,7 @@ const FeatureSections = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const awardsRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }),
@@ -66,7 +67,28 @@ const FeatureSections = () => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
-    return () => { emblaApi.off("select", onSelect); };
+
+    // Pause autoplay when on the video slide (index 0) and wait for video to end
+    const handleSettle = () => {
+      const idx = emblaApi.selectedScrollSnap();
+      const autoplay = emblaApi.plugins()?.autoplay as any;
+      if (idx === 0 && videoRef.current && autoplay) {
+        autoplay.stop();
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+        const onEnded = () => {
+          autoplay.play();
+          videoRef.current?.removeEventListener("ended", onEnded);
+        };
+        videoRef.current.addEventListener("ended", onEnded);
+      }
+    };
+    emblaApi.on("settle", handleSettle);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("settle", handleSettle);
+    };
   }, [emblaApi, onSelect]);
 
   useEffect(() => {
