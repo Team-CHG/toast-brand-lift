@@ -19,7 +19,7 @@ import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
 
-const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
+
 
 const qualities = [
   { number: "Top 1%", label: "TripAdvisor Worldwide" },
@@ -29,15 +29,9 @@ const qualities = [
 ];
 
 const FeatureSections = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const awardsRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }),
-  ]);
 
   const { scrollYProgress: awardsScroll } = useScroll({
     target: awardsRef,
