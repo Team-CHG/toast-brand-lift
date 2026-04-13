@@ -2,13 +2,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
-import { Gift, Star, TrendingUp, Zap, Smartphone, ChevronDown } from "lucide-react";
+import { Gift, Star, TrendingUp, Zap, Smartphone, ChevronDown, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import appScreenshot from "@/assets/app-screenshot.png";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import FloatingElement from "@/components/animations/FloatingElement";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import rewardsHero from "@/assets/rewards-hero.jpg";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +21,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Rewards = () => {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -29,36 +38,36 @@ const Rewards = () => {
       <SideDrawer />
       <Breadcrumbs />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-highlight/5" />
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-highlight/10 rounded-full blur-[150px]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollReveal className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+      {/* Hero Section with parallax image */}
+      <section ref={heroRef} className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
+          <img src={rewardsHero} alt="Toast All Day Rewards" className="w-full h-full object-cover" width={1920} height={800} />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/30 to-transparent" />
+        
+        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-highlight/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-accent/15 rounded-full blur-[100px]" />
+
+        <FloatingElement className="absolute top-1/3 right-10 opacity-20 hidden lg:block" delay={1} distance={15}>
+          <Star className="w-16 h-16 text-white fill-white/30" />
+        </FloatingElement>
+
+        <motion.div className="relative z-10 container mx-auto px-4 text-center" style={{ opacity: heroOpacity }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+              <Gift className="w-4 h-4 text-white" />
+              <span className="text-white text-sm font-medium tracking-widest uppercase">Loyalty Program</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
               Toast! <span className="text-highlight italic">Rewards</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
               Earn points with every visit and enjoy exclusive perks
             </p>
-            
-            <ScrollReveal delay={0.2}>
-              <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 md:p-8 mb-8 shadow-xl ring-1 ring-accent/10 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-highlight to-accent" />
-                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                  GET $10 FOR EVERY $100 SPENT!
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location. The more you spend, the more points you accumulate.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks! Earn double points Monday-Friday 12-3pm</p>
-              </div>
-            </ScrollReveal>
-            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="lg" className="text-lg px-8 bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full">
+                  <Button size="lg" className="text-lg px-8 bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full shadow-lg">
                     Register Here <ChevronDown className="ml-1 h-5 w-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -73,7 +82,7 @@ const Rewards = () => {
               </DropdownMenu>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button size="lg" variant="outline" className="text-lg px-8 rounded-full border-accent/20">
+                  <Button size="lg" variant="outline" className="text-lg px-8 rounded-full border-white/30 text-white hover:bg-white/10">
                     Check Your Rewards <ChevronDown className="ml-1 h-5 w-5" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -87,12 +96,30 @@ const Rewards = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-          </ScrollReveal>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Glass overlay - promo highlight */}
+      <section className="relative z-20 -mt-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl ring-1 ring-accent/10 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-highlight to-accent" />
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 text-center">
+              GET $10 FOR EVERY $100 SPENT!
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-center mb-2">
+              A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location. The more you spend, the more points you accumulate.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks! Earn double points Monday-Friday 12-3pm
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Download App Section */}
-      <section className="py-16 relative"
+      <section className="py-20 relative"
         style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container mx-auto px-4">
@@ -124,7 +151,7 @@ const Rewards = () => {
                     </div>
                   </div>
                   <div className="flex justify-center">
-                    <img src={appScreenshot} alt="Toast All Day mobile app" className="max-w-xs md:max-w-sm rounded-3xl shadow-2xl" />
+                    <img src={appScreenshot} alt="Toast All Day mobile app" className="max-w-xs md:max-w-sm rounded-3xl shadow-2xl" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -134,7 +161,7 @@ const Rewards = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -163,14 +190,17 @@ const Rewards = () => {
 
             {/* Member Benefits */}
             <ScrollReveal delay={0.3}>
-              <div className="mt-16 bg-gradient-to-br from-accent to-accent/80 rounded-3xl p-8 md:p-12 shadow-xl">
-                <h2 className="text-3xl font-bold text-center text-white mb-8">Member Benefits</h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {["1x Point per dollar", "Birthday Rewards", "Exclusive Offers", "Free Items", "Mobile Ordering", "First Updates"].map((benefit, i) => (
-                    <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-                      <div className="text-lg font-bold text-white">{benefit}</div>
-                    </div>
-                  ))}
+              <div className="mt-16 bg-gradient-to-br from-accent to-accent/80 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-highlight/15 rounded-full blur-[100px]" />
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold text-center text-white mb-8">Member Benefits</h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {["1x Point per dollar", "Birthday Rewards", "Exclusive Offers", "Free Items", "Mobile Ordering", "First Updates"].map((benefit, i) => (
+                      <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+                        <div className="text-lg font-bold text-white">{benefit}</div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

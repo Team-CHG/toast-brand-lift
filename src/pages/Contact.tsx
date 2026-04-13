@@ -19,6 +19,9 @@ import TurnstileWidget from "@/components/TurnstileWidget";
 import { supabase } from "@/integrations/supabase/client";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import contactHero from "@/assets/contact-hero.jpg";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const contactFormSchema = z.object({
   name: z.string().trim().min(1, { message: "Name is required" }).max(100),
@@ -34,6 +37,10 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -76,24 +83,28 @@ const Contact = () => {
       <SideDrawer />
       <Breadcrumbs />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-highlight/5" />
-        <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px]" />
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollReveal className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary">
+      {/* Hero Section with parallax image */}
+      <section ref={heroRef} className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
+          <img src={contactHero} alt="Contact Toast All Day" className="w-full h-full object-cover" width={1920} height={800} />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/30 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-accent/20 rounded-full blur-[120px]" />
+
+        <motion.div className="relative z-10 container mx-auto px-4 text-center" style={{ opacity: heroOpacity }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white">
               Get in <span className="text-highlight italic">Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               We'd love to hear from you! Send us a message and we'll respond as soon as possible.
             </p>
-          </ScrollReveal>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 relative"
+      <section className="py-20 relative"
         style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container mx-auto px-4">
@@ -108,9 +119,7 @@ const Contact = () => {
                   <CardContent>
                     {isSubmitted ? (
                       <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-                        <div className="rounded-full bg-accent/10 p-4">
-                          <CheckCircle2 className="h-12 w-12 text-accent" />
-                        </div>
+                        <div className="rounded-full bg-accent/10 p-4"><CheckCircle2 className="h-12 w-12 text-accent" /></div>
                         <h3 className="text-2xl font-bold text-primary">Message Sent!</h3>
                         <p className="text-muted-foreground max-w-sm">Thank you for contacting us.</p>
                         <Button variant="outline" onClick={() => setIsSubmitted(false)} className="mt-4 rounded-full">Send Another Message</Button>

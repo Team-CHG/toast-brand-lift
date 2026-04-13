@@ -9,6 +9,9 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Sparkles } from "lucide-react";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import newsHero from "@/assets/news-hero.jpg";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const newsItems = [
   { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Mothers-Day-Horizontal-Header-Post-1920-x-1080-px-1-1-1080x675.jpg", category: "Events", slug: "mothers-day" },
@@ -24,6 +27,11 @@ const newsItems = [
 ];
 
 const NewsEvents = () => {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
     <div className="min-h-screen">
       <SEO 
@@ -36,23 +44,33 @@ const NewsEvents = () => {
       <SideDrawer />
       <Breadcrumbs />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-highlight/5" />
-        <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-highlight/10 rounded-full blur-[120px]" />
-        <FloatingElement className="absolute top-1/3 right-10 opacity-10 hidden lg:block" delay={1} distance={15}>
-          <Sparkles className="w-16 h-16 text-highlight" />
+      {/* Hero Section with parallax image */}
+      <section ref={heroRef} className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
+          <img src={newsHero} alt="Celebrating at Toast All Day" className="w-full h-full object-cover" width={1920} height={800} />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/30 to-transparent" />
+        
+        <div className="absolute bottom-0 left-0 w-[400px] h-[300px] bg-highlight/20 rounded-full blur-[120px]" />
+
+        <FloatingElement className="absolute top-1/3 right-10 opacity-20 hidden lg:block" delay={1} distance={15}>
+          <Sparkles className="w-16 h-16 text-white" />
         </FloatingElement>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <ScrollReveal>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">News & <span className="text-highlight italic">Events</span></h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.</p>
-          </ScrollReveal>
-        </div>
+
+        <motion.div className="relative z-10 container mx-auto px-4 text-center" style={{ opacity: heroOpacity }}>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
+              News & <span className="text-highlight italic">Events</span>
+            </h1>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.
+            </p>
+          </motion.div>
+        </motion.div>
       </section>
       
       {/* News Grid */}
-      <section className="py-16 relative"
+      <section className="py-20 relative"
         style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="container mx-auto px-4">
@@ -61,7 +79,7 @@ const NewsEvents = () => {
               <ScrollReveal key={index} delay={index * 0.08}>
                 <Link to={`/news-events/${item.slug}`} className="group block bg-white/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-xl ring-1 ring-accent/10 hover:shadow-2xl transition-all hover:-translate-y-1">
                   <div className="aspect-video overflow-hidden">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
                   <div className="p-6">
                     <span className="inline-block px-3 py-1 text-xs font-semibold text-highlight bg-highlight/10 rounded-full mb-3">{item.category}</span>
@@ -76,7 +94,7 @@ const NewsEvents = () => {
       </section>
       
       {/* Newsletter CTA */}
-      <section className="py-16 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <ScrollReveal>
