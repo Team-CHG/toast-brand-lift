@@ -112,7 +112,7 @@ const Locations = () => {
                         <a href={location.reviewUrl} target="_blank" rel="noopener noreferrer">Review Us</a>
                       </Button>
                       {location.waitlistUrl && (
-                        <Button asChild size="sm" className="w-full bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full">
+                        <Button asChild size="sm" className="w-full bg-complementary hover:bg-complementary/80 text-primary font-semibold rounded-full">
                           <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">Join Waitlist</a>
                         </Button>
                       )}

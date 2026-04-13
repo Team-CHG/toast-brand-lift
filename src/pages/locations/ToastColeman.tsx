@@ -186,12 +186,12 @@ const ToastColeman = () => {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg">
+                  <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link to="/locations/toast-mt-pleasant">
                       Visit Hungry Neck Location
                     </Link>
                   </Button>
-                  <Button asChild variant="secondary" size="lg">
+                  <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-highlight-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
                     </Link>

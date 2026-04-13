@@ -4,6 +4,21 @@ import heroVideoNew from "@/assets/hero-video-new.mp4";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const orderLocations = [
+  { name: "Toast! on Meeting", url: "https://order.toasttab.com/online/toast-charleston-155-meeting-st" },
+  { name: "Toast! on King", url: "https://order.toasttab.com/online/toast-king-st-451-king-st" },
+  { name: "Toast! Mt. Pleasant", url: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
+  { name: "Toast! West Ashley", url: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci" },
+  { name: "Toast! Summerville", url: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road" },
+  { name: "Toast! Savannah", url: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st" },
+];
 
 const HeroCarousel = () => {
   const videoSrc = heroVideoNew;
@@ -112,14 +127,26 @@ const HeroCarousel = () => {
             >
               <a href="/locations">Find a Location</a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-md shadow-lg"
-            >
-              <a href="/locations">Order Online</a>
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-md shadow-lg"
+                >
+                  Order Online <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white/95 backdrop-blur-xl border-accent/10">
+                {orderLocations.map((loc) => (
+                  <DropdownMenuItem key={loc.name} asChild>
+                    <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                      {loc.name}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </motion.div>
         </motion.div>
       </motion.div>

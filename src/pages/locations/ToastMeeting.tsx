@@ -174,12 +174,12 @@ const ToastMeeting = () => {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg">
+                  <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
-                  <Button asChild variant="secondary" size="lg">
+                  <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-highlight-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
                     </Link>
