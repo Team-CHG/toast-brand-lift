@@ -96,12 +96,12 @@ const FeatureSections = () => {
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
                   <motion.div
-                    className="flex items-center gap-3 group cursor-default"
+                    className="flex flex-col items-center gap-1 group cursor-default"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <span className="text-2xl md:text-3xl group-hover:scale-125 transition-transform">{q.icon}</span>
-                    <span className="text-primary font-medium text-base md:text-lg tracking-wide">
+                    <span className="text-2xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
+                    <span className="text-primary/70 font-medium text-xs md:text-sm tracking-wide uppercase">
                       {q.label}
                     </span>
                   </motion.div>
@@ -151,14 +151,25 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                  <div ref={emblaRef} className="overflow-hidden h-full">
+                <div ref={emblaRef} className="overflow-hidden h-full">
                     <div className="flex h-full">
+                      {/* Video slide first */}
+                      <div className="flex-[0_0_100%] min-w-0 h-full">
+                        <video
+                          src={heroVideoOld}
+                          className="w-full h-full object-cover"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      </div>
                       {foodSlides.map((slide, index) => (
                         <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
                           <img
                             src={slide}
                             alt={`Delicious breakfast dish featuring Toast All Day signature menu item ${index + 1}`}
-                            loading={index === 0 ? "eager" : "lazy"}
+                            loading="lazy"
                             decoding="async"
                             className="w-full h-full object-cover"
                           />
