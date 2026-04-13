@@ -184,7 +184,6 @@ const FeatureSections = () => {
                           muted
                           playsInline
                         />
-                        />
                       </div>
                       {foodSlides.map((slide, index) => (
                         <div key={index} className="flex-[0_0_100%] min-w-0 h-full">
