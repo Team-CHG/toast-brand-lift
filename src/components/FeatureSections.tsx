@@ -92,10 +92,10 @@ const FeatureSections = () => {
   return (
     <>
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
-      <section className="relative z-20 -mt-28 md:-mt-32 pb-10 md:pb-16">
-        <div className="container mx-auto px-4">
-          <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 py-8 md:py-10 px-6 md:px-12 ring-1 ring-accent/10">
-            <StaggerContainer className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+      <section className="relative z-20 -mt-16 md:-mt-32 pb-8 md:pb-16">
+        <div className="container mx-auto px-3 md:px-4">
+          <div className="bg-white/70 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-5 md:py-10 px-4 md:px-12 ring-1 ring-accent/10">
+            <StaggerContainer className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 md:gap-16">
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
                   <motion.div
@@ -103,8 +103,8 @@ const FeatureSections = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <span className="text-2xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
-                    <span className="text-primary/70 font-medium text-xs md:text-sm tracking-wide uppercase">
+                    <span className="text-xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
+                    <span className="text-primary/70 font-medium text-[10px] md:text-sm tracking-wide uppercase">
                       {q.label}
                     </span>
                   </motion.div>
@@ -112,7 +112,7 @@ const FeatureSections = () => {
               ))}
             </StaggerContainer>
             {/* Red accent line */}
-            <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-highlight via-accent to-highlight rounded-full" />
+            <div className="mt-4 md:mt-6 mx-auto w-16 md:w-24 h-1 bg-gradient-to-r from-highlight via-accent to-highlight rounded-full" />
           </div>
         </div>
       </section>
