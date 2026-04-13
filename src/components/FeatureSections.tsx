@@ -147,13 +147,9 @@ const FeatureSections = () => {
                   distance={8}
                   duration={4}
                 >
-                  <div className="relative w-28 h-28 md:w-36 md:h-36">
-                    <img src={laurelWreath} alt="" aria-hidden className="w-full h-full" loading="lazy" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xs md:text-sm font-bold text-primary text-center leading-tight">
-                        Top 1%<br />Worldwide
-                      </span>
-                    </div>
+                  <div className="bg-accent text-white rounded-2xl px-5 py-4 shadow-xl text-center">
+                    <span className="block text-2xl md:text-3xl font-extrabold leading-none">Top 1%</span>
+                    <span className="block text-xs md:text-sm font-medium mt-1 uppercase tracking-wider opacity-90">Worldwide</span>
                   </div>
                 </FloatingElement>
               </motion.div>
