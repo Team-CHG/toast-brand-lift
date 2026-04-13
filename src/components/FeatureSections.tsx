@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import heroVideoOld from "@/assets/hero-video.mp4";
 import awardsSlide1 from "@/assets/awards-slide-1.avif";
 import awardsSlide2 from "@/assets/awards-slide-2.avif";
 import awardsSlide3 from "@/assets/awards-slide-4.avif";
@@ -28,10 +29,10 @@ import MenuCarousel from "@/components/MenuCarousel";
 const foodSlides = [awardsSlide1, awardsSlide2, awardsSlide3, awardsSlide4, awardsSlide5];
 
 const qualities = [
-  { icon: "🌿", label: "Fresh Daily" },
-  { icon: "🏆", label: "Award Winning" },
-  { icon: "📍", label: "Locally Sourced" },
-  { icon: "🥂", label: "Full Bar" },
+  { number: "Top 1%", label: "TripAdvisor Worldwide" },
+  { number: "Since 2005", label: "Serving Excellence" },
+  { number: "7", label: "Locations & Growing" },
+  { number: "Top 25", label: "Best Brunches in U.S." },
 ];
 
 const FeatureSections = () => {

@@ -1,15 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroVideo from "@/assets/hero-video.mp4";
-import heroVideoDesktop from "@/assets/hero-video-desktop.webm";
+import heroVideoNew from "@/assets/hero-video-new.mp4";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const HeroCarousel = () => {
-  const isMobile = useIsMobile();
-  const videoSrc = isMobile ? heroVideo : heroVideoDesktop;
+  const videoSrc = heroVideoNew;
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
