@@ -25,7 +25,7 @@ const HeroCarousel = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[85vh] md:min-h-screen flex items-center"
+      className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[90vh] md:min-h-[110vh] flex items-center"
     >
       {/* Parallax video background */}
       <motion.div className="absolute inset-0" style={{ scale }}>
@@ -40,11 +40,15 @@ const HeroCarousel = () => {
         />
       </motion.div>
 
-      {/* Gradient overlay */}
+      {/* Gradient overlay with blue/red tones */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/20 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-accent/10 to-transparent"
         style={{ opacity: overlayOpacity }}
       />
+
+      {/* Red accent glow */}
+      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-highlight/20 rounded-full blur-[150px] -translate-x-1/4 translate-y-1/4" />
+      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[120px] translate-x-1/4" />
 
       {/* Sparkles overlay with parallax */}
       <motion.div
@@ -61,7 +65,7 @@ const HeroCarousel = () => {
 
       {/* Hero content */}
       <motion.div
-        className="relative z-10 container mx-auto px-4 text-center"
+        className="relative z-10 container mx-auto px-4 text-center mb-32"
         style={{ y: textY }}
       >
         <motion.div
@@ -70,7 +74,7 @@ const HeroCarousel = () => {
           transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
         >
           <motion.p
-            className="text-accent-foreground/90 tracking-[0.3em] uppercase text-sm md:text-base mb-4 font-medium"
+            className="text-white/90 tracking-[0.3em] uppercase text-sm md:text-base mb-4 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -86,7 +90,7 @@ const HeroCarousel = () => {
           >
             Celebrate the
             <br />
-            <span className="text-accent italic">Possibilities</span>
+            <span className="text-highlight italic">Possibilities</span>
           </motion.h1>
 
           <motion.p
@@ -107,7 +111,7 @@ const HeroCarousel = () => {
             <Button
               size="lg"
               asChild
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-base px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-base px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               <a href="/locations">Find a Location</a>
             </Button>

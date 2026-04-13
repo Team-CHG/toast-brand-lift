@@ -87,31 +87,30 @@ const FeatureSections = () => {
 
   return (
     <>
-      {/* ═══════════════ QUALITIES RIBBON ═══════════════ */}
-      <section className="relative py-10 md:py-16 overflow-hidden bg-primary">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: "radial-gradient(circle at 20% 50%, hsl(var(--accent) / 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, hsl(var(--accent) / 0.2) 0%, transparent 50%)",
-          }} />
-        </div>
-        <StaggerContainer className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            {qualities.map((q, i) => (
-              <StaggerItem key={i}>
-                <motion.div
-                  className="flex items-center gap-3 group cursor-default"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <span className="text-2xl md:text-3xl group-hover:scale-125 transition-transform">{q.icon}</span>
-                  <span className="text-primary-foreground font-medium text-base md:text-lg tracking-wide">
-                    {q.label}
-                  </span>
-                </motion.div>
-              </StaggerItem>
-            ))}
+      {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
+      <section className="relative z-20 -mt-28 md:-mt-32 pb-10 md:pb-16">
+        <div className="container mx-auto px-4">
+          <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 py-8 md:py-10 px-6 md:px-12 ring-1 ring-accent/10">
+            <StaggerContainer className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              {qualities.map((q, i) => (
+                <StaggerItem key={i}>
+                  <motion.div
+                    className="flex items-center gap-3 group cursor-default"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <span className="text-2xl md:text-3xl group-hover:scale-125 transition-transform">{q.icon}</span>
+                    <span className="text-primary font-medium text-base md:text-lg tracking-wide">
+                      {q.label}
+                    </span>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+            {/* Red accent line */}
+            <div className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-highlight via-accent to-highlight rounded-full" />
           </div>
-        </StaggerContainer>
+        </div>
       </section>
 
       {/* ═══════════════ AWARDS SECTION ═══════════════ */}
@@ -135,7 +134,7 @@ const FeatureSections = () => {
           style={{ y: awardsBgY }}
         >
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-complementary/30 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-[100px]" />
         </motion.div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -167,10 +166,8 @@ const FeatureSections = () => {
                     </div>
                   </div>
 
-                  {/* Elegant gradient overlay at bottom */}
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
 
-                  {/* Indicators */}
                   <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
                     {foodSlides.map((_, index) => (
                       <button
@@ -206,9 +203,9 @@ const FeatureSections = () => {
 
             {/* Text content */}
             <ScrollReveal direction="right" delay={0.2} className="order-2">
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-                <Sparkles className="w-4 h-4 text-accent" />
-                <span className="text-accent text-sm font-medium tracking-wide uppercase">Award-Winning</span>
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-highlight/10 border border-highlight/20">
+                <Sparkles className="w-4 h-4 text-highlight" />
+                <span className="text-highlight text-sm font-medium tracking-wide uppercase">Award-Winning</span>
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary leading-tight">
                 A Toast to <br className="hidden md:block" />
@@ -221,7 +218,6 @@ const FeatureSections = () => {
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality, passion, and dedication to the art of breakfast.
               </p>
 
-              {/* Award Badges with hover */}
               <motion.div className="flex items-center gap-6 mb-8">
                 <motion.img
                   whileHover={{ scale: 1.1, rotate: -3 }}
@@ -255,24 +251,27 @@ const FeatureSections = () => {
       <section
         ref={menuRef}
         id="menu"
-        className="relative py-24 md:py-32 overflow-hidden bg-primary"
+        className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-accent via-accent/90 to-accent/80"
       >
         {/* Parallax pattern */}
         <motion.div className="absolute inset-0 opacity-5" style={{ y: menuBgY }}>
           <div className="absolute inset-0" style={{
-            backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(var(--primary-foreground) / 0.1) 40px, hsl(var(--primary-foreground) / 0.1) 42px)",
+            backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(0 0% 100% / 0.1) 40px, hsl(0 0% 100% / 0.1) 42px)",
           }} />
         </motion.div>
 
+        {/* Red accent blob */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-highlight/15 rounded-full blur-[150px]" />
+
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20">
-              <span className="text-primary-foreground/80 text-sm tracking-widest uppercase">Explore</span>
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-white/10 border border-white/20">
+              <span className="text-white/80 text-sm tracking-widest uppercase">Explore</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Our Menu
             </h2>
-            <p className="text-xl text-primary-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">
               From classic breakfast favorites to innovative brunch creations, our menu celebrates the art of morning dining.
             </p>
           </ScrollReveal>
@@ -280,7 +279,7 @@ const FeatureSections = () => {
           <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <StaggerItem>
               <motion.article
-                className="group bg-primary-foreground/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-foreground/10 hover:border-primary-foreground/20 transition-all"
+                className="group bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className="relative overflow-hidden">
@@ -293,17 +292,17 @@ const FeatureSections = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3 text-primary-foreground">Chef's Specials</h3>
-                  <p className="text-primary-foreground/60 mb-6">
+                  <h3 className="text-2xl font-bold mb-3 text-white">Chef's Specials</h3>
+                  <p className="text-white/60 mb-6">
                     Rotating seasonal dishes crafted by our culinary team featuring the finest local ingredients.
                   </p>
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                    className="rounded-full border-white/30 text-white hover:bg-white/10"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -312,7 +311,7 @@ const FeatureSections = () => {
             </StaggerItem>
             <StaggerItem>
               <motion.article
-                className="group bg-primary-foreground/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-foreground/10 hover:border-primary-foreground/20 transition-all"
+                className="group bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className="relative overflow-hidden">
@@ -325,17 +324,17 @@ const FeatureSections = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3 text-primary-foreground">Full Bar & Cocktails</h3>
-                  <p className="text-primary-foreground/60 mb-6">
+                  <h3 className="text-2xl font-bold mb-3 text-white">Full Bar & Cocktails</h3>
+                  <p className="text-white/60 mb-6">
                     Hand-crafted cocktails, mimosas, and brunch beverages to complement your meal perfectly.
                   </p>
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                    className="rounded-full border-white/30 text-white hover:bg-white/10"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -344,7 +343,6 @@ const FeatureSections = () => {
             </StaggerItem>
           </StaggerContainer>
 
-          {/* Menu Carousel */}
           <ScrollReveal delay={0.3}>
             <MenuCarousel showHeader={false} />
           </ScrollReveal>
@@ -353,9 +351,8 @@ const FeatureSections = () => {
 
       {/* ═══════════════ GIFT CARDS SECTION ═══════════════ */}
       <section className="relative py-24 md:py-32 overflow-hidden" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}>
-        {/* Decorative gradient blobs */}
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-complementary/40 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -366,7 +363,7 @@ const FeatureSections = () => {
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary leading-tight">
                 Share the Food <br className="hidden md:block" />
-                <span className="italic text-accent">You Love</span>
+                <span className="italic text-highlight">You Love</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
                 Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date.
@@ -375,7 +372,7 @@ const FeatureSections = () => {
                 <Button
                   size="lg"
                   asChild
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg"
+                  className="bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg"
                 >
                   <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer">
                     <CreditCard className="h-5 w-5 mr-2" />
@@ -410,7 +407,6 @@ const FeatureSections = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  {/* Glow effect */}
                   <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl -z-10" />
                 </div>
               </motion.div>
@@ -420,14 +416,13 @@ const FeatureSections = () => {
       </section>
 
       {/* ═══════════════ REVIEWS SECTION ═══════════════ */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-complementary">
+      <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-accent/5 via-background to-highlight/5">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.03]"
           style={{ backgroundImage: `url(${homeBackground3})` }}
         />
-        {/* Decorative elements */}
         <FloatingElement className="absolute top-20 left-10 opacity-10 hidden lg:block" delay={1}>
-          <Star className="w-16 h-16 text-accent fill-accent" />
+          <Star className="w-16 h-16 text-highlight fill-highlight" />
         </FloatingElement>
         <FloatingElement className="absolute bottom-20 right-20 opacity-10 hidden lg:block" delay={3} distance={20}>
           <Star className="w-12 h-12 text-accent fill-accent" />
@@ -435,9 +430,9 @@ const FeatureSections = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              <Star className="w-4 h-4 text-accent fill-accent" />
-              <span className="text-accent text-sm font-medium tracking-wide uppercase">Reviews</span>
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-highlight/10 border border-highlight/20">
+              <Star className="w-4 h-4 text-highlight fill-highlight" />
+              <span className="text-highlight text-sm font-medium tracking-wide uppercase">Reviews</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
               What Our Guests Say
@@ -448,7 +443,7 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-full max-w-7xl mx-auto bg-card/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+            <div className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
               <iframe
                 className="lc_reviews_widget"
                 src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
@@ -468,18 +463,19 @@ const FeatureSections = () => {
           background: `url(${newsletterCelebrationBg}) top center / contain no-repeat, url(${pageBackgroundTexture}) center / cover`,
         }}
       >
-        {/* Animated gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-complementary/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
+        {/* Diagonal red accent */}
+        <div className="absolute -bottom-20 -right-20 w-[600px] h-[300px] bg-highlight/5 rounded-full blur-[100px] rotate-12" />
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <ScrollReveal>
             <FloatingElement distance={5} duration={8}>
-              <Sparkles className="w-8 h-8 text-accent mx-auto mb-6" />
+              <Sparkles className="w-8 h-8 text-highlight mx-auto mb-6" />
             </FloatingElement>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary leading-tight">
               Never Miss Out on
               <br />
-              <span className="italic text-accent">A Celebration!</span>
+              <span className="italic text-highlight">A Celebration!</span>
             </h2>
             <p className="text-xl mb-12 max-w-2xl mx-auto text-muted-foreground">
               Join our community and be the first to know about exclusive offers, new menu items, and special events.
@@ -488,7 +484,7 @@ const FeatureSections = () => {
               <Button
                 size="lg"
                 asChild
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-full shadow-xl"
+                className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-lg px-10 py-6 rounded-full shadow-xl"
               >
                 <a
                   href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
