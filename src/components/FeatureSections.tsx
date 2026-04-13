@@ -232,7 +232,7 @@ const FeatureSections = () => {
         </motion.div>
 
         {/* Red accent blob */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-highlight/15 rounded-full blur-[150px]" />
+        <div className="absolute top-0 right-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-highlight/15 rounded-full blur-[80px] md:blur-[150px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-16">
