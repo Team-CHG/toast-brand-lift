@@ -17,7 +17,7 @@ const RewardsCtaSection = () => {
         </p>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button size="lg" className="text-lg px-10">
+            <Button size="lg" className="text-lg px-10 bg-accent hover:bg-accent/90 text-white">
               Sign Up Now <ChevronDown className="ml-1 h-5 w-5" />
             </Button>
           </DropdownMenuTrigger>

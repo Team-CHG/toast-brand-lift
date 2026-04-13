@@ -243,12 +243,12 @@ const ToastKing = () => {
                 Skip the wait! Order online for pickup or join our digital waitlist before you arrive.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                   <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
                     Order Now <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
                   <a href={location.waitlistUrl} target="_blank" rel="noopener noreferrer">
                     Join Waitlist
                   </a>

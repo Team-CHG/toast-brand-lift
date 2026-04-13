@@ -243,12 +243,12 @@ const ToastColeman = () => {
                 While this location is temporarily closed, you can enjoy the same great Toast! experience at our Hungry Neck Boulevard location, just minutes away!
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
                   <Link to="/locations/toast-mt-pleasant">
                     Toast! Mt. Pleasant
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                   <Link to="/locations">
                     View All Locations
                   </Link>
