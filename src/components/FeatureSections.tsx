@@ -1,25 +1,45 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import awardsVideo from "@/assets/awards-video.mp4";
-import menuImage2 from "@/assets/food-slide-2-new.jpg";
-import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
-import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
-import giftcardDesign from "@/assets/giftcard-design.png";
-import homeBackground3 from "@/assets/home-background-3.avif";
-import newsletterCelebrationBg from "@/assets/newsletter-celebration-bg.png";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import flourishDecoration from "@/assets/flourish-decoration.png";
-import laurelWreath from "@/assets/laurel-wreath.png";
-
+import { useEffect, useState, useRef, useCallback } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star, Sparkles } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import ParallaxLayer from "@/components/animations/ParallaxLayer";
 import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
 
+// Lazy-load heavy images only when needed
+const menuImage2 = new URL("@/assets/food-slide-2-new.jpg", import.meta.url).href;
+const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.png", import.meta.url).href;
+const awardTripadvisor = new URL("@/assets/award-tripadvisor.jpg", import.meta.url).href;
+const giftcardDesign = new URL("@/assets/giftcard-design.png", import.meta.url).href;
+const pageBackgroundTexture = new URL("@/assets/page-background-texture.png", import.meta.url).href;
+const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png", import.meta.url).href;
+const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
+const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
 
+// Lazy video component — only loads video src when in viewport
+const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "200px" });
+
+  return (
+    <div ref={ref} className={className}>
+      {isInView ? (
+        <video
+          src={src}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+      ) : (
+        <div className="w-full h-full bg-muted animate-pulse" />
+      )}
+    </div>
+  );
+};
 
 const qualities = [
   { number: "Top 1%", label: "TripAdvisor Worldwide" },
@@ -32,6 +52,8 @@ const FeatureSections = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const awardsRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLElement>(null);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+  const reviewsInView = useInView(reviewsRef, { once: true, margin: "100px" });
 
   const { scrollYProgress: awardsScroll } = useScroll({
     target: awardsRef,
@@ -45,9 +67,6 @@ const FeatureSections = () => {
   });
   const menuBgY = useTransform(menuScroll, [0, 1], [50, -50]);
 
-
-
-
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
@@ -57,13 +76,18 @@ const FeatureSections = () => {
     return () => { document.body.removeChild(script); };
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  // Throttled mouse move handler
+  const lastMove = useRef(0);
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const now = Date.now();
+    if (now - lastMove.current < 50) return; // throttle to ~20fps
+    lastMove.current = now;
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: (e.clientX - rect.left) / rect.width - 0.5,
       y: (e.clientY - rect.top) / rect.height - 0.5,
     });
-  };
+  }, []);
 
   return (
     <>
@@ -108,9 +132,9 @@ const FeatureSections = () => {
           <img src={flourishDecoration} alt="" aria-hidden className="w-36 h-auto" loading="lazy" />
         </FloatingElement>
 
-        {/* Animated background gradient */}
+        {/* Animated background gradient — hidden on mobile for performance */}
         <motion.div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none hidden md:block"
           style={{ y: awardsBgY }}
         >
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
@@ -130,14 +154,7 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                  <video
-                    src={awardsVideo}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
+                  <LazyVideo src={new URL("@/assets/awards-video.mp4", import.meta.url).href} className="w-full h-full" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
 
@@ -215,7 +232,7 @@ const FeatureSections = () => {
         </motion.div>
 
         {/* Red accent blob */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-highlight/15 rounded-full blur-[150px]" />
+        <div className="absolute top-0 right-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-highlight/15 rounded-full blur-[80px] md:blur-[150px]" />
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-16">
@@ -397,14 +414,21 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
-              <iframe
-                className="lc_reviews_widget"
-                src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
-                frameBorder="0"
-                scrolling="no"
-                style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
-              />
+            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+              {reviewsInView ? (
+                <iframe
+                  className="lc_reviews_widget"
+                  src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
+                  frameBorder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+                />
+              ) : (
+                <div style={{ minHeight: "600px" }} className="flex items-center justify-center">
+                  <p className="text-muted-foreground">Loading reviews...</p>
+                </div>
+              )}
             </div>
           </ScrollReveal>
         </div>
