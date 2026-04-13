@@ -314,7 +314,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white/30 text-white hover:bg-white/10"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -346,7 +346,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white/30 text-white hover:bg-white/10"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
