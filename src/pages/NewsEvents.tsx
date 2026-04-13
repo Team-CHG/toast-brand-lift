@@ -60,7 +60,7 @@ const NewsEvents = () => {
         <motion.div className="relative z-10 container mx-auto px-4 text-center" style={{ opacity: heroOpacity }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
-              News & <span className="text-highlight italic">Events</span>
+              News & <span className="text-complementary italic">Events</span>
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
               Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.

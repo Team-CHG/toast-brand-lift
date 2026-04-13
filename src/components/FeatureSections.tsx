@@ -178,12 +178,12 @@ const FeatureSections = () => {
                       {/* Video slide first */}
                       <div className="flex-[0_0_100%] min-w-0 h-full">
                         <video
+                          ref={videoRef}
                           src={heroVideoOld}
                           className="w-full h-full object-cover"
-                          autoPlay
                           muted
-                          loop
                           playsInline
+                        />
                         />
                       </div>
                       {foodSlides.map((slide, index) => (

@@ -52,7 +52,7 @@ const Catering = () => {
               <span className="text-white text-sm font-medium tracking-widest uppercase">Event Catering</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6">
-              Catering by <span className="text-highlight italic">Toast!</span>
+              Catering by <span className="text-complementary italic">Toast!</span>
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
               Experience exceptional cuisine from Charleston Hospitality Group

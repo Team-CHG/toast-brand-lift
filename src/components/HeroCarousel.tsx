@@ -87,7 +87,7 @@ const HeroCarousel = () => {
           >
             Celebrate the
             <br />
-            <span className="text-highlight italic">Possibilities</span>
+            <span className="text-complementary italic">Possibilities</span>
           </motion.h1>
 
           <motion.p
