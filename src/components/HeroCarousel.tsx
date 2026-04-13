@@ -116,7 +116,7 @@ const HeroCarousel = () => {
               size="lg"
               variant="outline"
               asChild
-              className="border-2 border-white/60 text-white hover:bg-white/10 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-sm"
+              className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-md shadow-lg"
             >
               <a href="/locations">Order Online</a>
             </Button>
