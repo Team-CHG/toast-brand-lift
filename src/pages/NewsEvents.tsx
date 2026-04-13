@@ -5,6 +5,10 @@ import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import FloatingElement from "@/components/animations/FloatingElement";
+import { Sparkles } from "lucide-react";
+import pageBackgroundTexture from "@/assets/page-background-texture.png";
 
 const newsItems = [
   { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: "https://toastallday.com/wp-content/uploads/2025/05/Toast-Mothers-Day-Horizontal-Header-Post-1920-x-1080-px-1-1-1080x675.jpg", category: "Events", slug: "mothers-day" },
@@ -16,7 +20,7 @@ const newsItems = [
   { title: "Black Friday $20 Bonus Gift Card", description: "Purchase $50 in gift cards and receive a $20 bonus card.", image: "https://toastallday.com/wp-content/uploads/2024/12/Toast_Giving_is_the_Greatest_Gift_web-1.jpg", category: "Promotions", slug: "black-friday-gift-card" },
   { title: "Veterans Eat FREE This Veterans Day", description: "We honor our veterans with a free meal on Veterans Day.", image: "https://toastallday.com/wp-content/uploads/2024/11/unnamed-22-1080x675.png", category: "Events", slug: "veterans-day" },
   { title: "Best Brunch in Charleston, SC", description: "Discover why Toast! All Day is voted the best brunch spot in Charleston.", image: "https://toastallday.com/wp-content/uploads/2022/02/Toast-All-Day-syrup-pour-chicken-800x675.jpg", category: "News", slug: "best-brunch" },
-  { title: "Love Is In The Air At Toast!", description: "Celebrate love with our special Valentine's Day menu.", image: "https://toastallday.com/wp-content/uploads/2022/02/49a9faa3-d3c4-4d48-82a7-ea3a05d30e61-copy-1-496x620-1.jpeg", category: "Events", slug: "valentines-day" }
+  { title: "Love Is In The Air At Toast!", description: "Celebrate love with our special Valentine's Day menu.", image: "https://toastallday.com/wp-content/uploads/2022/02/49a9faa3-d3c4-4d48-82a7-ea3a05d30e61-copy-1-496x620-1.jpeg", category: "Events", slug: "valentines-day" },
 ];
 
 const NewsEvents = () => {
@@ -24,8 +28,8 @@ const NewsEvents = () => {
     <div className="min-h-screen">
       <SEO 
         title="News & Events - Toast All Day | Promotions, Specials & Celebrations"
-        description="Stay updated with Toast All Day news, events, and promotions. Mother's Day specials, military discounts, 20th anniversary celebrations, and exclusive offers."
-        keywords="Toast All Day news, restaurant events Charleston, brunch promotions, special offers, military discount, holiday specials"
+        description="Stay updated with Toast All Day news, events, and promotions."
+        keywords="Toast All Day news, restaurant events Charleston, brunch promotions"
       />
       <FestiveBackdrop />
       <Navigation />
@@ -33,41 +37,55 @@ const NewsEvents = () => {
       <Breadcrumbs />
       
       {/* Hero Section */}
-      <section className="relative py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">News & Events</h1>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.</p>
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-background to-highlight/5" />
+        <div className="absolute top-20 left-0 w-[400px] h-[400px] bg-highlight/10 rounded-full blur-[120px]" />
+        <FloatingElement className="absolute top-1/3 right-10 opacity-10 hidden lg:block" delay={1} distance={15}>
+          <Sparkles className="w-16 h-16 text-highlight" />
+        </FloatingElement>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <ScrollReveal>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">News & <span className="text-highlight italic">Events</span></h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Stay up to date with the latest happenings, promotions, and special events at Toast! All Day.</p>
+          </ScrollReveal>
         </div>
       </section>
       
       {/* News Grid */}
-      <section className="py-16">
+      <section className="py-16 relative"
+        style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsItems.map((item, index) => (
-              <Link key={index} to={`/news-events/${item.slug}`} className="group bg-card/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/30 block">
-                <div className="aspect-video overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-accent bg-accent/10 rounded-full mb-3">{item.category}</span>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                </div>
-              </Link>
+              <ScrollReveal key={index} delay={index * 0.08}>
+                <Link to={`/news-events/${item.slug}`} className="group block bg-white/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-xl ring-1 ring-accent/10 hover:shadow-2xl transition-all hover:-translate-y-1">
+                  <div className="aspect-video overflow-hidden">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-6">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-highlight bg-highlight/10 rounded-full mb-3">{item.category}</span>
+                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
       
       {/* Newsletter CTA */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-4">Don't Miss Out!</h2>
-            <p className="text-foreground mb-8 max-w-xl mx-auto">Sign up for our newsletter to get the latest news, events, and exclusive offers.</p>
-            <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-3 rounded-full font-semibold hover:bg-accent/90 transition-colors">Subscribe Now</a>
-          </div>
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <ScrollReveal>
+            <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl ring-1 ring-accent/10 max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">Don't Miss Out!</h2>
+              <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Sign up for our newsletter to get the latest news, events, and exclusive offers.</p>
+              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-highlight text-highlight-foreground px-8 py-3 rounded-full font-semibold hover:bg-highlight/90 transition-all hover:scale-105 shadow-lg">Subscribe Now</a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
       <Footer />
