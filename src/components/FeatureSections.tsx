@@ -181,7 +181,7 @@ const FeatureSections = () => {
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
 
                   <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
-                    {foodSlides.map((_, index) => (
+                    {[...Array(foodSlides.length + 1)].map((_, index) => (
                       <button
                         key={index}
                         onClick={() => emblaApi?.scrollTo(index)}
