@@ -17,7 +17,7 @@ const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/
               Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. Can be used in any of Charleston Hospitality Group restaurants. Start customizing your card.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-              <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button size="lg" asChild className="bg-highlight hover:bg-highlight/90 text-white">
                 <a href={giftCardUrl} target="_blank" rel="noopener noreferrer">
                   <CreditCard className="h-5 w-5 mr-2" />
                   Buy e-Gift Card
