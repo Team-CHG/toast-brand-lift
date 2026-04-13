@@ -41,7 +41,7 @@ const DownloadApp = () => {
               <span className="text-accent text-sm font-medium tracking-widest uppercase">Mobile App</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-primary mb-6">
-              Download <span className="text-highlight italic">Our App</span>
+              Download <span className="text-complementary italic">Our App</span>
             </h1>
             <p className="text-xl text-highlight font-semibold mb-2">It's Cheaper to Order on the App!</p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
