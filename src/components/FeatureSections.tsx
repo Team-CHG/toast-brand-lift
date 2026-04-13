@@ -132,9 +132,9 @@ const FeatureSections = () => {
           <img src={flourishDecoration} alt="" aria-hidden className="w-36 h-auto" loading="lazy" />
         </FloatingElement>
 
-        {/* Animated background gradient */}
+        {/* Animated background gradient — hidden on mobile for performance */}
         <motion.div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none hidden md:block"
           style={{ y: awardsBgY }}
         >
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
