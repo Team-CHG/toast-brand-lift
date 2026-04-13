@@ -37,7 +37,7 @@ const HeroCarousel = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[90vh] md:min-h-[110vh] flex items-center"
+      className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center"
     >
       {/* Parallax video background */}
       <motion.div className="absolute inset-0" style={{ scale }}>
@@ -80,7 +80,7 @@ const HeroCarousel = () => {
 
       {/* Hero content */}
       <motion.div
-        className="relative z-10 container mx-auto px-4 text-center mb-32"
+        className="relative z-10 container mx-auto px-4 text-center mb-40 md:mb-32"
         style={{ y: textY }}
       >
         <motion.div
@@ -89,7 +89,7 @@ const HeroCarousel = () => {
           transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
         >
           <motion.p
-            className="text-white/90 tracking-[0.3em] uppercase text-sm md:text-base mb-4 font-medium"
+            className="text-white/90 tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-base mb-3 md:mb-4 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -98,7 +98,7 @@ const HeroCarousel = () => {
           </motion.p>
 
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[0.95]"
+            className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-4 md:mb-6 leading-[0.95]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
@@ -109,7 +109,7 @@ const HeroCarousel = () => {
           </motion.h1>
 
           <motion.p
-            className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10"
+            className="text-white/80 text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -118,7 +118,7 @@ const HeroCarousel = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -126,7 +126,7 @@ const HeroCarousel = () => {
             <Button
               size="lg"
               asChild
-              className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-base px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
               <a href="/locations">Find a Location</a>
             </Button>
@@ -135,7 +135,7 @@ const HeroCarousel = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-base px-8 py-6 rounded-full backdrop-blur-md shadow-lg"
+                  className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-full backdrop-blur-md shadow-lg"
                 >
                   Order Online <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
