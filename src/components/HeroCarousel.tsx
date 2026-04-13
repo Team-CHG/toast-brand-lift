@@ -49,6 +49,8 @@ const HeroCarousel = () => {
           muted
           loop
           playsInline
+          preload="auto"
+          poster=""
         />
       </motion.div>
 

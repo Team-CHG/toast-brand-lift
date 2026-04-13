@@ -74,6 +74,8 @@ const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
                       src={item.image}
                       alt={item.name}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="p-2 text-center">
