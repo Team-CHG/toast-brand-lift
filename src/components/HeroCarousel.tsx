@@ -50,6 +50,8 @@ const HeroCarousel = () => {
           loop
           playsInline
           preload="auto"
+          // @ts-ignore
+          fetchpriority="high"
           poster=""
         />
       </motion.div>
