@@ -1,13 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import heroVideoOld from "@/assets/hero-video.mp4";
-import awardsSlide1 from "@/assets/awards-slide-1.avif";
-import awardsSlide2 from "@/assets/awards-slide-2.avif";
-import awardsSlide3 from "@/assets/awards-slide-4.avif";
-import awardsSlide4 from "@/assets/awards-slide-5.avif";
-import awardsSlide5 from "@/assets/awards-slide-6.avif";
+import awardsVideo from "@/assets/awards-video.mp4";
 import menuImage2 from "@/assets/food-slide-2-new.jpg";
 import awardRestaurantGuru from "@/assets/award-restaurant-guru.png";
 import awardTripadvisor from "@/assets/award-tripadvisor.jpg";
