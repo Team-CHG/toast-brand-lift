@@ -414,14 +414,21 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
-              <iframe
-                className="lc_reviews_widget"
-                src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
-                frameBorder="0"
-                scrolling="no"
-                style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
-              />
+            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+              {reviewsInView ? (
+                <iframe
+                  className="lc_reviews_widget"
+                  src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
+                  frameBorder="0"
+                  scrolling="no"
+                  loading="lazy"
+                  style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+                />
+              ) : (
+                <div style={{ minHeight: "600px" }} className="flex items-center justify-center">
+                  <p className="text-muted-foreground">Loading reviews...</p>
+                </div>
+              )}
             </div>
           </ScrollReveal>
         </div>
