@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 
 const RewardsWidget = () => {
   const [state, setState] = useState<"minimized" | "expanded">("minimized");
+  const [showLocations, setShowLocations] = useState(false);
 
   const handleMinimizedClick = () => {
     setState("expanded");
@@ -17,6 +13,7 @@ const RewardsWidget = () => {
 
   const handleCloseExpanded = () => {
     setState("minimized");
+    setShowLocations(false);
   };
 
   // Minimized button at bottom
@@ -54,36 +51,37 @@ const RewardsWidget = () => {
           <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
         </div>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              size="sm"
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
-            >
-              JOIN REWARDS <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="center" className="w-56">
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        {!showLocations ? (
+          <Button
+            size="sm"
+            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
+            onClick={() => setShowLocations(true)}
+          >
+            JOIN REWARDS <ChevronDown className="ml-1 h-4 w-4" />
+          </Button>
+        ) : (
+          <div className="space-y-1 mt-1">
+            <p className="text-xs font-semibold text-muted-foreground text-center">Select a location:</p>
+            {[
+              { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" },
+              { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" },
+              { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" },
+              { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" },
+              { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" },
+              { name: "Savannah", url: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" },
+            ].map((loc) => (
+              <a
+                key={loc.name}
+                href={loc.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center text-sm py-1.5 px-2 rounded-md hover:bg-muted transition-colors text-foreground"
+              >
+                {loc.name}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
