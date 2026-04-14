@@ -2,12 +2,6 @@ import { useState } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const RewardsWidget = () => {
   const [state, setState] = useState<"minimized" | "expanded">("minimized");
