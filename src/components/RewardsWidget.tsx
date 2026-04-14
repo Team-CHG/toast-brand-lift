@@ -46,6 +46,7 @@ const RewardsWidget = () => {
         </div>
 
         <div className="space-y-1.5 mb-3 text-xs">
+          <p className="text-accent font-bold text-sm bg-accent/10 py-1 px-2 rounded text-center">Get $5 instantly for signing up!</p>
           <p className="text-foreground"><span className="font-semibold">$10</span> for every $100 spent</p>
           <p className="text-foreground"><span className="font-semibold">2x points</span> Mon–Fri, 12–3 PM</p>
           <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
