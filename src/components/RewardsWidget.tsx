@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const RewardsWidget = () => {
   const [state, setState] = useState<"minimized" | "expanded">("minimized");
@@ -48,19 +54,36 @@ const RewardsWidget = () => {
           <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
         </div>
 
-        <Button
-          size="sm"
-          asChild
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
-        >
-          <a
-            href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            JOIN REWARDS
-          </a>
-        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              size="sm"
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
+            >
+              JOIN REWARDS <ChevronDown className="ml-1 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="center" className="w-56">
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     );
   }
