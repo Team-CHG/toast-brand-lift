@@ -11,6 +11,7 @@ import {
 
 const RewardsWidget = () => {
   const [state, setState] = useState<"minimized" | "expanded">("minimized");
+  const [showLocations, setShowLocations] = useState(false);
 
   const handleMinimizedClick = () => {
     setState("expanded");
