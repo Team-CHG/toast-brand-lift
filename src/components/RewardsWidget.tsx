@@ -19,6 +19,7 @@ const RewardsWidget = () => {
 
   const handleCloseExpanded = () => {
     setState("minimized");
+    setShowLocations(false);
   };
 
   // Minimized button at bottom
