@@ -22,6 +22,15 @@ const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/
     { name: "Savannah", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
   ];
 
+  const checkBalanceLocations = [
+    { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard" },
+    { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/findcard" },
+    { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard" },
+    { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard" },
+    { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard" },
+    { name: "Savannah", url: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard" },
+  ];
+
   return (
     <section className="py-20 bg-complementary">
       <div className="container mx-auto px-4">
@@ -50,12 +59,24 @@ const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button size="lg" variant="outline" asChild>
-                <a href="https://www.toasttab.com//toast-charleston-155-meeting-st/findcard" target="_blank" rel="noopener noreferrer">
-                  <Search className="h-5 w-5 mr-2" />
-                  Check Balance
-                </a>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" variant="outline">
+                    <Search className="h-5 w-5 mr-2" />
+                    Check Balance
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56 bg-card z-50">
+                  {checkBalanceLocations.map((loc) => (
+                    <DropdownMenuItem key={loc.name} asChild>
+                      <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                        {loc.name}
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
           <div className="flex justify-center">
