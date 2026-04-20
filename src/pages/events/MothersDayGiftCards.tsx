@@ -11,6 +11,20 @@ import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils } fro
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import mothersDayBrunch from "@/assets/mothers-day-brunch.jpg";
+import sisterElisTable from "@/assets/sister-elis-table.png";
+import sisterJohnKing from "@/assets/sister-john-king-grill.png";
+import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
+import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
+import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
+
+const sisterRestaurants = [
+  { name: "Eli's Table", logo: sisterElisTable },
+  { name: "John King Grill", logo: sisterJohnKing },
+  { name: "Honkytonk Saloon", logo: sisterHonkytonk },
+  { name: "Toasted Crust", logo: sisterToastedCrust },
+  { name: "Cachita's Kitchen", logo: sisterCachitas },
+];
 
 const locations = [
   {
@@ -119,15 +133,27 @@ const MothersDayGiftCards = () => {
                 initial={{ rotate: -3, scale: 0.95 }}
                 animate={{ rotate: 0, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex justify-center"
+                className="flex justify-center relative"
               >
-                <img
-                  src={giftcardDesign}
-                  alt="Toast All Day Mother's Day Gift Card — perfect for breakfast and brunch lovers"
-                  className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-highlight/20"
-                  loading="eager"
-                  decoding="async"
-                />
+                <div className="relative">
+                  <img
+                    src={mothersDayBrunch}
+                    alt="Mom and friends laughing and toasting with mimosas at a sunlit Toast All Day brunch table"
+                    className="rounded-3xl shadow-2xl max-w-full h-auto ring-4 ring-highlight/20 object-cover aspect-[4/5] w-full"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <motion.img
+                    src={giftcardDesign}
+                    alt="Toast All Day eGift Card"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    className="hidden md:block absolute -bottom-8 -left-8 w-44 lg:w-56 rounded-xl shadow-2xl ring-4 ring-white rotate-[-8deg]"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
               </motion.div>
             </ScrollReveal>
           </div>
@@ -157,22 +183,24 @@ const MothersDayGiftCards = () => {
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
-                {[
-                  "Eli's Table",
-                  "John King Grill",
-                  "Honkytonk Saloon",
-                  "Toasted Crust",
-                  "Cachita's Kitchen",
-                ].map((name) => (
+                {sisterRestaurants.map((restaurant) => (
                   <motion.div
-                    key={name}
-                    whileHover={{ y: -4, scale: 1.03 }}
+                    key={restaurant.name}
+                    whileHover={{ y: -6, scale: 1.04 }}
                     transition={{ duration: 0.2 }}
-                    className="rounded-xl bg-white/15 backdrop-blur border border-white/30 px-4 py-5 flex flex-col items-center gap-2"
+                    className="rounded-2xl bg-white/95 backdrop-blur border border-white/40 p-4 flex flex-col items-center gap-3 shadow-lg"
                   >
-                    <Utensils className="h-5 w-5 text-white" />
-                    <span className="text-sm md:text-base font-semibold text-white text-center leading-tight">
-                      {name}
+                    <div className="w-full aspect-square flex items-center justify-center bg-white rounded-xl p-2">
+                      <img
+                        src={restaurant.logo}
+                        alt={`${restaurant.name} logo — sister restaurant where Toast All Day gift cards are accepted`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <span className="text-xs md:text-sm font-bold text-primary text-center leading-tight">
+                      {restaurant.name}
                     </span>
                   </motion.div>
                 ))}
