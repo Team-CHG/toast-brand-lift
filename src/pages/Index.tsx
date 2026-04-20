@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SideDrawer from "@/components/SideDrawer";
 import LocationsMap from "@/components/LocationsMap";
 import SEO from "@/components/SEO";
+import PromoBand from "@/components/PromoBand";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
@@ -19,6 +20,7 @@ const Index = () => {
         keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
       />
       <Navigation />
+      <PromoBand />
       <SideDrawer />
       <main>
         <HeroCarousel />
