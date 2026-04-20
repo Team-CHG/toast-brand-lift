@@ -141,18 +141,52 @@ const MothersDayGiftCards = () => {
                 sister restaurants. Delivered in minutes. Remembered for years.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#locations">
-                  <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
-                    <Gift className="h-5 w-5 mr-2" />
-                    Shop Gift Cards
-                  </Button>
-                </a>
-                <a href="#locations">
-                  <Button size="lg" variant="outline">
-                    <Search className="h-5 w-5 mr-2" />
-                    Check Card Balance
-                  </Button>
-                </a>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
+                      <Gift className="h-5 w-5 mr-2" />
+                      Shop Gift Cards
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-64 bg-card z-50">
+                    {locations.map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a
+                          href={loc.buyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" variant="outline">
+                      <Search className="h-5 w-5 mr-2" />
+                      Check Card Balance
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-64 bg-card z-50">
+                    {locations.map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a
+                          href={loc.balanceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </ScrollReveal>
             <ScrollReveal>
