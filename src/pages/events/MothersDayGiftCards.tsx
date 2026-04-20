@@ -204,8 +204,8 @@ const MothersDayGiftCards = () => {
                 A Gift That Travels With Her
               </h2>
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
-                Whether Mom is craving Sunday brunch downtown, a sunset dinner on the water, or a late
-                night with friends — her eGift Card is welcome at <strong>every Toast All Day location
+                Whether Mom is craving a relaxed brunch, a fine-dinning experience Downtown, or a late
+                night with friends, her eGift Card is welcome at <strong>every Toast All Day location
                 and all of our sister restaurants</strong>. One card. Endless ways to spoil her.
               </p>
 
