@@ -90,12 +90,14 @@ const MothersDayGiftCards = () => {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Give Mom the Gift of Brunch
+                Celebrate Mom with a Morning She'll Never Forget
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                Skip the flowers that wilt and the chocolate she'll regret. A Toast All Day eGift Card means
-                bottomless mimosas, golden beignets, and a sunlit morning she'll actually remember. Delivered
-                in minutes — perfect for last-minute planners.
+                This Mother's Day, give her something that lingers longer than flowers — laughter over
+                bottomless mimosas, the smell of warm beignets, and the people she loves all gathered
+                around one sunlit table. One Toast All Day eGift Card unlocks brunch, lunch, dinner, and
+                every craving in between — across <strong>all six Toast All Day locations</strong> AND our
+                sister restaurants. Delivered in minutes. Remembered for years.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="#locations">
