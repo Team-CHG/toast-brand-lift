@@ -14,6 +14,7 @@ import Franchise from "./pages/Franchise";
 import Blog from "./pages/Blog";
 import { Navigate } from "react-router-dom";
 import MothersDay from "./pages/events/MothersDay";
+import MothersDayGiftCards from "./pages/events/MothersDayGiftCards";
 import DownloadApp from "./pages/events/DownloadApp";
 import UnlimitedDrinkPass from "./pages/events/UnlimitedDrinkPass";
 import MilitaryDiscount from "./pages/events/MilitaryDiscount";
@@ -68,6 +69,7 @@ const App = () => (
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/mothers-day" element={<MothersDay />} />
+            <Route path="/mothers-day-gift-cards" element={<MothersDayGiftCards />} />
             <Route path="/blog/download-app" element={<DownloadApp />} />
             <Route path="/blog/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
             <Route path="/blog/military-discount" element={<MilitaryDiscount />} />
