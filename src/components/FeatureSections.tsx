@@ -346,21 +346,15 @@ const FeatureSections = () => {
                 Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date.
               </p>
               {/* Mother's Day promo banner */}
-              <a
-                href="/mothers-day-gift-cards"
-                className="group block mb-6 rounded-2xl bg-gradient-to-r from-highlight to-accent p-[2px] hover:scale-[1.02] transition-transform shadow-lg max-w-lg"
-              >
-                <div className="flex items-center justify-between gap-4 rounded-2xl bg-white/95 backdrop-blur px-5 py-4">
-                  <div className="flex items-center gap-3">
-                    <Sparkles className="w-5 h-5 text-highlight flex-shrink-0" />
-                    <div>
-                      <p className="text-sm font-semibold text-primary leading-tight">Mother's Day Gift Cards</p>
-                      <p className="text-xs text-muted-foreground">The perfect gift for Mom →</p>
-                    </div>
+              <div className="block mb-6 rounded-2xl bg-gradient-to-r from-highlight to-accent p-[2px] shadow-lg max-w-lg">
+                <div className="flex items-center gap-3 rounded-2xl bg-white/95 backdrop-blur px-5 py-4">
+                  <Sparkles className="w-5 h-5 text-highlight flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-primary leading-tight">Mother's Day Gift Cards</p>
+                    <p className="text-xs text-muted-foreground">The perfect gift for Mom — use the buttons below to shop or check a balance.</p>
                   </div>
-                  <span className="text-highlight text-sm font-semibold whitespace-nowrap group-hover:underline">Shop Now</span>
                 </div>
-              </a>
+              </div>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
