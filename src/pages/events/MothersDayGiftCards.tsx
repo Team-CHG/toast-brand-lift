@@ -7,7 +7,22 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils } from "lucide-react";
+import {
+  CreditCard,
+  Search,
+  Heart,
+  MapPin,
+  Gift,
+  Sparkles,
+  Star,
+  ChevronDown,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
@@ -17,6 +32,12 @@ import sisterJohnKing from "@/assets/sister-john-king-grill.png";
 import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
 import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
 import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
+import toastMeetingImg from "@/assets/locations/toast-meeting.jpg";
+import toastKingImg from "@/assets/locations/toast-king.jpg";
+import toastMtPleasantImg from "@/assets/locations/toast-mt-pleasant.jpg";
+import toastWestAshleyImg from "@/assets/locations/toast-west-ashley.jpg";
+import toastSummervilleImg from "@/assets/locations/toast-summerville.jpg";
+import toastSavannahImg from "@/assets/locations/toast-savannah.jpg";
 
 const sisterRestaurants = [
   { name: "Eli's Table", logo: sisterElisTable },
@@ -33,6 +54,7 @@ const locations = [
     address: "129 Meeting St, Charleston, SC 29401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st",
     balanceUrl: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard",
+    image: toastMeetingImg,
   },
   {
     name: "Toast! on King",
@@ -40,6 +62,7 @@ const locations = [
     address: "451 King St, Charleston, SC 29403",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st",
     balanceUrl: "https://www.toasttab.com/toast-king-st-451-king-st/findcard",
+    image: toastKingImg,
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -47,6 +70,7 @@ const locations = [
     address: "1150 Hungry Neck Blvd, Suite F-G, Mt. Pleasant, SC 29464",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
     balanceUrl: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard",
+    image: toastMtPleasantImg,
   },
   {
     name: "Toast! West Ashley",
@@ -54,6 +78,7 @@ const locations = [
     address: "2026 Savannah Hwy, Charleston, SC 29407",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci",
     balanceUrl: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard",
+    image: toastWestAshleyImg,
   },
   {
     name: "Toast! Summerville",
@@ -61,6 +86,7 @@ const locations = [
     address: "717 Old Trolley Rd, Summerville, SC 29485",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road",
     balanceUrl: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard",
+    image: toastSummervilleImg,
   },
   {
     name: "Toast! Savannah",
@@ -68,6 +94,7 @@ const locations = [
     address: "1 W Broughton St, Savannah, GA 31401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st",
     balanceUrl: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard",
+    image: toastSavannahImg,
   },
 ];
 
@@ -114,18 +141,52 @@ const MothersDayGiftCards = () => {
                 sister restaurants. Delivered in minutes. Remembered for years.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="#locations">
-                  <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
-                    <Gift className="h-5 w-5 mr-2" />
-                    Shop Gift Cards
-                  </Button>
-                </a>
-                <a href="#locations">
-                  <Button size="lg" variant="outline">
-                    <Search className="h-5 w-5 mr-2" />
-                    Check Card Balance
-                  </Button>
-                </a>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
+                      <Gift className="h-5 w-5 mr-2" />
+                      Shop Gift Cards
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-64 bg-card z-50">
+                    {locations.map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a
+                          href={loc.buyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" variant="outline">
+                      <Search className="h-5 w-5 mr-2" />
+                      Check Card Balance
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-64 bg-card z-50">
+                    {locations.map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a
+                          href={loc.balanceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </ScrollReveal>
             <ScrollReveal>
@@ -245,6 +306,16 @@ const MothersDayGiftCards = () => {
                   className="h-full"
                 >
                   <Card className="h-full flex flex-col border-2 hover:border-highlight/50 hover:shadow-xl transition-all bg-card/90 backdrop-blur">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
+                      <img
+                        src={loc.image}
+                        alt={`${loc.name} restaurant — buy a Mother's Day eGift Card for ${loc.city}`}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
                     <CardContent className="p-6 flex flex-col h-full">
                       <div className="flex items-start gap-3 mb-4">
                         <div className="p-2 rounded-full bg-highlight/10">
