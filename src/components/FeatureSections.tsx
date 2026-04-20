@@ -1,7 +1,13 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CreditCard, Search, Mail, Star, Sparkles } from "lucide-react";
+import { CreditCard, Search, Mail, Star, Sparkles, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
