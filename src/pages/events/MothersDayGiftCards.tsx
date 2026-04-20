@@ -23,6 +23,12 @@ import sisterJohnKing from "@/assets/sister-john-king-grill.png";
 import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
 import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
 import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
+import locMeeting from "@/assets/locations/toast-meeting.jpg";
+import locKing from "@/assets/locations/toast-king.jpg";
+import locMtPleasant from "@/assets/locations/toast-mt-pleasant.jpg";
+import locWestAshley from "@/assets/locations/toast-west-ashley.jpg";
+import locSummerville from "@/assets/locations/toast-summerville.jpg";
+import locSavannah from "@/assets/locations/toast-savannah.jpg";
 
 const sisterRestaurants = [
   { name: "Eli's Table", logo: sisterElisTable },
@@ -39,6 +45,7 @@ const locations = [
     address: "129 Meeting St, Charleston, SC 29401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st",
     balanceUrl: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard",
+    image: locMeeting,
   },
   {
     name: "Toast! on King",
@@ -46,6 +53,7 @@ const locations = [
     address: "451 King St, Charleston, SC 29403",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st",
     balanceUrl: "https://www.toasttab.com/toast-king-st-451-king-st/findcard",
+    image: locKing,
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -53,6 +61,7 @@ const locations = [
     address: "1150 Hungry Neck Blvd, Suite F-G, Mt. Pleasant, SC 29464",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
     balanceUrl: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard",
+    image: locMtPleasant,
   },
   {
     name: "Toast! West Ashley",
@@ -60,6 +69,7 @@ const locations = [
     address: "2026 Savannah Hwy, Charleston, SC 29407",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci",
     balanceUrl: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard",
+    image: locWestAshley,
   },
   {
     name: "Toast! Summerville",
@@ -67,6 +77,7 @@ const locations = [
     address: "717 Old Trolley Rd, Summerville, SC 29485",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road",
     balanceUrl: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard",
+    image: locSummerville,
   },
   {
     name: "Toast! Savannah",
@@ -74,6 +85,7 @@ const locations = [
     address: "1 W Broughton St, Savannah, GA 31401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st",
     balanceUrl: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard",
+    image: locSavannah,
   },
 ];
 
@@ -260,8 +272,18 @@ const MothersDayGiftCards = () => {
                   className="h-full"
                 >
                   <Card className="h-full flex flex-col border-2 hover:border-highlight/50 hover:shadow-xl transition-all bg-card/90 backdrop-blur">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-start gap-3 mb-4">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
+                      <img
+                        src={loc.image}
+                        alt={`${loc.name} restaurant interior`}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
+                    <CardContent className="p-6 flex flex-col flex-1">
+                      <div className="flex items-start gap-3 mb-3">
                         <div className="p-2 rounded-full bg-highlight/10">
                           <MapPin className="h-5 w-5 text-highlight" />
                         </div>
