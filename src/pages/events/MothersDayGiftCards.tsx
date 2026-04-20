@@ -195,15 +195,15 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="h-5 w-5 text-accent" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-                  Choose Mom's Favorite Spot
+                  Start Where She Smiles Most
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-                Pick Her Location
+                Pick Mom's Home Base
               </h2>
               <p className="text-lg text-muted-foreground">
-                Six locations across the Charleston area and Savannah. Buy a card or check an existing
-                balance below.
+                Choose the Toast All Day location closest to Mom's heart. Her card will work there — and
+                across our entire family of restaurants.
               </p>
             </div>
           </ScrollReveal>
