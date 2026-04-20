@@ -1,7 +1,13 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CreditCard, Search, Mail, Star, Sparkles } from "lucide-react";
+import { CreditCard, Search, Mail, Star, Sparkles, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
@@ -340,27 +346,63 @@ const FeatureSections = () => {
                 Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date.
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg"
-                >
-                  <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer">
-                    <CreditCard className="h-5 w-5 mr-2" />
-                    Buy e-Gift Card
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  asChild
-                  className="rounded-full px-8 hover:scale-105 transition-all"
-                >
-                  <a href="https://www.toasttab.com//toast-charleston-155-meeting-st/findcard" target="_blank" rel="noopener noreferrer">
-                    <Search className="h-5 w-5 mr-2" />
-                    Check Balance
-                  </a>
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      size="lg"
+                      className="bg-highlight hover:bg-highlight/90 text-highlight-foreground rounded-full px-8 hover:scale-105 transition-all shadow-lg"
+                    >
+                      <CreditCard className="h-5 w-5 mr-2" />
+                      Buy e-Gift Card
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-56 bg-card z-50">
+                    {[
+                      { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+                      { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
+                      { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
+                      { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
+                      { name: "Mt Pleasant", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
+                      { name: "Savannah", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+                    ].map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-full px-8 hover:scale-105 transition-all"
+                    >
+                      <Search className="h-5 w-5 mr-2" />
+                      Check Balance
+                      <ChevronDown className="h-4 w-4 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="w-56 bg-card z-50">
+                    {[
+                      { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard" },
+                      { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/findcard" },
+                      { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard" },
+                      { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard" },
+                      { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard" },
+                      { name: "Savannah", url: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard" },
+                    ].map((loc) => (
+                      <DropdownMenuItem key={loc.name} asChild>
+                        <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                          {loc.name}
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </ScrollReveal>
 
