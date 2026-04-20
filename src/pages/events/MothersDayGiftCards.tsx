@@ -183,22 +183,24 @@ const MothersDayGiftCards = () => {
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
-                {[
-                  "Eli's Table",
-                  "John King Grill",
-                  "Honkytonk Saloon",
-                  "Toasted Crust",
-                  "Cachita's Kitchen",
-                ].map((name) => (
+                {sisterRestaurants.map((restaurant) => (
                   <motion.div
-                    key={name}
-                    whileHover={{ y: -4, scale: 1.03 }}
+                    key={restaurant.name}
+                    whileHover={{ y: -6, scale: 1.04 }}
                     transition={{ duration: 0.2 }}
-                    className="rounded-xl bg-white/15 backdrop-blur border border-white/30 px-4 py-5 flex flex-col items-center gap-2"
+                    className="rounded-2xl bg-white/95 backdrop-blur border border-white/40 p-4 flex flex-col items-center gap-3 shadow-lg"
                   >
-                    <Utensils className="h-5 w-5 text-white" />
-                    <span className="text-sm md:text-base font-semibold text-white text-center leading-tight">
-                      {name}
+                    <div className="w-full aspect-square flex items-center justify-center bg-white rounded-xl p-2">
+                      <img
+                        src={restaurant.logo}
+                        alt={`${restaurant.name} logo — sister restaurant where Toast All Day gift cards are accepted`}
+                        className="max-h-full max-w-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <span className="text-xs md:text-sm font-bold text-primary text-center leading-tight">
+                      {restaurant.name}
                     </span>
                   </motion.div>
                 ))}
