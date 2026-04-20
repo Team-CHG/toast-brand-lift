@@ -7,7 +7,22 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils } from "lucide-react";
+import {
+  CreditCard,
+  Search,
+  Heart,
+  MapPin,
+  Gift,
+  Sparkles,
+  Star,
+  ChevronDown,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
@@ -17,6 +32,12 @@ import sisterJohnKing from "@/assets/sister-john-king-grill.png";
 import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
 import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
 import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
+import toastMeetingImg from "@/assets/locations/toast-meeting.jpg";
+import toastKingImg from "@/assets/locations/toast-king.jpg";
+import toastMtPleasantImg from "@/assets/locations/toast-mt-pleasant.jpg";
+import toastWestAshleyImg from "@/assets/locations/toast-west-ashley.jpg";
+import toastSummervilleImg from "@/assets/locations/toast-summerville.jpg";
+import toastSavannahImg from "@/assets/locations/toast-savannah.jpg";
 
 const sisterRestaurants = [
   { name: "Eli's Table", logo: sisterElisTable },
