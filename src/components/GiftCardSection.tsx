@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { CreditCard, Search } from "lucide-react";
+import { CreditCard, Search, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import giftcardDesign from "@/assets/giftcard-design.png";
 
 interface GiftCardSectionProps {
@@ -7,6 +13,15 @@ interface GiftCardSectionProps {
 }
 
 const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" }: GiftCardSectionProps) => {
+  const giftCardLocations = [
+    { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+    { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
+    { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
+    { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
+    { name: "Mt Pleasant", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
+    { name: "Savannah", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+  ];
+
   return (
     <section className="py-20 bg-complementary">
       <div className="container mx-auto px-4">
@@ -17,12 +32,24 @@ const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/
               Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. Can be used in any of Charleston Hospitality Group restaurants. Start customizing your card.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-              <Button size="lg" asChild className="bg-highlight hover:bg-highlight/90 text-white">
-                <a href={giftCardUrl} target="_blank" rel="noopener noreferrer">
-                  <CreditCard className="h-5 w-5 mr-2" />
-                  Buy e-Gift Card
-                </a>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
+                    <CreditCard className="h-5 w-5 mr-2" />
+                    Buy e-Gift Card
+                    <ChevronDown className="h-4 w-4 ml-2" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56 bg-card z-50">
+                  {giftCardLocations.map((loc) => (
+                    <DropdownMenuItem key={loc.name} asChild>
+                      <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                        {loc.name}
+                      </a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button size="lg" variant="outline" asChild>
                 <a href="https://www.toasttab.com//toast-charleston-155-meeting-st/findcard" target="_blank" rel="noopener noreferrer">
                   <Search className="h-5 w-5 mr-2" />
