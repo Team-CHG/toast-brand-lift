@@ -54,6 +54,7 @@ const locations = [
     address: "129 Meeting St, Charleston, SC 29401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st",
     balanceUrl: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard",
+    image: toastMeetingImg,
   },
   {
     name: "Toast! on King",
@@ -61,6 +62,7 @@ const locations = [
     address: "451 King St, Charleston, SC 29403",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st",
     balanceUrl: "https://www.toasttab.com/toast-king-st-451-king-st/findcard",
+    image: toastKingImg,
   },
   {
     name: "Toast! Mt. Pleasant",
@@ -68,6 +70,7 @@ const locations = [
     address: "1150 Hungry Neck Blvd, Suite F-G, Mt. Pleasant, SC 29464",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
     balanceUrl: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard",
+    image: toastMtPleasantImg,
   },
   {
     name: "Toast! West Ashley",
@@ -75,6 +78,7 @@ const locations = [
     address: "2026 Savannah Hwy, Charleston, SC 29407",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci",
     balanceUrl: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard",
+    image: toastWestAshleyImg,
   },
   {
     name: "Toast! Summerville",
@@ -82,6 +86,7 @@ const locations = [
     address: "717 Old Trolley Rd, Summerville, SC 29485",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road",
     balanceUrl: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard",
+    image: toastSummervilleImg,
   },
   {
     name: "Toast! Savannah",
@@ -89,6 +94,7 @@ const locations = [
     address: "1 W Broughton St, Savannah, GA 31401",
     buyUrl: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st",
     balanceUrl: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard",
+    image: toastSavannahImg,
   },
 ];
 
