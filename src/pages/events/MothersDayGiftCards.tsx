@@ -134,34 +134,54 @@ const MothersDayGiftCards = () => {
         </div>
       </section>
 
-      {/* Disclaimer Section */}
-      <section className="py-12 bg-complementary/30">
-        <div className="container mx-auto px-4">
+      {/* One Card, Every Table — Highlighted Family Section */}
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-highlight via-highlight to-accent" />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover" }} />
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
-            <div className="max-w-4xl mx-auto">
-              <Card className="border-2 border-highlight/30 bg-card/80 backdrop-blur">
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-start gap-4">
-                    <AlertCircle className="h-6 w-6 text-highlight flex-shrink-0 mt-1" />
-                    <div>
-                      <h2 className="text-xl md:text-2xl font-bold text-primary mb-3">
-                        Important Gift Card Information
-                      </h2>
-                      <p className="text-muted-foreground leading-relaxed mb-3">
-                        Toast All Day eGift Cards are issued <strong>per location</strong>. Each card is
-                        redeemable only at the specific Toast All Day restaurant where it was purchased.
-                        Please choose the location closest to Mom — or the one she loves most — before
-                        completing your purchase.
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed">
-                        eGift Cards are delivered electronically within minutes (or scheduled for a future
-                        date), available in any denomination, and never expire. All purchases are processed
-                        securely through Toast, our restaurant platform.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="max-w-5xl mx-auto text-center text-white">
+              <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/15 backdrop-blur border border-white/30">
+                <Star className="h-4 w-4 fill-white" />
+                <span className="text-xs md:text-sm font-bold uppercase tracking-widest">
+                  One Card. Every Table She Loves.
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
+                A Gift That Travels With Her
+              </h2>
+              <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
+                Whether Mom is craving Sunday brunch downtown, a sunset dinner on the water, or a late
+                night with friends — her eGift Card is welcome at <strong>every Toast All Day location
+                and all of our sister restaurants</strong>. One card. Endless ways to spoil her.
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+                {[
+                  "Eli's Table",
+                  "John King Grill",
+                  "Honkytonk Saloon",
+                  "Toasted Crust",
+                  "Cachita's Kitchen",
+                ].map((name) => (
+                  <motion.div
+                    key={name}
+                    whileHover={{ y: -4, scale: 1.03 }}
+                    transition={{ duration: 0.2 }}
+                    className="rounded-xl bg-white/15 backdrop-blur border border-white/30 px-4 py-5 flex flex-col items-center gap-2"
+                  >
+                    <Utensils className="h-5 w-5 text-white" />
+                    <span className="text-sm md:text-base font-semibold text-white text-center leading-tight">
+                      {name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <p className="text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
+                💌 Delivered in minutes. Available in any denomination. Never expires. Pick Mom's favorite
+                Toast All Day location below to get started — she can use her card anywhere in the family.
+              </p>
             </div>
           </ScrollReveal>
         </div>
