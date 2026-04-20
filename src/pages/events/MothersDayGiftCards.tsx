@@ -306,6 +306,16 @@ const MothersDayGiftCards = () => {
                   className="h-full"
                 >
                   <Card className="h-full flex flex-col border-2 hover:border-highlight/50 hover:shadow-xl transition-all bg-card/90 backdrop-blur">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
+                      <img
+                        src={loc.image}
+                        alt={`${loc.name} restaurant — buy a Mother's Day eGift Card for ${loc.city}`}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
                     <CardContent className="p-6 flex flex-col h-full">
                       <div className="flex items-start gap-3 mb-4">
                         <div className="p-2 rounded-full bg-highlight/10">
