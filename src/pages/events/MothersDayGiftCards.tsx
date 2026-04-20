@@ -200,7 +200,7 @@ const MothersDayGiftCards = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.6 }}
-                    className="hidden md:block absolute -bottom-8 -left-8 w-44 lg:w-56 rounded-xl shadow-2xl ring-4 ring-white rotate-[-8deg]"
+                    className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 w-32 sm:w-40 md:w-44 lg:w-56 rounded-xl shadow-2xl ring-4 ring-white rotate-[-8deg]"
                     loading="eager"
                     decoding="async"
                   />
