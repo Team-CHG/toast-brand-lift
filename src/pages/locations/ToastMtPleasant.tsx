@@ -293,7 +293,11 @@ const ToastMtPleasant = () => {
         </section>
 
         {/* Gift Card Section */}
-        <GiftCardSection giftCardUrl="https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" />
+        <GiftCardSection
+          locationName="Toast! Mt. Pleasant"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g"
+          balanceUrl="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard"
+        />
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
