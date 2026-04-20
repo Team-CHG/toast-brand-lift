@@ -11,6 +11,20 @@ import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils } fro
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import mothersDayBrunch from "@/assets/mothers-day-brunch.jpg";
+import sisterElisTable from "@/assets/sister-elis-table.png";
+import sisterJohnKing from "@/assets/sister-john-king-grill.png";
+import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
+import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
+import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
+
+const sisterRestaurants = [
+  { name: "Eli's Table", logo: sisterElisTable },
+  { name: "John King Grill", logo: sisterJohnKing },
+  { name: "Honkytonk Saloon", logo: sisterHonkytonk },
+  { name: "Toasted Crust", logo: sisterToastedCrust },
+  { name: "Cachita's Kitchen", logo: sisterCachitas },
+];
 
 const locations = [
   {
