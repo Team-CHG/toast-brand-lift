@@ -46,10 +46,29 @@ const GiftCardSection = ({
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. Can be used in any of Charleston Hospitality Group restaurants. Start customizing your card.
+              {isLocationSpecific
+                ? `Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. These cards are redeemable exclusively at ${locationName ?? "this location"}. Start customizing your card.`
+                : "Available in any denomination, choose the gift that fits the occasion. Our eGifts are delivered in minutes or can be scheduled for a future delivery date. Can be used in any of Charleston Hospitality Group restaurants. Start customizing your card."}
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-              <DropdownMenu>
+              {isLocationSpecific ? (
+                <>
+                  <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
+                    <a href={giftCardUrl} target="_blank" rel="noopener noreferrer">
+                      <CreditCard className="h-5 w-5 mr-2" />
+                      Buy e-Gift Card
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <a href={balanceUrl} target="_blank" rel="noopener noreferrer">
+                      <Search className="h-5 w-5 mr-2" />
+                      Check Balance
+                    </a>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                     <CreditCard className="h-5 w-5 mr-2" />
@@ -85,6 +104,8 @@ const GiftCardSection = ({
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+                </>
+              )}
             </div>
           </div>
           <div className="flex justify-center">
