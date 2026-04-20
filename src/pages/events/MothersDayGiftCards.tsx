@@ -133,15 +133,27 @@ const MothersDayGiftCards = () => {
                 initial={{ rotate: -3, scale: 0.95 }}
                 animate={{ rotate: 0, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex justify-center"
+                className="flex justify-center relative"
               >
-                <img
-                  src={giftcardDesign}
-                  alt="Toast All Day Mother's Day Gift Card — perfect for breakfast and brunch lovers"
-                  className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-highlight/20"
-                  loading="eager"
-                  decoding="async"
-                />
+                <div className="relative">
+                  <img
+                    src={mothersDayBrunch}
+                    alt="Mom and friends laughing and toasting with mimosas at a sunlit Toast All Day brunch table"
+                    className="rounded-3xl shadow-2xl max-w-full h-auto ring-4 ring-highlight/20 object-cover aspect-[4/5] w-full"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <motion.img
+                    src={giftcardDesign}
+                    alt="Toast All Day eGift Card"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    className="hidden md:block absolute -bottom-8 -left-8 w-44 lg:w-56 rounded-xl shadow-2xl ring-4 ring-white rotate-[-8deg]"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
               </motion.div>
             </ScrollReveal>
           </div>
