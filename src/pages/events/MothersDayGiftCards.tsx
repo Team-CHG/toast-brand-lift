@@ -7,7 +7,7 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, AlertCircle } from "lucide-react";
+import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils } from "lucide-react";
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
 import pageBackgroundTexture from "@/assets/page-background-texture.png";
