@@ -1,4 +1,4 @@
-import { Gift, X } from "lucide-react";
+import { Heart, X } from "lucide-react";
 import { useState } from "react";
 
 const PromoBand = () => {
@@ -7,16 +7,16 @@ const PromoBand = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="bg-primary text-primary-foreground py-2 px-4 relative">
+    <div className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-highlight via-highlight to-accent text-white py-2 px-10 sm:px-12 shadow-md">
       <a
-        href="https://charlestonhospitalitygroup.com/giftcard-raffle-contest/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 text-sm font-medium hover:opacity-90 transition-opacity"
+        href="/mothers-day-gift-cards"
+        className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity text-center"
       >
-        <Gift className="h-4 w-4" />
-        <span>Buy a $50 gift card, get a $20 bonus + enter our raffle!</span>
-        <span className="underline ml-1">Learn More →</span>
+        <Heart className="h-4 w-4 fill-white flex-shrink-0" />
+        <span className="truncate sm:whitespace-normal">
+          Mother's Day Gift Cards are here — give Mom a brunch she'll never forget
+        </span>
+        <span className="underline ml-1 hidden sm:inline">Shop Now →</span>
       </a>
       <button
         onClick={(e) => {
@@ -24,7 +24,7 @@ const PromoBand = () => {
           e.stopPropagation();
           setIsVisible(false);
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-primary-foreground/10 rounded-full transition-colors"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-white/20 rounded-full transition-colors"
         aria-label="Close promo banner"
       >
         <X className="h-4 w-4" />
