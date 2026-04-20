@@ -10,9 +10,17 @@ import giftcardDesign from "@/assets/giftcard-design.png";
 
 interface GiftCardSectionProps {
   giftCardUrl?: string;
+  balanceUrl?: string;
+  locationName?: string;
 }
 
-const GiftCardSection = ({ giftCardUrl = "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" }: GiftCardSectionProps) => {
+const GiftCardSection = ({
+  giftCardUrl,
+  balanceUrl,
+  locationName,
+}: GiftCardSectionProps) => {
+  // If both location URLs are provided, render simple direct buttons (location pages)
+  const isLocationSpecific = Boolean(giftCardUrl && balanceUrl);
   const giftCardLocations = [
     { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
     { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
