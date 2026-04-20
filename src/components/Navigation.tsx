@@ -54,6 +54,7 @@ const Navigation = () => {
             <a href="/catering" className="text-primary hover:text-accent transition-colors font-medium">Catering</a>
             <a href="/about" className="text-primary hover:text-accent transition-colors font-medium">About</a>
             <a href="/blog" className="text-primary hover:text-accent transition-colors font-medium">Blog</a>
+            <a href="/mothers-day-gift-cards" className="text-highlight hover:text-highlight/80 transition-colors font-semibold">Mother's Day</a>
           </div>
 
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
