@@ -114,6 +114,7 @@ const Navigation = () => {
               </div>
 
               <a href="/rewards" className="text-lg font-medium text-primary hover:text-accent transition-colors">Rewards</a>
+              <a href="/mothers-day-gift-cards" className="text-lg font-semibold text-highlight hover:text-highlight/80 transition-colors">🌷 Mother's Day Gift Cards</a>
               <a href="/about" className="text-lg font-medium text-primary hover:text-accent transition-colors">About Us</a>
               <a href="/locations" className="text-lg font-medium text-primary hover:text-accent transition-colors">Locations</a>
               <a href="/blog" className="text-lg font-medium text-primary hover:text-accent transition-colors">Blog</a>
