@@ -31,11 +31,11 @@ import locSummerville from "@/assets/locations/toast-summerville.jpg";
 import locSavannah from "@/assets/locations/toast-savannah.jpg";
 
 const sisterRestaurants = [
-  { name: "Eli's Table", logo: sisterElisTable },
-  { name: "John King Grill", logo: sisterJohnKing },
-  { name: "Honkytonk Saloon", logo: sisterHonkytonk },
-  { name: "Toasted Crust", logo: sisterToastedCrust },
-  { name: "Cachita's Kitchen", logo: sisterCachitas },
+  { name: "Eli's Table", logo: sisterElisTable, url: "https://elistable.com/" },
+  { name: "John King Grill", logo: sisterJohnKing, url: "https://johnkinggrill.com/" },
+  { name: "Honkytonk Saloon", logo: sisterHonkytonk, url: "https://honkytonksaloon.com/" },
+  { name: "Toasted Crust", logo: sisterToastedCrust, url: "https://toastedcrust.com/" },
+  { name: "Cachita's Kitchen", logo: sisterCachitas, url: "https://cachitaskitchenchs.com/" },
 ];
 
 const locations = [
@@ -241,18 +241,26 @@ const MothersDayGiftCards = () => {
                     transition={{ duration: 0.2 }}
                     className="rounded-2xl bg-white/95 backdrop-blur border border-white/40 p-4 flex flex-col items-center gap-3 shadow-lg"
                   >
-                    <div className="w-full aspect-square flex items-center justify-center bg-white rounded-xl p-2">
-                      <img
-                        src={restaurant.logo}
-                        alt={`${restaurant.name} logo — sister restaurant where Toast All Day gift cards are accepted`}
-                        className="max-h-full max-w-full object-contain"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <span className="text-xs md:text-sm font-bold text-primary text-center leading-tight">
-                      {restaurant.name}
-                    </span>
+                    <a
+                      href={restaurant.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${restaurant.name} website`}
+                      className="flex flex-col items-center gap-3 w-full"
+                    >
+                      <div className="w-full aspect-square flex items-center justify-center bg-white rounded-xl p-2">
+                        <img
+                          src={restaurant.logo}
+                          alt={`${restaurant.name} logo — sister restaurant where Toast All Day gift cards are accepted`}
+                          className="max-h-full max-w-full object-contain"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <span className="text-xs md:text-sm font-bold text-primary text-center leading-tight">
+                        {restaurant.name}
+                      </span>
+                    </a>
                   </motion.div>
                 ))}
               </div>
