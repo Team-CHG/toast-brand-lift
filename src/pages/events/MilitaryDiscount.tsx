@@ -20,7 +20,7 @@ const MilitaryDiscount = () => {
 
       <h2>How It Works</h2>
       <p>
-        Redeeming the discount is simple. Just let your server know at the time of ordering and be prepared to show a valid military ID if you're not in uniform. The 10% applies to your entire check — food and non-alcoholic beverages — at any of our locations. There's no coupon to clip, no app to open, and no minimum purchase required.
+        Redeeming the discount is simple. Just let your server know at the time of ordering and be prepared to show a valid military ID if you're not in uniform. The 10% applies to your entire check, food and non-alcoholic beverages, at any of our locations. There's no coupon to clip, no app to open, and no minimum purchase required.
       </p>
 
       <h2>Available at Every Location, Every Day</h2>
@@ -28,7 +28,7 @@ const MilitaryDiscount = () => {
         This isn't a one-day promotion or a holiday-only gesture. The military discount is available every day we're open, at every Toast All Day location across Charleston and Savannah. Whether you're grabbing a quick breakfast before reporting to base or settling in for a long weekend brunch with the family, the discount applies.
       </p>
       <p>
-        Find your nearest location on our <Link to="/locations" className="text-primary hover:underline">locations page</Link> — we have restaurants in downtown Charleston, Mount Pleasant, West Ashley, Summerville, and Savannah.
+        Find your nearest location on our <Link to="/locations" className="text-primary hover:underline">locations page</Link>, we have restaurants in downtown Charleston, Mount Pleasant, West Ashley, Summerville, and Savannah.
       </p>
 
       <h2>Why This Matters to Us</h2>
@@ -38,7 +38,7 @@ const MilitaryDiscount = () => {
 
       <h2>Pair It with Our Rewards Program</h2>
       <p>
-        The military discount stacks with our loyalty program. Sign up through our <Link to="/blog/download-app" className="text-primary hover:underline">mobile app</Link> and you'll earn 1 point for every dollar spent — even on discounted checks. Over time, those points convert to $10 rewards you can use on any future visit. Between the discount and the loyalty perks, regular guests save meaningfully over the course of a year.
+        The military discount stacks with our loyalty program. Sign up through our <Link to="/blog/download-app" className="text-primary hover:underline">mobile app</Link> and you'll earn 1 point for every dollar spent, even on discounted checks. Over time, those points convert to $10 rewards you can use on any future visit. Between the discount and the loyalty perks, regular guests save meaningfully over the course of a year.
       </p>
 
       <p>

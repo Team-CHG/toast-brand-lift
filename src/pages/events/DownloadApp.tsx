@@ -15,12 +15,12 @@ const DownloadApp = () => {
       currentSlug="download-app"
     >
       <p>
-        After twenty years of serving Charleston's favorite brunch, we're bringing the full Toast All Day experience to your pocket. Our brand-new app puts rewards tracking, online ordering, and exclusive offers in one place — and to celebrate the launch, every new user gets $5 in instant rewards just for signing up.
+        After twenty years of serving Charleston's favorite brunch, we're bringing the full Toast All Day experience to your pocket. Our brand-new app puts rewards tracking, online ordering, and exclusive offers in one place, and to celebrate the launch, every new user gets $5 in instant rewards just for signing up.
       </p>
 
       <h2>Why We Built the App</h2>
       <p>
-        Our loyalty program has been running on the web for years, and it works well — but we heard the same feedback from regulars: "I forgot to check in," "I didn't know I had points," "Can I just order from my phone?" The app solves all three. Your rewards balance is always visible, you earn points automatically when you pay through the app, and you can place pickup orders without waiting in line.
+        Our loyalty program has been running on the web for years, and it works well, but we heard the same feedback from regulars: "I forgot to check in," "I didn't know I had points," "Can I just order from my phone?" The app solves all three. Your rewards balance is always visible, you earn points automatically when you pay through the app, and you can place pickup orders without waiting in line.
       </p>
 
       <h2>How the Rewards Work</h2>
@@ -33,14 +33,14 @@ const DownloadApp = () => {
 
       <h2>Online Ordering, Simplified</h2>
       <p>
-        The app connects directly to our kitchen system at every location. Browse the full menu, customize your order, choose pickup or dine-in, and pay — all before you leave the house. Your food is timed to be ready when you arrive, so there's no standing around. Online orders through the app also earn loyalty points automatically.
+        The app connects directly to our kitchen system at every location. Browse the full menu, customize your order, choose pickup or dine-in, and pay, all before you leave the house. Your food is timed to be ready when you arrive, so there's no standing around. Online orders through the app also earn loyalty points automatically.
       </p>
 
       <h2>Getting Started Takes 60 Seconds</h2>
       <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
         <li>Download the Toast All Day app from the App Store or Google Play.</li>
         <li>Create an account with your name, email, and phone number.</li>
-        <li>Start earning — your $5 sign-up bonus is loaded instantly.</li>
+        <li>Start earning, your $5 sign-up bonus is loaded instantly.</li>
       </ol>
 
       <p>
@@ -49,7 +49,7 @@ const DownloadApp = () => {
 
       <h2>Stay in the Loop</h2>
       <p>
-        Enable push notifications and you'll be the first to hear about new menu launches, holiday specials, and limited-time promotions. We keep notifications infrequent and relevant — no spam, just brunch news worth reading.
+        Enable push notifications and you'll be the first to hear about new menu launches, holiday specials, and limited-time promotions. We keep notifications infrequent and relevant, no spam, just brunch news worth reading.
       </p>
 
       <p>

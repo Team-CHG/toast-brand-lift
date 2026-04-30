@@ -23,7 +23,7 @@ const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png"
 const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
 const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
 
-// Lazy video component — only loads video src when in viewport
+// Lazy video component, only loads video src when in viewport
 const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "200px" });
@@ -138,7 +138,7 @@ const FeatureSections = () => {
           <img src={flourishDecoration} alt="" aria-hidden className="w-36 h-auto" loading="lazy" />
         </FloatingElement>
 
-        {/* Animated background gradient — hidden on mobile for performance */}
+        {/* Animated background gradient, hidden on mobile for performance */}
         <motion.div
           className="absolute inset-0 pointer-events-none hidden md:block"
           style={{ y: awardsBgY }}
@@ -351,7 +351,7 @@ const FeatureSections = () => {
                   <Sparkles className="w-5 h-5 text-highlight flex-shrink-0" />
                   <div>
                     <p className="text-sm font-semibold text-primary leading-tight">Mother's Day Gift Cards</p>
-                    <p className="text-xs text-muted-foreground">The perfect gift for Mom — use the buttons below to shop or check a balance.</p>
+                    <p className="text-xs text-muted-foreground">The perfect gift for Mom, use the buttons below to shop or check a balance.</p>
                   </div>
                 </div>
               </div>
