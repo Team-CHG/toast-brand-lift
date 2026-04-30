@@ -14,7 +14,7 @@ const PromoBand = () => {
       >
         <Heart className="h-4 w-4 fill-white flex-shrink-0" />
         <span className="truncate sm:whitespace-normal">
-          Mother's Day Gift Cards are here — give Mom a brunch she'll never forget
+          No Mom Left Behind · Buy One. Bless Two. — every gift card blesses a deserving mom in our community
         </span>
         <span className="underline ml-1 hidden sm:inline">Shop Now →</span>
       </a>
