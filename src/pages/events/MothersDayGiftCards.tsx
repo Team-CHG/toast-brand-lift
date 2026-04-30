@@ -491,7 +491,9 @@ const MothersDayGiftCards = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
+              <strong className="text-highlight font-bold">Buy One. Bless Two.</strong> Every gift card
+              you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our
+              community. Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
                 and across our family of sister restaurants — Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen
