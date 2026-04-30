@@ -101,7 +101,7 @@ const Rewards = () => {
       </section>
 
       {/* Glass overlay - promo highlight */}
-      <section className="relative z-20 -mt-16">
+      <section className="relative z-20 mt-8 md:-mt-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-xl rounded-3xl p-6 md:p-8 shadow-2xl ring-1 ring-accent/10 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-highlight to-accent" />
