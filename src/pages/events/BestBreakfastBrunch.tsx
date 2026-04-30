@@ -16,7 +16,7 @@ const BestBreakfastBrunch = () => {
     >
       <h2>Charleston's Brunch and Breakfast Scene Has a Clear Favorite</h2>
       <p>
-        When it comes to brunch and breakfast in Charleston, there's no shortage of options — but there's only one place that consistently rises to the top: Toast! All Day.
+        When it comes to brunch and breakfast in Charleston, there's no shortage of options, but there's only one place that consistently rises to the top: Toast! All Day.
       </p>
       <p>
         We're honored to be recognized as one of the best brunch and breakfast spots in Charleston, SC. For over two decades, we've been serving scratch-made comfort food, all-day breakfast, and brunch favorites that keep guests coming back.
@@ -36,7 +36,7 @@ const BestBreakfastBrunch = () => {
 
       <h3>Mimosas That Elevate Brunch</h3>
       <p>
-        Because brunch without mimosas is just breakfast — and we do both exceptionally well.
+        Because brunch without mimosas is just breakfast, and we do both exceptionally well.
       </p>
 
       <h3>Prime King Street Location</h3>

@@ -21,7 +21,7 @@ const ToastSavannah = () => {
     script.async = true;
     document.body.appendChild(script);
 
-    // PX Grabber pixel for Savannah location — uses a unique id so it doesn't
+    // PX Grabber pixel for Savannah location, uses a unique id so it doesn't
     // collide with the site-wide px-grabber script already in index.html.
     if (!document.getElementById('px-grabber-savannah')) {
       const px = document.createElement("script");

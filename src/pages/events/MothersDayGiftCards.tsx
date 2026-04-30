@@ -102,7 +102,7 @@ const MothersDayGiftCards = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="No Mom Left Behind — Mother's Day Gift Cards | Toast All Day"
+        title="No Mom Left Behind, Mother's Day Gift Cards | Toast All Day"
         description="Buy One. Bless Two. Every Mother's Day eGift Card you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our community who never saw it coming."
         keywords="No Mom Left Behind, Mother's Day gift card, Toast All Day gift card, Buy One Bless Two, give back Mother's Day, brunch gift card Charleston, eGift card Savannah"
       />
@@ -214,7 +214,7 @@ const MothersDayGiftCards = () => {
         </div>
       </section>
 
-      {/* One Card, Every Table — Highlighted Family Section */}
+      {/* One Card, Every Table, Highlighted Family Section */}
       <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-highlight via-highlight to-accent" />
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover" }} />
@@ -234,7 +234,7 @@ const MothersDayGiftCards = () => {
               </h2>
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
                 Your mom's eGift Card is welcome across <strong>every Toast All Day location and all of
-                our sister restaurants</strong> — and every purchase blesses another mom in our community
+                our sister restaurants</strong>, and every purchase blesses another mom in our community
                 with a Mother's Day experience of her own.
               </p>
 
@@ -277,7 +277,7 @@ const MothersDayGiftCards = () => {
                       <div className="w-full aspect-square flex items-center justify-center bg-white rounded-xl p-2">
                         <img
                           src={restaurant.logo}
-                          alt={`${restaurant.name} logo — sister restaurant where Toast All Day gift cards are accepted`}
+                          alt={`${restaurant.name} logo, sister restaurant where Toast All Day gift cards are accepted`}
                           className="max-h-full max-w-full object-contain"
                           loading="lazy"
                           decoding="async"
@@ -299,7 +299,7 @@ const MothersDayGiftCards = () => {
         </div>
       </section>
 
-      {/* How It Works — Buy One. Bless Two. */}
+      {/* How It Works, Buy One. Bless Two. */}
       <section className="py-16 md:py-20 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-30"
@@ -335,13 +335,13 @@ const MothersDayGiftCards = () => {
               {
                 step: "02",
                 title: "We Bless One",
-                body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community — chosen with love, delivered as a surprise.",
+                body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community, chosen with love, delivered as a surprise.",
                 Icon: HandHeart,
               },
               {
                 step: "03",
                 title: "Our Community Rises",
-                body: "Every card you buy ripples outward — funding meals, memories, and Mother's Day moments for moms across Charleston, Mt. Pleasant, Summerville, and Savannah who might otherwise go unseen.",
+                body: "Every card you buy ripples outward, funding meals, memories, and Mother's Day moments for moms across Charleston, Mt. Pleasant, Summerville, and Savannah who might otherwise go unseen.",
                 Icon: Users,
               },
             ].map(({ step, title, body, Icon }) => (
@@ -461,7 +461,7 @@ const MothersDayGiftCards = () => {
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Sign up with your phone number and start earning points on every meal Mom shares with
-                you — redeemable across all Toast All Day locations.
+                you, redeemable across all Toast All Day locations.
               </p>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -495,10 +495,10 @@ const MothersDayGiftCards = () => {
               you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our
               community. Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
-                and across our family of sister restaurants — Eli's Table, John King Grill, Honkytonk
+                and across our family of sister restaurants, Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen
               </strong>
-              . One card. Endless tables. <strong className="text-primary">No expiration date</strong> —
+              . One card. Endless tables. <strong className="text-primary">No expiration date</strong> ,
               ever.
             </p>
           </div>

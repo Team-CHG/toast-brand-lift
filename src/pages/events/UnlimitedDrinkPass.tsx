@@ -14,7 +14,7 @@ const UnlimitedDrinkPass = () => {
       currentSlug="unlimited-drink-pass"
     >
       <p>
-        The Cooper River Bridge Run is Charleston's biggest annual fitness event, drawing tens of thousands of runners and spectators to the streets every April. This year, Toast All Day is turning race day into a full-blown celebration — combining our 20th anniversary festivities with an unlimited mimosa wristband you can grab at two of our locations along the race route.
+        The Cooper River Bridge Run is Charleston's biggest annual fitness event, drawing tens of thousands of runners and spectators to the streets every April. This year, Toast All Day is turning race day into a full-blown celebration, combining our 20th anniversary festivities with an unlimited mimosa wristband you can grab at two of our locations along the race route.
       </p>
 
       <h2>How the Wristband Works</h2>
@@ -30,16 +30,16 @@ const UnlimitedDrinkPass = () => {
 
       <h2>Event Details</h2>
       <p>
-        The mimosa festival runs on Saturday, April 5th, 2025 during regular service hours. Both participating locations will have a check-in station where you can pick up your wristband and start sipping. No need to print anything — just show your Eventbrite confirmation on your phone.
+        The mimosa festival runs on Saturday, April 5th, 2025 during regular service hours. Both participating locations will have a check-in station where you can pick up your wristband and start sipping. No need to print anything, just show your Eventbrite confirmation on your phone.
       </p>
       <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-        <li>Toast Mount Pleasant — near the Bridge Run starting line</li>
-        <li>Toast King Street — 451 King St, near the finish line</li>
+        <li>Toast Mount Pleasant, near the Bridge Run starting line</li>
+        <li>Toast King Street, 451 King St, near the finish line</li>
       </ul>
 
       <h2>Why Brunch After the Bridge Run Just Makes Sense</h2>
       <p>
-        You've just walked or run 10 kilometers over the Ravenel Bridge — you've earned a seat, a plate of Chicken &amp; Waffles, and more than one mimosa. Bridge Run morning is one of our busiest days of the year, and the energy in the dining room is electric. Finisher medals clinking against champagne flutes, running groups celebrating together, families cheering each other on over pancakes.
+        You've just walked or run 10 kilometers over the Ravenel Bridge, you've earned a seat, a plate of Chicken &amp; Waffles, and more than one mimosa. Bridge Run morning is one of our busiest days of the year, and the energy in the dining room is electric. Finisher medals clinking against champagne flutes, running groups celebrating together, families cheering each other on over pancakes.
       </p>
       <p>
         If you'd rather skip the crowds and order ahead, our <a href="https://apps.apple.com/us/app/toast-all-day/id6744418742" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">mobile app</a> lets you place a pickup order so your food is ready when you walk through the door.
