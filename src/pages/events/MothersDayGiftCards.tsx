@@ -222,19 +222,42 @@ const MothersDayGiftCards = () => {
           <ScrollReveal>
             <div className="max-w-5xl mx-auto text-center text-white">
               <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/15 backdrop-blur border border-white/30">
-                <Star className="h-4 w-4 fill-white" />
+                <HandHeart className="h-4 w-4" />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-widest">
-                  One Card. Every Table She Loves.
+                  Buy One. Bless Two.
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
-                A Gift That Travels With Her
+                One Gift Card. Twelve Restaurants.
+                <br />
+                Endless Experiences for All Moms.
               </h2>
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
-                Whether Mom is craving a relaxed brunch, a fine-dining experience Downtown, or a late
-                night with friends, her eGift Card is welcome at <strong>every Toast All Day location
-                and all of our sister restaurants</strong>. One card. Endless ways to spoil her.
+                Your mom's eGift Card is welcome across <strong>every Toast All Day location and all of
+                our sister restaurants</strong> — and every purchase blesses another mom in our community
+                with a Mother's Day experience of her own.
               </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
+                {[
+                  { Icon: Gift, accent: "One", label: "gift card." },
+                  { Icon: Utensils, accent: "Twelve", label: "restaurants." },
+                  { Icon: HandHeart, accent: "Endless", label: "experiences for all moms." },
+                ].map(({ Icon, accent, label }) => (
+                  <div
+                    key={accent}
+                    className="rounded-2xl bg-white/15 backdrop-blur border border-white/30 p-6 flex flex-col items-center gap-3"
+                  >
+                    <div className="p-3 rounded-full bg-white/20">
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+                    <p className="text-base md:text-lg leading-snug">
+                      <span className="font-bold text-white">{accent}</span>{" "}
+                      <span className="text-white/90">{label}</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
                 {sisterRestaurants.map((restaurant) => (
@@ -268,9 +291,8 @@ const MothersDayGiftCards = () => {
                 ))}
               </div>
 
-              <p className="text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-                💌 Delivered in minutes. Available in any denomination. Never expires. Pick Mom's favorite
-                Toast All Day location below to get started — she can use her card anywhere in the family.
+              <p className="text-base md:text-lg text-white font-semibold max-w-2xl mx-auto leading-relaxed italic">
+                Because the gift of getting is giving. ♡
               </p>
             </div>
           </ScrollReveal>
