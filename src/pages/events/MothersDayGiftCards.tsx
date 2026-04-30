@@ -127,25 +127,28 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="h-5 w-5 text-highlight fill-highlight" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
-                  Mother's Day 2026
+                  Mother's Day 2026 · Buy One. Bless Two.
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Celebrate Mom with a Morning She'll Never Forget
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.95]">
+                <span className="text-primary">No Mom</span>
+                <br />
+                <span className="text-highlight">Left Behind.</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                This Mother's Day, give her something that lingers longer than flowers — laughter over
-                bottomless mimosas, the smell of warm beignets, and the people she loves all gathered
-                around one sunlit table. One Toast All Day eGift Card unlocks brunch, lunch, dinner, and
-                every craving in between — across <strong>all six Toast All Day locations</strong> AND our
-                sister restaurants. Delivered in minutes. Remembered for years.
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                Every gift card you buy for your mom unlocks a full Mother's Day experience for a{" "}
+                <strong className="text-primary">deserving mom in our community</strong> who{" "}
+                <em className="text-highlight not-italic font-semibold">never saw it coming</em>.
+              </p>
+              <p className="text-base md:text-lg text-accent italic mb-8 font-medium">
+                This is what celebrating together looks like. ♡
               </p>
               <div className="flex flex-wrap gap-3">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                       <Gift className="h-5 w-5 mr-2" />
-                      Shop Gift Cards
+                      Buy One. Bless Two.
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </Button>
                   </DropdownMenuTrigger>
