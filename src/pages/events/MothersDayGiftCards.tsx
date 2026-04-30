@@ -7,7 +7,7 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils, ChevronDown } from "lucide-react";
+import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils, ChevronDown, HandHeart, Users } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -102,9 +102,9 @@ const MothersDayGiftCards = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Mother's Day Gift Cards | Toast All Day Charleston & Savannah"
-        description="Give Mom the gift of brunch this Mother's Day. Buy a Toast All Day eGift Card for any of our 6 Charleston, Mt. Pleasant, Summerville & Savannah locations — delivered instantly."
-        keywords="Mother's Day gift card, Toast All Day gift card, brunch gift card Charleston, Mother's Day brunch Savannah, eGift card, restaurant gift card SC"
+        title="No Mom Left Behind — Mother's Day Gift Cards | Toast All Day"
+        description="Buy One. Bless Two. Every Mother's Day eGift Card you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our community who never saw it coming."
+        keywords="No Mom Left Behind, Mother's Day gift card, Toast All Day gift card, Buy One Bless Two, give back Mother's Day, brunch gift card Charleston, eGift card Savannah"
       />
       <FestiveBackdrop />
       <Navigation />
@@ -127,25 +127,28 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="h-5 w-5 text-highlight fill-highlight" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
-                  Mother's Day 2026
+                  Mother's Day 2026 · Buy One. Bless Two.
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                Celebrate Mom with a Morning She'll Never Forget
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.95]">
+                <span className="text-primary">No Mom</span>
+                <br />
+                <span className="text-highlight">Left Behind.</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                This Mother's Day, give her something that lingers longer than flowers — laughter over
-                bottomless mimosas, the smell of warm beignets, and the people she loves all gathered
-                around one sunlit table. One Toast All Day eGift Card unlocks brunch, lunch, dinner, and
-                every craving in between — across <strong>all six Toast All Day locations</strong> AND our
-                sister restaurants. Delivered in minutes. Remembered for years.
+              <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                Every gift card you buy for your mom unlocks a full Mother's Day experience for a{" "}
+                <strong className="text-primary">deserving mom in our community</strong> who{" "}
+                <em className="text-highlight not-italic font-semibold">never saw it coming</em>.
+              </p>
+              <p className="text-base md:text-lg text-accent italic mb-8 font-medium">
+                This is what celebrating together looks like. ♡
               </p>
               <div className="flex flex-wrap gap-3">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                       <Gift className="h-5 w-5 mr-2" />
-                      Shop Gift Cards
+                      Buy One. Bless Two.
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -219,19 +222,42 @@ const MothersDayGiftCards = () => {
           <ScrollReveal>
             <div className="max-w-5xl mx-auto text-center text-white">
               <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/15 backdrop-blur border border-white/30">
-                <Star className="h-4 w-4 fill-white" />
+                <HandHeart className="h-4 w-4" />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-widest">
-                  One Card. Every Table She Loves.
+                  Buy One. Bless Two.
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
-                A Gift That Travels With Her
+                One Gift Card. Twelve Restaurants.
+                <br />
+                Endless Experiences for All Moms.
               </h2>
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
-                Whether Mom is craving a relaxed brunch, a fine-dining experience Downtown, or a late
-                night with friends, her eGift Card is welcome at <strong>every Toast All Day location
-                and all of our sister restaurants</strong>. One card. Endless ways to spoil her.
+                Your mom's eGift Card is welcome across <strong>every Toast All Day location and all of
+                our sister restaurants</strong> — and every purchase blesses another mom in our community
+                with a Mother's Day experience of her own.
               </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
+                {[
+                  { Icon: Gift, accent: "One", label: "gift card." },
+                  { Icon: Utensils, accent: "Twelve", label: "restaurants." },
+                  { Icon: HandHeart, accent: "Endless", label: "experiences for all moms." },
+                ].map(({ Icon, accent, label }) => (
+                  <div
+                    key={accent}
+                    className="rounded-2xl bg-white/15 backdrop-blur border border-white/30 p-6 flex flex-col items-center gap-3"
+                  >
+                    <div className="p-3 rounded-full bg-white/20">
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+                    <p className="text-base md:text-lg leading-snug">
+                      <span className="font-bold text-white">{accent}</span>{" "}
+                      <span className="text-white/90">{label}</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
                 {sisterRestaurants.map((restaurant) => (
@@ -265,12 +291,78 @@ const MothersDayGiftCards = () => {
                 ))}
               </div>
 
-              <p className="text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-                💌 Delivered in minutes. Available in any denomination. Never expires. Pick Mom's favorite
-                Toast All Day location below to get started — she can use her card anywhere in the family.
+              <p className="text-base md:text-lg text-white font-semibold max-w-2xl mx-auto leading-relaxed italic">
+                Because the gift of getting is giving. ♡
               </p>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* How It Works — Buy One. Bless Two. */}
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover" }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <HandHeart className="h-5 w-5 text-highlight" />
+                <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
+                  How It Works
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+                Every Card Becomes Two Celebrations
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                It's simple. You buy one gift card for the mom you love. We pair it with a full Mother's
+                Day experience for a mom in our community who needs the lift more than she'll ever say.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "You Buy One",
+                body: "Pick Mom's favorite Toast All Day location and send her an eGift Card she can use anywhere in our family of restaurants.",
+                Icon: Gift,
+              },
+              {
+                step: "02",
+                title: "We Bless Two",
+                body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community — chosen with love, delivered as a surprise.",
+                Icon: HandHeart,
+              },
+              {
+                step: "03",
+                title: "Two Tables Light Up",
+                body: "Two moms. Two stories. One Sunday neither will forget. This is what celebrating together looks like.",
+                Icon: Users,
+              },
+            ].map(({ step, title, body, Icon }) => (
+              <ScrollReveal key={step}>
+                <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="h-full">
+                  <Card className="h-full border-2 border-highlight/20 bg-card/90 backdrop-blur">
+                    <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-4xl md:text-5xl font-bold text-highlight/30">{step}</span>
+                        <div className="p-3 rounded-full bg-highlight/10">
+                          <Icon className="h-6 w-6 text-highlight" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary mb-3">{title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{body}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -282,15 +374,15 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="h-5 w-5 text-accent" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-                  Start Where She Smiles Most
+                  Buy Her Card · Bless Another Mom
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Pick Mom's Home Base
               </h2>
               <p className="text-lg text-muted-foreground">
-                Choose the Toast All Day location closest to Mom's heart. Her card will work there — and
-                across our entire family of restaurants.
+                Choose the Toast All Day location closest to Mom's heart. Every card you buy here also
+                blesses a deserving mom in our community with her own Mother's Day experience.
               </p>
             </div>
           </ScrollReveal>
@@ -399,7 +491,9 @@ const MothersDayGiftCards = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
+              <strong className="text-highlight font-bold">Buy One. Bless Two.</strong> Every gift card
+              you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our
+              community. Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
                 and across our family of sister restaurants — Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen
