@@ -102,9 +102,9 @@ const MothersDayGiftCards = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Mother's Day Gift Cards | Toast All Day Charleston & Savannah"
-        description="Give Mom the gift of brunch this Mother's Day. Buy a Toast All Day eGift Card for any of our 6 Charleston, Mt. Pleasant, Summerville & Savannah locations — delivered instantly."
-        keywords="Mother's Day gift card, Toast All Day gift card, brunch gift card Charleston, Mother's Day brunch Savannah, eGift card, restaurant gift card SC"
+        title="No Mom Left Behind — Mother's Day Gift Cards | Toast All Day"
+        description="Buy One. Bless Two. Every Mother's Day eGift Card you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our community who never saw it coming."
+        keywords="No Mom Left Behind, Mother's Day gift card, Toast All Day gift card, Buy One Bless Two, give back Mother's Day, brunch gift card Charleston, eGift card Savannah"
       />
       <FestiveBackdrop />
       <Navigation />
