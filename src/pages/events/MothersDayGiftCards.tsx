@@ -334,14 +334,14 @@ const MothersDayGiftCards = () => {
               },
               {
                 step: "02",
-                title: "We Bless Two",
+                title: "We Bless One",
                 body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community — chosen with love, delivered as a surprise.",
                 Icon: HandHeart,
               },
               {
                 step: "03",
-                title: "Two Tables Light Up",
-                body: "Two moms. Two stories. One Sunday neither will forget. This is what celebrating together looks like.",
+                title: "Our Community Rises",
+                body: "Every card you buy ripples outward — funding meals, memories, and Mother's Day moments for moms across Charleston, Mt. Pleasant, Summerville, and Savannah who might otherwise go unseen.",
                 Icon: Users,
               },
             ].map(({ step, title, body, Icon }) => (
