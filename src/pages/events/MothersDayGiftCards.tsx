@@ -299,6 +299,73 @@ const MothersDayGiftCards = () => {
         </div>
       </section>
 
+      {/* How It Works — Buy One. Bless Two. */}
+      <section className="py-16 md:py-20 relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover" }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <HandHeart className="h-5 w-5 text-highlight" />
+                <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
+                  How It Works
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+                Every Card Becomes Two Celebrations
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                It's simple. You buy one gift card for the mom you love. We pair it with a full Mother's
+                Day experience for a mom in our community who needs the lift more than she'll ever say.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "You Buy One",
+                body: "Pick Mom's favorite Toast All Day location and send her an eGift Card she can use anywhere in our family of restaurants.",
+                Icon: Gift,
+              },
+              {
+                step: "02",
+                title: "We Bless Two",
+                body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community — chosen with love, delivered as a surprise.",
+                Icon: HandHeart,
+              },
+              {
+                step: "03",
+                title: "Two Tables Light Up",
+                body: "Two moms. Two stories. One Sunday neither will forget. This is what celebrating together looks like.",
+                Icon: Users,
+              },
+            ].map(({ step, title, body, Icon }) => (
+              <ScrollReveal key={step}>
+                <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.2 }} className="h-full">
+                  <Card className="h-full border-2 border-highlight/20 bg-card/90 backdrop-blur">
+                    <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-4xl md:text-5xl font-bold text-highlight/30">{step}</span>
+                        <div className="p-3 rounded-full bg-highlight/10">
+                          <Icon className="h-6 w-6 text-highlight" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary mb-3">{title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{body}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Locations Section */}
       <section id="locations" className="py-20 relative">
         <div className="container mx-auto px-4">
@@ -307,15 +374,15 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="h-5 w-5 text-accent" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-                  Start Where She Smiles Most
+                  Buy Her Card · Bless Another Mom
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Pick Mom's Home Base
               </h2>
               <p className="text-lg text-muted-foreground">
-                Choose the Toast All Day location closest to Mom's heart. Her card will work there — and
-                across our entire family of restaurants.
+                Choose the Toast All Day location closest to Mom's heart. Every card you buy here also
+                blesses a deserving mom in our community with her own Mother's Day experience.
               </p>
             </div>
           </ScrollReveal>
