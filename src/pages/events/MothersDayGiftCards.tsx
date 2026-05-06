@@ -7,7 +7,7 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils, ChevronDown, HandHeart, Users } from "lucide-react";
+import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, ChevronDown, HandHeart, Users } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
