@@ -102,9 +102,9 @@ const MothersDayGiftCards = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="No Mom Left Behind, We Match Your $50+ Gift Card | Toast All Day"
-        description="Buy a Mother's Day eGift Card of $50 or more and Toast All Day matches it, gifting a card to a mom in need in our Charleston and Savannah communities."
-        keywords="No Mom Left Behind, Mother's Day gift card match, Toast All Day gift card, give back Mother's Day, brunch gift card Charleston, eGift card Savannah, mom in need"
+        title="No Mom Left Behind, Buy a Gift Card, Gift a Mom in Need | Toast All Day"
+        description="Buy a Mother's Day eGift Card of $50 or more and Toast All Day gifts a $15+ card to a mom in need in Charleston and Savannah. The more you give, the more we give."
+        keywords="No Mom Left Behind, Mother's Day gift card, Toast All Day gift card, give back Mother's Day, brunch gift card Charleston, eGift card Savannah, mom in need"
       />
       <FestiveBackdrop />
       <Navigation />
@@ -127,7 +127,7 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="h-5 w-5 text-highlight fill-highlight" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
-                  Mother's Day 2026 · Buy $50+, We Match It
+                  Mother's Day 2026 · Buy a Gift Card, Gift a Mom
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.95]">
@@ -136,9 +136,9 @@ const MothersDayGiftCards = () => {
                 <span className="text-highlight">Left Behind.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Buy a Mother's Day eGift Card of <strong className="text-primary">$50 or more</strong>, and we'll{" "}
-                <strong className="text-highlight">match it dollar for dollar</strong>, gifting a card to a{" "}
-                <em className="text-highlight not-italic font-semibold">mom in need</em> in our Charleston and Savannah communities.
+                Buy a Mother's Day eGift Card of <strong className="text-primary">$50 or more</strong> and we'll
+                gift a <strong className="text-highlight">$15+ card</strong> to a{" "}
+                <em className="text-highlight not-italic font-semibold">mom in need</em> in our Charleston and Savannah communities. The more you give, the more we give.
               </p>
               <p className="text-base md:text-lg text-accent italic mb-8 font-medium">
                 This is what celebrating together looks like. ♡
@@ -148,7 +148,7 @@ const MothersDayGiftCards = () => {
                   <DropdownMenuTrigger asChild>
                     <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                       <Gift className="h-5 w-5 mr-2" />
-                      Buy $50+ & We Match It
+                      Buy a Gift Card & Gift a Mom
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </Button>
                   </DropdownMenuTrigger>
