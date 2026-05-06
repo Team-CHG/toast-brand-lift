@@ -7,7 +7,7 @@ import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, Star, Utensils, ChevronDown, HandHeart, Users } from "lucide-react";
+import { CreditCard, Search, Heart, MapPin, Gift, Sparkles, ChevronDown, HandHeart, Users } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -102,9 +102,9 @@ const MothersDayGiftCards = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="No Mom Left Behind, Mother's Day Gift Cards | Toast All Day"
-        description="Buy One. Bless Two. Every Mother's Day eGift Card you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our community who never saw it coming."
-        keywords="No Mom Left Behind, Mother's Day gift card, Toast All Day gift card, Buy One Bless Two, give back Mother's Day, brunch gift card Charleston, eGift card Savannah"
+        title="No Mom Left Behind, We Match Your $50+ Gift Card | Toast All Day"
+        description="Buy a Mother's Day eGift Card of $50 or more and Toast All Day matches it, gifting a card to a mom in need in our Charleston and Savannah communities."
+        keywords="No Mom Left Behind, Mother's Day gift card match, Toast All Day gift card, give back Mother's Day, brunch gift card Charleston, eGift card Savannah, mom in need"
       />
       <FestiveBackdrop />
       <Navigation />
@@ -127,7 +127,7 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Heart className="h-5 w-5 text-highlight fill-highlight" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-highlight">
-                  Mother's Day 2026 · Buy One. Bless Two.
+                  Mother's Day 2026 · Buy $50+, We Match It
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.95]">
@@ -136,9 +136,9 @@ const MothersDayGiftCards = () => {
                 <span className="text-highlight">Left Behind.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Every gift card you buy for your mom unlocks a full Mother's Day experience for a{" "}
-                <strong className="text-primary">deserving mom in our community</strong> who{" "}
-                <em className="text-highlight not-italic font-semibold">never saw it coming</em>.
+                Buy a Mother's Day eGift Card of <strong className="text-primary">$50 or more</strong>, and we'll{" "}
+                <strong className="text-highlight">match it dollar for dollar</strong>, gifting a card to a{" "}
+                <em className="text-highlight not-italic font-semibold">mom in need</em> in our Charleston and Savannah communities.
               </p>
               <p className="text-base md:text-lg text-accent italic mb-8 font-medium">
                 This is what celebrating together looks like. ♡
@@ -148,7 +148,7 @@ const MothersDayGiftCards = () => {
                   <DropdownMenuTrigger asChild>
                     <Button size="lg" className="bg-highlight hover:bg-highlight/90 text-white">
                       <Gift className="h-5 w-5 mr-2" />
-                      Buy One. Bless Two.
+                      Buy $50+ & We Match It
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </Button>
                   </DropdownMenuTrigger>
@@ -224,25 +224,25 @@ const MothersDayGiftCards = () => {
               <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/15 backdrop-blur border border-white/30">
                 <HandHeart className="h-4 w-4" />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-widest">
-                  Buy One. Bless Two.
+                  Buy $50+ · We Match It
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-tight">
-                One Gift Card. Twelve Restaurants.
+                Spend $50, Gift $100.
                 <br />
-                Endless Experiences for All Moms.
+                Every Match Reaches a Mom in Need.
               </h2>
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
-                Your mom's eGift Card is welcome across <strong>every Toast All Day location and all of
-                our sister restaurants</strong>, and every purchase blesses another mom in our community
-                with a Mother's Day experience of her own.
+                Buy a $50 (or larger) eGift Card for your mom and Toast All Day will{" "}
+                <strong>match the full amount</strong> with a gift card delivered to a mom in need across our{" "}
+                <strong>Charleston and Savannah</strong> communities. Your card is welcome at every Toast All Day location and all of our sister restaurants.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
                 {[
-                  { Icon: Gift, accent: "One", label: "gift card." },
-                  { Icon: Utensils, accent: "Twelve", label: "restaurants." },
-                  { Icon: HandHeart, accent: "Endless", label: "experiences for all moms." },
+                  { Icon: Gift, accent: "$50+", label: "gift card for your mom." },
+                  { Icon: HandHeart, accent: "100%", label: "matched by Toast All Day." },
+                  { Icon: Users, accent: "Moms in need", label: "in Charleston & Savannah." },
                 ].map(({ Icon, accent, label }) => (
                   <div
                     key={accent}
@@ -292,7 +292,7 @@ const MothersDayGiftCards = () => {
               </div>
 
               <p className="text-base md:text-lg text-white font-semibold max-w-2xl mx-auto leading-relaxed italic">
-                Because the gift of getting is giving. ♡
+                Spend $50, gift $100. Because every mom deserves to feel celebrated. ♡
               </p>
             </div>
           </ScrollReveal>
@@ -315,11 +315,11 @@ const MothersDayGiftCards = () => {
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-                Every Card Becomes Two Celebrations
+                Spend $50, We Match It Dollar for Dollar
               </h2>
               <p className="text-lg text-muted-foreground">
-                It's simple. You buy one gift card for the mom you love. We pair it with a full Mother's
-                Day experience for a mom in our community who needs the lift more than she'll ever say.
+                It's simple. Purchase a Mother's Day eGift Card of $50 or more for the mom you love, and
+                Toast All Day matches the full amount with a gift card for a mom in need in Charleston or Savannah.
               </p>
             </div>
           </ScrollReveal>
@@ -328,20 +328,20 @@ const MothersDayGiftCards = () => {
             {[
               {
                 step: "01",
-                title: "You Buy One",
-                body: "Pick Mom's favorite Toast All Day location and send her an eGift Card she can use anywhere in our family of restaurants.",
+                title: "You Buy $50 or More",
+                body: "Pick Mom's favorite Toast All Day location and send her an eGift Card of $50 or more, redeemable across our family of restaurants.",
                 Icon: Gift,
               },
               {
                 step: "02",
-                title: "We Bless One",
-                body: "Your purchase unlocks a full Mother's Day experience for a deserving mom in the community, chosen with love, delivered as a surprise.",
+                title: "We Match It",
+                body: "Toast All Day matches your purchase dollar for dollar with a gift card of equal value, set aside for a deserving mom in our community.",
                 Icon: HandHeart,
               },
               {
                 step: "03",
-                title: "Our Community Rises",
-                body: "Every card you buy ripples outward, funding meals, memories, and Mother's Day moments for moms across Charleston, Mt. Pleasant, Summerville, and Savannah who might otherwise go unseen.",
+                title: "A Mom in Need Is Celebrated",
+                body: "Matched cards go directly to moms in need across our Charleston and Savannah communities, giving them a Mother's Day meal and moment to call their own.",
                 Icon: Users,
               },
             ].map(({ step, title, body, Icon }) => (
@@ -374,15 +374,15 @@ const MothersDayGiftCards = () => {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="h-5 w-5 text-accent" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-                  Buy Her Card · Bless Another Mom
+                  Buy $50+ · We Match It for a Mom in Need
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Pick Mom's Home Base
               </h2>
               <p className="text-lg text-muted-foreground">
-                Choose the Toast All Day location closest to Mom's heart. Every card you buy here also
-                blesses a deserving mom in our community with her own Mother's Day experience.
+                Choose the Toast All Day location closest to Mom's heart. Every $50+ card you buy here is
+                matched dollar for dollar and gifted to a mom in need in Charleston or Savannah.
               </p>
             </div>
           </ScrollReveal>
@@ -491,9 +491,10 @@ const MothersDayGiftCards = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              <strong className="text-highlight font-bold">Buy One. Bless Two.</strong> Every gift card
-              you buy for your mom unlocks a full Mother's Day experience for a deserving mom in our
-              community. Your Toast All Day eGift Card is valid at all Toast All Day locations{" "}
+              <strong className="text-highlight font-bold">Buy $50+, We Match It.</strong> For every
+              Mother's Day eGift Card of $50 or more, Toast All Day matches the full amount with a gift
+              card for a mom in need in our Charleston and Savannah communities. Your eGift Card is valid
+              at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
                 and across our family of sister restaurants, Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen

@@ -14,7 +14,7 @@ const PromoBand = () => {
       >
         <Heart className="h-4 w-4 fill-white flex-shrink-0" />
         <span className="truncate sm:whitespace-normal">
-          No Mom Left Behind · Buy One. Bless Two., every gift card blesses a deserving mom in our community
+          No Mom Left Behind · Buy a $50+ gift card, we match it for a mom in need in Charleston & Savannah
         </span>
         <span className="underline ml-1 hidden sm:inline">Shop Now →</span>
       </a>
