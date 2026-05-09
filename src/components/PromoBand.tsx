@@ -14,7 +14,7 @@ const PromoBand = () => {
       >
         <Heart className="h-4 w-4 fill-white flex-shrink-0" />
         <span className="truncate sm:whitespace-normal">
-          No Mom Left Behind · Buy a $50 gift card, we gift a $15 card to a mom in need. Spend more, give more.
+          No Mom Left Behind · Buy a $50 eGift Card, we gift a Toast Classic Breakfast to a mom in need.
         </span>
         <span className="underline ml-1 hidden sm:inline">Shop Now →</span>
       </a>
