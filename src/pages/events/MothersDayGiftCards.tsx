@@ -498,10 +498,9 @@ const MothersDayGiftCards = () => {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               <strong className="text-highlight font-bold">The More You Give, The More We Give Back.</strong>{" "}
-              Toast All Day will distribute complimentary Toast Classic Breakfast experiences and
-              promotional meal giveaways to local moms and/or participating community organizations
-              across Charleston and Savannah locations based on qualifying eGift Card sales. Your
-              eGift Card is valid at all Toast All Day locations{" "}
+              Promotional giveback experiences will be distributed by Toast All Day to local moms
+              and community organizations across participating Charleston and Savannah locations
+              while supplies last. Your eGift Card is valid at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
                 and across our family of sister restaurants, Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen
