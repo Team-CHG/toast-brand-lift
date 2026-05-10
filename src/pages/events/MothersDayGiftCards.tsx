@@ -508,6 +508,10 @@ const MothersDayGiftCards = () => {
               . One card. Endless tables. <strong className="text-primary">No expiration date</strong>,
               ever.
             </p>
+            <p className="mt-4 text-xs md:text-sm text-muted-foreground/80 leading-relaxed italic">
+              Gift cards are valid beginning the day after purchase and may not be redeemed on the
+              same day they are purchased.
+            </p>
           </div>
         </div>
       </section>
