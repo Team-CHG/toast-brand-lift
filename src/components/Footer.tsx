@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.png";
 
@@ -29,11 +29,11 @@ const Footer = () => {
           </div>
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null },
-              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards" },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup" },
-              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/elistablechs/" },
+              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards", instagram: "https://www.instagram.com/toastedcrustcharleston/" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup", instagram: "https://www.instagram.com/honkytonksaloonsc/" },
+              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup", instagram: "https://www.instagram.com/johnkinggrill_pianobar/" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/cachitaskitchenchs/" },
             ].map((brand) => (
               <li key={brand.name}>
                 <div className="relative group">
@@ -57,6 +57,16 @@ const Footer = () => {
                     <p className="mt-2 text-xs text-white/90 font-semibold opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Explore →</p>
                   </div>
                 </a>
+                <a
+                  href={brand.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="absolute top-3 left-3 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white/90 text-primary shadow-lg hover:scale-110 hover:bg-white transition-transform"
+                  aria-label={`Follow ${brand.name} on Instagram`}
+                >
+                  <Instagram className="h-4 w-4" aria-hidden="true" />
+                </a>
                 {brand.rewardsUrl && (
                   <a
                     href={brand.rewardsUrl}
@@ -73,6 +83,32 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+
+          {/* CHG Gift Card CTA */}
+          <div className="mt-8 max-w-3xl mx-auto">
+            <a
+              href="https://charlestonhospitalitygroup.com/#gift-cards"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col sm:flex-row items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-highlight/10 to-accent/10 ring-1 ring-accent/20 hover:ring-accent/50 hover:shadow-xl transition-all duration-300 overflow-hidden"
+              aria-label="Shop Charleston Hospitality Group gift cards"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <div className="flex items-center gap-4 text-center sm:text-left">
+                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-highlight/20 flex items-center justify-center ring-1 ring-highlight/30">
+                  <Gift className="h-6 w-6 text-highlight" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">The Gift of Getting Is Giving</p>
+                  <p className="font-bold text-primary text-lg md:text-xl">CHG Gift Cards — One Card, Every Venue</p>
+                  <p className="text-xs opacity-80 mt-0.5">Delivered in minutes. Redeemable across the Charleston Hospitality Group family.</p>
+                </div>
+              </div>
+              <span className="relative flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-highlight text-highlight-foreground text-sm font-bold uppercase tracking-wider shadow-lg group-hover:scale-105 transition-transform">
+                Buy Now →
+              </span>
+            </a>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 mb-12">
