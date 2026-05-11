@@ -54,14 +54,7 @@ const Footer = () => {
                   <div className="absolute inset-x-0 bottom-0 p-4 text-left">
                     <p className="text-[10px] uppercase tracking-[0.2em] text-highlight font-semibold mb-1">{brand.tag}</p>
                     <p className="font-bold text-white text-base md:text-lg leading-tight">{brand.name}</p>
-                    <div className="mt-3 flex items-center gap-2 flex-wrap">
-                      {brand.rewardsUrl && (
-                        <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-highlight text-highlight-foreground shadow">
-                          Get $5
-                        </span>
-                      )}
-                      <span className="text-xs text-white/90 font-semibold">Explore →</span>
-                    </div>
+                    <p className="mt-2 text-xs text-white/90 font-semibold opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Explore →</p>
                   </div>
                 </a>
                 {brand.rewardsUrl && (
