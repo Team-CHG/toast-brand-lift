@@ -20,6 +20,36 @@ const Footer = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-highlight to-accent" />
       
       <div className="container mx-auto px-4">
+        {/* Sister Brands */}
+        <div className="mb-12 pb-12 border-b border-accent/10">
+          <div className="text-center mb-8">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-2">Part of the Family</p>
+            <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Sister Brands</h3>
+            <p className="text-sm opacity-80 mt-2">Proud member of <a href="https://charlestonhospitalitygroup.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Charleston Hospitality Group</a></p>
+          </div>
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "Eli's Table", tag: "Fine Dining", url: "https://charlestonhospitalitygroup.com/venues/elis-table" },
+              { name: "Toasted Crust", tag: "Pizza", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon" },
+              { name: "John King Grill", tag: "Entertainment", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen" },
+            ].map((brand) => (
+              <li key={brand.name}>
+                <a
+                  href={brand.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-4 rounded-lg border border-accent/10 bg-white/40 backdrop-blur-sm hover:border-accent/40 hover:bg-white/70 hover:-translate-y-0.5 transition-all text-center"
+                >
+                  <p className="text-xs uppercase tracking-wider text-accent/80 group-hover:text-accent">{brand.tag}</p>
+                  <p className="font-bold text-primary mt-1">{brand.name}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start">
             <Link to="/" aria-label="Toast All Day Home">
