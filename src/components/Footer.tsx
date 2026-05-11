@@ -57,16 +57,6 @@ const Footer = () => {
                     <p className="mt-2 text-xs text-white/90 font-semibold opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Explore →</p>
                   </div>
                 </a>
-                <a
-                  href={brand.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="absolute top-3 left-3 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white/90 text-primary shadow-lg hover:scale-110 hover:bg-white transition-transform"
-                  aria-label={`Follow ${brand.name} on Instagram`}
-                >
-                  <Instagram className="h-4 w-4" aria-hidden="true" />
-                </a>
                 {brand.rewardsUrl && (
                   <a
                     href={brand.rewardsUrl}
@@ -83,37 +73,6 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-
-          {/* Follow the CHG Family */}
-          <div className="mt-10">
-            <p className="text-center text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-5">Follow the CHG Family</p>
-            <ul className="flex flex-wrap justify-center items-start gap-x-6 gap-y-5">
-              {[
-                { handle: "@toastallday", url: "https://www.instagram.com/toastofcharleston/" },
-                { handle: "@elistable", url: "https://www.instagram.com/elistablechs/" },
-                { handle: "@johnkingchs", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
-                { handle: "@honkytonkchs", url: "https://www.instagram.com/honkytonksaloonsc/" },
-                { handle: "@toastedcrustchs", url: "https://www.instagram.com/toastedcrustcharleston/" },
-                { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchenchs/" },
-                { handle: "@charlestongroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
-              ].map((item) => (
-                <li key={item.handle}>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex flex-col items-center gap-2"
-                    aria-label={`Follow ${item.handle} on Instagram`}
-                  >
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white ring-1 ring-accent/20 shadow-md group-hover:ring-accent/60 group-hover:scale-110 transition-all">
-                      <Instagram className="h-5 w-5 text-primary" aria-hidden="true" />
-                    </span>
-                    <span className="text-[11px] font-semibold text-primary/80 group-hover:text-accent transition-colors">{item.handle}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* CHG Gift Card CTA */}
           <div className="mt-8 max-w-3xl mx-auto">
@@ -142,7 +101,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start">
             <Link to="/" aria-label="Toast All Day Home">
               <img src={toastLogo} alt="Toast All Day - Award-winning breakfast and brunch restaurant" className="h-24 w-auto mb-4" loading="lazy" />
@@ -187,6 +146,33 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm opacity-80">Tag us in your photos: #ToastAllDay</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-lg mb-4">Follow the CHG Family</h4>
+            <ul className="space-y-2">
+              {[
+                { handle: "@toastallday", url: "https://www.instagram.com/toastofcharleston/" },
+                { handle: "@elistable", url: "https://www.instagram.com/elistablechs/" },
+                { handle: "@johnkingchs", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
+                { handle: "@honkytonkchs", url: "https://www.instagram.com/honkytonksaloonsc/" },
+                { handle: "@toastedcrustchs", url: "https://www.instagram.com/toastedcrustcharleston/" },
+                { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchenchs/" },
+                { handle: "@charlestongroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
+              ].map((item) => (
+                <li key={item.handle}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 opacity-90 hover:text-accent transition-colors"
+                    aria-label={`Follow ${item.handle} on Instagram`}
+                  >
+                    <Instagram className="h-4 w-4" aria-hidden="true" />
+                    <span className="text-sm">{item.handle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="border-t border-accent/10 pt-8">
