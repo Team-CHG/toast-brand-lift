@@ -1,7 +1,30 @@
 import { useEffect } from "react";
-import { Facebook, Instagram, Gift } from "lucide-react";
+import { Facebook, Instagram, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+
+const toastLocationGiftCards = [
+  { name: "Toast! on Meeting", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+  { name: "Toast! on King", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
+  { name: "Toast! Mt. Pleasant", city: "Mt. Pleasant, SC", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
+  { name: "Toast! West Ashley", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
+  { name: "Toast! Summerville", city: "Summerville, SC", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
+  { name: "Toast! Savannah", city: "Savannah, GA", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+];
+
+const sisterBrandGiftCards = [
+  { name: "Toasted Crust", tag: "Pizza", url: "https://order.toasttab.com/egiftcards/toasted-crust-downtown-451-king-street" },
+  { name: "HonkyTonk Saloon", tag: "Nightlife", url: "https://order.toasttab.com/egiftcards/honky-tonk-saloon-192-college-park-road" },
+  { name: "John King Grill", tag: "Entertainment", url: "https://order.toasttab.com/egiftcards/john-king-grill-bar-428-king-street" },
+];
 
 const Footer = () => {
   useEffect(() => {
