@@ -29,11 +29,11 @@ const Footer = () => {
           </div>
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/elistablechs/" },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/elistable/" },
               { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards", instagram: "https://www.instagram.com/toastedcrustcharleston/" },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup", instagram: "https://www.instagram.com/honkytonksaloonsc/" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup", instagram: "https://www.instagram.com/honkytonkladson/" },
               { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup", instagram: "https://www.instagram.com/johnkinggrill_pianobar/" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/cachitaskitchenchs/" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/cachitaskitchen/" },
             ].map((brand) => (
               <li key={brand.name}>
                 <div className="relative group">
@@ -152,11 +152,11 @@ const Footer = () => {
             <ul className="space-y-2">
               {[
                 { handle: "@toastallday", url: "https://www.instagram.com/toastofcharleston/" },
-                { handle: "@elistable", url: "https://www.instagram.com/elistablechs/" },
+                { handle: "@elistable", url: "https://www.instagram.com/elistable/" },
                 { handle: "@johnkingchs", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
-                { handle: "@honkytonkchs", url: "https://www.instagram.com/honkytonksaloonsc/" },
+                { handle: "@honkytonkladson", url: "https://www.instagram.com/honkytonkladson/" },
                 { handle: "@toastedcrustchs", url: "https://www.instagram.com/toastedcrustcharleston/" },
-                { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchenchs/" },
+                { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchen/" },
                 { handle: "@charlestongroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
               ].map((item) => (
                 <li key={item.handle}>
