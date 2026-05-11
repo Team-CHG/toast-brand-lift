@@ -1,7 +1,30 @@
 import { useEffect } from "react";
-import { Facebook, Instagram, Gift } from "lucide-react";
+import { Facebook, Instagram, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.png";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+
+const toastLocationGiftCards = [
+  { name: "Toast! on Meeting", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+  { name: "Toast! on King", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
+  { name: "Toast! Mt. Pleasant", city: "Mt. Pleasant, SC", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
+  { name: "Toast! West Ashley", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
+  { name: "Toast! Summerville", city: "Summerville, SC", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
+  { name: "Toast! Savannah", city: "Savannah, GA", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+];
+
+const sisterBrandGiftCards = [
+  { name: "Toasted Crust", tag: "Pizza", url: "https://order.toasttab.com/egiftcards/toasted-crust-downtown-451-king-street" },
+  { name: "HonkyTonk Saloon", tag: "Nightlife", url: "https://order.toasttab.com/egiftcards/honky-tonk-saloon-192-college-park-road" },
+  { name: "John King Grill", tag: "Entertainment", url: "https://order.toasttab.com/egiftcards/john-king-grill-bar-428-king-street" },
+];
 
 const Footer = () => {
   useEffect(() => {
@@ -74,30 +97,58 @@ const Footer = () => {
             ))}
           </ul>
 
-          {/* CHG Gift Card CTA */}
-          <div className="mt-8 max-w-3xl mx-auto">
-            <a
-              href="https://charlestonhospitalitygroup.com/#gift-cards"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col sm:flex-row items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-accent/10 via-highlight/10 to-accent/10 ring-1 ring-accent/20 hover:ring-accent/50 hover:shadow-xl transition-all duration-300 overflow-hidden"
-              aria-label="Shop Charleston Hospitality Group gift cards"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              <div className="flex items-center gap-4 text-center sm:text-left">
+          {/* Gift Card CTAs */}
+          <div className="mt-8 max-w-3xl mx-auto rounded-2xl bg-gradient-to-r from-accent/10 via-highlight/10 to-accent/10 ring-1 ring-accent/20 p-5 sm:p-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+              <div className="flex items-center gap-4 text-center sm:text-left flex-1">
                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-highlight/20 flex items-center justify-center ring-1 ring-highlight/30">
                   <Gift className="h-6 w-6 text-highlight" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">The Gift of Getting Is Giving</p>
-                  <p className="font-bold text-primary text-lg md:text-xl">CHG Gift Cards — One Card, Every Venue</p>
-                  <p className="text-xs opacity-80 mt-0.5">Delivered in minutes. Redeemable across the Charleston Hospitality Group family.</p>
+                  <p className="font-bold text-primary text-lg md:text-xl">Buy a Gift Card</p>
+                  <p className="text-xs opacity-80 mt-0.5">Delivered in minutes. Choose your Toast All Day location or sister brand.</p>
                 </div>
               </div>
-              <span className="relative flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-highlight text-highlight-foreground text-sm font-bold uppercase tracking-wider shadow-lg group-hover:scale-105 transition-transform">
-                Buy Now →
-              </span>
-            </a>
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-highlight text-highlight-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-highlight/50">
+                    Toast All Day
+                    <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-64 bg-background z-50">
+                    <DropdownMenuLabel>Choose a location</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {toastLocationGiftCards.map((loc) => (
+                      <DropdownMenuItem key={loc.url} asChild>
+                        <a href={loc.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-start cursor-pointer">
+                          <span className="font-semibold text-primary">{loc.name}</span>
+                          <span className="text-xs opacity-70">{loc.city}</span>
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-accent/50">
+                    Sister Brands
+                    <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-64 bg-background z-50">
+                    <DropdownMenuLabel>Choose a brand</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {sisterBrandGiftCards.map((brand) => (
+                      <DropdownMenuItem key={brand.url} asChild>
+                        <a href={brand.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-start cursor-pointer">
+                          <span className="font-semibold text-primary">{brand.name}</span>
+                          <span className="text-xs opacity-70">{brand.tag}</span>
+                        </a>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </div>
           </div>
         </div>
 
