@@ -27,23 +27,34 @@ const Footer = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-primary">Our Sister Brands</h3>
             <p className="text-sm opacity-80 mt-2">Proud member of <a href="https://charlestonhospitalitygroup.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Charleston Hospitality Group</a></p>
           </div>
-          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", url: "https://charlestonhospitalitygroup.com/venues/elis-table" },
-              { name: "Toasted Crust", tag: "Pizza", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust" },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon" },
-              { name: "John King Grill", tag: "Entertainment", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen" },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://charlestonhospitalitygroup.com/venues/elis-table" },
+              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon" },
+              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen" },
             ].map((brand) => (
               <li key={brand.name}>
                 <a
                   href={brand.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block p-4 rounded-lg border border-accent/10 bg-white/40 backdrop-blur-sm hover:border-accent/40 hover:bg-white/70 hover:-translate-y-0.5 transition-all text-center"
+                  className="group relative block aspect-[4/5] overflow-hidden rounded-xl shadow-md hover:shadow-2xl ring-1 ring-accent/10 hover:ring-accent/40 hover:-translate-y-1 transition-all duration-300"
+                  aria-label={`${brand.name} — ${brand.tag} by Charleston Hospitality Group`}
                 >
-                  <p className="text-xs uppercase tracking-wider text-accent/80 group-hover:text-accent">{brand.tag}</p>
-                  <p className="font-bold text-primary mt-1">{brand.name}</p>
+                  <img
+                    src={brand.img}
+                    alt={`${brand.name} — ${brand.tag} restaurant by Charleston Hospitality Group`}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-4 text-left">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-highlight font-semibold mb-1">{brand.tag}</p>
+                    <p className="font-bold text-white text-base md:text-lg leading-tight">{brand.name}</p>
+                    <p className="mt-2 text-xs text-white/80 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Explore →</p>
+                  </div>
                 </a>
               </li>
             ))}
