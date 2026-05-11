@@ -29,11 +29,11 @@ const Footer = () => {
           </div>
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://charlestonhospitalitygroup.com/venues/elis-table", rewardsUrl: null },
-              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust", rewardsUrl: null },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup" },
-              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen", rewardsUrl: null },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null },
+              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup" },
+              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null },
             ].map((brand) => (
               <li key={brand.name}>
                 <div className="relative group">
