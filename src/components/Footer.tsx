@@ -29,18 +29,19 @@ const Footer = () => {
           </div>
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://charlestonhospitalitygroup.com/venues/elis-table" },
-              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust" },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon" },
-              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen" },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://charlestonhospitalitygroup.com/venues/elis-table", rewardsUrl: null },
+              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://charlestonhospitalitygroup.com/venues/toasted-crust", rewardsUrl: null },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://charlestonhospitalitygroup.com/venues/honkytonk-saloon", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup" },
+              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://charlestonhospitalitygroup.com/venues/john-king-grill", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://charlestonhospitalitygroup.com/venues/cachitas-kitchen", rewardsUrl: null },
             ].map((brand) => (
               <li key={brand.name}>
+                <div className="relative group">
                 <a
                   href={brand.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block aspect-[4/5] overflow-hidden rounded-xl shadow-md hover:shadow-2xl ring-1 ring-accent/10 hover:ring-accent/40 hover:-translate-y-1 transition-all duration-300"
+                  className="relative block aspect-[4/5] overflow-hidden rounded-xl shadow-md hover:shadow-2xl ring-1 ring-accent/10 hover:ring-accent/40 group-hover:-translate-y-1 transition-all duration-300"
                   aria-label={`${brand.name} — ${brand.tag} by Charleston Hospitality Group`}
                 >
                   <img
@@ -53,9 +54,29 @@ const Footer = () => {
                   <div className="absolute inset-x-0 bottom-0 p-4 text-left">
                     <p className="text-[10px] uppercase tracking-[0.2em] text-highlight font-semibold mb-1">{brand.tag}</p>
                     <p className="font-bold text-white text-base md:text-lg leading-tight">{brand.name}</p>
-                    <p className="mt-2 text-xs text-white/80 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Explore →</p>
+                    <div className="mt-3 flex items-center gap-2 flex-wrap">
+                      {brand.rewardsUrl && (
+                        <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-highlight text-highlight-foreground shadow">
+                          Get $5
+                        </span>
+                      )}
+                      <span className="text-xs text-white/90 font-semibold">Explore →</span>
+                    </div>
                   </div>
                 </a>
+                {brand.rewardsUrl && (
+                  <a
+                    href={brand.rewardsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute top-3 right-3 z-10 inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-highlight text-highlight-foreground text-[11px] font-bold uppercase tracking-wider shadow-lg hover:scale-105 hover:bg-highlight/90 transition-transform"
+                    aria-label={`Get $5 rewards at ${brand.name}`}
+                  >
+                    Get $5
+                  </a>
+                )}
+                </div>
               </li>
             ))}
           </ul>
