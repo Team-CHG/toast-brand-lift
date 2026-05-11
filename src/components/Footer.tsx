@@ -84,6 +84,37 @@ const Footer = () => {
             ))}
           </ul>
 
+          {/* Follow the CHG Family */}
+          <div className="mt-10">
+            <p className="text-center text-xs uppercase tracking-[0.2em] text-accent font-semibold mb-5">Follow the CHG Family</p>
+            <ul className="flex flex-wrap justify-center items-start gap-x-6 gap-y-5">
+              {[
+                { handle: "@toastallday", url: "https://www.instagram.com/toastofcharleston/" },
+                { handle: "@elistable", url: "https://www.instagram.com/elistablechs/" },
+                { handle: "@johnkingchs", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
+                { handle: "@honkytonkchs", url: "https://www.instagram.com/honkytonksaloonsc/" },
+                { handle: "@toastedcrustchs", url: "https://www.instagram.com/toastedcrustcharleston/" },
+                { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchenchs/" },
+                { handle: "@charlestongroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
+              ].map((item) => (
+                <li key={item.handle}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center gap-2"
+                    aria-label={`Follow ${item.handle} on Instagram`}
+                  >
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white ring-1 ring-accent/20 shadow-md group-hover:ring-accent/60 group-hover:scale-110 transition-all">
+                      <Instagram className="h-5 w-5 text-primary" aria-hidden="true" />
+                    </span>
+                    <span className="text-[11px] font-semibold text-primary/80 group-hover:text-accent transition-colors">{item.handle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* CHG Gift Card CTA */}
           <div className="mt-8 max-w-3xl mx-auto">
             <a
