@@ -1,4 +1,4 @@
-import { Heart, X } from "lucide-react";
+import { Gift, X } from "lucide-react";
 import { useState } from "react";
 
 const PromoBand = () => {
@@ -12,9 +12,9 @@ const PromoBand = () => {
         href="/mothers-day-gift-cards"
         className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity text-center"
       >
-        <Heart className="h-4 w-4 fill-white flex-shrink-0" />
+        <Gift className="h-4 w-4 flex-shrink-0" />
         <span className="truncate sm:whitespace-normal">
-          No Mom Left Behind · Buy a $50 eGift Card, we gift $15 back to celebrate a mom in need.
+          Give the Gift of Great Times · Toast All Day eGift Cards for every celebration.
         </span>
         <span className="underline ml-1 hidden sm:inline">Shop Now →</span>
       </a>
@@ -34,3 +34,4 @@ const PromoBand = () => {
 };
 
 export default PromoBand;
+
