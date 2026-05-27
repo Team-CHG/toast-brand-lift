@@ -1,13 +1,16 @@
 import Navigation from "@/components/Navigation";
 import HeroCarousel from "@/components/HeroCarousel";
-import FeatureSections from "@/components/FeatureSections";
-import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
-import LocationsMap from "@/components/LocationsMap";
 import SEO from "@/components/SEO";
 import PromoBand from "@/components/PromoBand";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
+import { Suspense, lazy } from "react";
+// Below-the-fold components are code-split so the initial JS for `/`
+// only ships Navigation + Hero. Keeps TBT low and never blocks LCP.
+const FeatureSections = lazy(() => import("@/components/FeatureSections"));
+const LocationsMap = lazy(() => import("@/components/LocationsMap"));
+const Footer = lazy(() => import("@/components/Footer"));
+const SideDrawer = lazy(() => import("@/components/SideDrawer"));
 // AVIF variant is ~6 KB vs 20 KB for the WebP — used as a tiled section
 // background, decoded once and cached.
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
@@ -23,10 +26,14 @@ const Index = () => {
       />
       <Navigation />
       <PromoBand />
-      <SideDrawer />
+      <Suspense fallback={null}>
+        <SideDrawer />
+      </Suspense>
       <main>
         <HeroCarousel />
-        <FeatureSections />
+        <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
+          <FeatureSections />
+        </Suspense>
 
         {/* Locations Map Section */}
         <section
@@ -65,7 +72,9 @@ const Index = () => {
 
             <ScrollReveal delay={0.2}>
               <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl ring-1 ring-accent/10">
-                <LocationsMap />
+                <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
+                  <LocationsMap />
+                </Suspense>
               </div>
             </ScrollReveal>
 
@@ -91,7 +100,9 @@ const Index = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
