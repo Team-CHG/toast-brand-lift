@@ -64,16 +64,17 @@ const HeroCarousel = () => {
   const textY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [0, 150]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0.7]);
   const sparkleY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [0, -80]);
-  const scale = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [1, 1] : [1, 1.05]);
 
   return (
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center"
     >
-      {/* Background: poster image is always the LCP candidate. Video is only
-          attached on desktop after idle, behind the poster, then fades in. */}
-      <motion.div className="absolute inset-0" style={{ scale }}>
+      {/* Background: poster image is the LCP candidate. Rendered as a plain
+          <div> (NOT motion.div) so it commits on the very first React render
+          without waiting for framer-motion to initialize scroll transforms.
+          Video is attached after idle, behind the poster, and fades in. */}
+      <div className="absolute inset-0">
         <picture>
           <source media="(max-width: 767px)" srcSet={heroPosterMobileAvif} type="image/avif" />
           <source media="(max-width: 767px)" srcSet={heroPosterMobileWebp} type="image/webp" />
@@ -87,6 +88,7 @@ const HeroCarousel = () => {
             // @ts-ignore
             fetchpriority="high"
             decoding="async"
+            // No loading attribute = eager. Explicitly never lazy.
           />
         </picture>
         {useVideo && (
@@ -103,7 +105,7 @@ const HeroCarousel = () => {
             <source src={heroVideoNew} type="video/mp4" />
           </video>
         )}
-      </motion.div>
+      </div>
 
       {/* Gradient overlay with blue/red tones */}
       <motion.div
