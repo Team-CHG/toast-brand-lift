@@ -2,13 +2,17 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { useRef, useEffect, useState } from "react";
 import heroVideoNew from "@/assets/hero-video-new.mp4";
 import heroVideoWebm from "@/assets/hero-video-new.webm";
-import heroPosterJpg from "@/assets/hero-poster.jpg";
-import heroPosterWebp from "@/assets/hero-poster.webp";
-import heroPosterAvif from "@/assets/hero-poster.avif";
-import heroPosterMobileJpg from "@/assets/hero-poster-mobile.jpg";
-import heroPosterMobileWebp from "@/assets/hero-poster-mobile.webp";
-import heroPosterMobileAvif from "@/assets/hero-poster-mobile.avif";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
+
+// Hero posters are served from /public so the browser's preload scanner can
+// discover them before the JS bundle parses. These paths MUST match the
+// <link rel="preload"> tags in index.html so the preloaded bytes are reused.
+const heroPosterAvif = "/hero/hero-poster.avif";
+const heroPosterWebp = "/hero/hero-poster.webp";
+const heroPosterJpg = "/hero/hero-poster.jpg";
+const heroPosterMobileAvif = "/hero/hero-poster-mobile.avif";
+const heroPosterMobileWebp = "/hero/hero-poster-mobile.webp";
+const heroPosterMobileJpg = "/hero/hero-poster-mobile.jpg";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import {
