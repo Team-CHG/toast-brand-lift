@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
-import giftcardDesign from "@/assets/giftcard-design.png";
+import giftcardDesign from "@/assets/giftcard-design.avif";
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import brunchCelebration from "@/assets/mothers-day-brunch.jpg";
 import sisterElisTable from "@/assets/sister-elis-table.png";
