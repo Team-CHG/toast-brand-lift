@@ -13,16 +13,17 @@ import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
 
-// Lazy-load heavy images only when needed
-const menuImage2 = new URL("@/assets/food-slide-2-new.jpg", import.meta.url).href;
-const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.png", import.meta.url).href;
-const awardTripadvisor = new URL("@/assets/award-tripadvisor.jpg", import.meta.url).href;
-const giftcardDesign = new URL("@/assets/giftcard-design.png", import.meta.url).href;
-// Use the AVIF/WebP texture — the 209 KB PNG was being pulled into every
-// section background even on mobile. WebP is ~20 KB and covers all browsers.
-const pageBackgroundTexture = new URL("@/assets/page-background-texture.webp", import.meta.url).href;
-const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png", import.meta.url).href;
-const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
+// All large raster assets switched to AVIF variants (which already exist on disk).
+// AVIF is supported by ~96% of browsers globally (Chrome 85+, Firefox 93+,
+// Safari 16+). Combined savings on the home page are ~2 MB vs the PNG/JPG
+// versions previously bundled.
+const menuImage2 = new URL("@/assets/food-slide-2-new.avif", import.meta.url).href;          // 192K -> 96K
+const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.avif", import.meta.url).href;
+const awardTripadvisor = new URL("@/assets/award-tripadvisor.avif", import.meta.url).href;
+const giftcardDesign = new URL("@/assets/giftcard-design.avif", import.meta.url).href;       // 1.2M -> 204K
+const pageBackgroundTexture = new URL("@/assets/page-background-texture.avif", import.meta.url).href; // 20K -> 6K
+const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.avif", import.meta.url).href; // 551K -> 25K
+const flourishDecoration = new URL("@/assets/flourish-decoration.avif", import.meta.url).href; // 23K -> 8.7K
 const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
 
 // Lazy video component, only loads video src when in viewport.
