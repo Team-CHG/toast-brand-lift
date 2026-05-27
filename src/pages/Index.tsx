@@ -8,7 +8,9 @@ import SEO from "@/components/SEO";
 import PromoBand from "@/components/PromoBand";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
-import pageBackgroundTexture from "@/assets/page-background-texture.webp";
+// AVIF variant is ~6 KB vs 20 KB for the WebP — used as a tiled section
+// background, decoded once and cached.
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import { MapPin, Sparkles } from "lucide-react";
 
 const Index = () => {
