@@ -16,14 +16,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import giftcardDesign from "@/assets/giftcard-design.png";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import brunchCelebration from "@/assets/mothers-day-brunch.jpg";
 import sisterElisTable from "@/assets/sister-elis-table.png";
 import sisterJohnKing from "@/assets/sister-john-king-grill.png";
 import sisterHonkytonk from "@/assets/sister-honkytonk-saloon.png";
 import sisterToastedCrust from "@/assets/sister-toasted-crust.png";
 import sisterCachitas from "@/assets/sister-cachitas-kitchen.png";
-import locMeeting from "@/assets/locations/toast-meeting.jpg";
+import locMeeting from "@/assets/locations/toast-meeting.avif";
 import locKing from "@/assets/locations/toast-king.jpg";
 import locMtPleasant from "@/assets/locations/toast-mt-pleasant.jpg";
 import locWestAshley from "@/assets/locations/toast-west-ashley.jpg";

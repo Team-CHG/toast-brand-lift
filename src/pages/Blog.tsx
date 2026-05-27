@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogArticles } from "@/components/BlogArticleLayout";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 
 const Blog = () => {
   return (

@@ -8,8 +8,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import ParallaxLayer from "@/components/animations/ParallaxLayer";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
-import aboutHero from "@/assets/about-hero.jpg";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
+import aboutHero from "@/assets/about-hero.avif";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

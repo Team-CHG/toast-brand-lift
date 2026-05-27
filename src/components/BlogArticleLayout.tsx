@@ -6,7 +6,7 @@ import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import bestBreakfastBrunchImg from "@/assets/blog/best-breakfast-brunch.jpg";
 import mothersDayImg from "@/assets/blog/mothers-day.jpg";
 import downloadAppImg from "@/assets/blog/download-app.jpg";

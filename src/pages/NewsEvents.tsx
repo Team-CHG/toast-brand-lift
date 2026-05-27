@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Sparkles } from "lucide-react";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import newsHero from "@/assets/news-hero.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
