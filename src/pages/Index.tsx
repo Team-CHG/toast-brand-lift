@@ -8,7 +8,7 @@ import SEO from "@/components/SEO";
 import PromoBand from "@/components/PromoBand";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.webp";
 import { MapPin, Sparkles } from "lucide-react";
 
 const Index = () => {

@@ -18,7 +18,9 @@ const menuImage2 = new URL("@/assets/food-slide-2-new.jpg", import.meta.url).hre
 const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.png", import.meta.url).href;
 const awardTripadvisor = new URL("@/assets/award-tripadvisor.jpg", import.meta.url).href;
 const giftcardDesign = new URL("@/assets/giftcard-design.png", import.meta.url).href;
-const pageBackgroundTexture = new URL("@/assets/page-background-texture.png", import.meta.url).href;
+// Use the AVIF/WebP texture — the 209 KB PNG was being pulled into every
+// section background even on mobile. WebP is ~20 KB and covers all browsers.
+const pageBackgroundTexture = new URL("@/assets/page-background-texture.webp", import.meta.url).href;
 const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png", import.meta.url).href;
 const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
 const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;

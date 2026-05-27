@@ -11,9 +11,15 @@
     <meta name="author" content="Toast All Day" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://toastallday.com/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.cdnfonts.com/css/telegraf" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <!-- Load Telegraf without render-blocking the initial paint -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.cdnfonts.com/css/telegraf?display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/telegraf?display=swap" /></noscript>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

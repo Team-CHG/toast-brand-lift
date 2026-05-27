@@ -22,7 +22,7 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-accent/10 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 md:bg-white/80 md:backdrop-blur-md border-b border-accent/10 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center flex-shrink-0">
