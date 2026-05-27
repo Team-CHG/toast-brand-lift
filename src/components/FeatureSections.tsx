@@ -363,11 +363,7 @@ const FeatureSections = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.2}>
-              <motion.div
-                className="flex justify-center"
-                whileHover={{ rotate: 2, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
+              <div className="flex justify-center">
                 <div className="relative">
                   <img
                     src={giftcardDesign}
@@ -380,7 +376,7 @@ const FeatureSections = () => {
                   />
                   <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl -z-10" />
                 </div>
-              </motion.div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -414,21 +410,15 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/90 rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
-              {reviewsInView ? (
-                <iframe
-                  className="lc_reviews_widget"
-                  src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
-                  frameBorder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
-                />
-              ) : (
-                <div style={{ minHeight: "600px" }} className="flex items-center justify-center">
-                  <p className="text-muted-foreground">Loading reviews...</p>
-                </div>
-              )}
+            <div className="w-full max-w-7xl mx-auto bg-white/90 rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
+                frameBorder="0"
+                scrolling="no"
+                loading="lazy"
+                style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+              />
             </div>
           </ScrollReveal>
         </div>
@@ -458,22 +448,20 @@ const FeatureSections = () => {
             <p className="text-xl mb-12 max-w-2xl mx-auto text-muted-foreground">
               Join our community and be the first to know about exclusive offers, new menu items, and special events.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-              <Button
-                size="lg"
-                asChild
-                className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center"
+            <Button
+              size="lg"
+              asChild
+              className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center transition-transform hover:scale-105"
+            >
+              <a
+                href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <a
-                  href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Mail className="h-5 w-5 mr-2" />
-                  Sign Up For Exclusive News & Offers
-                </a>
-              </Button>
-            </motion.div>
+                <Mail className="h-5 w-5 mr-2" />
+                Sign Up For Exclusive News & Offers
+              </a>
+            </Button>
           </ScrollReveal>
         </div>
       </section>
