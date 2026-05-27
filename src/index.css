@@ -124,7 +124,7 @@ All colors MUST be HSL.
 
   /* Preserve intrinsic aspect ratio whenever width/height attributes are set,
      so explicit dimensions don't distort responsive layouts. */
-  img[width][height] {
+  :where(img[width][height]) {
     height: auto;
     max-width: 100%;
   }
