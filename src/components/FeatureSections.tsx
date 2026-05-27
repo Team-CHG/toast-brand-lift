@@ -66,16 +66,12 @@ const FeatureSections = () => {
             <StaggerContainer className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 md:gap-16">
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
-                  <motion.div
-                    className="flex flex-col items-center gap-1 group cursor-default"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
+                  <div className="flex flex-col items-center gap-1 group cursor-default transition-transform hover:scale-105">
                     <span className="text-xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
                     <span className="text-primary/70 font-medium text-[10px] md:text-sm tracking-wide uppercase">
                       {q.label}
                     </span>
-                  </motion.div>
+                  </div>
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -87,10 +83,8 @@ const FeatureSections = () => {
 
       {/* ═══════════════ AWARDS SECTION ═══════════════ */}
       <section
-        ref={awardsRef}
         className="relative py-24 md:py-32 overflow-hidden"
         style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        onMouseMove={handleMouseMove}
       >
         {/* Parallax decorative elements */}
         <FloatingElement className="absolute top-12 right-12 opacity-20 hidden lg:block" delay={0} distance={20}>
@@ -101,26 +95,16 @@ const FeatureSections = () => {
         </FloatingElement>
 
         {/* Animated background gradient, hidden on mobile for performance */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none hidden md:block"
-          style={{ y: awardsBgY }}
-        >
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-[100px]" />
-        </motion.div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Food Slideshow with tilt effect */}
             <ScrollReveal direction="left" className="order-1">
-              <motion.div
-                className="relative"
-                style={{
-                  rotateY: mousePosition.x * 5,
-                  rotateX: -mousePosition.y * 5,
-                  transformPerspective: 1200,
-                }}
-              >
+              <div className="relative">
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
                   <LazyVideo
                     sources={[
@@ -142,7 +126,7 @@ const FeatureSections = () => {
                     <span className="block text-xs md:text-sm font-medium mt-1 uppercase tracking-wider opacity-90">Worldwide</span>
                   </div>
                 </FloatingElement>
-              </motion.div>
+              </div>
             </ScrollReveal>
 
             {/* Text content */}
