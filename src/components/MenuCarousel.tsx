@@ -70,13 +70,17 @@ const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
               <CarouselItem key={index} className="pl-2 md:pl-3 basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
                 <div className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                   <div className="aspect-square overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <picture>
+                      <source srcSet={item.image.replace(/\.(png|jpe?g)$/i, ".avif")} type="image/avif" />
+                      <source srcSet={item.image.replace(/\.(png|jpe?g)$/i, ".webp")} type="image/webp" />
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
                   </div>
                   <div className="p-2 text-center">
                     <p className="font-medium text-xs">{item.name}</p>

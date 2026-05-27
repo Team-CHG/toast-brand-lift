@@ -1,43 +1,45 @@
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Locations from "./pages/Locations";
-import About from "./pages/About";
-import Catering from "./pages/Catering";
-import Contact from "./pages/Contact";
-import Rewards from "./pages/Rewards";
-import DownloadAppPage from "./pages/DownloadApp";
-import Franchise from "./pages/Franchise";
-import Blog from "./pages/Blog";
 import { Navigate } from "react-router-dom";
-import MothersDay from "./pages/events/MothersDay";
-import GiftCardsPage from "./pages/events/MothersDayGiftCards";
-import DownloadApp from "./pages/events/DownloadApp";
-import UnlimitedDrinkPass from "./pages/events/UnlimitedDrinkPass";
-import MilitaryDiscount from "./pages/events/MilitaryDiscount";
-import Anniversary from "./pages/events/Anniversary";
-import SoupSaladSandwich from "./pages/events/SoupSaladSandwich";
-import BlackFridayGiftCard from "./pages/events/BlackFridayGiftCard";
-import VeteransDay from "./pages/events/VeteransDay";
-import BestBrunch from "./pages/events/BestBrunch";
-import BestBreakfastBrunch from "./pages/events/BestBreakfastBrunch";
-import ValentinesDay from "./pages/events/ValentinesDay";
-import NotFound from "./pages/NotFound";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
 import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
 import FestiveBackdrop from "./components/FestiveBackdrop";
-import ToastMeeting from "./pages/locations/ToastMeeting";
-import ToastKing from "./pages/locations/ToastKing";
 
-import ToastMtPleasant from "./pages/locations/ToastMtPleasant";
-import ToastWestAshley from "./pages/locations/ToastWestAshley";
-import ToastSummerville from "./pages/locations/ToastSummerville";
-import ToastSavannah from "./pages/locations/ToastSavannah";
+// Code-split every non-home route to shrink initial JS bundle
+const Locations = lazy(() => import("./pages/Locations"));
+const About = lazy(() => import("./pages/About"));
+const Catering = lazy(() => import("./pages/Catering"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Rewards = lazy(() => import("./pages/Rewards"));
+const DownloadAppPage = lazy(() => import("./pages/DownloadApp"));
+const Franchise = lazy(() => import("./pages/Franchise"));
+const Blog = lazy(() => import("./pages/Blog"));
+const MothersDay = lazy(() => import("./pages/events/MothersDay"));
+const GiftCardsPage = lazy(() => import("./pages/events/MothersDayGiftCards"));
+const DownloadApp = lazy(() => import("./pages/events/DownloadApp"));
+const UnlimitedDrinkPass = lazy(() => import("./pages/events/UnlimitedDrinkPass"));
+const MilitaryDiscount = lazy(() => import("./pages/events/MilitaryDiscount"));
+const Anniversary = lazy(() => import("./pages/events/Anniversary"));
+const SoupSaladSandwich = lazy(() => import("./pages/events/SoupSaladSandwich"));
+const BlackFridayGiftCard = lazy(() => import("./pages/events/BlackFridayGiftCard"));
+const VeteransDay = lazy(() => import("./pages/events/VeteransDay"));
+const BestBrunch = lazy(() => import("./pages/events/BestBrunch"));
+const BestBreakfastBrunch = lazy(() => import("./pages/events/BestBreakfastBrunch"));
+const ValentinesDay = lazy(() => import("./pages/events/ValentinesDay"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const ToastMeeting = lazy(() => import("./pages/locations/ToastMeeting"));
+const ToastKing = lazy(() => import("./pages/locations/ToastKing"));
+const ToastMtPleasant = lazy(() => import("./pages/locations/ToastMtPleasant"));
+const ToastWestAshley = lazy(() => import("./pages/locations/ToastWestAshley"));
+const ToastSummerville = lazy(() => import("./pages/locations/ToastSummerville"));
+const ToastSavannah = lazy(() => import("./pages/locations/ToastSavannah"));
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,7 @@ const App = () => (
       <BrowserRouter>
         <div className="relative min-h-screen">
           <FestiveBackdrop />
+          <Suspense fallback={<div className="min-h-screen" aria-hidden />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/locations" element={<Locations />} />
@@ -88,6 +91,7 @@ const App = () => (
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </div>
       </BrowserRouter>
     </TooltipProvider>

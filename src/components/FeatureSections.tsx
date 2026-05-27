@@ -23,8 +23,15 @@ const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.png"
 const flourishDecoration = new URL("@/assets/flourish-decoration.png", import.meta.url).href;
 const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
 
-// Lazy video component, only loads video src when in viewport
-const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
+// Lazy video component, only loads video src when in viewport.
+// Accepts multiple sources for WebM-first, MP4 fallback delivery.
+const LazyVideo = ({
+  sources,
+  className,
+}: {
+  sources: { src: string; type: string }[];
+  className?: string;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "200px" });
 
@@ -32,14 +39,17 @@ const LazyVideo = ({ src, className }: { src: string; className?: string }) => {
     <div ref={ref} className={className}>
       {isInView ? (
         <video
-          src={src}
           className="w-full h-full object-cover"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-        />
+        >
+          {sources.map((s) => (
+            <source key={s.src} src={s.src} type={s.type} />
+          ))}
+        </video>
       ) : (
         <div className="w-full h-full bg-muted animate-pulse" />
       )}
@@ -160,7 +170,13 @@ const FeatureSections = () => {
                 }}
               >
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
-                  <LazyVideo src={new URL("@/assets/awards-video.mp4", import.meta.url).href} className="w-full h-full" />
+                  <LazyVideo
+                    sources={[
+                      { src: new URL("@/assets/awards-video.webm", import.meta.url).href, type: "video/webm" },
+                      { src: new URL("@/assets/awards-video.mp4", import.meta.url).href, type: "video/mp4" },
+                    ]}
+                    className="w-full h-full"
+                  />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
 
