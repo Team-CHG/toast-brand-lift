@@ -64,7 +64,7 @@ const Navigation = () => {
                   Order Online <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white/95 backdrop-blur-xl border-accent/10">
+              <DropdownMenuContent className="bg-white border-accent/10">
                 {locations.map((location, index) => (
                   <DropdownMenuItem key={index} asChild>
                     <a href={location.orderUrl} target="_blank" rel="noopener noreferrer" className="cursor-pointer">{location.name}</a>
@@ -79,7 +79,7 @@ const Navigation = () => {
                   Get in Line <ChevronDown className="ml-1 h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white/95 backdrop-blur-xl border-accent/10">
+              <DropdownMenuContent className="bg-white border-accent/10">
                 {locations.map((location, index) => (
                   location.waitlistUrl && (
                     <DropdownMenuItem key={index} asChild>
