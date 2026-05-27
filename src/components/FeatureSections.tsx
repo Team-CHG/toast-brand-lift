@@ -1,5 +1,3 @@
-import { useEffect, useState, useRef, useCallback } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star, Sparkles, ChevronDown } from "lucide-react";
 import {
@@ -35,31 +33,19 @@ const LazyVideo = ({
   sources: { src: string; type: string }[];
   className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  // Only attach the video once it's actually near the viewport, and only
-  // request bytes when the browser is about to play it. preload="none"
-  // ensures the awards video does NOT compete with the hero on initial load.
-  const isInView = useInView(ref, { once: true, margin: "100px" });
-
   return (
-    <div ref={ref} className={className}>
-      {isInView ? (
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-        >
-          {sources.map((s) => (
-            <source key={s.src} src={s.src} type={s.type} />
-          ))}
-        </video>
-      ) : (
-        <div className="w-full h-full bg-muted animate-pulse" />
-      )}
-    </div>
+    <video
+      className={className ? `${className} object-cover` : "w-full h-full object-cover"}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="none"
+    >
+      {sources.map((s) => (
+        <source key={s.src} src={s.src} type={s.type} />
+      ))}
+    </video>
   );
 };
 
@@ -71,46 +57,6 @@ const qualities = [
 ];
 
 const FeatureSections = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const awardsRef = useRef<HTMLElement>(null);
-  const menuRef = useRef<HTMLElement>(null);
-  const reviewsRef = useRef<HTMLDivElement>(null);
-  const reviewsInView = useInView(reviewsRef, { once: true, margin: "100px" });
-
-  const { scrollYProgress: awardsScroll } = useScroll({
-    target: awardsRef,
-    offset: ["start end", "end start"],
-  });
-  const awardsBgY = useTransform(awardsScroll, [0, 1], [0, -100]);
-
-  const { scrollYProgress: menuScroll } = useScroll({
-    target: menuRef,
-    offset: ["start end", "end start"],
-  });
-  const menuBgY = useTransform(menuScroll, [0, 1], [50, -50]);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
-    script.type = "text/javascript";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
-  }, []);
-
-  // Throttled mouse move handler
-  const lastMove = useRef(0);
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const now = Date.now();
-    if (now - lastMove.current < 50) return; // throttle to ~20fps
-    lastMove.current = now;
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: (e.clientX - rect.left) / rect.width - 0.5,
-      y: (e.clientY - rect.top) / rect.height - 0.5,
-    });
-  }, []);
-
   return (
     <>
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
