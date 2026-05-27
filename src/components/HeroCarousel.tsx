@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,6 +42,38 @@ const orderLocations = [
  * never changes after hydration. This makes LCP deterministic across runs.
  */
 const HeroCarousel = () => {
+  // Mobile-only: defer the hero video until AFTER LCP commits so the
+  // poster image is the sole LCP candidate and video decoding never
+  // competes with first paint. Desktop is unchanged — its <video>
+  // renders statically in the initial markup as before.
+  const [mountMobileVideo, setMountMobileVideo] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(min-width: 768px)").matches) return;
+
+    let cancelled = false;
+    const mount = () => {
+      if (cancelled) return;
+      // Wait one more frame past load so the LCP image has painted.
+      const idle =
+        (window as any).requestIdleCallback ||
+        ((cb: () => void) => window.setTimeout(cb, 1));
+      idle(() => !cancelled && setMountMobileVideo(true));
+    };
+
+    if (document.readyState === "complete") {
+      window.setTimeout(mount, 1500);
+    } else {
+      window.addEventListener("load", () => window.setTimeout(mount, 1500), {
+        once: true,
+      });
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
@@ -65,24 +98,23 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Hero video — rendered statically in the initial markup, layered
-          over the poster. preload="none" means no bytes are fetched until
-          the browser decides to play, so it never competes with the LCP
-          image. No requestIdleCallback, no useEffect, no JS swap. The
-          mobile-only and desktop-only variants are toggled with CSS so
-          each device fetches at most one file. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden
-        poster={heroPosterJpg}
-        className="md:hidden absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={heroVideoMobile} type="video/mp4" />
-      </video>
+      {/* Mobile video — mounted only AFTER load + idle so the poster
+          remains the uncontested LCP candidate. Desktop video below is
+          untouched and still ships in the initial markup. */}
+      {mountMobileVideo && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden
+          poster={heroPosterMobileJpg}
+          className="md:hidden absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideoMobile} type="video/mp4" />
+        </video>
+      )}
       <video
         autoPlay
         muted
@@ -96,8 +128,11 @@ const HeroCarousel = () => {
         <source src={heroVideoDesktop} type="video/mp4" />
       </video>
 
-      {/* Static gradient overlay — no animation, no hydration swap */}
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
+      {/* Static gradient overlay — simplified on mobile (single solid
+          tint, no multi-stop gradient) to reduce compositor work on the
+          first frame. Desktop keeps the original layered gradient. */}
+      <div className="md:hidden absolute inset-0 bg-foreground/40 pointer-events-none" />
+      <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
 
       {/* Hero content — static markup, no entrance animations, no parallax */}
       <div className="relative z-10 container mx-auto px-4 text-center mb-40 md:mb-32">
