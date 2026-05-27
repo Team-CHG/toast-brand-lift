@@ -31,16 +31,16 @@ const HeroCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
 
-  // Detect mobile / save-data / slow connection. On any of these we skip the
-  // ~1MB hero video entirely and render the static poster as the LCP element.
+  // Defer the hero video on every viewport so the poster stays the LCP
+  // element. We still skip it on save-data / very slow networks or when the
+  // user prefers reduced motion.
   const [useVideo, setUseVideo] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
     const conn = (navigator as any).connection;
     const saveData = conn?.saveData === true;
     const slowNet = conn?.effectiveType && /(^|-)(2g|slow-2g)$/.test(conn.effectiveType);
-    if (!isMobile && !saveData && !slowNet && !prefersReducedMotion) {
+    if (!saveData && !slowNet && !prefersReducedMotion) {
       // Defer attaching the video until after the page is interactive so it
       // never competes with the LCP image for bandwidth/main-thread.
       const w = window as any;
