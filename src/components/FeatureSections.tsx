@@ -447,6 +447,8 @@ const FeatureSections = () => {
                   <img
                     src={giftcardDesign}
                     alt="Charleston Hospitality Group Gift Card"
+                    width={800}
+                    height={500}
                     className="rounded-3xl shadow-2xl max-w-full h-auto"
                     loading="lazy"
                     decoding="async"

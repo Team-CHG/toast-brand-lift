@@ -71,6 +71,8 @@ const Footer = () => {
                     src={brand.img}
                     alt={`${brand.name} — ${brand.tag} restaurant by Charleston Hospitality Group`}
                     loading="lazy"
+                    width={400}
+                    height={500}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -155,7 +157,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="flex flex-col items-center md:items-start">
             <Link to="/" aria-label="Toast All Day Home">
-              <img src={toastLogo} alt="Toast All Day - Award-winning breakfast and brunch restaurant" className="h-24 w-auto mb-4" loading="lazy" />
+              <img src={toastLogo} alt="Toast All Day - Award-winning breakfast and brunch restaurant" width={240} height={96} className="h-24 w-auto mb-4" loading="lazy" />
             </Link>
             <p className="opacity-90 leading-relaxed text-center md:text-left">
               Serving exceptional breakfast, brunch, and lunch since 2005. TripAdvisor Top 25 Best Brunches.

@@ -113,6 +113,8 @@ const GiftCardSection = ({
             <img 
               src={giftcardDesign} 
               alt="Charleston Hospitality Group Gift Card - Perfect gift for breakfast and brunch lovers" 
+              width={800}
+              height={500}
               className="rounded-2xl shadow-2xl max-w-full h-auto ring-4 ring-accent/20"
               loading="lazy"
               decoding="async"
