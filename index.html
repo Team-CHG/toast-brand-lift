@@ -12,6 +12,25 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://toastallday.com/" />
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <!-- Preload the true LCP image (hero poster). Static /public paths so
+         the preload scanner can discover them before the JS bundle runs.
+         Mobile gets the small AVIF, larger viewports get the desktop AVIF. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/hero/hero-poster.avif"
+      type="image/avif"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/hero/hero-poster-mobile.avif"
+      type="image/avif"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
     <!-- Load Telegraf without render-blocking the initial paint -->
     <link
       rel="preload"
