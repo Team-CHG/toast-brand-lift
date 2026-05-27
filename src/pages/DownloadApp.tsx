@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Smartphone } from "lucide-react";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import appScreenshot from "@/assets/app-screenshot.png";
+import appScreenshot from "@/assets/app-screenshot.avif";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import { motion } from "framer-motion";
 
 const DownloadApp = () => {

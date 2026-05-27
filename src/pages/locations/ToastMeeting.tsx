@@ -11,7 +11,7 @@ import MenuCarousel from "@/components/MenuCarousel";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Star, Car, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
-import toastMeetingImg from "@/assets/locations/toast-meeting.jpg";
+import toastMeetingImg from "@/assets/locations/toast-meeting.avif";
 
 const ToastMeeting = () => {
   useEffect(() => {

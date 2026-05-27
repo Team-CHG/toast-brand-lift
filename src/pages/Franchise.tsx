@@ -18,7 +18,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Loader2, CheckCircle2, Sparkles } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import { motion } from "framer-motion";
 
 const franchiseSchema = z.object({

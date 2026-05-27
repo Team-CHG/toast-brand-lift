@@ -18,7 +18,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TurnstileWidget from "@/components/TurnstileWidget";
 import { supabase } from "@/integrations/supabase/client";
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import pageBackgroundTexture from "@/assets/page-background-texture.png";
+import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import contactHero from "@/assets/contact-hero.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";

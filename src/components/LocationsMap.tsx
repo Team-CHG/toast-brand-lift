@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import toastMeetingImg from '@/assets/locations/toast-meeting.jpg';
+import toastMeetingImg from '@/assets/locations/toast-meeting.avif';
 import toastKingImg from '@/assets/locations/toast-king.jpg';
 
 import toastMtPleasantImg from '@/assets/locations/toast-mt-pleasant.jpg';
