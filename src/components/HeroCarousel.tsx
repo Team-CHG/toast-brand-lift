@@ -43,11 +43,12 @@ const HeroCarousel = () => {
     if (!isMobile && !saveData && !slowNet && !prefersReducedMotion) {
       // Defer attaching the video until after the page is interactive so it
       // never competes with the LCP image for bandwidth/main-thread.
-      const idle = (cb: () => void) =>
-        "requestIdleCallback" in window
-          ? (window as any).requestIdleCallback(cb, { timeout: 1500 })
-          : window.setTimeout(cb, 600);
-      idle(() => setUseVideo(true));
+      const w = window as any;
+      if (typeof w.requestIdleCallback === "function") {
+        w.requestIdleCallback(() => setUseVideo(true), { timeout: 1500 });
+      } else {
+        setTimeout(() => setUseVideo(true), 600);
+      }
     }
   }, [prefersReducedMotion]);
 
