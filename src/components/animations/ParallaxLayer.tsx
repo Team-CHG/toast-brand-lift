@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
 interface ParallaxLayerProps {
@@ -15,12 +15,17 @@ export default function ParallaxLayer({
   style,
 }: ParallaxLayerProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [speed * -200, speed * 200]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    prefersReducedMotion ? [0, 0] : [speed * -200, speed * 200]
+  );
 
   return (
     <motion.div ref={ref} className={className} style={{ y, ...style }}>
