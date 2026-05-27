@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroVideoNew from "@/assets/hero-video-new.mp4";
+import heroVideoWebm from "@/assets/hero-video-new.webm";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -42,8 +43,6 @@ const HeroCarousel = () => {
       {/* Parallax video background */}
       <motion.div className="absolute inset-0" style={{ scale }}>
         <video
-          key={videoSrc}
-          src={videoSrc}
           className="w-full h-full object-cover"
           autoPlay
           muted
@@ -52,8 +51,10 @@ const HeroCarousel = () => {
           preload="auto"
           // @ts-ignore
           fetchpriority="high"
-          poster=""
-        />
+        >
+          <source src={heroVideoWebm} type="video/webm" />
+          <source src={videoSrc} type="video/mp4" />
+        </video>
       </motion.div>
 
       {/* Gradient overlay with blue/red tones */}
