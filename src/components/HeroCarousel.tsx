@@ -1,7 +1,13 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import heroVideoNew from "@/assets/hero-video-new.mp4";
 import heroVideoWebm from "@/assets/hero-video-new.webm";
+import heroPosterJpg from "@/assets/hero-poster.jpg";
+import heroPosterWebp from "@/assets/hero-poster.webp";
+import heroPosterAvif from "@/assets/hero-poster.avif";
+import heroPosterMobileJpg from "@/assets/hero-poster-mobile.jpg";
+import heroPosterMobileWebp from "@/assets/hero-poster-mobile.webp";
+import heroPosterMobileAvif from "@/assets/hero-poster-mobile.avif";
 import sparklesOverlay from "@/assets/sparkles-overlay.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -22,39 +28,76 @@ const orderLocations = [
 ];
 
 const HeroCarousel = () => {
-  const videoSrc = heroVideoNew;
   const containerRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  // Detect mobile / save-data / slow connection. On any of these we skip the
+  // ~1MB hero video entirely and render the static poster as the LCP element.
+  const [useVideo, setUseVideo] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    const conn = (navigator as any).connection;
+    const saveData = conn?.saveData === true;
+    const slowNet = conn?.effectiveType && /(^|-)(2g|slow-2g)$/.test(conn.effectiveType);
+    if (!isMobile && !saveData && !slowNet && !prefersReducedMotion) {
+      // Defer attaching the video until after the page is interactive so it
+      // never competes with the LCP image for bandwidth/main-thread.
+      const idle = (cb: () => void) =>
+        "requestIdleCallback" in window
+          ? (window as any).requestIdleCallback(cb, { timeout: 1500 })
+          : window.setTimeout(cb, 600);
+      idle(() => setUseVideo(true));
+    }
+  }, [prefersReducedMotion]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const textY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [0, 150]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0.7]);
-  const sparkleY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const sparkleY = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [0, -80]);
+  const scale = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [1, 1] : [1, 1.05]);
 
   return (
     <section
       ref={containerRef}
       className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center"
     >
-      {/* Parallax video background */}
+      {/* Background: poster image is always the LCP candidate. Video is only
+          attached on desktop after idle, behind the poster, then fades in. */}
       <motion.div className="absolute inset-0" style={{ scale }}>
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          // @ts-ignore
-          fetchpriority="high"
-        >
-          <source src={heroVideoWebm} type="video/webm" />
-          <source src={videoSrc} type="video/mp4" />
-        </video>
+        <picture>
+          <source media="(max-width: 767px)" srcSet={heroPosterMobileAvif} type="image/avif" />
+          <source media="(max-width: 767px)" srcSet={heroPosterMobileWebp} type="image/webp" />
+          <source srcSet={heroPosterAvif} type="image/avif" />
+          <source srcSet={heroPosterWebp} type="image/webp" />
+          <img
+            src={heroPosterJpg}
+            alt=""
+            aria-hidden
+            className="w-full h-full object-cover"
+            // @ts-ignore
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+        {useVideo && (
+          <video
+            className="absolute inset-0 w-full h-full object-cover animate-fade-in"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroPosterJpg}
+          >
+            <source src={heroVideoWebm} type="video/webm" />
+            <source src={heroVideoNew} type="video/mp4" />
+          </video>
+        )}
       </motion.div>
 
       {/* Gradient overlay with blue/red tones */}

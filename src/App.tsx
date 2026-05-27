@@ -6,11 +6,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import { Navigate } from "react-router-dom";
-import RewardsWidget from "./components/RewardsWidget";
 import LocalBusinessSchema from "./components/LocalBusinessSchema";
 import FestiveBackdrop from "./components/FestiveBackdrop";
 
 // Code-split every non-home route to shrink initial JS bundle
+const RewardsWidget = lazy(() => import("./components/RewardsWidget"));
 const Locations = lazy(() => import("./pages/Locations"));
 const About = lazy(() => import("./pages/About"));
 const Catering = lazy(() => import("./pages/Catering"));
@@ -49,7 +49,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <LocalBusinessSchema />
-      <RewardsWidget />
+      <Suspense fallback={null}>
+        <RewardsWidget />
+      </Suspense>
       <BrowserRouter>
         <div className="relative min-h-screen">
           <FestiveBackdrop />
