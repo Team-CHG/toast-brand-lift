@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import toastLogo from "@/assets/toast-logo.png";
+import toastLogo from "@/assets/toast-logo.avif";
 
 const locations = [
   { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },

@@ -36,7 +36,10 @@ const LazyVideo = ({
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "200px" });
+  // Only attach the video once it's actually near the viewport, and only
+  // request bytes when the browser is about to play it. preload="none"
+  // ensures the awards video does NOT compete with the hero on initial load.
+  const isInView = useInView(ref, { once: true, margin: "100px" });
 
   return (
     <div ref={ref} className={className}>
@@ -47,7 +50,7 @@ const LazyVideo = ({
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
         >
           {sources.map((s) => (
             <source key={s.src} src={s.src} type={s.type} />

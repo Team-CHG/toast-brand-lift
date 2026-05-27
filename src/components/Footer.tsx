@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Facebook, Instagram, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import toastLogo from "@/assets/toast-logo.png";
+import toastLogo from "@/assets/toast-logo.avif";
 import {
   DropdownMenu,
   DropdownMenuContent,
