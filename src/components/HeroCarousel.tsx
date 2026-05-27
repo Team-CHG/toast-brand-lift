@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,8 +17,8 @@ const heroPosterMobileAvif = "/hero/hero-poster-mobile.avif";
 const heroPosterMobileWebp = "/hero/hero-poster-mobile.webp";
 const heroPosterMobileJpg = "/hero/hero-poster-mobile.jpg";
 
-// Optimized hero video (re-encoded, ~344KB desktop / ~120KB mobile).
-// Loaded lazily AFTER first paint so it never competes with the LCP image.
+// Optimized hero video. Rendered directly in the initial markup with a
+// poster image and preload="none" so no JS timing logic gates first paint.
 const heroVideoDesktop = "/hero/hero.mp4";
 const heroVideoMobile = "/hero/hero-mobile.mp4";
 
@@ -42,25 +41,6 @@ const orderLocations = [
  * never changes after hydration. This makes LCP deterministic across runs.
  */
 const HeroCarousel = () => {
-  const [videoSrc, setVideoSrc] = useState<string | null>(null);
-  const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    // Defer video attach until the browser is idle so the LCP image owns
-    // first paint. The poster stays visible until the video can play.
-    const attach = () => {
-      const isMobile = window.matchMedia("(max-width: 767px)").matches;
-      setVideoSrc(isMobile ? heroVideoMobile : heroVideoDesktop);
-    };
-    const w = window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number };
-    if (w.requestIdleCallback) {
-      const id = w.requestIdleCallback(attach, { timeout: 2500 });
-      return () => (window as unknown as { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(id);
-    }
-    const t = window.setTimeout(attach, 1500);
-    return () => window.clearTimeout(t);
-  }, []);
-
   return (
     <section className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
@@ -83,24 +63,36 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Lazy hero video — attaches after idle, fades in over the poster.
-          Does NOT affect LCP because the poster <img> commits first. */}
-      {videoSrc && (
-        <video
-          key={videoSrc}
-          src={videoSrc}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          aria-hidden
-          onCanPlay={() => setVideoReady(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            videoReady ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      )}
+      {/* Hero video — rendered statically in the initial markup, layered
+          over the poster. preload="none" means no bytes are fetched until
+          the browser decides to play, so it never competes with the LCP
+          image. No requestIdleCallback, no useEffect, no JS swap. The
+          mobile-only and desktop-only variants are toggled with CSS so
+          each device fetches at most one file. */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden
+        poster={heroPosterJpg}
+        className="md:hidden absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={heroVideoMobile} type="video/mp4" />
+      </video>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden
+        poster={heroPosterJpg}
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={heroVideoDesktop} type="video/mp4" />
+      </video>
 
       {/* Static gradient overlay — no animation, no hydration swap */}
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
