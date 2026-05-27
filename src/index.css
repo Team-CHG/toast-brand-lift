@@ -121,4 +121,11 @@ All colors MUST be HSL.
     backface-visibility: hidden;
     transform: translateZ(0);
   }
+
+  /* Preserve intrinsic aspect ratio whenever width/height attributes are set,
+     so explicit dimensions don't distort responsive layouts. */
+  img[width][height] {
+    height: auto;
+    max-width: 100%;
+  }
 }

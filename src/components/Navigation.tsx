@@ -27,7 +27,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="hover:opacity-80 transition-opacity">
-              <img src={toastLogo} alt="Toast All Day" className="h-16 w-auto" />
+              <img src={toastLogo} alt="Toast All Day" width={160} height={64} className="h-16 w-auto" />
             </a>
           </div>
 
