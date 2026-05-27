@@ -55,6 +55,8 @@ const HeroCarousel = () => {
             src={heroPosterJpg}
             alt=""
             aria-hidden
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover"
             // @ts-ignore - fetchpriority is a valid HTML attribute
             fetchpriority="high"
