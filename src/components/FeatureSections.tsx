@@ -175,7 +175,6 @@ const FeatureSections = () => {
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
                   <LazyVideo
                     sources={[
-                      { src: new URL("@/assets/awards-video.webm", import.meta.url).href, type: "video/webm" },
                       { src: new URL("@/assets/awards-video.mp4", import.meta.url).href, type: "video/mp4" },
                     ]}
                     className="w-full h-full"
