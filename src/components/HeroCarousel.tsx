@@ -147,7 +147,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Static scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <ChevronDown className="w-8 h-8 text-white/60" />
       </div>
     </section>
