@@ -146,9 +146,8 @@ const FeatureSections = () => {
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality, passion, and dedication to the art of breakfast.
               </p>
 
-              <motion.div className="flex items-center gap-6 mb-8">
-                <motion.img
-                  whileHover={{ scale: 1.1, rotate: -3 }}
+              <div className="flex items-center gap-6 mb-8">
+                <img
                   src={awardRestaurantGuru}
                   alt="Restaurant Guru 2020 Award"
                   width={160}
@@ -156,8 +155,7 @@ const FeatureSections = () => {
                   className="h-16 md:h-20 w-auto object-contain cursor-pointer"
                   loading="lazy"
                 />
-                <motion.img
-                  whileHover={{ scale: 1.1, rotate: 3 }}
+                <img
                   src={awardTripadvisor}
                   alt="TripAdvisor Travelers Choice 2021"
                   width={160}
@@ -165,7 +163,7 @@ const FeatureSections = () => {
                   className="h-16 md:h-20 w-auto object-contain rounded-md cursor-pointer"
                   loading="lazy"
                 />
-              </motion.div>
+              </div>
 
               <Button
                 size="lg"
@@ -181,16 +179,15 @@ const FeatureSections = () => {
 
       {/* ═══════════════ MENU SECTION ═══════════════ */}
       <section
-        ref={menuRef}
         id="menu"
         className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-accent via-accent/90 to-accent/80"
       >
         {/* Parallax pattern */}
-        <motion.div className="absolute inset-0 opacity-5" style={{ y: menuBgY }}>
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(0 0% 100% / 0.1) 40px, hsl(0 0% 100% / 0.1) 42px)",
           }} />
-        </motion.div>
+        </div>
 
         {/* Red accent blob */}
         <div className="absolute top-0 right-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-highlight/15 rounded-full blur-[80px] md:blur-[150px]" />
@@ -210,12 +207,9 @@ const FeatureSections = () => {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <StaggerItem>
-              <motion.article
-                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <article className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <motion.img
+                  <img
                     alt="Toast All Day chef preparing fresh gourmet breakfast dishes"
                     className="w-full h-72 object-cover"
                     src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.avif"
@@ -223,8 +217,6 @@ const FeatureSections = () => {
                     height={600}
                     loading="lazy"
                     decoding="async"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -241,15 +233,12 @@ const FeatureSections = () => {
                     <a href="/locations">Order Online</a>
                   </Button>
                 </div>
-              </motion.article>
+              </article>
             </StaggerItem>
             <StaggerItem>
-              <motion.article
-                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <article className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <motion.img
+                  <img
                     src={menuImage2}
                     alt="Full bar selection with craft cocktails and mimosas"
                     width={800}
@@ -257,8 +246,6 @@ const FeatureSections = () => {
                     className="w-full h-72 object-cover"
                     loading="lazy"
                     decoding="async"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -275,7 +262,7 @@ const FeatureSections = () => {
                     <a href="/locations">Order Online</a>
                   </Button>
                 </div>
-              </motion.article>
+              </article>
             </StaggerItem>
           </StaggerContainer>
 
