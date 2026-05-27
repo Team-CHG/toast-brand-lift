@@ -52,11 +52,11 @@ const Footer = () => {
           </div>
           <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {[
-              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.jpg", url: "https://elistable.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/elistable/" },
-              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.jpg", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards", instagram: "https://www.instagram.com/toastedcrustcharleston/" },
-              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.jpg", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup", instagram: "https://www.instagram.com/honkytonkladson/" },
-              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.jpg", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup", instagram: "https://www.instagram.com/johnkinggrill_pianobar/" },
-              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.jpg", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/cachitaskitchen/" },
+              { name: "Eli's Table", tag: "Fine Dining", img: "/sister-brands/elis.avif", url: "https://elistable.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/elistable/" },
+              { name: "Toasted Crust", tag: "Pizza", img: "/sister-brands/toastedcrust.avif", url: "https://toastedcrust.com/", rewardsUrl: "https://toastedcrust.com/rewards", instagram: "https://www.instagram.com/toastedcrustcharleston/" },
+              { name: "HonkyTonk Saloon", tag: "Nightlife", img: "/sister-brands/honkytonk.avif", url: "https://honkytonksaloon.com/", rewardsUrl: "https://www.toasttab.com/honky-tonk-saloon-192-college-park-road/rewardsSignup", instagram: "https://www.instagram.com/honkytonkladson/" },
+              { name: "John King Grill", tag: "Entertainment", img: "/sister-brands/johnking.avif", url: "https://johnkinggrill.com/", rewardsUrl: "https://www.toasttab.com/john-king-grill-bar-428-king-street/rewardsSignup", instagram: "https://www.instagram.com/johnkinggrill_pianobar/" },
+              { name: "Cachita's Kitchen", tag: "Latin Kitchen", img: "/sister-brands/cachitas.avif", url: "https://cachitaskitchenchs.com/", rewardsUrl: null as string | null, instagram: "https://www.instagram.com/cachitaskitchen/" },
             ].map((brand) => (
               <li key={brand.name}>
                 <div className="relative group">
