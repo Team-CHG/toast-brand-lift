@@ -284,7 +284,7 @@ const FeatureSections = () => {
                   <motion.img
                     alt="Toast All Day chef preparing fresh gourmet breakfast dishes"
                     className="w-full h-72 object-cover"
-                    src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.png"
+                    src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.avif"
                     loading="lazy"
                     decoding="async"
                     whileHover={{ scale: 1.05 }}
