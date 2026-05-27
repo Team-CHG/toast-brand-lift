@@ -1,5 +1,3 @@
-import { useEffect, useState, useRef, useCallback } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Search, Mail, Star, Sparkles, ChevronDown } from "lucide-react";
 import {
@@ -35,31 +33,19 @@ const LazyVideo = ({
   sources: { src: string; type: string }[];
   className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  // Only attach the video once it's actually near the viewport, and only
-  // request bytes when the browser is about to play it. preload="none"
-  // ensures the awards video does NOT compete with the hero on initial load.
-  const isInView = useInView(ref, { once: true, margin: "100px" });
-
   return (
-    <div ref={ref} className={className}>
-      {isInView ? (
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-        >
-          {sources.map((s) => (
-            <source key={s.src} src={s.src} type={s.type} />
-          ))}
-        </video>
-      ) : (
-        <div className="w-full h-full bg-muted animate-pulse" />
-      )}
-    </div>
+    <video
+      className={className ? `${className} object-cover` : "w-full h-full object-cover"}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="none"
+    >
+      {sources.map((s) => (
+        <source key={s.src} src={s.src} type={s.type} />
+      ))}
+    </video>
   );
 };
 
@@ -71,46 +57,6 @@ const qualities = [
 ];
 
 const FeatureSections = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const awardsRef = useRef<HTMLElement>(null);
-  const menuRef = useRef<HTMLElement>(null);
-  const reviewsRef = useRef<HTMLDivElement>(null);
-  const reviewsInView = useInView(reviewsRef, { once: true, margin: "100px" });
-
-  const { scrollYProgress: awardsScroll } = useScroll({
-    target: awardsRef,
-    offset: ["start end", "end start"],
-  });
-  const awardsBgY = useTransform(awardsScroll, [0, 1], [0, -100]);
-
-  const { scrollYProgress: menuScroll } = useScroll({
-    target: menuRef,
-    offset: ["start end", "end start"],
-  });
-  const menuBgY = useTransform(menuScroll, [0, 1], [50, -50]);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://reputationhub.site/reputation/assets/review-widget.js";
-    script.type = "text/javascript";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
-  }, []);
-
-  // Throttled mouse move handler
-  const lastMove = useRef(0);
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    const now = Date.now();
-    if (now - lastMove.current < 50) return; // throttle to ~20fps
-    lastMove.current = now;
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: (e.clientX - rect.left) / rect.width - 0.5,
-      y: (e.clientY - rect.top) / rect.height - 0.5,
-    });
-  }, []);
-
   return (
     <>
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
@@ -120,16 +66,12 @@ const FeatureSections = () => {
             <StaggerContainer className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 md:gap-16">
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
-                  <motion.div
-                    className="flex flex-col items-center gap-1 group cursor-default"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
+                  <div className="flex flex-col items-center gap-1 group cursor-default transition-transform hover:scale-105">
                     <span className="text-xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
                     <span className="text-primary/70 font-medium text-[10px] md:text-sm tracking-wide uppercase">
                       {q.label}
                     </span>
-                  </motion.div>
+                  </div>
                 </StaggerItem>
               ))}
             </StaggerContainer>
@@ -141,10 +83,8 @@ const FeatureSections = () => {
 
       {/* ═══════════════ AWARDS SECTION ═══════════════ */}
       <section
-        ref={awardsRef}
         className="relative py-24 md:py-32 overflow-hidden"
         style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        onMouseMove={handleMouseMove}
       >
         {/* Parallax decorative elements */}
         <FloatingElement className="absolute top-12 right-12 opacity-20 hidden lg:block" delay={0} distance={20}>
@@ -155,26 +95,16 @@ const FeatureSections = () => {
         </FloatingElement>
 
         {/* Animated background gradient, hidden on mobile for performance */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none hidden md:block"
-          style={{ y: awardsBgY }}
-        >
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-[100px]" />
-        </motion.div>
+        </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Food Slideshow with tilt effect */}
             <ScrollReveal direction="left" className="order-1">
-              <motion.div
-                className="relative"
-                style={{
-                  rotateY: mousePosition.x * 5,
-                  rotateX: -mousePosition.y * 5,
-                  transformPerspective: 1200,
-                }}
-              >
+              <div className="relative">
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
                   <LazyVideo
                     sources={[
@@ -196,7 +126,7 @@ const FeatureSections = () => {
                     <span className="block text-xs md:text-sm font-medium mt-1 uppercase tracking-wider opacity-90">Worldwide</span>
                   </div>
                 </FloatingElement>
-              </motion.div>
+              </div>
             </ScrollReveal>
 
             {/* Text content */}
@@ -216,9 +146,8 @@ const FeatureSections = () => {
                 From our signature french toast to perfectly poached eggs, every plate tells a story of quality, passion, and dedication to the art of breakfast.
               </p>
 
-              <motion.div className="flex items-center gap-6 mb-8">
-                <motion.img
-                  whileHover={{ scale: 1.1, rotate: -3 }}
+              <div className="flex items-center gap-6 mb-8">
+                <img
                   src={awardRestaurantGuru}
                   alt="Restaurant Guru 2020 Award"
                   width={160}
@@ -226,8 +155,7 @@ const FeatureSections = () => {
                   className="h-16 md:h-20 w-auto object-contain cursor-pointer"
                   loading="lazy"
                 />
-                <motion.img
-                  whileHover={{ scale: 1.1, rotate: 3 }}
+                <img
                   src={awardTripadvisor}
                   alt="TripAdvisor Travelers Choice 2021"
                   width={160}
@@ -235,7 +163,7 @@ const FeatureSections = () => {
                   className="h-16 md:h-20 w-auto object-contain rounded-md cursor-pointer"
                   loading="lazy"
                 />
-              </motion.div>
+              </div>
 
               <Button
                 size="lg"
@@ -251,16 +179,15 @@ const FeatureSections = () => {
 
       {/* ═══════════════ MENU SECTION ═══════════════ */}
       <section
-        ref={menuRef}
         id="menu"
         className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-br from-accent via-accent/90 to-accent/80"
       >
         {/* Parallax pattern */}
-        <motion.div className="absolute inset-0 opacity-5" style={{ y: menuBgY }}>
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 40px, hsl(0 0% 100% / 0.1) 40px, hsl(0 0% 100% / 0.1) 42px)",
           }} />
-        </motion.div>
+        </div>
 
         {/* Red accent blob */}
         <div className="absolute top-0 right-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-highlight/15 rounded-full blur-[80px] md:blur-[150px]" />
@@ -280,12 +207,9 @@ const FeatureSections = () => {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <StaggerItem>
-              <motion.article
-                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <article className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <motion.img
+                  <img
                     alt="Toast All Day chef preparing fresh gourmet breakfast dishes"
                     className="w-full h-72 object-cover"
                     src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.avif"
@@ -293,8 +217,6 @@ const FeatureSections = () => {
                     height={600}
                     loading="lazy"
                     decoding="async"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -311,15 +233,12 @@ const FeatureSections = () => {
                     <a href="/locations">Order Online</a>
                   </Button>
                 </div>
-              </motion.article>
+              </article>
             </StaggerItem>
             <StaggerItem>
-              <motion.article
-                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              >
+              <article className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <motion.img
+                  <img
                     src={menuImage2}
                     alt="Full bar selection with craft cocktails and mimosas"
                     width={800}
@@ -327,8 +246,6 @@ const FeatureSections = () => {
                     className="w-full h-72 object-cover"
                     loading="lazy"
                     decoding="async"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -345,7 +262,7 @@ const FeatureSections = () => {
                     <a href="/locations">Order Online</a>
                   </Button>
                 </div>
-              </motion.article>
+              </article>
             </StaggerItem>
           </StaggerContainer>
 
@@ -446,11 +363,7 @@ const FeatureSections = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.2}>
-              <motion.div
-                className="flex justify-center"
-                whileHover={{ rotate: 2, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
+              <div className="flex justify-center">
                 <div className="relative">
                   <img
                     src={giftcardDesign}
@@ -463,7 +376,7 @@ const FeatureSections = () => {
                   />
                   <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl -z-10" />
                 </div>
-              </motion.div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -497,21 +410,15 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/90 rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
-              {reviewsInView ? (
-                <iframe
-                  className="lc_reviews_widget"
-                  src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
-                  frameBorder="0"
-                  scrolling="no"
-                  loading="lazy"
-                  style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
-                />
-              ) : (
-                <div style={{ minHeight: "600px" }} className="flex items-center justify-center">
-                  <p className="text-muted-foreground">Loading reviews...</p>
-                </div>
-              )}
+            <div className="w-full max-w-7xl mx-auto bg-white/90 rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+              <iframe
+                className="lc_reviews_widget"
+                src="https://reputationhub.site/reputation/widgets/review_widget/Uz6YkC2Cqk92rFC2504Q?widgetId=695d4e89b6efb8608acba4e1"
+                frameBorder="0"
+                scrolling="no"
+                loading="lazy"
+                style={{ minWidth: "100%", width: "100%", minHeight: "600px" }}
+              />
             </div>
           </ScrollReveal>
         </div>
@@ -541,22 +448,20 @@ const FeatureSections = () => {
             <p className="text-xl mb-12 max-w-2xl mx-auto text-muted-foreground">
               Join our community and be the first to know about exclusive offers, new menu items, and special events.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-              <Button
-                size="lg"
-                asChild
-                className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center"
+            <Button
+              size="lg"
+              asChild
+              className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center transition-transform hover:scale-105"
+            >
+              <a
+                href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <a
-                  href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Mail className="h-5 w-5 mr-2" />
-                  Sign Up For Exclusive News & Offers
-                </a>
-              </Button>
-            </motion.div>
+                <Mail className="h-5 w-5 mr-2" />
+                Sign Up For Exclusive News & Offers
+              </a>
+            </Button>
           </ScrollReveal>
         </div>
       </section>

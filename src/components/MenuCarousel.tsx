@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 // Menu item images.
 // Each item explicitly imports the AVIF, WebP, and PNG variants so Vite
@@ -91,13 +90,6 @@ const MenuCarousel = ({ showHeader = true }: MenuCarouselProps) => {
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-              stopOnInteraction: false,
-              stopOnMouseEnter: true,
-            }),
-          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-3">

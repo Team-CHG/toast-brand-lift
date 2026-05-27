@@ -92,11 +92,9 @@
           document.head.appendChild(px);
         }
       };
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadThirdParty, { timeout: 4000 });
-      } else {
-        window.addEventListener('load', function () { setTimeout(loadThirdParty, 1500); });
-      }
+      window.addEventListener('load', function () {
+        setTimeout(loadThirdParty, 12000);
+      });
     </script>
   </head>
 
