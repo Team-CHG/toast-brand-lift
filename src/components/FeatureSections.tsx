@@ -148,10 +148,10 @@ const FeatureSections = () => {
       >
         {/* Parallax decorative elements */}
         <FloatingElement className="absolute top-12 right-12 opacity-20 hidden lg:block" delay={0} distance={20}>
-          <img src={flourishDecoration} alt="" aria-hidden className="w-48 h-auto" loading="lazy" />
+          <img src={flourishDecoration} alt="" aria-hidden width={192} height={64} className="w-48 h-auto" loading="lazy" />
         </FloatingElement>
         <FloatingElement className="absolute bottom-12 left-12 opacity-15 hidden lg:block rotate-180" delay={2} distance={15}>
-          <img src={flourishDecoration} alt="" aria-hidden className="w-36 h-auto" loading="lazy" />
+          <img src={flourishDecoration} alt="" aria-hidden width={144} height={48} className="w-36 h-auto" loading="lazy" />
         </FloatingElement>
 
         {/* Animated background gradient, hidden on mobile for performance */}
@@ -221,6 +221,8 @@ const FeatureSections = () => {
                   whileHover={{ scale: 1.1, rotate: -3 }}
                   src={awardRestaurantGuru}
                   alt="Restaurant Guru 2020 Award"
+                  width={160}
+                  height={80}
                   className="h-16 md:h-20 w-auto object-contain cursor-pointer"
                   loading="lazy"
                 />
@@ -228,6 +230,8 @@ const FeatureSections = () => {
                   whileHover={{ scale: 1.1, rotate: 3 }}
                   src={awardTripadvisor}
                   alt="TripAdvisor Travelers Choice 2021"
+                  width={160}
+                  height={80}
                   className="h-16 md:h-20 w-auto object-contain rounded-md cursor-pointer"
                   loading="lazy"
                 />
@@ -285,6 +289,8 @@ const FeatureSections = () => {
                     alt="Toast All Day chef preparing fresh gourmet breakfast dishes"
                     className="w-full h-72 object-cover"
                     src="/lovable-uploads/82d1d24f-7f8c-4d59-a4bd-06ba2cb769ad.avif"
+                    width={800}
+                    height={600}
                     loading="lazy"
                     decoding="async"
                     whileHover={{ scale: 1.05 }}
@@ -316,6 +322,8 @@ const FeatureSections = () => {
                   <motion.img
                     src={menuImage2}
                     alt="Full bar selection with craft cocktails and mimosas"
+                    width={800}
+                    height={600}
                     className="w-full h-72 object-cover"
                     loading="lazy"
                     decoding="async"
