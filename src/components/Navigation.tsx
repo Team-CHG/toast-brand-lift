@@ -22,7 +22,7 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 md:bg-white/80 md:backdrop-blur-md border-b border-accent/10 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 border-b border-accent/10 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center flex-shrink-0">
@@ -36,7 +36,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 text-primary hover:text-accent transition-colors font-medium">
                 Menu <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white/95 backdrop-blur-xl border-accent/10">
+              <DropdownMenuContent className="bg-white border-accent/10">
                 <DropdownMenuItem asChild>
                   <a href="/menus/Toast_All_Day_Downtown_Locations_Menu.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer">Downtown Locations</a>
                 </DropdownMenuItem>
