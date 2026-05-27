@@ -112,7 +112,7 @@ const FeatureSections = () => {
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
       <section className="relative z-20 -mt-16 md:-mt-32 pb-8 md:pb-16">
         <div className="container mx-auto px-3 md:px-4">
-          <div className="bg-white/70 backdrop-blur-xl rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-5 md:py-10 px-4 md:px-12 ring-1 ring-accent/10">
+          <div className="bg-white/95 rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-5 md:py-10 px-4 md:px-12 ring-1 ring-accent/10">
             <StaggerContainer className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 md:gap-16">
               {qualities.map((q, i) => (
                 <StaggerItem key={i}>
@@ -274,7 +274,7 @@ const FeatureSections = () => {
           <StaggerContainer className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
             <StaggerItem>
               <motion.article
-                className="group bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
+                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className="relative overflow-hidden">
@@ -297,7 +297,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/25"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -306,7 +306,7 @@ const FeatureSections = () => {
             </StaggerItem>
             <StaggerItem>
               <motion.article
-                className="group bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
+                className="group bg-white/15 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all"
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className="relative overflow-hidden">
@@ -329,7 +329,7 @@ const FeatureSections = () => {
                   <Button
                     variant="outline"
                     asChild
-                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                    className="rounded-full border-white text-white bg-white/10 hover:bg-white/25"
                   >
                     <a href="/locations">Order Online</a>
                   </Button>
@@ -365,7 +365,7 @@ const FeatureSections = () => {
               </p>
               {/* Mother's Day promo banner */}
               <div className="block mb-6 rounded-2xl bg-gradient-to-r from-highlight to-accent p-[2px] shadow-lg max-w-lg">
-                <div className="flex items-center gap-3 rounded-2xl bg-white/95 backdrop-blur px-5 py-4">
+                <div className="flex items-center gap-3 rounded-2xl bg-white/95 px-5 py-4">
                   <Sparkles className="w-5 h-5 text-highlight flex-shrink-0" />
                   <div>
                     <p className="text-sm font-semibold text-primary leading-tight">Mother's Day Gift Cards</p>
@@ -484,7 +484,7 @@ const FeatureSections = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
+            <div ref={reviewsRef} className="w-full max-w-7xl mx-auto bg-white/90 rounded-3xl shadow-xl overflow-hidden ring-1 ring-accent/10">
               {reviewsInView ? (
                 <iframe
                   className="lc_reviews_widget"
