@@ -129,3 +129,14 @@ All colors MUST be HSL.
     max-width: 100%;
   }
 }
+
+/* Mobile-only: defer rendering work for below-the-fold sections until
+   they scroll near the viewport. Saves paint/layout cost on initial
+   load and improves Speed Index. `contain-intrinsic-size` reserves
+   space so there is zero CLS. Desktop unaffected. */
+@media (max-width: 767px) {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+  }
+}
