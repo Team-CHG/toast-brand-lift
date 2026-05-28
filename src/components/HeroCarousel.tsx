@@ -41,7 +41,7 @@ const orderLocations = [
  */
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-12 sm:pt-20 min-h-[85vh] md:min-h-[110vh] flex items-center">
+    <section className="relative w-full overflow-hidden pt-12 sm:pt-20 min-h-[78vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
@@ -133,7 +133,8 @@ const HeroCarousel = () => {
       </div>
 
       {/* Static scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      {/* Hidden on mobile to reduce above-the-fold paint cost. */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <ChevronDown className="w-8 h-8 text-white/60" />
       </div>
     </section>
