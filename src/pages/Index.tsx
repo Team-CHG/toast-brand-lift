@@ -37,21 +37,13 @@ const Index = () => {
           </Suspense>
         </div>
 
-        {/* Locations Map Section.
-            Mobile gets a solid background — the tiled texture image and
-            layered gradient are desktop-only to cut paint cost. */}
+        {/* Locations Map Section. */}
         <section
-          className="cv-auto relative py-14 md:py-32 px-4 overflow-hidden bg-background md:bg-transparent md:bg-cover md:bg-center"
+          className="cv-auto relative py-20 md:py-32 px-4 overflow-hidden bg-cover bg-center"
           aria-labelledby="locations-heading"
-          style={{ ['--bg-texture' as never]: `url(${pageBackgroundTexture})` }}
+          style={{ backgroundImage: `url(${pageBackgroundTexture})` }}
         >
-          {/* Desktop-only background texture + gradient overlay. */}
-          <div
-            aria-hidden
-            className="hidden md:block absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${pageBackgroundTexture})` }}
-          />
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
 
           {/* Decorative blurs — desktop only. blur-3xl is expensive to
               composite on mobile GPUs and tanks Speed Index. */}
