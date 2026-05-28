@@ -42,7 +42,7 @@ const orderLocations = [
  */
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-screen md:min-h-[110vh] flex items-center">
+    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-[75vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
