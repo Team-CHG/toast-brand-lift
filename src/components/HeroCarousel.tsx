@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +20,6 @@ const heroPosterMobileJpg = "/hero/hero-poster-mobile.jpg";
 // Optimized hero video. Rendered directly in the initial markup with a
 // poster image and preload="none" so no JS timing logic gates first paint.
 const heroVideoDesktop = "/hero/hero.mp4";
-const heroVideoMobile = "/hero/hero-mobile.mp4";
 
 const orderLocations = [
   { name: "Toast! on Meeting", url: "https://order.toasttab.com/online/toast-charleston-155-meeting-st" },
@@ -42,40 +40,8 @@ const orderLocations = [
  * never changes after hydration. This makes LCP deterministic across runs.
  */
 const HeroCarousel = () => {
-  // Mobile-only: defer the hero video until AFTER LCP commits so the
-  // poster image is the sole LCP candidate and video decoding never
-  // competes with first paint. Desktop is unchanged — its <video>
-  // renders statically in the initial markup as before.
-  const [mountMobileVideo, setMountMobileVideo] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.matchMedia("(min-width: 768px)").matches) return;
-
-    let cancelled = false;
-    const mount = () => {
-      if (cancelled) return;
-      // Wait one more frame past load so the LCP image has painted.
-      const idle =
-        (window as any).requestIdleCallback ||
-        ((cb: () => void) => window.setTimeout(cb, 1));
-      idle(() => !cancelled && setMountMobileVideo(true));
-    };
-
-    if (document.readyState === "complete") {
-      window.setTimeout(mount, 1500);
-    } else {
-      window.addEventListener("load", () => window.setTimeout(mount, 1500), {
-        once: true,
-      });
-    }
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   return (
-    <section className="relative w-full overflow-hidden pt-16 sm:pt-20 min-h-[100vh] md:min-h-[110vh] flex items-center">
+    <section className="relative w-full overflow-hidden pt-12 sm:pt-20 min-h-[85vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
@@ -98,23 +64,8 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Mobile video — mounted only AFTER load + idle so the poster
-          remains the uncontested LCP candidate. Desktop video below is
-          untouched and still ships in the initial markup. */}
-      {mountMobileVideo && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          aria-hidden
-          poster={heroPosterMobileJpg}
-          className="md:hidden absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={heroVideoMobile} type="video/mp4" />
-        </video>
-      )}
+      {/* Mobile: poster image only — no video at all. Saves ~2MB transfer,
+          eliminates video decode cost, and removes LCP contention. */}
       <video
         autoPlay
         muted

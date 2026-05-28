@@ -37,16 +37,17 @@ const Index = () => {
 
         {/* Locations Map Section */}
         <section
-          className="relative py-24 md:py-32 px-4 overflow-hidden"
+          className="relative py-14 md:py-32 px-4 overflow-hidden"
           aria-labelledby="locations-heading"
           style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
           {/* Gradient Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
 
-          {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-highlight/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+          {/* Decorative blurs — desktop only. blur-3xl is expensive to
+              composite on mobile GPUs and tanks Speed Index. */}
+          <div className="hidden md:block absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 bg-highlight/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
           <FloatingElement className="absolute top-1/4 right-10 opacity-10 hidden lg:block" delay={2} distance={20}>
             <MapPin className="w-20 h-20 text-accent" />
           </FloatingElement>
@@ -71,7 +72,7 @@ const Index = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl ring-1 ring-accent/10">
+              <div className="bg-white/90 md:bg-white/70 md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl ring-1 ring-accent/10">
                 <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
                   <LocationsMap />
                 </Suspense>
