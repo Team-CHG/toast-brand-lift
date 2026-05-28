@@ -31,13 +31,15 @@ const Index = () => {
       </Suspense>
       <main>
         <HeroCarousel />
-        <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
-          <FeatureSections />
-        </Suspense>
+        <div className="cv-auto">
+          <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
+            <FeatureSections />
+          </Suspense>
+        </div>
 
         {/* Locations Map Section */}
         <section
-          className="relative py-14 md:py-32 px-4 overflow-hidden"
+          className="cv-auto relative py-14 md:py-32 px-4 overflow-hidden"
           aria-labelledby="locations-heading"
           style={{ backgroundImage: `url(${pageBackgroundTexture})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
@@ -101,9 +103,11 @@ const Index = () => {
           </div>
         </section>
       </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <div className="cv-auto">
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      </div>
     </div>
   );
 };
