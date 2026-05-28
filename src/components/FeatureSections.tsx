@@ -60,7 +60,7 @@ const FeatureSections = () => {
   return (
     <>
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
-      <section className="relative z-20 mt-6 -mt-0 md:-mt-32 pb-8 md:pb-16">
+      <section className="relative z-20 mt-6 md:-mt-32 pb-8 md:pb-16">
         <div className="container mx-auto px-3 md:px-4">
           <div className="bg-white/95 rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-6 md:py-10 px-5 md:px-12 ring-1 ring-accent/10">
             <div className="grid grid-cols-2 md:flex md:flex-wrap items-start md:items-center justify-items-center md:justify-center gap-y-5 gap-x-4 md:gap-16">
