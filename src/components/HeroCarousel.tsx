@@ -17,9 +17,10 @@ const heroPosterMobileAvif = "/hero/hero-poster-mobile.avif";
 const heroPosterMobileWebp = "/hero/hero-poster-mobile.webp";
 const heroPosterMobileJpg = "/hero/hero-poster-mobile.jpg";
 
-// Optimized hero video. Rendered directly in the initial markup with a
-// poster image and preload="none" so no JS timing logic gates first paint.
+// Hero videos rendered directly in the initial markup with poster +
+// preload="none" so no JS timing logic gates first paint.
 const heroVideoDesktop = "/hero/hero.mp4";
+const heroVideoMobile = "/hero/hero-mobile.mp4";
 
 const orderLocations = [
   { name: "Toast! on Meeting", url: "https://order.toasttab.com/online/toast-charleston-155-meeting-st" },
@@ -41,7 +42,7 @@ const orderLocations = [
  */
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-12 sm:pt-20 min-h-[78vh] md:min-h-[110vh] flex items-center">
+    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-screen md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
@@ -64,8 +65,21 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Mobile: poster image only — no video at all. Saves ~2MB transfer,
-          eliminates video decode cost, and removes LCP contention. */}
+      {/* Mobile video — lightweight, preload="none", poster fallback */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        aria-hidden
+        poster={heroPosterMobileJpg}
+        className="md:hidden absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={heroVideoMobile} type="video/mp4" />
+      </video>
+
+      {/* Desktop video */}
       <video
         autoPlay
         muted
@@ -79,11 +93,8 @@ const HeroCarousel = () => {
         <source src={heroVideoDesktop} type="video/mp4" />
       </video>
 
-      {/* Static gradient overlay — simplified on mobile (single solid
-          tint, no multi-stop gradient) to reduce compositor work on the
-          first frame. Desktop keeps the original layered gradient. */}
-      <div className="md:hidden absolute inset-0 bg-foreground/40 pointer-events-none" />
-      <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
+      {/* Static gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
 
       {/* Hero content — static markup, no entrance animations, no parallax */}
       <div className="relative z-10 container mx-auto px-4 text-center mb-40 md:mb-32">
@@ -133,8 +144,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Static scroll indicator */}
-      {/* Hidden on mobile to reduce above-the-fold paint cost. */}
-      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <ChevronDown className="w-8 h-8 text-white/60" />
       </div>
     </section>
