@@ -60,23 +60,26 @@ const FeatureSections = () => {
   return (
     <>
       {/* ═══════════════ QUALITIES RIBBON - GLASS OVERLAY ON HERO ═══════════════ */}
-      <section className="relative z-20 -mt-16 md:-mt-32 pb-8 md:pb-16">
+      <section className="relative z-20 mt-6 -mt-0 md:-mt-32 pb-8 md:pb-16">
         <div className="container mx-auto px-3 md:px-4">
-          <div className="bg-white/95 rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-5 md:py-10 px-4 md:px-12 ring-1 ring-accent/10">
-            <StaggerContainer className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-4 md:gap-16">
+          <div className="bg-white/95 rounded-2xl md:rounded-3xl shadow-2xl border border-white/40 py-6 md:py-10 px-5 md:px-12 ring-1 ring-accent/10">
+            <div className="grid grid-cols-2 md:flex md:flex-wrap items-start md:items-center justify-items-center md:justify-center gap-y-5 gap-x-4 md:gap-16">
               {qualities.map((q, i) => (
-                <StaggerItem key={i}>
-                  <div className="flex flex-col items-center gap-1 group cursor-default transition-transform hover:scale-105">
-                    <span className="text-xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors">{q.number}</span>
-                    <span className="text-primary/70 font-medium text-[10px] md:text-sm tracking-wide uppercase">
-                      {q.label}
-                    </span>
-                  </div>
-                </StaggerItem>
+                <div
+                  key={i}
+                  className="flex flex-col items-center text-center gap-1.5 group cursor-default transition-transform hover:scale-105"
+                >
+                  <span className="text-2xl md:text-3xl font-bold text-accent group-hover:text-highlight transition-colors leading-none">
+                    {q.number}
+                  </span>
+                  <span className="text-primary/70 font-medium text-[11px] md:text-sm tracking-wide uppercase leading-tight">
+                    {q.label}
+                  </span>
+                </div>
               ))}
-            </StaggerContainer>
+            </div>
             {/* Red accent line */}
-            <div className="mt-4 md:mt-6 mx-auto w-16 md:w-24 h-1 bg-gradient-to-r from-highlight via-accent to-highlight rounded-full" />
+            <div className="mt-5 md:mt-6 mx-auto w-16 md:w-24 h-1 bg-gradient-to-r from-highlight via-accent to-highlight rounded-full" />
           </div>
         </div>
       </section>
