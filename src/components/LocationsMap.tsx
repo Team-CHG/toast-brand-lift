@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 import toastMeetingImg from '@/assets/locations/toast-meeting.avif';
 import toastKingImg from '@/assets/locations/toast-king.jpg';
 
@@ -104,6 +105,11 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
   onLocationSelect
 }) => {
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+  // Mobile: defer the Google Maps iframe (heavy 3rd-party JS) until the
+  // user taps. Eliminates ~500KB+ of JS from initial mobile load.
+  const isMobile = useIsMobile();
+  const [mapMounted, setMapMounted] = useState(false);
+  const shouldRenderMap = !isMobile || mapMounted;
 
   // Build Google Maps embed URL - search mode shows all Toast! All Day pins
   const getMapUrl = () => {
@@ -137,10 +143,31 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
 
         {/* Map Container */}
         <div className="lg:col-span-2 relative">
-          <iframe src={getMapUrl()} width="100%" height="500" style={{
-          border: 0,
-          borderRadius: '0.75rem'
-        }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="shadow-lg" />
+          {shouldRenderMap ? (
+            <iframe
+              src={getMapUrl()}
+              width="100%"
+              height="500"
+              style={{ border: 0, borderRadius: '0.75rem' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="shadow-lg"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setMapMounted(true)}
+              aria-label="Load interactive map"
+              className="w-full h-[500px] rounded-xl shadow-lg flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-accent/10 via-background to-highlight/10 border border-accent/20 active:scale-[0.99] transition-transform"
+            >
+              <MapPin className="h-10 w-10 text-accent" />
+              <span className="text-base font-semibold text-foreground">Tap to load map</span>
+              <span className="text-xs text-muted-foreground px-6 text-center">
+                Interactive Google Map · {locations.length} locations
+              </span>
+            </button>
+          )}
 
           {/* Selected Location Details Overlay */}
           {selectedLocation && <div className="absolute bottom-4 left-4 right-4 bg-background/95 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-accent/30">

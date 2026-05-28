@@ -154,6 +154,7 @@ const FeatureSections = () => {
                   height={80}
                   className="h-16 md:h-20 w-auto object-contain cursor-pointer"
                   loading="lazy"
+                  decoding="async"
                 />
                 <img
                   src={awardTripadvisor}
@@ -162,6 +163,7 @@ const FeatureSections = () => {
                   height={80}
                   className="h-16 md:h-20 w-auto object-contain rounded-md cursor-pointer"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
