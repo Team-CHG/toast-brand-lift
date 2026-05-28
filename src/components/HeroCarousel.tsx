@@ -96,7 +96,7 @@ const HeroCarousel = () => {
       {/* Static gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-accent/10 to-transparent pointer-events-none" />
 
-      {/* Hero content — static markup, no entrance animations, no parallax */}
+      <div className="relative z-10 container mx-auto px-4 text-center mb-16 md:mb-32">
       <div className="relative z-10 container mx-auto px-4 text-center mb-40 md:mb-32">
         <p className="text-white/90 tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-base mb-3 md:mb-4 font-medium">
           Award-Winning Breakfast & Brunch
