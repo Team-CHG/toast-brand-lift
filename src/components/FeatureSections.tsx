@@ -117,7 +117,7 @@ const FeatureSections = () => {
 
                 {/* Floating laurel wreath badge */}
                 <FloatingElement
-                  className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 z-20"
+                  className="absolute -bottom-5 right-3 md:-bottom-8 md:-right-8 z-20"
                   distance={8}
                   duration={4}
                 >
