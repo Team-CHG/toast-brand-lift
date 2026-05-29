@@ -14,10 +14,10 @@ const heroPosterAvif = "/hero/hero-poster.avif";
 const heroPosterWebp = "/hero/hero-poster.webp";
 const heroPosterJpg = "/hero/hero-poster.jpg";
 // Mobile hero is a static hyper-realistic champagne cheers photo (no video).
-// Ultra-light 560px variants are served first for fast LCP on slow 4G.
+// Single AVIF source on mobile = deterministic LCP path (matches the
+// <link rel="preload"> in index.html exactly). All mobile browsers we
+// support negotiate AVIF; desktop keeps full <picture> fallback chain.
 const heroPosterMobileAvif = "/hero/hero-cheers-mobile-sm.avif";
-const heroPosterMobileWebp = "/hero/hero-cheers-mobile-sm.webp";
-const heroPosterMobileJpg = "/hero/hero-cheers-mobile-sm.jpg";
 
 // Desktop-only hero video. Mobile uses a static image for performance.
 const heroVideoDesktop = "/hero/hero.mp4";
@@ -47,8 +47,6 @@ const HeroCarousel = () => {
       <div className="absolute inset-0">
         <picture>
           <source media="(max-width: 767px)" srcSet={heroPosterMobileAvif} type="image/avif" />
-          <source media="(max-width: 767px)" srcSet={heroPosterMobileWebp} type="image/webp" />
-          <source media="(max-width: 767px)" srcSet={heroPosterMobileJpg} type="image/jpeg" />
           <source srcSet={heroPosterAvif} type="image/avif" />
           <source srcSet={heroPosterWebp} type="image/webp" />
           <img
