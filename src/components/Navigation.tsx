@@ -7,7 +7,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import toastLogo from "@/assets/toast-logo.avif";
+import toastLogoAvif from "@/assets/toast-logo-sm.avif";
+import toastLogoWebp from "@/assets/toast-logo-sm.webp";
 
 const locations = [
   { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },
@@ -27,7 +28,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="hover:opacity-80 transition-opacity">
-              <img src={toastLogo} alt="Toast All Day" width={160} height={64} className="h-16 w-auto" />
+              <picture>
+                <source srcSet={toastLogoAvif} type="image/avif" />
+                <source srcSet={toastLogoWebp} type="image/webp" />
+                <img
+                  src={toastLogoWebp}
+                  alt="Toast All Day"
+                  width={160}
+                  height={64}
+                  className="h-16 w-auto"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
             </a>
           </div>
 
