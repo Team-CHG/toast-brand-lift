@@ -7,7 +7,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import toastLogoAvif from "@/assets/toast-logo-sm.avif";
 import toastLogoWebp from "@/assets/toast-logo-sm.webp";
 
 const locations = [
@@ -28,19 +27,14 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="hover:opacity-80 transition-opacity">
-              <picture>
-                <source srcSet={toastLogoAvif} type="image/avif" />
-                <source srcSet={toastLogoWebp} type="image/webp" />
-                <img
-                  src={toastLogoWebp}
-                  alt="Toast All Day"
-                  width={160}
-                  height={64}
-                  className="h-16 w-auto"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </picture>
+              <img
+                src={toastLogoWebp}
+                alt="Toast All Day"
+                width={160}
+                height={64}
+                className="h-16 w-auto"
+                decoding="async"
+              />
             </a>
           </div>
 
