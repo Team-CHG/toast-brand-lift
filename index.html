@@ -11,7 +11,6 @@
     <meta name="author" content="Toast All Day" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://toastallday.com/" />
-    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
     <!-- Preload the true LCP image (hero poster). Static /public paths so
          the preload scanner can discover them before the JS bundle runs.
          Mobile gets the small AVIF, larger viewports get the desktop AVIF. -->
@@ -31,15 +30,14 @@
       media="(max-width: 767px)"
       fetchpriority="high"
     />
-    <!-- Preload only the primary body/nav weight (400). The bold (800)
-         weight loads on demand from the inlined @font-face below. The
-         CDN's own CSS is skipped entirely — it lacks font-display:swap
-         and adds an extra render-blocking request hop. -->
+    <!-- Self-hosted font: preload only the primary body/nav weight (400).
+         Bold (800) is loaded on demand via @font-face. Self-hosting
+         eliminates a cross-origin TLS handshake on the critical path. -->
     <link
       rel="preload"
       as="font"
       type="font/woff"
-      href="https://fonts.cdnfonts.com/s/106028/TelegrafRegular_272984568a25d8528fe2de8b20b29011.woff"
+      href="/fonts/telegraf-regular.woff"
       crossorigin
     />
     <style>
@@ -49,7 +47,7 @@
         font-weight: 400;
         font-display: swap;
         src: local('Telegraf'),
-          url('https://fonts.cdnfonts.com/s/106028/TelegrafRegular_272984568a25d8528fe2de8b20b29011.woff') format('woff');
+          url('/fonts/telegraf-regular.woff') format('woff');
       }
       @font-face {
         font-family: 'Telegraf';
@@ -57,7 +55,7 @@
         font-weight: 800;
         font-display: swap;
         src: local('Telegraf'),
-          url('https://fonts.cdnfonts.com/s/106028/Telegraf%20UltraBold%20800.woff') format('woff');
+          url('/fonts/telegraf-ultrabold.woff') format('woff');
       }
     </style>
 
