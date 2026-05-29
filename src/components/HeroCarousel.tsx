@@ -42,7 +42,7 @@ const orderLocations = [
  */
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-[75vh] md:min-h-[110vh] flex items-center">
+    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-[60vh] md:min-h-[110vh] flex items-center">
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
@@ -79,8 +79,8 @@ const HeroCarousel = () => {
         <source src={heroVideoDesktop} type="video/mp4" />
       </video>
 
-      {/* Static gradient overlay — stronger on mobile for text legibility over the static cheers photo */}
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-foreground/30 md:from-foreground/60 md:via-accent/10 md:to-transparent pointer-events-none" />
+      {/* Static gradient overlay — single-stop on mobile (cheaper to composite), richer on desktop */}
+      <div className="absolute inset-0 bg-foreground/50 md:bg-gradient-to-t md:from-foreground/60 md:via-accent/10 md:to-transparent pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 text-center mb-4 md:mb-32">
         <p className="text-white/90 tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-base mb-3 md:mb-4 font-medium">
