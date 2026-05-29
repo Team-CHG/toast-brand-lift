@@ -14,6 +14,7 @@ const heroPosterAvif = "/hero/hero-poster.avif";
 const heroPosterWebp = "/hero/hero-poster.webp";
 const heroPosterJpg = "/hero/hero-poster.jpg";
 // Mobile hero is a static hyper-realistic champagne cheers photo (no video)
+const heroPosterMobileWebp = "/hero/hero-cheers-mobile.webp";
 const heroPosterMobileJpg = "/hero/hero-cheers-mobile.jpg";
 
 // Desktop-only hero video. Mobile uses a static image for performance.
@@ -43,6 +44,7 @@ const HeroCarousel = () => {
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
+          <source media="(max-width: 767px)" srcSet={heroPosterMobileWebp} type="image/webp" />
           <source media="(max-width: 767px)" srcSet={heroPosterMobileJpg} type="image/jpeg" />
           <source srcSet={heroPosterAvif} type="image/avif" />
           <source srcSet={heroPosterWebp} type="image/webp" />
