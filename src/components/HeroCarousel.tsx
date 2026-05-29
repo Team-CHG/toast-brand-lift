@@ -65,7 +65,9 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Desktop video (mobile uses the static picture above) */}
+      {/* Desktop video (mobile uses the static picture above).
+          Poster intentionally omitted: the <picture> above already paints
+          the same frame, so a poster fetch would be a wasted ~100 KB. */}
       <video
         autoPlay
         muted
@@ -73,7 +75,6 @@ const HeroCarousel = () => {
         playsInline
         preload="none"
         aria-hidden
-        poster={heroPosterJpg}
         className="hidden md:block absolute inset-0 w-full h-full object-cover"
       >
         <source src={heroVideoDesktop} type="video/mp4" />
@@ -128,8 +129,9 @@ const HeroCarousel = () => {
         </div>
       </div>
 
-      {/* Static scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+      {/* Static scroll indicator — desktop only to keep the mobile
+          above-the-fold DOM as small as possible. */}
+      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <ChevronDown className="w-8 h-8 text-white/60" />
       </div>
     </section>
