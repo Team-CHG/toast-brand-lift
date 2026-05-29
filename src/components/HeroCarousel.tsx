@@ -13,14 +13,11 @@ import {
 const heroPosterAvif = "/hero/hero-poster.avif";
 const heroPosterWebp = "/hero/hero-poster.webp";
 const heroPosterJpg = "/hero/hero-poster.jpg";
-const heroPosterMobileAvif = "/hero/hero-poster-mobile.avif";
-const heroPosterMobileWebp = "/hero/hero-poster-mobile.webp";
-const heroPosterMobileJpg = "/hero/hero-poster-mobile.jpg";
+// Mobile hero is a static hyper-realistic champagne cheers photo (no video)
+const heroPosterMobileJpg = "/hero/hero-cheers-mobile.jpg";
 
-// Hero videos rendered directly in the initial markup with poster +
-// preload="none" so no JS timing logic gates first paint.
+// Desktop-only hero video. Mobile uses a static image for performance.
 const heroVideoDesktop = "/hero/hero.mp4";
-const heroVideoMobile = "/hero/hero-mobile.mp4";
 
 const orderLocations = [
   { name: "Toast! on Meeting", url: "https://order.toasttab.com/online/toast-charleston-155-meeting-st" },
@@ -46,8 +43,6 @@ const HeroCarousel = () => {
       {/* LOCKED LCP element */}
       <div className="absolute inset-0">
         <picture>
-          <source media="(max-width: 767px)" srcSet={heroPosterMobileAvif} type="image/avif" />
-          <source media="(max-width: 767px)" srcSet={heroPosterMobileWebp} type="image/webp" />
           <source media="(max-width: 767px)" srcSet={heroPosterMobileJpg} type="image/jpeg" />
           <source srcSet={heroPosterAvif} type="image/avif" />
           <source srcSet={heroPosterWebp} type="image/webp" />
@@ -65,21 +60,7 @@ const HeroCarousel = () => {
         </picture>
       </div>
 
-      {/* Mobile video — lightweight, preload="none", poster fallback */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden
-        poster={heroPosterMobileJpg}
-        className="md:hidden absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={heroVideoMobile} type="video/mp4" />
-      </video>
-
-      {/* Desktop video */}
+      {/* Desktop video (mobile uses the static picture above) */}
       <video
         autoPlay
         muted
