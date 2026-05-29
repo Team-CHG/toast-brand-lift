@@ -31,14 +31,35 @@
       media="(max-width: 767px)"
       fetchpriority="high"
     />
-    <!-- Load Telegraf without render-blocking the initial paint -->
+    <!-- Preload only the primary body/nav weight (400). The bold (800)
+         weight loads on demand from the inlined @font-face below. The
+         CDN's own CSS is skipped entirely — it lacks font-display:swap
+         and adds an extra render-blocking request hop. -->
     <link
       rel="preload"
-      as="style"
-      href="https://fonts.cdnfonts.com/css/telegraf?display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
+      as="font"
+      type="font/woff"
+      href="https://fonts.cdnfonts.com/s/106028/TelegrafRegular_272984568a25d8528fe2de8b20b29011.woff"
+      crossorigin
     />
-    <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/telegraf?display=swap" /></noscript>
+    <style>
+      @font-face {
+        font-family: 'Telegraf';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Telegraf'),
+          url('https://fonts.cdnfonts.com/s/106028/TelegrafRegular_272984568a25d8528fe2de8b20b29011.woff') format('woff');
+      }
+      @font-face {
+        font-family: 'Telegraf';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: local('Telegraf'),
+          url('https://fonts.cdnfonts.com/s/106028/Telegraf%20UltraBold%20800.woff') format('woff');
+      }
+    </style>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
