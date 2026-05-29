@@ -120,7 +120,28 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static LCP placeholder. Renders the exact same mobile hero
+           image the React HeroCarousel will mount on top of, so the
+           pixels paint before the JS bundle parses. The matching
+           <picture> in HeroCarousel.tsx replaces this node on mount
+           with no flicker (same src, same object-fit, same position). -->
+      <picture>
+        <source media="(max-width: 767px)" srcset="/hero/hero-cheers-mobile-sm.avif" type="image/avif" />
+        <source media="(max-width: 767px)" srcset="/hero/hero-cheers-mobile-sm.webp" type="image/webp" />
+        <source srcset="/hero/hero-poster.avif" type="image/avif" />
+        <source srcset="/hero/hero-poster.webp" type="image/webp" />
+        <img
+          src="/hero/hero-poster.jpg"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+          decoding="async"
+          style="position:absolute;inset:0;width:100%;height:75vh;object-fit:cover;object-position:center 30%;z-index:-1;"
+        />
+      </picture>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
