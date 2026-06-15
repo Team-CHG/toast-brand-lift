@@ -124,7 +124,7 @@ async function syncGroup(
             name: it.name,
             description: it.description ?? null,
             price,
-            image_url: it.image ?? it.highResImage ?? (Array.isArray(it.images) && it.images[0]) || null,
+            image_url: it.image ?? it.highResImage ?? (Array.isArray(it.images) && it.images.length > 0 ? it.images[0] : null),
             calories: typeof it.calories === "number" ? it.calories : null,
             allergens: Array.isArray(it.allergens) ? it.allergens : null,
             modifiers: Array.isArray(it.modifierGroupReferences) ? it.modifierGroupReferences : null,
