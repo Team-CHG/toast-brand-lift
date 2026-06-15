@@ -240,6 +240,33 @@ async function syncGroup(
     .update({ last_synced_at: new Date().toISOString() })
     .eq("id", group.id);
 
+  // Fallback: for categories without an image, use the first available item's image
+  const { data: catsNeedingImage } = await supabase
+    .from("menu_categories")
+    .select("id")
+    .eq("group_id", group.id)
+    .eq("is_active", true)
+    .is("image_url", null);
+  for (const c of catsNeedingImage ?? []) {
+    const { data: itemWithImage } = await supabase
+      .from("menu_items")
+      .select("image_url")
+      .eq("category_id", (c as any).id)
+      .eq("is_active", true)
+      .eq("available_online", true)
+      .eq("is_86", false)
+      .not("image_url", "is", null)
+      .order("sort_order", { ascending: true })
+      .limit(1)
+      .maybeSingle();
+    if (itemWithImage?.image_url) {
+      await supabase
+        .from("menu_categories")
+        .update({ image_url: itemWithImage.image_url })
+        .eq("id", (c as any).id);
+    }
+  }
+
   return { categories: categoriesCount, items: itemsCount, removed };
 }
 
