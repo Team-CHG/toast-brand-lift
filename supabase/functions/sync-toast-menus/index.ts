@@ -68,12 +68,17 @@ async function syncGroup(
 ): Promise<{ categories: number; items: number; removed: number }> {
   const token = await getToastToken();
   const data = await fetchMenus(group.toast_guid, token);
-  console.log(`[${group.slug}] top-level keys:`, Object.keys(data || {}));
-  console.log(`[${group.slug}] sample:`, JSON.stringify(data).slice(0, 2000));
 
-  // Toast v2 menus response shape:
-  // { menus: [ { name, guid, groups: [ { name, guid, description, image, items: [ { guid, name, description, price, image, visibility, ... } ] } ] } ] }
-  // We flatten "groups" => categories.
+  // Toast v2 /menus/v2/menus response shape:
+  // { menus: [ { name, guid, visibility, menuGroups: [ { name, guid, visibility, menuItems: [...], menuGroups: [...] } ] } ] }
+  // visibility includes flags like "TOAST_ONLINE_ORDERING", "ORDERING_PARTNERS", "POS", "KIOSK".
+  // We only include menus/groups/items that are visible online.
+  const ONLINE_FLAGS = ["TOAST_ONLINE_ORDERING", "ORDERING_PARTNERS"];
+  const isOnline = (v: unknown): boolean => {
+    if (!Array.isArray(v)) return true; // permissive default
+    return v.some((flag) => ONLINE_FLAGS.includes(flag));
+  };
+
   const incomingCategories: Array<{
     toast_guid: string;
     name: string;
@@ -97,44 +102,48 @@ async function syncGroup(
 
   const menus: any[] = Array.isArray(data?.menus) ? data.menus : [];
   let catOrder = 0;
-  for (const menu of menus) {
-    const groups: any[] = Array.isArray(menu?.groups) ? menu.groups : [];
-    for (const g of groups) {
-      const items: any[] = Array.isArray(g?.items) ? g.items : [];
+
+  const walkGroup = (g: any, parentName?: string) => {
+    if (!g?.guid || !isOnline(g.visibility)) return;
+    const items: any[] = Array.isArray(g.menuItems) ? g.menuItems : [];
+    const onlineItems = items.filter((it) => isOnline(it.visibility));
+    if (onlineItems.length > 0) {
+      const displayName = parentName ? `${parentName} — ${g.name}` : g.name;
       incomingCategories.push({
         toast_guid: g.guid,
-        name: g.name,
+        name: displayName,
         description: g.description ?? null,
-        image_url: g.image ?? g.imageUrl ?? null,
+        image_url: g.image ?? g.highResImage ?? null,
         sort_order: catOrder++,
-        items: items.map((it: any, idx: number) => {
-          // Price handling: Toast may return `price` or `pricing.prices[].price`
+        items: onlineItems.map((it: any, idx: number) => {
           let price: number | null = null;
           if (typeof it.price === "number") price = it.price;
           else if (typeof it.basePrice === "number") price = it.basePrice;
-
-          const visibility: string[] = Array.isArray(it.visibility) ? it.visibility : [];
-          const availableOnline = visibility.length === 0
-            ? true
-            : visibility.includes("ONLINE") || visibility.includes("POS_AND_ONLINE") || visibility.includes("ORDERING_PARTNERS");
-          const is86 = it.outOfStock === true || it.availability === "OUT_OF_STOCK";
-
           return {
             toast_guid: it.guid,
             name: it.name,
             description: it.description ?? null,
             price,
-            image_url: it.image ?? it.imageUrl ?? null,
+            image_url: it.image ?? it.highResImage ?? (Array.isArray(it.images) && it.images[0]) || null,
             calories: typeof it.calories === "number" ? it.calories : null,
             allergens: Array.isArray(it.allergens) ? it.allergens : null,
-            modifiers: Array.isArray(it.modifierGroups) ? it.modifierGroups : null,
-            available_online: availableOnline,
-            is_86: is86,
-            sort_order: idx,
+            modifiers: Array.isArray(it.modifierGroupReferences) ? it.modifierGroupReferences : null,
+            available_online: true,
+            is_86: it.outOfStock === true,
+            sort_order: typeof it.sortOrder === "number" ? it.sortOrder : idx,
           };
         }),
       });
     }
+    // Recurse into nested groups
+    const sub: any[] = Array.isArray(g.menuGroups) ? g.menuGroups : [];
+    for (const child of sub) walkGroup(child, g.name);
+  };
+
+  for (const menu of menus) {
+    if (!isOnline(menu?.visibility)) continue;
+    const groups: any[] = Array.isArray(menu?.menuGroups) ? menu.menuGroups : [];
+    for (const g of groups) walkGroup(g);
   }
 
   // Upsert categories
