@@ -35,10 +35,13 @@ const LazyImage = ({
   const imgRef = useRef<HTMLImageElement>(null);
   const pictureRef = useRef<HTMLPictureElement>(null);
 
-  // Auto-generate optimized paths if not provided
+  // Only auto-generate AVIF/WebP variants for LOCAL assets.
+  // External URLs (e.g. Toast S3 CDN) won't have matching .avif/.webp siblings,
+  // and requesting non-existent variants can prevent the <picture> from rendering.
+  const isExternal = /^https?:\/\//i.test(src);
   const optimizedPaths = getOptimizedPaths(src);
-  const finalAvifSrc = avifSrc || optimizedPaths.avif;
-  const finalWebpSrc = webpSrc || optimizedPaths.webp;
+  const finalAvifSrc = avifSrc || (isExternal ? undefined : optimizedPaths.avif);
+  const finalWebpSrc = webpSrc || (isExternal ? undefined : optimizedPaths.webp);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,14 +79,14 @@ const LazyImage = ({
       
       <picture ref={pictureRef}>
         {/* AVIF format - best compression, lossless quality */}
-        {isInView && (
+        {isInView && finalAvifSrc && (
           <source 
             srcSet={finalAvifSrc} 
             type="image/avif"
           />
         )}
         {/* WebP format - good fallback */}
-        {isInView && (
+        {isInView && finalWebpSrc && (
           <source 
             srcSet={finalWebpSrc} 
             type="image/webp"
