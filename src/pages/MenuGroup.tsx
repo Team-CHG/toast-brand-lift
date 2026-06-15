@@ -62,7 +62,7 @@ const MenuGroup = () => {
       }
       const { data: cats } = await supabase
         .from("menu_categories")
-        .select("id, slug, name, description, image_url, menu_items(id)")
+        .select("id, slug, name, description, image_url, menu_items!inner(id)")
         .eq("group_id", g.id)
         .eq("is_active", true)
         .eq("menu_items.is_active", true)
