@@ -14,7 +14,214 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      menu_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          group_id: string
+          id: string
+          image_url: string | null
+          is_active: boolean
+          name: string
+          slug: string
+          sort_order: number
+          toast_guid: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          group_id: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name: string
+          slug: string
+          sort_order?: number
+          toast_guid: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          group_id?: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          name?: string
+          slug?: string
+          sort_order?: number
+          toast_guid?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_categories_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "menu_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      menu_groups: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          last_synced_at: string | null
+          name: string
+          slug: string
+          toast_guid: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_synced_at?: string | null
+          name: string
+          slug: string
+          toast_guid: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          last_synced_at?: string | null
+          name?: string
+          slug?: string
+          toast_guid?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      menu_items: {
+        Row: {
+          allergens: string[] | null
+          available_online: boolean
+          calories: number | null
+          category_id: string
+          created_at: string
+          description: string | null
+          group_id: string
+          id: string
+          image_url: string | null
+          is_86: boolean
+          is_active: boolean
+          modifiers: Json | null
+          name: string
+          price: number | null
+          slug: string
+          sort_order: number
+          toast_guid: string
+          updated_at: string
+        }
+        Insert: {
+          allergens?: string[] | null
+          available_online?: boolean
+          calories?: number | null
+          category_id: string
+          created_at?: string
+          description?: string | null
+          group_id: string
+          id?: string
+          image_url?: string | null
+          is_86?: boolean
+          is_active?: boolean
+          modifiers?: Json | null
+          name: string
+          price?: number | null
+          slug: string
+          sort_order?: number
+          toast_guid: string
+          updated_at?: string
+        }
+        Update: {
+          allergens?: string[] | null
+          available_online?: boolean
+          calories?: number | null
+          category_id?: string
+          created_at?: string
+          description?: string | null
+          group_id?: string
+          id?: string
+          image_url?: string | null
+          is_86?: boolean
+          is_active?: boolean
+          modifiers?: Json | null
+          name?: string
+          price?: number | null
+          slug?: string
+          sort_order?: number
+          toast_guid?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_items_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "menu_categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "menu_items_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "menu_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      menu_sync_logs: {
+        Row: {
+          categories_synced: number | null
+          created_at: string
+          duration_ms: number | null
+          error: string | null
+          group_id: string | null
+          group_slug: string | null
+          id: string
+          items_removed: number | null
+          items_synced: number | null
+          status: string
+        }
+        Insert: {
+          categories_synced?: number | null
+          created_at?: string
+          duration_ms?: number | null
+          error?: string | null
+          group_id?: string | null
+          group_slug?: string | null
+          id?: string
+          items_removed?: number | null
+          items_synced?: number | null
+          status: string
+        }
+        Update: {
+          categories_synced?: number | null
+          created_at?: string
+          duration_ms?: number | null
+          error?: string | null
+          group_id?: string | null
+          group_slug?: string | null
+          id?: string
+          items_removed?: number | null
+          items_synced?: number | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_sync_logs_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "menu_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

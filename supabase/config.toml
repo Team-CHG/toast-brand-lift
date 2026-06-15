@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.send-form-email]
 verify_jwt = false
+
+[functions.sync-toast-menus]
+verify_jwt = false

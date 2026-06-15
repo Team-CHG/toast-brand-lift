@@ -40,6 +40,9 @@ const ToastMtPleasant = lazy(() => import("./pages/locations/ToastMtPleasant"));
 const ToastWestAshley = lazy(() => import("./pages/locations/ToastWestAshley"));
 const ToastSummerville = lazy(() => import("./pages/locations/ToastSummerville"));
 const ToastSavannah = lazy(() => import("./pages/locations/ToastSavannah"));
+const MenuGroup = lazy(() => import("./pages/MenuGroup"));
+const MenuCategory = lazy(() => import("./pages/MenuCategory"));
+const MenuItemPage = lazy(() => import("./pages/MenuItem"));
 
 const queryClient = new QueryClient();
 
@@ -66,6 +69,9 @@ const App = () => (
             <Route path="/locations/toast-west-ashley" element={<ToastWestAshley />} />
             <Route path="/locations/toast-summerville" element={<ToastSummerville />} />
             <Route path="/locations/toast-savannah" element={<ToastSavannah />} />
+            <Route path="/menus/:group" element={<MenuGroup />} />
+            <Route path="/menus/:group/:category" element={<MenuCategory />} />
+            <Route path="/menus/:group/:category/:item" element={<MenuItemPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/catering" element={<Catering />} />
             <Route path="/contact" element={<Contact />} />
