@@ -65,6 +65,9 @@ const MenuGroup = () => {
         .select("id, slug, name, description, image_url, menu_items(id)")
         .eq("group_id", g.id)
         .eq("is_active", true)
+        .eq("menu_items.is_active", true)
+        .eq("menu_items.available_online", true)
+        .eq("menu_items.is_86", false)
         .order("sort_order", { ascending: true });
       if (cancelled) return;
       const mapped: Category[] = (cats ?? [])
