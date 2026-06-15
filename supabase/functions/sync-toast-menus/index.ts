@@ -68,6 +68,8 @@ async function syncGroup(
 ): Promise<{ categories: number; items: number; removed: number }> {
   const token = await getToastToken();
   const data = await fetchMenus(group.toast_guid, token);
+  console.log(`[${group.slug}] top-level keys:`, Object.keys(data || {}));
+  console.log(`[${group.slug}] sample:`, JSON.stringify(data).slice(0, 2000));
 
   // Toast v2 menus response shape:
   // { menus: [ { name, guid, groups: [ { name, guid, description, image, items: [ { guid, name, description, price, image, visibility, ... } ] } ] } ] }
