@@ -202,9 +202,13 @@ const LocationsMap: React.FC<LocationsMapProps> = ({
                     Order Online
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="sm">
+                <Button
+                  asChild
+                  size="sm"
+                  className="bg-highlight text-highlight-foreground font-bold shadow-md shadow-highlight/30 ring-2 ring-highlight/40 hover:bg-highlight/90 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
                   <a href={selectedLocation.reviewUrl} target="_blank" rel="noopener noreferrer">
-                    Review Us
+                    ⭐ Review Us
                   </a>
                 </Button>
                 {selectedLocation.waitlistUrl && <Button asChild variant="secondary" size="sm">
