@@ -44,7 +44,7 @@ const locations: Location[] = [{
   orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
-  reviewUrl: "https://share.google/nrqiLhbcNspQ4g9vC",
+  reviewUrl: "https://g.page/r/Cf1kHg4xwRH-EAE/review",
   embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
   image: toastKingImg
 }, {
