@@ -108,8 +108,14 @@ const Locations = () => {
                       <Button asChild size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                         <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">Order Online</a>
                       </Button>
-                      <Button asChild variant="outline" size="sm" className="w-full rounded-full border-accent/20">
-                        <a href={location.reviewUrl} target="_blank" rel="noopener noreferrer">Review Us</a>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="w-full rounded-full bg-highlight text-highlight-foreground font-bold shadow-lg shadow-highlight/30 ring-2 ring-highlight/40 hover:bg-highlight/90 hover:shadow-xl hover:shadow-highlight/40 hover:-translate-y-0.5 transition-all animate-pulse-slow"
+                      >
+                        <a href={location.reviewUrl} target="_blank" rel="noopener noreferrer" aria-label={`Leave a Google review for ${location.name}`}>
+                          ⭐ Review Us
+                        </a>
                       </Button>
                       {location.waitlistUrl && (
                         <Button asChild size="sm" className="w-full bg-complementary hover:bg-complementary/80 text-primary font-semibold rounded-full">
