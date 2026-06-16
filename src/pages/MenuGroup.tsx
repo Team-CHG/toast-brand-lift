@@ -328,18 +328,18 @@ const MenuGroup = () => {
                         }`}
                       >
                         <div
-                          className={`w-14 h-14 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center relative ${
+                          className={`w-14 h-14 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center ${
                             isRed ? "bg-white/20" : "bg-complementary"
                           }`}
                         >
                           {cat.image_url ? (
-                            <div className="absolute inset-0 [&>div]:w-full [&>div]:h-full [&_picture]:block [&_picture]:w-full [&_picture]:h-full">
-                              <LazyImage
-                                src={cat.image_url}
-                                alt={cat.name}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
+                            <img
+                              src={cat.image_url}
+                              alt={cat.name}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-full h-full object-cover"
+                            />
                           ) : (
                             <Utensils
                               className={`w-6 h-6 ${
