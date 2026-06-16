@@ -103,11 +103,13 @@ const MenuGroup = () => {
 
   const renderImage = (src: string | null, alt: string, className = "") =>
     src ? (
-      <LazyImage
-        src={src}
-        alt={alt}
-        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${className}`}
-      />
+      <div className="absolute inset-0 [&>div]:w-full [&>div]:h-full [&_picture]:w-full [&_picture]:h-full [&_picture]:block">
+        <LazyImage
+          src={src}
+          alt={alt}
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${className}`}
+        />
+      </div>
     ) : (
       <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent/80 to-primary/70" />
     );
