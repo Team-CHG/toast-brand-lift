@@ -14,17 +14,17 @@ const GROUP_META: Record<string, { name: string; description: string }> = {
   downtown: {
     name: "Downtown Locations Menu",
     description:
-      "Browse the full Toast All Day menu for our Downtown locations — Toast! on Meeting and Toast! on King — including breakfast, brunch, and lunch favorites with fresh, locally-sourced ingredients.",
+      "Browse the full Toast All Day menu for our Downtown locations, Toast! on Meeting and Toast! on King, including breakfast, brunch, and lunch favorites with fresh, locally-sourced ingredients.",
   },
   suburbs: {
     name: "Suburb Locations Menu",
     description:
-      "Browse the full Toast All Day menu for our suburb locations — Toast! Mt. Pleasant, Toast! West Ashley, and Toast! Summerville — including breakfast, brunch, and lunch favorites.",
+      "Browse the full Toast All Day menu for our suburb locations, Toast! Mt. Pleasant, Toast! West Ashley, and Toast! Summerville, including breakfast, brunch, and lunch favorites.",
   },
   savannah: {
     name: "Savannah Location Menu",
     description:
-      "Browse the full Toast All Day menu for our Savannah, GA location — breakfast, brunch, and lunch served fresh on Broughton Street.",
+      "Browse the full Toast All Day menu for our Savannah, GA location: breakfast, brunch, and lunch served fresh on Broughton Street.",
   },
 };
 
