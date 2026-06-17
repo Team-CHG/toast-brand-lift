@@ -93,11 +93,11 @@ const MenuCategory = () => {
   if (notFound) return <Navigate to={`/menus/${group}`} replace />;
 
   const title = cat
-    ? `${cat.name} — ${groupName} Menu | Toast All Day`
+    ? `${cat.name} - ${groupName} Menu | Toast All Day`
     : "Menu | Toast All Day";
   const description = cat
     ? cat.description ??
-      `Browse ${cat.name.toLowerCase()} on the Toast All Day ${groupName} menu — fresh, locally-sourced breakfast, brunch, and lunch.`
+      `Browse ${cat.name.toLowerCase()} on the Toast All Day ${groupName} menu - fresh, locally-sourced breakfast, brunch, and lunch.`
     : "";
 
   return (

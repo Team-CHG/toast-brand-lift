@@ -65,11 +65,11 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative block aspect-[4/5] overflow-hidden rounded-xl shadow-md hover:shadow-2xl ring-1 ring-accent/10 hover:ring-accent/40 group-hover:-translate-y-1 transition-all duration-300"
-                  aria-label={`${brand.name} — ${brand.tag} by Charleston Hospitality Group`}
+                  aria-label={`${brand.name} - ${brand.tag} by Charleston Hospitality Group`}
                 >
                   <img
                     src={brand.img}
-                    alt={`${brand.name} — ${brand.tag} restaurant by Charleston Hospitality Group`}
+                    alt={`${brand.name} - ${brand.tag} restaurant by Charleston Hospitality Group`}
                     loading="lazy"
                     width={400}
                     height={500}

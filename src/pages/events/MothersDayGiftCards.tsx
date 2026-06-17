@@ -136,7 +136,7 @@ const GiftCardsPage = () => {
                 <span className="text-highlight">Great Times.</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                Whether it is a birthday, anniversary, promotion, or just because — a Toast All Day
+                Whether it is a birthday, anniversary, promotion, or just because - a Toast All Day
                 eGift Card is the perfect way to say{' '}
                 <strong className="text-primary">you matter</strong>. Delivered in minutes or
                 scheduled for the perfect surprise, it is an invitation to gather, toast, and
@@ -237,7 +237,7 @@ const GiftCardsPage = () => {
               <p className="text-lg md:text-xl mb-10 leading-relaxed text-white/95 max-w-3xl mx-auto">
                 Your Toast All Day eGift Card is not just for brunch. It unlocks every seat at
                 the table across <strong>Charleston Hospitality Group</strong>'s family of
-                restaurants — from elevated Southern fare to honky-tonk classics and wood-fired
+                restaurants - from elevated Southern fare to honky-tonk classics and wood-fired
                 pizza. One card. Endless reasons to celebrate.
               </p>
 
@@ -301,7 +301,7 @@ const GiftCardsPage = () => {
               </h2>
               <p className="text-lg text-muted-foreground">
                 Sending a Toast All Day eGift Card takes less than a minute. Pick a location,
-                choose an amount, and deliver joy straight to their inbox — or schedule it for
+                choose an amount, and deliver joy straight to their inbox - or schedule it for
                 the perfect moment.
               </p>
             </div>
@@ -312,7 +312,7 @@ const GiftCardsPage = () => {
               {
                 step: "01",
                 title: "Choose a Location",
-                body: "Pick their favorite Toast All Day spot — or any CHG restaurant. Our eGift Cards are redeemable across our entire family of restaurants in Charleston, Savannah, and beyond.",
+                body: "Pick their favorite Toast All Day spot - or any CHG restaurant. Our eGift Cards are redeemable across our entire family of restaurants in Charleston, Savannah, and beyond.",
                 Icon: MapPin,
               },
               {
@@ -324,7 +324,7 @@ const GiftCardsPage = () => {
               {
                 step: "03",
                 title: "They Celebrate",
-                body: "Your recipient receives a beautiful digital card by email and can redeem it for brunch, drinks, dinner, or anything on the menu — no expiration, ever.",
+                body: "Your recipient receives a beautiful digital card by email and can redeem it for brunch, drinks, dinner, or anything on the menu - no expiration, ever.",
                 Icon: Coffee,
               },
             ].map(({ step, title, body, Icon }) => (
@@ -477,7 +477,7 @@ const GiftCardsPage = () => {
               <strong className="text-highlight font-bold">One Card, Every Table.</strong>{" "}
               Toast All Day eGift Cards are valid at all Toast All Day locations{" "}
               <strong className="text-highlight font-bold">
-                and across our family of sister restaurants — Eli's Table, John King Grill, Honkytonk
+                and across our family of sister restaurants - Eli's Table, John King Grill, Honkytonk
                 Saloon, Toasted Crust, and Cachita's Kitchen
               </strong>
               . No expiration date ever. Gift cards are valid beginning the day after purchase and

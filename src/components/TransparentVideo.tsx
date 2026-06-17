@@ -55,10 +55,10 @@ export default function TransparentVideo({ src, className, style }: TransparentV
 
         // White removal: high brightness + low saturation = white background
         if (min > 220 && saturation < 0.08) {
-          // Pure white — fully transparent
+          // Pure white - fully transparent
           data[i + 3] = 0;
         } else if (min > 190 && saturation < 0.12) {
-          // Near-white edge pixels — fade proportionally
+          // Near-white edge pixels - fade proportionally
           const alpha = 255 - Math.min(255, ((min - 190) / 30) * 255);
           data[i + 3] = Math.max(0, alpha);
         }
