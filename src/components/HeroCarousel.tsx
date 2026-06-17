@@ -37,7 +37,7 @@ const orderLocations = [
  * The single `<picture>`/`<img>` below is the permanent LCP candidate on
  * mobile, tablet, and desktop. It is rendered from the initial React tree
  * with no conditional logic, no video swap, no carousel, no framer-motion
- * wrapper, and no entrance animation — so it commits on first paint and
+ * wrapper, and no entrance animation - so it commits on first paint and
  * never changes after hydration. This makes LCP deterministic across runs.
  */
 const HeroCarousel = () => {
@@ -78,7 +78,7 @@ const HeroCarousel = () => {
         <source src={heroVideoDesktop} type="video/mp4" />
       </video>
 
-      {/* Static gradient overlay — single-stop on mobile (cheaper to composite), richer on desktop */}
+      {/* Static gradient overlay - single-stop on mobile (cheaper to composite), richer on desktop */}
       <div className="absolute inset-0 bg-foreground/50 md:bg-gradient-to-t md:from-foreground/60 md:via-accent/10 md:to-transparent pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 text-center mb-4 md:mb-32">
@@ -127,7 +127,7 @@ const HeroCarousel = () => {
         </div>
       </div>
 
-      {/* Static scroll indicator — desktop only to keep the mobile
+      {/* Static scroll indicator - desktop only to keep the mobile
           above-the-fold DOM as small as possible. */}
       <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <ChevronDown className="w-8 h-8 text-white/60" />

@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// AVIF version is ~204KB vs 1.2MB PNG — ~1MB saved on every page that mounts this section.
+// AVIF version is ~204KB vs 1.2MB PNG - ~1MB saved on every page that mounts this section.
 import giftcardDesign from "@/assets/giftcard-design.avif";
 
 interface GiftCardSectionProps {

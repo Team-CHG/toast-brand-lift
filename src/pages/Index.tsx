@@ -11,7 +11,7 @@ const FeatureSections = lazy(() => import("@/components/FeatureSections"));
 const LocationsMap = lazy(() => import("@/components/LocationsMap"));
 const Footer = lazy(() => import("@/components/Footer"));
 const SideDrawer = lazy(() => import("@/components/SideDrawer"));
-// AVIF variant is ~6 KB vs 20 KB for the WebP — used as a tiled section
+// AVIF variant is ~6 KB vs 20 KB for the WebP - used as a tiled section
 // background, decoded once and cached.
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import { MapPin, Sparkles } from "lucide-react";
@@ -45,7 +45,7 @@ const Index = () => {
         >
           <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
 
-          {/* Decorative blurs — desktop only. blur-3xl is expensive to
+          {/* Decorative blurs - desktop only. blur-3xl is expensive to
               composite on mobile GPUs and tanks Speed Index. */}
           <div className="hidden md:block absolute top-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 bg-highlight/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />

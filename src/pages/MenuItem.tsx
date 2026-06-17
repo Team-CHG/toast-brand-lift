@@ -137,7 +137,7 @@ const MenuItemPage = () => {
   if (notFound) return <Navigate to={`/menus/${group}/${category}`} replace />;
 
   const title = item
-    ? `${item.name} — ${groupName} Menu | Toast All Day`
+    ? `${item.name} - ${groupName} Menu | Toast All Day`
     : "Menu Item | Toast All Day";
   const description = item
     ? item.description ??

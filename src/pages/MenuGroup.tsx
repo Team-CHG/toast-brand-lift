@@ -14,17 +14,17 @@ const GROUP_META: Record<string, { name: string; description: string }> = {
   downtown: {
     name: "Downtown Locations Menu",
     description:
-      "Browse the full Toast All Day menu for our Downtown locations — Toast! on Meeting and Toast! on King — including breakfast, brunch, and lunch favorites with fresh, locally-sourced ingredients.",
+      "Browse the full Toast All Day menu for our Downtown locations, Toast! on Meeting and Toast! on King, including breakfast, brunch, and lunch favorites with fresh, locally-sourced ingredients.",
   },
   suburbs: {
     name: "Suburb Locations Menu",
     description:
-      "Browse the full Toast All Day menu for our suburb locations — Toast! Mt. Pleasant, Toast! West Ashley, and Toast! Summerville — including breakfast, brunch, and lunch favorites.",
+      "Browse the full Toast All Day menu for our suburb locations, Toast! Mt. Pleasant, Toast! West Ashley, and Toast! Summerville, including breakfast, brunch, and lunch favorites.",
   },
   savannah: {
     name: "Savannah Location Menu",
     description:
-      "Browse the full Toast All Day menu for our Savannah, GA location — breakfast, brunch, and lunch served fresh on Broughton Street.",
+      "Browse the full Toast All Day menu for our Savannah, GA location: breakfast, brunch, and lunch served fresh on Broughton Street.",
   },
 };
 
@@ -321,14 +321,14 @@ const MenuGroup = () => {
                       <Link
                         key={cat.id}
                         to={`/menus/${group}/${cat.slug}`}
-                        className={`group rounded-[1.5rem] p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-4 ring-1 ${
+                        className={`group rounded-[1.5rem] p-4 md:p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 ring-1 ${
                           isRed
                             ? "bg-highlight text-highlight-foreground ring-highlight/40"
                             : "bg-card ring-accent/15"
                         }`}
                       >
                         <div
-                          className={`w-14 h-14 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center ${
+                          className={`w-full sm:w-14 h-24 sm:h-14 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center ${
                             isRed ? "bg-white/20" : "bg-complementary"
                           }`}
                         >
@@ -342,7 +342,7 @@ const MenuGroup = () => {
                             />
                           ) : (
                             <Utensils
-                              className={`w-6 h-6 ${
+                              className={`w-8 h-8 sm:w-6 sm:h-6 ${
                                 isRed ? "text-white" : "text-accent"
                               }`}
                             />
@@ -350,14 +350,14 @@ const MenuGroup = () => {
                         </div>
                         <div className="min-w-0 flex-1">
                           <h3
-                            className={`font-bold truncate ${
+                            className={`font-bold text-sm sm:text-base leading-tight line-clamp-2 sm:truncate ${
                               isRed ? "text-white" : "text-primary"
                             }`}
                           >
                             {cat.name}
                           </h3>
                           <p
-                            className={`text-xs ${
+                            className={`text-xs mt-0.5 ${
                               isRed
                                 ? "text-white/80"
                                 : "text-muted-foreground"
@@ -368,7 +368,7 @@ const MenuGroup = () => {
                           </p>
                         </div>
                         <ArrowRight
-                          className={`w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1 ${
+                          className={`w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1 hidden sm:block ${
                             isRed ? "text-white" : "text-highlight"
                           }`}
                         />
