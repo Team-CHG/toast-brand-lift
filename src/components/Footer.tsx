@@ -204,13 +204,13 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Follow the CHG Family</h4>
             <ul className="space-y-2">
               {[
-                { handle: "@toastallday", url: "https://www.instagram.com/toastofcharleston/" },
+                { handle: "@toastofcharleston", url: "https://www.instagram.com/toastofcharleston/" },
                 { handle: "@elistable", url: "https://www.instagram.com/elistable/" },
-                { handle: "@johnkingchs", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
+                { handle: "@johnkinggrill_pianobar", url: "https://www.instagram.com/johnkinggrill_pianobar/" },
                 { handle: "@honkytonkladson", url: "https://www.instagram.com/honkytonkladson/" },
-                { handle: "@toastedcrustchs", url: "https://www.instagram.com/toastedcrustcharleston/" },
+                { handle: "@toastedcrustcharleston", url: "https://www.instagram.com/toastedcrustcharleston/" },
                 { handle: "@cachitaskitchen", url: "https://www.instagram.com/cachitaskitchen/" },
-                { handle: "@charlestongroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
+                { handle: "@charlestonhospitalitygroup", url: "https://www.instagram.com/charlestonhospitalitygroup/" },
               ].map((item) => (
                 <li key={item.handle}>
                   <a
