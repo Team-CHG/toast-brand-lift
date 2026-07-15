@@ -90,8 +90,6 @@ const RewardsWidget = () => {
           </p>
         </div>
 
-
-
         {!showLocations ? (
           <Button
             size="sm"
