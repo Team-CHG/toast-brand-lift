@@ -52,18 +52,31 @@ const RewardsWidget = () => {
         <div className="relative text-center mb-3">
           <div className="flex items-center justify-center gap-2 mb-1">
             <Gift className="h-5 w-5 text-highlight animate-[widget-bounce_1.4s_ease-in-out_infinite]" />
-            <h3 className="text-base font-bold text-primary">
-              Celebrate your birthday at Toast
-            </h3>
+            <h3 className="text-base font-bold text-primary">Get $10 for every $100 spent!</h3>
+          </div>
+          <p className="text-xs text-muted-foreground">Join Toast! Rewards and start earning today.</p>
+        </div>
+
+        <div className="relative space-y-2 mb-3 text-xs">
+          <div className="space-y-1.5 text-foreground">
+            <p>A $10 reward will automatically be applied to your account upon spending $100 at any Toast! All Day location.</p>
+            <p>The more you spend, the more points you accumulate. You'll also receive exclusive invites to special events, try new menu items before anyone else, and get special perks!</p>
+            <p className="font-semibold text-accent">Earn double points Monday-Friday 12-3pm.</p>
+          </div>
+
+          <div className="rounded-lg border border-highlight/30 bg-highlight/10 p-2.5 space-y-1">
+            <div className="flex items-center justify-center gap-1.5">
+              <Sparkles className="h-3.5 w-3.5 text-highlight" />
+              <h4 className="text-sm font-bold text-primary text-center">Celebrate your birthday at Toast</h4>
+              <Sparkles className="h-3.5 w-3.5 text-highlight" />
+            </div>
+            <p className="text-accent-foreground font-bold text-sm bg-gradient-to-r from-highlight to-accent py-1.5 px-2 rounded text-center text-white shadow-sm">
+              Get $10 and a bottle of champagne on us!
+            </p>
+            <p className="text-foreground text-center text-xs">Sign up now and celebrate your big day with us.</p>
           </div>
         </div>
 
-        <div className="relative space-y-1.5 mb-3 text-xs">
-          <p className="text-accent-foreground font-bold text-sm bg-gradient-to-r from-highlight to-accent py-1.5 px-2 rounded text-center text-white shadow-sm">
-            Get $10 and a bottle of champagne on us!
-          </p>
-          <p className="text-foreground text-center pt-1">Sign up now and celebrate your big day with us.</p>
-        </div>
 
         {!showLocations ? (
           <Button
