@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, Sparkles, PartyPopper, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 
@@ -21,9 +21,10 @@ const RewardsWidget = () => {
     return (
       <button
         onClick={handleMinimizedClick}
-        className="fixed bottom-4 left-4 z-[90] bg-[#ca252a] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold animate-in slide-in-from-bottom-4 fade-in"
+        className="fixed bottom-4 left-4 z-[90] bg-[#ca252a] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold animate-in slide-in-from-bottom-4 fade-in flex items-center gap-2"
       >
-        Get $10
+        <PartyPopper className="h-4 w-4 animate-[widget-bounce_1.4s_ease-in-out_infinite]" />
+        Birthday Perks
       </button>
     );
   }
@@ -31,37 +32,49 @@ const RewardsWidget = () => {
   // Expanded widget at bottom left
   if (state === "expanded") {
     return (
-      <div className="fixed bottom-4 left-4 z-[90] bg-card rounded-xl shadow-2xl w-72 p-4 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300">
+      <div className="fixed bottom-4 left-4 z-[90] bg-card rounded-xl shadow-2xl w-72 p-4 animate-in zoom-in-95 slide-in-from-bottom-4 fade-in duration-300 overflow-hidden">
+        {/* Celebration confetti */}
+        <span aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          <Sparkles className="absolute left-3 top-2 h-3 w-3 text-highlight animate-[confetti-float_2.4s_ease-in-out_infinite]" />
+          <PartyPopper className="absolute right-8 top-1 h-3.5 w-3.5 text-accent animate-[confetti-float_2.8s_ease-in-out_infinite_0.5s]" />
+          <Sparkles className="absolute left-8 top-8 h-2.5 w-2.5 text-highlight/80 animate-[confetti-float_3s_ease-in-out_infinite_0.9s]" />
+          <Sparkles className="absolute right-14 top-10 h-2.5 w-2.5 text-accent/80 animate-[confetti-float_2.6s_ease-in-out_infinite_0.3s]" />
+          <PartyPopper className="absolute left-2 bottom-14 h-3 w-3 text-highlight animate-[confetti-float_3.2s_ease-in-out_infinite_1.1s]" />
+          <Sparkles className="absolute right-3 bottom-16 h-3 w-3 text-accent animate-[confetti-float_2.2s_ease-in-out_infinite_0.7s]" />
+        </span>
         <button
           onClick={handleCloseExpanded}
-          className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted transition-colors"
+          className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted transition-colors z-10"
         >
           <X className="h-4 w-4 text-muted-foreground" />
         </button>
 
-        <div className="text-center mb-3">
-          <h3 className="text-base font-bold text-primary">
-            Sign up for rewards
-          </h3>
+        <div className="relative text-center mb-3">
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <Gift className="h-5 w-5 text-highlight animate-[widget-bounce_1.4s_ease-in-out_infinite]" />
+            <h3 className="text-base font-bold text-primary">
+              Celebrate your birthday at Toast
+            </h3>
+          </div>
         </div>
 
-        <div className="space-y-1.5 mb-3 text-xs">
-          <p className="text-accent font-bold text-sm bg-accent/10 py-1 px-2 rounded text-center">Get $5 instantly for signing up!</p>
-          <p className="text-foreground"><span className="font-semibold">$10</span> for every $100 spent</p>
-          <p className="text-foreground"><span className="font-semibold">2x points</span> Mon–Fri, 12–3 PM</p>
-          <p className="text-foreground"><span className="font-semibold">Birthday surprise</span> included!</p>
+        <div className="relative space-y-1.5 mb-3 text-xs">
+          <p className="text-accent-foreground font-bold text-sm bg-gradient-to-r from-highlight to-accent py-1.5 px-2 rounded text-center text-white shadow-sm">
+            Get $10 and a bottle of champagne on us!
+          </p>
+          <p className="text-foreground text-center pt-1">Sign up now and celebrate your big day with us.</p>
         </div>
 
         {!showLocations ? (
           <Button
             size="sm"
-            className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
+            className="relative w-full bg-accent hover:bg-accent/90 text-accent-foreground text-sm"
             onClick={() => setShowLocations(true)}
           >
-            JOIN REWARDS <ChevronDown className="ml-1 h-4 w-4" />
+            SIGN UP NOW <ChevronDown className="ml-1 h-4 w-4" />
           </Button>
         ) : (
-          <div className="space-y-1 mt-1">
+          <div className="relative space-y-1 mt-1">
             <p className="text-xs font-semibold text-muted-foreground text-center">Select a location:</p>
             {[
               { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" },
@@ -83,6 +96,16 @@ const RewardsWidget = () => {
             ))}
           </div>
         )}
+        <style>{`
+          @keyframes confetti-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-6px) rotate(20deg); opacity: 1; }
+          }
+          @keyframes widget-bounce {
+            0%, 100% { transform: translateY(0) rotate(-8deg); }
+            50% { transform: translateY(-3px) rotate(10deg); }
+          }
+        `}</style>
       </div>
     );
   }
