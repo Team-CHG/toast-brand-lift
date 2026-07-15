@@ -23,8 +23,8 @@ const RewardsWidget = () => {
         onClick={handleMinimizedClick}
         className="fixed bottom-4 left-4 z-[90] bg-[#ca252a] text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold animate-in slide-in-from-bottom-4 fade-in flex items-center gap-2"
       >
-        <PartyPopper className="h-4 w-4 animate-[widget-bounce_1.4s_ease-in-out_infinite]" />
-        Birthday Perks
+        <Gift className="h-4 w-4 animate-[widget-bounce_1.4s_ease-in-out_infinite]" />
+        Get $10
       </button>
     );
   }
