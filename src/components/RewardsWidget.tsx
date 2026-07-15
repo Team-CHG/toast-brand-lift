@@ -86,7 +86,7 @@ const RewardsWidget = () => {
             Get $10 and a bottle of champagne on us!
           </p>
           <p className="text-foreground text-center text-xs">
-            Sign up now and celebrate your big day with us. Anniversary rewards coming soon.
+            Sign up now and celebrate your big day with us.
           </p>
         </div>
 
