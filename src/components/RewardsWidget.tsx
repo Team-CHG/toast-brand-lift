@@ -76,19 +76,6 @@ const RewardsWidget = () => {
           </li>
         </ul>
 
-        <div className="relative rounded-lg border border-highlight/30 bg-highlight/10 p-2.5 space-y-1.5 mb-3">
-          <div className="flex items-center justify-center gap-1.5">
-            <Sparkles className="h-3.5 w-3.5 text-highlight" />
-            <h4 className="text-sm font-bold text-primary text-center">Birthday & Anniversary Celebration</h4>
-            <Sparkles className="h-3.5 w-3.5 text-highlight" />
-          </div>
-          <p className="text-accent-foreground font-bold text-sm bg-gradient-to-r from-highlight to-accent py-1.5 px-2 rounded text-center text-white shadow-sm">
-            Get $10 and a bottle of champagne on us!
-          </p>
-          <p className="text-foreground text-center text-xs">
-            Sign up now and celebrate your big day with us.
-          </p>
-        </div>
 
         {!showLocations ? (
           <Button
