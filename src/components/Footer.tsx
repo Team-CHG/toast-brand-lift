@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Facebook, Instagram, Linkedin, Gift, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.avif";
 import {
