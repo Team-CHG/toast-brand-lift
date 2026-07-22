@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Facebook, Instagram, Linkedin, Gift, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.avif";
 import {
@@ -199,6 +199,9 @@ const Footer = () => {
               </a>
               <a href="https://www.linkedin.com/company/toast-all-day" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors" aria-label="Follow Toast All Day on LinkedIn">
                 <Linkedin className="h-6 w-6" aria-hidden="true" />
+              </a>
+              <a href="https://www.youtube.com/@ToastAllDayCHS" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:text-accent transition-colors" aria-label="Follow Toast All Day on YouTube">
+                <Youtube className="h-6 w-6" aria-hidden="true" />
               </a>
             </div>
             <p className="text-sm opacity-80">Tag us in your photos: #ToastAllDay</p>
