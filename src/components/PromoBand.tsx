@@ -7,7 +7,7 @@ const PromoBand = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-highlight via-highlight to-accent text-white py-2 px-10 sm:px-12 shadow-md">
+    <div className="fixed top-20 md:top-24 left-0 right-0 z-40 bg-gradient-to-r from-highlight via-highlight to-accent text-white py-2 px-10 sm:px-12 shadow-md">
       <a
         href="/gift-cards"
         className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity text-center"
