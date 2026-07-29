@@ -8,6 +8,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import toastLogoWebp from "@/assets/toast-logo-sm.webp";
+import toastLogoAvif from "@/assets/toast-logo-sm.avif";
+import toastLogoLargeWebp from "@/assets/toast-logo.webp";
+import toastLogoLargeAvif from "@/assets/toast-logo.avif";
+import toastLogoPng from "@/assets/toast-logo.png";
 
 const locations = [
   { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },
@@ -22,19 +26,34 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 border-b border-accent/10 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-accent/10 shadow-[0_2px_20px_-8px_rgba(119,157,199,0.25)]">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="hover:opacity-80 transition-opacity">
-              <img
-                src={toastLogoWebp}
-                alt="Toast All Day"
-                width={160}
-                height={64}
-                className="h-16 w-auto"
-                decoding="async"
-              />
+            <a
+              href="/"
+              aria-label="Toast All Day - Home"
+              className="group inline-flex items-center transition-transform duration-300 hover:scale-[1.03]"
+            >
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet={`${toastLogoAvif} 1x, ${toastLogoLargeAvif} 2x`}
+                />
+                <source
+                  type="image/webp"
+                  srcSet={`${toastLogoWebp} 1x, ${toastLogoLargeWebp} 2x`}
+                />
+                <img
+                  src={toastLogoPng}
+                  alt="Toast All Day"
+                  width={220}
+                  height={88}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-14 md:h-20 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.08)] transition-[filter] duration-300 group-hover:drop-shadow-[0_4px_10px_rgba(216,0,0,0.18)]"
+                />
+              </picture>
             </a>
           </div>
 
