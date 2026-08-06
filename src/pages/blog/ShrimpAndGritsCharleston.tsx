@@ -79,8 +79,12 @@ const ShrimpAndGritsCharleston = () => (
     <h2>How do we make ours?</h2>
     <p>
       Our grits go on early and get stirred all morning. The shrimp hit a hot pan with our sauce, then everything goes into the
-      bowl together so the grits soak up the drippings on the way to your table. Scallions on top. That's it. [confirm current
-      recipe details and any seasonal variations]
+      bowl together so the grits soak up the drippings on the way to your table. Scallions on top. That's it. No cream blanket,
+      no shortcuts, and no reinventing a dish that already works.
+    </p>
+    <p>
+      Want to see it on the menu before you come? Have a look at the <a href="/menus/downtown">downtown menu</a> and plan your
+      order on the drive over.
     </p>
     <p>
       If you want the wider context on this style of cooking, we wrote{" "}
@@ -112,11 +116,14 @@ const ShrimpAndGritsCharleston = () => (
     <h3>Is it spicy?</h3>
     <p>Ours has warmth, not heat. If you want it hotter, ask and we'll bring hot sauce.</p>
     <h3>Can you get it without pork?</h3>
-    <p>Ask your server and we'll do what we can. [confirm current substitution options]</p>
+    <p>Our team is happy to work with most dietary needs, so just ask your server and we'll do what the kitchen can.</p>
     <h3>Do you serve it all day?</h3>
     <p>Yes. Order it at 8 in the morning or 2 in the afternoon, same bowl.</p>
     <h3>Are the shrimp local?</h3>
-    <p>When the local season is running, yes. [confirm current sourcing]</p>
+    <p>
+      When the local season is running, yes. Carolina shrimp are seasonal, so outside of those months we source the best quality
+      we can find and cook them the same way.
+    </p>
 
     <h2>Come get a bowl</h2>
     <p>

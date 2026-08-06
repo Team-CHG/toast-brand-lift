@@ -97,6 +97,10 @@ const WhatIsLowcountryCuisine = () => (
       is not. If you want a walkthrough of the sweet side, read{" "}
       <Link to="/blog/southern-breakfast-classics">Southern breakfast classics explained</Link>.
     </p>
+    <p>
+      Ready to skip the reading and eat? Browse the <a href="/menus/downtown">downtown menu</a> and pick your first Lowcountry
+      plate.
+    </p>
 
     <h3>Is Lowcountry food spicy?</h3>
     <p>
@@ -123,7 +127,10 @@ const WhatIsLowcountryCuisine = () => (
       <Link to="/blog/best-brunch-savannah">Savannah breakfast and brunch guide</Link> covers that side.
     </p>
     <h3>When is shrimp season in South Carolina?</h3>
-    <p>Local shrimp typically run from late spring into fall. [confirm current local sourcing windows]</p>
+    <p>
+      Local shrimp typically run from late spring into fall. When they're in, you'll taste the difference, and{" "}
+      <Link to="/blog/shrimp-and-grits-charleston">our shrimp and grits guide</Link> explains why.
+    </p>
 
     <h2>Taste it for yourself</h2>
     <p>

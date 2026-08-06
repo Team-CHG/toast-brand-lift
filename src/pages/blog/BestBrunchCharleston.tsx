@@ -18,12 +18,12 @@ const faqs = [
   {
     question: "What time does brunch start?",
     answer:
-      "We serve the full menu from the moment we open until we close, so there is no separate brunch window. [confirm current brunch hours by location]",
+      "We serve the full menu from the moment we open until we close, so there is no separate brunch window. Check the locations page for the current hours at the restaurant nearest you.",
   },
   {
     question: "Is brunch in Charleston expensive?",
     answer:
-      "Most plates land in a normal sit-down breakfast range, and mimosas are priced so you can have a second one. [confirm current pricing]",
+      "Most plates land in a normal sit-down breakfast range, and mimosas are priced so you can have a second one. Current prices are listed on our online menu.",
   },
 ];
 
@@ -96,8 +96,12 @@ const BestBrunchCharleston = () => (
     <p>
       Mimosas, bloody marys, and coffee that keeps coming. We built the drink list to go with the food rather than to compete
       with it. There's a whole guide to that in{" "}
-      <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail rundown</Link>. [confirm current bottomless mimosa
-      availability and pricing]
+      <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail rundown</Link>. Mimosa and bloody mary offerings vary a
+      little by location, so glance at the <a href="/menus/downtown">current menu</a> before you order, or just ask your server
+      what's pouring today.
+    </p>
+    <p>
+      Hungry already? Pick your morning on the <Link to="/locations">locations page</Link> and walk in whenever you're ready.
     </p>
     <img
       src={shrimpImg}
@@ -127,8 +131,8 @@ const BestBrunchCharleston = () => (
     <p>Yes. That's the whole idea behind the name. Order pancakes at 2 in the afternoon and nobody will blink.</p>
     <h3>Are you good for large groups?</h3>
     <p>
-      We seat groups regularly, especially bachelorette parties and family reunions. Give the location a call ahead of time so we
-      can plan the table. [confirm large party policy]
+      We seat groups regularly, especially bachelorette parties and family reunions. Give your location a call ahead of time so
+      we can plan the table and get everyone sitting together.
     </p>
     <h3>Is there parking downtown?</h3>
     <p>
@@ -136,7 +140,10 @@ const BestBrunchCharleston = () => (
       park right out front.
     </p>
     <h3>Do you have vegetarian options?</h3>
-    <p>Plenty, including avocado toast and veggie omelets. [confirm current vegetarian and gluten-friendly items]</p>
+    <p>
+      Plenty, including avocado toast and veggie omelets. Our kitchen is happy to work with most dietary needs, so tell your
+      server what you're avoiding and we'll steer you to the right plate.
+    </p>
 
     <h2>Come see us</h2>
     <p>
