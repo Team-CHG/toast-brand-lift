@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Are there dog-friendly brunch spots in Charleston?",
     answer:
-      "Yes. Many Charleston restaurants with patios welcome leashed dogs in outdoor seating, including Toast! All Day. [confirm current patio pet policy by location]",
+      "Yes. Many Charleston restaurants with patios welcome leashed dogs in outdoor seating, including Toast! All Day. Outdoor seating varies by location, so call ahead if you're bringing your dog.",
   },
   {
     question: "Can dogs sit inside restaurants in South Carolina?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "Do you have water for dogs?",
-    answer: "Ask your server and we'll bring a bowl. [confirm availability by location]",
+    answer: "Ask your server and we'll bring water out for your dog whenever we can.",
   },
 ];
 
@@ -57,8 +57,8 @@ const DogFriendlyBrunchCharleston = () => (
       restaurant's discretion, while indoor dining rooms are off limits to everyone except service animals.
     </p>
     <p>
-      Patio availability varies by our location, so call ahead if bringing your dog is the deciding factor. [confirm current
-      outdoor seating and pet policy at each location]
+      Patio availability varies by our location, so call ahead if bringing your dog is the deciding factor. You can find phone
+      numbers and directions for every restaurant on our <Link to="/locations">locations page</Link>.
     </p>
     <img
       src={downtownImg}
@@ -104,11 +104,17 @@ const DogFriendlyBrunchCharleston = () => (
 
     <h2>Dog-friendly brunch questions</h2>
     <h3>Are all your patios dog friendly?</h3>
-    <p>[confirm which locations have outdoor seating that allows pets]</p>
+    <p>
+      Not every restaurant has outdoor seating, so it's worth a quick call before you load the car. Our downtown rooms are the
+      easiest to pair with a walk, as{" "}
+      <Link to="/blog/where-to-eat-downtown-charleston">our downtown Charleston eating guide</Link> lays out.
+    </p>
     <h3>Can you order takeout and eat in a park instead?</h3>
     <p>Absolutely, and on a hot day that's often the kinder choice.</p>
     <h3>Do you have anything for dogs on the menu?</h3>
-    <p>[confirm whether a plain dog treat or plain protein option is available]</p>
+    <p>
+      There's no dog menu, but ask your server and we'll see what plain, simple option the kitchen can send out.
+    </p>
     <h3>What about service animals?</h3>
     <p>Service animals are welcome anywhere in our restaurants, indoors included.</p>
 

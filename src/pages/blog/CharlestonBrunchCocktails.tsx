@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Where can you get bottomless mimosas in Charleston?",
     answer:
-      "Toast! All Day pours mimosas and bloody marys with brunch at our Charleston, Mt. Pleasant, West Ashley, Summerville, Ladson, and Savannah locations. [confirm current bottomless mimosa availability and pricing]",
+      "Toast! All Day pours mimosas and bloody marys with brunch at our Charleston, Mt. Pleasant, West Ashley, Summerville, Ladson, and Savannah locations. Check our online menu for the current brunch drink lineup.",
   },
   {
     question: "What is the best brunch cocktail to order?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "What time can you order brunch cocktails in South Carolina?",
     answer:
-      "South Carolina allows Sunday alcohol sales starting at 10 a.m. in most areas, and earlier the rest of the week. [confirm current local service times]",
+      "South Carolina allows Sunday alcohol sales starting at 10 a.m. in most areas, and earlier the rest of the week. Service times follow local rules at each location.",
   },
   {
     question: "Do you have non-alcoholic brunch drinks?",
@@ -55,8 +55,8 @@ const CharlestonBrunchCocktails = () => (
       half-and-half with warm juice from a carton is a sad thing, and you've probably had one.
     </p>
     <p>
-      We keep the bubbles cold and the pour generous. If you want to make an event of it, order a flight and try a few juices
-      across the table. [confirm current mimosa flight and bottomless offerings]
+      We keep the bubbles cold and the pour generous. If you want to make an event of it, order a round for the table and try a
+      few different juices. The <a href="/menus/downtown">current menu</a> has the day's brunch drink lineup.
     </p>
     <img
       src={diningRoomImg}
@@ -100,19 +100,27 @@ const CharlestonBrunchCocktails = () => (
       front, so plan a designated driver.
     </p>
     <p>
-      Groups are welcome and common. Call your location ahead for anything large so we can set the table properly. [confirm
-      current large party policy]
+      Groups are welcome and common. Call your location ahead for anything large so we can set the table properly and keep the
+      party together.
     </p>
 
     <h2>Charleston brunch cocktail questions</h2>
     <h3>Can you buy a bottle for the table?</h3>
-    <p>[confirm current bottle service options]</p>
+    <p>
+      Ask your server what's available that morning. If you're celebrating something, tell us when you call and we'll make sure
+      the table is set for it.
+    </p>
     <h3>Do you do bachelorette parties?</h3>
     <p>Constantly. Give us a heads up and we'll do what we can to seat you together.</p>
     <h3>Is there a happy hour?</h3>
-    <p>[confirm current happy hour or drink specials by location]</p>
+    <p>
+      Specials rotate, so check the menu page for your location or ask your server what's running that day.
+    </p>
     <h3>Do all locations serve alcohol?</h3>
-    <p>[confirm alcohol service by location]</p>
+    <p>
+      Brunch drinks are part of the experience across our restaurants. Find the spot nearest you on our{" "}
+      <Link to="/locations">locations page</Link> and see its menu for the current pours.
+    </p>
 
     <h2>Pull up a chair</h2>
     <p>
