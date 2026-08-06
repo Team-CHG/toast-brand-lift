@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Is it hard to find breakfast early in downtown Charleston?",
     answer:
-      "Not on Meeting Street. We open early so you can eat before the tour groups start moving. [confirm current downtown opening hours]",
+      "Not on Meeting Street. We open early so you can eat before the tour groups start moving. Current opening hours are listed on our locations page.",
   },
 ];
 
@@ -79,6 +79,9 @@ const WhereToEatDowntownCharleston = () => (
       A mimosa or a bloody mary is fair game at that point too. Our{" "}
       <Link to="/blog/charleston-brunch-cocktails">brunch cocktail guide</Link> covers what goes with what.
     </p>
+    <p>
+      Give the <a href="/menus/downtown">downtown menu</a> a look and plan your table before you start walking.
+    </p>
 
     <h3>A simple downtown day, food included</h3>
     <ul className="list-disc list-inside space-y-2">
@@ -109,7 +112,10 @@ const WhereToEatDowntownCharleston = () => (
     <h3>Is Meeting Street or King Street better for visitors?</h3>
     <p>Meeting Street if you're touring the historic district, King Street if you're shopping or staying uptown.</p>
     <h3>How early can you eat breakfast?</h3>
-    <p>[confirm current downtown opening hours]</p>
+    <p>
+      Early enough to beat the tour groups. Check our <Link to="/locations">locations page</Link> for today's opening time on
+      Meeting Street and King Street.
+    </p>
 
     <h2>Start your day with us</h2>
     <p>

@@ -19,7 +19,8 @@ const faqs = [
   },
   {
     question: "What time do you open in Savannah?",
-    answer: "Early, and we serve the full menu until close. [confirm current Savannah hours]",
+    answer:
+      "Early, and we serve the full menu until close. Current Savannah hours are listed on our locations page.",
   },
 ];
 
@@ -75,8 +76,8 @@ const BestBrunchSavannah = () => (
       <li>A mimosa, because Savannah is one of the few cities where nobody will judge you for it at 10 a.m.</li>
     </ul>
     <p>
-      More on the drinks in <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail guide</Link>. [confirm current
-      Savannah drink menu and to-go cup rules]
+      More on the drinks in <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail guide</Link>. The{" "}
+      <a href="/menus/savannah">Savannah menu</a> has the current lineup if you'd rather decide before you sit down.
     </p>
 
     <h3>When is the best time to go?</h3>
@@ -95,12 +96,15 @@ const BestBrunchSavannah = () => (
     <h3>Is parking difficult downtown?</h3>
     <p>Garages nearby are your best bet, and metered spots free up early in the morning.</p>
     <h3>Do you have outdoor seating?</h3>
-    <p>[confirm current sidewalk seating at the Savannah location]</p>
+    <p>
+      Broughton Street is made for people watching, and seating depends on the day and the weather. Call ahead if a table outside
+      is what you're after.
+    </p>
     <h3>Are you dog friendly?</h3>
     <p>
       Well-behaved dogs are welcome in outdoor seating areas. See our{" "}
-      <Link to="/blog/dog-friendly-brunch-charleston">dog-friendly brunch guide</Link> for the details. [confirm Savannah patio
-      pet policy]
+      <Link to="/blog/dog-friendly-brunch-charleston">dog-friendly brunch guide</Link> for timing and etiquette, and give us a
+      call first so we can point you to the right table.
     </p>
     <h3>Do you serve lunch?</h3>
     <p>Yes, breakfast and lunch run together all day on one menu.</p>

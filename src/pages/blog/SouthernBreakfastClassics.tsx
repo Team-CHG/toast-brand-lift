@@ -61,6 +61,10 @@ const SouthernBreakfastClassics = () => (
       breakfast. It's sweet, but the cheese filling keeps it from tipping into dessert.
     </p>
     <p>Order it for the table and split it. That's our honest advice, though plenty of people finish one alone and regret nothing.</p>
+    <p>
+      You'll find it on the <a href="/menus/downtown">downtown menu</a> and at every one of our{" "}
+      <Link to="/locations">restaurants</Link>, morning, noon, and afternoon.
+    </p>
 
     <h2>What are grits and why do Southerners love them?</h2>
     <p>
