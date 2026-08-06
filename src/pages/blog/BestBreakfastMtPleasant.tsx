@@ -11,7 +11,8 @@ const faqs = [
   },
   {
     question: "What time does breakfast start in Mt. Pleasant?",
-    answer: "Our Mt. Pleasant location opens early and serves the full menu all day. [confirm current opening hours]",
+    answer:
+      "Our Mt. Pleasant location opens early and serves the full menu all day, so there's no cutoff for breakfast. Current hours are listed on our locations page.",
   },
   {
     question: "Is there parking at your Mt. Pleasant location?",
@@ -73,6 +74,10 @@ const BestBreakfastMtPleasant = () => (
       Not sure what half of that means? We broke it all down in{" "}
       <Link to="/blog/southern-breakfast-classics">Southern breakfast classics explained</Link>.
     </p>
+    <p>
+      You can look over the full <a href="/menus/suburbs">suburb locations menu</a> before you come, or just walk in and let your
+      server talk you into the biscuits.
+    </p>
     <img
       src={biscuitsImg}
       alt="Homemade buttermilk biscuits served at breakfast in Mt. Pleasant SC"
@@ -106,12 +111,17 @@ const BestBreakfastMtPleasant = () => (
     <h3>Do you serve mimosas?</h3>
     <p>
       We do. See <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail guide</Link> for what pairs with what.
-      [confirm current drink availability by location]
     </p>
     <h3>Is there outdoor seating?</h3>
-    <p>[confirm current patio seating at Mt. Pleasant]</p>
+    <p>
+      Seating varies by location and the weather usually decides for you. Give us a call if a patio table is the deciding factor,
+      and see our <Link to="/blog/dog-friendly-brunch-charleston">dog-friendly brunch guide</Link> if you're bringing a pup.
+    </p>
     <h3>Do you offer takeout?</h3>
-    <p>Yes, and you can order ahead. [confirm current online ordering link for Mt. Pleasant]</p>
+    <p>
+      Yes, and you can order ahead. Start from our <Link to="/locations">locations page</Link> and use the online ordering link
+      for Mt. Pleasant.
+    </p>
     <h3>How busy does it get on weekends?</h3>
     <p>Busy, honestly. Come before 9 or after 11:30 and you'll usually walk right in.</p>
 

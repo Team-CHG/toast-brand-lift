@@ -11,7 +11,8 @@ const faqs = [
   },
   {
     question: "What time does breakfast start in Summerville?",
-    answer: "We open early and serve the full breakfast menu all day. [confirm current Summerville hours]",
+    answer:
+      "We open early and serve the full breakfast menu all day, with no cutoff time. Current Summerville hours are listed on our locations page.",
   },
   {
     question: "Do you take reservations in Summerville?",
@@ -78,6 +79,9 @@ const BestBreakfastSummerville = () => (
       <Link to="/blog/southern-breakfast-classics">Southern breakfast classics</Link> explains each dish, and{" "}
       <Link to="/blog/what-is-lowcountry-cuisine">our Lowcountry cuisine guide</Link> covers where this cooking comes from.
     </p>
+    <p>
+      Take a look at the <a href="/menus/suburbs">suburb locations menu</a> and pick your plate before you leave the house.
+    </p>
 
     <h3>Is brunch served on weekends only?</h3>
     <p>
@@ -94,13 +98,25 @@ const BestBreakfastSummerville = () => (
 
     <h2>Summerville breakfast questions</h2>
     <h3>Do you have gluten-friendly options?</h3>
-    <p>[confirm current gluten-friendly menu items]</p>
+    <p>
+      We have options, and our team is happy to work with most dietary needs. Tell your server what you're avoiding and they'll
+      walk you through the plates that fit.
+    </p>
     <h3>Can large groups come in?</h3>
-    <p>Yes, and the Summerville room handles them better than most. Call ahead for anything over eight. [confirm party size policy]</p>
+    <p>
+      Yes, and the Summerville room handles them better than most. Call ahead for a bigger table so we can put everyone together.
+    </p>
     <h3>Do you serve mimosas in Summerville?</h3>
-    <p>[confirm current alcohol service at the Summerville location]</p>
+    <p>
+      Brunch drinks are part of the morning here. See{" "}
+      <Link to="/blog/charleston-brunch-cocktails">our brunch cocktail guide</Link> for what pairs with what, and check the
+      current menu for the day's pours.
+    </p>
     <h3>Is takeout available?</h3>
-    <p>Yes. [confirm current online ordering link for Summerville]</p>
+    <p>
+      Yes. Head to our <Link to="/locations">locations page</Link> and use the Summerville online ordering link to have it ready
+      when you pull up.
+    </p>
 
     <h2>Save yourself the drive</h2>
     <p>
