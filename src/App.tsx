@@ -31,6 +31,16 @@ const VeteransDay = lazy(() => import("./pages/events/VeteransDay"));
 const BestBrunch = lazy(() => import("./pages/events/BestBrunch"));
 const BestBreakfastBrunch = lazy(() => import("./pages/events/BestBreakfastBrunch"));
 const ValentinesDay = lazy(() => import("./pages/events/ValentinesDay"));
+const BestBrunchCharleston = lazy(() => import("./pages/blog/BestBrunchCharleston"));
+const ShrimpAndGritsCharleston = lazy(() => import("./pages/blog/ShrimpAndGritsCharleston"));
+const WhatIsLowcountryCuisine = lazy(() => import("./pages/blog/WhatIsLowcountryCuisine"));
+const BestBreakfastMtPleasant = lazy(() => import("./pages/blog/BestBreakfastMtPleasant"));
+const BestBreakfastSummerville = lazy(() => import("./pages/blog/BestBreakfastSummerville"));
+const BestBrunchSavannah = lazy(() => import("./pages/blog/BestBrunchSavannah"));
+const CharlestonBrunchCocktails = lazy(() => import("./pages/blog/CharlestonBrunchCocktails"));
+const SouthernBreakfastClassics = lazy(() => import("./pages/blog/SouthernBreakfastClassics"));
+const DogFriendlyBrunchCharleston = lazy(() => import("./pages/blog/DogFriendlyBrunchCharleston"));
+const WhereToEatDowntownCharleston = lazy(() => import("./pages/blog/WhereToEatDowntownCharleston"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
@@ -91,6 +101,16 @@ const App = () => (
             <Route path="/blog/best-brunch" element={<BestBrunch />} />
             <Route path="/blog/best-breakfast-brunch" element={<BestBreakfastBrunch />} />
             <Route path="/blog/valentines-day" element={<ValentinesDay />} />
+            <Route path="/blog/best-brunch-charleston" element={<BestBrunchCharleston />} />
+            <Route path="/blog/shrimp-and-grits-charleston" element={<ShrimpAndGritsCharleston />} />
+            <Route path="/blog/what-is-lowcountry-cuisine" element={<WhatIsLowcountryCuisine />} />
+            <Route path="/blog/best-breakfast-mt-pleasant" element={<BestBreakfastMtPleasant />} />
+            <Route path="/blog/best-breakfast-summerville" element={<BestBreakfastSummerville />} />
+            <Route path="/blog/best-brunch-savannah" element={<BestBrunchSavannah />} />
+            <Route path="/blog/charleston-brunch-cocktails" element={<CharlestonBrunchCocktails />} />
+            <Route path="/blog/southern-breakfast-classics" element={<SouthernBreakfastClassics />} />
+            <Route path="/blog/dog-friendly-brunch-charleston" element={<DogFriendlyBrunchCharleston />} />
+            <Route path="/blog/where-to-eat-downtown-charleston" element={<WhereToEatDowntownCharleston />} />
             {/* Redirect old news-events URLs */}
             <Route path="/news-events/*" element={<Navigate to="/blog" replace />} />
             <Route path="/news-events" element={<Navigate to="/blog" replace />} />
