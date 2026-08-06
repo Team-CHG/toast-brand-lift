@@ -60,7 +60,7 @@ const ShrimpAndGritsCharleston = () => (
       corn. Instant grits set up like spackle and taste like salt. You can tell in one bite.
     </p>
     <p>
-      Then the shrimp. Local when the season allows, cooked hot and fast so they stay snappy. Overcooked shrimk turns rubbery in
+      Then the shrimp. Local when the season allows, cooked hot and fast so they stay snappy. Overcooked shrimp turns rubbery in
       about fifteen seconds, which is why we cook them to order and not ahead.
     </p>
     <p>
