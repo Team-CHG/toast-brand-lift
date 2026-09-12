@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import flakySeasonAvif from "@/assets/campaign/flaky-season.avif.asset.json";
-import flakySeasonWebp from "@/assets/campaign/flaky-season.webp.asset.json";
-import flakySeasonMobileAvif from "@/assets/campaign/flaky-season-mobile.avif.asset.json";
-import flakySeasonMobileWebp from "@/assets/campaign/flaky-season-mobile.webp.asset.json";
+
+const flakySeasonAvif = "/hero/flaky-season.avif";
+const flakySeasonWebp = "/hero/flaky-season.webp";
+const flakySeasonMobileAvif = "/hero/flaky-season-mobile.avif";
+const flakySeasonMobileWebp = "/hero/flaky-season-mobile.webp";
 
 const HeroCarousel = () => {
   return (
@@ -58,12 +59,12 @@ const HeroCarousel = () => {
             />
             <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-muted shadow-[var(--shadow-campaign)] md:aspect-[5/6]">
               <picture>
-                <source media="(max-width: 767px)" srcSet={flakySeasonMobileAvif.url} type="image/avif" />
-                <source media="(max-width: 767px)" srcSet={flakySeasonMobileWebp.url} type="image/webp" />
-                <source srcSet={flakySeasonAvif.url} type="image/avif" />
-                <source srcSet={flakySeasonWebp.url} type="image/webp" />
+                <source media="(max-width: 767px)" srcSet={flakySeasonMobileAvif} type="image/avif" />
+                <source media="(max-width: 767px)" srcSet={flakySeasonMobileWebp} type="image/webp" />
+                <source srcSet={flakySeasonAvif} type="image/avif" />
+                <source srcSet={flakySeasonWebp} type="image/webp" />
                 <img
-                  src={flakySeasonWebp.url}
+                  src={flakySeasonWebp}
                   alt="Three croissant sandwiches stacked with chicken salad, breakfast sausage and egg, and seafood salad"
                   width={1024}
                   height={1536}
