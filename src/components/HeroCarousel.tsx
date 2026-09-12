@@ -46,7 +46,7 @@ const HeroCarousel = () => {
             <Button
               size="default"
               asChild
-              className="h-11 rounded-full bg-highlight px-6 text-xs font-extrabold uppercase text-highlight-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-highlight/90 sm:h-12 sm:px-7 md:text-sm"
+              className="h-11 rounded-full bg-complementary px-6 text-xs font-extrabold uppercase text-complementary-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-complementary/90 sm:h-12 sm:px-7 md:text-sm"
             >
               <a href="/menus/downtown">
                 Order now
