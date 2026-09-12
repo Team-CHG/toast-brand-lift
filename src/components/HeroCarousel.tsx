@@ -28,28 +28,28 @@ const HeroCarousel = () => {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-primary/45 via-transparent to-primary/10 md:from-primary/25" />
       <div aria-hidden className="absolute inset-x-0 top-0 h-2 bg-highlight" />
 
-      <div className="container relative z-10 mx-auto flex w-full items-center px-5 pb-12 pt-10 sm:px-8 md:px-10 md:pb-16 md:pt-14 lg:px-12">
-        <div className="max-w-[21rem] sm:max-w-md md:max-w-[39rem] lg:max-w-[46rem]">
+      <div className="container relative z-10 mx-auto flex w-full items-center px-5 pb-10 pt-8 sm:px-8 sm:pb-12 md:px-10 md:pb-14 md:pt-12 lg:px-12">
+        <div className="max-w-[19rem] sm:max-w-[24rem] md:max-w-[34rem] lg:max-w-[39rem]">
           <h1
             id="flaky-season-heading"
-            className="hero-copy-reveal text-[clamp(4.1rem,19vw,6.4rem)] font-extrabold uppercase leading-[0.78] text-primary-foreground drop-shadow-lg md:text-[clamp(6.7rem,11vw,10rem)] lg:text-[10rem]"
+            className="hero-copy-reveal text-[4.25rem] font-extrabold uppercase leading-[0.82] text-primary-foreground drop-shadow-lg sm:text-[5.25rem] md:text-[6.4rem] md:leading-[0.84] lg:text-[7.5rem]"
           >
             Flaky
             <span className="block text-highlight">Season</span>
           </h1>
 
-          <p className="hero-copy-reveal mt-6 max-w-[19rem] border-l-2 border-accent pl-4 text-base font-extrabold uppercase leading-tight text-primary-foreground drop-shadow-md sm:text-lg md:mt-8 md:max-w-md md:pl-6 md:text-2xl">
+          <p className="hero-copy-reveal mt-5 max-w-[18rem] border-l-2 border-accent pl-4 text-sm font-extrabold uppercase leading-[1.35] text-primary-foreground drop-shadow-md sm:mt-6 sm:max-w-[22rem] sm:text-base md:mt-7 md:max-w-[30rem] md:pl-5 md:text-xl md:leading-[1.3] lg:text-[1.35rem]">
             Three new ways to brunch at Toast! All Day
           </p>
 
-          <div className="hero-copy-reveal mt-6 md:mt-8">
+          <div className="hero-copy-reveal mt-5 sm:mt-6 md:mt-7">
             <Button
-              size="lg"
+              size="default"
               asChild
-              className="h-12 rounded-full bg-highlight px-6 text-xs font-extrabold uppercase text-highlight-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-highlight/90 md:h-14 md:px-8 md:text-sm"
+              className="h-11 rounded-full bg-highlight px-6 text-xs font-extrabold uppercase text-highlight-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-highlight/90 sm:h-12 sm:px-7 md:text-sm"
             >
               <a href="/menus/downtown">
-                Explore the new menu
+                Order now
                 <ArrowUpRight aria-hidden className="h-4 w-4" />
               </a>
             </Button>
