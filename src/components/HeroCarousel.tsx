@@ -7,7 +7,7 @@ const flakySeasonWebp = "/hero/flaky-season-new.webp";
 const HeroCarousel = () => {
   return (
     <section
-      className="relative isolate flex min-h-[620px] w-full items-center overflow-hidden bg-primary pt-28 sm:min-h-[680px] md:min-h-[760px] md:pt-32 lg:min-h-[820px]"
+      className="relative isolate flex min-h-[620px] w-full items-center overflow-hidden bg-primary pt-20 sm:min-h-[680px] md:min-h-[760px] md:pt-24 lg:min-h-[820px]"
       aria-labelledby="flaky-season-heading"
     >
       <picture className="absolute inset-0 h-full w-full">

@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroCarousel from "@/components/HeroCarousel";
 import SEO from "@/components/SEO";
-import PromoBand from "@/components/PromoBand";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Suspense, lazy } from "react";
@@ -25,7 +24,6 @@ const Index = () => {
         keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
       />
       <Navigation />
-      <PromoBand />
       <Suspense fallback={null}>
         <SideDrawer />
       </Suspense>
