@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
-const flakySeasonAvif = "/hero/flaky-season-horizontal.avif";
-const flakySeasonWebp = "/hero/flaky-season-horizontal.webp";
+const flakySeasonAvif = "/hero/flaky-season-new.avif";
+const flakySeasonWebp = "/hero/flaky-season-new.webp";
 
 const HeroCarousel = () => {
   return (
