@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import flakySeasonAvif from "@/assets/campaign/flaky-season-horizontal.avif.asset.json";
-import flakySeasonWebp from "@/assets/campaign/flaky-season-horizontal.webp.asset.json";
+
+const flakySeasonAvif = "/hero/flaky-season-horizontal.avif";
+const flakySeasonWebp = "/hero/flaky-season-horizontal.webp";
 
 const HeroCarousel = () => {
   return (
@@ -10,10 +11,10 @@ const HeroCarousel = () => {
       aria-labelledby="flaky-season-heading"
     >
       <picture className="absolute inset-0 h-full w-full">
-        <source srcSet={flakySeasonAvif.url} type="image/avif" />
-        <source srcSet={flakySeasonWebp.url} type="image/webp" />
+        <source srcSet={flakySeasonAvif} type="image/avif" />
+        <source srcSet={flakySeasonWebp} type="image/webp" />
         <img
-          src={flakySeasonWebp.url}
+          src={flakySeasonWebp}
           alt="Three croissant sandwiches stacked on a plate at Toast! All Day"
           width={1671}
           height={941}
