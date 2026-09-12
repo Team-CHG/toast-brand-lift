@@ -1,136 +1,88 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { ArrowUpRight } from "lucide-react";
+import flakySeasonAvif from "@/assets/campaign/flaky-season.avif.asset.json";
+import flakySeasonWebp from "@/assets/campaign/flaky-season.webp.asset.json";
+import flakySeasonMobileAvif from "@/assets/campaign/flaky-season-mobile.avif.asset.json";
+import flakySeasonMobileWebp from "@/assets/campaign/flaky-season-mobile.webp.asset.json";
 
-// LOCKED LCP ASSET. Served from /public so the preload scanner in index.html
-// discovers and fetches it before the JS bundle parses. These paths MUST
-// match the <link rel="preload"> tags in index.html.
-const heroPosterAvif = "/hero/hero-poster.avif";
-const heroPosterWebp = "/hero/hero-poster.webp";
-const heroPosterJpg = "/hero/hero-poster.jpg";
-// Mobile hero is a static hyper-realistic champagne cheers photo (no video).
-// Single AVIF source on mobile = deterministic LCP path (matches the
-// <link rel="preload"> in index.html exactly). All mobile browsers we
-// support negotiate AVIF; desktop keeps full <picture> fallback chain.
-const heroPosterMobileAvif = "/hero/hero-cheers-mobile-sm.avif";
-
-// Desktop-only hero video. Mobile uses a static image for performance.
-const heroVideoDesktop = "/hero/hero.mp4";
-
-const orderLocations = [
-  { name: "Toast! on Meeting", url: "https://order.toasttab.com/online/toast-charleston-155-meeting-st" },
-  { name: "Toast! on King", url: "https://order.toasttab.com/online/toast-king-st-451-king-st" },
-  { name: "Toast! Mt. Pleasant", url: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
-  { name: "Toast! West Ashley", url: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci" },
-  { name: "Toast! Summerville", url: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road" },
-  { name: "Toast! Savannah", url: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st" },
-];
-
-/**
- * Hero section with a LOCKED LCP element.
- *
- * The single `<picture>`/`<img>` below is the permanent LCP candidate on
- * mobile, tablet, and desktop. It is rendered from the initial React tree
- * with no conditional logic, no video swap, no carousel, no framer-motion
- * wrapper, and no entrance animation - so it commits on first paint and
- * never changes after hydration. This makes LCP deterministic across runs.
- */
 const HeroCarousel = () => {
   return (
-    <section className="relative w-full overflow-hidden pt-16 sm:pt-24 min-h-[60vh] md:min-h-[110vh] flex items-center">
-      {/* LOCKED LCP element */}
-      <div className="absolute inset-0">
-        <picture>
-          <source media="(max-width: 767px)" srcSet={heroPosterMobileAvif} type="image/avif" />
-          <source srcSet={heroPosterAvif} type="image/avif" />
-          <source srcSet={heroPosterWebp} type="image/webp" />
-          <img
-            src={heroPosterJpg}
-            alt=""
-            aria-hidden
-            width={560}
-            height={560}
-            className="w-full h-full object-cover object-[center_30%] md:object-center"
-            // @ts-ignore - fetchpriority is a valid HTML attribute
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
-      </div>
+    <section
+      className="relative isolate flex min-h-[720px] w-full items-center overflow-hidden bg-complementary pt-28 sm:min-h-[760px] md:min-h-[840px] md:pt-32"
+      aria-labelledby="flaky-season-heading"
+    >
+      <div aria-hidden className="absolute inset-x-0 top-0 h-2 bg-highlight" />
 
-      {/* Desktop video (mobile uses the static picture above).
-          Poster intentionally omitted: the <picture> above already paints
-          the same frame, so a poster fetch would be a wasted ~100 KB. */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        aria-hidden
-        className="hidden md:block absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={heroVideoDesktop} type="video/mp4" />
-      </video>
+      <div className="container relative mx-auto grid w-full grid-cols-1 items-center gap-4 px-5 pb-10 pt-8 sm:px-8 md:grid-cols-12 md:gap-0 md:px-8 md:pb-14 md:pt-12 lg:px-12">
+        <div className="relative z-20 order-1 md:col-span-6 lg:col-span-5">
+          <div className="hero-copy-reveal flex items-center gap-3">
+            <span aria-hidden className="h-px w-10 bg-highlight md:w-14" />
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-highlight md:text-sm">
+              A Toast! All Day seasonal drop
+            </p>
+          </div>
 
-      {/* Static gradient overlay - single-stop on mobile (cheaper to composite), richer on desktop */}
-      <div className="absolute inset-0 bg-foreground/50 md:bg-gradient-to-t md:from-foreground/60 md:via-accent/10 md:to-transparent pointer-events-none" />
-
-      <div className="relative z-10 container mx-auto px-4 text-center mb-4 md:mb-32">
-        <p className="text-white/90 tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-base mb-3 md:mb-4 font-medium">
-          Award-Winning Breakfast & Brunch
-        </p>
-
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-4 md:mb-6 leading-[0.95]">
-          Celebrate the
-          <br />
-          <span className="text-complementary italic">Possibilities</span>
-        </h1>
-
-        <p className="text-white/80 text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10">
-          TripAdvisor Top 25 Best Brunches in the U.S.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-          <Button
-            size="lg"
-            asChild
-            className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          <h1
+            id="flaky-season-heading"
+            className="hero-copy-reveal mt-4 max-w-[8ch] text-[clamp(4.2rem,21vw,6.5rem)] font-extrabold uppercase leading-[0.78] text-primary md:mt-7 md:text-[clamp(6rem,9vw,9.25rem)] lg:text-[9rem]"
           >
-            <a href="/locations">Find a Location</a>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white bg-black/30 hover:bg-black/50 hover:border-white text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-full shadow-lg"
-              >
-                Order Online <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white border-accent/10">
-              {orderLocations.map((loc) => (
-                <DropdownMenuItem key={loc.name} asChild>
-                  <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-                    {loc.name}
-                  </a>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </div>
+            Flaky
+            <span className="block text-highlight">Season</span>
+          </h1>
 
-      {/* Static scroll indicator - desktop only to keep the mobile
-          above-the-fold DOM as small as possible. */}
-      <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <ChevronDown className="w-8 h-8 text-white/60" />
+          <div className="hero-copy-reveal mt-6 max-w-md border-l-2 border-accent pl-4 md:mt-8 md:pl-6">
+            <p className="text-base font-extrabold uppercase leading-tight text-primary sm:text-lg md:text-xl">
+              Three new ways to brunch at Toast! All Day
+            </p>
+          </div>
+
+          <div className="hero-copy-reveal mt-6 md:mt-8">
+            <Button
+              size="lg"
+              asChild
+              className="h-12 rounded-full bg-highlight px-6 text-xs font-extrabold uppercase text-highlight-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-highlight/90 md:h-14 md:px-8 md:text-sm"
+            >
+              <a href="/menus/downtown">
+                Explore the new menu
+                <ArrowUpRight aria-hidden className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative z-10 order-2 -mt-3 flex justify-end md:col-span-7 md:-ml-12 md:mt-0 lg:col-span-7 lg:-ml-8">
+          <div className="hero-food-drift relative ml-auto w-[88vw] max-w-[450px] md:w-full md:max-w-[650px] lg:max-w-[720px]">
+            <div
+              aria-hidden
+              className="absolute -inset-3 translate-x-3 translate-y-3 rounded-md border-2 border-accent/40 bg-accent/10 md:-inset-5 md:translate-x-5 md:translate-y-5"
+            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-muted shadow-[var(--shadow-campaign)] md:aspect-[5/6]">
+              <picture>
+                <source media="(max-width: 767px)" srcSet={flakySeasonMobileAvif.url} type="image/avif" />
+                <source media="(max-width: 767px)" srcSet={flakySeasonMobileWebp.url} type="image/webp" />
+                <source srcSet={flakySeasonAvif.url} type="image/avif" />
+                <source srcSet={flakySeasonWebp.url} type="image/webp" />
+                <img
+                  src={flakySeasonWebp.url}
+                  alt="Three croissant sandwiches stacked with chicken salad, breakfast sausage and egg, and seafood salad"
+                  width={1024}
+                  height={1536}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover object-center"
+                />
+              </picture>
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-background/5" />
+            </div>
+          </div>
+        </div>
+
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-3 right-0 z-0 hidden select-none text-[12rem] font-extrabold uppercase leading-none text-accent/10 lg:block"
+        >
+          Flaky
+        </div>
       </div>
     </section>
   );

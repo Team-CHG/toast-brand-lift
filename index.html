@@ -11,13 +11,11 @@
     <meta name="author" content="Toast All Day" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://toastallday.com/" />
-    <!-- Preload the true LCP image (hero poster). Static /public paths so
-         the preload scanner can discover them before the JS bundle runs.
-         Mobile gets the small AVIF, larger viewports get the desktop AVIF. -->
+    <!-- Preload the seasonal campaign's exact LCP source for each viewport. -->
     <link
       rel="preload"
       as="image"
-      href="/hero/hero-poster.avif"
+      href="/__l5e/assets-v1/de14d8f2-156b-405e-b75f-a861c2f940c3/flaky-season.avif"
       type="image/avif"
       media="(min-width: 768px)"
       fetchpriority="high"
@@ -25,7 +23,7 @@
     <link
       rel="preload"
       as="image"
-      href="/hero/hero-cheers-mobile-sm.avif"
+      href="/__l5e/assets-v1/38c8afbe-7eed-4c3f-be2c-63c46518556a/flaky-season-mobile.avif"
       type="image/avif"
       media="(max-width: 767px)"
       fetchpriority="high"
