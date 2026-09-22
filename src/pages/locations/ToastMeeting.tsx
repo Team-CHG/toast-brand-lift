@@ -47,7 +47,7 @@ const ToastMeeting = () => {
     hours: "Monday – Sunday: 6am – 3pm",
     openTime: "06:00",
     closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
+    orderUrl: "https://order.toasttab.com/online/toast-charleston",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
     embedQuery: "Toast+All+Day,+129+Meeting+St,+Charleston,+SC+29401",
@@ -262,8 +262,8 @@ const ToastMeeting = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! on Meeting"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st"
-          balanceUrl="https://www.toasttab.com/toast-charleston-155-meeting-st/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-charleston"
+          balanceUrl="https://www.toasttab.com/toast-charleston/findcard"
         />
 
         {/* Rewards CTA Section */}

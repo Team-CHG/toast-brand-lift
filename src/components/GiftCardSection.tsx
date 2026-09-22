@@ -23,7 +23,7 @@ const GiftCardSection = ({
   // If both location URLs are provided, render simple direct buttons (location pages)
   const isLocationSpecific = Boolean(giftCardUrl && balanceUrl);
   const giftCardLocations = [
-    { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+    { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston" },
     { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
     { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
     { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
@@ -32,7 +32,7 @@ const GiftCardSection = ({
   ];
 
   const checkBalanceLocations = [
-    { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard" },
+    { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston/findcard" },
     { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/findcard" },
     { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard" },
     { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard" },

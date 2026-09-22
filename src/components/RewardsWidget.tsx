@@ -89,7 +89,7 @@ const RewardsWidget = () => {
           <div className="relative space-y-1 mt-1">
             <p className="text-xs font-semibold text-muted-foreground text-center">Select a location:</p>
             {[
-              { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" },
+              { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston/rewardsSignup" },
               { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" },
               { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" },
               { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" },

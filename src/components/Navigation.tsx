@@ -14,7 +14,7 @@ import toastLogoLargeAvif from "@/assets/toast-logo.avif";
 import toastLogoPng from "@/assets/toast-logo.png";
 
 const locations = [
-  { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },
+  { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston", orderUrl: "https://order.toasttab.com/online/toast-charleston", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },
   { name: "Toast! on King", menuUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st", orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st", waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist" },
   { name: "Toast! Mt. Pleasant", menuUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g", orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g", waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist" },
   { name: "Toast! West Ashley", menuUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci", orderUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci", waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist" },

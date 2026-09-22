@@ -72,7 +72,7 @@ const Rewards = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
@@ -87,7 +87,7 @@ const Rewards = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsLookup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsLookup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsLookup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsLookup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsLookup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
@@ -216,7 +216,7 @@ const Rewards = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
