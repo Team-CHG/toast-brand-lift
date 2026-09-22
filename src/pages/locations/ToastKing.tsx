@@ -35,7 +35,7 @@ const ToastKing = () => {
     hours: "Monday – Sunday: 7am – 3pm",
     openTime: "07:00",
     closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-king-st-451-king-st",
+    orderUrl: "https://order.toasttab.com/online/toast-king",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
     embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
@@ -283,8 +283,8 @@ const ToastKing = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! on King"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-king-st-451-king-st"
-          balanceUrl="https://www.toasttab.com/toast-king-st-451-king-st/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-king"
+          balanceUrl="https://www.toasttab.com/toast-king/findcard"
         />
 
         {/* Rewards CTA Section */}

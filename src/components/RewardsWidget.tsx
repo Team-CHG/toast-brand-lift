@@ -90,11 +90,11 @@ const RewardsWidget = () => {
             <p className="text-xs font-semibold text-muted-foreground text-center">Select a location:</p>
             {[
               { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston/rewardsSignup" },
-              { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" },
-              { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" },
-              { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" },
-              { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" },
-              { name: "Savannah", url: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" },
+              { name: "King St", url: "https://www.toasttab.com/toast-king/rewardsSignup" },
+              { name: "Summerville", url: "https://www.toasttab.com/toast-summerville/rewardsSignup" },
+              { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley/rewardsSignup" },
+              { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-mtpleasant/rewardsSignup" },
+              { name: "Savannah", url: "https://www.toasttab.com/toast-savannah/rewardsSignup" },
             ].map((loc) => (
               <a
                 key={loc.name}

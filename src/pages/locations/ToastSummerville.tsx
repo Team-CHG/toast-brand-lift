@@ -48,8 +48,8 @@ const ToastSummerville = () => {
     hours: "Monday – Sunday: 7am – 3pm",
     openTime: "07:00",
     closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road",
-    menuUrl: "https://order.toasttab.com/online/toast-summerville-717-old-trolley-road",
+    orderUrl: "https://order.toasttab.com/online/toast-summerville",
+    menuUrl: "https://order.toasttab.com/online/toast-summerville",
     waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
     embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
     image: toastSummervilleImg,
@@ -296,8 +296,8 @@ const ToastSummerville = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! Summerville"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road"
-          balanceUrl="https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-summerville"
+          balanceUrl="https://www.toasttab.com/toast-summerville/findcard"
         />
 
         {/* Rewards CTA Section */}

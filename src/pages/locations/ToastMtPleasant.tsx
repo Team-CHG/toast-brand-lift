@@ -47,7 +47,7 @@ const ToastMtPleasant = () => {
     hours: "Monday – Sunday: 7am – 3pm",
     openTime: "07:00",
     closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g",
+    orderUrl: "https://order.toasttab.com/online/toast-mtpleasant",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
     embedQuery: "Toast+All+Day,+1150+Hungry+Neck+Blvd,+Mt+Pleasant,+SC+29464",
@@ -295,8 +295,8 @@ const ToastMtPleasant = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! Mt. Pleasant"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g"
-          balanceUrl="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-mtpleasant"
+          balanceUrl="https://www.toasttab.com/toast-mtpleasant/findcard"
         />
 
         {/* Rewards CTA Section */}
