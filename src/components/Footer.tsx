@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const toastLocationGiftCards = [
-  { name: "Toast! on Meeting", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+  { name: "Toast! on Meeting", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-charleston" },
   { name: "Toast! on King", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
   { name: "Toast! Mt. Pleasant", city: "Mt. Pleasant, SC", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
   { name: "Toast! West Ashley", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },

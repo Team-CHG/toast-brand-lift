@@ -29,7 +29,7 @@ const locations: Location[] = [{
   city: "Charleston, SC 29401",
   phone: "(843) 994-3598",
   hours: "Monday – Sunday: 6am – 3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-charleston-155-meeting-st",
+  orderUrl: "https://order.toasttab.com/online/toast-charleston",
   menuUrl: "https://toastallday.com/toast-menu/",
   waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
   reviewUrl: "https://g.page/r/CbjkUb_VOmzFEAE/review",

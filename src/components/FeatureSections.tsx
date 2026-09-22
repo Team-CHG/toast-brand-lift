@@ -308,7 +308,7 @@ const FeatureSections = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="w-56 bg-card z-50">
                     {[
-                      { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" },
+                      { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston" },
                       { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
                       { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
                       { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
@@ -337,7 +337,7 @@ const FeatureSections = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="w-56 bg-card z-50">
                     {[
-                      { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard" },
+                      { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston/findcard" },
                       { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/findcard" },
                       { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard" },
                       { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard" },
@@ -447,7 +447,7 @@ const FeatureSections = () => {
               className="bg-highlight hover:bg-highlight/90 text-highlight-foreground text-sm md:text-lg px-6 md:px-10 py-4 md:py-6 rounded-full shadow-xl w-full sm:w-auto text-center transition-transform hover:scale-105"
             >
               <a
-                href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup"
+                href="https://www.toasttab.com/toast-charleston/marketing-signup"
                 target="_blank"
                 rel="noopener noreferrer"
               >

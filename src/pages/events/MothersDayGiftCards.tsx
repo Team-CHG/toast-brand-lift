@@ -43,8 +43,8 @@ const locations = [
     name: "Toast! on Meeting",
     city: "Charleston, SC",
     address: "129 Meeting St, Charleston, SC 29401",
-    buyUrl: "https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st",
-    balanceUrl: "https://www.toasttab.com/toast-charleston-155-meeting-st/findcard",
+    buyUrl: "https://order.toasttab.com/egiftcards/toast-charleston",
+    balanceUrl: "https://www.toasttab.com/toast-charleston/findcard",
     image: locMeeting,
   },
   {
@@ -90,7 +90,7 @@ const locations = [
 ];
 
 const rewardsLinks = [
-  { name: "Toast! on Meeting", url: "https://www.toasttab.com/toast-charleston-155-meeting-st/rewardsSignup" },
+  { name: "Toast! on Meeting", url: "https://www.toasttab.com/toast-charleston/rewardsSignup" },
   { name: "Toast! on King", url: "https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" },
   { name: "Toast! Mt. Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" },
   { name: "Toast! West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" },

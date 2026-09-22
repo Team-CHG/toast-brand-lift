@@ -46,7 +46,7 @@ const ValentinesDay = () => {
 
       <h2>Gift a Brunch Date</h2>
       <p>
-        Not sure what to get your valentine? A <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Toast All Day e-gift card</a> is delivered instantly and lets them choose their own celebration date. It's thoughtful, practical, and guaranteed to be used, unlike that heart-shaped box of chocolates.
+        Not sure what to get your valentine? A <a href="https://order.toasttab.com/egiftcards/toast-charleston" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Toast All Day e-gift card</a> is delivered instantly and lets them choose their own celebration date. It's thoughtful, practical, and guaranteed to be used, unlike that heart-shaped box of chocolates.
       </p>
 
       <p>

@@ -101,7 +101,7 @@ const NewsEvents = () => {
             <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl ring-1 ring-accent/10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">Don't Miss Out!</h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">Sign up for our newsletter to get the latest news, events, and exclusive offers.</p>
-              <a href="https://www.toasttab.com/toast-charleston-155-meeting-st/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-highlight text-highlight-foreground px-8 py-3 rounded-full font-semibold hover:bg-highlight/90 transition-all hover:scale-105 shadow-lg">Subscribe Now</a>
+              <a href="https://www.toasttab.com/toast-charleston/marketing-signup" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-highlight text-highlight-foreground px-8 py-3 rounded-full font-semibold hover:bg-highlight/90 transition-all hover:scale-105 shadow-lg">Subscribe Now</a>
             </div>
           </ScrollReveal>
         </div>

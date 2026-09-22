@@ -53,7 +53,7 @@ const MothersDay = () => {
       </p>
 
       <div className="text-center my-8">
-        <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer" className="blog-btn">
+        <a href="https://order.toasttab.com/egiftcards/toast-charleston" target="_blank" rel="noopener noreferrer" className="blog-btn">
           Send Mom a Gift Card
         </a>
       </div>

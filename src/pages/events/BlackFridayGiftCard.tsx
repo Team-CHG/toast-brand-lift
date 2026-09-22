@@ -23,7 +23,7 @@ const BlackFridayGiftCard = () => {
         Buy $50 in gift cards (any combination, one $50 card, five $10 cards, whatever works), and we'll add a $20 bonus card to your order at no extra charge. The bonus card is a separate card you can keep for yourself or give to someone else. Think of it as a reward for being a thoughtful gift-giver.
       </p>
       <p>
-        Both physical and e-gift cards qualify for the promotion. Physical cards can be purchased at our <a href="https://toastallday.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">online shop</a> or in person at any location. E-gift cards are available through <a href="https://order.toasttab.com/egiftcards/toast-charleston-155-meeting-st" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">our e-gift card portal</a> and deliver instantly via email, perfect for last-minute shoppers.
+        Both physical and e-gift cards qualify for the promotion. Physical cards can be purchased at our <a href="https://toastallday.myshopify.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">online shop</a> or in person at any location. E-gift cards are available through <a href="https://order.toasttab.com/egiftcards/toast-charleston" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">our e-gift card portal</a> and deliver instantly via email, perfect for last-minute shoppers.
       </p>
 
       <h2>Why Gift Cards Make Great Gifts</h2>
