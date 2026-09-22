@@ -309,11 +309,11 @@ const FeatureSections = () => {
                   <DropdownMenuContent align="start" className="w-56 bg-card z-50">
                     {[
                       { name: "Meeting St", url: "https://order.toasttab.com/egiftcards/toast-charleston" },
-                      { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
-                      { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
-                      { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
-                      { name: "Mt Pleasant", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
-                      { name: "Savannah", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+                      { name: "King St", url: "https://order.toasttab.com/egiftcards/toast-king" },
+                      { name: "Summerville", url: "https://order.toasttab.com/egiftcards/toast-summerville" },
+                      { name: "West Ashley", url: "https://order.toasttab.com/egiftcards/toast-west-ashley" },
+                      { name: "Mt Pleasant", url: "https://order.toasttab.com/egiftcards/toast-mtpleasant" },
+                      { name: "Savannah", url: "https://order.toasttab.com/egiftcards/toast-savannah" },
                     ].map((loc) => (
                       <DropdownMenuItem key={loc.name} asChild>
                         <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
@@ -338,11 +338,11 @@ const FeatureSections = () => {
                   <DropdownMenuContent align="start" className="w-56 bg-card z-50">
                     {[
                       { name: "Meeting St", url: "https://www.toasttab.com/toast-charleston/findcard" },
-                      { name: "King St", url: "https://www.toasttab.com/toast-king-st-451-king-st/findcard" },
-                      { name: "Summerville", url: "https://www.toasttab.com/toast-summerville-717-old-trolley-road/findcard" },
-                      { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard" },
-                      { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/findcard" },
-                      { name: "Savannah", url: "https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard" },
+                      { name: "King St", url: "https://www.toasttab.com/toast-king/findcard" },
+                      { name: "Summerville", url: "https://www.toasttab.com/toast-summerville/findcard" },
+                      { name: "West Ashley", url: "https://www.toasttab.com/toast-west-ashley/findcard" },
+                      { name: "Mt Pleasant", url: "https://www.toasttab.com/toast-mtpleasant/findcard" },
+                      { name: "Savannah", url: "https://www.toasttab.com/toast-savannah/findcard" },
                     ].map((loc) => (
                       <DropdownMenuItem key={loc.name} asChild>
                         <a href={loc.url} target="_blank" rel="noopener noreferrer" className="cursor-pointer">

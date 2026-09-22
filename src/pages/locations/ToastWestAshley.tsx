@@ -48,7 +48,7 @@ const ToastWestAshley = () => {
     hours: "Monday – Sunday: 7am – 3pm",
     openTime: "07:00",
     closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-west-ashley-2026-savannah-hwy-tvrci",
+    orderUrl: "https://order.toasttab.com/online/toast-west-ashley",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
     embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
@@ -296,8 +296,8 @@ const ToastWestAshley = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! West Ashley"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci"
-          balanceUrl="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-west-ashley"
+          balanceUrl="https://www.toasttab.com/toast-west-ashley/findcard"
         />
 
         {/* Rewards CTA Section */}

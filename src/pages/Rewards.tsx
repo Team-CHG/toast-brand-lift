@@ -73,11 +73,11 @@ const Rewards = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-mtpleasant/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <DropdownMenu>
@@ -88,11 +88,11 @@ const Rewards = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsLookup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsLookup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsLookup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsLookup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsLookup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsLookup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king/rewardsLookup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville/rewardsLookup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley/rewardsLookup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-mtpleasant/rewardsLookup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah/rewardsLookup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -217,11 +217,11 @@ const Rewards = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" className="w-56 bg-white/95 backdrop-blur-xl">
                   <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-charleston/rewardsSignup" target="_blank" rel="noopener noreferrer">Meeting St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king-st-451-king-st/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville-717-old-trolley-road/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley-2026-savannah-hwy-tvrci/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
-                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah-1-w-broughton-st/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-king/rewardsSignup" target="_blank" rel="noopener noreferrer">King St</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-summerville/rewardsSignup" target="_blank" rel="noopener noreferrer">Summerville</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-west-ashley/rewardsSignup" target="_blank" rel="noopener noreferrer">West Ashley</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-mtpleasant/rewardsSignup" target="_blank" rel="noopener noreferrer">Mt Pleasant</a></DropdownMenuItem>
+                  <DropdownMenuItem asChild><a href="https://www.toasttab.com/toast-savannah/rewardsSignup" target="_blank" rel="noopener noreferrer">Savannah</a></DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </ScrollReveal>

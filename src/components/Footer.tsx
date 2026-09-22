@@ -13,11 +13,11 @@ import {
 
 const toastLocationGiftCards = [
   { name: "Toast! on Meeting", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-charleston" },
-  { name: "Toast! on King", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-king-st-451-king-st" },
-  { name: "Toast! Mt. Pleasant", city: "Mt. Pleasant, SC", url: "https://order.toasttab.com/egiftcards/toast-hungryneck-blvd-1150-hungry-neck-blvd-suite-f-g" },
-  { name: "Toast! West Ashley", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-west-ashley-2026-savannah-hwy-tvrci" },
-  { name: "Toast! Summerville", city: "Summerville, SC", url: "https://order.toasttab.com/egiftcards/toast-summerville-717-old-trolley-road" },
-  { name: "Toast! Savannah", city: "Savannah, GA", url: "https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st" },
+  { name: "Toast! on King", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-king" },
+  { name: "Toast! Mt. Pleasant", city: "Mt. Pleasant, SC", url: "https://order.toasttab.com/egiftcards/toast-mtpleasant" },
+  { name: "Toast! West Ashley", city: "Charleston, SC", url: "https://order.toasttab.com/egiftcards/toast-west-ashley" },
+  { name: "Toast! Summerville", city: "Summerville, SC", url: "https://order.toasttab.com/egiftcards/toast-summerville" },
+  { name: "Toast! Savannah", city: "Savannah, GA", url: "https://order.toasttab.com/egiftcards/toast-savannah" },
 ];
 
 const sisterBrandGiftCards = [

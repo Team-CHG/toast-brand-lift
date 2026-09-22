@@ -48,7 +48,7 @@ const ToastSavannah = () => {
     hours: "Monday – Sunday: 7am – 10pm",
     openTime: "07:00",
     closeTime: "22:00",
-    orderUrl: "https://order.toasttab.com/online/toast-savannah-1-w-broughton-st",
+    orderUrl: "https://order.toasttab.com/online/toast-savannah",
     menuUrl: "https://toastallday.com/toast-menu/",
     waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
     embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
@@ -297,8 +297,8 @@ const ToastSavannah = () => {
         {/* Gift Card Section */}
         <GiftCardSection
           locationName="Toast! Savannah"
-          giftCardUrl="https://order.toasttab.com/egiftcards/toast-savannah-1-w-broughton-st"
-          balanceUrl="https://www.toasttab.com/toast-savannah-1-w-broughton-st/findcard"
+          giftCardUrl="https://order.toasttab.com/egiftcards/toast-savannah"
+          balanceUrl="https://www.toasttab.com/toast-savannah/findcard"
         />
 
         {/* Rewards CTA Section */}
