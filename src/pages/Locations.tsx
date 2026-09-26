@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import LocationsMap, { locations } from "@/components/LocationsMap";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,6 @@ const Locations = () => {
         keywords="Toast All Day locations, Charleston breakfast, Mt Pleasant brunch, Summerville restaurant, Savannah breakfast"
       />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Interactive Map Section */}

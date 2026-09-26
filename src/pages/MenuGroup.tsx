@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
@@ -122,7 +121,6 @@ const MenuGroup = () => {
         keywords={`Toast All Day menu, ${group} menu, breakfast menu, brunch menu, lunch menu`}
       />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       <section className="relative pt-28 pb-16 px-4 overflow-hidden bg-complementary">

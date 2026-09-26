@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -19,7 +18,6 @@ const Blog = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Hero Banner */}

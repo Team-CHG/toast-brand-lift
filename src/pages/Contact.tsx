@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -80,7 +79,6 @@ const Contact = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
       
       {/* Hero Section with parallax image */}

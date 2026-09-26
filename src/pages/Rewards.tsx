@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Gift, Star, TrendingUp, Zap, Smartphone, ChevronDown, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -35,7 +34,6 @@ const Rewards = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Hero Section with parallax image */}

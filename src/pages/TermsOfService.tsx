@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -13,7 +12,6 @@ const TermsOfService = () => {
         keywords="terms of service, terms and conditions, Toast All Day, user agreement"
       />
       <Navigation />
-      <SideDrawer />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">

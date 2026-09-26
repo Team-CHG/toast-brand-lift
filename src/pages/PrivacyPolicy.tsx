@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -13,7 +12,6 @@ const PrivacyPolicy = () => {
         keywords="privacy policy, data protection, Toast All Day, personal information"
       />
       <Navigation />
-      <SideDrawer />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">

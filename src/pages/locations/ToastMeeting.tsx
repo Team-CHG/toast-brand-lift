@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
@@ -66,7 +65,6 @@ const ToastMeeting = () => {
       <LocationSchema name={location.name} address={location.address} city={location.city} state={location.state} zip={location.zip} phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`} openTime={location.openTime} closeTime={location.closeTime} latitude={location.latitude} longitude={location.longitude} url={`https://toast-all-day.lovable.app/locations/toast-meeting`} />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <main>
         {/* Hero Section */}
         <section className="relative h-[50vh] min-h-[400px]">

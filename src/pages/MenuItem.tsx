@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
@@ -152,7 +151,6 @@ const MenuItemPage = () => {
         image={item?.image_url ?? undefined}
       />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       <section
