@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Smartphone } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -22,7 +21,6 @@ const DownloadApp = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Hero Section */}

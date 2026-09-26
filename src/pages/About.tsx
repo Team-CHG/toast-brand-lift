@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import { Award, Heart, Users, Sparkles } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -28,7 +27,6 @@ const About = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
       
       {/* Hero Section with parallax image */}

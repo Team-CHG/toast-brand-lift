@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -79,7 +78,6 @@ const Franchise = () => {
         keywords="franchise opportunity, breakfast franchise, brunch restaurant franchise"
       />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Hero Section */}

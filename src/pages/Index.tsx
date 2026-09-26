@@ -9,7 +9,6 @@ import { Suspense, lazy } from "react";
 const FeatureSections = lazy(() => import("@/components/FeatureSections"));
 const LocationsMap = lazy(() => import("@/components/LocationsMap"));
 const Footer = lazy(() => import("@/components/Footer"));
-const SideDrawer = lazy(() => import("@/components/SideDrawer"));
 // AVIF variant is ~6 KB vs 20 KB for the WebP - used as a tiled section
 // background, decoded once and cached.
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
@@ -25,7 +24,6 @@ const Index = () => {
       />
       <Navigation />
       <Suspense fallback={null}>
-        <SideDrawer />
       </Suspense>
       <main>
         <HeroCarousel />

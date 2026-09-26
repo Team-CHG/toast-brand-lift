@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -79,7 +78,6 @@ const Catering = () => {
         keywords="Toast All Day catering, Charleston brunch catering, Savannah catering, breakfast catering, office breakfast, party catering"
       />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       <main>

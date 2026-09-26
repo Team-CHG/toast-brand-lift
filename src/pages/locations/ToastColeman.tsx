@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
 import LocationSchema from "@/components/LocationSchema";
@@ -60,7 +59,6 @@ const ToastColeman = () => {
       />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <main>
         {/* Hero Section */}
         <section className="relative h-[50vh] min-h-[400px]">

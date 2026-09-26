@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import SideDrawer from "@/components/SideDrawer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
@@ -168,7 +167,6 @@ const BlogArticleLayout = ({
       <SEO title={seoTitle} description={seoDescription} keywords={seoKeywords} />
       <FestiveBackdrop />
       <Navigation />
-      <SideDrawer />
       <Breadcrumbs />
 
       {/* Hero Banner with title overlay */}
