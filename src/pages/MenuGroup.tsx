@@ -141,7 +141,7 @@ const MenuGroup = () => {
             ) : (
               <div className="space-y-16 md:space-y-20">
                 {categories.map((category) => (
-                  <section key={category.id} aria-labelledby={`category-${category.id}`}>
+                  <section key={category.id} id={`category-section-${category.id}`} aria-labelledby={`category-${category.id}`} className="scroll-mt-6">
                     <div className="relative mb-7 flex items-center justify-center md:mb-10">
                       <div className="absolute inset-x-0 h-px bg-border" aria-hidden="true" />
                       <h2 id={`category-${category.id}`} className="relative bg-card px-4 text-center text-xl font-bold uppercase text-primary sm:px-6 md:text-2xl">
