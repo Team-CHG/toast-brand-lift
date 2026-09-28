@@ -107,7 +107,7 @@ const MenuGroup = () => {
           </header>
 
 
-          <div className="px-5 py-12 sm:px-9 md:px-14 md:py-16">
+          <div className="px-5 pb-12 pt-8 sm:px-9 md:px-14 md:pb-16 md:pt-10">
             {loading ? (
               <div className="space-y-14" aria-label="Loading menu">
                 {Array.from({ length: 3 }).map((_, index) => (
