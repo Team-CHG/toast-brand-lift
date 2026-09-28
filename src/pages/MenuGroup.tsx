@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ArrowRight, Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -92,27 +91,6 @@ const MenuGroup = () => {
 
   if (!group || !meta) return <Navigate to="/" replace />;
 
-  const hero = categories[0];
-  const sideTall = categories[1];
-  const trio = categories.slice(2, 5);
-  const rest = categories.slice(5);
-
-  const cardBase =
-    "group relative overflow-hidden rounded-[2rem] shadow-xl ring-1 ring-accent/10 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500";
-
-  const renderImage = (src: string | null, alt: string, className = "") =>
-    src ? (
-      <div className="absolute inset-0 [&>div]:w-full [&>div]:h-full [&_picture]:w-full [&_picture]:h-full [&_picture]:block">
-        <LazyImage
-          src={src}
-          alt={alt}
-          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${className}`}
-        />
-      </div>
-    ) : (
-      <div className="absolute inset-0 bg-gradient-to-br from-accent via-accent/80 to-primary/70" />
-    );
-
   return (
     <div className="min-h-screen">
       <SEO
@@ -123,15 +101,6 @@ const MenuGroup = () => {
       <Navigation />
       <Breadcrumbs />
 
-      <section className="relative pt-28 pb-16 px-4 overflow-hidden bg-complementary">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] bg-accent/20 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute top-1/3 -right-24 w-80 h-80 bg-highlight/10 blur-[100px] rounded-full pointer-events-none" />
-        <div className="container mx-auto relative z-10 text-center max-w-3xl">
-          <span className="uppercase tracking-[0.3em] text-accent font-bold text-xs mb-4 block">
-            Menu Index
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary mb-6 leading-[1.05]">
-            {meta.name.replace(/ Menu$/, "")}{" "}
             <span className="text-highlight italic">Menu</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
