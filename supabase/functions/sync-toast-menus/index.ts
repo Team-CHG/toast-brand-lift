@@ -103,8 +103,11 @@ async function syncGroup(
   const menus: any[] = Array.isArray(data?.menus) ? data.menus : [];
   let catOrder = 0;
 
+  // Categories hidden from the website on every sync (matched case-insensitively)
+  const EXCLUDED_CATEGORIES = new Set(["sides", "side", "sides & extras"]);
   const walkGroup = (g: any, parentName?: string) => {
     if (!g?.guid || !isOnline(g.visibility)) return;
+    if (EXCLUDED_CATEGORIES.has(String(g.name ?? "").trim().toLowerCase())) return;
     const items: any[] = Array.isArray(g.menuItems) ? g.menuItems : [];
     const onlineItems = items.filter((it) => isOnline(it.visibility));
     if (onlineItems.length > 0) {
