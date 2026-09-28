@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import LazyImage from "@/components/LazyImage";
+import MenuItemThumb from "@/components/MenuItemThumb";
 import { supabase } from "@/integrations/supabase/client";
 
 const GROUP_META: Record<string, { name: string; label: string; description: string }> = {
@@ -134,9 +134,7 @@ const MenuGroup = () => {
                     <div className="divide-y divide-border">
                       {(category.items ?? []).map((item) => (
                         <Link key={item.id} to={`/menus/${group}/${category.slug}/${item.slug}`} className="group flex min-h-24 gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-h-28 sm:gap-6 sm:py-6">
-                          <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-complementary bg-muted transition-colors duration-300 group-hover:border-highlight sm:h-24 sm:w-24">
-                            {item.image_url ? <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" /> : <Utensils className="h-6 w-6 text-accent sm:h-7 sm:w-7" aria-hidden="true" />}
-                          </div>
+                          <MenuItemThumb src={item.image_url} alt={item.name} className="h-16 w-16 sm:h-24 sm:w-24" />
                           <div className="min-w-0 flex-1">
                             <div className="flex items-start justify-between gap-3">
                               <h3 className="text-base font-bold uppercase leading-snug text-primary transition-colors group-hover:text-highlight sm:text-lg">{item.name}</h3>
