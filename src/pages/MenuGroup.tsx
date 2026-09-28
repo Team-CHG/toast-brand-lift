@@ -99,12 +99,31 @@ const MenuGroup = () => {
 
       <main className="px-4 pb-20 pt-8 md:pb-28 md:pt-12">
         <div className="mx-auto max-w-3xl overflow-hidden border border-border border-t-8 border-t-highlight bg-card shadow-soft">
-          <header className="mx-5 px-1 pb-10 pt-10 text-center sm:mx-9 md:mx-14 md:pb-12 md:pt-14">
+          <header className="mx-5 px-1 pb-8 pt-10 text-center sm:mx-9 md:mx-14 md:pb-10 md:pt-14">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-highlight">{meta.label}</p>
             <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-5xl">Toast! All Day</h1>
             <div className="mx-auto my-5 h-px w-20 bg-accent" />
             <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{meta.description}</p>
           </header>
+
+          {categories.length > 0 && (
+            <nav aria-label="Menu categories" className="mx-5 border-y border-border/60 bg-complementary/60 px-3 py-4 sm:mx-9 sm:px-4 md:mx-14 md:px-6">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-2.5">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => {
+                      document.getElementById(`category-section-${category.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                    className="rounded-full border border-primary/20 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-primary transition-all duration-200 hover:border-highlight hover:bg-highlight hover:text-highlight-foreground active:scale-95 md:px-4"
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            </nav>
+          )}
 
           <div className="px-5 py-12 sm:px-9 md:px-14 md:py-16">
             {loading ? (
@@ -122,7 +141,7 @@ const MenuGroup = () => {
             ) : (
               <div className="space-y-16 md:space-y-20">
                 {categories.map((category) => (
-                  <section key={category.id} aria-labelledby={`category-${category.id}`}>
+                  <section key={category.id} id={`category-section-${category.id}`} aria-labelledby={`category-${category.id}`} className="scroll-mt-6">
                     <div className="relative mb-7 flex items-center justify-center md:mb-10">
                       <div className="absolute inset-x-0 h-px bg-border" aria-hidden="true" />
                       <h2 id={`category-${category.id}`} className="relative bg-card px-4 text-center text-xl font-bold uppercase text-primary sm:px-6 md:text-2xl">
