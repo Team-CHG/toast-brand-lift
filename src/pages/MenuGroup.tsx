@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowRight, Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -8,21 +8,21 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
 import { supabase } from "@/integrations/supabase/client";
 
-const GROUP_META: Record<string, { name: string; description: string }> = {
+const GROUP_META: Record<string, { name: string; label: string; description: string }> = {
   downtown: {
     name: "Downtown Locations Menu",
-    description:
-      "Browse the full Toast All Day menu for our Downtown locations, Toast! on Meeting and Toast! on King, including breakfast, brunch, and lunch favorites with fresh, locally-sourced ingredients.",
+    label: "Downtown Charleston",
+    description: "Breakfast, brunch, and lunch favorites served at Toast! on Meeting and Toast! on King.",
   },
   suburbs: {
     name: "Suburb Locations Menu",
-    description:
-      "Browse the full Toast All Day menu for our suburb locations, Toast! Mt. Pleasant, Toast! West Ashley, and Toast! Summerville, including breakfast, brunch, and lunch favorites.",
+    label: "Charleston Suburbs",
+    description: "Breakfast, brunch, and lunch favorites served in Mt. Pleasant, West Ashley, and Summerville.",
   },
   savannah: {
     name: "Savannah Location Menu",
-    description:
-      "Browse the full Toast All Day menu for our Savannah, GA location: breakfast, brunch, and lunch served fresh on Broughton Street.",
+    label: "Savannah",
+    description: "Breakfast, brunch, and lunch favorites served fresh on Broughton Street.",
   },
 };
 
@@ -39,7 +39,6 @@ const MenuGroup = () => {
   const { group } = useParams<{ group: string }>();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
-
   const meta = group ? GROUP_META[group] : undefined;
 
   useEffect(() => {
@@ -47,16 +46,9 @@ const MenuGroup = () => {
     let cancelled = false;
     (async () => {
       setLoading(true);
-      const { data: g } = await supabase
-        .from("menu_groups")
-        .select("id")
-        .eq("slug", group)
-        .maybeSingle();
+      const { data: g } = await supabase.from("menu_groups").select("id").eq("slug", group).maybeSingle();
       if (!g) {
-        if (!cancelled) {
-          setCategories([]);
-          setLoading(false);
-        }
+        if (!cancelled) { setCategories([]); setLoading(false); }
         return;
       }
       const { data: cats } = await supabase
@@ -69,286 +61,65 @@ const MenuGroup = () => {
         .eq("menu_items.is_86", false)
         .order("sort_order", { ascending: true });
       if (cancelled) return;
-      const mapped: Category[] = (cats ?? [])
-        .map((c: any) => ({
-          id: c.id,
-          slug: c.slug,
-          name: c.name,
-          description: c.description,
-          image_url: c.image_url,
-          item_count: Array.isArray(c.menu_items)
-            ? c.menu_items.length
-            : 0,
-        }))
-        .filter((c) => c.item_count > 0);
-      setCategories(mapped);
+      setCategories((cats ?? []).map((category: any) => ({
+        id: category.id,
+        slug: category.slug,
+        name: category.name,
+        description: category.description,
+        image_url: category.image_url,
+        item_count: Array.isArray(category.menu_items) ? category.menu_items.length : 0,
+      })).filter((category) => category.item_count > 0));
       setLoading(false);
     })();
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [group, meta]);
 
   if (!group || !meta) return <Navigate to="/" replace />;
 
   return (
-    <div className="min-h-screen">
-      <SEO
-        title={`${meta.name} | Toast All Day`}
-        description={meta.description}
-        keywords={`Toast All Day menu, ${group} menu, breakfast menu, brunch menu, lunch menu`}
-      />
+    <div className="min-h-screen bg-complementary">
+      <SEO title={`${meta.name} | Toast All Day`} description={meta.description} keywords={`Toast All Day menu, ${group} menu, breakfast menu, brunch menu, lunch menu`} />
       <Navigation />
       <Breadcrumbs />
 
-            <span className="text-highlight italic">Menu</span>
-          </h1>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            {meta.description}
-          </p>
-          <div className="mt-8 flex justify-center">
-            <div className="h-1.5 w-16 bg-highlight rounded-full" />
-          </div>
-        </div>
-      </section>
+      <main className="px-4 pb-20 pt-8 md:pb-28 md:pt-12">
+        <div className="mx-auto max-w-3xl border border-border bg-card px-5 py-10 shadow-soft sm:px-9 md:px-14 md:py-14">
+          <header className="mb-10 text-center md:mb-14">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-highlight">{meta.label}</p>
+            <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-5xl">Toast! All Day</h1>
+            <div className="mx-auto my-5 h-px w-20 bg-accent" />
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">{meta.description}</p>
+          </header>
 
-      <section className="py-16 px-4 bg-complementary">
-        <div className="container mx-auto max-w-7xl">
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-              <div className="md:col-span-8 h-[400px] rounded-[2rem] bg-muted animate-pulse" />
-              <div className="md:col-span-4 h-[400px] rounded-[2rem] bg-muted animate-pulse" />
-              {Array.from({ length: 3 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="md:col-span-4 h-[320px] rounded-[2rem] bg-muted animate-pulse"
-                />
-              ))}
-            </div>
-          ) : categories.length === 0 ? (
-            <p className="text-center text-muted-foreground py-24">
-              Menu is being updated. Please check back soon.
-            </p>
-          ) : (
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.08 } },
-              }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-6"
-            >
-              {/* Hero featured */}
-              {hero && (
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 24 },
-                    show: { opacity: 1, y: 0 },
-                  }}
-                  className="md:col-span-8"
-                >
-                  <Link
-                    to={`/menus/${group}/${hero.slug}`}
-                    className={`${cardBase} block h-[400px] bg-card`}
-                  >
-                    {renderImage(hero.image_url, hero.name)}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                    <div className="absolute top-6 right-6">
-                      <span className="bg-highlight text-highlight-foreground px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em]">
-                        Featured
-                      </span>
+          <section aria-labelledby="menu-categories">
+            <h2 id="menu-categories" className="mb-2 border-b border-border pb-3 text-2xl font-bold text-primary md:text-3xl">Choose a category</h2>
+            {loading ? (
+              <div className="divide-y divide-border" aria-label="Loading menu categories">
+                {Array.from({ length: 6 }).map((_, index) => <div key={index} className="h-28 animate-pulse bg-muted/50" />)}
+              </div>
+            ) : categories.length === 0 ? (
+              <p className="py-16 text-center text-muted-foreground">Menu is being updated. Please check back soon.</p>
+            ) : (
+              <div className="divide-y divide-border">
+                {categories.map((category) => (
+                  <Link key={category.id} to={`/menus/${group}/${category.slug}`} className="group flex min-h-28 items-center gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-5">
+                    <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted sm:h-24 sm:w-24">
+                      {category.image_url ? <LazyImage src={category.image_url} alt={category.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" /> : <Utensils className="h-7 w-7 text-accent" aria-hidden="true" />}
                     </div>
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <div className="inline-block backdrop-blur-md bg-white/15 border border-white/30 px-7 py-5 rounded-2xl text-primary-foreground shadow-2xl max-w-md">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-1 leading-tight">
-                          {hero.name}
-                        </h2>
-                        <p className="text-sm opacity-90">
-                          {hero.description ??
-                            `${hero.item_count} signature ${
-                              hero.item_count === 1 ? "dish" : "dishes"
-                            }`}
-                        </p>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="text-lg font-bold leading-snug text-primary transition-colors group-hover:text-highlight md:text-xl">{category.name}</h3>
+                        <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-highlight transition-transform group-hover:translate-x-1" aria-hidden="true" />
                       </div>
+                      <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{category.description ?? `${category.item_count} ${category.item_count === 1 ? "item" : "items"}`}</p>
                     </div>
                   </Link>
-                </motion.div>
-              )}
-
-              {/* Side tall */}
-              {sideTall && (
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 24 },
-                    show: { opacity: 1, y: 0 },
-                  }}
-                  className="md:col-span-4"
-                >
-                  <Link
-                    to={`/menus/${group}/${sideTall.slug}`}
-                    className={`${cardBase} block h-[400px] bg-card`}
-                  >
-                    {renderImage(sideTall.image_url, sideTall.name)}
-                    <div className="absolute inset-0 bg-primary/30 group-hover:bg-primary/50 transition-colors duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                      <div className="backdrop-blur-md bg-white/15 border border-white/30 w-full py-7 px-4 rounded-2xl text-primary-foreground">
-                        <h2 className="text-2xl font-bold">{sideTall.name}</h2>
-                        <p className="text-xs uppercase tracking-[0.2em] mt-2 opacity-80">
-                          {sideTall.item_count} item
-                          {sideTall.item_count === 1 ? "" : "s"}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              )}
-
-              {/* Trio of medium cards */}
-              {trio.map((cat, i) => {
-                const variant = i % 3;
-                return (
-                  <motion.div
-                    key={cat.id}
-                    variants={{
-                      hidden: { opacity: 0, y: 24 },
-                      show: { opacity: 1, y: 0 },
-                    }}
-                    className="md:col-span-4"
-                  >
-                    <Link
-                      to={`/menus/${group}/${cat.slug}`}
-                      className={`${cardBase} block h-[320px] bg-card`}
-                    >
-                      {variant === 1 && !cat.image_url ? (
-                        // Brand-tile typographic card
-                        <>
-                          <div className="absolute inset-0 bg-accent" />
-                          <div className="absolute top-0 right-0 p-6 opacity-15">
-                            <Utensils className="w-28 h-28 text-accent-foreground rotate-12" />
-                          </div>
-                          <div className="relative z-10 p-8 h-full flex flex-col justify-end text-accent-foreground">
-                            <h2 className="text-3xl font-bold leading-tight">
-                              {cat.name}
-                            </h2>
-                            <p className="mt-2 text-sm opacity-80">
-                              {cat.item_count} item
-                              {cat.item_count === 1 ? "" : "s"}
-                            </p>
-                          </div>
-                        </>
-                      ) : variant === 2 ? (
-                        <>
-                          {renderImage(cat.image_url, cat.name)}
-                          <div className="absolute inset-x-0 bottom-0 bg-card/95 backdrop-blur-md p-5 border-t border-accent/10">
-                            <div className="flex justify-between items-center gap-3">
-                              <div>
-                                <h2 className="text-lg font-bold text-primary">
-                                  {cat.name}
-                                </h2>
-                                <p className="text-xs text-muted-foreground">
-                                  {cat.item_count} item
-                                  {cat.item_count === 1 ? "" : "s"}
-                                </p>
-                              </div>
-                              <ArrowRight className="w-5 h-5 text-highlight shrink-0 group-hover:translate-x-1 transition-transform" />
-                            </div>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          {renderImage(cat.image_url, cat.name)}
-                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/85" />
-                          <div className="absolute bottom-5 left-5 right-5 text-primary-foreground">
-                            <h2 className="text-xl font-bold">{cat.name}</h2>
-                            <span className="text-[10px] uppercase tracking-[0.2em] opacity-80">
-                              {cat.item_count} item
-                              {cat.item_count === 1 ? "" : "s"}
-                            </span>
-                          </div>
-                        </>
-                      )}
-                    </Link>
-                  </motion.div>
-                );
-              })}
-
-              {/* Remaining categories: compact icon-style cards */}
-              {rest.length > 0 && (
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 24 },
-                    show: { opacity: 1, y: 0 },
-                  }}
-                  className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-5"
-                >
-                  {rest.map((cat, i) => {
-                    const isRed = i % 4 === 3;
-                    return (
-                      <Link
-                        key={cat.id}
-                        to={`/menus/${group}/${cat.slug}`}
-                        className={`group rounded-[1.5rem] p-4 md:p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 ring-1 ${
-                          isRed
-                            ? "bg-highlight text-highlight-foreground ring-highlight/40"
-                            : "bg-card ring-accent/15"
-                        }`}
-                      >
-                        <div
-                          className={`w-full sm:w-14 h-24 sm:h-14 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center ${
-                            isRed ? "bg-white/20" : "bg-complementary"
-                          }`}
-                        >
-                          {cat.image_url ? (
-                            <img
-                              src={cat.image_url}
-                              alt={cat.name}
-                              loading="lazy"
-                              decoding="async"
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <Utensils
-                              className={`w-8 h-8 sm:w-6 sm:h-6 ${
-                                isRed ? "text-white" : "text-accent"
-                              }`}
-                            />
-                          )}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h3
-                            className={`font-bold text-sm sm:text-base leading-tight line-clamp-2 sm:truncate ${
-                              isRed ? "text-white" : "text-primary"
-                            }`}
-                          >
-                            {cat.name}
-                          </h3>
-                          <p
-                            className={`text-xs mt-0.5 ${
-                              isRed
-                                ? "text-white/80"
-                                : "text-muted-foreground"
-                            }`}
-                          >
-                            {cat.item_count} item
-                            {cat.item_count === 1 ? "" : "s"}
-                          </p>
-                        </div>
-                        <ArrowRight
-                          className={`w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1 hidden sm:block ${
-                            isRed ? "text-white" : "text-highlight"
-                          }`}
-                        />
-                      </Link>
-                    );
-                  })}
-                </motion.div>
-              )}
-            </motion.div>
-          )}
+                ))}
+              </div>
+            )}
+          </section>
         </div>
-      </section>
-
+      </main>
       <Footer />
     </div>
   );

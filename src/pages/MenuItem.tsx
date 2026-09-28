@@ -1,41 +1,22 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
+import { Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
+import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 
-const GROUP_NAMES: Record<string, string> = {
-  downtown: "Downtown Locations",
-  suburbs: "Suburb Locations",
-  savannah: "Savannah Location",
-};
-
-interface Item {
-  id: string;
-  name: string;
-  description: string | null;
-  price: number | null;
-  image_url: string | null;
-  calories: number | null;
-  allergens: string[] | null;
-  category_name: string;
-  category_slug: string;
-}
+const GROUP_NAMES: Record<string, string> = { downtown: "Downtown Locations", suburbs: "Suburb Locations", savannah: "Savannah Location" };
+interface Item { id: string; name: string; description: string | null; price: number | null; image_url: string | null; calories: number | null; allergens: string[] | null; category_name: string; category_slug: string; }
 
 const MenuItemPage = () => {
-  const { group, category, item: itemSlug } = useParams<{
-    group: string;
-    category: string;
-    item: string;
-  }>();
+  const { group, category, item: itemSlug } = useParams<{ group: string; category: string; item: string }>();
   const [item, setItem] = useState<Item | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
-
   const groupName = group ? GROUP_NAMES[group] : undefined;
 
   useEffect(() => {
@@ -43,197 +24,62 @@ const MenuItemPage = () => {
     let cancelled = false;
     (async () => {
       setLoading(true);
-      const { data: g } = await supabase
-        .from("menu_groups")
-        .select("id")
-        .eq("slug", group)
-        .maybeSingle();
-      if (!g) {
-        if (!cancelled) {
-          setNotFound(true);
-          setLoading(false);
-        }
-        return;
-      }
-      const { data: row } = await supabase
-        .from("menu_items")
-        .select(
-          "id, name, description, price, image_url, calories, allergens, category:menu_categories!inner(name, slug)"
-        )
-        .eq("group_id", g.id)
-        .eq("slug", itemSlug)
-        .eq("is_active", true)
-        .eq("available_online", true)
-        .eq("is_86", false)
-        .maybeSingle();
+      const { data: g } = await supabase.from("menu_groups").select("id").eq("slug", group).maybeSingle();
+      if (!g) { if (!cancelled) { setNotFound(true); setLoading(false); } return; }
+      const { data: row } = await supabase.from("menu_items").select("id, name, description, price, image_url, calories, allergens, category:menu_categories!inner(name, slug)").eq("group_id", g.id).eq("slug", itemSlug).eq("is_active", true).eq("available_online", true).eq("is_86", false).maybeSingle();
       if (cancelled) return;
-      if (!row) {
-        setNotFound(true);
-        setLoading(false);
-        return;
-      }
-      const cat = (row as any).category;
-      if (!cat || cat.slug !== category) {
-        setNotFound(true);
-        setLoading(false);
-        return;
-      }
-      setItem({
-        id: row.id,
-        name: row.name,
-        description: row.description,
-        price: row.price,
-        image_url: row.image_url,
-        calories: row.calories,
-        allergens: row.allergens,
-        category_name: cat.name,
-        category_slug: cat.slug,
-      });
+      const categoryData = row ? (row as any).category : null;
+      if (!row || !categoryData || categoryData.slug !== category) { setNotFound(true); setLoading(false); return; }
+      setItem({ id: row.id, name: row.name, description: row.description, price: row.price, image_url: row.image_url, calories: row.calories, allergens: row.allergens, category_name: categoryData.name, category_slug: categoryData.slug });
       setLoading(false);
     })();
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [group, category, itemSlug, groupName]);
 
-  // Product JSON-LD
   useEffect(() => {
     if (!item || !group) return;
-    const schema: Record<string, unknown> = {
-      "@context": "https://schema.org",
-      "@type": "MenuItem",
-      name: item.name,
-      description: item.description ?? undefined,
-      image: item.image_url ?? undefined,
-      url: `https://toastallday.com/menus/${group}/${item.category_slug}/${itemSlug}`,
-    };
-    if (item.price != null) {
-      schema.offers = {
-        "@type": "Offer",
-        price: item.price.toFixed(2),
-        priceCurrency: "USD",
-      };
-    }
-    if (item.calories != null) {
-      schema.nutrition = {
-        "@type": "NutritionInformation",
-        calories: `${item.calories} cal`,
-      };
-    }
-    const tag = document.createElement("script");
-    tag.type = "application/ld+json";
-    tag.setAttribute("data-schema", "menu-item");
-    tag.textContent = JSON.stringify(schema);
-    document.head.appendChild(tag);
-    return () => {
-      tag.remove();
-    };
+    const schema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "MenuItem", name: item.name, description: item.description ?? undefined, image: item.image_url ?? undefined, url: `https://toastallday.com/menus/${group}/${item.category_slug}/${itemSlug}` };
+    if (item.price != null) schema.offers = { "@type": "Offer", price: item.price.toFixed(2), priceCurrency: "USD" };
+    if (item.calories != null) schema.nutrition = { "@type": "NutritionInformation", calories: `${item.calories} cal` };
+    const tag = document.createElement("script"); tag.type = "application/ld+json"; tag.setAttribute("data-schema", "menu-item"); tag.textContent = JSON.stringify(schema); document.head.appendChild(tag);
+    return () => { tag.remove(); };
   }, [item, group, itemSlug]);
 
-  if (!group || !category || !itemSlug || !groupName) {
-    return <Navigate to="/" replace />;
-  }
+  if (!group || !category || !itemSlug || !groupName) return <Navigate to="/" replace />;
   if (notFound) return <Navigate to={`/menus/${group}/${category}`} replace />;
-
-  const title = item
-    ? `${item.name} - ${groupName} Menu | Toast All Day`
-    : "Menu Item | Toast All Day";
-  const description = item
-    ? item.description ??
-      `${item.name} from the Toast All Day ${groupName} menu. Fresh, locally-sourced breakfast, brunch, and lunch.`
-    : "";
+  const title = item ? `${item.name} - ${groupName} Menu | Toast All Day` : "Menu Item | Toast All Day";
+  const description = item ? item.description ?? `${item.name} from the Toast All Day ${groupName} menu.` : "";
 
   return (
-    <div className="min-h-screen">
-      <SEO
-        title={title}
-        description={description}
-        image={item?.image_url ?? undefined}
-      />
+    <div className="min-h-screen bg-complementary">
+      <SEO title={title} description={description} image={item?.image_url ?? undefined} />
       <Navigation />
       <Breadcrumbs />
-
-      <section
-        className="relative pt-24 pb-16 px-4 overflow-hidden"
-        style={{
-          backgroundImage: `url(${pageBackgroundTexture})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-highlight/5" />
-        <div className="container mx-auto relative z-10 max-w-5xl">
+      <main className="px-4 pb-20 pt-8 md:pb-28 md:pt-12">
+        <article className="mx-auto max-w-3xl border border-border bg-card px-5 py-10 shadow-soft sm:px-9 md:px-14 md:py-14">
           {loading || !item ? (
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="aspect-square rounded-2xl bg-muted animate-pulse" />
-              <div className="space-y-4">
-                <div className="h-10 w-3/4 bg-muted rounded animate-pulse" />
-                <div className="h-4 w-full bg-muted rounded animate-pulse" />
-                <div className="h-4 w-2/3 bg-muted rounded animate-pulse" />
-              </div>
-            </div>
+            <div className="space-y-7"><div className="mx-auto aspect-square max-w-md animate-pulse bg-muted" /><div className="mx-auto h-10 w-2/3 animate-pulse bg-muted" /><div className="h-24 animate-pulse bg-muted" /></div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="rounded-2xl overflow-hidden shadow-xl ring-1 ring-accent/10 bg-white/60">
-                {item.image_url ? (
-                  <div className="aspect-square">
-                    <LazyImage
-                      src={item.image_url}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-square bg-gradient-to-br from-accent/20 to-highlight/20 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary/40 px-6 text-center">
-                      {item.name}
-                    </span>
-                  </div>
-                )}
+            <>
+              <header className="mb-8 text-center">
+                <Link to={`/menus/${group}/${category}`} className="text-xs font-semibold uppercase tracking-[0.22em] text-highlight hover:underline">{item.category_name}</Link>
+                <h1 className="mt-3 text-3xl font-bold leading-tight text-primary md:text-5xl">{item.name}</h1>
+                {item.price != null && <p className="mt-3 text-xl font-semibold text-primary">${item.price.toFixed(2)}</p>}
+                <div className="mx-auto mt-5 h-px w-20 bg-accent" />
+              </header>
+              <div className="mx-auto mb-8 flex aspect-[4/3] max-w-xl items-center justify-center overflow-hidden border border-border bg-muted">
+                {item.image_url ? <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover" /> : <Utensils className="h-12 w-12 text-accent" aria-hidden="true" />}
               </div>
-
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-md ring-1 ring-accent/10">
-                <Link
-                  to={`/menus/${group}/${category}`}
-                  className="text-sm uppercase tracking-widest text-highlight hover:underline"
-                >
-                  {item.category_name}
-                </Link>
-                <h1 className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">
-                  {item.name}
-                </h1>
-                {item.price != null && (
-                  <div className="text-2xl font-semibold text-highlight mb-4">
-                    ${item.price.toFixed(2)}
-                  </div>
-                )}
-                {item.description && (
-                  <p className="text-base text-foreground/80 leading-relaxed mb-6">
-                    {item.description}
-                  </p>
-                )}
-                {item.calories != null && (
-                  <p className="text-sm text-muted-foreground mb-2">
-                    {item.calories} calories
-                  </p>
-                )}
-                {item.allergens && item.allergens.length > 0 && (
-                  <p className="text-sm text-muted-foreground">
-                    Allergens: {item.allergens.join(", ")}
-                  </p>
-                )}
-                <div className="mt-8 pt-6 border-t border-accent/10">
-                  <p className="text-sm text-muted-foreground">
-                    Available at our <strong>{groupName}</strong>. Pricing and
-                    availability may vary.
-                  </p>
-                </div>
-              </div>
-            </div>
+              {item.description && <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/80 md:text-lg">{item.description}</p>}
+              {(item.calories != null || (item.allergens && item.allergens.length > 0)) && <dl className="mx-auto mt-8 max-w-xl border-y border-border py-5 text-sm text-muted-foreground">{item.calories != null && <div className="flex justify-between gap-4"><dt>Calories</dt><dd>{item.calories}</dd></div>}{item.allergens && item.allergens.length > 0 && <div className="mt-2 flex justify-between gap-4"><dt>Allergens</dt><dd className="text-right">{item.allergens.join(", ")}</dd></div>}</dl>}
+              <footer className="mt-9 text-center">
+                <p className="mb-5 text-sm text-muted-foreground">Available at our <strong>{groupName}</strong>. Pricing and availability may vary.</p>
+                <Button asChild variant="outline"><Link to={`/menus/${group}/${category}`}>Back to {item.category_name}</Link></Button>
+              </footer>
+            </>
           )}
-        </div>
-      </section>
-
+        </article>
+      </main>
       <Footer />
     </div>
   );
