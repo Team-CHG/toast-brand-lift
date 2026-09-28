@@ -55,6 +55,7 @@ const MenuGroup = () => {
     let cancelled = false;
     (async () => {
       setLoading(true);
+      setCategories([]);
       const { data: g } = await supabase.from("menu_groups").select("id").eq("slug", group).maybeSingle();
       if (!g) {
         if (!cancelled) { setCategories([]); setLoading(false); }
@@ -82,7 +83,7 @@ const MenuGroup = () => {
         name: category.name,
         description: category.description,
         items: menuItems.filter((item) => item.category_id === category.id),
-      })).filter((category) => category.items.length > 0));
+      })).filter((category) => Array.isArray(category.items) && category.items.length > 0));
       setLoading(false);
     })();
     return () => { cancelled = true; };
@@ -130,7 +131,7 @@ const MenuGroup = () => {
                     </div>
                     {category.description && <p className="mx-auto -mt-4 mb-7 max-w-xl text-center text-sm leading-relaxed text-muted-foreground md:-mt-6 md:mb-9">{category.description}</p>}
                     <div className="divide-y divide-border">
-                      {category.items.map((item) => (
+                      {(category.items ?? []).map((item) => (
                         <Link key={item.id} to={`/menus/${group}/${category.slug}/${item.slug}`} className="group flex min-h-24 gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-h-28 sm:gap-6 sm:py-6">
                           <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-complementary bg-muted transition-colors duration-300 group-hover:border-highlight sm:h-24 sm:w-24">
                             {item.image_url ? <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" /> : <Utensils className="h-6 w-6 text-accent sm:h-7 sm:w-7" aria-hidden="true" />}
