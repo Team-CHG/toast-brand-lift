@@ -74,7 +74,7 @@ const MenuItemPage = () => {
               {(item.calories != null || (item.allergens && item.allergens.length > 0)) && <dl className="mx-auto mt-8 max-w-xl border-y border-border py-5 text-sm text-muted-foreground">{item.calories != null && <div className="flex justify-between gap-4"><dt>Calories</dt><dd>{item.calories}</dd></div>}{item.allergens && item.allergens.length > 0 && <div className="mt-2 flex justify-between gap-4"><dt>Allergens</dt><dd className="text-right">{item.allergens.join(", ")}</dd></div>}</dl>}
               <footer className="mt-9 text-center">
                 <p className="mb-5 text-sm text-muted-foreground">Available at our <strong>{groupName}</strong>. Pricing and availability may vary.</p>
-                <Button asChild variant="outline"><Link to={`/menus/${group}/${category}`}>Back to {item.category_name}</Link></Button>
+                <Button asChild variant="outline"><Link to={`/menus/${group}`}>Back to {groupName} Menu</Link></Button>
               </footer>
             </>
           )}
