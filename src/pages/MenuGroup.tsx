@@ -103,7 +103,7 @@ const MenuGroup = () => {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-highlight">{meta.label}</p>
             <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-5xl">Toast! All Day</h1>
             <div className="mx-auto my-5 h-px w-20 bg-accent" />
-            <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">{meta.description}</p>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{meta.description}</p>
           </header>
 
           <div className="px-5 py-12 sm:px-9 md:px-14 md:py-16">
