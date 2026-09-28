@@ -19,8 +19,6 @@ const Rewards = lazy(() => import("./pages/Rewards"));
 const DownloadAppPage = lazy(() => import("./pages/DownloadApp"));
 const Franchise = lazy(() => import("./pages/Franchise"));
 const Blog = lazy(() => import("./pages/Blog"));
-const MothersDay = lazy(() => import("./pages/events/MothersDay"));
-const GiftCardsPage = lazy(() => import("./pages/events/MothersDayGiftCards"));
 const DownloadApp = lazy(() => import("./pages/events/DownloadApp"));
 const UnlimitedDrinkPass = lazy(() => import("./pages/events/UnlimitedDrinkPass"));
 const MilitaryDiscount = lazy(() => import("./pages/events/MilitaryDiscount"));
@@ -89,8 +87,6 @@ const App = () => (
             <Route path="/download-app" element={<DownloadAppPage />} />
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/mothers-day" element={<MothersDay />} />
-            <Route path="/gift-cards" element={<GiftCardsPage />} />
             <Route path="/blog/download-app" element={<DownloadApp />} />
             <Route path="/blog/unlimited-drink-pass" element={<UnlimitedDrinkPass />} />
             <Route path="/blog/military-discount" element={<MilitaryDiscount />} />
