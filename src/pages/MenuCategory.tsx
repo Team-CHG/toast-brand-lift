@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import LazyImage from "@/components/LazyImage";
+import MenuItemThumb from "@/components/MenuItemThumb";
 import { supabase } from "@/integrations/supabase/client";
 
 const GROUP_NAMES: Record<string, string> = { downtown: "Downtown Locations", suburbs: "Suburb Locations", savannah: "Savannah Location" };
@@ -63,9 +63,7 @@ const MenuCategory = () => {
             <section aria-label={`${cat?.name ?? "Menu"} items`} className="divide-y divide-border border-t border-border">
               {items.map((item) => (
                 <Link key={item.id} to={`/menus/${group}/${category}/${item.slug}`} className="group flex min-h-28 gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-5">
-                  <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted sm:h-24 sm:w-24">
-                    {item.image_url ? <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" /> : <Utensils className="h-7 w-7 text-accent" aria-hidden="true" />}
-                  </div>
+                  <MenuItemThumb src={item.image_url} alt={item.name} className="h-20 w-20 sm:h-24 sm:w-24" />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-start justify-between gap-3">
                       <h2 className="text-lg font-bold leading-snug text-primary transition-colors group-hover:text-highlight md:text-xl">{item.name}</h2>
