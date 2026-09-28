@@ -19,7 +19,6 @@ const routeLabels: Record<string, string> = {
   'downtown': 'Downtown Locations',
   'suburbs': 'Suburb Locations',
   'savannah': 'Savannah Location',
-  'mothers-day': "Mother's Day",
   'download-app': 'Download App',
   'unlimited-drink-pass': 'Unlimited Drink Pass',
   'military-discount': 'Military Discount',

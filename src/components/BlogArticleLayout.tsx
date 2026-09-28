@@ -8,7 +8,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import bestBreakfastBrunchImg from "@/assets/blog/best-breakfast-brunch.jpg";
-import mothersDayImg from "@/assets/blog/mothers-day.jpg";
 import downloadAppImg from "@/assets/blog/download-app.jpg";
 import unlimitedDrinkPassImg from "@/assets/blog/unlimited-drink-pass.jpg";
 import militaryDiscountImg from "@/assets/blog/military-discount.jpg";
@@ -42,7 +41,6 @@ export const blogArticles = [
   { title: "Dog-Friendly Brunch Spots in Charleston", description: "Brunch with your dog in Charleston. Patio tips, what to bring, and where a well-behaved pup is welcome.", image: dogFriendlyBrunchImg, category: "Guides", slug: "dog-friendly-brunch-charleston", date: "August 2026" },
   { title: "Where to Eat Before or After Exploring Historic Downtown Charleston", description: "Fuel up before the walking tour or refuel after. Where to eat near historic downtown Charleston.", image: downtownCharlestonImg, category: "Guides", slug: "where-to-eat-downtown-charleston", date: "August 2026" },
   { title: "Toast! All Day Named One of the Best Brunch and Breakfast Spots in Charleston", description: "We're honored to be recognized as one of the best brunch and breakfast spots in Charleston, SC. Discover why locals love our all-day breakfast and mimosas.", image: bestBreakfastBrunchImg, category: "News", slug: "best-breakfast-brunch", date: "March 2026" },
-  { title: "Celebrate Mother's Day with Us", description: "Treat Mom to a special brunch! Free Mimosa and Beignets for all moms on Mother's Day.", image: mothersDayImg, category: "Events", slug: "mothers-day", date: "May 2025" },
   { title: "Download Our App and Earn $5", description: "Get rewarded just for downloading! Sign up through our app and receive $5 towards your next meal.", image: downloadAppImg, category: "Promotions", slug: "download-app", date: "April 2025" },
   { title: "Unlimited Drink Pass", description: "Enjoy unlimited mimosas with our special wristband offer at the Bridge Run!", image: unlimitedDrinkPassImg, category: "Promotions", slug: "unlimited-drink-pass", date: "March 2025" },
   { title: "10% Military Discount", description: "We proudly offer 10% off to all active duty military and veterans.", image: militaryDiscountImg, category: "Offers", slug: "military-discount", date: "January 2025" },
