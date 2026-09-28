@@ -68,7 +68,6 @@ const staticEntries: SitemapEntry[] = [
   { path: "/blog/southern-breakfast-classics", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/dog-friendly-brunch-charleston", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/where-to-eat-downtown-charleston", changefreq: "monthly", priority: "0.7" },
-  { path: "/gift-cards", changefreq: "monthly", priority: "0.6" },
   { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
   { path: "/terms-of-service", changefreq: "yearly", priority: "0.3" },
 ];
