@@ -313,13 +313,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/savannah/benedicts</loc>
+    <loc>https://toastallday.com/menus/downtown/kids-breakfast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-breakfast</loc>
+    <loc>https://toastallday.com/menus/savannah/benedicts</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -403,25 +403,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/healthy-bites</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/suburbs/soups-and-salads</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -433,13 +415,31 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/savannah/happy-hour-food</loc>
+    <loc>https://toastallday.com/menus/suburbs/soups-and-salads</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/juice-milk-and-water</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/savannah/happy-hour-food</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/healthy-bites</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -529,12 +529,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soups-and-salads</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/coffee</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -571,13 +565,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/omelets</loc>
+    <loc>https://toastallday.com/menus/savannah/kids-breakfast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/savannah/kids-breakfast</loc>
+    <loc>https://toastallday.com/menus/downtown/omelets</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -590,6 +584,12 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/lunch-favorites</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/soups-and-salads</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -679,12 +679,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/toast-belgian-waffle</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/savannah/lattes/summer-peach-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -757,6 +751,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/benedicts/florentine-benny</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/suburbs/tea/earl-grey-hot-tea</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -823,12 +823,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/benedicts/florentine-benny</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/sweet-and-southern/stack-of-pancakes</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -842,12 +836,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/savannah/kids-juice-milk-water/kids-milk-chocolate</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/lunch-favorites/low-country-fried-green-blt</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -871,13 +859,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/toast-classic-breakfast</loc>
+    <loc>https://toastallday.com/menus/downtown/lunch-favorites/low-country-fried-green-blt</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://toastallday.com/menus/suburbs/soups-and-salads/caesar-salad-large</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/toast-belgian-waffle</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -931,7 +925,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/benedicts/crab-cake-benny</loc>
+    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/toast-classic-breakfast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -955,31 +949,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/lavender-dream-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/birthday-cake-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/espresso-double-shot</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/corned-beef-hash-and-eggs</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/savannah/juice-milk-and-water/cranberry-juice-lrg</loc>
+    <loc>https://toastallday.com/menus/downtown/benedicts/crab-cake-benny</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -991,25 +961,49 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/espresso</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/corned-beef-hash-and-eggs</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/downtown/coffee/coffee</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/coconut-raspberry-latte</loc>
+    <loc>https://toastallday.com/menus/savannah/juice-milk-and-water/cranberry-juice-lrg</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/creme-brulee-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/espresso-double-shot</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/espresso</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/hot-chocolate</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/french-toast-latte</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/lavender-dream-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1039,7 +1033,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/french-toast-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/double-meeting</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1051,31 +1045,43 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/hot-chocolate</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/birthday-cake-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/double-meeting</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/creme-brulee-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/shot-in-the-dark</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/coconut-raspberry-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/salted-caramel-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/diet-pepsi</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/signature-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/vanilla-latte</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/dr-pepper</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/vanilla-rose-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1087,13 +1093,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/red-bull-yellow</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/shot-in-the-dark</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/rose-tea-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/signature-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1111,37 +1117,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/s-more-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/coffee/snickerdoodle-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/vanilla-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/vanilla-rose-latte</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/diet-pepsi</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/dr-pepper</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1201,49 +1177,43 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/bottled-water</loc>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/red-bull-yellow</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/cranberry-juice</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/rose-tea-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/tea/raspberry-tea</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/s-more-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/dr-pepper-fountain</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/salted-caramel-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/tea/sweet-tea</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/red-eye</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/apple-juice</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/tea/unsweet-tea</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/tea/peach-tea</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/tea/mint-hot-tea</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1261,13 +1231,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/apple-juice</loc>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/bloody-mary-virgin</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/bloody-mary-virgin</loc>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/bottled-water</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/cranberry-juice</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1291,19 +1267,49 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/suburbs/lto-s/strawberry-lime</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/strawberry-lemonade</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/dr-pepper-fountain</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/starry-fountain</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/suburbs/lto-s/strawberry-lime</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/tea/sweet-tea</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/tea/raspberry-tea</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/tea/peach-tea</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/tea/mint-hot-tea</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1321,31 +1327,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/red-eye</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-grilled-cheese</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/tomato-juice</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/lto-s/sparking-hibiscus</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/kids-breakfast/kids-french-toast</loc>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/water</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1357,25 +1339,37 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-cheese-quesadilla</loc>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-chicken-fingers</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/orange-juice</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-fried-shrimp-basket</loc>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-grilled-shrimp-basket</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/pineapple-juice</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/kids-breakfast/kids-pancake</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/kids-breakfast/kids-french-toast</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/orange-juice</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1393,31 +1387,61 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-chicken-fingers</loc>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-cheese-quesadilla</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/water</loc>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/tomato-juice</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-breakfast/kids-pancake</loc>
+    <loc>https://toastallday.com/menus/downtown/lto-s/sparking-hibiscus</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-grilled-shrimp-basket</loc>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-fried-shrimp-basket</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/kids-lunch/kids-grilled-cheese</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/croissants/chicken-salad-croissant</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/croissants/shrimp-salad-croissant</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/coffee/mocha-latte</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/suburbs/starters/fried-green-tomatoes</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/milk-chocolate</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1430,24 +1454,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/milk-skim</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/suburbs/starters/fried-green-tomatoes</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/croissants/chicken-salad-croissant</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/juice-milk-and-water/milk-chocolate</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1472,12 +1478,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/suburbs/healthy-bites/avocado-toast</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/croissants/shrimp-salad-croissant</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1591,6 +1591,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/chicken-and-waffles</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/biscuits/biscuit-gravy-and-eggs</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/downtown/biscuits/breakfast-biscuit-sandwich</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -1610,30 +1622,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/suburbs/soups-and-salads/cobb-salad</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/chicken-and-waffles</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/biscuits/biscuit-gravy-and-eggs</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/benedicts/classic-biscuit-benedict</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/tropicana-lemonade-fountain</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1675,19 +1663,31 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/benedicts/classic-biscuit-benedict</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/tropicana-lemonade-fountain</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/suburbs/coffee/s-more-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/suburbs/coffee/salted-caramel-latte</loc>
+    <loc>https://toastallday.com/menus/downtown/croissants/philly-cheesesteak-croissant</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/croissants/philly-cheesesteak-croissant</loc>
+    <loc>https://toastallday.com/menus/suburbs/coffee/salted-caramel-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1813,6 +1813,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/omelets/roasted-veggie-omelet</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/suburbs/soda-and-red-bull/red-bull-sugar-free</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -1820,12 +1826,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/suburbs/tea/raspberry-tea</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/omelets/carolina-ham-bacon-and-cheddar</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1897,7 +1897,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/omelets/roasted-veggie-omelet</loc>
+    <loc>https://toastallday.com/menus/downtown/omelets/carolina-ham-bacon-and-cheddar</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2077,6 +2077,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/lunch-favorites/philly-cheesesteak</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/savannah/soups-and-salad/lobster-bisque</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -2090,12 +2096,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/savannah/benedicts/crab-cake-benny</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/lunch-favorites/philly-cheesesteak</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2263,13 +2263,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/savannah/tea/unsweet-tea</loc>
+    <loc>https://toastallday.com/menus/downtown/lunch-favorites/coastal-chicken-club</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/lunch-favorites/buttermilk-chicken-tenders</loc>
+    <loc>https://toastallday.com/menus/savannah/tea/unsweet-tea</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2311,7 +2311,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/lunch-favorites/coastal-chicken-club</loc>
+    <loc>https://toastallday.com/menus/downtown/lunch-favorites/buttermilk-chicken-tenders</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2443,13 +2443,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/diet-pepsi-fountain</loc>
+    <loc>https://toastallday.com/menus/downtown/starters/the-big-biscuit</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/starters/the-big-biscuit</loc>
+    <loc>https://toastallday.com/menus/downtown/soups-and-salads/she-crab-soup</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2491,7 +2491,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soups-and-salads/she-crab-soup</loc>
+    <loc>https://toastallday.com/menus/downtown/soda-and-red-bull/diet-pepsi-fountain</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2515,13 +2515,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/starters/candied-bacon</loc>
+    <loc>https://toastallday.com/menus/downtown/omelets/blue-crab-and-shrimp-omelet</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/two-egg-breakfast</loc>
+    <loc>https://toastallday.com/menus/downtown/soups-and-salads/caesar-salad-large</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2569,13 +2569,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/omelets/blue-crab-and-shrimp-omelet</loc>
+    <loc>https://toastallday.com/menus/downtown/starters/candied-bacon</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/soups-and-salads/caesar-salad-large</loc>
+    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/two-egg-breakfast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2635,6 +2635,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/single-meeting</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://toastallday.com/menus/downtown/sweet-and-southern/peach-stuffed-french-toast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -2654,36 +2660,6 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/savannah/lunch-favorites/buttermilk-chicken-tenders</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/single-meeting</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/suburbs/breakfast-and-brunch/double-meeting</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/suburbs/lunch-favorites/buttermilk-chicken-tenders</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/savannah/sweet-and-southern/peach-stuffed-french-toast</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/cappuccino</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2713,7 +2689,31 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/caramel-latte</loc>
+    <loc>https://toastallday.com/menus/suburbs/breakfast-and-brunch/double-meeting</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/suburbs/lunch-favorites/buttermilk-chicken-tenders</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/savannah/sweet-and-southern/peach-stuffed-french-toast</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/cappuccino</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/coffee/cafe-americano</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2731,13 +2731,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/healthy-bites/power-plate</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://toastallday.com/menus/downtown/coffee/cafe-americano</loc>
+    <loc>https://toastallday.com/menus/downtown/coffee/caramel-latte</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2768,6 +2762,12 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/savannah/sweet-and-southern/chicken-and-waffles</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/healthy-bites/power-plate</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -2875,12 +2875,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/brioche-french-toast</loc>
-    <lastmod>2026-09-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://toastallday.com/menus/downtown/biscuits/bacon-egg-and-cheese-biscuit</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -2906,6 +2900,12 @@
   </url>
   <url>
     <loc>https://toastallday.com/menus/downtown/breakfast-and-brunch/steak-and-eggs</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://toastallday.com/menus/downtown/sweet-and-southern/brioche-french-toast</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
