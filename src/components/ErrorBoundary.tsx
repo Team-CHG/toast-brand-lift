@@ -3,13 +3,15 @@ import { Button } from "@/components/ui/button";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
+  /** Replaces the branded panel, e.g. null to quietly drop an optional widget. */
+  fallback?: ReactNode;
 }
 
 interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-// A stale bundle (a deploy replaced the chunks under an already-open tab) makes a
+// A stale bundle (a deploy replaced the chunks under an open tab) makes a
 // dynamic import fail, which blanks the page. One reload picks up the current
 // build; the timestamp window keeps a genuine render bug from reloading forever.
 const RELOAD_STAMP_KEY = "toast-allday-last-auto-reload";
@@ -43,6 +45,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render(): ReactNode {
     if (!this.state.hasError) return this.props.children;
+
+    if (this.props.fallback !== undefined) return this.props.fallback;
 
     return (
       <div className="flex min-h-screen items-center justify-center bg-complementary px-6 py-24">
