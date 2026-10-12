@@ -19,7 +19,7 @@ const cateringLocations = [
   {
     name: "Toast! on Meeting",
     area: "Downtown Charleston",
-    address: "129 Meeting St, Charleston, SC 29401",
+    address: "127 Meeting St, Charleston, SC 29401",
     image: meetingImage,
     url: "https://www.toasttab.com/catering/toast-charleston",
   },

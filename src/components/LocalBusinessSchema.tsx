@@ -13,7 +13,7 @@ interface LocationData {
 const locations: LocationData[] = [
   {
     name: "Toast! on Meeting",
-    address: "129 Meeting St",
+    address: "127 Meeting St",
     city: "Charleston",
     state: "SC",
     zip: "29401",

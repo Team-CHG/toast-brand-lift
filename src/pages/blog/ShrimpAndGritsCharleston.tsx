@@ -99,7 +99,7 @@ const ShrimpAndGritsCharleston = () => (
       West Ashley, Summerville, and Ladson.
     </p>
     <ul className="list-disc list-inside space-y-2">
-      <li>Toast! on Meeting, 129 Meeting St, closest to the historic district.</li>
+      <li>Toast! on Meeting, 127 Meeting St, closest to the historic district.</li>
       <li>Toast! on King, 453 King Street, easy walk from upper King hotels.</li>
       <li>Toast! Mt. Pleasant, 1150 Hungry Neck Blvd, if you're coming over the Ravenel Bridge.</li>
       <li>Toast! Summerville, 717 Old Trolley Road.</li>

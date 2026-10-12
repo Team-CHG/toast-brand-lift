@@ -70,7 +70,7 @@ interface BlogArticleLayoutProps {
 }
 
 const restaurantLocations: Record<string, { name: string; street: string; city: string; state: string; zip: string; phone: string }> = {
-  meeting: { name: "Toast! on Meeting", street: "129 Meeting St", city: "Charleston", state: "SC", zip: "29401", phone: "+1-843-994-3598" },
+  meeting: { name: "Toast! on Meeting", street: "127 Meeting St", city: "Charleston", state: "SC", zip: "29401", phone: "+1-843-994-3598" },
   king: { name: "Toast! on King", street: "453 King Street", city: "Charleston", state: "SC", zip: "29403", phone: "+1-843-793-0364" },
   "mt-pleasant": { name: "Toast! Mt. Pleasant", street: "1150 Hungry Neck Blvd.", city: "Mt. Pleasant", state: "SC", zip: "29464", phone: "+1-843-350-5256" },
   "west-ashley": { name: "Toast! West Ashley", street: "2026 Savannah Hwy", city: "Charleston", state: "SC", zip: "29407", phone: "+1-843-483-8940" },
