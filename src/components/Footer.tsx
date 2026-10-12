@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Facebook, Instagram, Linkedin, Youtube, Gift, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import toastLogo from "@/assets/toast-logo.avif";
@@ -27,16 +26,6 @@ const sisterBrandGiftCards = [
 ];
 
 const Footer = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.leadconnectorhq.com/loader.js";
-    script.setAttribute("data-resources-url", "https://widgets.leadconnectorhq.com/chat-widget/loader.js");
-    script.setAttribute("data-widget-id", "687adeb581758b005d3c04cf");
-    script.async = true;
-    document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
-  }, []);
-
   return (
     <footer className="relative bg-gradient-to-b from-background to-accent/5 text-primary py-16 border-t border-accent/10" role="contentinfo">
       {/* Decorative top accent */}
