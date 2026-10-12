@@ -54,7 +54,7 @@ const WhereToEatDowntownCharleston = () => (
     <h2>Where should you eat before a walking tour?</h2>
     <p>
       Somewhere close to your starting point that opens early. Most walking tours meet near the City Market or Washington Square,
-      and our Meeting Street room at 129 Meeting St is a few blocks from both. Get there 45 minutes before your tour and you'll
+      and our Meeting Street room at 127 Meeting St is a few blocks from both. Get there 45 minutes before your tour and you'll
       eat without rushing.
     </p>
     <p>
