@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "@/lib/router-compat";
 import { Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";

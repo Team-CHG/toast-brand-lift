@@ -9,7 +9,7 @@ import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ExternalLink, Star, Car, Gift } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import toastSummervilleImg from "@/assets/locations/toast-summerville.jpg";
 
 const ToastSummerville = () => {

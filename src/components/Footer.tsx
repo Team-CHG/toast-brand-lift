@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube, Gift, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import toastLogo from "@/assets/toast-logo.avif";
 import {
   DropdownMenu,
