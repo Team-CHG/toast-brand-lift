@@ -62,7 +62,7 @@ const FeatureSections = () => {
       {/* ═══════════════ QUALITIES RIBBON - COMPACT UNDER HERO ═══════════════ */}
       <section className="relative z-20 mt-2 md:-mt-4 pb-6 md:pb-10">
         <div className="container mx-auto px-3 md:px-4">
-          <div className="bg-white/90 rounded-xl md:rounded-2xl shadow-sm border border-accent/10 py-3 md:py-4 px-4 md:px-10">
+          <div className="bg-white/90 rounded-xl md:rounded-2xl shadow-xs border border-accent/10 py-3 md:py-4 px-4 md:px-10">
             <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-items-center md:justify-center gap-y-2 gap-x-3 md:gap-10">
               {qualities.map((q, i) => (
                 <div

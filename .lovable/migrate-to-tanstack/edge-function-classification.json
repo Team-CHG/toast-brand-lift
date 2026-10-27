@@ -1,0 +1,5 @@
+{"functions": [
+  {"name": "get-turnstile-key", "classification": "internal-only", "signal": "called from src/components/TurnstileWidget.tsx", "outcome": "migrated"},
+  {"name": "send-form-email", "classification": "internal-only", "signal": "called from src/pages/Contact.tsx and src/pages/Franchise.tsx", "outcome": "migrated"},
+  {"name": "sync-toast-menus", "classification": "cron target", "signal": "scheduled nightly by pg_cron (job created in the database, not in repo migrations)", "outcome": "left"}
+]}
