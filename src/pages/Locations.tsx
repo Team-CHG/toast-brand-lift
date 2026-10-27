@@ -4,6 +4,8 @@ import LocationsMap, { locations } from "@/components/LocationsMap";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
+import { organizationNodes } from "@/lib/locationSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
@@ -14,9 +16,10 @@ const Locations = () => {
     <div className="min-h-screen">
       <SEO 
         title="Locations - Toast All Day | Charleston, Mt Pleasant, Summerville, Savannah"
-        description="Find your nearest Toast All Day restaurant. 7 locations across Charleston, Mt. Pleasant, Summerville SC and Savannah GA."
+        description="Find your nearest Toast All Day restaurant. 6 locations across Charleston, Mt. Pleasant, Summerville SC and Savannah GA."
         keywords="Toast All Day locations, Charleston breakfast, Mt Pleasant brunch, Summerville restaurant, Savannah breakfast"
       />
+      <JsonLd data={organizationNodes()} />
       <Navigation />
       <Breadcrumbs />
 

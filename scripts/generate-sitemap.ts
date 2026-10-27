@@ -4,6 +4,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { createClient } from "@supabase/supabase-js";
+import { LOCATIONS, MENU_GROUPS, fullAddress } from "../src/lib/locations";
 
 const BASE_URL = "https://toastallday.com";
 
@@ -27,8 +28,6 @@ interface SitemapEntry {
   priority?: string;
 }
 
-const today = new Date().toISOString().split("T")[0];
-
 const staticEntries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/locations", changefreq: "weekly", priority: "0.9" },
@@ -38,9 +37,7 @@ const staticEntries: SitemapEntry[] = [
   { path: "/locations/toast-west-ashley", changefreq: "monthly", priority: "0.8" },
   { path: "/locations/toast-summerville", changefreq: "monthly", priority: "0.8" },
   { path: "/locations/toast-savannah", changefreq: "monthly", priority: "0.8" },
-  { path: "/menus/downtown", changefreq: "daily", priority: "0.9" },
-  { path: "/menus/suburbs", changefreq: "daily", priority: "0.9" },
-  { path: "/menus/savannah", changefreq: "daily", priority: "0.9" },
+  { path: "/menus", changefreq: "weekly", priority: "0.8" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/catering", changefreq: "monthly", priority: "0.8" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
@@ -86,45 +83,99 @@ async function fetchMenuEntries(): Promise<SitemapEntry[]> {
     .eq("is_active", true);
   if (catError) throw catError;
 
+  // Same filters as the visible menu pages, so hidden or 86'd items never reach the sitemap.
   const { data: items, error: itemError } = await supabase
     .from("menu_items")
     .select("slug, category_id, updated_at")
-    .eq("is_active", true);
+    .eq("is_active", true)
+    .eq("available_online", true)
+    .eq("is_86", false);
   if (itemError) throw itemError;
 
   const groupById = new Map((groups ?? []).map((g) => [g.id, g.slug]));
   const catById = new Map(
-    (categories ?? []).map((c) => [
-      c.id,
-      { slug: c.slug, groupSlug: groupById.get(c.group_id) },
-    ]),
+    (categories ?? []).map((c) => [c.id, { slug: c.slug, groupSlug: groupById.get(c.group_id) }]),
   );
+  const day = (s?: string | null) => (s ? s.split("T")[0] : undefined);
+  const latest = (a?: string, b?: string | null) => (b && (!a || b > a) ? b : a);
 
   const entries: SitemapEntry[] = [];
-
-  for (const cat of categories ?? []) {
-    const groupSlug = groupById.get(cat.group_id);
-    if (!groupSlug) continue;
-    entries.push({
-      path: `/menus/${groupSlug}/${cat.slug}`,
-      lastmod: cat.updated_at?.split("T")[0],
-      changefreq: "weekly",
-      priority: "0.7",
-    });
-  }
+  const catLastmod = new Map<string, string>();
+  const groupLastmod = new Map<string, string>();
 
   for (const item of items ?? []) {
     const cat = catById.get(item.category_id);
     if (!cat || !cat.groupSlug) continue;
     entries.push({
       path: `/menus/${cat.groupSlug}/${cat.slug}/${item.slug}`,
-      lastmod: item.updated_at?.split("T")[0],
+      ...(day(item.updated_at) ? { lastmod: day(item.updated_at) as string } : {}),
       changefreq: "weekly",
       priority: "0.6",
     });
+    const cKey = item.category_id;
+    const c = latest(catLastmod.get(cKey), item.updated_at);
+    if (c) catLastmod.set(cKey, c);
+    const g = latest(groupLastmod.get(cat.groupSlug), item.updated_at);
+    if (g) groupLastmod.set(cat.groupSlug, g);
+  }
+
+  // Categories with no visible items render a 404, so they are skipped.
+  for (const cat of categories ?? []) {
+    const groupSlug = groupById.get(cat.group_id);
+    if (!groupSlug || !catLastmod.has(cat.id)) continue;
+    entries.push({
+      path: `/menus/${groupSlug}/${cat.slug}`,
+      lastmod: day(catLastmod.get(cat.id)) as string,
+      changefreq: "weekly",
+      priority: "0.7",
+    });
+  }
+
+  for (const slug of Object.keys(MENU_GROUPS)) {
+    const lm = day(groupLastmod.get(slug));
+    entries.push({ path: `/menus/${slug}`, ...(lm ? { lastmod: lm } : {}), changefreq: "daily", priority: "0.9" });
   }
 
   return entries;
+}
+
+function generateLlmsTxt(): string {
+  const loc = LOCATIONS.map(
+    (l) =>
+      `- [${l.name}](${BASE_URL}/locations/${l.slug}): ${fullAddress(l)}. Phone ${l.phone}. Hours ${l.hours.replace(/–/g, "-")}. Menu: ${BASE_URL}/menus/${l.menuGroup}`,
+  );
+  const menus = Object.values(MENU_GROUPS).map(
+    (m) => `- [${m.menuName}](${BASE_URL}/menus/${m.slug}): ${m.description}`,
+  );
+  return [
+    "# Toast! All Day",
+    "",
+    "> Lowcountry breakfast, brunch and lunch at six locations in Charleston, Mt. Pleasant, Summerville and Savannah. TripAdvisor Top 25 Best Brunches in the U.S.",
+    "",
+    "## Locations",
+    "",
+    ...loc,
+    "",
+    "## Menus",
+    "",
+    ...menus,
+    "",
+    "## Pages",
+    "",
+    `- [All locations](${BASE_URL}/locations): Addresses, phones and hours for every Toast! All Day restaurant.`,
+    `- [Catering](${BASE_URL}/catering): Catering orders from each location.`,
+    `- [Rewards](${BASE_URL}/rewards): The VIP Club rewards program.`,
+    `- [Blog](${BASE_URL}/blog): Guides to brunch, breakfast and Lowcountry food.`,
+    "",
+    "## FAQ topics",
+    "",
+    "- Locations, addresses and phone numbers",
+    "- Hours at each location",
+    "- Signature dishes: Famous Shrimp & Grits, Eggs Meeting Street, New Orleans Beignets, Peach Stuffed French Toast, Blue Crab & Shrimp omelet, Double Smash Burger",
+    "- Lunch, mimosas and Bloody Marys, vegetarian options, kids menu",
+    "- Rewards, catering, and the 20% service charge for parties of six or more",
+    "",
+  ].join("\n");
 }
 
 function generateSitemap(entries: SitemapEntry[]): string {
@@ -132,7 +183,7 @@ function generateSitemap(entries: SitemapEntry[]): string {
     [
       `  <url>`,
       `    <loc>${BASE_URL}${e.path}</loc>`,
-      `    <lastmod>${e.lastmod ?? today}</lastmod>`,
+      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       `  </url>`,
@@ -161,6 +212,7 @@ async function main() {
   const all = [...staticEntries, ...menuEntries];
   const xml = generateSitemap(all);
   writeFileSync(resolve("public/sitemap.xml"), xml);
+  writeFileSync(resolve("public/llms.txt"), generateLlmsTxt());
   console.log(`sitemap.xml written (${all.length} entries: ${staticEntries.length} static + ${menuEntries.length} dynamic)`);
 }
 

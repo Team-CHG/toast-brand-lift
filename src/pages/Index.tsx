@@ -1,6 +1,9 @@
 import Navigation from "@/components/Navigation";
 import HeroCarousel from "@/components/HeroCarousel";
 import SEO from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { organizationNodes } from "@/lib/locationSchema";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Suspense, lazy } from "react";
@@ -22,6 +25,7 @@ const Index = () => {
         description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations."
         keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
       />
+      <JsonLd data={organizationNodes()} />
       <Navigation />
       <Suspense fallback={null}>
       </Suspense>
@@ -97,6 +101,7 @@ const Index = () => {
             </ScrollReveal>
           </div>
         </section>
+        <FaqSection className="bg-complementary" />
       </main>
       <div className="cv-auto">
         <Suspense fallback={null}>

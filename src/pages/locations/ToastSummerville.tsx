@@ -3,7 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
-import LocationSchema from "@/components/LocationSchema";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { getLocation } from "@/lib/locations";
+import { restaurantNode } from "@/lib/locationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -36,24 +39,25 @@ const ToastSummerville = () => {
       if (pxScript) pxScript.remove();
     };
   }, []);
+  const loc = getLocation("toast-summerville");
   const location = {
-    name: "Toast! Summerville",
-    address: "717 Old Trolley Road",
-    city: "Summerville",
-    state: "SC",
-    zip: "29485",
-    fullCity: "Summerville, SC 29485",
-    phone: "(843) 900-4422",
-    hours: "Monday – Sunday: 7am – 3pm",
-    openTime: "07:00",
-    closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-summerville",
-    menuUrl: "https://order.toasttab.com/online/toast-summerville",
-    waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
+    name: loc.name,
+    address: loc.street,
+    city: loc.city,
+    state: loc.state,
+    zip: loc.zip,
+    fullCity: `${loc.city}, ${loc.state} ${loc.zip}`,
+    phone: loc.phone,
+    hours: loc.hours,
+    openTime: loc.opens,
+    closeTime: loc.closes,
+    orderUrl: loc.orderUrl,
+    menuUrl: `/menus/${loc.menuGroup}`,
+    waitlistUrl: loc.waitlistUrl,
     embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
     image: toastSummervilleImg,
-    latitude: 33.0185,
-    longitude: -80.1756,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
     neighborhood: "Old Trolley Road",
     nearbyAttractions: ["Azalea Park", "Downtown Summerville", "Hutchinson Square", "Summerville-Dorchester Museum"],
     parking: "Spacious free parking lot with easy access from Old Trolley Road.",
@@ -68,19 +72,7 @@ const ToastSummerville = () => {
         description={`Award-winning breakfast & brunch at ${location.address}, Summerville SC. Open daily 7am-3pm. Near Downtown Summerville & Azalea Park. Farm-fresh ingredients & craft cocktails. Order online!`}
         keywords="Summerville breakfast, Old Trolley Road brunch, best brunch Summerville SC, Flowertown restaurant, family breakfast Summerville, Dorchester County dining"
       />
-      <LocationSchema
-        name={location.name}
-        address={location.address}
-        city={location.city}
-        state={location.state}
-        zip={location.zip}
-        phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`}
-        openTime={location.openTime}
-        closeTime={location.closeTime}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        url={`https://toast-all-day.lovable.app/locations/toast-summerville`}
-      />
+      <JsonLd data={restaurantNode(loc)} />
       <FestiveBackdrop />
       <Navigation />
       <main>
@@ -202,6 +194,9 @@ const ToastSummerville = () => {
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                    <a href={`/menus/${loc.menuGroup}`}>View the {loc.name} menu</a>
+                  </Button>
                   <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-highlight-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
@@ -300,6 +295,7 @@ const ToastSummerville = () => {
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

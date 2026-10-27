@@ -3,7 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
-import LocationSchema from "@/components/LocationSchema";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { getLocation } from "@/lib/locations";
+import { restaurantNode } from "@/lib/locationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -36,24 +39,25 @@ const ToastWestAshley = () => {
       if (pxScript) pxScript.remove();
     };
   }, []);
+  const loc = getLocation("toast-west-ashley");
   const location = {
-    name: "Toast! West Ashley",
-    address: "2026 Savannah Hwy",
-    city: "Charleston",
-    state: "SC",
-    zip: "29407",
-    fullCity: "Charleston, SC 29407",
-    phone: "(843) 483-8940",
-    hours: "Monday – Sunday: 7am – 3pm",
-    openTime: "07:00",
-    closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-west-ashley",
-    menuUrl: "https://toastallday.com/toast-menu/",
-    waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
+    name: loc.name,
+    address: loc.street,
+    city: loc.city,
+    state: loc.state,
+    zip: loc.zip,
+    fullCity: `${loc.city}, ${loc.state} ${loc.zip}`,
+    phone: loc.phone,
+    hours: loc.hours,
+    openTime: loc.opens,
+    closeTime: loc.closes,
+    orderUrl: loc.orderUrl,
+    menuUrl: `/menus/${loc.menuGroup}`,
+    waitlistUrl: loc.waitlistUrl,
     embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
     image: toastWestAshleyImg,
-    latitude: 32.7720,
-    longitude: -79.9894,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
     neighborhood: "West Ashley",
     nearbyAttractions: ["Avondale Shopping District", "Charles Towne Landing", "Citadel Mall", "West Ashley Greenway"],
     parking: "Free parking lot available with convenient access from Savannah Highway.",
@@ -68,19 +72,7 @@ const ToastWestAshley = () => {
         description={`Award-winning breakfast & brunch at ${location.address}, West Ashley. Open daily 7am-3pm. Near Avondale & Charles Towne Landing. Farm-fresh ingredients & craft cocktails. Order online!`}
         keywords="West Ashley breakfast, Savannah Highway brunch, best brunch West Ashley, Charleston restaurant, Avondale dining, family breakfast West Ashley SC"
       />
-      <LocationSchema
-        name={location.name}
-        address={location.address}
-        city={location.city}
-        state={location.state}
-        zip={location.zip}
-        phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`}
-        openTime={location.openTime}
-        closeTime={location.closeTime}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        url={`https://toast-all-day.lovable.app/locations/toast-west-ashley`}
-      />
+      <JsonLd data={restaurantNode(loc)} />
       <FestiveBackdrop />
       <Navigation />
       <main>
@@ -202,6 +194,9 @@ const ToastWestAshley = () => {
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                    <a href={`/menus/${loc.menuGroup}`}>View the {loc.name} menu</a>
+                  </Button>
                   <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
@@ -300,6 +295,7 @@ const ToastWestAshley = () => {
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

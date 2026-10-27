@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Clock, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getLocation } from '@/lib/locations';
 import { useIsMobile } from '@/hooks/use-mobile';
 import toastMeetingImg from '@/assets/locations/toast-meeting.avif';
 import toastKingImg from '@/assets/locations/toast-king.jpg';
@@ -23,75 +24,46 @@ interface Location {
   temporarilyClosed?: boolean;
   image: string;
 }
+const base = (slug: string) => {
+  const l = getLocation(slug);
+  return {
+    name: l.name,
+    address: l.street,
+    city: `${l.city}, ${l.state} ${l.zip}`,
+    phone: l.phone,
+    hours: l.hours,
+    orderUrl: l.orderUrl,
+    menuUrl: `/menus/${l.menuGroup}`,
+    waitlistUrl: l.waitlistUrl,
+  };
+};
 const locations: Location[] = [{
-  name: "Toast! on Meeting",
-  address: "127 Meeting St",
-  city: "Charleston, SC 29401",
-  phone: "(843) 994-3598",
-  hours: "Monday – Sunday: 6am – 3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-charleston",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
+  ...base("toast-meeting"),
   reviewUrl: "https://g.page/r/CbjkUb_VOmzFEAE/review",
   embedQuery: "Toast+All+Day,+127+Meeting+St,+Charleston,+SC+29401",
   image: toastMeetingImg
 }, {
-  name: "Toast! on King",
-  address: "453 King Street",
-  city: "Charleston, SC 29403",
-  phone: "(843) 793-0364",
-  hours: "Monday – Sunday: 7am-3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-king",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
+  ...base("toast-king"),
   reviewUrl: "https://g.page/r/Cf1kHg4xwRH-EAE/review",
   embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
   image: toastKingImg
 }, {
-  name: "Toast! Mt. Pleasant",
-  address: "1150 Hungry Neck Blvd.",
-  city: "Mt. Pleasant, SC 29464",
-  phone: "(843) 350-5256",
-  hours: "Monday – Sunday: 7am – 3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-mtpleasant",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/05cb9aff-c588-49f4-83c3-125ca914376c/joinWaitlist",
+  ...base("toast-mt-pleasant"),
   reviewUrl: "https://g.page/r/CZ-MhIXdCf71EAE/review",
   embedQuery: "Toast+All+Day,+1150+Hungry+Neck+Blvd,+Mt+Pleasant,+SC+29464",
   image: toastMtPleasantImg
 }, {
-  name: "Toast! West Ashley",
-  address: "2026 Savannah Hwy",
-  city: "Charleston, SC 29407",
-  phone: "(843) 483-8940",
-  hours: "Monday – Sunday: 7am – 3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-west-ashley",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/236efb55-104c-49e1-8b73-3d9af66684ce/joinWaitlist",
+  ...base("toast-west-ashley"),
   reviewUrl: "https://g.page/r/Cc7pS_ELZC-mEAE/review",
   embedQuery: "Toast+All+Day,+2026+Savannah+Hwy,+Charleston,+SC+29407",
   image: toastWestAshleyImg
 }, {
-  name: "Toast! Summerville",
-  address: "717 Old Trolley Road",
-  city: "Summerville, SC 29485",
-  phone: "(843) 900-4422",
-  hours: "Monday-Sunday: 7am-3pm",
-  orderUrl: "https://order.toasttab.com/online/toast-summerville",
-  menuUrl: "https://order.toasttab.com/online/toast-summerville",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/48ca16ab-9cc0-4c0b-a826-d3cc2118e44a/joinWaitlist",
+  ...base("toast-summerville"),
   reviewUrl: "https://g.page/r/CfHscKnFZrnUEAE/review",
   embedQuery: "Toast+All+Day,+717+Old+Trolley+Rd,+Summerville,+SC+29485",
   image: toastSummervilleImg
 }, {
-  name: "Toast! Savannah",
-  address: "1 W Broughton Street",
-  city: "Savannah, GA 31401",
-  phone: "(912) 513-8920",
-  hours: "Monday – Sunday: 7AM – 10PM",
-  orderUrl: "https://order.toasttab.com/online/toast-savannah",
-  menuUrl: "https://toastallday.com/toast-menu/",
-  waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
+  ...base("toast-savannah"),
   reviewUrl: "https://g.page/r/Cb2KNFpxhv-aEAE/review",
   embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
   image: toastSavannahImg

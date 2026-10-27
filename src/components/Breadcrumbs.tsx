@@ -34,9 +34,11 @@ const routeLabels: Record<string, string> = {
 
 interface BreadcrumbsProps {
   className?: string;
+  /** Real names for dynamic path segments, keyed by full path */
+  labels?: Record<string, string>;
 }
 
-const Breadcrumbs = ({ className = '' }: BreadcrumbsProps) => {
+const Breadcrumbs = ({ className = '', labels }: BreadcrumbsProps) => {
   const location = useLocation();
   const pathSegments = location.pathname.split('/').filter(Boolean);
 
@@ -53,7 +55,7 @@ const Breadcrumbs = ({ className = '' }: BreadcrumbsProps) => {
   pathSegments.forEach((segment) => {
     currentPath += `/${segment}`;
     breadcrumbs.push({
-      label: routeLabels[segment] || segment.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      label: labels?.[currentPath] || routeLabels[segment] || segment.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
       path: currentPath,
     });
   });

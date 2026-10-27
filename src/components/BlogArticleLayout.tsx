@@ -1,9 +1,11 @@
-import { useEffect } from "react";
 import { Link, useLocation } from "@/lib/router-compat";
 import { ArrowLeft, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
+import { getLocation, locationUrl } from "@/lib/locations";
+import { restaurantId } from "@/lib/locationSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
@@ -69,13 +71,13 @@ interface BlogArticleLayoutProps {
   locations?: string[];
 }
 
-const restaurantLocations: Record<string, { name: string; street: string; city: string; state: string; zip: string; phone: string }> = {
-  meeting: { name: "Toast! on Meeting", street: "127 Meeting St", city: "Charleston", state: "SC", zip: "29401", phone: "+1-843-994-3598" },
-  king: { name: "Toast! on King", street: "453 King Street", city: "Charleston", state: "SC", zip: "29403", phone: "+1-843-793-0364" },
-  "mt-pleasant": { name: "Toast! Mt. Pleasant", street: "1150 Hungry Neck Blvd.", city: "Mt. Pleasant", state: "SC", zip: "29464", phone: "+1-843-350-5256" },
-  "west-ashley": { name: "Toast! West Ashley", street: "2026 Savannah Hwy", city: "Charleston", state: "SC", zip: "29407", phone: "+1-843-483-8940" },
-  summerville: { name: "Toast! Summerville", street: "717 Old Trolley Road", city: "Summerville", state: "SC", zip: "29485", phone: "+1-843-900-4422" },
-  savannah: { name: "Toast! Savannah", street: "1 W Broughton Street", city: "Savannah", state: "GA", zip: "31401", phone: "+1-912-513-8920" },
+const restaurantLocations: Record<string, string> = {
+  meeting: "toast-meeting",
+  king: "toast-king",
+  "mt-pleasant": "toast-mt-pleasant",
+  "west-ashley": "toast-west-ashley",
+  summerville: "toast-summerville",
+  savannah: "toast-savannah",
 };
 
 const BlogArticleLayout = ({
@@ -95,74 +97,47 @@ const BlogArticleLayout = ({
   const { pathname } = useLocation();
   const url = `https://toastallday.com${pathname}`;
 
-  useEffect(() => {
-    const schemas: Record<string, unknown>[] = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: title,
-        description: seoDescription,
-        image: `https://toastallday.com${heroImage}`,
-        articleSection: category,
-        mainEntityOfPage: { "@type": "WebPage", "@id": url },
-        author: { "@type": "Organization", name: "Toast! All Day" },
-        publisher: {
-          "@type": "Organization",
-          name: "Toast! All Day",
-          logo: { "@type": "ImageObject", url: "https://toastallday.com/toast-logo.png" },
-        },
+  const about = (locations ?? [])
+    .map((key) => restaurantLocations[key])
+    .filter(Boolean)
+    .map((slug) => {
+      const loc = getLocation(slug as string);
+      return { "@type": "Restaurant", "@id": restaurantId(loc), name: loc.name, url: locationUrl(loc) };
+    });
+  const schemas: Record<string, unknown>[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description: seoDescription,
+      image: heroImage.startsWith("http") ? heroImage : `https://toastallday.com${heroImage}`,
+      articleSection: category,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      author: { "@type": "Organization", name: "Toast! All Day" },
+      publisher: {
+        "@type": "Organization",
+        name: "Toast! All Day",
+        logo: { "@type": "ImageObject", url: "https://toastallday.com/favicon.png" },
       },
-    ];
-
-    if (faqs?.length) {
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
-        })),
-      });
-    }
-
-    locations?.forEach((key) => {
-      const loc = restaurantLocations[key];
-      if (!loc) return;
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        name: loc.name,
-        url: "https://toastallday.com/locations",
-        telephone: loc.phone,
-        priceRange: "$$",
-        servesCuisine: ["American", "Breakfast", "Brunch", "Southern"],
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: loc.street,
-          addressLocality: loc.city,
-          addressRegion: loc.state,
-          postalCode: loc.zip,
-          addressCountry: "US",
-        },
-      });
+      ...(about.length ? { about } : {}),
+    },
+  ];
+  if (faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
     });
-
-    const nodes = schemas.map((schema) => {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.setAttribute("data-schema", "blog-article");
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
-      return script;
-    });
-
-    return () => nodes.forEach((n) => n.remove());
-  }, [title, seoDescription, heroImage, category, url, faqs, locations]);
+  }
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={seoTitle} description={seoDescription} keywords={seoKeywords} />
+      <SEO title={seoTitle} description={seoDescription} keywords={seoKeywords} type="article" />
+      <JsonLd data={schemas} />
       <FestiveBackdrop />
       <Navigation />
       <Breadcrumbs />

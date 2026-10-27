@@ -3,7 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
-import LocationSchema from "@/components/LocationSchema";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { getLocation } from "@/lib/locations";
+import { restaurantNode } from "@/lib/locationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -23,24 +26,25 @@ const ToastKing = () => {
       document.body.removeChild(script);
     };
   }, []);
+  const loc = getLocation("toast-king");
   const location = {
-    name: "Toast! on King",
-    address: "453 King Street",
-    city: "Charleston",
-    state: "SC",
-    zip: "29403",
-    fullCity: "Charleston, SC 29403",
-    phone: "(843) 793-0364",
-    hours: "Monday – Sunday: 7am – 3pm",
-    openTime: "07:00",
-    closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-king",
-    menuUrl: "https://toastallday.com/toast-menu/",
-    waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
+    name: loc.name,
+    address: loc.street,
+    city: loc.city,
+    state: loc.state,
+    zip: loc.zip,
+    fullCity: `${loc.city}, ${loc.state} ${loc.zip}`,
+    phone: loc.phone,
+    hours: loc.hours,
+    openTime: loc.opens,
+    closeTime: loc.closes,
+    orderUrl: loc.orderUrl,
+    menuUrl: `/menus/${loc.menuGroup}`,
+    waitlistUrl: loc.waitlistUrl,
     embedQuery: "Toast+All+Day,+453+King+St,+Charleston,+SC+29403",
     image: toastKingImg,
-    latitude: 32.7901,
-    longitude: -79.9407,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
     neighborhood: "Upper King Street",
     nearbyAttractions: ["Marion Square", "Charleston Museum", "Joseph Manigault House", "King Street Shopping"],
     parking: "Street parking available on King Street. Nearby parking garage at 75 Calhoun Street.",
@@ -55,19 +59,7 @@ const ToastKing = () => {
         description={`Award-winning breakfast & brunch at ${location.address} on King Street, Charleston. Open daily 7am-3pm. Perfect after shopping on Upper King. Farm-fresh ingredients & craft cocktails. Order online!`}
         keywords="King Street brunch Charleston, Upper King breakfast, Charleston brunch restaurant, best breakfast King Street, shopping district brunch, Marion Square dining"
       />
-      <LocationSchema
-        name={location.name}
-        address={location.address}
-        city={location.city}
-        state={location.state}
-        zip={location.zip}
-        phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`}
-        openTime={location.openTime}
-        closeTime={location.closeTime}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        url={`https://toast-all-day.lovable.app/locations/toast-king`}
-      />
+      <JsonLd data={restaurantNode(loc)} />
       <FestiveBackdrop />
       <Navigation />
       <main>
@@ -189,6 +181,9 @@ const ToastKing = () => {
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                    <a href={`/menus/${loc.menuGroup}`}>View the {loc.name} menu</a>
+                  </Button>
                   <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
@@ -287,6 +282,7 @@ const ToastKing = () => {
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

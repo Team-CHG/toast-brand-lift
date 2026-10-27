@@ -3,7 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
-import LocationSchema from "@/components/LocationSchema";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { getLocation } from "@/lib/locations";
+import { restaurantNode } from "@/lib/locationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -36,24 +39,25 @@ const ToastSavannah = () => {
       if (pxEl) pxEl.remove();
     };
   }, []);
+  const loc = getLocation("toast-savannah");
   const location = {
-    name: "Toast! Savannah",
-    address: "1 W Broughton Street",
-    city: "Savannah",
-    state: "GA",
-    zip: "31401",
-    fullCity: "Savannah, GA 31401",
-    phone: "(912) 513-8920",
-    hours: "Monday – Sunday: 7am – 10pm",
-    openTime: "07:00",
-    closeTime: "22:00",
-    orderUrl: "https://order.toasttab.com/online/toast-savannah",
-    menuUrl: "https://toastallday.com/toast-menu/",
-    waitlistUrl: "https://tables.toasttab.com/restaurants/97f1d59a-b51c-4a46-92e7-4251dd54980d/joinWaitlist",
+    name: loc.name,
+    address: loc.street,
+    city: loc.city,
+    state: loc.state,
+    zip: loc.zip,
+    fullCity: `${loc.city}, ${loc.state} ${loc.zip}`,
+    phone: loc.phone,
+    hours: loc.hours,
+    openTime: loc.opens,
+    closeTime: loc.closes,
+    orderUrl: loc.orderUrl,
+    menuUrl: `/menus/${loc.menuGroup}`,
+    waitlistUrl: loc.waitlistUrl,
     embedQuery: "Toast+All+Day,+1+W+Broughton+St,+Savannah,+GA+31401",
     image: toastSavannahImg,
-    latitude: 32.0809,
-    longitude: -81.0912,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
     neighborhood: "Historic Downtown Savannah",
     nearbyAttractions: ["Forsyth Park", "River Street", "City Market", "Savannah College of Art & Design"],
     parking: "Nearby public parking available on Bryan Street and at the Whitaker Street Parking Garage.",
@@ -68,19 +72,7 @@ const ToastSavannah = () => {
         description={`Award-winning breakfast, brunch & dinner at ${location.address}, Downtown Savannah. Open daily 7am-10pm! Near Forsyth Park & River Street. Farm-fresh ingredients & craft cocktails. Order online!`}
         keywords="Savannah breakfast, Broughton Street brunch, best brunch downtown Savannah GA, River Street dining, Forsyth Park restaurant, Savannah dinner, SCAD dining"
       />
-      <LocationSchema
-        name={location.name}
-        address={location.address}
-        city={location.city}
-        state={location.state}
-        zip={location.zip}
-        phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`}
-        openTime={location.openTime}
-        closeTime={location.closeTime}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        url={`https://toast-all-day.lovable.app/locations/toast-savannah`}
-      />
+      <JsonLd data={restaurantNode(loc)} />
       <FestiveBackdrop />
       <Navigation />
       <main>
@@ -203,6 +195,9 @@ const ToastSavannah = () => {
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                    <a href={`/menus/${loc.menuGroup}`}>View the {loc.name} menu</a>
+                  </Button>
                   <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
@@ -301,6 +296,7 @@ const ToastSavannah = () => {
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>

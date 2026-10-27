@@ -17,6 +17,7 @@ import { Route as ContactIndexRouteImport } from './routes/contact/index'
 import { Route as DownloadAppIndexRouteImport } from './routes/download-app/index'
 import { Route as FranchiseIndexRouteImport } from './routes/franchise/index'
 import { Route as LocationsIndexRouteImport } from './routes/locations/index'
+import { Route as MenusIndexRouteImport } from './routes/menus/index'
 import { Route as NewsEventsIndexRouteImport } from './routes/news-events/index'
 import { Route as NewsEventsSplatRouteImport } from './routes/news-events/$'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy/index'
@@ -90,6 +91,11 @@ const FranchiseIndexRoute = FranchiseIndexRouteImport.update({
 const LocationsIndexRoute = LocationsIndexRouteImport.update({
   id: '/locations/',
   path: '/locations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenusIndexRoute = MenusIndexRouteImport.update({
+  id: '/menus/',
+  path: '/menus/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsEventsIndexRoute = NewsEventsIndexRouteImport.update({
@@ -294,6 +300,7 @@ export interface FileRoutesByFullPath {
   '/download-app/': typeof DownloadAppIndexRoute
   '/franchise/': typeof FranchiseIndexRoute
   '/locations/': typeof LocationsIndexRoute
+  '/menus/': typeof MenusIndexRoute
   '/news-events/': typeof NewsEventsIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/rewards/': typeof RewardsIndexRoute
@@ -338,6 +345,7 @@ export interface FileRoutesByTo {
   '/download-app': typeof DownloadAppIndexRoute
   '/franchise': typeof FranchiseIndexRoute
   '/locations': typeof LocationsIndexRoute
+  '/menus': typeof MenusIndexRoute
   '/news-events': typeof NewsEventsIndexRoute
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/rewards': typeof RewardsIndexRoute
@@ -383,6 +391,7 @@ export interface FileRoutesById {
   '/download-app/': typeof DownloadAppIndexRoute
   '/franchise/': typeof FranchiseIndexRoute
   '/locations/': typeof LocationsIndexRoute
+  '/menus/': typeof MenusIndexRoute
   '/news-events/': typeof NewsEventsIndexRoute
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/rewards/': typeof RewardsIndexRoute
@@ -429,6 +438,7 @@ export interface FileRouteTypes {
     | '/download-app/'
     | '/franchise/'
     | '/locations/'
+    | '/menus/'
     | '/news-events/'
     | '/privacy-policy/'
     | '/rewards/'
@@ -473,6 +483,7 @@ export interface FileRouteTypes {
     | '/download-app'
     | '/franchise'
     | '/locations'
+    | '/menus'
     | '/news-events'
     | '/privacy-policy'
     | '/rewards'
@@ -517,6 +528,7 @@ export interface FileRouteTypes {
     | '/download-app/'
     | '/franchise/'
     | '/locations/'
+    | '/menus/'
     | '/news-events/'
     | '/privacy-policy/'
     | '/rewards/'
@@ -562,6 +574,7 @@ export interface RootRouteChildren {
   DownloadAppIndexRoute: typeof DownloadAppIndexRoute
   FranchiseIndexRoute: typeof FranchiseIndexRoute
   LocationsIndexRoute: typeof LocationsIndexRoute
+  MenusIndexRoute: typeof MenusIndexRoute
   NewsEventsIndexRoute: typeof NewsEventsIndexRoute
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   RewardsIndexRoute: typeof RewardsIndexRoute
@@ -653,6 +666,13 @@ declare module '@tanstack/react-router' {
       path: '/locations'
       fullPath: '/locations/'
       preLoaderRoute: typeof LocationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menus/': {
+      id: '/menus/'
+      path: '/menus'
+      fullPath: '/menus/'
+      preLoaderRoute: typeof MenusIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news-events/': {
@@ -906,6 +926,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadAppIndexRoute: DownloadAppIndexRoute,
   FranchiseIndexRoute: FranchiseIndexRoute,
   LocationsIndexRoute: LocationsIndexRoute,
+  MenusIndexRoute: MenusIndexRoute,
   NewsEventsIndexRoute: NewsEventsIndexRoute,
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   RewardsIndexRoute: RewardsIndexRoute,
