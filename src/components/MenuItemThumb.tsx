@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Utensils } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -8,10 +7,10 @@ interface Props {
   className?: string;
 }
 
-/** Uniform rounded-square menu item photo with icon fallback for missing or broken images. */
+/** Uniform rounded-square menu item photo. Items without a photo show no image at all. */
 const MenuItemThumb = ({ src, alt, className }: Props) => {
   const [failed, setFailed] = useState(false);
-  const showImage = !!src && !failed;
+  if (!src || failed) return null;
   return (
     <div
       className={cn(
@@ -19,18 +18,14 @@ const MenuItemThumb = ({ src, alt, className }: Props) => {
         className,
       )}
     >
-      {showImage ? (
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          decoding="async"
-          onError={() => setFailed(true)}
-          className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-        />
-      ) : (
-        <Utensils className="h-6 w-6 text-accent sm:h-7 sm:w-7" aria-hidden="true" />
-      )}
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+      />
     </div>
   );
 };

@@ -64,7 +64,10 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border-accent/10">
                 <DropdownMenuItem asChild>
-                  <a href="/menus/downtown" className="cursor-pointer">Downtown Locations</a>
+                  <a href="/menus/meeting-street" className="cursor-pointer">Meeting Street</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/menus/king-street" className="cursor-pointer">King Street</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="/menus/suburbs" className="cursor-pointer">Suburb Locations</a>
@@ -134,7 +137,8 @@ const Navigation = () => {
             <div className="flex flex-col gap-4">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground px-2">Menu</p>
-                <a href="/menus/downtown" className="block px-2 py-2 text-primary hover:text-accent transition-colors">Downtown Locations</a>
+                <a href="/menus/meeting-street" className="block px-2 py-2 text-primary hover:text-accent transition-colors">Meeting Street</a>
+                <a href="/menus/king-street" className="block px-2 py-2 text-primary hover:text-accent transition-colors">King Street</a>
                 <a href="/menus/suburbs" className="block px-2 py-2 text-primary hover:text-accent transition-colors">Suburb Locations</a>
                 <a href="/menus/savannah" className="block px-2 py-2 text-primary hover:text-accent transition-colors">Savannah Location</a>
               </div>

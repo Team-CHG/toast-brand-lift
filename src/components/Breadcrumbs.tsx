@@ -17,6 +17,8 @@ const routeLabels: Record<string, string> = {
   'news-events': 'News & Events',
   'menus': 'Menus',
   'downtown': 'Downtown Locations',
+  'meeting-street': 'Toast! on Meeting',
+  'king-street': 'Toast! on King',
   'suburbs': 'Suburb Locations',
   'savannah': 'Savannah Location',
   'download-app': 'Download App',

@@ -50,8 +50,11 @@ import { Route as LocationsToastSavannahIndexRouteImport } from './routes/locati
 import { Route as LocationsToastSummervilleIndexRouteImport } from './routes/locations/toast-summerville/index'
 import { Route as LocationsToastWestAshleyIndexRouteImport } from './routes/locations/toast-west-ashley/index'
 import { Route as MenusGroupIndexRouteImport } from './routes/menus/$group/index'
+import { Route as MenusDowntownIndexRouteImport } from './routes/menus/downtown/index'
 import { Route as MenusGroupCategoryIndexRouteImport } from './routes/menus/$group/$category/index'
+import { Route as MenusDowntownCategoryIndexRouteImport } from './routes/menus/downtown/$category/index'
 import { Route as MenusGroupCategoryItemIndexRouteImport } from './routes/menus/$group/$category/$item/index'
+import { Route as MenusDowntownCategoryItemIndexRouteImport } from './routes/menus/downtown/$category/$item/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -278,15 +281,32 @@ const MenusGroupIndexRoute = MenusGroupIndexRouteImport.update({
   path: '/menus/$group/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MenusDowntownIndexRoute = MenusDowntownIndexRouteImport.update({
+  id: '/menus/downtown/',
+  path: '/menus/downtown/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MenusGroupCategoryIndexRoute = MenusGroupCategoryIndexRouteImport.update({
   id: '/menus/$group/$category/',
   path: '/menus/$group/$category/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MenusDowntownCategoryIndexRoute =
+  MenusDowntownCategoryIndexRouteImport.update({
+    id: '/menus/downtown/$category/',
+    path: '/menus/downtown/$category/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MenusGroupCategoryItemIndexRoute =
   MenusGroupCategoryItemIndexRouteImport.update({
     id: '/menus/$group/$category/$item/',
     path: '/menus/$group/$category/$item/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MenusDowntownCategoryItemIndexRoute =
+  MenusDowntownCategoryItemIndexRouteImport.update({
+    id: '/menus/downtown/$category/$item/',
+    path: '/menus/downtown/$category/$item/',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -332,8 +352,11 @@ export interface FileRoutesByFullPath {
   '/locations/toast-summerville/': typeof LocationsToastSummervilleIndexRoute
   '/locations/toast-west-ashley/': typeof LocationsToastWestAshleyIndexRoute
   '/menus/$group/': typeof MenusGroupIndexRoute
+  '/menus/downtown/': typeof MenusDowntownIndexRoute
   '/menus/$group/$category/': typeof MenusGroupCategoryIndexRoute
+  '/menus/downtown/$category/': typeof MenusDowntownCategoryIndexRoute
   '/menus/$group/$category/$item/': typeof MenusGroupCategoryItemIndexRoute
+  '/menus/downtown/$category/$item/': typeof MenusDowntownCategoryItemIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -377,8 +400,11 @@ export interface FileRoutesByTo {
   '/locations/toast-summerville': typeof LocationsToastSummervilleIndexRoute
   '/locations/toast-west-ashley': typeof LocationsToastWestAshleyIndexRoute
   '/menus/$group': typeof MenusGroupIndexRoute
+  '/menus/downtown': typeof MenusDowntownIndexRoute
   '/menus/$group/$category': typeof MenusGroupCategoryIndexRoute
+  '/menus/downtown/$category': typeof MenusDowntownCategoryIndexRoute
   '/menus/$group/$category/$item': typeof MenusGroupCategoryItemIndexRoute
+  '/menus/downtown/$category/$item': typeof MenusDowntownCategoryItemIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -423,8 +449,11 @@ export interface FileRoutesById {
   '/locations/toast-summerville/': typeof LocationsToastSummervilleIndexRoute
   '/locations/toast-west-ashley/': typeof LocationsToastWestAshleyIndexRoute
   '/menus/$group/': typeof MenusGroupIndexRoute
+  '/menus/downtown/': typeof MenusDowntownIndexRoute
   '/menus/$group/$category/': typeof MenusGroupCategoryIndexRoute
+  '/menus/downtown/$category/': typeof MenusDowntownCategoryIndexRoute
   '/menus/$group/$category/$item/': typeof MenusGroupCategoryItemIndexRoute
+  '/menus/downtown/$category/$item/': typeof MenusDowntownCategoryItemIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -470,8 +499,11 @@ export interface FileRouteTypes {
     | '/locations/toast-summerville/'
     | '/locations/toast-west-ashley/'
     | '/menus/$group/'
+    | '/menus/downtown/'
     | '/menus/$group/$category/'
+    | '/menus/downtown/$category/'
     | '/menus/$group/$category/$item/'
+    | '/menus/downtown/$category/$item/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -515,8 +547,11 @@ export interface FileRouteTypes {
     | '/locations/toast-summerville'
     | '/locations/toast-west-ashley'
     | '/menus/$group'
+    | '/menus/downtown'
     | '/menus/$group/$category'
+    | '/menus/downtown/$category'
     | '/menus/$group/$category/$item'
+    | '/menus/downtown/$category/$item'
   id:
     | '__root__'
     | '/'
@@ -560,8 +595,11 @@ export interface FileRouteTypes {
     | '/locations/toast-summerville/'
     | '/locations/toast-west-ashley/'
     | '/menus/$group/'
+    | '/menus/downtown/'
     | '/menus/$group/$category/'
+    | '/menus/downtown/$category/'
     | '/menus/$group/$category/$item/'
+    | '/menus/downtown/$category/$item/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -606,8 +644,11 @@ export interface RootRouteChildren {
   LocationsToastSummervilleIndexRoute: typeof LocationsToastSummervilleIndexRoute
   LocationsToastWestAshleyIndexRoute: typeof LocationsToastWestAshleyIndexRoute
   MenusGroupIndexRoute: typeof MenusGroupIndexRoute
+  MenusDowntownIndexRoute: typeof MenusDowntownIndexRoute
   MenusGroupCategoryIndexRoute: typeof MenusGroupCategoryIndexRoute
+  MenusDowntownCategoryIndexRoute: typeof MenusDowntownCategoryIndexRoute
   MenusGroupCategoryItemIndexRoute: typeof MenusGroupCategoryItemIndexRoute
+  MenusDowntownCategoryItemIndexRoute: typeof MenusDowntownCategoryItemIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -899,6 +940,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenusGroupIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/menus/downtown/': {
+      id: '/menus/downtown/'
+      path: '/menus/downtown'
+      fullPath: '/menus/downtown/'
+      preLoaderRoute: typeof MenusDowntownIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menus/$group/$category/': {
       id: '/menus/$group/$category/'
       path: '/menus/$group/$category'
@@ -906,11 +954,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenusGroupCategoryIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/menus/downtown/$category/': {
+      id: '/menus/downtown/$category/'
+      path: '/menus/downtown/$category'
+      fullPath: '/menus/downtown/$category/'
+      preLoaderRoute: typeof MenusDowntownCategoryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menus/$group/$category/$item/': {
       id: '/menus/$group/$category/$item/'
       path: '/menus/$group/$category/$item'
       fullPath: '/menus/$group/$category/$item/'
       preLoaderRoute: typeof MenusGroupCategoryItemIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menus/downtown/$category/$item/': {
+      id: '/menus/downtown/$category/$item/'
+      path: '/menus/downtown/$category/$item'
+      fullPath: '/menus/downtown/$category/$item/'
+      preLoaderRoute: typeof MenusDowntownCategoryItemIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -964,8 +1026,11 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsToastSummervilleIndexRoute: LocationsToastSummervilleIndexRoute,
   LocationsToastWestAshleyIndexRoute: LocationsToastWestAshleyIndexRoute,
   MenusGroupIndexRoute: MenusGroupIndexRoute,
+  MenusDowntownIndexRoute: MenusDowntownIndexRoute,
   MenusGroupCategoryIndexRoute: MenusGroupCategoryIndexRoute,
+  MenusDowntownCategoryIndexRoute: MenusDowntownCategoryIndexRoute,
   MenusGroupCategoryItemIndexRoute: MenusGroupCategoryItemIndexRoute,
+  MenusDowntownCategoryItemIndexRoute: MenusDowntownCategoryItemIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

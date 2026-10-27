@@ -4,7 +4,8 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { createClient } from "@supabase/supabase-js";
-import { LOCATIONS, MENU_GROUPS, fullAddress } from "../src/lib/locations";
+import { LOCATIONS, MENU_GROUPS, fullAddress, type MenuGroupSlug } from "../src/lib/locations";
+import { buildMenu, type SourceCategory, type SourceItem } from "../src/lib/menuBuild";
 
 const BASE_URL = "https://toastallday.com";
 
@@ -71,71 +72,48 @@ const staticEntries: SitemapEntry[] = [
 
 async function fetchMenuEntries(): Promise<SitemapEntry[]> {
   const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-  const { data: groups, error: groupsError } = await supabase
-    .from("menu_groups")
-    .select("id, slug");
+  const { data: groups, error: groupsError } = await supabase.from("menu_groups").select("id, slug");
   if (groupsError) throw groupsError;
-
-  const { data: categories, error: catError } = await supabase
-    .from("menu_categories")
-    .select("id, slug, group_id, updated_at")
-    .eq("is_active", true);
-  if (catError) throw catError;
-
-  // Same filters as the visible menu pages, so hidden or 86'd items never reach the sitemap.
-  const { data: items, error: itemError } = await supabase
-    .from("menu_items")
-    .select("slug, category_id, updated_at")
-    .eq("is_active", true)
-    .eq("available_online", true)
-    .eq("is_86", false);
-  if (itemError) throw itemError;
-
-  const groupById = new Map((groups ?? []).map((g) => [g.id, g.slug]));
-  const catById = new Map(
-    (categories ?? []).map((c) => [c.id, { slug: c.slug, groupSlug: groupById.get(c.group_id) }]),
-  );
   const day = (s?: string | null) => (s ? s.split("T")[0] : undefined);
-  const latest = (a?: string, b?: string | null) => (b && (!a || b > a) ? b : a);
-
   const entries: SitemapEntry[] = [];
-  const catLastmod = new Map<string, string>();
-  const groupLastmod = new Map<string, string>();
 
-  for (const item of items ?? []) {
-    const cat = catById.get(item.category_id);
-    if (!cat || !cat.groupSlug) continue;
-    entries.push({
-      path: `/menus/${cat.groupSlug}/${cat.slug}/${item.slug}`,
-      ...(day(item.updated_at) ? { lastmod: day(item.updated_at) as string } : {}),
-      changefreq: "weekly",
-      priority: "0.6",
-    });
-    const cKey = item.category_id;
-    const c = latest(catLastmod.get(cKey), item.updated_at);
-    if (c) catLastmod.set(cKey, c);
-    const g = latest(groupLastmod.get(cat.groupSlug), item.updated_at);
-    if (g) groupLastmod.set(cat.groupSlug, g);
+  // Same assembly as the visible menu pages (synced data + printed-menu layer),
+  // so hidden, renamed or redirected items never reach the sitemap.
+  for (const slug of Object.keys(MENU_GROUPS) as MenuGroupSlug[]) {
+    const g = (groups ?? []).find((x) => x.slug === MENU_GROUPS[slug].source);
+    if (!g) continue;
+    const { data: cats, error: catError } = await supabase
+      .from("menu_categories")
+      .select("id, slug, name, description, image_url, updated_at")
+      .eq("group_id", g.id)
+      .eq("is_active", true)
+      .order("sort_order", { ascending: true });
+    if (catError) throw catError;
+    const { data: items, error: itemError } = await supabase
+      .from("menu_items")
+      .select("id, category_id, slug, name, description, price, image_url, calories, allergens, updated_at")
+      .eq("group_id", g.id)
+      .eq("is_active", true)
+      .eq("available_online", true)
+      .eq("is_86", false)
+      .order("sort_order", { ascending: true });
+    if (itemError) throw itemError;
+
+    const menu = buildMenu(slug, (cats ?? []) as SourceCategory[], (items ?? []) as SourceItem[]);
+    const srcUpdated = new Map((items ?? []).map((i) => [i.id, i.updated_at as string | null]));
+    const menuDay = day(menu.updatedAt);
+    for (const section of menu.sections) {
+      let secLatest: string | undefined;
+      for (const item of section.items) {
+        const lm = menu.printed && item.id.startsWith("local-") ? menuDay : day(srcUpdated.get(item.id));
+        if (lm && (!secLatest || lm > secLatest)) secLatest = lm;
+        entries.push({ path: `/menus/${slug}/${section.slug}/${item.slug}`, ...(lm ? { lastmod: lm } : {}), changefreq: "weekly", priority: "0.6" });
+      }
+      entries.push({ path: `/menus/${slug}/${section.slug}`, ...(secLatest ? { lastmod: secLatest } : {}), changefreq: "weekly", priority: "0.7" });
+    }
+    entries.push({ path: `/menus/${slug}`, ...(menuDay ? { lastmod: menuDay } : {}), changefreq: "daily", priority: "0.9" });
   }
-
-  // Categories with no visible items render a 404, so they are skipped.
-  for (const cat of categories ?? []) {
-    const groupSlug = groupById.get(cat.group_id);
-    if (!groupSlug || !catLastmod.has(cat.id)) continue;
-    entries.push({
-      path: `/menus/${groupSlug}/${cat.slug}`,
-      lastmod: day(catLastmod.get(cat.id)) as string,
-      changefreq: "weekly",
-      priority: "0.7",
-    });
-  }
-
-  for (const slug of Object.keys(MENU_GROUPS)) {
-    const lm = day(groupLastmod.get(slug));
-    entries.push({ path: `/menus/${slug}`, ...(lm ? { lastmod: lm } : {}), changefreq: "daily", priority: "0.9" });
-  }
-
+  entries.push({ path: "/menus/downtown", lastmod: "2026-10-27", changefreq: "monthly", priority: "0.6" });
   return entries;
 }
 

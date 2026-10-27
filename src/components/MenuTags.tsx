@@ -6,10 +6,12 @@ const MenuTags = ({ item }: { item: Pick<MenuItemData, "dietary" | "signature"> 
   return (
     <span className="ml-2 inline-flex flex-wrap gap-1 align-middle">
       {item.signature && (
-        <span className="border border-highlight px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-highlight">Signature</span>
+        <span className="tag border border-highlight px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-highlight">
+          <span aria-hidden="true">🥂 </span>Toast Signature Dish
+        </span>
       )}
       {item.dietary.map((d) => (
-        <span key={d} className="border border-accent px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
+        <span key={d} className="tag border border-accent px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
           {DIETARY_LABEL[d]}
         </span>
       ))}
