@@ -4,8 +4,8 @@
 
 ## Locations
 
-- [Toast! on Meeting](https://toastallday.com/locations/toast-meeting): 127 Meeting St, Charleston, SC 29401. Phone (843) 994-3598. Hours Monday - Sunday: 6am - 3pm. Menu: https://toastallday.com/menus/downtown
-- [Toast! on King](https://toastallday.com/locations/toast-king): 453 King Street, Charleston, SC 29403. Phone (843) 793-0364. Hours Monday - Sunday: 7am - 3pm. Menu: https://toastallday.com/menus/downtown
+- [Toast! on Meeting](https://toastallday.com/locations/toast-meeting): 127 Meeting St, Charleston, SC 29401. Phone (843) 994-3598. Hours Monday - Sunday: 6am - 3pm. Menu: https://toastallday.com/menus/meeting-street
+- [Toast! on King](https://toastallday.com/locations/toast-king): 453 King Street, Charleston, SC 29403. Phone (843) 793-0364. Hours Monday - Sunday: 7am - 3pm. Menu: https://toastallday.com/menus/king-street
 - [Toast! Mt. Pleasant](https://toastallday.com/locations/toast-mt-pleasant): 1150 Hungry Neck Blvd., Mt. Pleasant, SC 29464. Phone (843) 350-5256. Hours Monday - Sunday: 7am - 3pm. Menu: https://toastallday.com/menus/suburbs
 - [Toast! West Ashley](https://toastallday.com/locations/toast-west-ashley): 2026 Savannah Hwy, Charleston, SC 29407. Phone (843) 483-8940. Hours Monday - Sunday: 7am - 3pm. Menu: https://toastallday.com/menus/suburbs
 - [Toast! Summerville](https://toastallday.com/locations/toast-summerville): 717 Old Trolley Road, Summerville, SC 29485. Phone (843) 900-4422. Hours Monday - Sunday: 7am - 3pm. Menu: https://toastallday.com/menus/suburbs
@@ -13,7 +13,8 @@
 
 ## Menus
 
-- [Toast! All Day Downtown Charleston Menu](https://toastallday.com/menus/downtown): Breakfast, brunch, and lunch favorites served at Toast! on Meeting and Toast! on King in downtown Charleston, with prices.
+- [Toast! on Meeting Menu (127 Meeting St)](https://toastallday.com/menus/meeting-street): Breakfast, brunch, and lunch favorites with prices at Toast! on Meeting, 127 Meeting St in downtown Charleston.
+- [Toast! on King Menu (453 King Street)](https://toastallday.com/menus/king-street): Breakfast, brunch, and lunch favorites with prices at Toast! on King, 453 King Street in downtown Charleston.
 - [Toast! All Day Suburban Menu](https://toastallday.com/menus/suburbs): Breakfast, brunch, and lunch favorites served in Mt. Pleasant, West Ashley, and Summerville, with prices.
 - [Toast! All Day Savannah Menu](https://toastallday.com/menus/savannah): Breakfast, brunch, and lunch favorites served fresh on Broughton Street in Savannah, with prices.
 
