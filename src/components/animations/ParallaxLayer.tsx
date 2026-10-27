@@ -28,7 +28,7 @@ export default function ParallaxLayer({
   );
 
   return (
-    <motion.div ref={ref} className={className} style={{ y, ...style }}>
+    <motion.div ref={ref} className={className} style={{ y, ...(style as MotionStyle | undefined) }}>
       {children}
     </motion.div>
   );
