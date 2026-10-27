@@ -28,11 +28,11 @@ describe("dietary schema", () => {
   const section = { id: "s", slug: "omelets", name: "Omelets", description: null, image_url: null, items: [] };
   const base = { id: "i", description: null, price: 16, image_url: null, calories: null, allergens: null, signature: false };
   it("maps vegetarian to VegetarianDiet", () => {
-    const node = menuItemNode("downtown", section, { ...base, slug: "roasted-veggie-omelet", name: "Roasted Veggie Omelet", dietary: ["vegetarian"] });
+    const node = menuItemNode("suburbs", section, { ...base, slug: "roasted-veggie-omelet", name: "Roasted Veggie Omelet", dietary: ["vegetarian"] });
     expect(node.suitableForDiet).toEqual(["https://schema.org/VegetarianDiet"]);
   });
   it("omits suitableForDiet when untagged", () => {
-    const node = menuItemNode("downtown", section, { ...base, slug: "x", name: "X", dietary: [] });
+    const node = menuItemNode("suburbs", section, { ...base, slug: "x", name: "X", dietary: [] });
     expect("suitableForDiet" in node).toBe(false);
   });
 });
