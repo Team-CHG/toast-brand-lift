@@ -1,0 +1,19 @@
+{
+  "customizations": [
+    { "token": "--highlight / --highlight-foreground (bg-highlight)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--complementary / --complementary-foreground (bg-complementary)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "brand HSL palette (:root and .dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--hero-gradient / --warm-gradient", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--shadow-soft / --shadow-hover / --shadow-campaign", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--transition-smooth", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius 0.75rem", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "hero-copy-reveal / hero-food-drift keyframes and classes", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "Telegraf base typography rules and @font-face", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "img rendering rules", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "cv-auto mobile utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-sans / font-racing / font-body", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container (centered, 2rem padding, 1400px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-swipe-left keyframes", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-accordion-down / animate-accordion-up", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" }
+  ]
+}
