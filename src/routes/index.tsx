@@ -4,7 +4,6 @@ import Index from "@/pages/Index";
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
-      { rel: "canonical", href: "https://toastallday.com/" },
       // Preload the seasonal campaign's exact LCP source.
       {
         rel: "preload",
@@ -14,7 +13,6 @@ export const Route = createFileRoute("/")({
         fetchPriority: "high",
       },
     ],
-    meta: [{ property: "og:url", content: "https://toastallday.com/" }],
   }),
   component: Index,
 });
