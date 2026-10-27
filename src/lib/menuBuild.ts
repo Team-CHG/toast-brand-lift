@@ -193,12 +193,10 @@ export function buildMenu(group: MenuGroupSlug, cats: SourceCategory[], items: S
 export function legacyMenuRedirect(menu: MenuData, category: string, item?: string): string | null {
   const base = `/menus/${menu.group}`;
   const has = (slug: string) => menu.sections.some((s) => s.slug === slug);
-  let cat: string | null = category;
-  if (!has(category)) {
-    if (!(category in CATEGORY_REDIRECTS)) cat = undefined as unknown as null;
-    else cat = CATEGORY_REDIRECTS[category];
-  }
-  if (cat === undefined) return null;
+  let cat: string | null;
+  if (has(category)) cat = category;
+  else if (category in CATEGORY_REDIRECTS) cat = CATEGORY_REDIRECTS[category];
+  else return null;
   if (!item) return cat === category ? null : cat ? `${base}/${cat}` : base;
 
   const section = cat ? menu.sections.find((s) => s.slug === cat) : undefined;
