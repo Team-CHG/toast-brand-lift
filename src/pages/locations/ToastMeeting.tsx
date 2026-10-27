@@ -3,7 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import SEO from "@/components/SEO";
-import LocationSchema from "@/components/LocationSchema";
+import JsonLd from "@/components/JsonLd";
+import FaqSection from "@/components/FaqSection";
+import { getLocation } from "@/lib/locations";
+import { restaurantNode } from "@/lib/locationSchema";
 import GiftCardSection from "@/components/GiftCardSection";
 import RewardsCtaSection from "@/components/RewardsCtaSection";
 import MenuCarousel from "@/components/MenuCarousel";
@@ -35,24 +38,25 @@ const ToastMeeting = () => {
       if (pxScript) pxScript.remove();
     };
   }, []);
+  const loc = getLocation("toast-meeting");
   const location = {
-    name: "Toast! on Meeting",
-    address: "127 Meeting St",
-    city: "Charleston",
-    state: "SC",
-    zip: "29401",
-    fullCity: "Charleston, SC 29401",
-    phone: "(843) 994-3598",
-    hours: "Monday – Sunday: 6am – 3pm",
-    openTime: "06:00",
-    closeTime: "15:00",
-    orderUrl: "https://order.toasttab.com/online/toast-charleston",
-    menuUrl: "https://toastallday.com/toast-menu/",
-    waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
+    name: loc.name,
+    address: loc.street,
+    city: loc.city,
+    state: loc.state,
+    zip: loc.zip,
+    fullCity: `${loc.city}, ${loc.state} ${loc.zip}`,
+    phone: loc.phone,
+    hours: loc.hours,
+    openTime: loc.opens,
+    closeTime: loc.closes,
+    orderUrl: loc.orderUrl,
+    menuUrl: `/menus/${loc.menuGroup}`,
+    waitlistUrl: loc.waitlistUrl,
     embedQuery: "Toast+All+Day,+127+Meeting+St,+Charleston,+SC+29401",
     image: toastMeetingImg,
-    latitude: 32.7832,
-    longitude: -79.9364,
+    latitude: loc.latitude,
+    longitude: loc.longitude,
     neighborhood: "Downtown Charleston",
     nearbyAttractions: ["Charleston City Market", "Waterfront Park", "Rainbow Row", "The Battery"],
     parking: "Street parking and nearby parking garages available on Meeting Street and Market Street."
@@ -62,7 +66,7 @@ const ToastMeeting = () => {
   return (
     <div className="min-h-screen">
       <SEO title={`Best Brunch in Downtown Charleston | ${location.name} - Toast All Day`} description={`Award-winning breakfast & brunch at 127 Meeting St, Downtown Charleston. Open daily 6am-3pm. Farm-fresh ingredients, craft cocktails & family-friendly dining near City Market. Order online or join our waitlist!`} keywords="best brunch downtown Charleston, Charleston breakfast restaurant, Meeting Street brunch, Charleston City Market dining, farm to table Charleston, Sunday brunch Charleston SC" />
-      <LocationSchema name={location.name} address={location.address} city={location.city} state={location.state} zip={location.zip} phone={`+1-${location.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}`} openTime={location.openTime} closeTime={location.closeTime} latitude={location.latitude} longitude={location.longitude} url={`https://toast-all-day.lovable.app/locations/toast-meeting`} />
+      <JsonLd data={restaurantNode(loc)} />
       <FestiveBackdrop />
       <Navigation />
       <main>
@@ -177,6 +181,9 @@ const ToastMeeting = () => {
                       Order Online <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
+                  <Button asChild size="lg" variant="outline" className="border-primary text-primary">
+                    <a href={`/menus/${loc.menuGroup}`}>View the {loc.name} menu</a>
+                  </Button>
                   <Button asChild size="lg" className="bg-highlight hover:bg-highlight/90 text-highlight-foreground">
                     <Link to="/rewards">
                       <Gift className="mr-2 h-4 w-4" /> Join Rewards
@@ -266,6 +273,7 @@ const ToastMeeting = () => {
 
         {/* Rewards CTA Section */}
         <RewardsCtaSection />
+        <FaqSection />
       </main>
       <Footer />
     </div>
