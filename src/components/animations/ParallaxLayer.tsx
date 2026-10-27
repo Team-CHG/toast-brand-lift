@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, type MotionStyle } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
 interface ParallaxLayerProps {
