@@ -5,7 +5,6 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
-import FaqSection from "@/components/FaqSection";
 import { organizationNodes } from "@/lib/locationSchema";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ScrollReveal from "@/components/animations/ScrollReveal";
