@@ -1,0 +1,277 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ * Brand colors are kept in HSL, exactly as before the framework upgrade.
+ */
+
+@font-face {
+  font-family: "Telegraf";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Telegraf"), url("/fonts/telegraf-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Telegraf";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Telegraf"), url("/fonts/telegraf-ultrabold.woff") format("woff");
+}
+
+@theme inline {
+  --font-sans: "Telegraf", sans-serif;
+  --font-racing: "Racing Sans One", sans-serif;
+  --font-body: "Telegraf", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-complementary: var(--complementary);
+  --color-complementary-foreground: var(--complementary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-swipe-left: swipe-left 4s ease-in-out infinite;
+}
+
+:root {
+  --background: hsl(210 40% 98%);
+  --foreground: hsl(25 25% 15%);
+
+  --card: hsl(210 40% 100%);
+  --card-foreground: hsl(25 25% 15%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(25 25% 15%);
+
+  --primary: hsl(25 40% 25%);
+  --primary-foreground: hsl(210 40% 98%);
+
+  --secondary: hsl(210 30% 94%);
+  --secondary-foreground: hsl(210 50% 30%);
+
+  --muted: hsl(210 20% 96%);
+  --muted-foreground: hsl(210 10% 45%);
+
+  --accent: hsl(213 38% 63%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  --highlight: hsl(0 100% 42%);
+  --highlight-foreground: hsl(0 0% 100%);
+
+  --complementary: hsl(191 100% 95%);
+  --complementary-foreground: hsl(25 25% 15%);
+
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(210 20% 90%);
+  --input: hsl(210 20% 90%);
+  --ring: hsl(213 38% 63%);
+
+  --radius: 0.75rem;
+
+  --hero-gradient: linear-gradient(135deg, hsl(213 38% 63% / 0.85), hsl(0 100% 42% / 0.7));
+  --warm-gradient: linear-gradient(180deg, hsl(210 40% 98%), hsl(210 30% 94%));
+  --shadow-soft: 0 4px 20px hsl(213 38% 63% / 0.08);
+  --shadow-hover: 0 8px 30px hsl(213 38% 63% / 0.15);
+  --shadow-campaign: 0 32px 70px -28px hsl(25 25% 15% / 0.42);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --sidebar-background: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+  --background: hsl(215 30% 10%);
+  --foreground: hsl(210 40% 98%);
+
+  --card: hsl(215 30% 13%);
+  --card-foreground: hsl(210 40% 98%);
+
+  --popover: hsl(215 30% 13%);
+  --popover-foreground: hsl(210 40% 98%);
+
+  --primary: hsl(210 40% 98%);
+  --primary-foreground: hsl(215 50% 20%);
+
+  --secondary: hsl(215 25% 18%);
+  --secondary-foreground: hsl(210 40% 98%);
+
+  --muted: hsl(215 30% 18%);
+  --muted-foreground: hsl(210 15% 65%);
+
+  --accent: hsl(213 38% 63%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  --highlight: hsl(0 100% 42%);
+  --highlight-foreground: hsl(0 0% 100%);
+
+  --complementary: hsl(191 100% 95%);
+  --complementary-foreground: hsl(25 25% 15%);
+
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+
+  --border: hsl(215 25% 20%);
+  --input: hsl(215 25% 20%);
+  --ring: hsl(213 38% 63%);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 96rem) {
+    max-width: 1400px;
+  }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes swipe-left {
+  0% { transform: translateX(100%) translateY(-50%); opacity: 0; }
+  15% { opacity: 1; }
+  50% { transform: translateX(0%) translateY(-50%); opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(100%) translateY(-50%); opacity: 0; }
+}
+
+@keyframes hero-copy-reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-food-drift {
+  from { opacity: 0; transform: translateY(18px) rotate(1.5deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+.hero-copy-reveal {
+  animation: hero-copy-reveal 600ms ease-out both;
+}
+
+.hero-copy-reveal:nth-child(2) { animation-delay: 80ms; }
+.hero-copy-reveal:nth-child(3) { animation-delay: 160ms; }
+.hero-copy-reveal:nth-child(4) { animation-delay: 240ms; }
+
+.hero-food-drift {
+  animation: hero-food-drift 800ms cubic-bezier(0.22, 1, 0.36, 1) 100ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy-reveal,
+  .hero-food-drift {
+    animation: none;
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Telegraf", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Telegraf", sans-serif;
+  }
+
+  p, span, li, a, label, input, textarea, button:not(.font-racing) {
+    font-family: "Telegraf", sans-serif;
+  }
+
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Preserve intrinsic aspect ratio whenever width/height attributes are set,
+     so explicit dimensions don't distort responsive layouts. */
+  :where(img[width][height]) {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Mobile-only: defer rendering work for below-the-fold sections until
+   they scroll near the viewport. Desktop unaffected. */
+@media (max-width: 767px) {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+  }
+}

@@ -10,19 +10,28 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import StaggerContainer, { StaggerItem } from "@/components/animations/StaggerContainer";
 import MenuCarousel from "@/components/MenuCarousel";
+import asset_food_slide_2_new_0 from "@/assets/food-slide-2-new.avif";
+import asset_award_restaurant_guru_1 from "@/assets/award-restaurant-guru.avif";
+import asset_award_tripadvisor_2 from "@/assets/award-tripadvisor.avif";
+import asset_giftcard_design_3 from "@/assets/giftcard-design.avif";
+import asset_page_background_texture_4 from "@/assets/page-background-texture.avif";
+import asset_newsletter_celebration_bg_5 from "@/assets/newsletter-celebration-bg.avif";
+import asset_flourish_decoration_6 from "@/assets/flourish-decoration.avif";
+import asset_home_background_3_7 from "@/assets/home-background-3.avif";
+import asset_awards_video_8 from "@/assets/awards-video.mp4";
 
 // All large raster assets switched to AVIF variants (which already exist on disk).
 // AVIF is supported by ~96% of browsers globally (Chrome 85+, Firefox 93+,
 // Safari 16+). Combined savings on the home page are ~2 MB vs the PNG/JPG
 // versions previously bundled.
-const menuImage2 = new URL("@/assets/food-slide-2-new.avif", import.meta.url).href;          // 192K -> 96K
-const awardRestaurantGuru = new URL("@/assets/award-restaurant-guru.avif", import.meta.url).href;
-const awardTripadvisor = new URL("@/assets/award-tripadvisor.avif", import.meta.url).href;
-const giftcardDesign = new URL("@/assets/giftcard-design.avif", import.meta.url).href;       // 1.2M -> 204K
-const pageBackgroundTexture = new URL("@/assets/page-background-texture.avif", import.meta.url).href; // 20K -> 6K
-const newsletterCelebrationBg = new URL("@/assets/newsletter-celebration-bg.avif", import.meta.url).href; // 551K -> 25K
-const flourishDecoration = new URL("@/assets/flourish-decoration.avif", import.meta.url).href; // 23K -> 8.7K
-const homeBackground3 = new URL("@/assets/home-background-3.avif", import.meta.url).href;
+const menuImage2 = asset_food_slide_2_new_0;          // 192K -> 96K
+const awardRestaurantGuru = asset_award_restaurant_guru_1;
+const awardTripadvisor = asset_award_tripadvisor_2;
+const giftcardDesign = asset_giftcard_design_3;       // 1.2M -> 204K
+const pageBackgroundTexture = asset_page_background_texture_4; // 20K -> 6K
+const newsletterCelebrationBg = asset_newsletter_celebration_bg_5; // 551K -> 25K
+const flourishDecoration = asset_flourish_decoration_6; // 23K -> 8.7K
+const homeBackground3 = asset_home_background_3_7;
 
 // Lazy video component, only loads video src when in viewport.
 // Accepts multiple sources for WebM-first, MP4 fallback delivery.
@@ -62,7 +71,7 @@ const FeatureSections = () => {
       {/* ═══════════════ QUALITIES RIBBON - COMPACT UNDER HERO ═══════════════ */}
       <section className="relative z-20 mt-2 md:-mt-4 pb-6 md:pb-10">
         <div className="container mx-auto px-3 md:px-4">
-          <div className="bg-white/90 rounded-xl md:rounded-2xl shadow-sm border border-accent/10 py-3 md:py-4 px-4 md:px-10">
+          <div className="bg-white/90 rounded-xl md:rounded-2xl shadow-xs border border-accent/10 py-3 md:py-4 px-4 md:px-10">
             <div className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-items-center md:justify-center gap-y-2 gap-x-3 md:gap-10">
               {qualities.map((q, i) => (
                 <div
@@ -109,7 +118,7 @@ const FeatureSections = () => {
                 <div className="relative h-[350px] md:h-[450px] lg:h-[550px] rounded-3xl shadow-2xl overflow-hidden ring-1 ring-accent/20">
                   <LazyVideo
                     sources={[
-                      { src: new URL("@/assets/awards-video.mp4", import.meta.url).href, type: "video/mp4" },
+                      { src: asset_awards_video_8, type: "video/mp4" },
                     ]}
                     className="w-full h-full"
                   />

@@ -15,7 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TurnstileWidget from "@/components/TurnstileWidget";
-import { supabase } from "@/integrations/supabase/client";
+import { sendFormEmail } from "@/lib/sendFormEmail.functions";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import contactHero from "@/assets/contact-hero.jpg";
@@ -53,11 +53,7 @@ const Contact = () => {
     }
     setIsSubmitting(true);
     try {
-      const { data: response, error } = await supabase.functions.invoke("send-form-email", {
-        body: { formType: "contact", turnstileToken, data: { name: data.name, email: data.email, phone: data.phone || "", message: data.message } },
-      });
-      if (error) throw new Error(error.message);
-      if (response?.error) throw new Error(response.error);
+      await sendFormEmail({ data: { formType: "contact", turnstileToken, data: { name: data.name, email: data.email, phone: data.phone || "", message: data.message } } });
       setIsSubmitted(true);
       toast({ title: "Message Sent!", description: "Thank you for contacting us. We'll get back to you soon." });
       form.reset();

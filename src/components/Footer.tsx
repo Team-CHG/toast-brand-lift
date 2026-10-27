@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube, Gift, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import toastLogo from "@/assets/toast-logo.avif";
 import {
   DropdownMenu,
@@ -103,7 +103,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-highlight text-highlight-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-highlight/50">
+                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-highlight text-highlight-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-hidden focus:ring-2 focus:ring-highlight/50">
                     Toast All Day
                     <ChevronDown className="h-4 w-4" aria-hidden="true" />
                   </DropdownMenuTrigger>
@@ -121,7 +121,7 @@ const Footer = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-accent/50">
+                  <DropdownMenuTrigger className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform focus:outline-hidden focus:ring-2 focus:ring-accent/50">
                     Sister Brands
                     <ChevronDown className="h-4 w-4" aria-hidden="true" />
                   </DropdownMenuTrigger>

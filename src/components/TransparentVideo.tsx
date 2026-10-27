@@ -46,9 +46,9 @@ export default function TransparentVideo({ src, className, style }: TransparentV
       const data = frame.data;
 
       for (let i = 0; i < data.length; i += 4) {
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
+        const r = data[i] ?? 0;
+        const g = data[i + 1] ?? 0;
+        const b = data[i + 2] ?? 0;
         const min = Math.min(r, g, b);
         const max = Math.max(r, g, b);
         const saturation = max === 0 ? 0 : (max - min) / max;

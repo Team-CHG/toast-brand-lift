@@ -1,4 +1,5 @@
 # Project Architecture Rules
 
 - Keep catering location content in one typed page-level data collection so every card uses the same accessible structure and location-specific external ordering destination; this prevents mismatched labels and links.
-- Keep menu overview, category, and item pages in one Telegraf-based single-column bistro system using semantic brand tokens, with location menus presented as continuous category-and-item lists; this prevents competing menu layouts and extra navigation steps.
+- Keep menu overview, category, and item pages in one Telegraf-based single-column bistro system using semantic brand tokens, with location menus presented as continuous category-and-item lists; this prevents competing menu layouts and extra navigation steps.- The app runs on TanStack Start with server rendering: each page lives in `src/routes/` (index-file per path so parents are not layouts), shared head tags and providers live in `src/routes/__root.tsx`, and page-specific title/description/canonical/JSON-LD belong in each route's `head()`; this lets crawlers read every page without running JavaScript.
+- Form email and Turnstile key lookups run as server functions in `src/lib/*.functions.ts`; the nightly Toast menu sync stays a backend scheduled function because the database scheduler calls its fixed URL.

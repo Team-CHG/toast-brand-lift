@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "@/lib/router-compat";
 import { Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -133,7 +133,7 @@ const MenuGroup = () => {
                     {category.description && <p className="mx-auto -mt-4 mb-7 max-w-xl text-center text-sm leading-relaxed text-muted-foreground md:-mt-6 md:mb-9">{category.description}</p>}
                     <div className="divide-y divide-border">
                       {(category.items ?? []).map((item) => (
-                        <Link key={item.id} to={`/menus/${group}/${category.slug}/${item.slug}`} className="group flex min-h-24 gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:min-h-28 sm:gap-6 sm:py-6">
+                        <Link key={item.id} to={`/menus/${group}/${category.slug}/${item.slug}`} className="group flex min-h-24 gap-4 py-5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring sm:min-h-28 sm:gap-6 sm:py-6">
                           <MenuItemThumb src={item.image_url} alt={item.name} className="h-16 w-16 sm:h-24 sm:w-24" />
                           <div className="min-w-0 flex-1">
                             <div className="flex items-start justify-between gap-3">

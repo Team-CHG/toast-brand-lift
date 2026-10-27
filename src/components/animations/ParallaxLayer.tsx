@@ -1,11 +1,11 @@
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, type MotionStyle } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
 interface ParallaxLayerProps {
   children: ReactNode;
   className?: string;
   speed?: number; // negative = slower, positive = faster
-  style?: React.CSSProperties;
+  style?: React.CSSProperties | undefined;
 }
 
 export default function ParallaxLayer({
@@ -28,7 +28,7 @@ export default function ParallaxLayer({
   );
 
   return (
-    <motion.div ref={ref} className={className} style={{ y, ...style }}>
+    <motion.div ref={ref} className={className} style={{ y, ...(style as MotionStyle | undefined) }}>
       {children}
     </motion.div>
   );

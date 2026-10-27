@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "@/lib/router-compat";
 import { Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -39,8 +39,8 @@ const MenuItemPage = () => {
   useEffect(() => {
     if (!item || !group) return;
     const schema: Record<string, unknown> = { "@context": "https://schema.org", "@type": "MenuItem", name: item.name, description: item.description ?? undefined, image: item.image_url ?? undefined, url: `https://toastallday.com/menus/${group}/${item.category_slug}/${itemSlug}` };
-    if (item.price != null) schema.offers = { "@type": "Offer", price: item.price.toFixed(2), priceCurrency: "USD" };
-    if (item.calories != null) schema.nutrition = { "@type": "NutritionInformation", calories: `${item.calories} cal` };
+    if (item.price != null) schema["offers"] = { "@type": "Offer", price: item.price.toFixed(2), priceCurrency: "USD" };
+    if (item.calories != null) schema["nutrition"] = { "@type": "NutritionInformation", calories: `${item.calories} cal` };
     const tag = document.createElement("script"); tag.type = "application/ld+json"; tag.setAttribute("data-schema", "menu-item"); tag.textContent = JSON.stringify(schema); document.head.appendChild(tag);
     return () => { tag.remove(); };
   }, [item, group, itemSlug]);

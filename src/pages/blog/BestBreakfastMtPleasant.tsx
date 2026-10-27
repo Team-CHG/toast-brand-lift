@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import BlogArticleLayout from "@/components/BlogArticleLayout";
 import heroImg from "@/assets/blog/breakfast-mt-pleasant.jpg";
 import biscuitsImg from "@/assets/blog/biscuits.jpg";

@@ -13,7 +13,7 @@ import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import TurnstileWidget from "@/components/TurnstileWidget";
-import { supabase } from "@/integrations/supabase/client";
+import { sendFormEmail } from "@/lib/sendFormEmail.functions";
 import { Loader2, CheckCircle2, Sparkles } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
@@ -52,11 +52,7 @@ const Franchise = () => {
     }
     setIsSubmitting(true);
     try {
-      const { data: response, error } = await supabase.functions.invoke("send-form-email", {
-        body: { formType: "franchise", turnstileToken, data: { ...data, experience: data.experience || "" } },
-      });
-      if (error) throw new Error(error.message);
-      if (response?.error) throw new Error(response.error);
+      await sendFormEmail({ data: { formType: "franchise", turnstileToken, data: { ...data, experience: data.experience || "" } } });
       setIsSubmitted(true);
       toast({ title: "Inquiry Submitted!", description: "Thank you for your interest in franchising with Toast All Day." });
       form.reset();
