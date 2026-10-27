@@ -1,5 +1,4 @@
 import { Link } from "@/lib/router-compat";
-import { Utensils } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -10,12 +9,13 @@ import MenuTags from "@/components/MenuTags";
 import MenuLocations from "@/components/MenuLocations";
 import { Button } from "@/components/ui/button";
 import { MENU_GROUPS } from "@/lib/locations";
-import { itemPageNode, priceText, type MenuData, type MenuItemData, type MenuSectionData } from "@/lib/menu";
+import { itemPageNode, itemPriceText, type MenuData, type MenuItemData, type MenuSectionData } from "@/lib/menu";
 
 const MenuItemPage = ({ menu, section, item }: { menu: MenuData; section: MenuSectionData; item: MenuItemData }) => {
   const { group } = menu;
   const meta = MENU_GROUPS[group];
-  const title = `${item.name}${item.price != null ? ` – ${priceText(item.price)}` : ""} | ${meta.menuName} | Toast! All Day`;
+  const price = itemPriceText(item);
+  const title = `${item.name}${price ? ` - ${price}` : ""} | ${meta.menuName} | Toast! All Day`;
   const description =
     item.description ?? `${item.name} from the ${section.name} section of the ${meta.menuName} at Toast! All Day.`;
 
@@ -36,15 +36,21 @@ const MenuItemPage = ({ menu, section, item }: { menu: MenuData; section: MenuSe
             <Link to={`/menus/${group}/${section.slug}`} className="text-xs font-semibold uppercase tracking-[0.22em] text-highlight hover:underline">{section.name}</Link>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-primary md:text-5xl">
               {item.name}
+              {item.advisory && "*"}
               <MenuTags item={item} />
             </h1>
-            {item.price != null && <p className="mt-3 text-xl font-semibold text-primary">${item.price.toFixed(2)}</p>}
+            {price && <p className="mt-3 text-xl font-semibold text-primary">{price}</p>}
             <div className="mx-auto mt-5 h-px w-20 bg-accent" />
           </header>
-          <div className="mx-auto mb-8 flex aspect-[4/3] max-w-xl items-center justify-center overflow-hidden border border-border bg-muted">
-            {item.image_url ? <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover" /> : <Utensils className="h-12 w-12 text-accent" aria-hidden="true" />}
-          </div>
+          {item.image_url && (
+            <div className="mx-auto mb-8 flex aspect-[4/3] max-w-xl items-center justify-center overflow-hidden border border-border bg-muted">
+              <LazyImage src={item.image_url} alt={item.name} className="h-full w-full object-cover" />
+            </div>
+          )}
           {item.description && <p className="mx-auto max-w-xl text-center text-base leading-relaxed text-foreground/80 md:text-lg">{item.description}</p>}
+          {item.addons && <p className="mx-auto mt-3 max-w-xl text-center text-sm font-semibold uppercase tracking-wider text-accent">{item.addons}</p>}
+          {section.description && menu.printed && <p className="mx-auto mt-3 max-w-xl text-center text-sm text-muted-foreground">{section.description}</p>}
+          {item.advisory && <p className="mx-auto mt-6 max-w-xl text-center text-xs text-muted-foreground">* Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>}
           {(item.calories != null || (item.allergens && item.allergens.length > 0)) && (
             <dl className="mx-auto mt-8 max-w-xl border-y border-border py-5 text-sm text-muted-foreground">
               {item.calories != null && <div className="flex justify-between gap-4"><dt>Calories</dt><dd>{item.calories}</dd></div>}

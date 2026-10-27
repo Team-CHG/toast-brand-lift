@@ -3,12 +3,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import MenuItemThumb from "@/components/MenuItemThumb";
+import MenuItemRow from "@/components/MenuItemRow";
+import MenuFooterNotes from "@/components/MenuFooterNotes";
 import JsonLd from "@/components/JsonLd";
-import MenuTags from "@/components/MenuTags";
 import { MENU_GROUPS } from "@/lib/locations";
 import { categoryDescription, menuNode, type MenuData, type MenuSectionData } from "@/lib/menu";
-import { ALLERGY_NOTE } from "@/pages/MenuGroup";
 
 const MenuCategory = ({ menu, section }: { menu: MenuData; section: MenuSectionData }) => {
   const { group } = menu;
@@ -30,24 +29,20 @@ const MenuCategory = ({ menu, section }: { menu: MenuData; section: MenuSectionD
             <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">{description}</p>
           </header>
 
-          <section aria-label={`${section.name} items`} className="divide-y divide-border border-t border-border">
+          <ul aria-label={`${section.name} items`} className="menu-items divide-y divide-border border-t border-border">
             {section.items.map((item) => (
-              <Link key={item.id} to={`/menus/${group}/${section.slug}/${item.slug}`} className="group flex min-h-28 gap-4 py-5 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring sm:gap-5">
-                <MenuItemThumb src={item.image_url} alt={item.name} className="h-20 w-20 sm:h-24 sm:w-24" />
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-start justify-between gap-3">
-                    <h2 className="text-lg font-bold leading-snug text-primary transition-colors group-hover:text-highlight md:text-xl">
-                      {item.name}
-                      <MenuTags item={item} />
-                    </h2>
-                    {item.price != null && <span className="shrink-0 text-sm font-semibold text-primary md:text-base">${item.price.toFixed(2)}</span>}
-                  </div>
-                  {item.description && <p className="mt-1 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>}
-                </div>
-              </Link>
+              <MenuItemRow
+                key={item.id}
+                item={item}
+                as="h2"
+                href={`/menus/${group}/${section.slug}/${item.slug}`}
+                thumbClassName="h-20 w-20 sm:h-24 sm:w-24"
+                nameClassName="text-lg font-bold leading-snug md:text-xl"
+                priceClassName="text-sm font-semibold text-primary md:text-base"
+              />
             ))}
-          </section>
-          <p className="mt-10 text-center text-sm text-muted-foreground">{ALLERGY_NOTE}</p>
+          </ul>
+          <MenuFooterNotes printed={menu.printed} />
           <p className="mt-4 text-center text-sm">
             <Link to={`/menus/${group}`} className="font-semibold text-highlight hover:underline">Back to the full {meta.label} menu</Link>
           </p>
