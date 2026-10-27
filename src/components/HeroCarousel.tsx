@@ -30,13 +30,14 @@ const HeroCarousel = () => {
 
       <div className="container relative z-10 mx-auto flex w-full items-center px-5 pb-10 pt-8 sm:px-8 sm:pb-12 md:px-10 md:pb-14 md:pt-12 lg:px-12">
         <div className="max-w-[19rem] sm:max-w-[24rem] md:max-w-[34rem] lg:max-w-[39rem]">
-          <h1
+          <h1 className="sr-only">Toast! All Day: Breakfast, Brunch & Lunch in Charleston, Mt. Pleasant, Summerville & Savannah</h1>
+          <h2
             id="flaky-season-heading"
             className="hero-copy-reveal text-[4.25rem] font-extrabold uppercase leading-[0.82] text-primary-foreground drop-shadow-lg sm:text-[5.25rem] md:text-[6.4rem] md:leading-[0.84] lg:text-[7.5rem]"
           >
             Flaky
             <span className="block text-highlight">Season</span>
-          </h1>
+          </h2>
 
           <p className="hero-copy-reveal mt-5 max-w-[18rem] border-l-2 border-accent pl-4 text-sm font-extrabold uppercase leading-[1.35] text-primary-foreground drop-shadow-md sm:mt-6 sm:max-w-[22rem] sm:text-base md:mt-7 md:max-w-[30rem] md:pl-5 md:text-xl md:leading-[1.3] lg:text-[1.35rem]">
             Three new ways to brunch at Toast! All Day
