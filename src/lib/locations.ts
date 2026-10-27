@@ -5,7 +5,9 @@
 
 export const SITE_URL = "https://toastallday.com";
 
-export type MenuGroupSlug = "downtown" | "suburbs" | "savannah";
+export type MenuGroupSlug = "meeting-street" | "king-street" | "suburbs" | "savannah";
+/** Menu group slug in the synced Toast data that feeds each menu page. */
+export type MenuSourceSlug = "downtown" | "suburbs" | "savannah";
 
 export interface ToastLocation {
   slug: string;
@@ -46,7 +48,7 @@ const raw: Omit<ToastLocation, "telephone">[] = [
     // Geocoded from 127 Meeting St (OpenStreetMap), replacing two conflicting points.
     latitude: 32.7785,
     longitude: -79.9314,
-    menuGroup: "downtown",
+    menuGroup: "meeting-street",
     orderUrl: "https://order.toasttab.com/online/toast-charleston",
     waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist",
   },
@@ -63,7 +65,7 @@ const raw: Omit<ToastLocation, "telephone">[] = [
     closes: "15:00",
     latitude: 32.7901,
     longitude: -79.9407,
-    menuGroup: "downtown",
+    menuGroup: "king-street",
     orderUrl: "https://order.toasttab.com/online/toast-king",
     waitlistUrl: "https://tables.toasttab.com/restaurants/d54baf9c-c752-4df6-81af-70807504a517/joinWaitlist",
   },
@@ -150,6 +152,8 @@ export const locationUrl = (l: ToastLocation) => `${SITE_URL}/locations/${l.slug
 
 export interface MenuGroupMeta {
   slug: MenuGroupSlug;
+  /** Synced Toast group the page starts from */
+  source: MenuSourceSlug;
   /** Schema Menu name */
   menuName: string;
   /** Visible H1 */
@@ -162,18 +166,29 @@ export interface MenuGroupMeta {
 }
 
 export const MENU_GROUPS: Record<MenuGroupSlug, MenuGroupMeta> = {
-  downtown: {
-    slug: "downtown",
-    menuName: "Toast! All Day Downtown Charleston Menu",
-    h1: "Downtown Charleston Menu: Toast! on Meeting & Toast! on King",
-    label: "Downtown Charleston",
+  "meeting-street": {
+    slug: "meeting-street",
+    source: "downtown",
+    menuName: "Toast! on Meeting Menu (127 Meeting St)",
+    h1: "Toast! on Meeting Menu: 127 Meeting St, Downtown Charleston",
+    label: "Toast! on Meeting",
     areas: "Downtown Charleston SC",
-    title: "Breakfast & Brunch Menu | Toast! All Day Downtown Charleston SC",
-    description:
-      "Breakfast, brunch, and lunch favorites served at Toast! on Meeting and Toast! on King in downtown Charleston, with prices.",
+    title: "Breakfast & Brunch Menu | Toast! on Meeting, 127 Meeting St, Charleston SC",
+    description: "Breakfast, brunch, and lunch favorites with prices at Toast! on Meeting, 127 Meeting St in downtown Charleston.",
+  },
+  "king-street": {
+    slug: "king-street",
+    source: "downtown",
+    menuName: "Toast! on King Menu (453 King Street)",
+    h1: "Toast! on King Menu: 453 King Street, Charleston",
+    label: "Toast! on King",
+    areas: "King Street, Charleston SC",
+    title: "Breakfast & Brunch Menu | Toast! on King, 453 King Street, Charleston SC",
+    description: "Breakfast, brunch, and lunch favorites with prices at Toast! on King, 453 King Street in downtown Charleston.",
   },
   suburbs: {
     slug: "suburbs",
+    source: "suburbs",
     menuName: "Toast! All Day Suburban Menu",
     h1: "Toast! All Day Menu: West Ashley, Mt. Pleasant & Summerville",
     label: "Charleston Suburbs",
@@ -184,6 +199,7 @@ export const MENU_GROUPS: Record<MenuGroupSlug, MenuGroupMeta> = {
   },
   savannah: {
     slug: "savannah",
+    source: "savannah",
     menuName: "Toast! All Day Savannah Menu",
     h1: "Toast! Savannah Menu: Broughton Street",
     label: "Savannah",
