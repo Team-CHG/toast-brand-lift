@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { getTurnstileKey } from "@/lib/getTurnstileKey.functions";
 
 declare global {
   interface Window {
@@ -41,13 +41,7 @@ const TurnstileWidget = ({ onVerify, onError, onExpire }: TurnstileWidgetProps) 
   useEffect(() => {
     const fetchSiteKey = async () => {
       try {
-        const { data, error } = await supabase.functions.invoke("get-turnstile-key");
-        
-        if (error) {
-          console.error("Error fetching Turnstile key:", error);
-          setError("Failed to load verification widget");
-          return;
-        }
+        const data = await getTurnstileKey();
 
         if (data?.siteKey) {
           setSiteKey(data.siteKey);
