@@ -13,7 +13,6 @@ import {
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import FestiveBackdrop from "@/components/FestiveBackdrop";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "@/pages/NotFound";
@@ -53,43 +52,18 @@ window.addEventListener('load', function () {
 });
 `;
 
-const TITLE = "Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston";
-const DESCRIPTION =
-  "Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations.";
-
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      {
-        name: "keywords",
-        content:
-          "breakfast Charleston, brunch Charleston, lunch Mt Pleasant, best brunch Savannah, award winning breakfast, mimosas, french toast, eggs benedict, pancakes, waffles",
-      },
       { name: "author", content: "Toast All Day" },
-      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Toast All Day - Award-Winning Breakfast, Brunch & Lunch" },
-      {
-        property: "og:description",
-        content:
-          "TripAdvisor Top 25 Best Brunches in the U.S. Fresh, locally-sourced ingredients. Locations in Charleston, Mt. Pleasant, Summerville & Savannah.",
-      },
-      { property: "og:image", content: "https://toastallday.com/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:site_name", content: "Toast All Day" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Toast All Day - Award-Winning Breakfast, Brunch & Lunch" },
-      {
-        name: "twitter:description",
-        content: "TripAdvisor Top 25 Best Brunches in the U.S. Fresh, locally-sourced ingredients.",
-      },
-      { name: "twitter:image", content: "https://toastallday.com/og-image.jpg" },
       { name: "theme-color", content: "#2d5a27" },
       { name: "geo.region", content: "US-SC" },
       { name: "geo.placename", content: "Charleston" },
@@ -139,7 +113,6 @@ function RootComponent() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <LocalBusinessSchema />
         <ErrorBoundary fallback={null}>
           <Suspense fallback={null}>
             <RewardsWidget />
