@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from '@/lib/router-compat';
+import { useLocation } from "@/lib/router-compat";
+import { SITE_URL } from "@/lib/locations";
 
 interface SEOProps {
   title?: string | undefined;
@@ -11,13 +11,20 @@ interface SEOProps {
 }
 
 const defaultMeta = {
-  title: 'Toast All Day - Award-Winning Breakfast, Brunch & Lunch',
-  description: 'Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations.',
-  keywords: 'breakfast, brunch, lunch, Charleston restaurant, Mt Pleasant breakfast, Summerville brunch, Savannah breakfast, award winning brunch, mimosas, french toast',
-  image: '/og-image.jpg',
-  type: 'website',
+  title: "Toast All Day - Award-Winning Breakfast, Brunch & Lunch",
+  description:
+    "Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations.",
+  keywords:
+    "breakfast, brunch, lunch, Charleston restaurant, Mt Pleasant breakfast, Summerville brunch, Savannah breakfast, award winning brunch, mimosas, french toast",
+  image: "/og-image.jpg",
+  type: "website",
 };
 
+/**
+ * Renders title/meta/link tags as plain React elements. React 19 hoists them
+ * into <head> during server rendering, so crawlers get route-specific tags in
+ * the initial HTML and the client keeps them in sync on navigation.
+ */
 const SEO = ({
   title = defaultMeta.title,
   description = defaultMeta.description,
@@ -26,69 +33,27 @@ const SEO = ({
   type = defaultMeta.type,
   noIndex = false,
 }: SEOProps) => {
-  const location = useLocation();
-  const canonicalUrl = `https://toastallday.com${location.pathname}`;
-  const fullImageUrl = image.startsWith('http') ? image : `https://toastallday.com${image}`;
+  const { pathname } = useLocation();
+  const canonicalUrl = `${SITE_URL}${pathname === "/" ? "/" : pathname.replace(/\/+$/, "")}`;
+  const fullImageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
 
-  useEffect(() => {
-    // Update title
-    document.title = title;
-
-    // Helper to update or create meta tags
-    const updateMetaTag = (selector: string, attribute: string, content: string) => {
-      let element = document.querySelector(selector) as HTMLMetaElement;
-      if (!element) {
-        element = document.createElement('meta');
-        if (selector.includes('property=')) {
-          element.setAttribute('property', selector.match(/property="([^"]+)"/)?.[1] || '');
-        } else if (selector.includes('name=')) {
-          element.setAttribute('name', selector.match(/name="([^"]+)"/)?.[1] || '');
-        }
-        document.head.appendChild(element);
-      }
-      element.setAttribute(attribute, content);
-    };
-
-    // Basic meta tags
-    updateMetaTag('meta[name="description"]', 'content', description);
-    updateMetaTag('meta[name="keywords"]', 'content', keywords);
-    
-    // Robots
-    if (noIndex) {
-      updateMetaTag('meta[name="robots"]', 'content', 'noindex, nofollow');
-    } else {
-      updateMetaTag('meta[name="robots"]', 'content', 'index, follow');
-    }
-
-    // Open Graph tags
-    updateMetaTag('meta[property="og:title"]', 'content', title);
-    updateMetaTag('meta[property="og:description"]', 'content', description);
-    updateMetaTag('meta[property="og:type"]', 'content', type);
-    updateMetaTag('meta[property="og:url"]', 'content', canonicalUrl);
-    updateMetaTag('meta[property="og:image"]', 'content', fullImageUrl);
-    updateMetaTag('meta[property="og:site_name"]', 'content', 'Toast All Day');
-
-    // Twitter Card tags
-    updateMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
-    updateMetaTag('meta[name="twitter:title"]', 'content', title);
-    updateMetaTag('meta[name="twitter:description"]', 'content', description);
-    updateMetaTag('meta[name="twitter:image"]', 'content', fullImageUrl);
-
-    // Canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', canonicalUrl);
-
-    return () => {
-      // Cleanup is optional since we're updating in place
-    };
-  }, [title, description, keywords, image, type, noIndex, canonicalUrl, fullImageUrl]);
-
-  return null;
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={fullImageUrl} />
+      {!noIndex && <link rel="canonical" href={canonicalUrl} />}
+    </>
+  );
 };
 
 export default SEO;
