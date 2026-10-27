@@ -5,7 +5,7 @@ interface ParallaxLayerProps {
   children: ReactNode;
   className?: string;
   speed?: number; // negative = slower, positive = faster
-  style?: React.CSSProperties;
+  style?: React.CSSProperties | undefined;
 }
 
 export default function ParallaxLayer({

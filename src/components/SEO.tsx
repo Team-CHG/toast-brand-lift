@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { useLocation } from '@/lib/router-compat';
 
 interface SEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-  type?: string;
-  noIndex?: boolean;
+  title?: string | undefined;
+  description?: string | undefined;
+  keywords?: string | undefined;
+  image?: string | undefined;
+  type?: string | undefined;
+  noIndex?: boolean | undefined;
 }
 
 const defaultMeta = {

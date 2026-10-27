@@ -30,20 +30,20 @@ function shouldAutoReload(): boolean {
 }
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  state: ErrorBoundaryState = { hasError: false };
+  override state: ErrorBoundaryState = { hasError: false };
 
   static getDerivedStateFromError(): ErrorBoundaryState {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, info: ErrorInfo): void {
+  override componentDidCatch(error: Error, info: ErrorInfo): void {
     console.error("Page failed to load:", error, info.componentStack);
     if (shouldAutoReload()) {
       window.location.reload();
     }
   }
 
-  render(): ReactNode {
+  override render(): ReactNode {
     if (!this.state.hasError) return this.props.children;
 
     if (this.props.fallback !== undefined) return this.props.fallback;
