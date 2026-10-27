@@ -195,7 +195,7 @@ export function legacyMenuRedirect(menu: MenuData, category: string, item?: stri
   const has = (slug: string) => menu.sections.some((s) => s.slug === slug);
   let cat: string | null;
   if (has(category)) cat = category;
-  else if (category in CATEGORY_REDIRECTS) cat = CATEGORY_REDIRECTS[category];
+  else if (category in CATEGORY_REDIRECTS) cat = CATEGORY_REDIRECTS[category] ?? null;
   else return null;
   if (!item) return cat === category ? null : cat ? `${base}/${cat}` : base;
 

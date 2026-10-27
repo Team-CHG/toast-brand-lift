@@ -39,7 +39,7 @@ describe("October 2026 menu prices", () => {
     const m = buildMenu("suburbs", cats, items);
     expect(m.sections.flatMap((s) => s.items).some((i) => i.slug === "two-egg-breakfast")).toBe(false);
     expect(m.sections.at(-1)?.slug).toBe("coffee");
-    expect(m.sections[1].slug).toBe("brunch-beverages");
+    expect(m.sections[1]?.slug).toBe("brunch-beverages");
   });
   it("Savannah is untouched by the printed-menu layer", () => {
     const m = buildMenu("savannah", cats, items);
