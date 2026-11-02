@@ -37,7 +37,7 @@ const HeroCarousel = () => {
             <span className="block text-highlight">Brunch</span>
           </h2>
 
-          <p className="hero-copy-reveal mt-5 max-w-[18rem] border-l-2 border-accent pl-4 text-sm font-extrabold uppercase leading-[1.35] text-primary-foreground drop-shadow-md sm:mt-6 sm:max-w-[22rem] sm:text-base md:mt-7 md:max-w-[30rem] md:pl-5 md:text-xl md:leading-[1.3] lg:text-[1.35rem]">
+          <p className="hero-copy-reveal mt-5 max-w-[18rem] border-l-2 border-accent pl-4 text-sm font-black uppercase leading-[1.35] text-primary-foreground drop-shadow-lg sm:mt-6 sm:max-w-[22rem] sm:text-base md:mt-7 md:max-w-[30rem] md:pl-5 md:text-xl md:leading-[1.3] lg:text-[1.35rem]">
             {THANKSGIVING.dish} - <time dateTime={THANKSGIVING.date}>{THANKSGIVING.dateLabel}</time>
           </p>
 
