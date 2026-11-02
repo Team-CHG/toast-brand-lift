@@ -22,6 +22,6 @@
 - [x] GPTBot checks; validator.schema.org must be run by the owner after publishing
 
 ## Thanksgiving 2026
-- [ ] Add branded Thanksgiving page with approved menu, price, date, FAQ and search metadata
-- [ ] Add navigation link, homepage announcement and sitemap entry
-- [ ] Verify mobile/desktop page, links, crawler HTML and campaign data tests
+- [x] Add branded Thanksgiving page with approved menu, price, date, FAQ and search metadata
+- [x] Add navigation link, homepage announcement and sitemap entry; remove nightly-refresh lastmod dates
+- [x] Verify mobile/desktop page, links, crawler HTML and campaign data tests
