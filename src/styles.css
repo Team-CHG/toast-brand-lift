@@ -59,6 +59,7 @@
   --color-highlight-foreground: var(--highlight-foreground);
   --color-complementary: var(--complementary);
   --color-complementary-foreground: var(--complementary-foreground);
+  --color-autumn: var(--autumn);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -274,4 +275,20 @@
     content-visibility: auto;
     contain-intrinsic-size: 1px 800px;
   }
+}
+
+/* Seasonal accents are scoped to this campaign, not the global theme. */
+.thanksgiving-page {
+  --autumn: hsl(17 48% 40%);
+  --thanksgiving-wash: linear-gradient(90deg, hsl(191 100% 95% / 0.98), hsl(191 100% 95% / 0.85) 30%, hsl(191 100% 95% / 0) 65%);
+}
+.thanksgiving-hero { height: 560px; }
+.thanksgiving-wash { background: var(--thanksgiving-wash); }
+.thanksgiving-photo { height: 100%; max-width: none; }
+@media (max-width: 639px) {
+  .thanksgiving-page {
+    --thanksgiving-wash: linear-gradient(180deg, hsl(191 100% 95%) 0%, hsl(191 100% 95% / 0.95) 36%, hsl(191 100% 95% / 0) 66%);
+  }
+  .thanksgiving-hero { height: 650px; }
+  .thanksgiving-photo { object-position: 65% bottom; }
 }

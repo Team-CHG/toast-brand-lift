@@ -12,6 +12,7 @@ import toastLogoAvif from "@/assets/toast-logo-sm.avif";
 import toastLogoLargeWebp from "@/assets/toast-logo.webp";
 import toastLogoLargeAvif from "@/assets/toast-logo.avif";
 import toastLogoPng from "@/assets/toast-logo.png";
+import { Link } from "@tanstack/react-router";
 
 const locations = [
   { name: "Toast! on Meeting", menuUrl: "https://order.toasttab.com/online/toast-charleston", orderUrl: "https://order.toasttab.com/online/toast-charleston", waitlistUrl: "https://tables.toasttab.com/restaurants/68470c10-a7ea-4c0f-aa51-13ad297c1a49/joinWaitlist" },
@@ -57,7 +58,7 @@ const Navigation = () => {
             </a>
           </div>
 
-          <div className="hidden lg:flex items-center justify-center flex-1 gap-6">
+          <div className="hidden xl:flex items-center justify-center flex-1 gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-primary hover:text-accent transition-colors font-medium">
                 Menu <ChevronDown className="h-4 w-4" />
@@ -81,6 +82,7 @@ const Navigation = () => {
             <a href="/locations" className="text-primary hover:text-accent transition-colors font-medium">Locations</a>
             <a href="/rewards" className="text-primary hover:text-accent transition-colors font-medium">Rewards</a>
             <a href="/catering" className="text-primary hover:text-accent transition-colors font-medium">Catering</a>
+            <Link to="/thanksgiving" className="text-highlight hover:text-highlight/80 transition-colors font-semibold">Thanksgiving</Link>
             <a href="/about" className="text-primary hover:text-accent transition-colors font-medium">About</a>
             <a href="/blog" className="text-primary hover:text-accent transition-colors font-medium">Blog</a>
             <a href="https://order.toasttab.com/egiftcards/toast-charleston" target="_blank" rel="noopener noreferrer" className="text-highlight hover:text-highlight/80 transition-colors font-semibold">Gift Cards</a>
@@ -121,7 +123,9 @@ const Navigation = () => {
           </div>
 
           <button
-            className="lg:hidden p-2 transition-transform hover:translate-x-1"
+            className="xl:hidden p-2 transition-transform hover:translate-x-1"
+            aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -133,7 +137,7 @@ const Navigation = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden py-6 border-t border-accent/10 max-h-[calc(100vh-5rem)] overflow-y-auto">
+          <div className="xl:hidden py-6 border-t border-accent/10 max-h-[calc(100vh-5rem)] overflow-y-auto">
             <div className="flex flex-col gap-4">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground px-2">Menu</p>
@@ -149,6 +153,7 @@ const Navigation = () => {
               <a href="/locations" className="text-lg font-medium text-primary hover:text-accent transition-colors">Locations</a>
               <a href="/blog" className="text-lg font-medium text-primary hover:text-accent transition-colors">Blog</a>
               <a href="/catering" className="text-lg font-medium text-primary hover:text-accent transition-colors">Catering</a>
+              <Link to="/thanksgiving" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold text-highlight hover:text-highlight/80 transition-colors">Thanksgiving</Link>
               <a href="/franchise" className="text-lg font-medium text-primary hover:text-accent transition-colors">Franchise</a>
               <a href="https://payroll.toasttab.com/jobs/chgllc" target="_blank" rel="noopener noreferrer" className="text-lg font-medium text-primary hover:text-accent transition-colors">Careers</a>
               <a href="/contact" className="text-lg font-medium text-primary hover:text-accent transition-colors">Contact Us</a>
