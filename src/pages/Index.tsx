@@ -7,6 +7,7 @@ import { organizationNodes } from "@/lib/locationSchema";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Suspense, lazy } from "react";
+import share from "@/assets/thanksgiving-share.jpg.asset.json";
 // Below-the-fold components are code-split so the initial JS for `/`
 // only ships Navigation + Hero. Keeps TBT low and never blocks LCP.
 const FeatureSections = lazy(() => import("@/components/FeatureSections"));
