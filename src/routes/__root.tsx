@@ -1,4 +1,4 @@
-import { useEffect, Suspense, lazy, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import type { QueryClient } from "@tanstack/react-query";
 import { QueryClientProvider } from "@tanstack/react-query";
 import {
@@ -18,8 +18,6 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "@/pages/NotFound";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import appCss from "../styles.css?url";
-
-const RewardsWidget = lazy(() => import("@/components/RewardsWidget"));
 
 // Third-party scripts (GA + PX Grabber lead tracking) are deferred until the
 // browser is idle so they never compete with the hero image for first paint.
@@ -112,11 +110,6 @@ function RootComponent() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <ErrorBoundary fallback={null}>
-          <Suspense fallback={null}>
-            <RewardsWidget />
-          </Suspense>
-        </ErrorBoundary>
         <ErrorBoundary>
           <div className="relative min-h-screen">
             <FestiveBackdrop />
