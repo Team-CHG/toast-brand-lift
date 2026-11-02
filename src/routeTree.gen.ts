@@ -23,6 +23,7 @@ import { Route as NewsEventsSplatRouteImport } from './routes/news-events/$'
 import { Route as PrivacyPolicyIndexRouteImport } from './routes/privacy-policy/index'
 import { Route as RewardsIndexRouteImport } from './routes/rewards/index'
 import { Route as TermsOfServiceIndexRouteImport } from './routes/terms-of-service/index'
+import { Route as ThanksgivingIndexRouteImport } from './routes/thanksgiving/index'
 import { Route as BlogAnniversaryIndexRouteImport } from './routes/blog/anniversary/index'
 import { Route as BlogBestBreakfastBrunchIndexRouteImport } from './routes/blog/best-breakfast-brunch/index'
 import { Route as BlogBestBreakfastMtPleasantIndexRouteImport } from './routes/blog/best-breakfast-mt-pleasant/index'
@@ -124,6 +125,11 @@ const RewardsIndexRoute = RewardsIndexRouteImport.update({
 const TermsOfServiceIndexRoute = TermsOfServiceIndexRouteImport.update({
   id: '/terms-of-service/',
   path: '/terms-of-service/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThanksgivingIndexRoute = ThanksgivingIndexRouteImport.update({
+  id: '/thanksgiving/',
+  path: '/thanksgiving/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogAnniversaryIndexRoute = BlogAnniversaryIndexRouteImport.update({
@@ -325,6 +331,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/rewards/': typeof RewardsIndexRoute
   '/terms-of-service/': typeof TermsOfServiceIndexRoute
+  '/thanksgiving/': typeof ThanksgivingIndexRoute
   '/blog/anniversary/': typeof BlogAnniversaryIndexRoute
   '/blog/best-breakfast-brunch/': typeof BlogBestBreakfastBrunchIndexRoute
   '/blog/best-breakfast-mt-pleasant/': typeof BlogBestBreakfastMtPleasantIndexRoute
@@ -373,6 +380,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyIndexRoute
   '/rewards': typeof RewardsIndexRoute
   '/terms-of-service': typeof TermsOfServiceIndexRoute
+  '/thanksgiving': typeof ThanksgivingIndexRoute
   '/blog/anniversary': typeof BlogAnniversaryIndexRoute
   '/blog/best-breakfast-brunch': typeof BlogBestBreakfastBrunchIndexRoute
   '/blog/best-breakfast-mt-pleasant': typeof BlogBestBreakfastMtPleasantIndexRoute
@@ -422,6 +430,7 @@ export interface FileRoutesById {
   '/privacy-policy/': typeof PrivacyPolicyIndexRoute
   '/rewards/': typeof RewardsIndexRoute
   '/terms-of-service/': typeof TermsOfServiceIndexRoute
+  '/thanksgiving/': typeof ThanksgivingIndexRoute
   '/blog/anniversary/': typeof BlogAnniversaryIndexRoute
   '/blog/best-breakfast-brunch/': typeof BlogBestBreakfastBrunchIndexRoute
   '/blog/best-breakfast-mt-pleasant/': typeof BlogBestBreakfastMtPleasantIndexRoute
@@ -472,6 +481,7 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/rewards/'
     | '/terms-of-service/'
+    | '/thanksgiving/'
     | '/blog/anniversary/'
     | '/blog/best-breakfast-brunch/'
     | '/blog/best-breakfast-mt-pleasant/'
@@ -520,6 +530,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/rewards'
     | '/terms-of-service'
+    | '/thanksgiving'
     | '/blog/anniversary'
     | '/blog/best-breakfast-brunch'
     | '/blog/best-breakfast-mt-pleasant'
@@ -568,6 +579,7 @@ export interface FileRouteTypes {
     | '/privacy-policy/'
     | '/rewards/'
     | '/terms-of-service/'
+    | '/thanksgiving/'
     | '/blog/anniversary/'
     | '/blog/best-breakfast-brunch/'
     | '/blog/best-breakfast-mt-pleasant/'
@@ -617,6 +629,7 @@ export interface RootRouteChildren {
   PrivacyPolicyIndexRoute: typeof PrivacyPolicyIndexRoute
   RewardsIndexRoute: typeof RewardsIndexRoute
   TermsOfServiceIndexRoute: typeof TermsOfServiceIndexRoute
+  ThanksgivingIndexRoute: typeof ThanksgivingIndexRoute
   BlogAnniversaryIndexRoute: typeof BlogAnniversaryIndexRoute
   BlogBestBreakfastBrunchIndexRoute: typeof BlogBestBreakfastBrunchIndexRoute
   BlogBestBreakfastMtPleasantIndexRoute: typeof BlogBestBreakfastMtPleasantIndexRoute
@@ -749,6 +762,13 @@ declare module '@tanstack/react-router' {
       path: '/terms-of-service'
       fullPath: '/terms-of-service/'
       preLoaderRoute: typeof TermsOfServiceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thanksgiving/': {
+      id: '/thanksgiving/'
+      path: '/thanksgiving'
+      fullPath: '/thanksgiving/'
+      preLoaderRoute: typeof ThanksgivingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/anniversary/': {
@@ -993,6 +1013,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyIndexRoute: PrivacyPolicyIndexRoute,
   RewardsIndexRoute: RewardsIndexRoute,
   TermsOfServiceIndexRoute: TermsOfServiceIndexRoute,
+  ThanksgivingIndexRoute: ThanksgivingIndexRoute,
   BlogAnniversaryIndexRoute: BlogAnniversaryIndexRoute,
   BlogBestBreakfastBrunchIndexRoute: BlogBestBreakfastBrunchIndexRoute,
   BlogBestBreakfastMtPleasantIndexRoute: BlogBestBreakfastMtPleasantIndexRoute,

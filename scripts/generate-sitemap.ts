@@ -6,6 +6,7 @@ import { resolve } from "path";
 import { createClient } from "@supabase/supabase-js";
 import { LOCATIONS, MENU_GROUPS, fullAddress, type MenuGroupSlug } from "../src/lib/locations";
 import { buildMenu, type SourceCategory, type SourceItem } from "../src/lib/menuBuild";
+import { MENU_OVERRIDE_DATE } from "../src/lib/menuOverrides";
 
 const BASE_URL = "https://toastallday.com";
 
@@ -41,6 +42,7 @@ const staticEntries: SitemapEntry[] = [
   { path: "/menus", changefreq: "weekly", priority: "0.8" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/catering", changefreq: "monthly", priority: "0.8" },
+  { path: "/thanksgiving", changefreq: "yearly", priority: "0.8" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
   { path: "/rewards", changefreq: "monthly", priority: "0.8" },
   { path: "/download-app", changefreq: "monthly", priority: "0.7" },
@@ -100,12 +102,13 @@ async function fetchMenuEntries(): Promise<SitemapEntry[]> {
     if (itemError) throw itemError;
 
     const menu = buildMenu(slug, (cats ?? []) as SourceCategory[], (items ?? []) as SourceItem[]);
-    const srcUpdated = new Map((items ?? []).map((i) => [i.id, i.updated_at as string | null]));
-    const menuDay = day(menu.updatedAt);
+    // Synced updated_at changes on every nightly upsert, even if content is
+    // identical. Only the owner-approved printed menu has a content edit date.
+    const menuDay = menu.printed ? day(MENU_OVERRIDE_DATE) : undefined;
     for (const section of menu.sections) {
       let secLatest: string | undefined;
       for (const item of section.items) {
-        const lm = menu.printed && item.id.startsWith("local-") ? menuDay : day(srcUpdated.get(item.id));
+        const lm = menu.printed && item.id.startsWith("local-") ? menuDay : undefined;
         if (lm && (!secLatest || lm > secLatest)) secLatest = lm;
         entries.push({ path: `/menus/${slug}/${section.slug}/${item.slug}`, ...(lm ? { lastmod: lm } : {}), changefreq: "weekly", priority: "0.6" });
       }
@@ -184,7 +187,9 @@ async function main() {
   try {
     menuEntries = await fetchMenuEntries();
   } catch (err) {
-    console.warn("[sitemap] Failed to fetch menu data, continuing with static entries only:", err);
+    // Leave the previous complete sitemap intact instead of publishing a
+    // partial list when the content source fails.
+    throw new Error("Failed to fetch complete menu sitemap data", { cause: err });
   }
 
   const all = [...staticEntries, ...menuEntries];
