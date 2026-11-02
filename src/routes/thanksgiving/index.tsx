@@ -44,7 +44,7 @@ function ThanksgivingPage() {
           <div className="thanksgiving-wash absolute inset-0" aria-hidden="true" />
           <div className="container relative z-10 flex h-full items-start px-6 pt-10 sm:items-center sm:py-12 md:px-10">
             <div className="max-w-md lg:max-w-lg">
-              <h1 id="thanksgiving-heading" className="text-4xl font-bold leading-tight text-primary md:text-5xl lg:text-6xl">Thanksgiving Brunch at Toast! All Day</h1>
+              <h1 id="thanksgiving-heading" className="max-w-md text-4xl font-bold leading-tight text-primary md:text-5xl lg:text-6xl">Thanksgiving Brunch at Toast! All Day</h1>
               <p className="mt-5 max-w-sm text-base leading-relaxed text-primary md:text-lg">Skip the dishes this year and let us cook. Join us Thanksgiving Day, <time dateTime={THANKSGIVING.date}>{THANKSGIVING.dateLabel}</time>.</p>
             </div>
           </div>
