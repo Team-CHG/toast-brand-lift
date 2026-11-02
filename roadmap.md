@@ -27,7 +27,7 @@
 - [x] Verify mobile/desktop page, links, crawler HTML and campaign data tests
 
 ## Election Day homepage popup
-- [ ] Add branded $5 Classic Breakfast popup using an existing real dish photo
-- [ ] Enforce November 3 Eastern time only, two-second delay, once per session and all dismissal controls
-- [ ] Verify date boundaries, desktop/mobile display and locations button
-- [ ] Clarify whether Toasted Crust pizza popup belongs on this Toast! All Day homepage or a separate Toasted Crust site
+- [x] Add branded $5 Classic Breakfast popup using an existing real dish photo
+- [x] Enforce November 3 Eastern time only, two-second delay, once per session and all dismissal controls
+- [x] Verify date boundaries, desktop/mobile display and locations button
+- [ ] Toasted Crust pizza popup: awaiting confirmation of intended site or replacement of the breakfast popup
