@@ -282,9 +282,17 @@
   --autumn: hsl(17 48% 40%);
   --thanksgiving-wash: linear-gradient(90deg, hsl(191 100% 95% / 0.98), hsl(191 100% 95% / 0.85) 30%, hsl(191 100% 95% / 0) 65%);
 }
-.thanksgiving-hero { height: 560px; }
+.thanksgiving-hero { height: 560px; background: hsl(191 100% 95%); }
 .thanksgiving-wash { background: var(--thanksgiving-wash); }
 .thanksgiving-photo { height: 100%; max-width: none; }
+/* Tablet and up: the photo only fills the right side, so the copy never sits on the food. */
+@media (min-width: 640px) {
+  .thanksgiving-page {
+    --thanksgiving-wash: linear-gradient(90deg, hsl(191 100% 95%) 0%, hsl(191 100% 95%) 46%, hsl(191 100% 95% / 0) 54%);
+  }
+  .thanksgiving-photo { left: auto; right: 0; width: 54%; object-position: 40% center; }
+  .thanksgiving-copy { max-width: min(42vw, 32rem); }
+}
 @media (max-width: 639px) {
   .thanksgiving-page {
     --thanksgiving-wash: linear-gradient(180deg, hsl(191 100% 95%) 0%, hsl(191 100% 95%) 56%, hsl(191 100% 95% / 0.9) 66%, hsl(191 100% 95% / 0) 80%);
