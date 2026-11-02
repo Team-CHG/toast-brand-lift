@@ -20,3 +20,8 @@
 - [x] New sections, prices, notes, add-ons, signature/vegetarian tags, Sides, Brunch Beverages, menu footer
 - [x] Renames/hidden items with redirects; sitemap updated
 - [x] GPTBot checks; validator.schema.org must be run by the owner after publishing
+
+## Thanksgiving 2026
+- [ ] Add branded Thanksgiving page with approved menu, price, date, FAQ and search metadata
+- [ ] Add navigation link, homepage announcement and sitemap entry
+- [ ] Verify mobile/desktop page, links, crawler HTML and campaign data tests
