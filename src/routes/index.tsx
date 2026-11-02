@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Index from "@/pages/Index";
+import dinner from "@/assets/thanksgiving-dinner.avif.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/hero/flaky-season-new.avif",
+        href: dinner.url,
         type: "image/avif",
         fetchPriority: "high",
       },

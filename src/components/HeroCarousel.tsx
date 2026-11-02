@@ -1,26 +1,24 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-
-const flakySeasonAvif = "/hero/flaky-season-new.avif";
-const flakySeasonWebp = "/hero/flaky-season-new.webp";
+import { THANKSGIVING } from "@/lib/thanksgiving";
+import dinner from "@/assets/thanksgiving-dinner.avif.asset.json";
 
 const HeroCarousel = () => {
   return (
     <section
       className="relative isolate flex min-h-[620px] w-full items-center overflow-hidden bg-primary pt-20 sm:min-h-[680px] md:min-h-[760px] md:pt-24 lg:min-h-[820px]"
-      aria-labelledby="flaky-season-heading"
+      aria-labelledby="thanksgiving-hero-heading"
     >
       <picture className="absolute inset-0 h-full w-full">
-        <source srcSet={flakySeasonAvif} type="image/avif" />
-        <source srcSet={flakySeasonWebp} type="image/webp" />
         <img
-          src={flakySeasonWebp}
-          alt="Three croissant sandwiches stacked on a plate at Toast! All Day"
-          width={1671}
-          height={941}
+          src={dinner.url}
+          alt="Thanksgiving turkey dinner with dressing, mashed potatoes, green beans and pumpkin pie at Toast! All Day"
+          width={1536}
+          height={1024}
           fetchPriority="high"
           decoding="async"
-          className="h-full w-full object-cover object-[56%_center] sm:object-[58%_center] md:object-center"
+          className="h-full w-full object-cover object-center"
         />
       </picture>
 
@@ -32,15 +30,15 @@ const HeroCarousel = () => {
         <div className="max-w-[19rem] sm:max-w-[24rem] md:max-w-[34rem] lg:max-w-[39rem]">
           <h1 className="sr-only">Toast! All Day: Breakfast, Brunch & Lunch in Charleston, Mt. Pleasant, Summerville & Savannah</h1>
           <h2
-            id="flaky-season-heading"
-            className="hero-copy-reveal text-[4.25rem] font-extrabold uppercase leading-[0.82] text-primary-foreground drop-shadow-lg sm:text-[5.25rem] md:text-[6.4rem] md:leading-[0.84] lg:text-[7.5rem]"
+            id="thanksgiving-hero-heading"
+            className="hero-copy-reveal text-[2.5rem] font-extrabold uppercase leading-[0.95] tracking-tight text-primary-foreground drop-shadow-lg sm:text-[3.25rem] md:text-[4.5rem] md:leading-[0.9] lg:text-[5.25rem]"
           >
-            Flaky
-            <span className="block text-highlight">Season</span>
+            Thanksgiving
+            <span className="block text-highlight">Brunch</span>
           </h2>
 
           <p className="hero-copy-reveal mt-5 max-w-[18rem] border-l-2 border-accent pl-4 text-sm font-extrabold uppercase leading-[1.35] text-primary-foreground drop-shadow-md sm:mt-6 sm:max-w-[22rem] sm:text-base md:mt-7 md:max-w-[30rem] md:pl-5 md:text-xl md:leading-[1.3] lg:text-[1.35rem]">
-            Three new ways to brunch at Toast! All Day
+            {THANKSGIVING.dish} - <time dateTime={THANKSGIVING.date}>{THANKSGIVING.dateLabel}</time>
           </p>
 
           <div className="hero-copy-reveal mt-5 sm:mt-6 md:mt-7">
@@ -49,10 +47,10 @@ const HeroCarousel = () => {
               asChild
               className="h-11 rounded-full bg-complementary px-6 text-xs font-extrabold uppercase text-complementary-foreground shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:bg-complementary/90 sm:h-12 sm:px-7 md:text-sm"
             >
-              <a href="/menus/downtown">
-                Order now
+              <Link to="/thanksgiving">
+                See the special
                 <ArrowUpRight aria-hidden className="h-4 w-4" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
