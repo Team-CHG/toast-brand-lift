@@ -17,8 +17,6 @@ const Footer = lazy(() => import("@/components/Footer"));
 // background, decoded once and cached.
 import pageBackgroundTexture from "@/assets/page-background-texture.avif";
 import { MapPin, Sparkles } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -26,6 +24,7 @@ const Index = () => {
         title="Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston"
         description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations."
         keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
+        image={share.url}
       />
       <JsonLd data={organizationNodes()} />
       <Navigation />
@@ -33,12 +32,6 @@ const Index = () => {
       </Suspense>
       <main>
         <HeroCarousel />
-        <aside className="bg-complementary border-y border-accent/20 px-5 py-4 text-center">
-          <Link to="/thanksgiving" className="inline-flex items-center justify-center gap-3 text-sm font-bold text-primary underline-offset-4 hover:underline md:text-base">
-            Thanksgiving Brunch is here: see the menu
-            <span aria-hidden="true">→</span>
-          </Link>
-        </aside>
         <div className="cv-auto">
           <Suspense fallback={<div className="min-h-[400px]" aria-hidden />}>
             <FeatureSections />
