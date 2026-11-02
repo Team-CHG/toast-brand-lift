@@ -76,21 +76,6 @@ function ThanksgivingPage() {
           </div>
         </section>
 
-        <section className="bg-complementary px-6 py-12 md:py-16" aria-labelledby="thanksgiving-faq">
-          <div className="mx-auto max-w-3xl">
-            <h2 id="thanksgiving-faq" className="mb-7 text-3xl font-bold text-primary md:text-4xl">Thanksgiving FAQ</h2>
-            <div className="divide-y divide-accent/30 border-y border-accent/30">
-              {THANKSGIVING.faqs.map((faq) => (
-                <details key={faq.question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-bold text-primary [&::-webkit-details-marker]:hidden">
-                    {faq.question}<ChevronDown className="size-5 shrink-0 text-highlight transition-transform group-open:rotate-180" aria-hidden="true" />
-                  </summary>
-                  <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary/85">{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
