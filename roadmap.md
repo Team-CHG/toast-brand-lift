@@ -30,3 +30,4 @@
 - [ ] Add branded $5 Classic Breakfast popup using an existing real dish photo
 - [ ] Enforce November 3 Eastern time only, two-second delay, once per session and all dismissal controls
 - [ ] Verify date boundaries, desktop/mobile display and locations button
+- [ ] Clarify whether Toasted Crust pizza popup belongs on this Toast! All Day homepage or a separate Toasted Crust site
