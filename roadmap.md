@@ -29,4 +29,4 @@
 ## Expired campaign cleanup
 - [x] Remove the expired homepage promotion, scheduling/session logic, exclusive image and superseded tests
 - [x] Cancel the pending pizza promotion for this site
-- [ ] Verify no promotional leftovers and confirm unchanged desktop/mobile layouts
+- [x] Verify no promotional leftovers and confirm unchanged desktop/mobile layouts
