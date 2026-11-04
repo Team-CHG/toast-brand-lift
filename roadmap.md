@@ -26,8 +26,7 @@
 - [x] Add navigation link, homepage announcement and sitemap entry; remove nightly-refresh lastmod dates
 - [x] Verify mobile/desktop page, links, crawler HTML and campaign data tests
 
-## Election Day homepage popup
-- [x] Add branded $5 Classic Breakfast popup using an existing real dish photo
-- [x] Enforce November 3 Eastern time only, two-second delay, once per session and all dismissal controls
-- [x] Verify date boundaries, desktop/mobile display and locations button
-- [ ] Toasted Crust pizza popup: awaiting confirmation of intended site or replacement of the breakfast popup
+## Expired campaign cleanup
+- [x] Remove the expired homepage promotion, scheduling/session logic, exclusive image and superseded tests
+- [x] Cancel the pending pizza promotion for this site
+- [ ] Verify no promotional leftovers and confirm unchanged desktop/mobile layouts
