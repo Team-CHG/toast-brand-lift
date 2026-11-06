@@ -33,4 +33,4 @@
 
 ## Holiday gift cards
 - [x] Add homepage-only branded offer modal with approved copy and new-tab purchase link
-- [ ] Verify once-per-session behavior, dismissal, and desktop/mobile presentation
+- [x] Verify once-per-session behavior, dismissal, and desktop/mobile presentation
