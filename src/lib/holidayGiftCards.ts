@@ -1,8 +1,8 @@
 export const HOLIDAY_GIFT_CARDS = {
   headline: "Holiday Gift Cards Are Here",
   offers: [
-    { purchase: 50, immediate: 50, bonus: 25, body: "Buy a $50 gift card → get $50 now + $25 to spend in the new year." },
-    { purchase: 100, immediate: 100, bonus: 50, body: "Buy a $100 gift card → get $100 now + $50 for your next purchase in the new year." },
+    { purchase: 50, immediate: 50, bonus: 25, body: "Buy a $50 gift card and get $25 to spend in the new year." },
+    { purchase: 100, immediate: 100, bonus: 50, body: "Buy a $100 gift card and get $50 to spend in the new year." },
   ],
   button: "Buy Gift Cards",
   url: "https://order.toasttab.com/egiftcards/toast-charleston",
