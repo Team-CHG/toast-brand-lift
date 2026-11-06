@@ -30,3 +30,7 @@
 - [x] Remove the expired homepage promotion, scheduling/session logic, exclusive image and superseded tests
 - [x] Cancel the pending pizza promotion for this site
 - [x] Verify no promotional leftovers and confirm unchanged desktop/mobile layouts
+
+## Holiday gift cards
+- [x] Add homepage-only branded offer modal with approved copy and new-tab purchase link
+- [x] Verify once-per-session behavior, dismissal, and desktop/mobile presentation

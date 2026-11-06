@@ -1,13 +1,12 @@
 import Navigation from "@/components/Navigation";
 import HeroCarousel from "@/components/HeroCarousel";
-import SEO from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import FaqSection from "@/components/FaqSection";
 import { organizationNodes } from "@/lib/locationSchema";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FloatingElement from "@/components/animations/FloatingElement";
 import { Suspense, lazy } from "react";
-import share from "@/assets/thanksgiving-share.jpg.asset.json";
+const HolidayGiftCardPopup = lazy(() => import("@/components/HolidayGiftCardPopup"));
 // Below-the-fold components are code-split so the initial JS for `/`
 // only ships Navigation + Hero. Keeps TBT low and never blocks LCP.
 const FeatureSections = lazy(() => import("@/components/FeatureSections"));
@@ -20,15 +19,10 @@ import { MapPin, Sparkles } from "lucide-react";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Toast All Day - Award-Winning Breakfast, Brunch & Lunch in Charleston"
-        description="Toast All Day serves gourmet breakfast, brunch, and lunch with fresh, locally-sourced ingredients. TripAdvisor Top 25 Best Brunches in the U.S. Visit our Charleston, Mt. Pleasant, Summerville & Savannah locations."
-        keywords="breakfast Charleston, brunch Charleston, best breakfast SC, award winning brunch, mimosas, french toast, eggs benedict"
-        image={share.url}
-      />
       <JsonLd data={organizationNodes()} />
       <Navigation />
       <Suspense fallback={null}>
+        <HolidayGiftCardPopup />
       </Suspense>
       <main>
         <HeroCarousel />
