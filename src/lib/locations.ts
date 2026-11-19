@@ -110,7 +110,7 @@ const raw: Omit<ToastLocation, "telephone">[] = [
     city: "Summerville",
     state: "SC",
     zip: "29485",
-    phone: "(843) 900-4422",
+    phone: "(843) 376-1523",
     hours: "Monday – Sunday: 7am – 3pm",
     opens: "07:00",
     closes: "15:00",
