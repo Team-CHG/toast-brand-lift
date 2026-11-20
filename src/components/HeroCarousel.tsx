@@ -13,7 +13,7 @@ const HeroCarousel = () => {
       <picture className="absolute inset-0 h-full w-full">
         <img
           src={dinner.url}
-          alt="Thanksgiving turkey dinner with dressing, mashed potatoes, green beans and pumpkin pie at Toast! All Day"
+          alt="Thanksgiving turkey dinner with dressing, mashed potatoes and green beans at Toast! All Day"
           width={1536}
           height={1024}
           fetchPriority="high"

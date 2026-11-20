@@ -1,15 +1,14 @@
 export const THANKSGIVING = {
   title: "Thanksgiving Brunch 2026 in Charleston | Toast! All Day",
-  description: "Celebrate Thanksgiving Day, Thursday, Nov 26, 2026, at Toast! All Day in Charleston. Mimosa-brined turkey dinner with herb dressing, mashed potatoes and pumpkin pie. See the menu.",
+  description: "Celebrate Thanksgiving Day, Thursday, Nov 26, 2026, at Toast! All Day in Charleston. Mimosa-brined turkey dinner with herb dressing, mashed potatoes and cranberry-orange compote. See the menu.",
   date: "2026-11-26",
   dateLabel: "Thursday, November 26, 2026",
   dish: "Mimosa-Brined Turkey Dinner",
   dishDescription: "Sliced mimosa-brined roasted turkey breast, savory herb dressing, whipped mashed potatoes, green beans almondine, maple-sage turkey gravy, and cranberry-orange compote.",
   price: 24,
-  dessert: "Pumpkin Pie",
   faqs: [
     { question: "Is Toast! All Day open on Thanksgiving?", answer: "Yes, we're serving our Thanksgiving brunch on Thursday, November 26, 2026." },
-    { question: "What's on the Thanksgiving menu?", answer: "A mimosa-brined turkey dinner with herb dressing, mashed potatoes, green beans almondine, gravy and cranberry-orange compote, plus optional pumpkin pie." },
+    { question: "What's on the Thanksgiving menu?", answer: "A mimosa-brined turkey dinner with herb dressing, mashed potatoes, green beans almondine, gravy and cranberry-orange compote." },
   ],
 } as const;
 

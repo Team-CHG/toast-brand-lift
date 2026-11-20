@@ -22,7 +22,7 @@ export const Route = createFileRoute("/thanksgiving/")({
       { property: "og:image", content: shareUrl },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Thanksgiving turkey dinner with seasonal sides and pumpkin pie" },
+      { property: "og:image:alt", content: "Thanksgiving turkey dinner with seasonal sides" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: THANKSGIVING.title },
       { name: "twitter:description", content: THANKSGIVING.description },
@@ -40,7 +40,7 @@ function ThanksgivingPage() {
       <Navigation />
       <main className="pt-20 md:pt-24">
         <section className="thanksgiving-hero relative isolate overflow-hidden" aria-labelledby="thanksgiving-heading">
-          <img src={dinner.url} alt="Illustrative Thanksgiving turkey dinner with dressing, mashed potatoes, green beans, cranberry compote and pumpkin pie" width={1536} height={1024} fetchPriority="high" decoding="async" className="thanksgiving-photo absolute inset-0 h-full w-full object-cover" />
+          <img src={dinner.url} alt="Illustrative Thanksgiving turkey dinner with dressing, mashed potatoes, green beans and cranberry compote" width={1536} height={1024} fetchPriority="high" decoding="async" className="thanksgiving-photo absolute inset-0 h-full w-full object-cover" />
           <div className="thanksgiving-wash absolute inset-0" aria-hidden="true" />
           <div className="container relative z-10 flex h-full items-start px-6 pt-10 sm:items-center sm:py-12 md:px-10">
             <div className="thanksgiving-copy max-w-md lg:max-w-lg">
