@@ -56,7 +56,6 @@ function ThanksgivingPage() {
             <h3 className="mt-4 text-3xl font-bold leading-tight text-primary md:text-4xl">{THANKSGIVING.dish}</h3>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary/85 md:text-lg">{THANKSGIVING.dishDescription}</p>
             <p className="mt-4 text-base font-black text-primary md:text-lg">${THANKSGIVING.price}</p>
-            <p className="mt-7 border-l-2 border-autumn pl-4 text-base text-primary"><span className="font-bold">Optional Dessert:</span> {THANKSGIVING.dessert}</p>
             <div className="mt-10" aria-labelledby="thanksgiving-faq">
               <h2 id="thanksgiving-faq" className="mb-4 text-xl font-bold text-primary md:text-2xl">Thanksgiving FAQ</h2>
               <div className="divide-y divide-accent/30 rounded-2xl border border-accent/30 bg-white/70 px-5">
